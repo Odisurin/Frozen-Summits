@@ -149,15 +149,15 @@
 	invisibility = oldinv
 
 	if(getorganslot(ORGAN_SLOT_PENIS))
-		W.internal_organs_slot[ORGAN_SLOT_PENIS] = /obj/item/organ/penis/internal
+		W.internal_organs_slot[ORGAN_SLOT_PENIS] = /obj/item/organ/penis/knotted
 	if(getorganslot(ORGAN_SLOT_TESTICLES))
 		W.internal_organs_slot[ORGAN_SLOT_TESTICLES] = /obj/item/organ/testicles
 	if(getorganslot(ORGAN_SLOT_BREASTS))
-		W.internal_organs_slot[ORGAN_SLOT_BREASTS] = /obj/item/organ/breasts/internal
+		W.internal_organs_slot[ORGAN_SLOT_BREASTS] = /obj/item/organ/breasts
 	if(getorganslot(ORGAN_SLOT_BELLY))
-		W.internal_organs_slot[ORGAN_SLOT_BELLY] = /obj/item/organ/belly/internal
+		W.internal_organs_slot[ORGAN_SLOT_BELLY] = /obj/item/organ/belly
 	if(getorganslot(ORGAN_SLOT_VAGINA))
-		W.internal_organs_slot[ORGAN_SLOT_VAGINA] = /obj/item/organ/vagina/internal
+		W.internal_organs_slot[ORGAN_SLOT_VAGINA] = /obj/item/organ/vagina
 
 	W.client.prefs.sexable = client.prefs.sexable
 

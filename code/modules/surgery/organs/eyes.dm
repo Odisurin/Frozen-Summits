@@ -160,6 +160,7 @@
 /obj/item/organ/eyes/night_vision/werewolf
 	name = "moonlight eyes"
 	desc = ""
+	accessory_type = /datum/sprite_accessory/none
 
 /obj/item/organ/eyes/night_vision/nightmare
 	name = "burning red eyes"
