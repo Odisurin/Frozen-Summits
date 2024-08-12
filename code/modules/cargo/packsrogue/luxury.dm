@@ -5,7 +5,6 @@
 	crate_name = "merchant guild's crate"
 	crate_type = /obj/structure/closet/crate/chest/merchant
 
-
 /datum/supply_pack/rogue/luxury/sigs
 	name = "Pipe Weed Zig"
 	cost = 3
@@ -20,6 +19,10 @@
 	name = "Ozium"
 	cost = 5
 	contains = list(/obj/item/reagent_containers/powder/ozium)
+/datum/supply_pack/rogue/luxury/perfume
+	name = "Perfume"
+	cost = 15
+	contains = list(/obj/item/perfume/random)
 
 /datum/supply_pack/rogue/luxury/moondust
 	name = "Moon Dust"

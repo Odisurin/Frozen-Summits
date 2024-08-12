@@ -302,7 +302,7 @@
 /datum/status_effect/buff/healing
 	id = "healing"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/healing
-	duration = 10 SECONDS
+	duration = 40 SECONDS
 	examine_text = "SUBJECTPRONOUN is bathed in a restorative aura!"
 	var/healing_on_tick = 1
 	var/outline_colour = "#c42424"
