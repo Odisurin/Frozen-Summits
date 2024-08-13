@@ -606,4 +606,15 @@
 	H.mind.special_items["Heirloom Magical Book"] = /obj/item/book/granter/spellbook
 
 
+/datum/quirk/cleric
+	name = "Clerical Potential"
+	desc = "One of the gods favor you and has given you holy potential"
 
+
+/datum/quirk/cleric/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/devotion/C = new /datum/devotion(H, H.patron)
+	H.mind.adjust_skillrank_up_to((/datum/skill/magic/holy), 2, TRUE)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/orison)
+	C.grant_spells_templar(H)
+	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)

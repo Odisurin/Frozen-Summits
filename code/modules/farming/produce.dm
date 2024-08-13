@@ -303,3 +303,17 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
 	rotprocess = null
 	seed = /obj/item/seeds/potato
+	
+/obj/item/reagent_containers/food/snacks/grown/sugarcane
+	seed = /obj/item/seeds/sugarcane
+	name = "sugarcane"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "sugarcane"
+	gender = PLURAL
+	dropshrink = 0.75
+	filling_color = "#f5f2d9"
+	bitesize_mod = 2
+	foodtype = SUGAR
+	tastes = list("sugar" = 1)
+	grind_results = list(/datum/reagent/sugar = 10)

@@ -157,3 +157,13 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/potato/rogue
 	produce_amount_min = 3
 	produce_amount_max = 4
+
+
+/datum/plant_def/sugarcane
+	name = "sugarcane"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "sugarcane"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/sugarcane
+	produce_amount_min = 3
+	produce_amount_max = 4
+

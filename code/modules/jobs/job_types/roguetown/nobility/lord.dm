@@ -130,7 +130,6 @@ GLOBAL_LIST_EMPTY(lord_titles)
 			qdel(H.wear_mask)
 			mask = /obj/item/clothing/mask/rogue/lordmask/l
 
-	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 //	SSticker.rulermob = H
