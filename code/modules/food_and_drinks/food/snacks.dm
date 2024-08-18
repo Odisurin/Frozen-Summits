@@ -431,7 +431,7 @@ All foods are distributed among various categories. Use common sense.
 			return 1
 		else if(slice(W, user))
 			return 1*/
-	..()
+
 //Called when you finish tablecrafting a snack.
 /obj/item/reagent_containers/food/snacks/CheckParts(list/parts_list, datum/crafting_recipe/food/R)
 	..()
@@ -624,7 +624,9 @@ All foods are distributed among various categories. Use common sense.
 		add_fingerprint(user)
 		contents += W
 		stored_item = 1
-		return 1 // no afterattack here
+	else
+		return ..()
+	return ..()
 
 /obj/item/reagent_containers/food/snacks/MouseDrop(atom/over)
 	var/turf/T = get_turf(src)
