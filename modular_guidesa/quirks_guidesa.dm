@@ -1,7 +1,7 @@
 /datum/quirk/elemental_breath_fire
 	name = "Elemental Breath (Fire Breath)"
 	desc = "Harness the elemental fury within you to unleash a breath of scorching fire. This power, often gifted by draconic heritage or a deep elemental connection, allows you to exhale a ball of flames, searing the enemies. Its not not as strong as a true dragon breath, the intensity only embodies a little of your lineage's power, but it requires time to recover after each use."
-	value = 5
+	value = 3
 
 /datum/quirk/elemental_breath_fire/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder

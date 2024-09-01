@@ -784,7 +784,7 @@
 	color = null
 	icon_state = "waistpron"
 	item_state = "waistpron"
-	body_parts_covered = GROIN
+	body_parts_covered = null
 	boobed = FALSE
 	flags_inv = HIDECROTCH
 
@@ -801,9 +801,10 @@
 	color = null
 	icon_state = "aproncook"
 	item_state = "aproncook"
-	body_parts_covered = GROIN
+	body_parts_covered = CHEST
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
 	boobed = FALSE
+	flags_inv = HIDECROTCH|HIDEBOOB
 
 /*
 /obj/item/clothing/cloak/apron/waist/ComponentInitialize()
