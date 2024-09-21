@@ -10,7 +10,17 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/iron
 
-/datum/anvil_recipe/weapons/iron/swordshort
+
+/datum/anvil_recipe/weapons/bullets
+	name = "Lead Bullets x5 (+s)"
+	appro_skill = /datum/skill/craft/engineering
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/ammo_casing/caseless/rogue/bullet
+	createditem_num = 4
+	i_type = "Ammo"
+	craftdiff = 0
+
+/datum/anvil_recipe/weapons/shortsword_iron
 	name = "Short sword"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/iron/short

@@ -160,6 +160,12 @@
 /obj/item/storage/belt/rogue/pouch/food/PopulateContents()
 	new /obj/item/reagent_containers/food/snacks/rogue/crackerscooked(src)
 
+/obj/item/storage/belt/rogue/pouch/bullets/Initialize()
+	. = ..()
+	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
+	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
+	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
+
 /obj/item/storage/backpack/rogue/satchel
 	name = "satchel"
 	desc = ""
