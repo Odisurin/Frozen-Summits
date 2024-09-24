@@ -1144,7 +1144,7 @@
 								if(!C.client)
 									continue
 								//Gotta get a divorce first
-								if(C.marriedto)
+								if(C.IsWedded())
 									continue
 								if(C.real_name == X)
 									//I know this is very sloppy but its alot less code.
@@ -1191,8 +1191,7 @@
 						bridefirst = thebride.real_name
 						thegroom.change_name(thegroom.real_name + surname2use)
 						thebride.change_name(thebride.real_name + surname2use)
-						thegroom.marriedto = thebride.real_name
-						thebride.marriedto = thegroom.real_name
+						thegroom.MarryTo(thebride)
 						thegroom.adjust_triumphs(1)
 						thebride.adjust_triumphs(1)
 						//Bite the apple first if you want to be the groom.

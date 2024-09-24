@@ -81,9 +81,11 @@
 			. += span_notice("A fellow noble.")
 
 		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
-			if(H.marriedto == name)
-				. += span_love("It's my spouse.")
+			var/mob/living/carbon/human/stranger = user
+			if(RomanticPartner(stranger))
+				. += "<span class='love'>It's my spouse.</span>"
+			if(family_datum == stranger.family_datum && family_datum)
+				. += ReturnRelation(user)
 
 		if(name in GLOB.excommunicated_players)
 			. += span_userdanger("HERETIC! SHAME!")
