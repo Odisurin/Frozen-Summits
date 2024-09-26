@@ -85,7 +85,9 @@
 			if(RomanticPartner(stranger))
 				. += "<span class='love'>It's my spouse.</span>"
 			if(family_datum == stranger.family_datum && family_datum)
-				. += ReturnRelation(user)
+				var/family_text = ReturnRelation(user)
+				if(family_text)
+					. += family_text
 
 		if(name in GLOB.excommunicated_players)
 			. += span_userdanger("HERETIC! SHAME!")
