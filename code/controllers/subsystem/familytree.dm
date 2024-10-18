@@ -50,7 +50,6 @@ SUBSYSTEM_DEF(familytree)
 		/datum/species/human/northern,
 		/datum/species/elf,
 		/datum/species/elf/dark,
-		/datum/species/elf/snow/wood,
 		/datum/species/dwarf/mountain,
 		/datum/species/tieberian,
 		)

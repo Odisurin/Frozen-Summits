@@ -191,6 +191,8 @@ GLOBAL_LIST_EMPTY(confessors)
 #define FAMILY_MOTHER "Mother"
 #define FAMILY_PROGENY "Progeny"
 #define FAMILY_ADOPTED "Adoptive Progeny"
+#define FAMILY_OMMER "Parents Sibling"
+#define FAMILY_INLAW "In Law"
 
 GLOBAL_LIST_EMPTY(sunlights)
 GLOBAL_LIST_EMPTY(head_bounties)
