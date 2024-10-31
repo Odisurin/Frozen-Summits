@@ -27,8 +27,8 @@
 
 		else if (world.time >= transforming + 25 SECONDS) // Stage 2
 			H.flash_fullscreen("redflash3")
-			H.emote("agony", forced = TRUE)
-			to_chat(H, span_userdanger("UNIMAGINABLE PAIN!"))
+			H.emote("whimper", forced = TRUE)
+			to_chat(H, span_userdanger("THE MOON SCORCHES, THE PAIN!"))
 			H.Stun(30)
 			H.Knockdown(30)
 

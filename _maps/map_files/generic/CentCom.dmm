@@ -2404,10 +2404,6 @@
 "Te" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"Tf" = (
-/obj/effect/landmark/start/vampirespawn,
-/turf/open/floor/rogue/blocks/paving,
-/area/rogue/indoors)
 "Tv" = (
 /obj/structure/bars,
 /turf/open/floor/rogue/ruinedwood{
@@ -10394,7 +10390,7 @@ Zl
 Zl
 WB
 Gz
-Tf
+cN
 cZ
 cZ
 dh
@@ -10524,7 +10520,7 @@ Zl
 Zl
 WB
 Gz
-Tf
+cN
 cZ
 dO
 cZ
@@ -10654,7 +10650,7 @@ WB
 cD
 WB
 Gs
-Tf
+cN
 WB
 de
 cZ
@@ -10784,7 +10780,7 @@ cC
 cD
 WB
 Gz
-Tf
+cN
 da
 cZ
 cZ

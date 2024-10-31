@@ -90,7 +90,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			mypool = mansion
 		equip_spawn()
 		greet()
-		addtimer(CALLBACK(owner.current, TYPE_PROC_REF(/mob/living/carbon/human, spawn_pick_class), "VAMPIRE SPAWN"), 5 SECONDS)
 	else
 		forge_vampirelord_objectives()
 		finalize_vampire()
@@ -140,21 +139,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 	owner.adjust_skillrank(/datum/skill/magic/blood, 2, TRUE)
 	owner.current.ambushable = FALSE
-
-/mob/living/carbon/human/proc/spawn_pick_class()
-	var/list/classoptions = list("Bard", "Fisher", "Hunter", "Miner", "Peasant", "Woodcutter", "Cheesemaker", "Blacksmith", "Carpenter", "Rogue", "Treasure Hunter", "Mage")
-	var/list/visoptions = list()
-
-	for(var/T in 1 to 5)
-		var/picked = pick(classoptions)
-		visoptions |= picked
-
-	var/selected = input(src, "Which class was I?", "VAMPIRE SPAWN") as anything in visoptions
-
-	for(var/datum/advclass/A in SSrole_class_handler.sorted_class_categories[CTAG_ALLCLASS])
-		if(A.name == selected)
-			equipOutfit(A.outfit)
-			return
 
 /datum/outfit/job/roguetown/vamplord/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -308,7 +292,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	..()
 
 /datum/antagonist/vampirelord/lesser/greet()
-	to_chat(owner.current, span_userdanger("We are awakened from our slumber, Spawn of the feared Vampire Lord."))
+	to_chat(owner.current, span_userdanger("I am awakened from my slumber"))
 	owner.announce_objectives()
 
 /datum/antagonist/vampirelord/proc/finalize_vampire()
@@ -945,8 +929,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		return TRUE
 
 /datum/objective/vlordserve
-	name = "serve"
-	explanation_text = "I must serve my master, and ensure that they triumph."
+	name = "survive"
+	explanation_text = "I must survive, find blood while not giving the mortals a reason to try and destroy me."
 	triumph_count = 3
 
 /datum/objective/solovamp
