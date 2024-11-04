@@ -172,3 +172,20 @@
 	name = "internal belly"
 	visible_organ = FALSE
 	accessory_type = /datum/sprite_accessory/none
+
+/obj/item/organ/butt/internal
+	name = "internal butt"
+	visible_organ = FALSE
+	accessory_type = /datum/sprite_accessory/none
+
+/obj/item/organ/butt
+	name = "butt"
+	icon = 'modular_stonehedge/icons/obj/surgery.dmi'
+	icon_state = "butt"
+	dropshrink = 0.5
+	visible_organ = TRUE
+	zone = BODY_ZONE_PRECISE_STOMACH
+	slot = ORGAN_SLOT_BUTT
+	organ_dna_type = /datum/organ_dna/butt
+	accessory_type = /datum/sprite_accessory/butt/pair
+	organ_size = DEFAULT_BUTT_SIZE

@@ -4,25 +4,70 @@ GLOBAL_LIST_INIT(named_penis_sizes, list(
 	"Large" = 3,
 ))
 
+//unselectables included.
+GLOBAL_LIST_INIT(uns_named_penis_sizes, list(
+	"small" = 1,
+	"average" = 2,
+	"large" = 3,
+	"massive" = 4,
+	"enormous" = 5,
+))
+
+//6 cant be selected, dont have sprite but used when you put salami in your pants.
 GLOBAL_LIST_INIT(named_ball_sizes, list(
 	"Small" = 1,
 	"Average" = 2,
 	"Large" = 3,
 ))
 
-GLOBAL_LIST_INIT(named_breast_sizes, list(
-	"Flat" = 0,
-	"Very Small" = 1,
-	"Small" = 2,
-	"Normal" = 3,
-	"Large" = 4,
-	"Enormous" = 5,
-	"Towering" = 6,
-	"Gigantic" = 7,
-	"Gargantuan" = 8,
-	"Impossible" = 9,
-	"Ungodly" = 10,
+//unselectables included.
+GLOBAL_LIST_INIT(uns_named_ball_sizes, list(
+	"small" = 1,
+	"average" = 2,
+	"large" = 3,
+	"massive" = 4,
+	"enormous" = 5,
+	"gigantic" = 6,
 ))
+
+GLOBAL_LIST_INIT(named_breast_sizes, list(
+	"flat" = 0,
+	"very small" = 1,
+	"small" = 2,
+	"normal" = 3,
+	"large" = 4,
+	"extra large" = 5,
+	"massive" = 6,
+	"enormous" = 7,
+	"towering" = 8,
+	"magnificent" = 9,
+	"gigantic" = 10,
+	"titanic" = 11,
+	"gargantuan" = 12,
+	"colossal" = 13,
+))
+
+//unselectables included.
+GLOBAL_LIST_INIT(uns_named_breast_sizes, list(
+	"flat" = 0,
+	"very small" = 1,
+	"small" = 2,
+	"normal" = 3,
+	"large" = 4,
+	"extra large" = 5,
+	"massive" = 6,
+	"enormous" = 7,
+	"towering" = 8,
+	"magnificent" = 9,
+	"gigantic" = 10,
+	"titanic" = 11,
+	"gargantuan" = 12,
+	"colossal" = 13,
+	"unbelieveably big" = 14,
+	"godly big" = 15,
+	"ungodly big" = 16,
+))
+
 
 GLOBAL_LIST_INIT(named_belly_sizes, list(
 	"Flat" = 0,
@@ -30,6 +75,25 @@ GLOBAL_LIST_INIT(named_belly_sizes, list(
 	"Medium" = 2,
 	"Large" = 3,
 ))
+
+GLOBAL_LIST_INIT(named_butt_sizes, list(
+	"flat" = 0,
+	"small" = 1,
+	"medium" = 2,
+	"large" = 3,
+	"massive" = 4,
+))
+
+//unselectables included.
+GLOBAL_LIST_INIT(uns_named_butt_sizes, list(
+	"flat" = 0,
+	"small" = 1,
+	"medium" = 2,
+	"large" = 3,
+	"massive" = 4,
+	"enormous" = 5,
+))
+
 
 GLOBAL_LIST_INIT(customizer_choices, build_customizer_choices())
 GLOBAL_LIST_INIT(customizers, build_customizers())
