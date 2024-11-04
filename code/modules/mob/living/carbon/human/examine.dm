@@ -95,7 +95,6 @@
 		if(name in GLOB.outlawed_players)
 			. += span_userdanger("OUTLAW!")
 
-
 		var/commie_text
 		if(mind)
 			if(mind.special_role == "Bandit")

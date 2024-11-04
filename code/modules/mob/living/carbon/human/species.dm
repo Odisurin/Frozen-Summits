@@ -556,6 +556,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return "FRONT"
 		if(BODY_FRONT_FRONT_LAYER)
 			return "FFRONT"
+
+		if(BODY_FRONT_FRONT_FRONT_LAYER)
+			return "FRONT"
 		if(BODY_UNDER_LAYER)
 			return "UNDER"
 
@@ -644,6 +647,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			if(is_nudist)
 				return FALSE
+			if(is_BOOBS && !I.can_hold_endowed && H.gender == FEMALE)
+				if(!disable_warning)
+					to_chat(H, span_warning("I can't squeeze MY TITS in!.."))
+				return FALSE
 			if(I.blocking_behavior & BULKYBLOCKS)
 				if(H.cloak)
 					return FALSE
@@ -720,6 +727,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(H.wear_pants)
 				return FALSE
 			if(is_nudist)
+				return FALSE
+			if(is_BOOBS && !I.can_hold_endowed && H.gender == MALE)
+				if(!disable_warning)
+					to_chat(H, span_warning("I can't squeeze MY JUNK in!.."))
 				return FALSE
 			if( !(I.slot_flags & ITEM_SLOT_PANTS) )
 				return FALSE

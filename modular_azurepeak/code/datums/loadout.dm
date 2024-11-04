@@ -238,3 +238,32 @@ GLOBAL_LIST_EMPTY(loadout_items)
 /datum/loadout_item/feather
 	name = "Feather"
 	path = /obj/item/natural/feather
+//below are not clothes and may be valuable and well, clearly superior to having clothes but you only get one choice, and it's a 'loadout' so maybe its fine.
+// Above clothing are usually hard to get on their own, some.
+
+//ACCESSORIES
+/datum/loadout_item/sring
+	name = "Silver Ring"
+	path = /obj/item/clothing/ring/silver
+
+/datum/loadout_item/gring
+	name = "Gold Ring"
+	path = /obj/item/clothing/ring/gold
+
+/datum/loadout_item/divine
+	name = "Divine symbol"
+	path = /obj/item/clothing/neck/roguetown/psicross
+
+/obj/item/clothing/neck/roguetown/psicross
+//ARMOR
+/datum/loadout_item/ironmask
+	name = "Iron Mask"
+	path = /obj/item/clothing/mask/rogue/facemask
+
+/datum/loadout_item/ironmask
+	name = "Iron coif"
+	path = /obj/item/clothing/neck/roguetown/chaincoif/iron
+
+/datum/loadout_item/lbracers
+	name = "Leather Bracers"
+	path = /obj/item/clothing/wrists/roguetown/bracers/leather

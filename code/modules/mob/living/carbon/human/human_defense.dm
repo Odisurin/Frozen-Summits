@@ -13,7 +13,6 @@
 		organnum++
 	return (armorval/max(organnum, 1))
 
-
 /mob/living/carbon/human/proc/checkarmor(def_zone, d_type, damage, armor_penetration, blade_dulling)
 	if(!d_type)
 		return 0
