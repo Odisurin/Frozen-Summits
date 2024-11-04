@@ -81,7 +81,7 @@
 /datum/quirk/duelist/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.change_stat("speed", 2)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
 	H.mind.special_items["Rapier"] = /obj/item/rogueweapon/sword/rapier
 
 /datum/quirk/eagle_eyed
@@ -137,7 +137,7 @@
 /datum/quirk/pineapple/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.special_items["Whip"] = /obj/item/rogueweapon/whip
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 4, TRUE)
 
 
 /datum/quirk/spring_in_my_step
@@ -241,6 +241,7 @@
 	ADD_TRAIT(H, TRAIT_NASTY_EATER, TRAIT_GENERIC)
 
 //neutral
+/* 
 /datum/quirk/backproblems
 	name = "Giant"
 	desc = "I've always been called a giant (atleast among my kin). I am valued for my stature, but, this world made for smaller folk has forced me to move cautiously."
@@ -254,7 +255,7 @@
 	H.transform = H.transform.Scale(1.25, 1.25)
 	H.transform = H.transform.Translate(0, (0.25 * 16))
 	H.update_transform()
-
+*/
 //negative
 /datum/quirk/nimrod
 	name = "Nimrod"
@@ -411,6 +412,24 @@
 /datum/quirk/vampire/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/antagonist/vampire/new_antag = new /datum/antagonist/vampirelord/lesser/secret()
+	H.mind.add_antag_datum(new_antag)
+
+/datum/antagonist/vampirelord/lesser/secret
+	ashes = FALSE
+
+/datum/antagonist/vampirelord/lesser/secret/roundend_report()
+	return
+
+/datum/antagonist/vampirelord/lesser/secret/move_to_spawnpoint()
+	return
+
+/datum/quirk/werewolf
+	name = "Cursed Lineage (Werewolf)"
+	desc = "Cursed with lycanthropy but driven by a heart that resists darkness, you walk the line between beast and person, harnessing the primal power and keen senses of the wolf to protect rather than destroy, perhaps guided by Selûne's blessing or Mielikki's wisdom, striving to master your dual nature while society's fear and misunderstanding shadow your every step. (You area werewolf but NOT an ANTAGONIST.)"
+
+/datum/quirk/werewolf/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/antagonist/werewolf/new_antag = new /datum/antagonist/vampirelord/lesser/secret()
 	H.mind.add_antag_datum(new_antag)
 
 /datum/antagonist/vampirelord/lesser/secret

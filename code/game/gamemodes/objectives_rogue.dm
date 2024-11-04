@@ -39,8 +39,8 @@
 
 /datum/objective/werewolf
 	name = "conquer"
-	explanation_text = "You are touched by the Mad God of the Wilds, Silvanus - be it through a bite... Or a terrible blessing. And you are SO, SO VERY HUNGRY. The form Silvanus promises will be fearsome, but the transition will be agonizing. Fear not the full moon - and let the feast begin."
-	team_explanation_text = "Lycanthropy is a terrible disease that's been recorded in scattered accounts going back hundreds of years. Whatever madness drove Silvanus to create such an aberration is beyond mortal minds - and whatever the reason, he has been unwilling or unable to undo it. Nightly transformations and prodigious increses in mass drive the body into an active state of insatiable starvation, driving animalistic, rabid behavior."
+	explanation_text = "You were infected by this disease for what you think was a eternity- be it through a bite... Or a terrible blessing. And you are SO, SO VERY HUNGRY. The form  promises will be fearsome, but the transition will be agonizing. But you still hold control. Others might fear you. But you know when you turn. It is something to be proud."
+	team_explanation_text = "Lycanthropy is a terrible disease that's been recorded in scattered accounts going back hundreds of years. Whatever madness drove the gods to create such an aberration is beyond mortal minds - and whatever the reason, they have been unwilling or unable to undo it. Nightly transformations and prodigious increses in mass drive the body into an active state of insatiable starvation, driving animalistic, rabid behavior."
 	triumph_count = 5
 
 /datum/objective/werewolf/check_completion()
