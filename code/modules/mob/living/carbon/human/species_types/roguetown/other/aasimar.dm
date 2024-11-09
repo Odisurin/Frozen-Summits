@@ -11,7 +11,7 @@
 	Most commonly, Aasimar are similar to Humans, albeit taller, and possess uncanny beauty. \
 	They have strangely colored skin and are more physically frail than the average Human. \
 	Because of their upbringing, they make for natural conduits for godly powers. \
-	Azure Peak's populace holds them with a mixture of uneasy fear or, and respect. \
+	Frozen Summit's populace holds them with a mixture of uneasy fear or, and respect. \
 	It is also widely believed that an Aasimars death is a bad omen... \
 	+1 Fortune, -1 Perception."
 
@@ -59,7 +59,7 @@
 		/datum/customizer/organ/vagina/human,
 		)
 	body_markings = list(
-		/datum/body_marking/flushed_cheeks, //Azure > Hearth
+		/datum/body_marking/flushed_cheeks, //Frozen Summit > Hearth
 		/datum/body_marking/eyeliner,
 		/datum/body_marking/tonage,
 	)

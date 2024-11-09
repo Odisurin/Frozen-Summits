@@ -2,8 +2,7 @@ GLOBAL_VAR(lordsurname)
 GLOBAL_LIST_EMPTY(lord_titles)
 
 /datum/job/roguetown/lord
-	title = "Grand Duke"
-	f_title = "Grand Duchess"
+	title = "Expedition Leader"
 	flag = LORD
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -15,17 +14,14 @@ GLOBAL_LIST_EMPTY(lord_titles)
 
 	spells = list(
 		/obj/effect/proc_holder/spell/self/grant_title,
-		/obj/effect/proc_holder/spell/self/convertrole/servant,
-		/obj/effect/proc_holder/spell/self/convertrole/guard,
-		/obj/effect/proc_holder/spell/self/convertrole/bog,
 	)
 	outfit = /datum/outfit/job/roguetown/lord
 	visuals_only_outfit = /datum/outfit/job/roguetown/lord/visuals
 
 	display_order = JDO_LORD
-	tutorial = "Elevated upon your throne through a web of intrigue and political upheaval, you are the absolute authority of these lands and at the center of every plot within it. Every man, woman and child is envious of your position and would replace you in less than a heartbeat: Show them the error of their ways."
+	tutorial = "You are a noble man or woman, though out your own violition decided to fund a small voyage towards unknown lands to settle down a small hamlet. You are not any higher than the worker, you share your blood on the lands alongside your peers."
 	whitelist_req = FALSE
-	min_pq = 10
+	min_pq = 0
 	max_pq = null
 	round_contrib_points = 4
 	give_bank_account = 1000
@@ -56,12 +52,12 @@ GLOBAL_LIST_EMPTY(lord_titles)
 		SSticker.rulermob = L
 		switch(L.pronouns)
 			if(SHE_HER)
-				SSticker.rulertype = "Grand Duchess"
+				SSticker.rulertype = "Expedition Leader"
 			if(THEY_THEM_F)
-				SSticker.rulertype = "Grand Duchess"
+				SSticker.rulertype = "Expedition Leader"
 			else
-				SSticker.rulertype = "Grand Duke"
-		to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is [SSticker.rulertype] of Azure Peak.</span></span></b>")
+				SSticker.rulertype = "Expedition Leader"
+		to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is [SSticker.rulertype] of Frozen Summit.</span></span></b>")
 		if(STATION_TIME_PASSED() <= 10 MINUTES) //Late to the party? Stuck with default colors, sorry!
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
 
@@ -69,10 +65,8 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	..()
 	head = /obj/item/clothing/head/roguetown/crown/serpcrown
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
-	cloak = /obj/item/clothing/cloak/lordcloak
 	belt = /obj/item/storage/belt/rogue/leather/plaquegold
 	beltl = /obj/item/storage/keyring/lord
-	l_hand = /obj/item/rogueweapon/lordscepter
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
 	id = /obj/item/clothing/ring/active/nomag
 	if(H.pronouns == SHE_HER || H.pronouns == THEY_THEM_F)

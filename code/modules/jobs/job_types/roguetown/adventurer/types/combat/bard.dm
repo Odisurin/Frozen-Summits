@@ -5,7 +5,7 @@
 	registered adventurers in Enigma, mostly because they are \
 	the last ones in a party to die. Their wish is to experience \
 	the greatest adventures of the age and write amazing songs about them. \
-	The class has the option between the jack of all trades Bard, the martial-focused Skald, magic-equip arcanist, and the gospel Hymnist." //Azure peak updated for Hymnist
+	The class has the option between the jack of all trades Bard, the martial-focused Skald, magic-equip arcanist, and the gospel Hymnist." //Frozen Summit peak updated for Hymnist
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/bard
@@ -15,7 +15,7 @@
 /datum/outfit/job/roguetown/adventurer/bard/pre_equip(mob/living/carbon/human/H)
 	..() // The entertaining jack of all trades, uniquely handy with crossbows and swords. They're incredibly well travelled, can sneak, steal and survive on their own.
 	H.adjust_blindness(-3)
-	var/classes = list("Bard","Skald","Arcanist","Hymnist") //Azure Peak Edit for Hymnist
+	var/classes = list("Bard","Skald","Arcanist","Hymnist") //Frozen Summit Edit for Hymnist
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 
 	switch(classchoice)
@@ -140,7 +140,7 @@
 			H.change_stat("intelligence", 2)
 			H.change_stat("perception", 2)
 			H.change_stat("speed", 2)
-		if("Hymnist") //Azure Peak Update, Miracles and some utility skills, less combat prowess
+		if("Hymnist") //Frozen Summit Update, Miracles and some utility skills, less combat prowess
 			to_chat(H, span_warning("The tales of the gods are mighty indeed, though your skill in their retelling through song has granted you a touch of their favor as thanks."))
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
@@ -195,7 +195,7 @@
 			var/datum/devotion/C = new /datum/devotion(H, H.patron)
 			C.grant_spells_templar(H)
 			H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-			H.mind.RemoveSpell(/obj/effect/proc_holder/spell/targeted/churn)//End of Azure Peak Update
+			H.mind.RemoveSpell(/obj/effect/proc_holder/spell/targeted/churn)//End of Frozen Summit Update
 
 	var/weapons = list("Harp","Lute","Accordion","Guitar")
 	var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons

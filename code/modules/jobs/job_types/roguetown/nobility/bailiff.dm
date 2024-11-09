@@ -3,8 +3,8 @@
 	flag = MARSHAL
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
@@ -127,7 +127,7 @@
 /proc/find_lord(required_stat = CONSCIOUS)
 	var/mob/living/lord
 	for(var/mob/living/carbon/human/H in GLOB.human_list)
-		if(!H.mind || H.job != "Grand Duke" || (H.stat > required_stat))
+		if(!H.mind || H.job != "Expedition Leader" || (H.stat > required_stat))
 			continue
 		lord = H
 		break

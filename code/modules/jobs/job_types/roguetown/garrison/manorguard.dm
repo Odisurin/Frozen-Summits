@@ -9,7 +9,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
-	tutorial = "Having proven yourself loyal and capable, you are entrusted to defend the Royal Family and their Court. Trained regularly in combat and siege warfare, you stand a small chance of surviving the Duke's reign."
+	tutorial = "Having proven yourself loyal and capable, you are entrusted to defend the Hamlet."
 	display_order = JDO_CASTLEGUARD
 	whitelist_req = TRUE
 
@@ -17,7 +17,7 @@
 	advclass_cat_rolls = list(CTAG_MENATARMS = 20)
 
 	give_bank_account = 22
-	min_pq = 1
+	min_pq = 0
 	max_pq = null
 	round_contrib_points = 2
 
