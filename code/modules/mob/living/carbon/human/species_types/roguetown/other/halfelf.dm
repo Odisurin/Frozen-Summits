@@ -16,6 +16,13 @@
 	Half-Elves also typically try to find identity in one of two regions they have similarities towards. \
 	+1 Perception." 
 
+	inherent_traits = list(
+		TRAIT_FASTSLEEP,
+		TRAIT_NOCSIGHT,
+		TRAIT_BEAUTIFUL,
+		TRAIT_EMPATH
+	)
+
 	skin_tone_wording = "Identity"
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)

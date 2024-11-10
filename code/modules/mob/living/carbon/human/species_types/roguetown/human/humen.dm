@@ -14,6 +14,13 @@
 	are dominant in their species... \
 	+1 Intelligence."
 
+	inherent_traits = list(
+		TRAIT_NUTCRACKER,
+		TRAIT_SEEPRICES,
+		TRAIT_BREADY,
+		TRAIT_FASTSLEEP,
+		TRAIT_EMPATH
+	)
 	skin_tone_wording = "Ancestry"
 
 	default_color = "FFFFFF"

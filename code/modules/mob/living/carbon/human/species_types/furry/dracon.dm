@@ -2,9 +2,9 @@
 	race = /datum/species/dracon
 
 /datum/species/dracon
-	name = "Drakian"
+	name = "Half Dragon"
 	id = "dracon"
-	desc = "Mighty scaled individuals who claim to be descendant from the dragons of yore."
+	desc = "Mighty scaled individuals who are descendant from the primordial dragons."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
@@ -26,11 +26,19 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
-	race_bonus = list(STAT_STRENGTH = 1, STAT_ENDURANCE = -1)
+	race_bonus = list(STAT_STRENGTH = 2, STAT_ENDURANCE = 1, STAT_SPEED = -2)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
 	miss_sound = 'sound/blank.ogg'
+	inherent_traits = list(
+		TRAIT_ZJUMP,
+		TRAIT_STRONGBITE ,
+		TRAIT_WILD_EATER,
+		TRAIT_LEAPER,
+		TRAIT_NOFALLDAMAGE1
+	)
+
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,

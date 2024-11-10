@@ -21,6 +21,15 @@
 	Each dwarf hails from a ancient fortress named after the most plentiful mineral. \
 	+1 Constitution."
 
+	inherent_traits = list(
+		TRAIT_NUTCRACKER,
+		TRAIT_SEEPRICES_SHITTY,
+		TRAIT_BREADY,
+		TRAIT_DECEIVING_MEEKNESS,
+		TRAIT_FASTSLEEP,
+		TRAIT_NOCSIGHT 
+	)
+
 	skin_tone_wording = "Dwarf Fortress"
 
 	default_color = "FFFFFF"

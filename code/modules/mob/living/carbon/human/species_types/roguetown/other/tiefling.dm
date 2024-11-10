@@ -13,11 +13,16 @@
 	In this, their species has suffered vast tragedy throughout their short history, \
 	Facing scrutiny, judgement and even genocide in the past. Wounding many tiefling psyche \
 	and leading to most seeking a solitary life outside the watchful eyes of others. \
-	Tiefling cannot reproduce with mortals, and so no half-breed exists. \
+	Tiefling can rarely reproduce with mortals. \
 	Tiefling tend to be extremely perceptive and paranoid, as luck is rarely on their side \
 	and their unique biology makes them extremely susceptible to injury. \
 	+1 Intelligence."
-
+	inherent_traits = list(
+		TRAIT_FASTSLEEP,
+		TRAIT_NOCSIGHT,
+		TRAIT_BEAUTIFUL,
+		TRAIT_NASTY_EATER
+	)
 	skin_tone_wording = "Progenitor"
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)

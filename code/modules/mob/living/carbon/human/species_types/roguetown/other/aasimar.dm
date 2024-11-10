@@ -15,6 +15,13 @@
 	It is also widely believed that an Aasimars death is a bad omen... \
 	+1 Fortune, -1 Perception."
 
+	inherent_traits = list(
+		TRAIT_FASTSLEEP,
+		TRAIT_EMPATH,
+		TRAIT_BEAUTIFUL,
+		TRAIT_STEELHEARTED
+	)
+
 	skin_tone_wording = "Craft"
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)

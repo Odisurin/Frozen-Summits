@@ -5,7 +5,7 @@
 
 /datum/virtue/combat/magical_potential/apply_to_human(mob/living/carbon/human/recipient)
 	if (!recipient.mind?.get_skill_level(/datum/skill/magic/arcane)) // we can do this because apply_to is always called first
-		recipient.mind?.adjust_spellpoints(-6) // no martial-arcyne for you - not the intent of this virtue!
+		recipient.mind?.adjust_spellpoints(2) // no martial-arcyne for you - not the intent of this virtue!
 		if (!recipient.mind?.has_spell(/obj/effect/proc_holder/spell/targeted/touch/prestidigitation))
 			recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 	else
@@ -61,10 +61,10 @@
 								"Quiver (Arrows)" = /obj/item/quiver/arrows
 	)
 
-/*/datum/virtue/combat/tavern_brawler
+/datum/virtue/combat/tavern_brawler
 	name = "Tavern Brawler"
 	desc = "I've never met a problem my fists couldn't solve."
-	added_traits = list(TRAIT_CIVILIZEDBARBARIAN)*/
+	added_traits = list(TRAIT_CIVILIZEDBARBARIAN)
 
 /datum/virtue/combat/guarded
 	name = "Guarded"

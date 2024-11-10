@@ -4,8 +4,16 @@
 /datum/species/vulpkanin
 	name = "Vulpkian"
 	id = "vulpkanin"
-	desc = "Foxy creatures known for their cleverness and mischief. In ancient history they were Dendor's original champions, but as His madness grew the connect became frey and forgotten, leaving them to their own devices. Or, at least, that's what they say."
+	desc = "Foxy creatures known for their cleverness and mischief. In ancient history they were the one of the forgotten god's original champions, but when the god started to be forgotten, they could not control vulpkanin any longer due to their lack of power, leaving them to their own devices. Or, at least, that's what they say."
 	default_color = "444"
+	inherent_traits = list(
+		TRAIT_STRONGBITE,
+		TRAIT_NASTY_EATER,
+		TRAIT_LEAPER,
+		TRAIT_PERFECT_TRACKER,
+		TRAIT_NOCSIGHT,
+		TRAIT_NIGHT_OWL
+	)
 	species_traits = list(
 		MUTCOLORS,
 		EYECOLOR,

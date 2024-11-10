@@ -5,7 +5,7 @@
 	name = "Kobold"
 	id = "kobold"
 	desc = "<b>Kobold</b><br>\
-	Short in stature and typically scrawny, this little lizards make up for it in their natural agility. People typically stereotype them as thieves, though..."
+	Short in stature and typically scrawny, this little lizards are distant cousins of half-dragons, and they make up for it in their natural agility. People typically stereotype them as thieves, though..."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
@@ -18,6 +18,16 @@
 	use_f = TRUE
 	custom_clothes = TRUE
 	clothes_id = "dwarf"
+	inherent_traits = list(
+		TRAIT_WEBWALK,
+		TRAIT_STRONGBITE,
+		TRAIT_WILD_EATER,
+		TRAIT_NOCSIGHT,
+		TRAIT_NOFALLDAMAGE1,
+		TRAIT_NUTCRACKER,
+		TRAIT_NIGHT_OWL,
+		TRAIT_DECEIVING_MEEKNESS
+	)
 	offset_features = list(
 		OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,-3), OFFSET_WRISTS = list(0,-3),\
 		OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,-4), OFFSET_HEAD = list(0,-4), \
@@ -30,7 +40,7 @@
 		OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,-4), OFFSET_UNDIES_F = list(0,-4), \
 		)
-	race_bonus = list(STAT_SPEED = 1, STAT_CONSTITUTION = -1)
+	race_bonus = list(STAT_SPEED = 2, STAT_CONSTITUTION = -1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'

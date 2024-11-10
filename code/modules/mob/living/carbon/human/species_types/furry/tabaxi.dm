@@ -14,6 +14,13 @@
 		Tabaxi eyes are slit-pupilled and usually green or yellow.\
 		Tabaxi are competent swimmers and climbers as well as speedy runners.\
 		They have a good sense of balance and an acute sense of smell."
+	inherent_traits = list(
+		TRAIT_ZJUMP,
+		TRAIT_LEAPER,
+		TRAIT_NOFALLDAMAGE1,
+		TRAIT_STRONGBITE ,
+		TRAIT_WILD_EATER
+	)
 	skin_tone_wording = "Fur Colors"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE, MUTCOLORS)
 	possible_ages = ALL_AGES_LIST

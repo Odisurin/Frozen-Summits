@@ -19,7 +19,12 @@
 	+1 Speed, -1 Constitution."
 
 	skin_tone_wording = "Tribal Identity"
-
+	inherent_traits = list(
+		TRAIT_FASTSLEEP,
+		TRAIT_NOCSIGHT,
+		TRAIT_BEAUTIFUL,
+		TRAIT_EMPATH
+	)
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	default_features = MANDATORY_FEATURE_LIST
