@@ -10,55 +10,78 @@
 	)
 
 /datum/patron/inhumen/zizo
-	name = "Zizo"
-	domain = "Advancement, Hubris, Left Hand Magicks"
-	desc = "Snow Elf turned God- banished by the Ten for spreading unholy magicks and forbidden sciences. Her craft taught mortals to bend the natural world to their will, but destroyed the Snow Elf race.."
+	name = "Myrkul"
+	domain = "God of Death, the Dead, and the Afterlife"
+	desc = "Myrkul is the god of death, the dead, and the afterlife. His followers believe that death is the ultimate end and that only through embracing it can one gain true power. Myrkul teaches that destruction is inevitable and that those who embrace it can shape the future by controlling death itself. The cult of Myrkul seeks to extinguish life, plunging the world into a state of eternal decay, where death rules supreme."
 	worshippers = "Necromancers, Warlocks, and the Undead"
 	mob_traits = list(TRAIT_CABAL)
 	t1 = /obj/effect/proc_holder/spell/invoked/projectile/profane/miracle
 	t2 = /obj/effect/proc_holder/spell/invoked/raise_lesser_undead/miracle
 	t3 = /obj/effect/proc_holder/spell/invoked/rituos/miracle
 	confess_lines = list(
-		"PRAISE ZIZO!",
-		"LONG LIVE ZIZO!",
-		"ZIZO IS QUEEN!",
+		"THE DEAD SHALL RISE TO RULE!",
+		"IN DEATH, WE ARE ETERNAL!",
+		"ZMYRKUL BRINGS THE END!",
 	)
 
 /datum/patron/inhumen/graggar
-	name = "Graggar"
-	domain = "God of Conquest, War, Murder, Pillaging"
-	desc = "Orc turned deity, said by the Holy Ecclesial to have been blessed by Ravox himself. He took his blessings to rampage and tear down the Old Ten. Though some Graggarites might care for 'honor', most do not- what matters are results, and victory at any cost."
-	worshippers = "Prisoners, Murderers and the Cruel"
+	name = "Bhaal"
+	domain = "God of Murder, Bloodshed, and Death"
+	desc = "Bhaal is the god of murder, bloodshed, and death. His followers revel in the chaos of violent acts and believe that through the destruction of life, they can achieve ultimate power. The cult of Bhaal teaches that death is the true form of liberation, and only by embracing the slaughter of the weak can one become truly strong."
+	worshippers = "Bloodthirsty Warriors, Prisoners, Murderers and the Cruel"
 	mob_traits = list(TRAIT_HORDE, TRAIT_ORGAN_EATER)
 	confess_lines = list(
-		"GRAGGAR IS THE BEAST I WORSHIP!",
+		"BHAAL IS THE BLOOD OF THE WORLD!",
 		"THROUGH VIOLENCE, DIVINITY!",
-		"THE GOD OF CONQUEST DEMANDS BLOOD!",
+		"IN BLOOD, WE ASCEND!",
 	)
 
 /datum/patron/inhumen/matthios
-	name = "Matthios"
+	name = "Mask"
 	domain = "God of Robbery, Redistribution of Wealth, and Commerce"
-	desc = "The Man who stole fire from the Underworld and gave it in exchange for worship; the first Transaction, cutting a hole in the firmament and flooding ontological reality with the fact of Wealth. Take from the wealthy, give to the worthless, empower."
+	desc = "Mask is the god of shadows, thieves, and deception. His followers operate in the darkness, stealing from those who hold power and manipulating others for personal gain. Mask teaches that all wealth, power, and influence are ripe for the taking, and only those bold enough to steal it deserve it. His cults are often involved in covert operations, heists, and political intrigue, seeking to disrupt the established order and sow chaos for their own gain."
 	worshippers = "Highwaymen, Robbers, Downtrodden Peasants, Merchants"
 	mob_traits = list(TRAIT_COMMIE)
 	confess_lines = list(
-		"MATTHIOS STEALS FROM THE WORTHLESS!",
-		"MATTHIOS IS JUSTICE!",
-		"MATTHIOS IS MY LORD!",
+		"MASK IS THE MASTER OF SHADOWS!",
+		"BETRAYAL IS THE TRUEST LOYALTY!",
+		"STEAL FROM THE WEALTHY!",
 	)
 
 /datum/patron/inhumen/baotha
-	name = "Baotha"
-	domain = "Goddess of Degeneracy, Debauchery and Addiction"
-	desc = "Eora's crueler half, made be from her one true love having been unfaithful. Filled with bitterness, she separated from Eora in spirit and spiraled into a dark hole of crippling hedonism. She teaches her ilk to place their trust in no one, and do only as they please."
+	name = "Sharess"
+	domain = "Goddess of Hedonism, Pleasure, and Excess"
+	desc = "Sharess, once a goddess of joy and revelry, embraces the darker side of indulgence. Where Sune represents creation and nurturing, Sharess embodies the desire to consume, to live for the fleeting moments of pleasure, regardless of the consequences. Her worshipers revel in excess, seeking to gratify their every desire. Sharess teaches her followers to abandon restraint, embrace decadence, and pursue their passions at all costs. The pursuit of hedonistic pleasure is paramount, and she offers no forgiveness for those who hold back."
 	worshippers = "Perverts, Gamblers, Drunkards, and Bards"
 	mob_traits = list(TRAIT_DEPRAVED, TRAIT_CRACKHEAD)
 	confess_lines = list(
-		"BAOTHA DEMANDS PLEASURE!",
+		"SHARES DEMANDS PLEASURE!",
 		"LIVE, LAUGH, LOVE!",
-		"BAOTHA IS MY JOY!",
+		"SHARESS IS MY JOY!",
 	)
+
+/datum/patron/inhumen/lolth
+	name = "Lolth"
+	domain = "Goddess of Chaos, Darkness, and Deception"
+	desc = "Lolth, the Queen of Spiders, is the dark patroness of deception, chaos, and the webs of manipulation that bind the world. A former god of order and justice, Lolth turned her back on the natural balance to pursue a reign of fear and dominance. She teaches her followers that only by embracing chaos can true power be attained. Lolth’s worshippers are trained in the arts of treachery and seduction, ruling through fear, lies, and unrelenting ambition. In the darkness, where loyalty is fleeting and survival depends on cunning, Lolth’s word is law. She thrives on the corruption of the strong and the destruction of any semblance of order."
+	worshippers = "Drow, Assassins, Spies, and Traitors"
+	confess_lines = list(
+	"LOLTH WEAVES THE WEB OF DEATH!",
+	"IN CHAOS, THERE IS POWER!",
+	"THE SPIDER QUEEN DEMANDS FEAR!",
+	"BETRAYAL IS MY BLESSING!")
+
+/datum/patron/inhumen/bane
+	name = "Bane"
+	domain = "God of Tyranny, Fear, and Oppression"
+	desc = "Bane is the god of tyranny, fear, and oppression, the embodiment of strength through domination and control. A ruthless god who teaches that only the strong should rule and that fear is the greatest weapon one can wield. His followers believe that true power comes not from kindness or mercy, but from the unyielding rule of those who can impose their will over others. Bane’s creed is one of total domination, where the weak are subjugated, and only the strong can thrive. To follow Bane is to embrace fear as a tool to bring about a new world order, where those who defy his will are crushed beneath the weight of his power."
+	worshippers = "Tyrants, Soldiers, Dictators, Fearmongers, Warlocks, and Conquerors"
+	confess_lines = list(
+	"BANE DEMANDS YOUR FEAR!",
+	"THE STRONG RULE THROUGH TYRANNY!",
+	"SUBMISSION IS STRENGTH!",
+	"FEAR IS THE PATH TO POWER!",
+	"ONLY THROUGH CONQUEST CAN WE TRULY RULE!")
 
 
 /* RATWOOD EDIT - Back to the main pantheon

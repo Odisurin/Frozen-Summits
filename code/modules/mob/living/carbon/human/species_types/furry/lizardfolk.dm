@@ -2,7 +2,7 @@
 	race = /datum/species/lizardfolk
 
 /datum/species/lizardfolk
-	name = "Kecuala"
+	name = "Lizard-folk"
 	id = "lizardfolk"
 	desc = "<b>Kecuala</b><br>\
 	Kecualas are semi-aquatic reptilian humanoids, usually called lizardfolk.\

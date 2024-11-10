@@ -300,7 +300,7 @@
 
 /obj/item/book/rogue/robber
 	name = "Reading for Robbers"
-	desc = "By Flavius of Dendor"
+	desc = "By Flavius of Silvanus"
 	icon_state ="basic_book_0"
 	base_icon_state = "basic_book"
 	bookfile = "tales4.json"

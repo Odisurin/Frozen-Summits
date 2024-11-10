@@ -4,37 +4,37 @@
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 
 /datum/patron/divine/astrata
-	name = "Astrata"
-	domain = "Twinned Goddess of the Sun, Day, and Order"
-	desc = "The she-form of the Twinned Gods, the combined amalgam of single-bodied Astrata and Noc that opens her eyes at glorious Dae. Men bask under the gift of the Sun. A single form begets two Gods that shift at Dusk and Dawn but always endures, even at night."
-	worshippers = "The Noble Hearted, Zealots and Farmers"
+	name = "Pelor"
+	domain = "God of the Sun, Healing, and Agriculture"
+	desc = "The benevolent god of the Sun, Pelor radiates warmth and healing to all. Farmers and healers alike revere his light and are strengthened by his guidance."
+	worshippers = "Clerics of the Light, Healers, Farmers"
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	t2 = /obj/effect/proc_holder/spell/invoked/heal
 	t3 = /obj/effect/proc_holder/spell/invoked/revive
 	confess_lines = list(
-		"ASTRATA IS MY LIGHT!",
-		"ASTRATA BRINGS LAW!",
+		"PELOR IS MY LIGHT!",
+		"PELOR BRINGS PEACE!",
 		"I SERVE THE GLORY OF THE SUN!",
 	)
 
 /datum/patron/divine/noc
-	name = "Noc"
-	domain = "Twinned God of the Moon, Night, and Knowledge"
-	desc = "The he-form of the Twinned Gods, the combined amalgam of single-bodied Noc and Astrata that opens his eyes during pondorous Night. He gifted man knowledge of divinity and magicks. A single form begets two Gods that shift at Dusk and Dawn but always endures, even at dae."
+	name = "Mystra"
+	domain = "Goddess of Magic and Mysticism"
+	desc = "Mystra is the living embodiment of all magic and arcane power within the universe. As the Goddess of Magic, she governs the weave of magic that connects all things, and her influence permeates both the natural and mystical realms. Mystra's divine presence maintains the delicate balance of magic, ensuring it flows freely yet remains controlled, for it is through her power that reality itself is shaped. She is the keeper of the Weave, the framework through which all magic is channeled and manipulated, both by mortals and immortals alike. Mystra’s guidance has fostered great civilizations and advanced arcane knowledge, yet she also serves as a reminder of the potential dangers of unchecked magical forces."
 	worshippers = "Wizards and Scholars"
 	mob_traits = list(TRAIT_NIGHT_OWL, TRAIT_NOCSIGHT)
 	t1 = /obj/effect/proc_holder/spell/invoked/blindness/miracle
 	t2 = /obj/effect/proc_holder/spell/invoked/invisibility/miracle
 	confess_lines = list(
-		"NOC IS NIGHT!",
-		"NOC SEES ALL!",
-		"I SEEK THE MYSTERIES OF THE MOON!",
+		"THE WEAVE CONNECTS ALL THAT IS!",
+		"IN MYSTRA'S LIGHT, MAGIC THRIVES!",
+		"MAGIC IS THE SONG OF THE UNIVERSE!",
 	)
 
 /datum/patron/divine/dendor
-	name = "Dendor"
+	name = "Silvanus"
 	domain = "God of the Earth and Nature"
-	desc = "The God of Wilds, born from Abyssor's feverish dreams. Spilt forth life from the oceans to land in a wild craze. The Father of Ground-Lyfe. Treefather."
+	desc = "The Oak Father of the wilderness, Silvanus represents nature in all its forms. He presides over the balance of the land and life itself."
 	worshippers = "Druids, Beasts, Madmen"
 	mob_traits = list(TRAIT_KNEESTINGER_IMMUNITY)
 	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
@@ -42,72 +42,65 @@
 	t3 = /obj/effect/proc_holder/spell/targeted/conjure_glowshroom
 	t4 = /obj/effect/proc_holder/spell/self/howl/call_of_the_moon
 	confess_lines = list(
-		"DENDOR PROVIDES!",
+		"Silvanus PROVIDES!",
 		"THE TREEFATHER BRINGS BOUNTY!",
 		"I ANSWER THE CALL OF THE WILD!",
 	)
 
 /datum/patron/divine/abyssor
-	name = "Abyssor"
-	domain = "God of the Ocean, Storms and the Tide"
-	desc = "The strongest of the Ten; when awakened, the world flooded for a thousand daes and a thousand nights before he was put to slumber. Resting fitfully did Dendor split from his skull like a gaping wound. Communes rarely with his followers, only offering glimpses in dreams. Gifted primordial Man water. "
+	name = "Umberlee"
+	domain = "Goddess of the Sea, Storms, and Tides"
+	desc = "The Queen of the Depths, Umberlee is feared and respected by those who sail. She commands the fury of the seas. "
 	worshippers = "Men of the Sea, Primitive Aquatics"
 	mob_traits = list(TRAIT_ABYSSOR_SWIM)
 	confess_lines = list(
-		"ABYSSOR COMMANDS THE WAVES!",
-		"THE OCEAN'S FURY IS ABYSSOR'S WILL!",
+		"UMBERLEE COMMANDS THE WAVES!",
+		"THE OCEAN'S FURY IS UMBERLEE'S WILL!",
 		"I AM DRAWN BY THE PULL OF THE TIDE!",
 	)
 
 /datum/patron/divine/ravox
-	name = "Ravox"
+	name = "Tyr"
 	domain = "God of Justice, Glory, Battle"
-	desc = "Stalwart warrior, glorious justicier; legends say he came down to the Basin to repel the vile hordes of demons with his own hands, and that he seeks warriors for his divine army among mortals."
+	desc = "Tyr, the Maimed God, stands for justice and law. He is known for his unwavering sense of right and wrong and often inspires warriors with a sense of duty."
 	worshippers = "Warriors, Sellswords & those who seek Justice"
 	confess_lines = list(
-		"RAVOX IS JUSTICE!",
+		"TYR IS JUSTICE!",
 		"THROUGH STRIFE, GRACE!",
-		"THE DRUMS OF WAR BEAT IN MY CHEST!",
+		"THE DRUMS OF JUSTICE BEAT IN MY CHEST!",
 	)
 
 /datum/patron/divine/necra
-	name = "Necra"
-	domain = "Goddess of Death and the Afterlife"
-	desc = "Veiled Lady of the underworld, equally feared and respected by mortals. She taught mortals the inevitability of death and cares for them as they reach the afterlife."
+	name = "Kelemvor"
+	domain = "God of Death and the Afterlife"
+	desc = "Kelemvor oversees the passage of souls, guiding them into the afterlife. He is fair and seeks to maintain balance, respected by mortals as the judge of the dead."
 	worshippers = "The Dead, Mourners, Gravekeepers"
 	mob_traits = list(TRAIT_SOUL_EXAMINE)
 	t1 = /obj/effect/proc_holder/spell/invoked/avert
 	t2 = /obj/effect/proc_holder/spell/targeted/abrogation
 	t3 = /obj/effect/proc_holder/spell/targeted/soulspeak
 	confess_lines = list(
-		"ALL SOULS FIND THEIR WAY TO NECRA!",
-		"THE UNDERMAIDEN IS OUR FINAL REPOSE!",
-		"I FEAR NOT DEATH, MY LADY AWAITS ME!",
+		"ALL SOULS FIND THEIR WAY TO KELEMVOR!",
+		"THE JUDGE IS OUR FINAL REPOSE!",
+		"I FEAR NOT DEATH, AS IT AWAITS ME!",
 	)
 
 /datum/patron/divine/xylix
-	name = "Xylix"
+	name = "Olidammara"
 	domain = "God of Trickery, Freedom and Inspiration"
-	desc = "The Laughing God, both famous and infamous for his sway over the forces of luck. Xylix is known for the inspiration of many a bards lyric. Speaks through his gift to man; the Tarot deck."
+	desc = "The Laughing Rogue, Olidammara is a god of wit, music, and freedom. His followers seek to revel in life's pleasures, from games of chance to the pursuit of inspiration. Known for his trickery and penchant for unpredictability, he is a god of those who dance to their own beat."
 	worshippers = "Gamblers, Bards, Artists, and the Silver-Tongued"
 	mob_traits = list(TRAIT_XYLIX)
 	confess_lines = list(
-		"ASTRATA IS MY LIGHT!",
-		"NOC IS NIGHT!",
-		"DENDOR PROVIDES!",
-		"ABYSSOR COMMANDS THE WAVES!",
-		"RAVOX IS JUSTICE!",
-		"ALL SOULS FIND THEIR WAY TO NECRA!",
-		"HAHAHAHA! AHAHAHA! HAHAHAHA!",
-		"PESTRA SOOTHES ALL ILLS!",
-		"MALUM IS MY MUSE!",
-		"EORA BRINGS US TOGETHER!",
+		"OLIDAMMARA IS MY LIGHT!",
+		"FREEDOM IS NIGHT!",
+		"THE DICE PROVIDES!",
 	)
 
 /datum/patron/divine/pestra
-	name = "Pestra"
-	domain = "Goddess of Decay, Disease and Medicine"
-	desc = "Goddess that blessed many a saint with healing hands, Pestra taught man the arts of medicine and its benefits."
+	name = "Talona"
+	domain = "Goddess of Disease, Poison, Decay and Medicine"
+	desc = "The Lady of Poison, Talona represents both the natural decay of life and the spread of sickness. She is seen both as a curse and a purifier."
 	worshippers = "The Sick, Phyicians, Apothecaries"
 	mob_traits = list(TRAIT_EMPATH, TRAIT_ROT_EATER)
 	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
@@ -116,19 +109,19 @@
 	t3 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
 	t4 = /obj/effect/proc_holder/spell/invoked/cure_rot
 	confess_lines = list(
-		"PESTRA SOOTHES ALL ILLS!",
+		"TALONA'S TOUCH IS INESCAPABLE!",
 		"DECAY IS A CONTINUATION OF LIFE!",
 		"MY AFFLICTION IS MY TESTAMENT!",
 	)
 
 /datum/patron/divine/malum
-	name = "Malum"
-	domain = "God of Fire, Destruction and Rebirth"
-	desc = "Opinionless god of the crafts. He teaches that great works for killing or saving are great works, either way. The well-oiled guillotine and the well-sharpened axe are tools, and there is no good and evil to their craft."
+	name = "Moradin"
+	domain = "God of Creation, Fire, and Crafting"
+	desc = "Moradin, the Soul Forger, is the dwarven god of creation and craftsmanship. He values hard work and skill above all else."
 	worshippers = "Smiths, Miners, Engineers"
 	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	confess_lines = list(
-		"MALUM IS MY MUSE!",
+		"MORADIN IS MY MUSE!",
 		"TRUE VALUE IS IN THE TOIL!",
 		"I AM AN INSTRUMENT OF CREATION!",
 	)
@@ -136,16 +129,16 @@
 //Eora content from Stonekeep
 
 /datum/patron/divine/eora
-	name = "Eora"
+	name = "Sune"
 	domain = "Goddess of Love, Life and Beauty"
-	desc = "Baotha's fairer half, made from blind, unconditional love. She is without a shred of hate in her heart and taught mankind that true love that even transcends Necra's grasp."
+	desc = "Sune is the goddess of beauty and love, her followers cherishing the values of compassion and charm. She inspires the arts and romantic love."
 	worshippers = "Lovers, the romantically inclined, and Doting Grandparents"
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/bud
 	t2 = /obj/effect/proc_holder/spell/invoked/eoracurse
 	t3 = null
 	confess_lines = list(
-		"EORA BRINGS US TOGETHER!",
-		"HER BEAUTY IS EVEN IN THIS TORMENT!",
+		"SUNE INSPIRES LOVE!",
+		"HER BEAUTY SHINES IN ALL THINGS!",
 		"I LOVE YOU, EVEN AS YOU TRESPASS AGAINST ME!",
 	)

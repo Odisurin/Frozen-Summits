@@ -72,7 +72,7 @@
 	sellprice = 25
 
 /datum/crafting_recipe/roguetown/weaving/dendorrobe
-	name = "dendor robes"
+	name = "Silvanus robes"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/dendor)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)

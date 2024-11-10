@@ -9,12 +9,12 @@
 	selection_color = JCOLOR_CHURCH
 	f_title = "Priestess"
 	allowed_races = RACES_ALL_KINDS
-	allowed_patrons = ALL_DIVINE_PATRONS
+	allowed_patrons = list(/datum/patron/divine/astrata)
 	allowed_sexes = list(MALE, FEMALE)
 	tutorial = "You are a wandering Priest that came across a small hamlet. Deciding to settle here. You decided to help on its progression."
 	whitelist_req = FALSE
 
-	spells = list(/obj/effect/proc_holder/spell/invoked/cure_rot, /obj/effect/proc_holder/spell/invoked/diagnose/secular, /obj/effect/proc_holder/spell/invoked/revive)
+	spells = list(/obj/effect/proc_holder/spell/invoked/cure_rot, /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	outfit = /datum/outfit/job/roguetown/priest
 
 	display_order = JDO_PRIEST
@@ -24,7 +24,6 @@
 	round_contrib_points = 3
 
 /datum/outfit/job/roguetown/priest
-	allowed_patrons = ALL_DIVINE_PATRONS
 
 
 

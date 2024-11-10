@@ -1,8 +1,7 @@
 /datum/faith/old_god
-	name = "Old God"
-	desc = "The Holy See has been taken over by misguided fools who defile Psydon and worship false gods, but we survive.\n\
-		<b>PSYDON YET LIVES. PSYDON YET ENDURES.</b>\n\
-		PSYDON sent the COMET SYON to destroy the rampaging ARCHDEVIL VHESLYN and save all Humenity. Though he rests now, the fools believe him DEAD- but \
-		PSYDON YET LIVES, AND PSYDON YET ENDURES. Unanswered prayers and impotent miracles - they are TESTS."
-	worshippers = "People of Zybantium, people of Stine, religious extremists, zealotry-filled fools"
+	name = "The Prime Architect"
+	desc = "Itharoth, The Prime Architect, is the primordial deity who gave birth to the very fabric of existence. Before time, before form, there was only Itharoth—the cosmic weaver of life, the bringer of all things into being. Itharoth’s will shaped the stars, the lands, the seas, and the heavens, weaving the delicate threads that connect all things in the grand tapestry of existence. It is said that the breath of Itharoth shaped the first elements, the first forces of creation, from which the world and all life emerged.\n\
+		The faithful believe that Itharoth's work is eternal and ever-continuing, with each new dawn a reflection of the divine artistry that built the world. To worship Itharoth is to honor the ancient creator and acknowledge that all life, magic, and matter are the result of divine design. The followers of Itharoth seek to understand the mysteries of creation and to fulfill their roles as part of the grand design, striving to preserve the balance of life and existence. \n\
+		There are those who believe Itharoth has withdrawn from the mortal plane, leaving the world to evolve according to the patterns of his creation. The truth of Itharoth’s presence is debated—some claim that the deity is ever-watchful, while others say Itharoth’s hand is no longer visible in the world. But those who follow the Prime Architect know that no matter the changes in the world, Itharoth’s design remains unbroken and eternal."
+	worshippers = "Philosophers, creators, mystics, those who seek the hidden order of the world, and those who revere the act of creation itself."
 	godhead = /datum/patron/old_god

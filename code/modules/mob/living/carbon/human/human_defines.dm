@@ -107,6 +107,7 @@
 	var/headshot_link = null
 	var/flavortext = null
 	var/ooc_notes = null
+	var/custom_race_name = null
 
 	possible_rmb_intents = list(/datum/rmb_intent/feint,\
 	/datum/rmb_intent/aimed,\

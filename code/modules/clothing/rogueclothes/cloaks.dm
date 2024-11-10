@@ -1058,8 +1058,8 @@
 	allowed_race = NON_DWARVEN_RACE_TYPES
 
 /obj/item/clothing/cloak/templar/psydon
-	name = "psydon tabard"
-	desc = "An outer garment commonly worn by soldiers. This one has the symbol of Psydon on it."
+	name = "itharoth tabard"
+	desc = "An outer garment commonly worn by soldiers. This one has the symbol of itharoth on it."
 	icon_state = "tabard_weeping"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
@@ -1086,8 +1086,8 @@
 	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/noc
-	name = "noc tabard"
-	desc = "An outer garment commonly worn by soldiers. This one has the symbol of Noc on it."
+	name = "Mystra tabard"
+	desc = "An outer garment commonly worn by soldiers. This one has the symbol of Mystra on it."
 	icon_state = "tabard_noc"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
@@ -1100,8 +1100,8 @@
 	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/templar/dendor
-	name = "dendor tabard"
-	desc = "An outer garment commonly worn by soldiers. This one has the symbol of Dendor on it."
+	name = "Silvanus tabard"
+	desc = "An outer garment commonly worn by soldiers. This one has the symbol of Silvanus on it."
 	icon_state = "tabard_dendor"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN

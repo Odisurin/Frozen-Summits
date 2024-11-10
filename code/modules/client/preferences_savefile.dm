@@ -471,6 +471,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(needs_update >= 0)
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
 
+		S["custom_race_name"]			>> custom_race_name
+	if(!valid_custom_race_name(null, custom_race_name, TRUE))
+		custom_race_name = null
+
 	//Sanitize
 
 	real_name = reject_bad_name(real_name)
@@ -608,6 +612,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["headshot_link"] , headshot_link)
 	WRITE_FILE(S["flavortext"] , flavortext)
 	WRITE_FILE(S["ooc_notes"] , ooc_notes)
+	WRITE_FILE(S["custom_race_name"] , custom_race_name)
 	WRITE_FILE(S["char_accent"] , char_accent)
 	WRITE_FILE(S["voice_type"] , voice_type)
 	WRITE_FILE(S["pronouns"] , pronouns)

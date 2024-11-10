@@ -6,7 +6,7 @@
 	id = "lupian"
 	desc = "<b>Lupian</b><br>\
 	Lupians are a volf-like people hailing from the Northern Regions, born to withstand harsh winters with rugged pelts and sharp fangs.\
-	Their half-lycan ancestry grants them heightened senses, night vision, and a natural instinct for tracking and hunting, making them exceptional warriors and survivalists.\
+	Their half-lycanthrophic ancestry grants them heightened senses, night vision, and a natural instinct for tracking and hunting, making them exceptional warriors and survivalists.\
 	They are very dutiful individuals and make fantastic and fearsome \
 	allies to those who earn their loyalty. Thanks to their pack minded nature they are slow to trust the other races \
 	but form deep connections with those they do. In recent years they have been driven from the forests by unrest and pressed \

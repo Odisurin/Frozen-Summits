@@ -4,7 +4,7 @@
 /datum/species/anthromorphsmall
 	name = "Verminvolk"
 	id = "anthromorphsmall"
-	desc = "A race akin to wild-kin, except afflicted with significantly smaller stature. A bit less respected than their kin due to their closer resemblance to vermin, like the dichotomy between Kobold and Lizardkin."
+	desc = "A race akin to beast-kin, except afflicted with significantly smaller stature. A bit less respected than their kin due to their closer resemblance to vermin, like the dichotomy between Kobold and Lizardkin."
 	default_color = "444"
 	inherent_traits = list(
 		TRAIT_STRONGBITE,

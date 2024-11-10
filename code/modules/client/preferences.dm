@@ -64,6 +64,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	//character preferences
 	var/slot_randomized					//keeps track of round-to-round randomization of the character slot, prevents overwriting
 	var/real_name						//our character's name
+	var/custom_race_name				//custom race name
 	var/gender = MALE					//gender of character (well duh) (LETHALSTONE EDIT: this no longer references anything but whether the masculine or feminine model is used)
 	var/pronouns = HE_HIM				// LETHALSTONE EDIT: character's pronouns (well duh)
 	var/voice_type = VOICE_TYPE_MASC	// LETHALSTONE EDIT: the type of soundpack the mob should use
@@ -321,8 +322,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			// LETHALSTONE EDIT END
 
 			dat += "<BR>"
-			dat += "<b>Race:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
-
+			dat += "<b>Race Origin:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
+			dat += "<b>Race Name:</b> <a href='?_src_=prefs;preference=customracename;task=input'>Change: [custom_race_name]</a><BR>"
 			// LETHALSTONE EDIT BEGIN: add statpack selection
 			dat += "<b>Statpack:</b> <a href='?_src_=prefs;preference=statpack;task=input'>[statpack.name]</a><BR>"
 //			dat += "<a href='?_src_=prefs;preference=species;task=random'>Random Species</A> "
@@ -1584,6 +1585,23 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							return
 						voice_pitch = new_voice_pitch
 
+				if("customracename")
+					to_chat(user, "<span class='notice'>What are you?</span>")
+					var/new_custom_race_name = input(user, "Input your custom race name:", "Custom Race Name", custom_race_name) as message|null
+					if(new_custom_race_name == null)
+						return
+					if(new_custom_race_name == "")
+						custom_race_name = null
+						ShowChoices(user)
+						return
+					if(!valid_custom_race_name(user, new_custom_race_name))
+						custom_race_name = null
+						ShowChoices(user)
+						return
+					custom_race_name = new_custom_race_name
+					to_chat(user, "<span class='notice'>Successfully updated Race Name</span>")
+					log_game("[user] has set their Race Name to '[custom_race_name]'.")
+
 				if("headshot")
 					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
@@ -2210,6 +2228,8 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 
 	character.headshot_link = headshot_link
 
+	character.custom_race_name = custom_race_name
+
 	character.statpack = statpack
 
 	character.flavortext = flavortext
@@ -2309,6 +2329,13 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 			to_chat(usr, "<span class='warning'>The image must be hosted on one of the following sites: 'Gyazo, Lensdump, Imgbox, Catbox'</span>")
 		return FALSE
 	return TRUE
+
+/proc/valid_custom_race_name(mob/user, value, silent = FALSE)
+
+	if(!length(value))
+		return FALSE
+	return TRUE
+
 
 /datum/preferences/proc/is_active_migrant()
 	if(!migrant)

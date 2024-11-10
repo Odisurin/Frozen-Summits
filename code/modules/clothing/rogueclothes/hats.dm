@@ -99,7 +99,7 @@
 
 /obj/item/clothing/head/roguetown/nochood
 	name = "moon hood"
-	desc = "A hood worn by those who favor Noc with a mask in the shape of a crescent."
+	desc = "A hood worn by those who favor Mystra with a mask in the shape of a crescent."
 	color = null
 	icon_state = "nochood"
 	item_state = "nochood"
@@ -118,7 +118,7 @@
 
 /obj/item/clothing/head/roguetown/dendormask
 	name = "briarmask"
-	desc = "A mask of wood worn by druids in service to Dendor."
+	desc = "A mask of wood worn by druids in service to Silvanus."
 	color = null
 	icon_state = "dendormask"
 	item_state = "dendormask"
@@ -735,7 +735,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 	name = "noc helmet"
-	desc = "Headwear commonly worn by Templars in service to Noc. Without the night there can be no day, without Noc there can be no light in the dark hours."
+	desc = "Headwear commonly worn by Templars in service to Mystra. Without the night there can be no day, without Mystra there can be no light in the dark hours."
 	icon_state = "nochelm"
 	item_state = "nochelm"
 	emote_environment = 3
@@ -757,7 +757,7 @@
 	smelt_bar_num = 2
 
 /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
-	name = "dendor helmet"
+	name = "Silvanus helmet"
 	desc = "Headwear commonly worn by Templars in service to Dendor. Its protrusions almost resemble branches. Take root in the earth, and you will never be moved."
 	icon_state = "dendorhelm"
 	item_state = "dendorhelm"

@@ -192,8 +192,8 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/sewing/psydon
-	name = "psydon tabard"
+/datum/crafting_recipe/roguetown/sewing/itharoth
+	name = "itharoth tabard"
 	result = list(/obj/item/clothing/cloak/templar/psydon)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
@@ -214,7 +214,7 @@
 	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/sewing/dendor
-	name = "dendor tabard"
+	name = "Silvanus tabard"
 	result = list(/obj/item/clothing/cloak/templar/dendor)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
