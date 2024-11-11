@@ -18,7 +18,7 @@
 	backr = /obj/item/storage/backpack/rogue/satchel
 	r_hand = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/quiver/arrows
+	beltr = /obj/item/ammo_holder/quiver/arrows
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	backpack_contents = list(
 						/obj/item/flint = 1,
