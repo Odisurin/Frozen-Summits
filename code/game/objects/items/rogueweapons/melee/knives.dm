@@ -58,6 +58,9 @@
 	clickcd = 8
 	item_d_type = "stab"
 
+/*------------\
+| Pick intent |	great AP. Not actually used anywhere.
+\------------*/
 /datum/intent/dagger/thrust/pick
 	name = "icepick stab"
 	icon_state = "inpick"
@@ -240,7 +243,9 @@
 			H.Paralyze(10)
 			H.adjustFireLoss(25)
 			H.fire_act(1,10)
-
+	if((target.mob_biotypes & MOB_UNDEAD))
+		target.adjustFireLoss(25)
+		return
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()

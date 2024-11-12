@@ -583,7 +583,7 @@
 				else
 					VDrinker.handle_vitae(300)
 
-	C.blood_volume = max(C.blood_volume-5, 0)
+	C.blood_volume = max(C.blood_volume-60, 0)
 	C.handle_blood()
 
 	playsound(user.loc, 'sound/misc/drink_blood.ogg', 100, FALSE, -4)

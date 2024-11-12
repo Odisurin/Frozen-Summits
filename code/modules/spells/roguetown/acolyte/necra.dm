@@ -76,8 +76,7 @@
 				vamp_prob -= 59
 			if(prob(vamp_prob))
 				explosion(get_turf(L), light_impact_range = 1, flame_range = 1, smoke = FALSE)
-				L.Stun(50)
-//				L.throw_at(get_ranged_target_turf(L, get_dir(user,L), 7), 7, 1, L, spin = FALSE)
+				L.Knockdown(50)
 			else
 				L.visible_message(span_warning("[L] resists being churned!"), span_userdanger("I resist being churned!"))
 	..()

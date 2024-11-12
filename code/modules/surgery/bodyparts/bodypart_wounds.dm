@@ -217,6 +217,10 @@
 				used += 10
 		if(prob(used))
 			attempted_wounds += /datum/wound/artery
+	if(bclass == BCLASS_LASHING)
+		used = round(damage_dividend * 20 + (dam / 6), 1)
+		if(prob(used))
+			attempted_wounds += /datum/wound/scarring
 
 	for(var/wound_type in shuffle(attempted_wounds))
 		var/datum/wound/applied = add_wound(wound_type, silent, crit_message)
@@ -373,6 +377,10 @@
 						attempted_wounds += /datum/wound/facial/disfigurement/nose
 				else if(zone_precise in knockout_zones)
 					attempted_wounds += /datum/wound/fracture/head/brain
+	if(bclass == BCLASS_LASHING)
+		used = round(damage_dividend * 20 + (dam / 6), 1)
+		if(prob(used))
+			attempted_wounds += /datum/wound/scarring
 
 	for(var/wound_type in shuffle(attempted_wounds))
 		var/datum/wound/applied = add_wound(wound_type, silent, crit_message)
