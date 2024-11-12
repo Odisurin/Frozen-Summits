@@ -1755,15 +1755,6 @@
 	color = "80ffff"
 	},
 /area/rogue/outdoors/beach/forest)
-"mV" = (
-/obj/structure/fluff/traveltile/vampire{
-	aportalid = "vampexit";
-	aportalgoesto = "vampin"
-	},
-/turf/open/floor/rogue/dirt/road{
-	color = "80ffff"
-	},
-/area/rogue/outdoors/beach/forest)
 "mW" = (
 /obj/structure/table/wood{
 	icon_state = "largetable";
@@ -57047,10 +57038,10 @@ pz
 pz
 pz
 pz
-mV
-mV
-mV
-mV
+XK
+XK
+XK
+XK
 XK
 rb
 rb
