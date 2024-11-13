@@ -240,3 +240,9 @@
 				/obj/item/natural/hide = 4)
 	craftdiff = 3
 	sellprice = 80
+
+/datum/crafting_recipe/roguetown/leather/volfhelm
+	name = "wolf helmet"
+	result = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
+	reqs = list(/obj/item/natural/volf_head = 1, /obj/item/natural/hide = 2)
+	craftdiff = 1
