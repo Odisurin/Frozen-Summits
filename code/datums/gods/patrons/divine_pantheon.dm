@@ -119,10 +119,7 @@
 	domain = "God of Creation, Fire, and Crafting"
 	desc = "Moradin, the Soul Forger, is the dwarven god of creation and craftsmanship. He values hard work and skill above all else."
 	worshippers = "Smiths, Miners, Engineers"
-	t1 = /obj/effect/proc_holder/spell/invoked/vigorousexchange
-	t2 = /obj/effect/proc_holder/spell/invoked/heatmetal
-	t3 = /obj/effect/proc_holder/spell/invoked/hammerfall
-	t4 = /obj/effect/proc_holder/spell/invoked/craftercovenant
+	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
 	confess_lines = list(
 		"MORADIN IS MY MUSE!",
 		"TRUE VALUE IS IN THE TOIL!",

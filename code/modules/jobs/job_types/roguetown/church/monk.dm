@@ -22,7 +22,7 @@
 	name = "Acolyte"
 	jobtype = /datum/job/roguetown/monk
 
-	allowed_patrons = list(/datum/patron/divine/pestra, /datum/patron/divine/astrata, /datum/patron/divine/eora, /datum/patron/divine/noc, /datum/patron/divine/necra, /datum/patron/divine/malum) //Eora content from Stonekeep
+	allowed_patrons = list(/datum/patron/divine/pestra, /datum/patron/divine/astrata, /datum/patron/divine/eora, /datum/patron/divine/noc, /datum/patron/divine/necra) //Eora content from Stonekeep
 
 
 /datum/outfit/job/roguetown/monk/pre_equip(mob/living/carbon/human/H)
@@ -67,12 +67,6 @@
 			neck = /obj/item/clothing/neck/roguetown/psicross/eora
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
-		if(/datum/patron/divine/malum) //Will need their own gear.
-			head = /obj/item/clothing/head/roguetown/roguehood/black
-			neck = /obj/item/clothing/neck/roguetown/psicross/malum
-			shoes = /obj/item/clothing/shoes/roguetown/sandals
-			shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/black
-			cloak = /obj/item/clothing/cloak/apron/blacksmith
 		else
 			head = /obj/item/clothing/head/roguetown/roguehood/astrata
 			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
