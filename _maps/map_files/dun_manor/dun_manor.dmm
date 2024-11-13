@@ -440,6 +440,10 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave)
+"cXD" = (
+/obj/item/rogueweapon/stoneaxe,
+/turf/open/floor/rogue/grassred,
+/area/rogue/outdoors/rtfield)
 "cXE" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/rogue/grasscold,
@@ -473,6 +477,10 @@
 	},
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
+"diZ" = (
+/obj/item/rogueweapon/spear/stone,
+/turf/open/floor/rogue/grassred,
 /area/rogue/outdoors/rtfield)
 "djl" = (
 /turf/closed/mineral/rogue/bedrock,
@@ -601,6 +609,10 @@
 "dSI" = (
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)
+"dWw" = (
+/obj/item/rogueweapon/huntingknife/stoneknife,
+/turf/open/floor/rogue/grassred,
+/area/rogue/outdoors/rtfield)
 "dZj" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -925,7 +937,6 @@
 /obj/item/roguekey/shop,
 /obj/item/roguekey/nightmaiden,
 /obj/item/roguekey/vault,
-/obj/item/roguekey/lord,
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors)
 "gxf" = (
@@ -977,6 +988,7 @@
 /area/rogue/indoors)
 "hfk" = (
 /obj/structure/table/wood,
+/obj/item/roguekey/lord,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
 "hgC" = (
@@ -1537,6 +1549,13 @@
 /obj/structure/flora/roguegrass/bush/wall,
 /turf/open/floor/rogue/grassred,
 /area/rogue/outdoors/rtfield)
+"llC" = (
+/obj/structure/fluff/customsign{
+	name = "sign - Public Treasury";
+	desc = "This is the public treasure of Frozen summit. You store all valuable things you might find to help the whole outpost. Please do no22t steal."
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "lnn" = (
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/rtfield)
@@ -1978,6 +1997,10 @@
 /obj/structure/table/wood{
 	dir = 5;
 	icon_state = "largetable"
+	},
+/obj/structure/fluff/customsign{
+	name = "sign - Public Treasury";
+	desc = "This is the public treasure of Frozen summit. You store all valuable things you might find to help the whole outpost. Please do no22t steal."
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
@@ -2627,10 +2650,9 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "tCj" = (
-/turf/open/floor/rogue/snow{
-	color = "e6f2ff"
-	},
-/area/rogue/under/cave)
+/obj/item/reagent_containers/glass/bucket/pot/stone,
+/turf/open/floor/rogue/grassred,
+/area/rogue/outdoors/rtfield)
 "tEM" = (
 /obj/structure/flora/roguegrass/bush/wall,
 /turf/open/floor/rogue/twig/platform,
@@ -2934,6 +2956,10 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
+"wxk" = (
+/obj/item/rogueweapon/hoe/stone,
+/turf/open/floor/rogue/grassred,
+/area/rogue/outdoors/rtfield)
 "wAc" = (
 /obj/structure/fluff/traveltile{
 	aallmig = "rwfieldin1";
@@ -7734,8 +7760,8 @@ hWI
 hWI
 uBR
 uBR
-tCj
-tCj
+hWI
+hWI
 hWI
 hWI
 hWI
@@ -7890,9 +7916,9 @@ hWI
 hWI
 uBR
 uBR
-tCj
-tCj
-dKO
+hWI
+hWI
+hWI
 dKO
 ona
 hWI
@@ -8045,9 +8071,9 @@ dSI
 hWI
 hWI
 hWI
-tCj
-tCj
-tCj
+hWI
+hWI
+hWI
 dKO
 dKO
 ona
@@ -8199,11 +8225,11 @@ dSI
 dKO
 dKO
 dKO
-tCj
-tCj
+hWI
+hWI
 dKO
-dKO
-dKO
+hWI
+hWI
 dKO
 dKO
 dKO
@@ -8357,8 +8383,8 @@ dKO
 dSI
 uBR
 uBR
-tCj
-tCj
+hWI
+hWI
 dKO
 dKO
 dKO
@@ -8515,13 +8541,13 @@ dSI
 dSI
 uBR
 uBR
-tCj
+hWI
 dKO
 dKO
 dKO
 dKO
-tCj
-tCj
+hWI
+hWI
 hWI
 hWI
 ona
@@ -8677,8 +8703,8 @@ dKO
 dKO
 hWI
 hWI
-tCj
-tCj
+hWI
+hWI
 hWI
 hWI
 hWI
@@ -8834,7 +8860,7 @@ dKO
 hWI
 hWI
 hWI
-tCj
+hWI
 hWI
 hWI
 hWI
@@ -8991,7 +9017,7 @@ hWI
 hWI
 hWI
 hWI
-tCj
+hWI
 hWI
 hWI
 hWI
@@ -9147,9 +9173,9 @@ dKO
 dKO
 hWI
 hWI
-tCj
-tCj
-tCj
+hWI
+hWI
+hWI
 hWI
 hWI
 ona
@@ -9303,8 +9329,8 @@ dSI
 dSI
 dKO
 dKO
-tCj
-tCj
+hWI
+hWI
 hWI
 hWI
 hWI
@@ -9460,11 +9486,11 @@ dSI
 dSI
 dSI
 dKO
-tCj
-tCj
-tCj
-tCj
-ona
+hWI
+hWI
+hWI
+hWI
+hWI
 ona
 ona
 hWI
@@ -9618,10 +9644,10 @@ dSI
 dSI
 dKO
 dKO
-tCj
-tCj
-ona
-ona
+hWI
+hWI
+hWI
+hWI
 ona
 hWI
 hWI
@@ -9775,9 +9801,9 @@ hWI
 hWI
 dSI
 dKO
-tCj
 hWI
-ona
+hWI
+hWI
 hWI
 hWI
 hWI
@@ -11181,7 +11207,7 @@ dSI
 dSI
 dSI
 dSI
-tCj
+hWI
 uBR
 dKO
 dKO
@@ -11338,8 +11364,8 @@ hWI
 uBR
 uBR
 dSI
-tCj
-tCj
+hWI
+hWI
 dKO
 dSI
 hWI
@@ -11496,7 +11522,7 @@ hWI
 uBR
 uBR
 hWI
-tCj
+hWI
 dKO
 dSI
 dSI
@@ -33719,7 +33745,7 @@ lnn
 lyQ
 huO
 lyQ
-lyQ
+tLJ
 lyQ
 lyQ
 huO
@@ -33876,7 +33902,7 @@ lnn
 lyQ
 lyQ
 lyQ
-lyQ
+tLJ
 lyQ
 lyQ
 lyQ
@@ -34035,7 +34061,7 @@ lyQ
 lyQ
 lyQ
 lyQ
-lyQ
+tLJ
 lyQ
 lyQ
 lyQ
@@ -34194,7 +34220,7 @@ lnn
 lnn
 lnn
 lyQ
-lyQ
+tLJ
 lyQ
 lnn
 lnn
@@ -34672,12 +34698,12 @@ lnn
 lnn
 lnn
 dPV
-dPV
+lyQ
 dPV
 dPV
 dPV
 lnn
-lnn
+lyQ
 lnn
 lnn
 lnn
@@ -34828,14 +34854,14 @@ lnn
 lnn
 lnn
 lnn
+lyQ
+lyQ
 dPV
-lnn
 dPV
 dPV
-dPV
-lnn
-lnn
-lnn
+lyQ
+lyQ
+lyQ
 lnn
 lnn
 lyQ
@@ -34979,20 +35005,20 @@ lyQ
 lnn
 lnn
 lyQ
+tLJ
+lyQ
+lnn
+lnn
+dPV
+dPV
+lyQ
+diZ
 lyQ
 lyQ
-lnn
-lnn
-dPV
-dPV
-dPV
-lnn
-dPV
-dPV
-dPV
-lnn
-lnn
-lnn
+lyQ
+lgQ
+lyQ
+lyQ
 lnn
 lyQ
 lyQ
@@ -35143,13 +35169,13 @@ lnn
 dPV
 dPV
 dPV
-lnn
-dPV
-dPV
-dPV
-lnn
-lnn
-lnn
+lyQ
+lyQ
+lgQ
+lyQ
+wxk
+lgQ
+lgQ
 lnn
 lyQ
 lgQ
@@ -35300,13 +35326,13 @@ lnn
 lnn
 bOa
 lnn
-lnn
-lnn
-lnn
-lnn
-lnn
-lnn
-lnn
+lyQ
+lyQ
+lyQ
+lyQ
+lgQ
+lyQ
+lyQ
 lnn
 lyQ
 lgQ
@@ -35457,13 +35483,13 @@ lnn
 lnn
 lnn
 lnn
-lnn
-lnn
-dPV
-lnn
-lnn
-lnn
-lnn
+cXD
+lyQ
+tCj
+lgQ
+lyQ
+lyQ
+lyQ
 lnn
 lyQ
 lyQ
@@ -35614,13 +35640,13 @@ lnn
 lnn
 lnn
 lnn
-lnn
-lnn
-dPV
-lnn
-lnn
-lnn
-lnn
+lyQ
+lyQ
+lyQ
+lyQ
+lyQ
+lyQ
+lyQ
 lnn
 lyQ
 lyQ
@@ -35771,13 +35797,13 @@ lnn
 lnn
 lnn
 lnn
-lnn
-dPV
-dPV
-lnn
-lnn
-lnn
-lnn
+lyQ
+lyQ
+lgQ
+dWw
+lyQ
+lyQ
+lyQ
 lyQ
 lyQ
 lnn
@@ -35928,12 +35954,12 @@ lyQ
 lnn
 lnn
 lnn
-lnn
-dPV
-lnn
-lnn
-lnn
-lnn
+lyQ
+lyQ
+lgQ
+lgQ
+lgQ
+lyQ
 lyQ
 lyQ
 jBO
@@ -36084,13 +36110,13 @@ tLJ
 lyQ
 lyQ
 lnn
-lnn
-lnn
-dPV
-lnn
-lnn
-lnn
-lnn
+lyQ
+lyQ
+lyQ
+lyQ
+lyQ
+lyQ
+lyQ
 lyQ
 lyQ
 lyQ
@@ -36247,7 +36273,7 @@ dPV
 lnn
 lnn
 lnn
-lnn
+lyQ
 lyQ
 lyQ
 lyQ
@@ -36402,9 +36428,9 @@ lnn
 dPV
 dPV
 lnn
-lnn
-lnn
-lnn
+lyQ
+lyQ
+lyQ
 lgQ
 lyQ
 lnn
@@ -36560,7 +36586,7 @@ dPV
 dPV
 lnn
 lnn
-lnn
+lyQ
 lnn
 lyQ
 lyQ
@@ -38948,7 +38974,7 @@ sKj
 mOa
 tbN
 fsP
-fsP
+llC
 ylN
 dQZ
 gog
@@ -41424,7 +41450,7 @@ lyQ
 lyQ
 lyQ
 lyQ
-lyQ
+huO
 lyQ
 lnn
 lnn
@@ -42213,7 +42239,7 @@ lyQ
 lyQ
 lnn
 lyQ
-lyQ
+huO
 lyQ
 dPV
 lnn
@@ -42368,7 +42394,7 @@ dot
 lyQ
 lyQ
 lyQ
-lnn
+bOa
 lyQ
 lyQ
 lyQ
@@ -46308,7 +46334,7 @@ iFR
 lnn
 lnn
 dPV
-kjK
+dPV
 dPV
 dPV
 dPV
@@ -48185,7 +48211,7 @@ lnn
 lnn
 lnn
 lnn
-lnn
+vcT
 dPV
 dPV
 lnn
