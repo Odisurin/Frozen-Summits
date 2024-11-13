@@ -6,7 +6,7 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	spells = list(/obj/effect/proc_holder/spell/invoked/cure_rot, /obj/effect/proc_holder/spell/invoked/diagnose/secular, /obj/effect/proc_holder/spell/invoked/revive, /obj/effect/proc_holder/spell/self/claws)
+	spells = list(/obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_patrons = ALL_DIVINE_PATRONS //gets set to Silvanus on the outfit anyways lol

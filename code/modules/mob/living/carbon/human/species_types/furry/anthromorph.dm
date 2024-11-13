@@ -2,7 +2,7 @@
 	race = /datum/species/anthromorph
 
 /datum/species/anthromorph
-	name = "Wild-Kin"
+	name = "Beast-Kin"
 	id = "anthromorph"
 	desc = "A product of many gods enigmatic meddling in mortals races. The average beast-kin suffers from animalistic urges that vary in severity, \
 	from simply avoiding certain foods to smoldering desires to howl at the moon or chase prey. Usually these urges are tied to the animal that the beast-kin is melded with, \
@@ -24,6 +24,12 @@
 		LIPS,
 		HAIR,
 	)
+
+	languages = list(
+		/datum/language/common,
+		/datum/language/beast
+	)
+
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	attack_verb = "slash"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT

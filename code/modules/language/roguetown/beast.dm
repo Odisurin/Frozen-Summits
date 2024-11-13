@@ -16,4 +16,6 @@
 "GRrr",
 "Rr",
 "Rrrr",
-"Rrrrr")
+"Rrrrr",
+"Askgghrr",
+"Aghrrogggh")
