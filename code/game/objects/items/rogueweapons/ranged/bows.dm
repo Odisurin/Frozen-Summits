@@ -138,7 +138,7 @@
 			BB.damage = BB.damage - (BB.damage * (user.client.chargedprog / 100))
 			BB.embedchance = 5
 		else
-			BB.damage = BB.damage
+			BB.damage = BB.damage * (user.STAPER / 10)
 			BB.embedchance = 100
 		BB.damage = BB.damage * (user.STAPER / 10) * damfactor
 	. = ..()

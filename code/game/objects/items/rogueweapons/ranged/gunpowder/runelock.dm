@@ -15,7 +15,7 @@
 	pin = /obj/item/firing_pin
 	force = 10
 	var/cocked = FALSE
-	cartridge_wording = "musketball"
+	cartridge_wording = "iron sphere"
 	load_sound = 'sound/foley/musketload.ogg'
 	fire_sound = 'sound/combat/Ranged/musketfire2.ogg'
 	vary_fire_sound = TRUE
@@ -91,8 +91,8 @@
 	..()
 
 /obj/item/ammo_box/magazine/internal/shot/runelock
-	ammo_type = /obj/item/ammo_casing/caseless/runelock
-	caliber = "runed_sphere"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/bullet
+	caliber = "small_sphere"
 	max_ammo = 1
 	start_empty = TRUE
 

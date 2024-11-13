@@ -22,8 +22,8 @@
 	fire_sound = 'sound/combat/Ranged/crossbow-small-shot-02.ogg'
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	smeltresult = /obj/item/ingot/steel
-	var/damfactor = 2
-	resistance_flags = FIRE_PROOF
+	damfactor = 2
+
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/getonmobprop(tag)
 	. = ..()
