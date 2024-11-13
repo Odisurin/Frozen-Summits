@@ -142,7 +142,7 @@
 			mod = 10
 		if(selection == "SILVER")
 			mod = 5
-		var/coin_amt = input(user, "Sayyid, you have [src.gamblingprice] mammon in tithes. You may withdraw [floor(gamblingprice/mod)] [selection] COINS.", src) as null|num
+		var/coin_amt = input(user, "Sayyid, you have [src.gamblingprice] coin in tithes. You may withdraw [floor(gamblingprice/mod)] [selection] COINS.", src) as null|num
 		coin_amt = round(coin_amt)
 		if(coin_amt < 1)
 			return

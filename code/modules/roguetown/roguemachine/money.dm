@@ -44,7 +44,7 @@ GLOBAL_VAR(moneymaster)
 					return
 			P.forceMove(T.loc)
 			playsound(T.loc, 'sound/misc/hiss.ogg', 100, TRUE, -1)
-			say("Item accepted for [amtofsale] mammon.")
+			say("Item accepted for [amtofsale] coin.")
 			playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 			playsound(T, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
 

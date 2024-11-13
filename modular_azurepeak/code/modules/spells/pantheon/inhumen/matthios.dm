@@ -1,6 +1,6 @@
 #define EQUALIZED_GLOW "equalizer glow"
 
-// T0: Determine the net mammon value of target
+// T0: Determine the net coin value of target
 
 /obj/effect/proc_holder/spell/invoked/appraise
 	name = "Appraise"

@@ -61,7 +61,7 @@
 		if(D.held_items[source_stockpile] <= 0)
 			parent_structure.say("Insufficient stock.")
 		else if(total_price > budget)
-			parent_structure.say("Insufficient mammon.")
+			parent_structure.say("Insufficient coin.")
 		else
 			D.held_items[source_stockpile]--
 			budget -= total_price

@@ -41,7 +41,7 @@
 /datum/skill/misc/stealing
 	name = "Pickpocketing"
 	dreams = list(
-		"...one moment you are standing in line for the smith, waiting behind the captain of the guard. The next moment, you are standing in line at the merchant's, behind a travelling noble. Moments later, cries of a thief echo throughout town, while you count out hundreds of mammon...",
+		"...one moment you are standing in line for the smith, waiting behind the captain of the guard. The next moment, you are standing in line at the merchant's, behind a travelling noble. Moments later, cries of a thief echo throughout town, while you count out hundreds of coin...",
 		"...a piss-stinking, wooden-armed beggar with a lice-filled, greyed beard hails you, a rotten-toothed smile on his face, 'Spare a zenny for the wretched?' You step away from the disease-bearer, and as you turn around, you feel strangely light about the waist. With a double-take, you see your empty pouch, and two wooden arms left upon the floor where he had once seated..."
 	)
 

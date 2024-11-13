@@ -51,7 +51,7 @@
 			mod = 10
 		if(selection == "SILVER")
 			mod = 5
-		var/coin_amt = input(user, "There is [SStreasury.treasury_value] mammon in the treasury. You may withdraw [floor(amt/mod)] [selection] COINS from your account.", src) as null|num
+		var/coin_amt = input(user, "There is [SStreasury.treasury_value] coin in the treasury. You may withdraw [floor(amt/mod)] [selection] COINS from your account.", src) as null|num
 		coin_amt = round(coin_amt)
 		if(coin_amt < 1)
 			return
@@ -97,7 +97,7 @@
 				if(!HAS_TRAIT(H, TRAIT_NOBLE))
 					var/T = round(P.get_real_price() * SStreasury.tax_value)
 					if(T != 0)
-						say("Your deposit was taxed [T] mammon.")
+						say("Your deposit was taxed [T] coin.")
 				qdel(P)
 				playsound(src, 'sound/misc/coininsert.ogg', 100, FALSE, -1)
 				return
@@ -159,7 +159,7 @@
 			mammonsiphoned += 50
 			budget2change(50, null, "SILVER")
 			playsound(src, 'sound/misc/coindispense.ogg', 70, TRUE)
-			SStreasury.log_to_steward("-[50] exported mammon to the Freefolks!")
+			SStreasury.log_to_steward("-[50] exported coin to the Freefolks!")
 			drill(src)
 
 /obj/structure/roguemachine/atm/attack_right(mob/living/carbon/human/user)
