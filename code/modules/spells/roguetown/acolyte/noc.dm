@@ -20,7 +20,7 @@
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	chargedrain = 0
 	chargetime = 0
-	invocation = "Noc blinds thee of thy sins!"
+	invocation = "Mystra blinds thee of thy sins!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	associated_skill = /datum/skill/magic/holy
 	devotion_cost = 15

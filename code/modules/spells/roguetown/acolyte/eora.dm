@@ -1,7 +1,7 @@
 //Eora content from Stonekeep
 
 /obj/effect/proc_holder/spell/invoked/bud
-	name = "Eoran Bloom"
+	name = "Sune Bloom"
 	desc = ""
 	clothes_req = FALSE
 	range = 7
@@ -22,12 +22,12 @@
 	if(!isclosedturf(T))
 		new /obj/item/clothing/head/peaceflower(T)
 		return TRUE
-	to_chat(user, "<span class='warning'>The targeted location is blocked. The flowers of Eora refuse to grow.</span>")
+	to_chat(user, "<span class='warning'>The targeted location is blocked. The flowers of Sune refuse to grow.</span>")
 	revert_cast()
 	return FALSE
 
 /obj/effect/proc_holder/spell/invoked/eoracurse
-	name = "Eora's Curse"
+	name = "Sune's Curse"
 	overlay_state = "curse2"
 	releasedrain = 50
 	chargetime = 30

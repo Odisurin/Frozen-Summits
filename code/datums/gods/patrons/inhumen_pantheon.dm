@@ -11,7 +11,7 @@
 
 /datum/patron/inhumen/zizo
 	name = "Myrkul"
-	domain = "God of Death, the Dead, and the Afterlife"
+	domain = "Death, the Dead, and the Afterlife"
 	desc = "Myrkul is the god of death, the dead, and the afterlife. His followers believe that death is the ultimate end and that only through embracing it can one gain true power. Myrkul teaches that destruction is inevitable and that those who embrace it can shape the future by controlling death itself. The cult of Myrkul seeks to extinguish life, plunging the world into a state of eternal decay, where death rules supreme."
 	worshippers = "Necromancers, Warlocks, and the Undead"
 	mob_traits = list(TRAIT_CABAL)
@@ -26,7 +26,7 @@
 
 /datum/patron/inhumen/graggar
 	name = "Bhaal"
-	domain = "God of Murder, Bloodshed, and Death"
+	domain = "Murder, Bloodshed, and Death"
 	desc = "Bhaal is the god of murder, bloodshed, and death. His followers revel in the chaos of violent acts and believe that through the destruction of life, they can achieve ultimate power. The cult of Bhaal teaches that death is the true form of liberation, and only by embracing the slaughter of the weak can one become truly strong."
 	worshippers = "Bloodthirsty Warriors, Prisoners, Murderers and the Cruel"
 	mob_traits = list(TRAIT_HORDE, TRAIT_ORGAN_EATER)
@@ -38,7 +38,7 @@
 
 /datum/patron/inhumen/matthios
 	name = "Mask"
-	domain = "God of Robbery, Redistribution of Wealth, and Commerce"
+	domain = "Robbery, Redistribution of Wealth, and Commerce"
 	desc = "Mask is the god of shadows, thieves, and deception. His followers operate in the darkness, stealing from those who hold power and manipulating others for personal gain. Mask teaches that all wealth, power, and influence are ripe for the taking, and only those bold enough to steal it deserve it. His cults are often involved in covert operations, heists, and political intrigue, seeking to disrupt the established order and sow chaos for their own gain."
 	worshippers = "Highwaymen, Robbers, Downtrodden Peasants, Merchants"
 	mob_traits = list(TRAIT_COMMIE)
@@ -50,7 +50,7 @@
 
 /datum/patron/inhumen/baotha
 	name = "Sharess"
-	domain = "Goddess of Hedonism, Pleasure, and Excess"
+	domain = "Hedonism, Pleasure, and Excess"
 	desc = "Sharess, once a goddess of joy and revelry, embraces the darker side of indulgence. Where Sune represents creation and nurturing, Sharess embodies the desire to consume, to live for the fleeting moments of pleasure, regardless of the consequences. Her worshipers revel in excess, seeking to gratify their every desire. Sharess teaches her followers to abandon restraint, embrace decadence, and pursue their passions at all costs. The pursuit of hedonistic pleasure is paramount, and she offers no forgiveness for those who hold back."
 	worshippers = "Perverts, Gamblers, Drunkards, and Bards"
 	mob_traits = list(TRAIT_DEPRAVED, TRAIT_CRACKHEAD)
@@ -62,7 +62,7 @@
 
 /datum/patron/inhumen/lolth
 	name = "Lolth"
-	domain = "Goddess of Chaos, Darkness, and Deception"
+	domain = "Chaos, Darkness, and Deception"
 	desc = "Lolth, the Queen of Spiders, is the dark patroness of deception, chaos, and the webs of manipulation that bind the world. A former god of order and justice, Lolth turned her back on the natural balance to pursue a reign of fear and dominance. She teaches her followers that only by embracing chaos can true power be attained. Lolth’s worshippers are trained in the arts of treachery and seduction, ruling through fear, lies, and unrelenting ambition. In the darkness, where loyalty is fleeting and survival depends on cunning, Lolth’s word is law. She thrives on the corruption of the strong and the destruction of any semblance of order."
 	worshippers = "Drow, Assassins, Spies, and Traitors"
 	confess_lines = list(
@@ -70,10 +70,12 @@
 	"IN CHAOS, THERE IS POWER!",
 	"THE SPIDER QUEEN DEMANDS FEAR!",
 	"BETRAYAL IS MY BLESSING!")
+	t1 = /obj/effect/proc_holder/spell/targeted/spiderconjur
+
 
 /datum/patron/inhumen/bane
 	name = "Bane"
-	domain = "God of Tyranny, Fear, and Oppression"
+	domain = "Tyranny, Fear, and Oppression"
 	desc = "Bane is the god of tyranny, fear, and oppression, the embodiment of strength through domination and control. A ruthless god who teaches that only the strong should rule and that fear is the greatest weapon one can wield. His followers believe that true power comes not from kindness or mercy, but from the unyielding rule of those who can impose their will over others. Bane’s creed is one of total domination, where the weak are subjugated, and only the strong can thrive. To follow Bane is to embrace fear as a tool to bring about a new world order, where those who defy his will are crushed beneath the weight of his power."
 	worshippers = "Tyrants, Soldiers, Dictators, Fearmongers, Warlocks, and Conquerors"
 	confess_lines = list(
@@ -83,6 +85,29 @@
 	"FEAR IS THE PATH TO POWER!",
 	"ONLY THROUGH CONQUEST CAN WE TRULY RULE!")
 
+/datum/patron/inhumen/tiamat
+	name = "Tiamat"
+	domain = "Greed, Power, and Destruction"
+	desc = "Tiamat, the five-headed dragon goddess, represents the forces of greed, power, and ruthless conquest. She desires nothing less than total domination and treasures above all else."
+	worshippers = "Dragons, Warlocks, Cultists, Despoilers"
+	confess_lines = list(
+	"TIAMAT DEMANDS TREASURE!",
+	"POWER IS OUR DESTINY!",
+	"BOW TO THE FIVE-HEADED QUEEN!",
+	"ALL WEALTH BELONGS TO TIAMAT!")
+
+
+/datum/patron/inhumen/shar
+	name = "Shar"
+	domain = "Loss, Darkness, and Despair"
+	desc = "Shar is the goddess of darkness, loss, and despair, embracing the emptiness of the void and offering solace only through isolation and detachment. Her followers shun light and warmth, believing true strength lies in accepting the harsh reality of life’s darkness and rejecting attachment. Shar's creed denies the healing powers of love and light, teaching that only solitude and acceptance of life’s cruel nature can bring enlightenment."
+	worshippers = "Loners, Betrayed Souls, Nihilists, Assassins"
+	confess_lines = list(
+	"SHAR EMBRACES ME IN DARKNESS!",
+	"ONLY THROUGH LOSS CAN WE GROW!",
+	"DESPAIR IS MY SALVATION!",
+	"SHAR HOLDS THE TRUTH OF THE VOID!"
+)
 
 /* RATWOOD EDIT - Back to the main pantheon
 /datum/patron/inhumen/eora
