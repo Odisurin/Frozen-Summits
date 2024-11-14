@@ -193,7 +193,7 @@
 	overlay_state = "book1"
 	chargedrain = 0
 	chargetime = 0
-
+a
 /obj/effect/proc_holder/spell/self/learnspell/cast(list/targets, mob/user = usr)
 	. = ..()
 	//list of spells you can learn, it may be good to move this somewhere else eventually
@@ -219,8 +219,23 @@
 		/obj/effect/proc_holder/spell/invoked/projectile/acidsplash5e,
 		/obj/effect/proc_holder/spell/invoked/frostbite5e,
 		/obj/effect/proc_holder/spell/invoked/guidance,
-		/obj/effect/proc_holder/spell/invoked/fortitude
+		/obj/effect/proc_holder/spell/invoked/fortitude,
+		/obj/effect/proc_holder/spell/self/bladeward5e,
+		/obj/effect/proc_holder/spell/invoked/boomingblade5e,
+		/obj/effect/proc_holder/spell/invoked/chilltouch5e,
+		/obj/effect/proc_holder/spell/aoe_turf/conjure/createbonfire5e,
+		/obj/effect/proc_holder/spell/invoked/decompose5e,
+		/obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e,
+		/obj/effect/proc_holder/spell/targeted/encodethoughts5e,
+		/obj/effect/proc_holder/spell/invoked/projectile/firebolt5e,
+		/obj/effect/proc_holder/spell/invoked/greenflameblade5e,
+		/obj/effect/proc_holder/spell/invoked/infestation5e,
+		/obj/effect/proc_holder/spell/self/light5e,
+		/obj/effect/proc_holder/spell/targeted/lightninglure5e,
+		/obj/effect/proc_holder/spell/invoked/mending5e,
+		/obj/effect/proc_holder/spell/invoked/projectile/rayoffrost5e,
 	)
+
 	for(var/i = 1, i <= spell_choices.len, i++)
 		choices["[spell_choices[i].name]: [spell_choices[i].cost]"] = spell_choices[i]
 

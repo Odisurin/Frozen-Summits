@@ -190,6 +190,7 @@
 
 /mob/living/simple_animal/onbite(mob/living/carbon/human/user)
 	var/damage = 10*(user.STASTR/20)
+	
 	if(HAS_TRAIT(user, TRAIT_STRONGBITE))
 		damage = damage*2
 	playsound(user.loc, "smallslash", 100, FALSE, -1)

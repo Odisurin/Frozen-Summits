@@ -85,6 +85,10 @@
 		/datum/customizer/organ/belly/human,
 		)
 	body_marking_sets = list(
+		/datum/body_marking_set/none,
+		/datum/body_marking_set/belly,
+	)
+	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
 		/datum/body_marking/plain,
@@ -108,15 +112,6 @@
 		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
 		/datum/body_marking/spotted,
-	)
-	body_markings = list(
-		/datum/body_marking/flushed_cheeks,
-		/datum/body_marking/eyeliner,
-		/datum/body_marking/belly,
-		/datum/body_marking/bellyslim,
-		/datum/body_marking/butt,
-		/datum/body_marking/tonage,
-		/datum/body_marking/tiger/dark,
 	)
 	descriptor_choices = list(
 		/datum/descriptor_choice/height,

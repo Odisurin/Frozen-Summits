@@ -139,6 +139,9 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	w_class = WEIGHT_CLASS_TINY
 	/// If our stone is magical, this lets us know -how- magical. Maximum is 15.
 	var/magic_power = 0
+	destroy_sound = 'sound/foley/hit_rock.ogg'
+	grind_results = list(/datum/reagent/consumable/sodiumchloride = 15)
+	var/magicstone = FALSE
 
 /obj/item/natural/stone/Initialize()
 	. = ..()
