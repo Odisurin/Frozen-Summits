@@ -42,6 +42,10 @@
 	desc = "Mask is the god of shadows, thieves, and deception. His followers operate in the darkness, stealing from those who hold power and manipulating others for personal gain. Mask teaches that all wealth, power, and influence are ripe for the taking, and only those bold enough to steal it deserve it. His cults are often involved in covert operations, heists, and political intrigue, seeking to disrupt the established order and sow chaos for their own gain."
 	worshippers = "Highwaymen, Robbers, Downtrodden Peasants, Merchants"
 	mob_traits = list(TRAIT_COMMIE)
+	t0 = /obj/effect/proc_holder/spell/invoked/appraise
+	t1 = /obj/effect/proc_holder/spell/invoked/transact
+	t2 = /obj/effect/proc_holder/spell/invoked/equalize
+	t3 = /obj/effect/proc_holder/spell/invoked/churnwealthy
 	confess_lines = list(
 		"MASK IS THE MASTER OF SHADOWS!",
 		"BETRAYAL IS THE TRUEST LOYALTY!",
