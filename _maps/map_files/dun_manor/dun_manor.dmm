@@ -286,6 +286,13 @@
 /obj/structure/chair/bench/church/smallbench,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/woods)
+"bZC" = (
+/obj/structure/fluff/customsign{
+	name = "sign - Public Treasury";
+	desc = "This is the public treasure of Frozen summit. You store all valuable things you might find to help the whole outpost. Please do not steal."
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "bZE" = (
 /obj/structure/bed/rogue/shit{
 	name = "makeshift bed"
@@ -440,10 +447,6 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave)
-"cXD" = (
-/obj/item/rogueweapon/stoneaxe,
-/turf/open/floor/rogue/grassred,
-/area/rogue/outdoors/rtfield)
 "cXE" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/rogue/grasscold,
@@ -477,10 +480,6 @@
 	},
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/rtfield)
-"diZ" = (
-/obj/item/rogueweapon/spear/stone,
-/turf/open/floor/rogue/grassred,
 /area/rogue/outdoors/rtfield)
 "djl" = (
 /turf/closed/mineral/rogue/bedrock,
@@ -609,10 +608,6 @@
 "dSI" = (
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)
-"dWw" = (
-/obj/item/rogueweapon/huntingknife/stoneknife,
-/turf/open/floor/rogue/grassred,
-/area/rogue/outdoors/rtfield)
 "dZj" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -695,6 +690,10 @@
 "etD" = (
 /turf/closed/mineral/random/rogue/high,
 /area/rogue/under/cave)
+"euU" = (
+/obj/item/rogueweapon/spear/stone,
+/turf/open/floor/rogue/grassred,
+/area/rogue/outdoors/rtfield)
 "eyX" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 8
@@ -1511,6 +1510,10 @@
 /obj/effect/landmark/start/orphan,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
+"kUD" = (
+/obj/item/reagent_containers/glass/bucket/pot/stone,
+/turf/open/floor/rogue/grassred,
+/area/rogue/outdoors/rtfield)
 "kUZ" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/rtfield)
@@ -1548,13 +1551,6 @@
 "lgQ" = (
 /obj/structure/flora/roguegrass/bush/wall,
 /turf/open/floor/rogue/grassred,
-/area/rogue/outdoors/rtfield)
-"llC" = (
-/obj/structure/fluff/customsign{
-	name = "sign - Public Treasury";
-	desc = "This is the public treasure of Frozen summit. You store all valuable things you might find to help the whole outpost. Please do no22t steal."
-	},
-/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "lnn" = (
 /turf/open/floor/rogue/snow,
@@ -1999,8 +1995,8 @@
 	icon_state = "largetable"
 	},
 /obj/structure/fluff/customsign{
-	name = "sign - Public Treasury";
-	desc = "This is the public treasure of Frozen summit. You store all valuable things you might find to help the whole outpost. Please do no22t steal."
+	desc = "You may buy things on the machine and import materials and items from the trading ship. Be mindful!";
+	name = "sign - Public Stewardy"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
@@ -2038,6 +2034,13 @@
 "oLW" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors)
+"oQK" = (
+/obj/structure/fluff/customsign{
+	desc = "Trading Bay. Things you buy from the nervemaster comes here";
+	name = "sign - Trading bay"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/beach)
 "oSX" = (
 /obj/structure/roguemachine/atm,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -2328,6 +2331,10 @@
 /obj/structure/chair/wood/rogue/fancy,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
+"rjr" = (
+/obj/item/rogueweapon/hoe/stone,
+/turf/open/floor/rogue/grassred,
+/area/rogue/outdoors/rtfield)
 "rpq" = (
 /obj/structure/fluff/traveltile{
 	aallmig = "rwfieldin1";
@@ -2650,7 +2657,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "tCj" = (
-/obj/item/reagent_containers/glass/bucket/pot/stone,
+/obj/item/rogueweapon/huntingknife/stoneknife,
 /turf/open/floor/rogue/grassred,
 /area/rogue/outdoors/rtfield)
 "tEM" = (
@@ -2880,6 +2887,10 @@
 	},
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors)
+"vYI" = (
+/obj/item/rogueweapon/stoneaxe,
+/turf/open/floor/rogue/grassred,
+/area/rogue/outdoors/rtfield)
 "vZE" = (
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/mountains)
@@ -2956,10 +2967,6 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
-"wxk" = (
-/obj/item/rogueweapon/hoe/stone,
-/turf/open/floor/rogue/grassred,
-/area/rogue/outdoors/rtfield)
 "wAc" = (
 /obj/structure/fluff/traveltile{
 	aallmig = "rwfieldin1";
@@ -35012,7 +35019,7 @@ lnn
 dPV
 dPV
 lyQ
-diZ
+euU
 lyQ
 lyQ
 lyQ
@@ -35173,7 +35180,7 @@ lyQ
 lyQ
 lgQ
 lyQ
-wxk
+rjr
 lgQ
 lgQ
 lnn
@@ -35483,9 +35490,9 @@ lnn
 lnn
 lnn
 lnn
-cXD
+vYI
 lyQ
-tCj
+kUD
 lgQ
 lyQ
 lyQ
@@ -35800,7 +35807,7 @@ lnn
 lyQ
 lyQ
 lgQ
-dWw
+tCj
 lyQ
 lyQ
 lyQ
@@ -38974,7 +38981,7 @@ sKj
 mOa
 tbN
 fsP
-llC
+bZC
 ylN
 dQZ
 gog
@@ -41667,7 +41674,7 @@ xOC
 xOC
 xOC
 iXP
-sRV
+oQK
 sRV
 toL
 cKj
