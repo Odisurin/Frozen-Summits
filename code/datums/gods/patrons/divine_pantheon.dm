@@ -40,7 +40,6 @@
 	mob_traits = list(TRAIT_NIGHT_OWL, TRAIT_NOCSIGHT)
 	t1 = /obj/effect/proc_holder/spell/invoked/blindness/miracle
 	t2 = /obj/effect/proc_holder/spell/invoked/invisibility/miracle
-	t3 = /obj/effect/proc_holder/spell/invoked/teleport/miracle
 	confess_lines = list(
 		"THE WEAVE CONNECTS ALL THAT IS!",
 		"IN MYSTRA'S LIGHT, MAGIC THRIVES!",
