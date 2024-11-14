@@ -8,6 +8,7 @@
 
 /obj/item/book/granter/spell/spells5e/onlearned(mob/living/carbon/user)
 	..()
+	if(oneuse == TRUE)
 		name = "siphoned scroll"
 		desc = "A scroll once inscribed with magical scripture. The surface is now barren of knowledge, siphoned by someone else. It's utterly useless."
 		icon_state = "scroll"

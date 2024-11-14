@@ -6,6 +6,7 @@
 
 //Contributors:
 
+// ways you can contribute:
 // balance damage
 // balance cooldowns
 // balance stamina loss from spell
