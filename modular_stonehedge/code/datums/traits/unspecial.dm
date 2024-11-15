@@ -259,7 +259,7 @@
 /datum/quirk/nimrod
 	name = "Nimrod"
 	desc = "In the past I learned slower than my peers, and I tend to be clumsy."
-	value = -6
+	value = -7
 
 /datum/quirk/nimrod/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -269,7 +269,7 @@
 /datum/quirk/nopouch
 	name = "No Pouch"
 	desc = "I lost my pouch recently, I'm without a zenny.."
-	value = -1
+	value = -4
 
 /datum/quirk/nopouch/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -285,7 +285,7 @@
 /datum/quirk/hussite
 	name = "Known Heretic"
 	desc = "I've been denounced by the church for either reasons legitimate or not!"
-	value = -2
+	value = -8
 
 /datum/quirk/hussite/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -343,7 +343,7 @@
 /datum/quirk/sillyvoice
 	name = "Annoying"
 	desc = "People really hate my voice for some reason."
-	value = -1
+	value = -4
 
 /datum/quirk/sillyvoice/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -363,7 +363,7 @@
 /datum/quirk/jesterphobia
 	name = "Jesterphobic"
 	desc = "I have a severe, irrational fear of Jesters"
-	value = -1
+	value = -4
 
 /datum/quirk/jesterphobia/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -372,7 +372,7 @@
 /datum/quirk/wild_night
 	name = "Wild Night"
 	desc = "I don't remember what I did last night, and now I'm lost!"
-	value = -1
+	value = -4
 
 /datum/quirk/wild_night/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -394,7 +394,7 @@
 /datum/quirk/nude_sleeper
 	name = "Picky Sleeper"
 	desc = "I just can't seem to fall asleep unless I'm <i>truly</i> comfortable..."
-	value = -3 //Sleeping people are already rather vulnerable. Having to take off literally everything is more than just bothersome.
+	value = -7 //Sleeping people are already rather vulnerable. Having to take off literally everything is more than just bothersome.
 
 /datum/quirk/nude_sleeper/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
