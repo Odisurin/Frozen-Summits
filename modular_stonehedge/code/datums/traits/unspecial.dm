@@ -56,7 +56,7 @@
 
 /datum/quirk/night_owl
 	name = "Night Owl"
-	desc = "I've always preferred Noc over her sister"
+	desc = "I've always preferred the night."
 	value = 1
 
 /datum/quirk/night_owl/on_spawn()
