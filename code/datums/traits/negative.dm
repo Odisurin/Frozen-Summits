@@ -23,7 +23,7 @@
 /datum/quirk/monochromatic/remove()
 	if(quirk_holder)
 		quirk_holder.remove_client_colour(/datum/client_colour/monochrome)
-
+/*
 /datum/quirk/phobia
 	name = "Phobia"
 	desc = ""
@@ -38,11 +38,11 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		H.cure_trauma_type(/datum/brain_trauma/mild/phobia, TRAUMA_RESILIENCE_ABSOLUTE)
-
+*/
 
 /datum/quirk/no_taste
 	name = "Ageusia"
-	desc = ""
+	desc = "You can't taste anything"
 	value = -1
 	mob_trait = TRAIT_AGEUSIA
 	gain_text = span_notice("I can't taste anything!")
@@ -51,7 +51,7 @@
 
 /datum/quirk/vegetarian
 	name = "Vegetarian"
-	desc = ""
+	desc = "Its on the tin can, you eat leafs."
 	value = -1
 	gain_text = span_notice("I feel repulsion at the idea of eating meat.")
 	lose_text = span_notice("I feel like eating meat isn't that bad.")
@@ -74,7 +74,7 @@
 
 /datum/quirk/snob
 	name = "Snob"
-	desc = ""
+	desc = "You feel like a noble. Looking bothered at dirty places."
 	value = -1
 	gain_text = span_notice("I feel like you understand what things should look like.")
 	lose_text = span_notice("Well who cares about deco anyways?")
@@ -83,7 +83,7 @@
 
 /datum/quirk/blooddeficiency
 	name = "Blood Deficiency"
-	desc = ""
+	desc = "You have a illness that makes you lose blood, but you can survive it barely without aid."
 	value = -2
 	gain_text = span_danger("I feel my vigor slowly fading away.")
 	lose_text = span_notice("I feel vigorous again.")
@@ -289,7 +289,7 @@
 */
 /datum/quirk/frail
 	name = "Frail"
-	desc = ""
+	desc = "You are slightly more frail than most. Your bones ligaments are weaker."
 	value = -2
 	mob_trait = TRAIT_EASYLIMBDISABLE
 	gain_text = span_danger("I feel frail.")
@@ -298,8 +298,8 @@
 
 /datum/quirk/heavy_sleeper
 	name = "Heavy Sleeper"
-	desc = ""
-	value = -1
+	desc = "You take a bit to wake up"
+	value = -3
 	mob_trait = TRAIT_HEAVY_SLEEPER
 	gain_text = span_danger("I feel sleepy.")
 	lose_text = span_notice("I feel awake again.")

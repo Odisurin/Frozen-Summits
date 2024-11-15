@@ -1,6 +1,6 @@
 //traits with no real impact that can be taken freely
 //MAKE SURE THESE DO NOT MAJORLY IMPACT GAMEPLAY. those should be positive or negative traits.
-
+/*
 /datum/quirk/pineapple_liker
 	name = "Ananas Affinity"
 	desc = ""
@@ -60,3 +60,4 @@
 		var/datum/species/species = H.dna.species
 		species.liked_food = initial(species.liked_food)
 		species.disliked_food = initial(species.disliked_food)
+*/

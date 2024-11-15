@@ -22,7 +22,7 @@
 
 /datum/quirk/thickskin/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_BREADY, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_BREADY, TRAIT_GENERIC)
 	H.change_stat("constitution", 2)
 
 /datum/quirk/curseofcain
@@ -32,8 +32,8 @@
 
 /datum/quirk/curseofcain/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_NOHUNGER, QUIRK_TRAIT)
-	ADD_TRAIT(H, TRAIT_NOBREATH, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOBREATH, TRAIT_GENERIC)
 	H.change_stat("endurance", 2)
 
 /datum/quirk/deadened
@@ -43,7 +43,7 @@
 
 /datum/quirk/deadened/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_NOMOOD, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_NOMOOD, TRAIT_GENERIC)
 
 /datum/quirk/value
 	name = "Skilled Appraiser"
@@ -52,7 +52,7 @@
 
 /datum/quirk/value/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_SEEPRICES, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 
 /datum/quirk/night_owl
 	name = "Night Owl"
@@ -61,7 +61,7 @@
 
 /datum/quirk/night_owl/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_NIGHT_OWL, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_NIGHT_OWL, TRAIT_GENERIC)
 
 /datum/quirk/beautiful
 	name = "Beautiful"
@@ -70,7 +70,7 @@
 
 /datum/quirk/beautiful/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_BEAUTIFUL, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
 
 //positive
 /datum/quirk/duelist
@@ -139,15 +139,6 @@
 	H.mind.special_items["Whip"] = /obj/item/rogueweapon/whip
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 5, TRUE)
 
-/datum/quirk/packed_lunch
-	name = "Packed Lunch"
-	desc = "I don't like going around hungry so I packed my lunch!"
-	value = 1
-
-/datum/quirk/packed_lunch/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/bag = new /obj/item/storage/roguebag/lunch(get_turf(H))
-	H.put_in_hands(bag, forced = TRUE)
 
 /datum/quirk/spring_in_my_step
 	name = "Spring in my Step"
@@ -156,7 +147,7 @@
 
 /datum/quirk/spring_in_my_step/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_ZJUMP, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_ZJUMP, TRAIT_GENERIC)
 
 /datum/quirk/thief
 	name = "Thief"
@@ -216,7 +207,7 @@
 
 /datum/quirk/bleublood/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_NOBLE, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
 
 /datum/quirk/richpouch
@@ -236,8 +227,7 @@
 
 /datum/quirk/swift/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_DODGEEXPERT, QUIRK_TRAIT)
-	ADD_TRAIT(H, TRAIT_GOODRUNNER, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 5, TRUE)
 	H.change_stat("speed", 3)
 
@@ -248,7 +238,7 @@
 
 /datum/quirk/gourmand/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_NASTY_EATER, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_NASTY_EATER, TRAIT_GENERIC)
 
 //neutral
 /datum/quirk/backproblems
@@ -357,7 +347,7 @@
 
 /datum/quirk/sillyvoice/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_COMICSANS, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_COMICSANS, TRAIT_GENERIC)
 	H.dna.add_mutation(WACKY)
 
 /datum/quirk/unlucky
@@ -377,7 +367,7 @@
 
 /datum/quirk/jesterphobia/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_JESTERPHOBIA, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_JESTERPHOBIA, TRAIT_GENERIC)
 
 /datum/quirk/wild_night
 	name = "Wild Night"
@@ -410,7 +400,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	H.change_stat("endurance", 1) //since sleeping naked will probably get you sick or some shit.
 	H.change_stat("constitution", 1)
-	ADD_TRAIT(H, TRAIT_NUDE_SLEEPER, QUIRK_TRAIT)
+	ADD_TRAIT(H, TRAIT_NUDE_SLEEPER, TRAIT_GENERIC)
 
 // disgustingly hooking into quirks to provide a convenient way to become a vampire
 /datum/quirk/vampire

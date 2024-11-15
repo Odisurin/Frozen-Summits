@@ -3,7 +3,7 @@
 
 /datum/quirk/alcohol_tolerance
 	name = "Alcohol Tolerance"
-	desc = ""
+	desc = "You are more tolerant to alcohol."
 	value = 1
 	mob_trait = TRAIT_ALCOHOL_TOLERANCE
 	gain_text = span_notice("I feel like you could drink a whole keg!")
@@ -32,7 +32,7 @@
 
 /datum/quirk/drunkhealing
 	name = "Drunken Resilience"
-	desc = ""
+	desc = "While drunk, you can heal your wounds very slowly."
 	value = 2
 	mob_trait = TRAIT_DRUNK_HEALING
 	gain_text = span_notice("I feel like a drink would do you good.")
@@ -54,7 +54,7 @@
 
 /datum/quirk/empath
 	name = "Empath"
-	desc = ""
+	desc = "You are more empathic than most. Which can be a good or bad thing."
 	value = 2
 	mob_trait = TRAIT_EMPATH
 	gain_text = span_notice("I feel in tune with those around you.")
@@ -98,7 +98,7 @@ datum/quirk/fan_clown
 	)
 	H.equip_in_one_of_slots(B, slots , qdel_on_fail = TRUE)
 */
-
+/*
 /datum/quirk/freerunning
 	name = "Freerunning"
 	desc = ""
@@ -107,7 +107,7 @@ datum/quirk/fan_clown
 	gain_text = span_notice("I feel lithe on your feet!")
 	lose_text = span_danger("I feel clumsy again.")
 	medical_record_text = "Patient scored highly on cardio tests."
-
+*/
 /*
 /datum/quirk/friendly
 	name = "Friendly"
@@ -134,13 +134,13 @@ datum/quirk/fan_clown
 
 /datum/quirk/light_step
 	name = "Light Step"
-	desc = ""
+	desc = "Your feet or paws.. or claws... you get it are less noisy."
 	value = 1
 	mob_trait = TRAIT_LIGHT_STEP
 	gain_text = span_notice("I walk with a little more litheness.")
 	lose_text = span_danger("I start tromping around like a barbarian.")
 	medical_record_text = "Patient's dexterity belies a strong capacity for stealth."
-
+/*
 /datum/quirk/musician
 	name = "Musician"
 	desc = ""
@@ -158,7 +158,8 @@ datum/quirk/fan_clown
 		"hands" = SLOT_HANDS,
 	)
 	H.equip_in_one_of_slots(B, slots , qdel_on_fail = TRUE)
-
+*/
+/*
 /datum/quirk/night_vision
 	name = "Night Vision"
 	desc = ""
@@ -174,7 +175,7 @@ datum/quirk/fan_clown
 	if(!eyes || eyes.lighting_alpha)
 		return
 	eyes.Insert(H) //refresh their eyesight and vision
-
+*/
 /*
 /datum/quirk/photographer
 	name = "Photographer"
@@ -207,7 +208,7 @@ datum/quirk/fan_clown
 	H.equip_in_one_of_slots(camera, camera_slots , qdel_on_fail = TRUE)
 	H.regenerate_icons()
 */
-
+/*
 /datum/quirk/selfaware
 	name = "Self-Aware"
 	desc = ""
@@ -235,7 +236,7 @@ datum/quirk/fan_clown
 	var/mob/living/carbon/human/H = quirk_holder
 	H.equip_to_slot_or_del(new /obj/item/storage/fancy/candle_box(H), SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/matches(H), SLOT_IN_BACKPACK)
-
+*/
 /*
 /datum/quirk/tagger
 	name = "Tagger"
@@ -256,7 +257,7 @@ datum/quirk/fan_clown
 
 /datum/quirk/voracious
 	name = "Voracious"
-	desc = ""
+	desc = "You feel the urge to eat faster."
 	value = 1
 	mob_trait = TRAIT_VORACIOUS
 	gain_text = span_notice("I feel HONGRY.")
