@@ -288,6 +288,17 @@
 	body_parts_covered = CHEST|ARMS|VITALS
 	color = null
 
+
+/obj/item/clothing/suit/roguetown/shirt/undershirt/maid_dress
+	name = "maid dress"
+	desc = "A maid dress meant to clean stuff with."
+	icon_state = "maid"
+	item_state = "maid"
+	r_sleeve_status = SLEEVE_NOMOD
+	l_sleeve_status = SLEEVE_NOMOD
+	body_parts_covered = CHEST|ARMS|VITALS
+	color = null
+
 /obj/item/clothing/suit/roguetown/shirt/jester
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
 	name = "jester's tunick"

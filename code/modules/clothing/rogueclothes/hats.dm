@@ -1220,3 +1220,11 @@
 	desc = "A feathered leather hat, to show them all your superiority."
 	icon_state = "duelhat"
 	sewrepair = TRUE
+
+//other hats
+
+/obj/item/clothing/head/roguetown/maid
+	name = "maid headdress"
+	desc = "A frilly maid headband."
+	icon_state = "maid_headband"
+	sewrepair = TRUE

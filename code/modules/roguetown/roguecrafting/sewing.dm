@@ -10,6 +10,18 @@
 	reqs = list(/obj/item/natural/cloth = 1)
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/sewing/maid_headband
+	name = "maid headband"
+	result = list(/obj/item/clothing/head/roguetown/maid)
+	reqs = list(/obj/item/natural/cloth = 1)
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/sewing/maid_dress
+	name = "maid dress"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/undershirt/maid_dress)
+	reqs = list(/obj/item/natural/cloth = 3)
+	craftdiff = 0
+
 /datum/crafting_recipe/roguetown/sewing/peasantcap
 	name = "peasant cap"
 	result = list(/obj/item/clothing/head/roguetown/armingcap)
