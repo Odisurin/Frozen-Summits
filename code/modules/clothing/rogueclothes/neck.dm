@@ -176,42 +176,42 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/psicross/astrata
-	name = "amulet of Pelor"
+	name = "amulet of the sun"
 	desc = ""
 	icon_state = "astrata"
 
 /obj/item/clothing/neck/roguetown/psicross/noc
-	name = "amulet of Mystra"
+	name = "amulet of the moon"
 	desc = ""
 	icon_state = "noc"
 
 /obj/item/clothing/neck/roguetown/psicross/dendor
-	name = "amulet of Silvanus"
+	name = "amulet of nature"
 	desc = ""
 	icon_state = "dendor"
 
 /obj/item/clothing/neck/roguetown/psicross/necra
-	name = "amulet of Kelemvor"
+	name = "amulet of death"
 	desc = ""
 	icon_state = "necra"
 
 /obj/item/clothing/neck/roguetown/psicross/pestra
-	name = "amulet of Talona"
+	name = "amulet of medicine"
 	desc = ""
 	icon_state = "pestra"
 
 /obj/item/clothing/neck/roguetown/psicross/ravox
-	name = "amulet of Tyr"
+	name = "amulet of justice"
 	desc = ""
 	icon_state = "ravox"
 
 /obj/item/clothing/neck/roguetown/psicross/malum
-	name = "amulet of Moradin"
+	name = "amulet of crafts"
 	desc = ""
 	icon_state = "malum"
 
 /obj/item/clothing/neck/roguetown/psicross/eora
-	name = "amulet of Sune"
+	name = "amulet of love"
 	desc = ""
 	icon_state = "eora"
 
@@ -330,6 +330,6 @@
 
 /obj/item/clothing/neck/roguetown/psicross/naledi
 	name = "naledian psy-bracelet"
-	desc = "A peculiar icon of worship from a foreign land. Forming the three-progned itharothite cross in a circular ring, this bracelet embodies the Naledian belief of itharoth's eternity."
+	desc = "A peculiar icon of worship from a foreign land. Forming the three-progned Aoite cross in a circular ring, this bracelet embodies the Naledian belief of Ao's eternity."
 	icon_state = "null"
 	item_state = "psybracelet"

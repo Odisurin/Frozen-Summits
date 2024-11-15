@@ -105,9 +105,9 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 		var/text_to_show
 		switch(GLOB.dayspassed)
 			if(1)
-				text_to_show = "DAWN OF THE FIRST DAE\nMOON'S DAE"
+				text_to_show = "DAWN OF THE FIRST DAE\nSELUNE'S DAE"
 			if(2)
-				text_to_show = "DAWN OF THE SECOND DAE\nTIW'S DAE"
+				text_to_show = "DAWN OF THE SECOND DAE\nTYR'S DAE"
 			if(3)
 				text_to_show = "DAWN OF THE THIRD DAE\nWEDDING'S DAE"
 			if(4)

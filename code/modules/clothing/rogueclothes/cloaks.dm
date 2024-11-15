@@ -1058,8 +1058,8 @@
 	allowed_race = NON_DWARVEN_RACE_TYPES
 
 /obj/item/clothing/cloak/templar/psydon
-	name = "itharoth tabard"
-	desc = "An outer garment commonly worn by soldiers. This one has the symbol of itharoth on it."
+	name = "Ao tabard"
+	desc = "An outer garment commonly worn by soldiers. This one has the symbol of Ao on it."
 	icon_state = "tabard_weeping"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN

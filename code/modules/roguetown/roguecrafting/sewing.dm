@@ -193,7 +193,7 @@
 	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/sewing/itharoth
-	name = "itharoth tabard"
+	name = "Ao tabard"
 	result = list(/obj/item/clothing/cloak/templar/psydon)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)

@@ -36,6 +36,19 @@
 		"IN BLOOD, WE ASCEND!",
 	)
 
+/datum/patron/inhumen/bane
+	name = "Bane"
+	domain = "Tyranny, Fear, and Oppression"
+	desc = "Bane is the god of tyranny, fear, and oppression, the embodiment of strength through domination and control. A ruthless god who teaches that only the strong should rule and that fear is the greatest weapon one can wield. His followers believe that true power comes not from kindness or mercy, but from the unyielding rule of those who can impose their will over others. Bane’s creed is one of total domination, where the weak are subjugated, and only the strong can thrive. To follow Bane is to embrace fear as a tool to bring about a new world order, where those who defy his will are crushed beneath the weight of his power."
+	worshippers = "Tyrants, Soldiers, Dictators, Fearmongers, Warlocks, and Conquerors"
+	confess_lines = list(
+	"BANE DEMANDS YOUR FEAR!",
+	"THE STRONG RULE THROUGH TYRANNY!",
+	"SUBMISSION IS STRENGTH!",
+	"FEAR IS THE PATH TO POWER!",
+	"ONLY THROUGH CONQUEST CAN WE TRULY RULE!")
+
+
 /datum/patron/inhumen/matthios
 	name = "Mask"
 	domain = "Robbery, Redistribution of Wealth, and Commerce"
@@ -51,6 +64,23 @@
 		"BETRAYAL IS THE TRUEST LOYALTY!",
 		"STEAL FROM THE WEALTHY!",
 	)
+
+/datum/patron/inhumen/tiamat
+	name = "Tiamat"
+	domain = "Greed, Tyranny, and Dragons"
+	desc = "Tiamat, the Many-Mawed, is the dragon goddess of greed and tyranny, eternally plotting to gain dominion over all. Her followers are fanatical, pursuing wealth and power in her name."
+	worshippers = "Dragons, Tyrants, Fanatics, and Treasure Seekers"
+	mob_traits = list(TRAIT_COMMIE)
+	confess_lines = list(
+	"TIAMAT DEMANDS TREASURE!",
+	"POWER IS OUR DESTINY!",
+	"BOW TO THE FIVE-HEADED QUEEN!",
+	"ALL WEALTH BELONGS TO TIAMAT!")
+	t0 = /obj/effect/proc_holder/spell/invoked/appraise
+	t1 = /obj/effect/proc_holder/spell/invoked/transact
+	t2 = /obj/effect/proc_holder/spell/invoked/equalize
+	t3 = /obj/effect/proc_holder/spell/invoked/churnwealthy
+
 
 /datum/patron/inhumen/baotha
 	name = "Sharess"
@@ -75,31 +105,6 @@
 	"THE SPIDER QUEEN DEMANDS FEAR!",
 	"BETRAYAL IS MY BLESSING!")
 	t1 = /obj/effect/proc_holder/spell/targeted/spiderconjur
-
-
-/datum/patron/inhumen/bane
-	name = "Bane"
-	domain = "Tyranny, Fear, and Oppression"
-	desc = "Bane is the god of tyranny, fear, and oppression, the embodiment of strength through domination and control. A ruthless god who teaches that only the strong should rule and that fear is the greatest weapon one can wield. His followers believe that true power comes not from kindness or mercy, but from the unyielding rule of those who can impose their will over others. Bane’s creed is one of total domination, where the weak are subjugated, and only the strong can thrive. To follow Bane is to embrace fear as a tool to bring about a new world order, where those who defy his will are crushed beneath the weight of his power."
-	worshippers = "Tyrants, Soldiers, Dictators, Fearmongers, Warlocks, and Conquerors"
-	confess_lines = list(
-	"BANE DEMANDS YOUR FEAR!",
-	"THE STRONG RULE THROUGH TYRANNY!",
-	"SUBMISSION IS STRENGTH!",
-	"FEAR IS THE PATH TO POWER!",
-	"ONLY THROUGH CONQUEST CAN WE TRULY RULE!")
-
-/datum/patron/inhumen/tiamat
-	name = "Tiamat"
-	domain = "Greed, Power, and Destruction"
-	desc = "Tiamat, the five-headed dragon goddess, represents the forces of greed, power, and ruthless conquest. She desires nothing less than total domination and treasures above all else."
-	worshippers = "Dragons, Warlocks, Cultists, Despoilers"
-	confess_lines = list(
-	"TIAMAT DEMANDS TREASURE!",
-	"POWER IS OUR DESTINY!",
-	"BOW TO THE FIVE-HEADED QUEEN!",
-	"ALL WEALTH BELONGS TO TIAMAT!")
-
 
 /datum/patron/inhumen/shar
 	name = "Shar"

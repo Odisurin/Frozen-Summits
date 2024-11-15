@@ -489,5 +489,5 @@
 
 /obj/item/rogueweapon/woodstaff/naledi
 	name = "naledian warstaff"
-	desc = "A staff carrying the crescent moon of itharoth's knowledge, as well as the black and gold insignia of the war scholars."
+	desc = "A staff carrying the crescent moon of Ao's knowledge, as well as the black and gold insignia of the war scholars."
 	icon_state = "naledistaff"

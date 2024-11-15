@@ -46,6 +46,21 @@
 		"MAGIC IS THE SONG OF THE UNIVERSE!",
 	)
 
+/datum/patron/divine/selune
+	name = "Selûne"
+	domain = "Moon, Stars, and Navigation"
+	desc = "Selûne, the Lady of Silver, presides over the moon and stars, guiding travelers and dreamers. She represents light and hope against the darkness and constantly struggles against her sister, Shar, who seeks to plunge the world into eternal shadow."
+	worshippers = "Navigators, Dreamers, Celestial Guides, and Sailors"
+	mob_traits = list(TRAIT_NIGHT_OWL, TRAIT_NOCSIGHT)
+	t1 = /obj/effect/proc_holder/spell/invoked/blindness/miracle
+	t2 = /obj/effect/proc_holder/spell/invoked/invisibility/miracle
+	confess_lines = list(
+		"SELÛNE, GUIDE MY PATH!",
+		"FOR SELÛNE, I LIGHT THE NIGHT!",
+		"IN SELÛNE'S NAME, I BANISH THE SHADOW!"
+	)
+
+
 /datum/patron/divine/dendor
 	name = "Silvanus"
 	domain = "Earth and Nature"
