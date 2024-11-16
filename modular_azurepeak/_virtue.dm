@@ -44,7 +44,9 @@ GLOBAL_LIST_EMPTY(virtues)
 			var/increase_by = skill_block[2]
 			var/maximum_skill = skill_block[3]
 			var/our_skill = recipient.mind?.get_skill_level(the_skill)
-			if (our_skill && our_skill < maximum_skill)
+			if (our_skill < maximum_skill)
+				if ((our_skill + increase_by) > maximum_skill) // we'll be pushing it higher than our max with 1 addition, so lower increase_by
+					increase_by = (maximum_skill - our_skill)
 				recipient.mind?.adjust_skillrank(the_skill.type, increase_by, TRUE)
 			else
 				to_chat(recipient, span_notice("My Virtue cannot influence my skill with [lowertext(the_skill.name)] any further."))
