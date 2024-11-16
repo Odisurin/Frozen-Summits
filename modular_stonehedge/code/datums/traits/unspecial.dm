@@ -149,6 +149,14 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_ZJUMP, TRAIT_GENERIC)
 
+/datum/quirk/impervious
+	name = "Impervious"
+	desc = "I've spent years shoring up my weakspots, and have become difficult to wound with critical blows."
+/datum/quirk/impervious/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
+	value = 3
+
 /datum/quirk/thief
 	name = "Thief"
 	desc = "Life's not easy around here, but I've made mine a little easier by taking things of others. I am a great at picking pockets."
@@ -240,8 +248,6 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NASTY_EATER, TRAIT_GENERIC)
 
-//neutral
-/* 
 /datum/quirk/backproblems
 	name = "Giant"
 	desc = "I've always been called a giant (atleast among my kin). I am valued for my stature, but, this world made for smaller folk has forced me to move cautiously."
@@ -255,7 +261,9 @@
 	H.transform = H.transform.Scale(1.25, 1.25)
 	H.transform = H.transform.Translate(0, (0.25 * 16))
 	H.update_transform()
-*/
+
+
+
 //negative
 /datum/quirk/nimrod
 	name = "Nimrod"
@@ -369,6 +377,15 @@
 /datum/quirk/jesterphobia/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_JESTERPHOBIA, TRAIT_GENERIC)
+
+/datum/quirk/dweakness
+	name = "Deceiving Weakness"
+	desc = "People think i am weak... THINK."
+	value = -4
+
+/datum/quirk/dweakness/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_DECEIVING_MEEKNESS, TRAIT_GENERIC)
 
 /datum/quirk/wild_night
 	name = "Wild Night"

@@ -1,3 +1,4 @@
+/*
 /datum/virtue/items/rich
 	name = "Rich"
 	desc = "Through a stroke of luck or shrewd planning, I've come into a considerable amount of mammon."
@@ -13,3 +14,5 @@
 	added_stashed_items = list("Firebomb #1" = /obj/item/bomb,
 								"Firebomb #2" = /obj/item/bomb
 	)
+
+*/

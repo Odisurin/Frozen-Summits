@@ -47,11 +47,13 @@
 			if (CLERIC_REQ_4)
 				our_faith.passive_devotion_gain += 1
 
+/*
 /datum/virtue/combat/duelist
 	name = "Duelist Apprentice"
 	desc = "I have trained under a duelist of considerable skill, and always have my trusty rapier close at hand."
 	added_skills = list(list(/datum/skill/combat/swords, 1, 4)) // increase swords by one to a maximum of 4
 	added_stashed_items = list("Rapier" = /obj/item/rogueweapon/sword/rapier)
+*/
 
 /datum/virtue/combat/bowman
 	name = "Toxophilite"
@@ -61,11 +63,13 @@
 								"Quiver (Arrows)" = /obj/item/quiver/arrows
 	)
 
+/*
 /datum/virtue/combat/tavern_brawler
 	name = "Tavern Brawler"
 	desc = "I've never met a problem my fists couldn't solve."
 	added_traits = list(TRAIT_CIVILIZEDBARBARIAN)
-
+*/
+/*
 /datum/virtue/combat/guarded
 	name = "Guarded"
 	desc = "I have long kept my true capabilities a secret. Sometimes being deceptively weak can save one's life."
@@ -75,7 +79,7 @@
 	name = "Impervious"
 	desc = "I've spent years shoring up my weakspots, and have become difficult to wound with critical blows."
 	added_traits = list(TRAIT_CRITICAL_RESISTANCE)
-
+*/
 /datum/virtue/combat/rotcured
 	name = "Rotcured"
 	desc = "I was once afflicted with the accursed rot, and was cured. It has left me changed: my limbs are weaker, but I feel no pain and have no need to breathe..."
