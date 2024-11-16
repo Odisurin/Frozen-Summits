@@ -152,10 +152,11 @@
 /datum/quirk/impervious
 	name = "Impervious"
 	desc = "I've spent years shoring up my weakspots, and have become difficult to wound with critical blows."
+	value = 3
 /datum/quirk/impervious/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
-	value = 3
+
 
 /datum/quirk/thief
 	name = "Thief"
