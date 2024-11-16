@@ -100,6 +100,7 @@
 		/datum/body_marking/bellyscalesmooth,
 		/datum/body_marking/bellyscaleslimsmooth,
 		/datum/body_marking/buttscale,
+		/datum/body_marking/fox,
 		/datum/body_marking/belly,
 		/datum/body_marking/bellyslim,
 		/datum/body_marking/butt,
