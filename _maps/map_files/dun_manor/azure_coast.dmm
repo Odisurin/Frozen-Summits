@@ -333,8 +333,8 @@
 /area/rogue/indoors/cave)
 "bc" = (
 /obj/effect/spawner/lootdrop/roguetown/dungeon/tools,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "bf" = (
@@ -442,8 +442,8 @@
 /area/rogue/indoors/shelter)
 "bW" = (
 /obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "bX" = (
@@ -459,8 +459,8 @@
 /area/rogue/indoors/cave)
 "cf" = (
 /obj/item/roguegem/random,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "cg" = (
@@ -469,8 +469,8 @@
 /area/rogue/indoors/cave)
 "ci" = (
 /obj/machinery/light/rogue/torchholder/c,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "ck" = (
@@ -646,8 +646,8 @@
 /area/rogue/indoors/cave)
 "dz" = (
 /mob/living/simple_animal/hostile/rogue/dragger,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "dA" = (
@@ -681,8 +681,8 @@
 "dH" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "dI" = (
@@ -796,8 +796,8 @@
 /area/rogue/outdoors/beach/forest)
 "eG" = (
 /obj/effect/spawner/roguemap/hauntpile,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "eH" = (
@@ -818,8 +818,8 @@
 /area/rogue/indoors/cave)
 "eM" = (
 /obj/structure/fluff/railing/fence,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "eQ" = (
@@ -1063,8 +1063,8 @@
 /area/rogue/indoors/cave)
 "gu" = (
 /obj/effect/decal/remains/saiga,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "gw" = (
@@ -1292,8 +1292,8 @@
 /area/rogue/indoors/cave)
 "iv" = (
 /obj/machinery/light/rogue/torchholder/l,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "iA" = (
@@ -1418,8 +1418,8 @@
 /area/rogue/outdoors/beach)
 "jF" = (
 /obj/item/natural/rock,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "jJ" = (
@@ -1433,8 +1433,8 @@
 /area/rogue/indoors/cave)
 "jW" = (
 /obj/structure/chair/bench,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "jX" = (
@@ -1600,8 +1600,8 @@
 /area/rogue/indoors/shelter)
 "lC" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/spider,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "lE" = (
@@ -1654,8 +1654,8 @@
 "mb" = (
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/lootdrop/roguetown,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "md" = (
@@ -1706,8 +1706,8 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/cave)
 "ms" = (
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "mt" = (
@@ -1719,8 +1719,8 @@
 /area/rogue/indoors/shelter)
 "mz" = (
 /obj/structure/flora/roguegrass/bush/wall/tall,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "mA" = (
@@ -1751,8 +1751,8 @@
 	dir = 8;
 	pixel_x = -4
 	},
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "mW" = (
@@ -1855,8 +1855,8 @@
 	pixel_x = 2;
 	pixel_y = 7
 	},
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "nJ" = (
@@ -1891,14 +1891,14 @@
 /area/rogue/indoors/shelter)
 "nS" = (
 /obj/structure/spider/stickyweb,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "nX" = (
 /obj/structure/flora/roguegrass/maneater/real,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "oa" = (
@@ -2099,8 +2099,8 @@
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/cave)
 "pz" = (
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "pA" = (
@@ -2219,14 +2219,14 @@
 "qw" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/spawner/lootdrop/roguetown/sewers,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "qz" = (
 /obj/item/roguebin/water/gross,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "qE" = (
@@ -2268,8 +2268,8 @@
 	icon_state = "stairs";
 	dir = 8
 	},
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "qY" = (
@@ -2444,8 +2444,8 @@
 /area/rogue/indoors/cave)
 "rY" = (
 /obj/structure/mineral_door/wood/deadbolt,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "rZ" = (
@@ -2657,14 +2657,14 @@
 /area/rogue/indoors/cave)
 "tD" = (
 /mob/living/simple_animal/hostile/rogue/skeleton/bow,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "tL" = (
 /obj/structure/flora/roguetree/evil,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "tM" = (
@@ -2879,8 +2879,8 @@
 /area/rogue/indoors/cave)
 "vF" = (
 /obj/structure/flora/newtree,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "vG" = (
@@ -2977,8 +2977,8 @@
 /area/rogue/indoors/cave)
 "wm" = (
 /mob/living/simple_animal/hostile/rogue/skeleton/bow,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "wn" = (
@@ -3099,8 +3099,8 @@
 /area/rogue/indoors/shelter)
 "xx" = (
 /obj/item/natural/rock,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "xA" = (
@@ -3127,8 +3127,8 @@
 	icon_state = "fence";
 	dir = 4
 	},
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "xL" = (
@@ -3232,8 +3232,8 @@
 	dir = 1;
 	locked = 1
 	},
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/shelter)
 "yG" = (
@@ -3363,8 +3363,8 @@
 /area/rogue/indoors/shelter)
 "zL" = (
 /obj/machinery/light/rogue/torchholder/l,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "zM" = (
@@ -3392,8 +3392,8 @@
 /area/rogue/indoors/cave)
 "zR" = (
 /mob/living/carbon/human/species/goblin/npc/ambush/sea,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "zS" = (
@@ -3780,8 +3780,8 @@
 /area/rogue/indoors/cave)
 "Dh" = (
 /mob/living/carbon/human/species/goblin/npc/sea,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Di" = (
@@ -3814,8 +3814,8 @@
 /area/rogue/indoors/shelter)
 "Dx" = (
 /obj/machinery/light/rogue/firebowl/standing/blue,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Dy" = (
@@ -3956,8 +3956,8 @@
 "Ez" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/seeds/wheat,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "EB" = (
@@ -4157,8 +4157,8 @@
 /obj/effect/decal/cobbleedge{
 	dir = 10
 	},
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Ge" = (
@@ -4214,8 +4214,8 @@
 /area/rogue/indoors/cave)
 "GB" = (
 /obj/effect/spawner/roguemap/stump,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "GC" = (
@@ -4226,8 +4226,8 @@
 /area/rogue/outdoors/beach/forest)
 "GD" = (
 /obj/machinery/light/rogue/firebowl/stump,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "GE" = (
@@ -4305,8 +4305,8 @@
 /area/rogue/outdoors/beach/forest)
 "Hr" = (
 /obj/structure/flora/roguetree/burnt,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "Hs" = (
@@ -4329,14 +4329,14 @@
 /area/rogue/outdoors/beach)
 "HE" = (
 /obj/effect/spawner/lootdrop/roguetown/dungeon/materials,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "HH" = (
 /obj/item/restraints/legcuffs/beartrap/armed,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "HI" = (
@@ -4393,8 +4393,8 @@
 /area/rogue/indoors/shelter)
 "Id" = (
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Ie" = (
@@ -4433,8 +4433,8 @@
 /obj/effect/decal/cobbleedge{
 	dir = 9
 	},
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Ip" = (
@@ -4689,8 +4689,8 @@
 "JX" = (
 /obj/structure/flora/newtree,
 /obj/structure/flora/newtree,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "Ka" = (
@@ -4764,14 +4764,14 @@
 /area/rogue/indoors/cave)
 "Kv" = (
 /obj/effect/decal/remains/mole,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Kw" = (
 /obj/item/restraints/legcuffs/beartrap/armed,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach)
 "Kx" = (
@@ -4815,8 +4815,8 @@
 /area/rogue/indoors/cave)
 "KO" = (
 /obj/structure/flora/roguetree/stump/burnt,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "KP" = (
@@ -4877,8 +4877,8 @@
 "Lm" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/reagent_containers/food/snacks/grown/wheat,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "Lo" = (
@@ -4915,8 +4915,8 @@
 /area/rogue/indoors/shelter)
 "LO" = (
 /obj/structure/flora/roguegrass/bush/wall,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "LP" = (
@@ -4962,8 +4962,8 @@
 "Mc" = (
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/misc,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Md" = (
@@ -5185,8 +5185,8 @@
 	dir = 4
 	},
 /obj/structure/fluff/railing/fence,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "NR" = (
@@ -5405,14 +5405,14 @@
 /area/rogue/outdoors/beach)
 "Pt" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Pw" = (
 /obj/structure/plasticflaps,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Pz" = (
@@ -5468,14 +5468,14 @@
 /area/rogue/outdoors/beach/forest)
 "PZ" = (
 /obj/item/natural/stone,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "Qb" = (
 /mob/living/carbon/human/species/skeleton/npc/ambush,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Qe" = (
@@ -5487,8 +5487,8 @@
 /area/rogue/outdoors/beach/forest)
 "Qj" = (
 /obj/structure/flora/roguegrass/thorn_bush,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "Qk" = (
@@ -5677,8 +5677,8 @@
 	icon_state = "fence";
 	dir = 1
 	},
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "Rr" = (
@@ -5744,8 +5744,8 @@
 /area/rogue/indoors/cave)
 "Se" = (
 /obj/structure/fluff/railing/wood,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "Sg" = (
@@ -5886,8 +5886,8 @@
 /area/rogue/indoors/shelter)
 "Tn" = (
 /mob/living/carbon/human/species/skeleton/npc/ambush,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "Tr" = (
@@ -5898,8 +5898,8 @@
 /area/rogue/indoors/cave)
 "Ts" = (
 /obj/item/roguegem/yellow,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Tt" = (
@@ -5907,8 +5907,8 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/cave)
 "Tv" = (
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach)
 "Ty" = (
@@ -5925,8 +5925,8 @@
 /area/rogue/outdoors/beach/forest)
 "TF" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/mole,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "TI" = (
@@ -6060,8 +6060,8 @@
 "UT" = (
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/armor,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "UU" = (
@@ -6152,8 +6152,8 @@
 /area/rogue/indoors/cave)
 "VE" = (
 /obj/structure/fluff/statue/scare,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "VG" = (
@@ -6354,8 +6354,8 @@
 	icon_state = "fence";
 	dir = 8
 	},
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
 "Xp" = (
@@ -6388,8 +6388,8 @@
 /area/rogue/indoors/cave)
 "Xw" = (
 /obj/structure/toilet,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Xx" = (
@@ -6434,8 +6434,8 @@
 /area/rogue/indoors/shelter)
 "Yc" = (
 /obj/machinery/light/rogue/wallfire/candle/blue,
-/turf/open/floor/rogue/dirt{
-	color = "80ffff"
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
 	},
 /area/rogue/indoors/cave)
 "Yd" = (
