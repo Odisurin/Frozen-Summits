@@ -34,6 +34,9 @@
 	misscost = 0
 
 /obj/item/reagent_containers/glass/attack(mob/M, mob/user, obj/target)
+	if(!reagents || !reagents.total_volume)
+		to_chat(user, span_warning("[src] is empty!"))
+		return
 	testing("a1")
 	if(istype(M))
 		if(user.used_intent.type == INTENT_GENERIC)

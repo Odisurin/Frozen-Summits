@@ -75,14 +75,97 @@
 //positive
 /datum/quirk/duelist
 	name = "Swordmaster"
-	desc = "I was the student of a legendary sword master, my skill is rivalled by few! I've also hidden a rapier."
+	desc = "I was the student of a sword master, my skill are okayish! I've also hidden a rapier."
 	value = 4
 
 /datum/quirk/duelist/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.change_stat("speed", 2)
-	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.special_items["Rapier"] = /obj/item/rogueweapon/sword/rapier
+
+/datum/quirk/training1
+	name = "Sword Training"
+	desc = "I have journeyman sword skills."
+	value = 1
+
+/datum/quirk/training1/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
+
+/datum/quirk/training2
+	name = "Mace Training"
+	desc = "I have journeyman mace skills."
+	value = 1
+
+/datum/quirk/training2/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE)
+
+/datum/quirk/training3
+	name = "Whips and Flails Training"
+	desc = "I have journeyman flail and whip skills."
+	value = 1
+
+/datum/quirk/training3/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 3, TRUE)
+
+/datum/quirk/training4
+	name = "Polearms Training"
+	desc = "I have journeyman polearm skills."
+	value = 1
+
+/datum/quirk/training4/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
+
+/datum/quirk/training5
+	name = "Knife Training"
+	desc = "I have journeyman knife skills."
+	value = 1
+
+/datum/quirk/training5/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+
+/datum/quirk/training6
+	name = "Axe Training"
+	desc = "I have journeyman axe skills, including woodchopping."
+	value = 1
+
+/datum/quirk/training6/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/lumberjacking, 3, TRUE)
+
+
+/datum/quirk/training8
+	name = "Shield Training"
+	desc = "I have journeyman shield skills."
+	value = 1
+
+/datum/quirk/training8/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 3, TRUE)
+
+/datum/quirk/training9
+	name = "Unarmed Training"
+	desc = "I have journeyman unarmed skills."
+	value = 1
+
+/datum/quirk/training9/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
+
+/datum/quirk/mtraining1
+	name = "Medical Training"
+	desc = "I have journeyman medical skills."
+	value = 1
+
+/datum/quirk/mtraining1/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
 
 /datum/quirk/eagle_eyed
 	name = "Eagle Eyed"
@@ -420,6 +503,14 @@
 	H.change_stat("endurance", 1) //since sleeping naked will probably get you sick or some shit.
 	H.change_stat("constitution", 1)
 	ADD_TRAIT(H, TRAIT_NUDE_SLEEPER, TRAIT_GENERIC)
+
+/datum/quirk/nymphomaniac
+	name = "Nymphomaniac"
+	desc = "My experiences with certain things make me good in bed."
+	value = -5
+/datum/quirk/nymphomaniac/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 
 // disgustingly hooking into quirks to provide a convenient way to become a vampire
 /datum/quirk/vampire

@@ -139,3 +139,13 @@
 	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
 	t3 = /obj/effect/proc_holder/spell/self/howl/call_of_the_moon
 
+/datum/patron/neutral/semuanya  
+	name = "Semuanya"  
+	domain = "Survival, Instinct, and Lizardfolk"  
+	desc = "Semuanya is the distant and enigmatic god of survival and preservation worshipped by the lizardfolk. He teaches his followers to focus on survival above all else, avoiding unnecessary conflicts and emotional entanglements. To lizardfolk, Semuanya represents the pure instinct to endure and thrive in a hostile world."  
+	worshippers = "Lizardfolk, Survivalists, and Pragmatists"  
+	confess_lines = list(
+		"SEMUANYA PRESERVES US!",  
+		"SURVIVAL IS ALL THAT MATTERS!",  
+		"ENDURE AND THRIVE IN HIS NAME!"  
+	)

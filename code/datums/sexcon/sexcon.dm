@@ -113,7 +113,7 @@
 	var/obj/item/organ/vagina/vagina = user.getorganslot(ORGAN_SLOT_VAGINA)
 	var milk_amount
 
-	if(isseelie(user))
+	if(user)
 		switch(breasts.breast_size)
 			if(0)
 				milk_amount = 5
@@ -153,7 +153,7 @@
 	var/obj/item/organ/breasts/breasts = user.getorganslot(ORGAN_SLOT_BREASTS)
 	var/milk_amount
 	log_combat(user, user, "Was milked into a container")
-	user.visible_message(span_lovebold("[user] lactates into [C]!"))
+	user.visible_message(span_love("[user] lactates into [C]!"))
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	milk_amount = calculate_milk()
 	C.reagents.add_reagent(/datum/reagent/consumable/breastmilk, milk_amount)

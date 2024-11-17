@@ -118,6 +118,17 @@
 	"SHAR HOLDS THE TRUTH OF THE VOID!"
 )
 
+/datum/patron/inhumen/gruumsh  
+	name = "Gruumsh"  
+	domain = "God of War, Conquest, and Orcs"  
+	desc = "Gruumsh, the One-Eye, is the warlike patron of orcs and the embodiment of brutal conquest and victory at all costs. His eternal hatred for the elven pantheon drives his followers to ceaseless conflict, with no room for mercy or compromise. To worship Gruumsh is to embrace strength through savagery and to live for the glory of battle."  
+	worshippers = "Orcs, Barbarians, Raiders, and Conquerors"  
+	confess_lines = list(  
+		"GRUUMSH WILL CRUSH ALL FOES!",  
+		"FOR GRUUMSH, I WILL CONQUER!",  
+		"IN GRUUMSH'S NAME, I CLAIM VICTORY!"  
+	)
+
 /* RATWOOD EDIT - Back to the main pantheon
 /datum/patron/inhumen/eora
 	name = "Eora"
