@@ -34,9 +34,6 @@
 	misscost = 0
 
 /obj/item/reagent_containers/glass/attack(mob/M, mob/user, obj/target)
-	if(!reagents || !reagents.total_volume)
-		to_chat(user, span_warning("[src] is empty!"))
-		return
 	testing("a1")
 	if(istype(M))
 		if(user.used_intent.type == INTENT_GENERIC)
@@ -148,6 +145,10 @@
 			addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, min(amount_per_transfer_from_this,5), TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 			playsound(M.loc,pick(drinksounds), 100, TRUE)
 			return
+
+	if(!reagents || !reagents.total_volume)
+		to_chat(user, span_warning("[src] is empty!"))
+		return
 /obj/item/reagent_containers/glass/attack_obj(obj/target, mob/living/user)
 	if(user.used_intent.type == INTENT_GENERIC)
 		return ..()
