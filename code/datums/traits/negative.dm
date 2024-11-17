@@ -49,6 +49,7 @@
 	lose_text = span_notice("I can taste again!")
 	medical_record_text = "Patient suffers from ageusia and is incapable of tasting food or reagents."
 
+/*
 /datum/quirk/vegetarian
 	name = "Vegetarian"
 	desc = "Its on the tin can, you eat leafs."
@@ -71,7 +72,7 @@
 			species.liked_food |= MEAT
 		if(!initial(species.disliked_food) & MEAT)
 			species.disliked_food &= ~MEAT
-
+*/
 /datum/quirk/snob
 	name = "Snob"
 	desc = "You feel like a noble. Looking bothered at dirty places."

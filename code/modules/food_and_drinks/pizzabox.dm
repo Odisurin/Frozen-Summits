@@ -299,6 +299,8 @@
 	pizza = new /obj/item/reagent_containers/food/snacks/pizza/pineapple(src)
 	boxtag = "Honolulu Chew"
 
+
+/*
 //An anomalous pizza box that, when opened, produces the opener's favorite kind of pizza.
 /obj/item/pizzabox/infinite
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF //hard to destroy
@@ -338,3 +340,4 @@
 	var/obj/item/pizza_type = pizza_preferences[noms.ckey]
 	pizza = new pizza_type (src)
 	pizza.foodtype = noms.dna.species.liked_food //it's our favorite!
+*/

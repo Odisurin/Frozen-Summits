@@ -49,7 +49,7 @@
 					if(breasts && breasts.lactating)
 						if(breasts.milk_stored > 0)
 							if(reagents.total_volume < volume)
-								var/milk_to_take = min(breasts.milk_stored, max(breasts.breast_size, 1), volume - reagents.total_volume)
+								var/milk_to_take = min(breasts.milk_stored, max(breasts.breast_size, 5), volume - reagents.total_volume)
 								if(do_after(user, 20, target = M))
 									reagents.add_reagent(/datum/reagent/consumable/milk, milk_to_take)
 									breasts.milk_stored -= milk_to_take
@@ -87,6 +87,7 @@
 		addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, min(amount_per_transfer_from_this,5), TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 		playsound(M.loc,pick(drinksounds), 100, TRUE)
 		return
+
 		if(user.used_intent.type == /datum/intent/fill)
 			if(ishuman(M))
 				var/mob/living/carbon/human/humanized = M
