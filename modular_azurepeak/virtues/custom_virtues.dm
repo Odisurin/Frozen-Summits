@@ -11,7 +11,7 @@
 	recipient.update_transform()
 
 
-||-------------
+//-------------
 
 /datum/virtue/size/feral_sorcerer
 	name = "Beastial Sorcerer"
@@ -26,7 +26,7 @@
 		if (!recipient.mind?.has_spell(/obj/effect/proc_holder/spell/targeted/touch/prestidigitation))
 			recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 
-||-------------------
+//-------------------
 
 /datum/virtue/size/lycan_male
 	name = "Lycanthropic Lineage (Male)"
@@ -50,7 +50,7 @@
 	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/shapeshift/werewolf_f)
 	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/self/rename_self)
 
-||-------------------------
+//-------------------------
 
 
 /datum/virtue/size/lycan_male_sorcerer
