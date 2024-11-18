@@ -60,8 +60,10 @@
 				else
 					to_chat(user, span_warning("[M]'s chest must be exposed before I can milk them!"))
 				return 1
+
 		if(!spillable)
 			return
+
 		if(M != user)
 			M.visible_message(span_danger("[user] attempts to feed [M] something."), \
 						span_danger("[user] attempts to feed you something."))
@@ -84,6 +86,10 @@
 		addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, min(amount_per_transfer_from_this,5), TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 		playsound(M.loc,pick(drinksounds), 100, TRUE)
 		return
+
+		if(!reagents || !reagents.total_volume)
+			to_chat(user, span_warning("[src] is empty!"))
+			return
 
 		if(user.used_intent.type == /datum/intent/fill)
 			if(ishuman(M))
@@ -109,9 +115,7 @@
 		if(!spillable)
 			return
 
-		if(!reagents || !reagents.total_volume)
-			to_chat(user, span_warning("[src] is empty!"))
-			return
+
 		if(user.used_intent.type == INTENT_SPLASH)
 			var/R
 			M.visible_message(span_danger("[user] splashes the contents of [src] onto [M]!"), \
@@ -149,6 +153,7 @@
 	if(!reagents || !reagents.total_volume)
 		to_chat(user, span_warning("[src] is empty!"))
 		return
+
 /obj/item/reagent_containers/glass/attack_obj(obj/target, mob/living/user)
 	if(user.used_intent.type == INTENT_GENERIC)
 		return ..()

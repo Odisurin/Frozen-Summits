@@ -1,4 +1,4 @@
-/mob/living/carbon/human/species/werewolf
+/mob/living/carbon/human/species/werewolf 
 	race = /datum/species/werewolf
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	var/datum/language_holder/stored_language
@@ -7,12 +7,14 @@
 
 /mob/living/carbon/human/species/werewolf/male
 	gender = MALE
+	race = /datum/species/werewolf/werewolf_male
 
 /mob/living/carbon/human/species/werewolf/female
 	gender = FEMALE
+	race = /datum/species/werewolf/werewolf_female
 
 /datum/species/werewolf
-	name = "verewolf"
+	name = "werewolf"
 	id = "werewolf"
 	species_traits = list(NO_UNDERWEAR, NO_ORGAN_FEATURES, NO_BODYPART_FEATURES)
 	inherent_traits = list(
@@ -68,7 +70,7 @@
 
 /datum/species/werewolf/regenerate_icons(mob/living/carbon/human/H)
 	H.icon = 'icons/roguetown/mob/monster/werewolf.dmi'
-	H.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB)
+	H.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 	if(H.gender == MALE)
 		H.icon_state = "wwolf_m"
 	else
@@ -113,4 +115,51 @@
 	return TRUE
 
 /datum/species/werewolf/random_name(gender,unique,lastname)
-	return "VEREWOLF"
+	var/randname
+	if(unique)
+		if(gender == MALE)
+			for(var/i in 1 to 1)
+				randname = "Werewolf"
+				if(!findname(randname))
+					break
+		if(gender == FEMALE)
+			for(var/i in 1 to 1)
+				randname = "Werewolf"
+				if(!findname(randname))
+					break
+	else
+		if(gender == MALE)
+			randname = "Werewolf"
+		if(gender == FEMALE)
+			randname = "Werewolf"
+	return randname
+
+/datum/species/werewolf/werewolf_male
+	organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/werewolf,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+		ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
+		ORGAN_SLOT_PENIS = /obj/item/organ/penis/knotted/big,
+		)
+
+/datum/species/werewolf/werewolf_female
+	organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/werewolf,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+		ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
+		ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
+		)

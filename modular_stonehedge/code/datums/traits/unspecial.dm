@@ -532,6 +532,7 @@
 /datum/antagonist/vampirelord/lesser/secret/move_to_spawnpoint()
 	return
 
+/*
 /datum/quirk/werewolf
 	name = "Cursed Lineage (Werewolf)"
 	desc = "Cursed with lycanthropy but driven by a heart that resists darkness, you walk the line between beast and person, harnessing the primal power and keen senses of the wolf to protect rather than destroy, perhaps guided by Selûne's blessing or Mielikki's wisdom, striving to master your dual nature while society's fear and misunderstanding shadow your every step. (You are a werewolf but NOT an ANTAGONIST. DO NOT BITE PEOPLE WITHOUT A VERY GOOD REASON.)"
@@ -543,3 +544,4 @@
 
 /datum/antagonist/werewolf/secret/roundend_report()
 	return
+*/
