@@ -1,9 +1,15 @@
 /mob/living/carbon/human/species/werewolf 
+	name = "Werewolf"
 	race = /datum/species/werewolf
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	var/datum/language_holder/stored_language
 	var/list/stored_skills
 	var/list/stored_experience
+	STASTR = 17
+	STACON = 17
+	STAEND = 17
+	faction = list("wolves")
+
 
 /mob/living/carbon/human/species/werewolf/male
 	gender = MALE
@@ -21,7 +27,6 @@
 		TRAIT_STRONGBITE,
 		TRAIT_ZJUMP,
 		TRAIT_NOFALLDAMAGE1,
-		TRAIT_NOROGSTAM,
 		TRAIT_BASHDOORS,
 		TRAIT_SHOCKIMMUNE,
 		TRAIT_STEELHEARTED,

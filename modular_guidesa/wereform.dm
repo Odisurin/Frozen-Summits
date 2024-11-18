@@ -1,4 +1,4 @@
-/obj/effect/proc_holder/spell/targeted/shapeshift/werewolf_m
+/obj/effect/proc_holder/spell/targeted/shapeshift/werewolf_m // THIS IS FUCKING AWFUL
 	name = "Werewolf Form"
 	desc = "Call upon the curse of lycanthropy, transforming into a werewolf to unleash primal fury. In this form, you embody the predatory instincts and resilience of the lycanthrope, gaining enhanced physical prowess and feral abilities. While in this state, your actions teeter on the edge of control, driven by the beast within."
 	invocation = "RAAAAAAAAAAAAAAAAAAAAAAAAWR!!"
@@ -7,7 +7,6 @@
 	convert_damage = TRUE
 	convert_damage_type = BRUTE
 	shapeshift_type = /mob/living/carbon/human/species/werewolf/male
-
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/werewolf_f
 	name = "Werewolf Form"
@@ -18,6 +17,9 @@
 	convert_damage = TRUE
 	convert_damage_type = BRUTE
 	shapeshift_type = /mob/living/carbon/human/species/werewolf/female
+
+
+
 
 /obj/effect/proc_holder/spell/self/rename_self
 	name = "Rename Self"

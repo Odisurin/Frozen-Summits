@@ -10,6 +10,8 @@
 	invocation = "RAC'WA NO!"
 	invocation_type = "shout"
 	action_icon_state = "shapeshift"
+	smoke_spread = 1
+	smoke_amt = 2
 
 	var/revert_on_death = TRUE
 	var/die_with_shapeshifted_form = TRUE
