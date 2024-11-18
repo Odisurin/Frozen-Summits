@@ -79,17 +79,6 @@
 		"IN YONDALLA'S NAME, I FOSTER PEACE!"
 	)
 
-/datum/patron/neutral/gruumsh
-	name = "Gruumsh"
-	domain = "War, Conquest, and Orcs"
-	desc = "Gruumsh, the One-Eye, is the orcish god of war and conquest. He embodies the ferocity of battle, urging his followers to dominate their enemies and take what they want by force."
-	worshippers = "Orcs, Barbarians, Conquerors, and Warmongers"
-	confess_lines = list(
-		"GRUUMSH, GRANT ME VICTORY!",
-		"FOR GRUUMSH, I FIGHT WITHOUT MERCY!",
-		"IN GRUUMSH'S NAME, I TAKE WHAT IS MINE!"
-	)
-
 /datum/patron/neutral/elistraee
 	name = "Eilistraee"
 	domain = "Freedom, Beauty, and the good-hearted Drows"
