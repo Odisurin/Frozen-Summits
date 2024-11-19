@@ -83,16 +83,17 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	if(prob(50))
 		wrists = /obj/item/clothing/wrists/roguetown/bracers
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor 
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
 	if(prob(50))
 		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic
-	pants = /obj/item/clothing/under/roguetown/tights
+	pants = /obj/item/clothing/under/roguetown/tights/sailor 
 	if(prob(50))
 		pants = /obj/item/clothing/under/roguetown/chainlegs/iron
-	head = /obj/item/clothing/head/roguetown/helmet/leather
 	if(prob(50))
-		head = /obj/item/clothing/head/roguetown/helmet/horned
+		head = /obj/item/clothing/head/bandana
+	if(prob(30))
+		head = /obj/item/clothing/head/pirate
 	if(prob(50))
 		neck = /obj/item/clothing/neck/roguetown/gorget
 	if(prob(50))
@@ -103,13 +104,12 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	H.STAPER = 10
 	H.STAINT = 1
 	if(prob(50))
-		r_hand = /obj/item/rogueweapon/sword
+		r_hand = /obj/item/rogueweapon/sword/rapier 
 	else
 		r_hand = /obj/item/rogueweapon/stoneaxe/battle
-	l_hand = /obj/item/rogueweapon/shield/wood
+	l_hand = /obj/item/rogueweapon/huntingknife/idagger/steel/parrying 
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	if(prob(30))
-		neck = /obj/item/clothing/neck/roguetown/chaincoif
 		H.eye_color = pick("27becc", "35cc27", "000000")
 	H.hair_color = pick ("4f4f4f", "61310f", "faf6b9")
 	H.facial_hair_color = H.hair_color
