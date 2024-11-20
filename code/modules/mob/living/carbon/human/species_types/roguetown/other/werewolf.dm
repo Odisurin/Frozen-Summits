@@ -5,9 +5,12 @@
 	var/datum/language_holder/stored_language
 	var/list/stored_skills
 	var/list/stored_experience
-	STASTR = 17
-	STACON = 17
-	STAEND = 17
+	STASTR = 20
+	STACON = 15
+	STAEND = 13
+	STAPER = 14
+	STASPD = 13
+	STAINT = 7
 	faction = list("wolves")
 
 

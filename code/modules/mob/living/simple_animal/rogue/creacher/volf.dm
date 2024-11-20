@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf
 	icon = 'icons/roguetown/mob/monster/vol.dmi'
-	name = "volf"
+	name = "wolf"
 	icon_state = "vv"
 	icon_living = "vv"
 	icon_dead = "vvd"
@@ -17,8 +17,8 @@
 						/obj/item/natural/fur = 1, /obj/item/natural/bone = 4, /obj/item/natural/volf_head = 1)
 	faction = list("wolfs")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 120
-	maxHealth = 120
+	health = 240
+	maxHealth = 240
 	melee_damage_lower = 19
 	melee_damage_upper = 29
 	vision_range = 7

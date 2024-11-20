@@ -1,6 +1,9 @@
 /datum/patron/neutral
 	name = null
 	associated_faith = /datum/faith/neutral
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
+
+
 
 /datum/patron/neutral/tempus
 	name = "Tempus"

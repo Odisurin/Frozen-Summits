@@ -140,7 +140,7 @@
 
 #define ALL_ACOLYTE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/pestra, /datum/patron/divine/eora, /datum/patron/divine/necra)
 
-#define ALL_DIVINE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/divine/lathander, /datum/patron/neutral/tempus, /datum/patron/neutral/helm, /datum/patron/neutral/ilmater, /datum/patron/neutral/oghma, /datum/patron/neutral/corellon, /datum/patron/neutral/garl, /datum/patron/neutral/yondalla, /datum/patron/neutral/gruumsh, /datum/patron/neutral/elistraee, /datum/patron/neutral/talos, /datum/patron/neutral/tymora, /datum/patron/neutral/mielikki, )
+#define ALL_DIVINE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/divine/lathander, /datum/patron/neutral/tempus, /datum/patron/neutral/helm, /datum/patron/neutral/ilmater, /datum/patron/neutral/oghma, /datum/patron/neutral/corellon, /datum/patron/neutral/garl, /datum/patron/neutral/yondalla, /datum/patron/neutral/elistraee, /datum/patron/neutral/talos, /datum/patron/neutral/tymora, /datum/patron/neutral/mielikki, )
 
 #define ALL_INHUMEN_PATRONS list(/datum/patron/inhumen/zizo, /datum/patron/inhumen/graggar, /datum/patron/inhumen/matthios, /datum/patron/inhumen/baotha)
 

@@ -83,3 +83,54 @@
 		recipient.mind?.adjust_spellpoints(2)
 		if (!recipient.mind?.has_spell(/obj/effect/proc_holder/spell/targeted/touch/prestidigitation))
 			recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+
+
+
+//-----------
+/datum/virtue/size/lycan_female_sorcerer_druid_dragon_f
+	name = "Lycanthropic and Draconic Lineage / Druid / (Female)"
+	desc = "Blessed by both Mielikki, the goddess of forests and harmony, and Selûne, the goddess of the moon and transformation, I walk a sacred path between the primal and the divine. Mielikki’s touch grants me a deep connection to the natural world, a protector’s heart, and an unwavering sense of balance, while Selûne’s gift unlocks my lycanthropic nature, teaching me to embrace the duality of my soul under her silvery light. My draconic lineage whispers of arcane power and unyielding strength, a fire in my veins tempered by the wisdom of the stars. I am both predator and protector, a creature of both wild instinct and mystical insight, serving as a bridge between the savage wilds and the luminous heavens."
+	added_stats = list(STAT_STRENGTH = 2, STAT_CONSTITUTION = 1, STAT_SPEED = -2, STAT_INTELLIGENCE = 1)
+	added_stashed_items = list(
+		"Quill" = /obj/item/natural/feather,
+		"Scroll" = /obj/item/paper/scroll,
+		"Book" = /obj/item/book/rogue/playerbook
+	)
+
+/datum/virtue/size/lycan_female_sorcerer_druid_dragon_f/apply_to_human(mob/living/carbon/human/recipient)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/self/claws)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/self/howl/call_of_the_moon)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/shapeshift/werewolf_f)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/shapeshift/dragon_form)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/shapeshift/wolf_form)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/self/rename_self)
+
+	if (!recipient.mind?.get_skill_level(/datum/skill/magic/arcane)) 
+		recipient.mind?.adjust_spellpoints(2)
+		if (!recipient.mind?.has_spell(/obj/effect/proc_holder/spell/targeted/touch/prestidigitation))
+			recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+
+
+
+/datum/virtue/size/lycan_female_sorcerer_druid_dragon_m
+	name = "Lycanthropic and Draconic Lineage / Druid / (Male)"
+	desc = "Blessed by both Mielikki, the goddess of forests and harmony, and Selûne, the goddess of the moon and transformation, I walk a sacred path between the primal and the divine. Mielikki’s touch grants me a deep connection to the natural world, a protector’s heart, and an unwavering sense of balance, while Selûne’s gift unlocks my lycanthropic nature, teaching me to embrace the duality of my soul under her silvery light. My draconic lineage whispers of arcane power and unyielding strength, a fire in my veins tempered by the wisdom of the stars. I am both predator and protector, a creature of both wild instinct and mystical insight, serving as a bridge between the savage wilds and the luminous heavens."
+	added_stats = list(STAT_STRENGTH = 2, STAT_CONSTITUTION = 1, STAT_SPEED = -2, STAT_INTELLIGENCE = 1)
+	added_stashed_items = list(
+		"Quill" = /obj/item/natural/feather,
+		"Scroll" = /obj/item/paper/scroll,
+		"Book" = /obj/item/book/rogue/playerbook
+	)
+
+/datum/virtue/size/lycan_female_sorcerer_druid_dragon_m/apply_to_human(mob/living/carbon/human/recipient)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/self/claws)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/self/howl/call_of_the_moon)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/shapeshift/werewolf_m)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/shapeshift/dragon_form)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/shapeshift/wolf_form)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/self/rename_self)
+
+	if (!recipient.mind?.get_skill_level(/datum/skill/magic/arcane)) 
+		recipient.mind?.adjust_spellpoints(2)
+		if (!recipient.mind?.has_spell(/obj/effect/proc_holder/spell/targeted/touch/prestidigitation))
+			recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)

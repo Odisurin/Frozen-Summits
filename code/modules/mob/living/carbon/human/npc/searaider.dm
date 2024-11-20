@@ -93,7 +93,7 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	if(prob(50))
 		head = /obj/item/clothing/head/bandana
 	if(prob(30))
-		head = /obj/item/clothing/head/pirate
+		head = /obj/item/clothing/head/roguetown/helmet/tricorn/skull
 	if(prob(50))
 		neck = /obj/item/clothing/neck/roguetown/gorget
 	if(prob(50))

@@ -7,6 +7,7 @@
 /datum/virtue/utility/noble/apply_to_human(mob/living/carbon/human/recipient)
 	SStreasury.noble_incomes[recipient] += 15
 
+/* 
 /datum/virtue/utility/beautiful
 	name = "Beautiful"
 	desc = "Wherever I go, I turn heads, such is my natural beauty."
@@ -22,7 +23,7 @@
 	desc = "Years of skulking about have left my steps quiet."
 	added_traits = list(TRAIT_LIGHT_STEP)
 	added_skills = list(list(/datum/skill/misc/sneaking, 2, 5))
-
+*/
 /datum/virtue/utility/linguist
 	name = "Linguist"
 	desc = "I've spent a while studying a foreign language, and can speak and understand it fluently."
@@ -44,6 +45,7 @@
 		recipient.grant_language(new_language)
 		to_chat(recipient, span_info("I recall my knowledge of [new_language.name]..."))
 
+/*
 /datum/virtue/utility/deathless
 	name = "Deathless"
 	desc = "Some fell magick has rendered me inwardly unliving - I do not hunger, and I do not breathe."
@@ -51,7 +53,7 @@
 
 /*/datum/virtue/utility/deathless/apply_to_human(mob/living/carbon/human/recipient)
 	recipient.mob_biotypes |= MOB_UNDEAD*/
-
+*/
 /datum/virtue/utility/crafter
 	name = "Crafter's Apprentice"
 	desc = "In my youth, I worked for the Artisan's Guild in a variety of disciplines."
@@ -65,7 +67,7 @@
 						list(/datum/skill/craft/engineering, 2, 5),
 						list(/datum/skill/misc/sewing, 2, 5),
 	)
-
+/*
 /datum/virtue/utility/feral_appetite
 	name = "Feral Appetite"
 	desc = "Raw, toxic or spoiled food doesn't bother my superior digestive system."
@@ -82,7 +84,7 @@
 	eyes.see_in_dark = 12
 	eyes.lighting_alpha = min(eyes.lighting_alpha, LIGHTING_PLANE_ALPHA_NOCVISION)
 	recipient.update_sight()
-
+*/
 /datum/virtue/utility/learned
 	name = "Learned"
 	desc = "I am surprisingly well-read for someone of my station, and have no issue with literacy or numbers."

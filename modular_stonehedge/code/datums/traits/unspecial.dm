@@ -231,6 +231,7 @@
 /datum/quirk/spring_in_my_step/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_ZJUMP, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOFALLDAMAGE1, TRAIT_GENERIC)
 
 /datum/quirk/impervious
 	name = "Impervious"

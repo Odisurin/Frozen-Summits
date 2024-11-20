@@ -74,6 +74,9 @@
 			M.visible_message(span_danger("[user] feeds [M] something."), \
 						span_danger("[user] feeds you something."))
 			log_combat(user, M, "fed", reagents.log_list())
+		if(!reagents || !reagents.total_volume)
+			to_chat(user, span_warning("[src] is empty!"))
+			return
 		else
 			// check to see if we're a noble drinking soup
 			if (ishuman(user) && istype(src, /obj/item/reagent_containers/glass/bowl))
@@ -87,9 +90,6 @@
 		playsound(M.loc,pick(drinksounds), 100, TRUE)
 		return
 
-		if(!reagents || !reagents.total_volume)
-			to_chat(user, span_warning("[src] is empty!"))
-			return
 
 		if(user.used_intent.type == /datum/intent/fill)
 			if(ishuman(M))
