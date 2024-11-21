@@ -38,6 +38,13 @@
 			return TRUE
 		else
 			return FALSE
+/obj/item/ammo_holder/bullet
+	name = "bullet pouch"
+	icon_state = "pouch0"
+	item_state = "pouch"
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_NECK
+	max_storage = 10
+	ammo_type = list(/obj/item/ammo_casing) //common denominator type for runelock and arquebus bullets
 
 /obj/item/quiver/attackby(obj/A, loc, params)
 	if(A.type in subtypesof(/obj/item/ammo_casing/caseless/rogue))
@@ -101,6 +108,14 @@
 	. = ..()
 	for(var/i in 1 to max_storage)
 		var/obj/item/ammo_casing/caseless/grapeshot/B = new()
+		var/obj/item/ammo_casing/caseless/runelock/R = new()
+		ammo += R
+	update_icon()
+
+/obj/item/ammo_holder/bullet/lead/Initialize()
+	. = ..()
+	for(var/i in 1 to max_storage)
+		var/obj/item/ammo_casing/caseless/lead/B = new()
 		ammo += B
 	update_icon()
 

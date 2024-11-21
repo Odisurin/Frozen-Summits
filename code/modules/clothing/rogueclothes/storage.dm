@@ -166,6 +166,15 @@
 	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
 	new /obj/item/ammo_casing/caseless/rogue/bullet(src)
 
+/obj/item/storage/belt/rogue/pouch/ammo
+	name = "sphere pouch"
+	desc = "Usually used for holding runelock sphreres."
+
+/obj/item/storage/belt/rogue/pouch/ammo/PopulateContents()
+	new /obj/item/ammo_casing/caseless/runelock(src)
+	new /obj/item/ammo_casing/caseless/runelock(src)
+	new /obj/item/ammo_casing/caseless/runelock(src)
+
 /obj/item/storage/backpack/rogue/satchel
 	name = "satchel"
 	desc = ""
