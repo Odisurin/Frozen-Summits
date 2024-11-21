@@ -16,6 +16,8 @@
 	projectile_type = /obj/projectile/bullet/reusable/bolt/poison
 	icon_state = "arrow_poison"
 */
+	w_class = WEIGHT_CLASS_SMALL
+
 /obj/projectile/bullet/reusable/bolt
 	name = "bolt"
 	damage = 70
@@ -52,13 +54,6 @@
 	name = "poisoned bolt"
 	damage = 50
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/bolt/poison
-
-
-/obj/projectile/bullet/reusable/bolt/poison/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
-		M.reagents.add_reagent(/datum/reagent/toxin/mutetoxin, 7) //not gonna kill anyone, but they will be quite quiet
 */
 /obj/item/ammo_casing/caseless/rogue/arrow
 	name = "arrow"
