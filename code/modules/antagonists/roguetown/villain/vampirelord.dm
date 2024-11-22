@@ -37,8 +37,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/ashes = FALSE
 
 /datum/antagonist/vampirelord/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
-	if(istype(examined_datum, /datum/antagonist/vampirelord/lesser))
-		return span_boldnotice("A vampire spawn.")
 	if(istype(examined_datum, /datum/antagonist/vampirelord))
 		return span_boldnotice("A Vampire Lord!.")
 	if(istype(examined_datum, /datum/antagonist/zombie))
