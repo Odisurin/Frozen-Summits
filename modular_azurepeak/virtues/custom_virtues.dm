@@ -134,3 +134,7 @@
 		recipient.mind?.adjust_spellpoints(2)
 		if (!recipient.mind?.has_spell(/obj/effect/proc_holder/spell/targeted/touch/prestidigitation))
 			recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+
+
+//----------------------
+

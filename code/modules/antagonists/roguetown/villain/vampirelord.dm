@@ -75,7 +75,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	eyes.Insert(owner.current)
 	owner.current.AddSpell(new /obj/effect/proc_holder/spell/targeted/transfix)
 	owner.current.verbs |= /mob/living/carbon/human/proc/vamp_regenerate
-	owner.current.verbs |= /mob/living/carbon/human/proc/vampire_telepathy
 	vamp_look()
 
 
@@ -315,7 +314,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	V.update_body()
 	V.update_hair()
 	V.update_body_parts(redraw = TRUE)
-	V.mob_biotypes = MOB_UNDEAD
 	if(isspawn)
 		V.vampire_disguise(src)
 
@@ -473,6 +471,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			lord << span_boldnotice("They refuse!")
 			src << span_boldnotice("I refuse!")
 
+/*
 /mob/living/carbon/human/proc/vampire_telepathy()
 	set name = "Telepathy"
 	set category = "VAMPIRE"
@@ -487,7 +486,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		to_chat(D, span_boldnotice("A message from [src.real_name]:[msg]"))
 	for(var/mob/dead/observer/rogue/arcaneeye/A in GLOB.mob_list)
 		to_chat(A, span_boldnotice("A message from [src.real_name]:[msg]"))
-
+*/
 /mob/living/carbon/human/proc/punish_spawn()
 	set name = "Punish Minion"
 	set category = "VAMPIRE"
@@ -800,7 +799,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/antagonist/skeleton/knight/on_gain()
 	. = ..()
-	owner.current.verbs |= /mob/living/carbon/human/proc/vampire_telepathy
 	owner.unknow_all_people()
 	for(var/datum/mind/MF in get_minds())
 		owner.become_unknown_to(MF)

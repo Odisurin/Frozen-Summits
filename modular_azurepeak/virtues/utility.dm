@@ -45,15 +45,17 @@
 		recipient.grant_language(new_language)
 		to_chat(recipient, span_info("I recall my knowledge of [new_language.name]..."))
 
-/*
-/datum/virtue/utility/deathless
-	name = "Deathless"
-	desc = "Some fell magick has rendered me inwardly unliving - I do not hunger, and I do not breathe."
-	added_traits = list(TRAIT_NOHUNGER, TRAIT_NOBREATH)
 
-/*/datum/virtue/utility/deathless/apply_to_human(mob/living/carbon/human/recipient)
-	recipient.mob_biotypes |= MOB_UNDEAD*/
-*/
+/datum/virtue/utility/deathless
+	name = "Vampiric Prowess"
+	desc = "Some fell dark magick has rendered me inwardly unliving - I do not hunger, and I do not breathe, i do not tire, i do not feel pain, almost perfected. All holy magic harms me. But i am more powerful. Very much more powerful than other vampires."
+	added_traits = list(TRAIT_NOHUNGER, TRAIT_NOBREATH, TRAIT_NOROGSTAM, TRAIT_LEAPER, TRAIT_NOFALLDAMAGE1, TRAIT_EASYDISMEMBER)
+	added_stats = list(STAT_STRENGTH = 1, STAT_CONSTITUTION = 1, STAT_SPEED = 1, STAT_INTELLIGENCE = 2)
+
+/datum/virtue/utility/deathless/apply_to_human(mob/living/carbon/human/recipient)
+	recipient.mob_biotypes |= MOB_UNDEAD
+
+
 /datum/virtue/utility/crafter
 	name = "Crafter's Apprentice"
 	desc = "In my youth, I worked for the Artisan's Guild in a variety of disciplines."
