@@ -36,6 +36,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/gaseousform/gas
 	var/ashes = FALSE
 
+/*
 /datum/antagonist/vampirelord/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
 	if(istype(examined_datum, /datum/antagonist/vampirelord))
 		return span_boldnotice("A Vampire Lord!.")
@@ -43,6 +44,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		return span_boldnotice("Another deadite.")
 	if(istype(examined_datum, /datum/antagonist/skeleton))
 		return span_boldnotice("Another deadite.")
+*/
+
 
 /datum/antagonist/vampirelord/apply_innate_effects(mob/living/mob_override)
 	var/mob/living/M = mob_override || owner.current
