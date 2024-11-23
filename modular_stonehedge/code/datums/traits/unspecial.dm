@@ -14,6 +14,7 @@
 	eyes.see_in_dark = 7
 	eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	eyes.Insert(H)
+	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
 
 /datum/quirk/thickskin
 	name = "Tough"

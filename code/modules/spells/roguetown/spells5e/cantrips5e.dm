@@ -1126,6 +1126,7 @@
 //	MENDING
 //==============================================
 
+/*
 /obj/effect/proc_holder/spell/invoked/mending5e
 	name = "Mending"
 	overlay_state = "null"
@@ -1166,7 +1167,7 @@
 	else
 		to_chat(user, span_warning("There is no item here!"))
 		revert_cast()
-
+*/
 //==============================================
 //	MESSAGE
 //==============================================

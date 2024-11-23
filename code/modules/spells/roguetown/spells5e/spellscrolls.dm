@@ -136,12 +136,6 @@
 	spellname = "magic stone"
 	icon_state ="scrollred"
 
-/obj/item/book/granter/spell/spells5e/mending5e
-	name = "Scroll of Mending"
-	spell = /obj/effect/proc_holder/spell/invoked/mending5e
-	spellname = "mending"
-	icon_state ="scrollred"
-
 /obj/item/book/granter/spell/spells5e/mindsliver5e
 	name = "Scroll of Mind Sliver"
 	spell = /obj/effect/proc_holder/spell/invoked/mindsliver5e
