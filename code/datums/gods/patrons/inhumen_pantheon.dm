@@ -104,7 +104,9 @@
 	"IN CHAOS, THERE IS POWER!",
 	"THE SPIDER QUEEN DEMANDS FEAR!",
 	"BETRAYAL IS MY BLESSING!")
-	t1 = /obj/effect/proc_holder/spell/targeted/spiderconjur
+	t1 = /obj/effect/proc_holder/spell/invoked/projectile/sickness
+	t2 = /obj/effect/proc_holder/spell/targeted/spiderconjur
+	t3 = /obj/effect/proc_holder/spell/invoked/blindness
 
 /datum/patron/inhumen/shar
 	name = "Shar"
@@ -117,6 +119,9 @@
 	"DESPAIR IS MY SALVATION!",
 	"SHAR HOLDS THE TRUTH OF THE VOID!"
 )
+	t1 = /obj/effect/proc_holder/spell/invoked/invisibility
+	t2 = /obj/effect/proc_holder/spell/invoked/blindness
+	t3 = /obj/effect/proc_holder/spell/invoked/avert
 
 /datum/patron/inhumen/gruumsh  
 	name = "Gruumsh"  
