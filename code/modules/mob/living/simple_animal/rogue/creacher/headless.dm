@@ -1,4 +1,5 @@
-//The vile Vore Monster
+/*
+// //The vile Vore Monster
 /mob/living/simple_animal/hostile/retaliate/rogue/headless
 	icon = 'icons/roguetown/mob/monster/lamia.dmi'
 	name = "headless"
@@ -167,3 +168,4 @@
 		swallowed_mob = null
 		body_eater = TRUE
 	swallow_cooldown = world.time + swallow_cooldown_delay
+*/

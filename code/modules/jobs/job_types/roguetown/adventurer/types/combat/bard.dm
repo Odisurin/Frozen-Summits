@@ -64,7 +64,6 @@
 			H.change_stat("speed", 2)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_SEEPRICES_SHITTY, TRAIT_GENERIC)
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/mockery)
 		if("Skald") // Less skilled, better martial prowess. Also a sword!
 			to_chat(H, span_warning("Skalds are wandering storytellers, and for many villages they are local historians keeping the tales of great legends and heroes alive."))
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
