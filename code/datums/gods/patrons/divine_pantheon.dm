@@ -150,15 +150,15 @@
 	)
 
 /datum/patron/divine/xylix
-	name = "Olidammara"
+	name = "Tymora"
 	domain = "Trickery, Freedom and Inspiration"
-	desc = "The Laughing Rogue, Olidammara is a god of wit, music, and freedom. His followers seek to revel in life's pleasures, from games of chance to the pursuit of inspiration. Known for his trickery and penchant for unpredictability, he is a god of those who dance to their own beat."
+	desc = "Tymora is the goddess of good luck in the Faerûnian pantheon. Her followers seek to revel in life's pleasures, from games of chance to the pursuit of inspiration. Known for her trickery and penchant for unpredictability, she is a god of those who dance to their own beat."
 	worshippers = "Gamblers, Bards, Artists, and the Silver-Tongued"
 	mob_traits = list(TRAIT_XYLIX)
 	confess_lines = list(
-		"OLIDAMMARA IS MY LIGHT!",
-		"FREEDOM IS NIGHT!",
-		"THE DICE PROVIDES!",
+		"FORTUNE FAVORS THE BOLD!",
+		"TYMORA IS MY GODDESS!",
+		"LADY LUCK IS WITH ME!",
 	)
 
 /datum/patron/divine/pestra
