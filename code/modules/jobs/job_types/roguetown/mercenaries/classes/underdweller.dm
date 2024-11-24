@@ -7,6 +7,7 @@
 		/datum/species/dwarf/mountain,
 		/datum/species/elf/dark,
 		/datum/species/kobold,
+		/datum/species/goblin
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/underdweller
 	category_tags = list(CTAG_MERCENARY)

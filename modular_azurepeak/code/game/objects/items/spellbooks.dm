@@ -19,7 +19,7 @@
 	name = "\improper tome of the arcyne"
 	desc = "A crackling, glowing book, filled with runes and symbols that hurt the mind to stare at."
 	pages_to_mastery = 7
-	remarks = list("Recall that place of white and black, so cold after its season of heat...", "Time slips away as I devour each pictograph and sigil...", "Noc is a shrewd God, and his followers’ writings are no different...", "The smell of wet rain fills the room with every turned page...", "Helical text spans the page like a winding puzzle...", "Tracing a finger over one rune renders  my hand paralyzed, if only for a moment...", "This writer was clearly influenced by the Z, their writings somewhat heretical...", "The Sun-And-Moon theory implicates Astrata and Noc as the primary drivers of magick...", "The Sea-And-Moon theory connects Abyssor and Noc as the chief patrons of arcyne...", "This page clearly details the benefits of swampweed on one's capacity to conceptualize the arcyne...", "Conceptualize. Theorize. Feel. Flow. Manifest...", "Passion. Strength. Power. Victory. The tenets through which we break the chains of reality...", "Didn’t I just read this page...?", "A lone illustration of Noc’s visage fills this page, his stony gaze boring into my soul...", "My eyes begin to lid as I finish this chapter. These symbols cast a heavy fog over my mind...", "This chapter focuses on the scholars of Naledi, and their abstruse traditions on daemon-hunting...", "The book states Grenzelhoftian jesters are reknowned for dabbling in the arcyne to please their lords. Is there something I could learn from fools...?", "Silver. Blade. Mana. Blood. These are the ingredients I’ll need to imbibe the very ground with arcyne abilities...", "Elysium incants speak to me in an extinct tongue immortalized on parchment...", "My mind wanders and waves. Z's temptations draw close, but I weather through as I finally finish this chapter...", "I close my eye's for but a moment, and the competing visages of Noc and Z stare into my very soul. I see them blink, and my eyelids open...", "I am the Root. The Root is me. I must reach it, and the Tree...", "I feel the arcyne circuits running through my body, empowered with each word I read...", "Am I reading? Are these words, symbols or inane scribbles? I cannot be sure, yet with each one my eyes glaze over, I can feel the arcyne pulse within me...", "A mystery is revealed before my very eyes. I do not read it, yet I am aware. Gems are the Root's natural arcyne energy, manifest. Perhaps I can use them to better my conceptualization...")
+	remarks = list("Recall that place of white and black, so cold after its season of heat...", "Time slips away as I devour each pictograph and sigil...", "Correllon is a shrewd God, and his followers’ writings are no different...", "The smell of wet rain fills the room with every turned page...", "Helical text spans the page like a winding puzzle...", "Tracing a finger over one rune renders  my hand paralyzed, if only for a moment...", "This writer was clearly influenced by Shar, their writings somewhat heretical...", "These theories suggest Mystra as the primary drivers of magick...", "The Sea-And-Moon theory connects Umberlee and Selune as mistresses of the tides...", "This page clearly details the benefits of swampweed on one's capacity to conceptualize the arcyne...", "Conceptualize. Theorize. Feel. Flow. Manifest...", "Passion. Strength. Power. Victory. The tenets through which we break the chains of reality...", "Didn’t I just read this page...?", "A lone illustration of Mystra’s visage fills this page, her gaze boring into my soul...", "My eyes begin to lid as I finish this chapter. These symbols cast a heavy fog over my mind...", "This chapter focuses on the wizards of thay, and their abstruse traditions on daemon-binding...", "The book states Waterdeep's jesters are reknowned for dabbling in the arcyne to please their lords. Is there something I could learn from fools...?", "Silver. Blade. Mana. Blood. These are the ingredients I’ll need to imbibe the very ground with magical abilities...", "Ancient incants speak to me in an extinct tongue immortalized on parchment...", "My mind wanders and waves. Z's temptations draw close, but I weather through as I finally finish this chapter...", "I close my eye's for but a moment, and the competing visages of Selune and Shar stare into my very soul. I see them blink, and my eyelids open...", "I am the Root. The Root is me. I must reach it, and the Tree...", "I feel the weave circuits running through my body, empowered with each word I read...", "Am I reading? Are these words, symbols or inane scribbles? I cannot be sure, yet with each one my eyes glaze over, I can feel the arcyne pulse within me...", "A mystery is revealed before my very eyes. I do not read it, yet I am aware. Gems are the Root's natural arcane energy, manifest. Perhaps I can use them to better my conceptualization...")
 	oneuse = FALSE
 	var/owner
 	var/list/allowed_readers = list()
@@ -130,18 +130,18 @@
 	icon_state = "[base_icon_state]_[open]"
 
 /obj/item/book/granter/spellbook/on_reading_start(mob/user)
-	to_chat(user, span_notice("Arcyne mysteries abound in this enigmatic tome, gift of Noc..."))
+	to_chat(user, span_notice("Arcyne mysteries abound in this enigmatic tome, gift of Mystra..."))
 
 /obj/item/book/granter/spellbook/on_reading_finished(mob/user)
 	var/mob/living/carbon/human/gamer = user
 	if(gamer != owner && !allowed_readers.Find(gamer))
-		to_chat(user, span_notice("What was that gibberish? Even for the arcyne it was completely illegible!"))
+		to_chat(user, span_notice("What was that gibberish? Even for the arcane it was completely illegible!"))
 		return
 	user.mind?.has_studied = TRUE
 	var/mob/living/reader = user
 	var/chance2learn = (reader.STAINT*2 + (user.mind?.get_skill_level(/datum/skill/misc/reading)*2) + (user.mind?.get_skill_level(/datum/skill/magic/arcane)*2))
 	if(reader.has_status_effect(/datum/status_effect/buff/weed))
-		to_chat(user, span_smallgreen("Swampweed truly does open one's third eye to the secrets of the arcyne..."))
+		to_chat(user, span_smallgreen("Swampweed truly does open one's third eye to the secrets of the weave..."))
 		chance2learn += 3.5
 	var/obj/effect/roguerune/rune = (locate(/obj/effect/roguerune) in range(1, user))
 	if(rune)
@@ -149,7 +149,7 @@
 		chance2learn += rune.spellbonus
 		rune.do_invoke_glow()
 	if(stored_gem)
-		to_chat(user, span_smallnotice("I can feel the magical energies imbued within the crystaline dust scattered upon my tome resonate with the arcyne..."))
+		to_chat(user, span_smallnotice("I can feel the magical energies imbued within the crystaline dust scattered upon my tome resonate with the weave..."))
 		chance2learn += stored_gem
 		stored_gem = FALSE
 	if(!isarcyne(user))
@@ -231,7 +231,7 @@
 /obj/item/spellbook_unfinished/pre_arcyne
 	name = "tome in waiting"
 	icon_state = "spellbook_unfinished"
-	desc = "A fully bound tome of scroll paper. It's lacking a certain arcyne energy."
+	desc = "A fully bound tome of scroll paper. It's lacking a certain arcane energy."
 
 /obj/item/natural/hide/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -316,8 +316,8 @@
 					if (isarcyne(user))
 						playsound(loc, 'modular_azurepeak/sound/spellbooks/crystal.ogg', 100, TRUE)
 						user.visible_message(span_warning("[user] crushes [user.p_their()] [P]! Its powder seeps into the [src]."), \
-							span_notice("I join my arcyne energy with that of the magical stone in my hands, which shudders briefly before dissolving into motes of ash. Runes and symbols of an unknowable language cover its pages now..."))
-						to_chat(user, span_notice("...yet even for an enigma of the arcyne, these characters are unlike anything I've seen before. They're going to be -much- harder to understand..."))
+							span_notice("I join my arcane energy with that of the magical stone in my hands, which shudders briefly before dissolving into motes of ash. Runes and symbols of an unknowable language cover its pages now..."))
+						to_chat(user, span_notice("...yet even for an enigma of the Weave, these characters are unlike anything I've seen before. They're going to be -much- harder to understand..."))
 						var/obj/item/book/granter/spellbook/newbook = new /obj/item/book/granter/spellbook(loc)
 						newbook.owner = user
 						newbook.born_of_rock = TRUE
@@ -328,7 +328,7 @@
 						if (prob(the_rock.magic_power)) // for reference, this is never higher than 15 and usually significantly lower
 							playsound(loc, 'modular_azurepeak/sound/spellbooks/crystal.ogg', 100, TRUE)
 							user.visible_message(span_warning("[user] carefully sets down [the_rock] upon [src]. Nothing happens for a moment or three, then suddenly, the glow surrounding the stone becomes as liquid, seeps down and soaks into the tome!"), \
-							span_notice("I knew this stone was special! Its colourful magick has soaked into my tome and given me gift of mystery!"))
+							span_notice("I knew this stone was special! Its colourful magic has soaked into my tome and given me gift of mystery!"))
 							to_chat(user, span_notice("...what in the world does any of this scribbling possibly mean?"))
 							var/obj/item/book/granter/spellbook/newbook = new /obj/item/book/granter/spellbook(loc)
 							newbook.owner = user
@@ -382,13 +382,13 @@
 				var/crafttime = (60 - ((user.mind?.get_skill_level(/datum/skill/magic/arcane))*5))
 				if(do_after(user, crafttime, target = src))
 					playsound(loc, 'modular_azurepeak/sound/spellbooks/glass.ogg', 100, TRUE)
-					to_chat(user, span_notice("Running my arcyne energy through this crystal, I imbue the tome with my natural essence, attuning it to my state of mind..."))
+					to_chat(user, span_notice("Running my arcane energy through this crystal, I imbue the tome with my natural essence, attuning it to my state of mind..."))
 					stored_gem = gem.arcyne_potency
 					qdel(P)
 			else
 				to_chat(user, span_notice("Why am I jamming a gem into a book? I must look like a fool!"))
 		else
-			to_chat(user, span_notice("This tome is already coursing with arcyne energies..."))
+			to_chat(user, span_notice("This tome is already coursing with arcane energies..."))
 	else
 		return ..()
 
@@ -444,7 +444,7 @@
 	var/crafttime = (100 - ((user.mind?.get_skill_level(/datum/skill/magic/arcane))*5))
 	if(do_after(user, crafttime, target = src))
 		playsound(loc, 'modular_azurepeak/sound/spellbooks/bladescrape.ogg', 100, TRUE)
-		user.visible_message(span_warning("[user] carves an arcyne rune with [user.p_their()] [src]!"), \
+		user.visible_message(span_warning("[user] carves an arcane rune with [user.p_their()] [src]!"), \
 							span_notice("I drag the blade in symbols and circles, the manna powder falling into the crevices as I trace arcyne patterns. A rune now carved before me in iridiscent purple."))
 		new rune_to_scribe(Turf)
 		var/obj/silver_knife = new /obj/item/rogueweapon/huntingknife/idagger/silver/
