@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat/gethsmane
-	name = "fretensis"
+	name = "Dire Rat"
 	health = 100
 	maxHealth = 100
 	STASTR = 8

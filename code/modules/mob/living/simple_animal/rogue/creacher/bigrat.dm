@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat
 	icon = 'icons/roguetown/mob/monster/bigrat.dmi'
-	name = "dire rat"
+	name = "giant rat"
 	icon_state = "rat"
 	icon_living = "rat"
 	icon_dead = "rat1"
