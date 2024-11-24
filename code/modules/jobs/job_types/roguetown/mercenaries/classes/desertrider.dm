@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/desert_rider
-	name = "Desert Rider Mercenary"
-	tutorial = "Blood, like the desert sand, stains your hands, a crimson testament to the gold you covet. A desert rider, renowned mercenary of the far east, your shamshir whispers tales of centuries-old tradition. Your loyalty, a fleeting mirage in the shifting sands, will yield to the allure of fortune."
+	name = "Zhentarim Mercenary"
+	tutorial = "The Zhentarim , also known as the Black Network is a mercenary company and greater mercantile organization in Faerun, who over 200 years of existence, had a storied history as a cadre of self-serving thieves, spies, assassins, and malevolent wizards.	"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/mercenary/desert_rider
@@ -13,13 +13,13 @@
 
 	// CLASS ARCHETYPES
 	H.adjust_blindness(-3)
-	var/classes = list("Janissary","Blade Dancer")
+	var/classes = list("Bruiser","Blade Dancer")
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 
 	switch(classchoice)
-		if("Janissary")
+		if("Bruiser")
 			H.set_blindness(0)
-			to_chat(H, span_warning("The Janissaries are the Empire's elite infantry units, wielding mace and shield. We do not break."))
+			to_chat(H, span_warning("Hired elite infantry units, wielding mace and shield. We do not break."))
 			H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
@@ -49,7 +49,7 @@
 
 		if("Blade Dancer")
 			H.set_blindness(0)
-			to_chat(H, span_warning("Zybantian 'Blade Dancers' are famed and feared the world over. Their expertise in blades both long and short is well known..."))
+			to_chat(H, span_warning("Zhentarim 'Blade Dancers' are famed and feared the world over. Their expertise in blades both long and short is well known..."))
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE) //they have literally nothing else going for them and swords suck ass, do not use this as an excuse to powercreep
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
