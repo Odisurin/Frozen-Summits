@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/condottiero
 	name = "Flaming Fist Mercenary"
-	tutorial = "Hailing from the City of Baldurs Gate, The Flaming Fists are soldiers of fortune oft found in the employ of powerful merchants. Without a war to fight back home, the Frontier has become a much-needed source of contracts. Afterall, this land is rich in coin yet poor in manpower..."
+	tutorial = "Hailing from the City of Baldurs Gate, The Flaming Fists are soldiers of fortune often found in the employ of powerful merchants. Without a war to fight back home, the Frontier has become a much-needed source of contracts. Afterall, this land is rich in coin yet poor in manpower..."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/mercenary/condottiero
