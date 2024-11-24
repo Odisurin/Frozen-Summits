@@ -141,7 +141,7 @@
 	var/mob/living/reader = user
 	var/chance2learn = (reader.STAINT*2 + (user.mind?.get_skill_level(/datum/skill/misc/reading)*2) + (user.mind?.get_skill_level(/datum/skill/magic/arcane)*2))
 	if(reader.has_status_effect(/datum/status_effect/buff/weed))
-		to_chat(user, span_smallgreen("Swampweed truly does open one's third eye to the secrets of the arcyne..."))
+		to_chat(user, span_smallgreen("Swampweed truly does open one's third eye to the secrets of the weave..."))
 		chance2learn += 3.5
 	var/obj/effect/roguerune/rune = (locate(/obj/effect/roguerune) in range(1, user))
 	if(rune)
@@ -231,7 +231,7 @@
 /obj/item/spellbook_unfinished/pre_arcyne
 	name = "tome in waiting"
 	icon_state = "spellbook_unfinished"
-	desc = "A fully bound tome of scroll paper. It's lacking a certain arcyne energy."
+	desc = "A fully bound tome of scroll paper. It's lacking a certain arcane energy."
 
 /obj/item/natural/hide/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -316,8 +316,8 @@
 					if (isarcyne(user))
 						playsound(loc, 'modular_azurepeak/sound/spellbooks/crystal.ogg', 100, TRUE)
 						user.visible_message(span_warning("[user] crushes [user.p_their()] [P]! Its powder seeps into the [src]."), \
-							span_notice("I join my arcyne energy with that of the magical stone in my hands, which shudders briefly before dissolving into motes of ash. Runes and symbols of an unknowable language cover its pages now..."))
-						to_chat(user, span_notice("...yet even for an enigma of the arcyne, these characters are unlike anything I've seen before. They're going to be -much- harder to understand..."))
+							span_notice("I join my arcane energy with that of the magical stone in my hands, which shudders briefly before dissolving into motes of ash. Runes and symbols of an unknowable language cover its pages now..."))
+						to_chat(user, span_notice("...yet even for an enigma of the Weave, these characters are unlike anything I've seen before. They're going to be -much- harder to understand..."))
 						var/obj/item/book/granter/spellbook/newbook = new /obj/item/book/granter/spellbook(loc)
 						newbook.owner = user
 						newbook.born_of_rock = TRUE
@@ -328,7 +328,7 @@
 						if (prob(the_rock.magic_power)) // for reference, this is never higher than 15 and usually significantly lower
 							playsound(loc, 'modular_azurepeak/sound/spellbooks/crystal.ogg', 100, TRUE)
 							user.visible_message(span_warning("[user] carefully sets down [the_rock] upon [src]. Nothing happens for a moment or three, then suddenly, the glow surrounding the stone becomes as liquid, seeps down and soaks into the tome!"), \
-							span_notice("I knew this stone was special! Its colourful magick has soaked into my tome and given me gift of mystery!"))
+							span_notice("I knew this stone was special! Its colourful magic has soaked into my tome and given me gift of mystery!"))
 							to_chat(user, span_notice("...what in the world does any of this scribbling possibly mean?"))
 							var/obj/item/book/granter/spellbook/newbook = new /obj/item/book/granter/spellbook(loc)
 							newbook.owner = user
@@ -382,13 +382,13 @@
 				var/crafttime = (60 - ((user.mind?.get_skill_level(/datum/skill/magic/arcane))*5))
 				if(do_after(user, crafttime, target = src))
 					playsound(loc, 'modular_azurepeak/sound/spellbooks/glass.ogg', 100, TRUE)
-					to_chat(user, span_notice("Running my arcyne energy through this crystal, I imbue the tome with my natural essence, attuning it to my state of mind..."))
+					to_chat(user, span_notice("Running my arcane energy through this crystal, I imbue the tome with my natural essence, attuning it to my state of mind..."))
 					stored_gem = gem.arcyne_potency
 					qdel(P)
 			else
 				to_chat(user, span_notice("Why am I jamming a gem into a book? I must look like a fool!"))
 		else
-			to_chat(user, span_notice("This tome is already coursing with arcyne energies..."))
+			to_chat(user, span_notice("This tome is already coursing with arcane energies..."))
 	else
 		return ..()
 
@@ -444,7 +444,7 @@
 	var/crafttime = (100 - ((user.mind?.get_skill_level(/datum/skill/magic/arcane))*5))
 	if(do_after(user, crafttime, target = src))
 		playsound(loc, 'modular_azurepeak/sound/spellbooks/bladescrape.ogg', 100, TRUE)
-		user.visible_message(span_warning("[user] carves an arcyne rune with [user.p_their()] [src]!"), \
+		user.visible_message(span_warning("[user] carves an arcane rune with [user.p_their()] [src]!"), \
 							span_notice("I drag the blade in symbols and circles, the manna powder falling into the crevices as I trace arcyne patterns. A rune now carved before me in iridiscent purple."))
 		new rune_to_scribe(Turf)
 		var/obj/silver_knife = new /obj/item/rogueweapon/huntingknife/idagger/silver/
