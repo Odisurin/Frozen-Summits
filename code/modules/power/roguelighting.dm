@@ -757,7 +757,7 @@
 						pot.reagents.remove_reagent(/datum/reagent/water, 1)
 				return
 
-			if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks/rogue/meat))
+			if(W.type in subtypesof(/obj/item/reagent_containers/food/snacks/rogue))
 				if(!pot.reagents.has_reagent(/datum/reagent/water, 33))
 					to_chat(user, "<span class='notice'>Not enough water.</span>")
 					return TRUE
@@ -791,6 +791,12 @@
 						sleep(900)
 						playsound(src, "bubbles", 30, TRUE)
 						pot.reagents.add_reagent(/datum/reagent/consumable/soup/stew/meat, 32)
+						pot.reagents.remove_reagent(/datum/reagent/water, 1)
+					if(istype(W, /obj/item/reagent_containers/food/snacks/rogue/truffles))
+						qdel(W)
+						sleep(900)
+						playsound(src, "bubbles", 30, TRUE)
+						pot.reagents.add_reagent(/datum/reagent/consumable/soup/veggie, 32)
 						pot.reagents.remove_reagent(/datum/reagent/water, 1)
 				return
 

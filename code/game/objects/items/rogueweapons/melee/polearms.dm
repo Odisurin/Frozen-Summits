@@ -488,6 +488,6 @@
 	clickcd = 10
 
 /obj/item/rogueweapon/woodstaff/naledi
-	name = "naledian warstaff"
-	desc = "A staff carrying the crescent moon of Ao's knowledge, as well as the black and gold insignia of the war scholars."
+	name = "warstaff"
+	desc = "A staff carrying the crescent moon of Selune, as well as the black and gold insignia of the war scholars."
 	icon_state = "naledistaff"

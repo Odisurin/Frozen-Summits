@@ -22,7 +22,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	backpack_contents = list(/obj/item/kitchen/spoon, /obj/item/reagent_containers/food/snacks/rogue/truffles)
+	backpack_contents = list(/obj/item/kitchen/spoon, /obj/item/reagent_containers/food/snacks/rogue/truffles, /obj/item/rogueweapon/huntingknife/cleaver)
 	if(H.pronouns == SHE_HER || H.pronouns == THEY_THEM_F)
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 	else

@@ -133,8 +133,25 @@
 		"FOR GRUUMSH, I WILL CONQUER!",  
 		"IN GRUUMSH'S NAME, I CLAIM VICTORY!"  
 	)
+	t1 = /obj/effect/proc_holder/spell/invoked/longstrider
+	t2 = /obj/effect/proc_holder/spell/invoked/heal
+	t3 = /obj/effect/proc_holder/spell/invoked/push_spell
 
-/* RATWOOD EDIT - Back to the main pantheon
+/datum/patron/inhumen/maglubiyet
+	name = "Maglubiyet"
+	domain = "Goblins, Order, War"
+	desc = "Maglubiyet is the chief deity of goblins, hobgoblins, and Dekanter goblins as well as an exarch of Bane. He's a god of war who rules over all goblinoids with an iron fist"
+	worshippers = "Goblins , Hobgoblins , Worgs"
+	confess_lines = list(
+		"MAGLUBIYET	CONQUERS ALL!",
+		"FOR THE HIGH CHIEFTAIN!",
+		"MAGLUBIYET IS THE BATTLE LORD!"
+	)
+	t1 = /obj/effect/proc_holder/spell/targeted/beasttame
+	t2 = /obj/effect/proc_holder/spell/invoked/heal
+	t3 = /obj/effect/proc_holder/spell/invoked/shepherd
+
+/* RATWOOD EDIT - Back to the main pantheon 
 /datum/patron/inhumen/eora
 	name = "Eora"
 	domain = "Goddess of Degeneracy, Debauchery and Addiction"
@@ -146,4 +163,4 @@
 		"EORA IS MY HAPPINESS!",
 	)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-*/
+*/ 
