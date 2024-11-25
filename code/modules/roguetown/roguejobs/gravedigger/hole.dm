@@ -287,6 +287,8 @@
 			if(!(locate(/obj/item/natural/stone) in T))
 				if(prob(23))
 					new /obj/item/natural/stone(T)
+				if(prob(10))
+					new /obj/item/reagent_containers/food/snacks/rogue/truffles(T)
 	return ..()
 
 /obj/structure/closet/dirthole/Destroy()
