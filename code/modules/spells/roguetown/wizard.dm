@@ -5,6 +5,8 @@
 	clothes_req = FALSE
 	overlay_state = "lightning"
 	sound = 'sound/magic/lightning.ogg'
+	invocation = "Qo'Strun!"
+	invocation_type = "shout"
 	range = 8
 	projectile_type = /obj/projectile/magic/lightning
 	releasedrain = 30
@@ -165,6 +167,8 @@
 	projectile_type = /obj/projectile/magic/aoe/fireball/rogue
 	overlay_state = "fireball"
 	sound = list('sound/magic/fireball.ogg')
+	invocation = "GAAR'ARDE!!"
+	invocation_type = "shout"
 	active = FALSE
 	releasedrain = 30
 	chargedrain = 1
@@ -213,6 +217,8 @@
 	projectile_type = /obj/projectile/magic/aoe/fireball/rogue/great
 	overlay_state = "fireball_wide"
 	sound = list('sound/magic/fireball.ogg')
+	invocation = "GAAR'SOL'ARDE!!"
+	invocation_type = "shout"
 	active = FALSE
 	releasedrain = 50
 	chargedrain = 1
@@ -241,6 +247,8 @@
 	projectile_type = /obj/projectile/magic/aoe/fireball/rogue2
 	overlay_state = "fireball_multi"
 	sound = list('sound/magic/whiteflame.ogg')
+	invocation = "Sol'Igniculus!!"
+	invocation_type = "shout"
 	active = FALSE
 	releasedrain = 30
 	chargedrain = 1
@@ -276,6 +284,8 @@
 	projectile_type = /obj/projectile/magic/fetch
 	overlay_state = ""
 	sound = list('sound/magic/magnet.ogg')
+	invocation = "Rapto."
+	invocation_type = "whisper"
 	active = FALSE
 	releasedrain = 5
 	chargedrain = 0
