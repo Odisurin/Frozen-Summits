@@ -10,7 +10,7 @@
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
-	invocation = "The Treefather commands thee, be fruitful!"
+	invocation = "Nature commands thee, be fruitful!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	miracle = TRUE
 	devotion_cost = 20
@@ -68,7 +68,7 @@
 	cast_without_targets = TRUE
 	sound = 'sound/items/dig_shovel.ogg'
 	associated_skill = /datum/skill/magic/holy
-	invocation = "Treefather light the way."
+	invocation = "Spores light the way."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	devotion_cost = 30
 
