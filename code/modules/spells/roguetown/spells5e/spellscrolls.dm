@@ -19,7 +19,6 @@
 	new /obj/item/book/granter/spell/spells5e/acidsplash5e(src)
 	new /obj/item/book/granter/spell/spells5e/bladeward5e(src)
 	new /obj/item/book/granter/spell/spells5e/createbonfire5e(src)
-	new /obj/item/book/granter/spell/spells5e/chilltouch5e(src)
 	new /obj/item/book/granter/spell/spells5e/frostbite5e(src)
 	new /obj/item/book/granter/spell/spells5e/guidance5e(src)
 	new /obj/item/book/granter/spell/spells5e/infestation5e(src)

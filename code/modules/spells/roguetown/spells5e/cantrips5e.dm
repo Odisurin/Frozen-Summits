@@ -164,8 +164,6 @@
 	name = "Booming Blade"
 	desc = "I feel if I move I am in serious trouble."
 	icon_state = "debuff"
-
-	sound = 'sound/magic/whiteflame.ogg'
 //==============================================
 //	CONTROL FLAMES
 //==============================================
