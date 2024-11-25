@@ -318,6 +318,10 @@
 	color = "#9e559c"
 	taste_description = "something rancid"
 
+/datum/reagent/consumable/soup/truffles
+	color = "#c4671c"
+	taste_description = "fine mushrooms"
+
 
 /* * * * * * * * * * * * * * *	*
  *								*
