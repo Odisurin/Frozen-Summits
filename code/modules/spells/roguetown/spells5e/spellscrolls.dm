@@ -64,12 +64,6 @@
 	spellname = "create bonfire"
 	icon_state ="scrollred"
 
-/obj/item/book/granter/spell/spells5e/chilltouch5e
-	name = "Scroll of Chill Touch"
-	spell = /obj/effect/proc_holder/spell/invoked/chilltouch5e
-	spellname = "chill touch"
-	icon_state ="scrollred"
-
 /obj/item/book/granter/spell/spells5e/decompose5e
 	name = "Scroll of Decompose"
 	spell = /obj/effect/proc_holder/spell/invoked/decompose5e

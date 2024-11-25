@@ -222,7 +222,6 @@ a
 		/obj/effect/proc_holder/spell/invoked/fortitude,
 		/obj/effect/proc_holder/spell/self/bladeward5e,
 		/obj/effect/proc_holder/spell/invoked/boomingblade5e,
-		/obj/effect/proc_holder/spell/invoked/chilltouch5e,
 		/obj/effect/proc_holder/spell/aoe_turf/conjure/createbonfire5e,
 		/obj/effect/proc_holder/spell/invoked/decompose5e,
 		/obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e,
