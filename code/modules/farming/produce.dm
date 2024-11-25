@@ -98,8 +98,8 @@
 
 /obj/item/reagent_containers/food/snacks/grown/shroom
 	seed = /obj/item/seeds/shroom
-	name = "elder shroom"
-	desc = "a magic mushroom that makes a healing brew when fermented."
+	name = "crag shroom"
+	desc = "a mushroom that makes a healing brew when fermented."
 	icon_state = "eldershroom"
 	filling_color = "#476e4d"
 	bitesize = 4
