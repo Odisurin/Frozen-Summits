@@ -89,29 +89,23 @@
 	force = 0
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/kitchen/ironspoon
+/obj/item/kitchen/spoon/ironspoon
 	name = "iron spoon"
 	desc = "Traditional utensil for shoveling soup into your mouth, now made with iron for that metallic taste!"
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
 	icon_state = "spoon_iron"
-	force = 0
-	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/kitchen/fork
 	name = "wooden fork"
 	desc = "Traditional utensil for stabbing your food in order to shove it into your mouth."
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
-	icon_state = "fork"
+	icon_state = "fork_wooden"
 	force = 0
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/kitchen/ironfork
+/obj/item/kitchen/fork/ironfork
 	name = "iron fork"
 	desc = "Traditional utensil for stabbing your food, now made with iron for extra stabbiness!"
-	icon = 'modular/Neu_Food/icons/cooking.dmi'
 	icon_state = "fork_iron"
-	force = 0
-	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/kitchen/rollingpin
 	icon = 'modular/Neu_Food/icons/cooking.dmi'
@@ -139,7 +133,7 @@
 	reagent_flags = OPENCONTAINER
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
-	dropshrink = 0.8
+	dropshrink = 1
 	w_class = WEIGHT_CLASS_NORMAL
 	volume = 33
 	obj_flags = CAN_BE_HIT
@@ -615,6 +609,18 @@
 				new /obj/item/reagent_containers/food/snacks/rogue/frybirdtato/plated(loc)
 				qdel(I)
 				qdel(src)
+	if(istype(I, /obj/item/reagent_containers/food/snacks))
+		var/obj/item/reagent_containers/food/snacks/S = I
+		if(isturf(loc)&& (found_table))
+			if (S.plateable == TRUE)
+				playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 40, TRUE, -1)
+				if(do_after(user,2 SECONDS, target = src))
+					var/path = text2path("[S.type]/plated")
+					new path(loc)
+					qdel(I)
+					qdel(src)
+			else
+				to_chat(user, span_warning("[S] cannot be plated."))
 		else
 			to_chat(user, span_warning("You need to put [src] on a table to work on it."))
 	else
