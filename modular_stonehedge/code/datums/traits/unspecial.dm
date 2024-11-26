@@ -283,16 +283,23 @@
 
 /datum/quirk/mastercraftsmen/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/weaponsmithing, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 2, TRUE)
-	H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/weaponsmithing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 3, TRUE) //lets be real you are taking this for smithing only.
+	H.mind.special_items["Hammer"] = /obj/item/rogueweapon/hammer/claw //works same as normal hammer. for smithing
+	H.mind.special_items["Tongs"] = /obj/item/rogueweapon/tongs
+	H.mind.special_items["Coal"] = /obj/item/rogueore/coal // ya get one kid, make an ore furnace and smelt logs for the rest.
+
 
 /datum/quirk/bleublood
 	name = "Noble Lineage"
@@ -547,3 +554,29 @@
 /datum/antagonist/werewolf/secret/roundend_report()
 	return
 */
+
+/datum/quirk/elvishtalker
+	name = "Knows Elvish"
+	desc = "I learned to speak elvish in my time here."
+	value = 1
+
+/datum/quirk/elvishtalker/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/elvish)
+
+/datum/quirk/lupinetalker
+	name = "Knows Lupine"
+	desc = "I learned to speak lupine in my time here."
+	value = 1
+
+/datum/quirk/lupinetalker/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/canilunzt)
+
+
+/datum/quirk/selfaware
+	name = "Self-Aware"
+	desc = "I know the extent of my wounds to a terrifying scale."
+	value = 1
+	mob_trait = TRAIT_SELF_AWARE
+	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
