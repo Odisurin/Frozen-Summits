@@ -1357,3 +1357,22 @@
 	desc = "A frilly maid headband."
 	icon_state = "maid_headband"
 	sewrepair = TRUE
+
+/obj/item/clothing/head/roguetown/lily_crown
+	name = "flower headdress"
+	desc = "A frilly flower headband."
+	icon_state = "lily_crown"
+	sewrepair = TRUE
+
+/obj/item/clothing/head/roguetown/garland
+	name = "garland headdress"
+	desc = "A frilly flower headband."
+	icon_state = "garland"
+	sewrepair = TRUE
+
+/obj/item/clothing/head/roguetown/sunflower
+	name = "sunflower headdress"
+	desc = "A frilly flower headband."
+	icon_state = "sunflower_crown"
+	sewrepair = TRUE
+
