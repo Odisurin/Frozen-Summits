@@ -234,7 +234,8 @@ a
 		/obj/effect/proc_holder/spell/invoked/projectile/rayoffrost5e,
 		/obj/effect/proc_holder/spell/invoked/snap_freeze,
 		/obj/effect/proc_holder/spell/invoked/projectile/frostbolt,
-		/obj/effect/proc_holder/spell/invoked/projectile/arcynebolt
+		/obj/effect/proc_holder/spell/invoked/projectile/arcynebolt,
+		/obj/effect/proc_holder/spell/targeted/touch/summonrogueweapon/bladeofpsydon
 	)
 
 	for(var/i = 1, i <= spell_choices.len, i++)

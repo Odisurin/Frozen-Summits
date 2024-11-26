@@ -3,7 +3,7 @@
 	school = "transmutation"
 
 /obj/effect/proc_holder/spell/targeted/touch/summonrogueweapon/bladeofpsydon
-	name = "Blade of Ao"
+	name = "Blade of Mystra"
 	desc = "The manifestation of the higher concept of a blade itself. Said to be drawn upon from Mystra's tresury of wisdom, each casting a poor facsimile of the perfect weapon They hold."
 	clothes_req = FALSE
 	drawmessage = "I imagine the perfect weapon, forged by arcyne knowledge, it's edge flawless. \
@@ -13,6 +13,7 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	hand_path = /obj/item/melee/touch_attack/rogueweapon/bladeofpsydon
+	cost = 1
 
 /obj/item/melee/touch_attack/rogueweapon/bladeofpsydon
 	name = "\improper arcyne push dagger"
