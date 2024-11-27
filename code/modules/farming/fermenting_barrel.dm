@@ -139,14 +139,14 @@
 	reagents.add_reagent(/datum/reagent/consumable/ethanol/beer/zagul,900)
 
 /obj/structure/fermenting_barrel/blackgoat
-	desc = "A barrel marked with the Black Goat Kriek emblem. A fruit-sour beer brewed with jackberries for a tangy taste."
+	desc = "A barrel of halflings help. A fruit-sour beer brewed with jackberries for a tangy taste."
 
 /obj/structure/fermenting_barrel/blackgoat/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/consumable/ethanol/beer/blackgoat,900)
 
 /obj/structure/fermenting_barrel/hagwoodbitter
-	desc = "A barrel marked with the Hagwood Bitters emblem. The least bitter thing to be exported from the Grenzelhoft occupied state of Zorn."
+	desc = "A barrel labled Moonslake cider. Made by the Moon Mountain Brewery from the savage frontiers."
 
 /obj/structure/fermenting_barrel/hagwoodbitter/Initialize()
 	. = ..()
