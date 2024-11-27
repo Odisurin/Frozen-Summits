@@ -1,7 +1,7 @@
 /*
 /datum/virtue/items/rich
 	name = "Rich"
-	desc = "Through a stroke of luck or shrewd planning, I've come into a considerable amount of mammon."
+	desc = "Through a stroke of luck or shrewd planning, I've come into a considerable amount of coin."
 
 /datum/virtue/items/rich/apply_to_human(mob/living/carbon/human/recipient)
 	var/obj/item/pouch = new /obj/item/storage/belt/rogue/pouch/coins/rich(get_turf(recipient))

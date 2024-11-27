@@ -321,7 +321,8 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	if(current_mammons >= required_mammons)
 		to_chat(user, span_blue("I'm quite happy with the amount of coins I have..."))
 	else
-		to_chat(user, span_boldwarning("I need more coinss, what I have is not enough..."))
+		to_chat(user, span_boldwarning("I need more coins, what I have is not enough..."))
+
 
 	last_checked_mammons = current_mammons
 

@@ -64,7 +64,7 @@
 		if(user.mind.has_antag_datum(/datum/antagonist/skeleton))
 			realbribe = 0
 	if(bribe < realbribe)
-		to_chat(user, span_warning("Not enough mammon to make the navigators betray the schedule."))
+		to_chat(user, span_warning("Not enough coin to make the navigators betray the schedule."))
 		return
 //	SSshuttle.requestEvac(user, href_list["call"])
 	if(SSshuttle.emergency.mode != SHUTTLE_DOCKED)

@@ -44,4 +44,4 @@
 				bounty_total = rand(121, 180)
 	
 		add_bounty(H.real_name, bounty_total, FALSE, my_crime, "the Justiciary of Frozen Summit Peak")
-		to_chat(H, span_notice("I'm on the run from the law, and there's a [lowertext(bounty_amount)] sum of mammons out on my head... better lay low."))
+		to_chat(H, span_notice("I'm on the run from the law, and there's a [lowertext(bounty_amount)] sum of oinss out on my head... better lay low."))
