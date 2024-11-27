@@ -47,7 +47,7 @@
 	..()
 
 /obj/structure/fluff/walldeco/painting/queen
-	desc = "A verz old portrait of the Mage Laeral Silverhand, once Lady of Waterdeep."
+	desc = "A very old portrait of the Mage Laeral Silverhand, once Lady of Waterdeep."
 	icon_state = "queenpainting_deployed"
 	stolen_painting = /obj/item/rogue/painting/queen
 
