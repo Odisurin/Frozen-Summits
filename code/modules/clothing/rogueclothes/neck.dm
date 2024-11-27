@@ -337,5 +337,5 @@
 /obj/item/clothing/neck/roguetown/psicross/naledi
 	name = "naledian psy-bracelet"
 	desc = "A peculiar icon of worship from a foreign land. Forming the three-progned Aoite cross in a circular ring, this bracelet embodies the Naledian belief of Ao's eternity."
-	icon_state = "null"
+	icon_state = "psybracelet"
 	item_state = "psybracelet"

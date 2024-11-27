@@ -531,6 +531,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/antagonist/vampire/new_antag = new /datum/antagonist/vampirelord/lesser/secret()
 	H.mind.add_antag_datum(new_antag)
+	H.mind.special_items["Crimson Medallion"] = /obj/item/clothing/mask/rogue/collar/medallion
 
 /datum/antagonist/vampirelord/lesser/secret
 	ashes = FALSE
@@ -580,3 +581,15 @@
 	value = 1
 	mob_trait = TRAIT_SELF_AWARE
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
+
+/datum/quirk/clothing_stasher
+	name = "Clothing stasher'
+	desc = "You have a few clothing stashed away"
+
+
+/datum/quirk/clohing_stasher()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.special_items["Black Collar"] = /obj/item/clothing/mask/rogue/collar/black
+	H.mind.special_items["Spiked Collar"] = /obj/item/clothing/mask/rogue/collar/spiked
+	H.mind.special_items["Cyan Collar"] = /obj/item/clothing/mask/rogue/collar
+

@@ -237,3 +237,31 @@
 	icon_state = "naledimask"
 	desc = "Runes and wards, meant for daemons; the gold has somehow rusted in unnatural, impossible agony. The most prominent of these etchings is in the shape of the Naledian psycross."
 	sellprice = 0
+
+
+/obj/item/clothing/mask/rogue/collar
+	name = "cyan collar"
+	desc = "A collar meant to a humanoid to wear. Weird."
+	icon_state = "collar_cyan"
+	flags_inv = NONE
+	body_parts_covered = NONE
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP|ITEM_SLOT_NECK
+	adjustable = FALSE
+	toggle_icon_state = FALSE
+	experimental_onhip = TRUE
+	sewrepair = TRUE
+
+/obj/item/clothing/mask/rogue/collar/spiked
+	name = "spiked collar"
+	desc = "A collar meant to a humanoid to wear. Weird."
+	icon_state = "collar_spike"
+
+/obj/item/clothing/mask/rogue/collar/black
+	name = "black collar"
+	desc = "A collar meant to a humanoid to wear. Weird."
+	icon_state = "collar_black"
+
+/obj/item/clothing/mask/rogue/collar/medallion
+	name = "crimson medallion"
+	desc = "A blood-soaked medallion"
+	icon_state = "crimson_medallion"
