@@ -28,7 +28,7 @@
 	var/real_value = get_real_price()
 	if(real_value > 0)
 		if(HAS_TRAIT(user, TRAIT_SEEPRICES) || simpleton_price)
-			. += span_info("Value: [real_value] c")
+			. += span_info("Value: [real_value] coin")
 		else if(HAS_TRAIT(user, TRAIT_SEEPRICES_SHITTY))
 			//you can get up to 50% of the value if you have shitty see prices
 			var/static/fumbling_seed = text2num(GLOB.rogue_round_id)
