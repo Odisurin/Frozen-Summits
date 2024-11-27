@@ -227,6 +227,7 @@
 		/obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e,
 		/obj/effect/proc_holder/spell/targeted/encodethoughts5e,
 		/obj/effect/proc_holder/spell/invoked/projectile/firebolt5e,
+		/obj/effect/proc_holder/spell/invoked/curewounds5e,
 		/obj/effect/proc_holder/spell/invoked/greenflameblade5e,
 		/obj/effect/proc_holder/spell/invoked/infestation5e,
 		/obj/effect/proc_holder/spell/self/light5e,
