@@ -583,11 +583,11 @@
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
 
 /datum/quirk/clothing_stasher
-	name = "Clothing stasher'
+	name = "Clothing stasher"
 	desc = "You have a few clothing stashed away"
 
 
-/datum/quirk/clohing_stasher()
+/datum/quirk/clothing_stasher/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.special_items["Black Collar"] = /obj/item/clothing/mask/rogue/collar/black
 	H.mind.special_items["Spiked Collar"] = /obj/item/clothing/mask/rogue/collar/spiked

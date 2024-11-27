@@ -193,7 +193,7 @@
 	overlay_state = "book1"
 	chargedrain = 0
 	chargetime = 0
-a
+
 /obj/effect/proc_holder/spell/self/learnspell/cast(list/targets, mob/user = usr)
 	. = ..()
 	//list of spells you can learn, it may be good to move this somewhere else eventually

@@ -302,7 +302,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 		return
 	if(world.time >= next_mammon_increase)
 		mammon_increase(user)
-	_check(user)
+	mammon_check(user)
 
 /datum/charflaw/greedy/proc/determine_starting_mammons(mob/living/carbon/human/user)
 	var/starting_mammons = get_mammons_in_atom(user)
