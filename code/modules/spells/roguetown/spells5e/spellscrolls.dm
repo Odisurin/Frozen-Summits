@@ -149,6 +149,6 @@
 
 /obj/item/book/granter/spell/spells5e/curewounds5e
 	name = "Scroll of Cure Wounds"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/curewounds5e
+	spell = /obj/effect/proc_holder/spell/invoked/curewounds5e
 	spellname = "cure wounds"
 	icon_state ="scrollred"
