@@ -1293,9 +1293,11 @@
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
 			C.apply_status_effect(/datum/status_effect/buff/healing)
+			target.adjustBruteLoss(-25)
+			target.adjustFireLoss(-25)
 		else
-			target.adjustBruteLoss(-15)
-			target.adjustFireLoss(-15)
+			target.adjustBruteLoss(-25)
+			target.adjustFireLoss(-25)
 		return TRUE
 	revert_cast()
 	return FALSE
