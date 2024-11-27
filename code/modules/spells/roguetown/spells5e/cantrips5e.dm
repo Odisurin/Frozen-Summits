@@ -1282,7 +1282,7 @@
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
 
-/obj/effect/proc_holder/spell/invoked/lesser_heal/cast(list/targets, mob/living/user)
+/obj/effect/proc_holder/spell/invoked/curewounds5e/cast(list/targets, mob/living/user)
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
