@@ -90,7 +90,7 @@
 	consult_menu += "<center>BOUNTIES<BR>"
 	consult_menu += "--------------<BR>"
 	if(SSrole_class_handler.bandits_in_round)
-		consult_menu += "The head of each Bandit is wanted by The Crown for 80 mammons.<BR>"
+		consult_menu += "The head of each Bandit is wanted by The Crown for 80 coins.<BR>"
 		consult_menu += "--------------<BR>"
 		bounty_found = TRUE
 	for(var/datum/bounty/saved_bounty in GLOB.head_bounties)
@@ -122,12 +122,12 @@
 		say("No target selected.")
 		return
 
-	var/amount = input(user, "How many mammons shall be stained red for their demise?", src) as null|num
+	var/amount = input(user, "How many coins shall be stained red for their demise?", src) as null|num
 	if(isnull(amount))
 		say("Invalid amount.")
 		return
 	if(amount < 20)
-		say("Insufficient amount. Bounty must be at least 20 mammons.")
+		say("Insufficient amount. Bounty must be at least 20 coins.")
 		return
 
 	// Has user a bank account?
@@ -185,11 +185,11 @@
 	switch(rand(1, 3))
 		if(1)
 			new_bounty.banner += "A dire bounty hangs upon the head of [new_bounty.target], for '[new_bounty.reason]'.<BR>"
-			new_bounty.banner += "The patron, [new_bounty.employer], offers [new_bounty.amount] mammons for the task.<BR>"
+			new_bounty.banner += "The patron, [new_bounty.employer], offers [new_bounty.amount] coins for the task.<BR>"
 		if(2)
 			new_bounty.banner += "The head of [new_bounty.target] is wanted for '[new_bounty.reason]''.<BR>"
-			new_bounty.banner += "The employer, [new_bounty.employer], offers [new_bounty.amount] mammons for the deed.<BR>"
+			new_bounty.banner += "The employer, [new_bounty.employer], offers [new_bounty.amount] coins for the deed.<BR>"
 		if(3)
-			new_bounty.banner += "[new_bounty.employer] hath offered to pay [new_bounty.amount] mammons for the head of [new_bounty.target].<BR>"
+			new_bounty.banner += "[new_bounty.employer] hath offered to pay [new_bounty.amount] coins for the head of [new_bounty.target].<BR>"
 			new_bounty.banner += "By reason of the following: '[new_bounty.reason]'.<BR>"
 	new_bounty.banner += "--------------<BR>"

@@ -313,7 +313,7 @@
 
 /datum/quirk/richpouch
 	name = "Rich Pouch"
-	desc = "I have a pouch full of mammons."
+	desc = "I have a pouch full of coins."
 	value = 1
 
 /datum/quirk/richpouch/on_spawn()

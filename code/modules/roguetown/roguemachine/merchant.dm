@@ -296,10 +296,10 @@
 	var/canread = user.can_read(src, TRUE)
 	var/contents
 	contents = "<center>GOLDFACE - In the name of greed.<BR>"
-	contents += "<a href='?src=[REF(src)];change=1'>MAMMON LOADED:</a> [budget]<BR>"
+	contents += "<a href='?src=[REF(src)];change=1'>COIN LOADED:</a> [budget]<BR>"
 
 	var/mob/living/carbon/human/H = user
-	if(H.job in list("Merchant","Shophand","Priest","Druidic Priest"))
+	if(H.job in list("Merchant","Shophand","Priest","Druidic Priest", "Priest", "Innkeeper", "Adventurer", "Mercenary"))
 		if(canread)
 			contents += "<a href='?src=[REF(src)];secrets=1'>Secrets</a>"
 		else
