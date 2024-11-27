@@ -1292,7 +1292,8 @@
 		target.visible_message(span_info("Healing energies infuse [target]!"), span_notice("I'm infused with healing!"))
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
-			C.apply_status_effect(/datum/status_effect/buff/healing)
+			var/healing = 2.5
+			C.apply_status_effect(/datum/status_effect/buff/healing, healing)
 			target.adjustBruteLoss(-25)
 			target.adjustFireLoss(-25)
 		else
