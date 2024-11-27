@@ -302,7 +302,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 		return
 	if(world.time >= next_mammon_increase)
 		mammon_increase(user)
-	mammon_check(user)
+	_check(user)
 
 /datum/charflaw/greedy/proc/determine_starting_mammons(mob/living/carbon/human/user)
 	var/starting_mammons = get_mammons_in_atom(user)
@@ -319,9 +319,10 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	next_mammon_increase = world.time + rand(35 MINUTES, 40 MINUTES)
 	var/current_mammons = get_mammons_in_atom(user)
 	if(current_mammons >= required_mammons)
-		to_chat(user, span_blue("I'm quite happy with the amount of mammons I have..."))
+		to_chat(user, span_blue("I'm quite happy with the amount of coins I have..."))
 	else
 		to_chat(user, span_boldwarning("I need more coins, what I have is not enough..."))
+
 
 	last_checked_mammons = current_mammons
 
@@ -333,7 +334,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	if(new_mammon_amount >= required_mammons)
 		// Feel better
 		if(user.has_stress_event(/datum/stressevent/vice))
-			to_chat(user, span_blue("[new_mammon_amount] mammons... That's more like it.."))
+			to_chat(user, span_blue("[new_mammon_amount] coins... That's more like it.."))
 		user.remove_stress(/datum/stressevent/vice)
 		user.remove_status_effect(/datum/status_effect/debuff/addiction)
 		last_passed_check = world.time
@@ -348,9 +349,9 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 	if(do_update_msg)
 		if(ascending)
-			to_chat(user, span_warning("Only [new_mammon_amount] mammons.. I need more..."))
+			to_chat(user, span_warning("Only [new_mammon_amount] GOLD.. I need more..."))
 		else
-			to_chat(user, span_boldwarning("No! My precious mammons..."))
+			to_chat(user, span_boldwarning("No! My precious money..."))
 
 	last_checked_mammons = new_mammon_amount
 
