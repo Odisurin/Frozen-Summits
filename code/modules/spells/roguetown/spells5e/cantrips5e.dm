@@ -1258,6 +1258,49 @@
 	. = ..()
 
 //==============================================
+//	CURE WOUNDS
+//==============================================
+//Notes: Almost like a shorter range miracle that can't hurt undead
+/obj/effect/proc_holder/spell/invoked/curewounds5e
+	name = "Cure Wounds"
+	overlay_state = "lesserheal"
+	releasedrain = 30
+	chargedrain = 0
+	chargetime = 0
+	range = 2
+	warnie = "sydwarning"
+	movement_interrupt = FALSE
+	sound = 'sound/magic/heal.ogg'
+	associated_skill = /datum/skill/magic/arcane
+	antimagic_allowed = FALSE
+	charge_max = 10 SECONDS
+	cost = 1
+
+	xp_gain = FALSE
+	miracle = FALSE
+
+	invocation = ""
+	invocation_type = "shout" //can be none, whisper, emote and shout
+
+/obj/effect/proc_holder/spell/invoked/lesser_heal/cast(list/targets, mob/living/user)
+	. = ..()
+	if(isliving(targets[1]))
+		var/mob/living/target = targets[1]
+		if(target.mob_biotypes & MOB_UNDEAD) //Doesn't affect undead according to the wiki
+			target.visible_message("<span class='danger'>[target] is unaffected!</span>", "<span class='userdanger'>I'm unaffected!</span>")
+			return TRUE
+		target.visible_message(span_info("Healing energies infuse [target]!"), span_notice("I'm infused with healing!"))
+		if(iscarbon(target))
+			var/mob/living/carbon/C = target
+			C.apply_status_effect(/datum/status_effect/buff/healing)
+		else
+			target.adjustBruteLoss(-15)
+			target.adjustFireLoss(-15)
+		return TRUE
+	revert_cast()
+	return FALSE
+
+//==============================================
 //	RESISTANCE
 //==============================================
 //Notes: 
