@@ -171,10 +171,10 @@
 	var/contents
 	if(canread)
 		contents = "<center>PURITY - In the name of pleasure.<BR>"
-		contents += "<a href='?src=[REF(src)];change=1'>MAMMON LOADED:</a> [budget]<BR>"
+		contents += "<a href='?src=[REF(src)];change=1'>COIN LOADED:</a> [budget]<BR>"
 	else
 		contents = "<center>[stars("PURITY - In the name of pleasure.")]<BR>"
-		contents += "<a href='?src=[REF(src)];change=1'>[stars("MAMMON LOADED:")]</a> [budget]<BR>"
+		contents += "<a href='?src=[REF(src)];change=1'>[stars("COIN LOADED:")]</a> [budget]<BR>"
 
 
 	var/mob/living/carbon/human/H = user

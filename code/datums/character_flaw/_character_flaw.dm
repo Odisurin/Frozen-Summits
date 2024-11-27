@@ -282,7 +282,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 /datum/charflaw/greedy
 	name = "Greedy"
-	desc = "I can't get enough of mammons, I need more and more! I've also become good at knowing how much things are worth"
+	desc = "I can't get enough of coins, I need more and more! I've also become good at knowing how much things are worth"
 	var/last_checked_mammons = 0
 	var/required_mammons = 0
 	var/next_mammon_increase = 0
@@ -312,7 +312,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 /datum/charflaw/greedy/proc/mammon_increase(mob/living/carbon/human/user)
 	if(last_passed_check + (50 MINUTES) < world.time) //If we spend a REALLY long time without being able to satisfy, then pity downgrade
 		required_mammons -= rand(10, 20)
-		to_chat(user, span_blue("Maybe a little less mammons is enough..."))
+		to_chat(user, span_blue("Maybe a little less coins is enough..."))
 	else
 		required_mammons += rand(25, 35) + extra_increment_value
 	required_mammons = min(required_mammons, 250) //Cap at 250 coins maximum
@@ -321,7 +321,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	if(current_mammons >= required_mammons)
 		to_chat(user, span_blue("I'm quite happy with the amount of mammons I have..."))
 	else
-		to_chat(user, span_boldwarning("I need more mammons, what I have is not enough..."))
+		to_chat(user, span_boldwarning("I need more coins, what I have is not enough..."))
 
 	last_checked_mammons = current_mammons
 

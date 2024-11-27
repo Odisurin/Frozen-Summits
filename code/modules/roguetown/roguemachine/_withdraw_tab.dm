@@ -15,7 +15,7 @@
 		contents += "<a href='?src=[REF(parent_structure)];navigate=directory'>(back)</a><BR>"
 
 	contents += "--------------<BR>"
-	contents += "<a href='?src=[REF(parent_structure)];change=1'>Stored Mammon: [budget]</a><BR>"
+	contents += "<a href='?src=[REF(parent_structure)];change=1'>Stored coin: [budget]</a><BR>"
 	contents += "<a href='?src=[REF(parent_structure)];compact=1'>Compact Mode: [compact ? "ENABLED" : "DISABLED"]</a></center><BR>"
 
 	if(compact)
