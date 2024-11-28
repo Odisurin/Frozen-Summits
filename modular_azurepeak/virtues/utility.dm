@@ -53,8 +53,11 @@
 	added_stats = list(STAT_STRENGTH = 1, STAT_CONSTITUTION = 1, STAT_SPEED = 1, STAT_INTELLIGENCE = 2)
 
 /datum/virtue/utility/deathless/apply_to_human(mob/living/carbon/human/recipient)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/bloodlightning)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/bloodsteal)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/self/claws)
+	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/shapeshift/bat)
 	recipient.mob_biotypes |= MOB_UNDEAD
-
 
 /datum/virtue/utility/crafter
 	name = "Crafter's Apprentice"

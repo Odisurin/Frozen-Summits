@@ -593,3 +593,16 @@
 	H.mind.special_items["Spiked Collar"] = /obj/item/clothing/mask/rogue/collar/spiked
 	H.mind.special_items["Cyan Collar"] = /obj/item/clothing/mask/rogue/collar
 
+
+/datum/quirk/magic_potential
+	name = "Magical Potential"
+	desc = "You being born with magical blood, or learning through books, you know the way of arcane and have your trusty book with you, its more like a old book that you can't really use anymore, need get an actual new one. Precious and valuable, you would kill anyone if they touched this book, by Mystra spectral balls!"
+
+
+/datum/quirk/magic_potential/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.adjust_skillrank_up_to((/datum/skill/magic/arcane), 2, TRUE)
+	H.mind.special_items["Heirloom Magical Book"] = /obj/item/book/granter/spellbook
+
+
+
