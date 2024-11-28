@@ -368,7 +368,7 @@
 	arcyne_potency = 25
 
 /obj/item/roguegem/amethyst
-	name = "amythortz"
+	name = "amethyst"
 	icon_state = "amethyst"
 	sellprice = 18
 	arcyne_potency = 25
