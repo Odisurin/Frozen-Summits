@@ -1,6 +1,6 @@
 
 /obj/item/roguegem
-	name = "rontz"
+	name = "Ruby"
 	icon_state = "ruby_cut"
 	icon = 'icons/roguetown/items/gems.dmi'
 	desc = "Its facets shine so brightly.."
@@ -28,31 +28,31 @@
 	..()
 
 /obj/item/roguegem/green
-	name = "gemerald"
+	name = "Emerald"
 	icon_state = "emerald_cut"
 	sellprice = 42
 	desc = "Glints with verdant brilliance."
 
 /obj/item/roguegem/blue
-	name = "blortz"
+	name = "Quartz"
 	icon_state = "quartz_cut"
 	sellprice = 88
 	desc = "Pale blue, like a frozen tear." // i am not sure if this is really quartz.
 
 /obj/item/roguegem/yellow
-	name = "toper"
+	name = "Topaz"
 	icon_state = "topaz_cut"
 	sellprice = 34
 	desc = "Its amber hues remind you of the sunset."
 
 /obj/item/roguegem/violet
-	name = "saffira"
+	name = "Sapphire"
 	icon_state = "sapphire_cut"
 	sellprice = 56
 	desc = "This gem is admired by many wizards."
 
 /obj/item/roguegem/diamond
-	name = "dorpel"
+	name = "Diamond"
 	icon_state = "diamond_cut"
 	sellprice = 121
 	desc = "Beautifully clear, it demands respect."
@@ -74,7 +74,7 @@
 
 
 /obj/item/riddleofsteel
-	name = "riddle of steel"
+	name = "Moradins Gift"
 	icon_state = "ros"
 	icon = 'icons/roguetown/items/gems.dmi'
 	desc = "Flesh, mind."
