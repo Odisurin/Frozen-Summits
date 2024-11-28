@@ -175,7 +175,7 @@
 	icon_state = "g1"
 	sellprice = 10
 	base_type = CTYPE_GOLD
-	plural_name = "Gold coins"
+	plural_name = "zenarii"
 
 
 // SILVER
@@ -185,7 +185,7 @@
 	icon_state = "s1"
 	sellprice = 5
 	base_type = CTYPE_SILV
-	plural_name = "Silver Coins"
+	plural_name = "ziliquae"
 
 // COPPER
 /obj/item/roguecoin/copper
@@ -194,7 +194,7 @@
 	icon_state = "c1"
 	sellprice = 1
 	base_type = CTYPE_COPP
-	plural_name = "Copper Coins"
+	plural_name = "zennies"
 
 /obj/item/roguecoin/copper/pile/Initialize()
 	. = ..()
