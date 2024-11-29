@@ -361,9 +361,11 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cave)
 "bQr" = (
-/obj/structure/closet/crate/roguecloset/inn,
-/obj/structure/closet/crate/roguecloset/inn,
-/turf/closed/mineral/random/rogue/high,
+/obj/structure/roguemachine/withdraw,
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/turf/open/floor/rogue/blocks,
 /area/rogue/under/cave)
 "bRi" = (
 /obj/structure/flora/junglebush,
@@ -996,8 +998,8 @@
 /turf/open/water/bath,
 /area/rogue/under/cave)
 "euD" = (
-/obj/structure/bed/rogue/inn/wooldouble,
-/turf/closed/wall/mineral/rogue/stone/moss,
+/obj/structure/chair/stool/rogue,
+/turf/closed/mineral/random/rogue/high,
 /area/rogue/under/cave)
 "eyX" = (
 /obj/structure/mineral_door/wood/deadbolt{
@@ -1612,7 +1614,12 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cave)
 "ibq" = (
-/obj/structure/roguewindow/openclose,
+/obj/structure/roguewindow/openclose{
+	dir = 4
+	},
+/obj/structure/roguewindow/openclose{
+	dir = 4
+	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/rtfield)
 "idt" = (
@@ -3064,9 +3071,13 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "pKQ" = (
-/obj/machinery/light/rogue/firebowl/standing/blue,
-/obj/machinery/light/rogue/firebowl/standing/blue,
-/turf/closed/mineral/random/rogue/high,
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/structure/roguemachine/steward{
+	icon_state = "streetvendor0"
+	},
+/turf/open/floor/rogue/blocks,
 /area/rogue/under/cave)
 "pLi" = (
 /turf/open/floor/rogue/twig,
@@ -3159,10 +3170,10 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
 "qza" = (
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
+/obj/structure/roguewindow/openclose{
+	dir = 8
 	},
-/turf/open/floor/rogue/snow,
+/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/rtfield)
 "qzM" = (
 /obj/structure/fluff/railing/border{
@@ -10658,7 +10669,7 @@ etD
 etD
 etD
 etD
-bQr
+etD
 etD
 etD
 etD
@@ -10973,7 +10984,7 @@ etD
 etD
 etD
 etD
-pKQ
+etD
 etD
 etD
 etD
@@ -14490,7 +14501,7 @@ etD
 etD
 etD
 etD
-etD
+euD
 etD
 etD
 etD
@@ -16073,7 +16084,7 @@ hVe
 hVe
 joi
 tCj
-qqW
+bQr
 hVe
 hVe
 hVe
@@ -16231,8 +16242,8 @@ hVe
 hVe
 tCj
 hXR
-hXR
-hXR
+hVe
+hVe
 hVe
 tCj
 tiy
@@ -16389,7 +16400,7 @@ joi
 tCj
 tCj
 tCj
-tCj
+hXR
 iEj
 tCj
 rLu
@@ -16545,8 +16556,8 @@ hVe
 hVe
 kRD
 tCj
-hXR
-pun
+hVe
+hVe
 hVe
 hVe
 hVe
@@ -16859,8 +16870,8 @@ dCp
 hVe
 joi
 tCj
-hVe
-hVe
+hXR
+pun
 hVe
 kRD
 kRD
@@ -17330,7 +17341,7 @@ hVe
 hVe
 pun
 qNy
-hXR
+hVe
 hVe
 hVe
 qNy
@@ -17487,9 +17498,9 @@ hVe
 hVe
 hVe
 okk
-hXR
 pun
 hVe
+pun
 tCj
 hXm
 djR
@@ -17646,7 +17657,7 @@ hVe
 tCj
 hXR
 hVe
-hVe
+pKQ
 tCj
 lwP
 djR
@@ -18073,7 +18084,7 @@ etD
 etD
 etD
 etD
-euD
+etD
 etD
 etD
 etD
@@ -37999,7 +38010,7 @@ lnn
 lyQ
 lyQ
 lnn
-qza
+lnn
 lnn
 lnn
 lnn
@@ -41772,7 +41783,7 @@ lnn
 lnn
 qYz
 qYz
-ibq
+qza
 qYz
 qYz
 qYz
@@ -61538,11 +61549,11 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -61694,13 +61705,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -61851,13 +61862,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -62008,13 +62019,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -62165,13 +62176,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -62322,13 +62333,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -62479,13 +62490,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -62636,13 +62647,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -62793,13 +62804,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -62951,11 +62962,11 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -64850,13 +64861,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -65007,13 +65018,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -65164,13 +65175,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -65321,13 +65332,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -65478,13 +65489,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -65635,13 +65646,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -65792,13 +65803,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -65949,13 +65960,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
@@ -66106,13 +66117,13 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
+kDi
 tXZ
 tXZ
 tXZ
