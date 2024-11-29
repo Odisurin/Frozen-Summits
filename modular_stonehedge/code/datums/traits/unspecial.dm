@@ -602,6 +602,7 @@
 /datum/quirk/magic_potential/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to((/datum/skill/magic/arcane), 2, TRUE)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 	H.mind.special_items["Heirloom Magical Book"] = /obj/item/book/granter/spellbook
 
 
