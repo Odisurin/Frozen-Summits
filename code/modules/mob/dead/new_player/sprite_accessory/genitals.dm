@@ -1,10 +1,8 @@
 /datum/sprite_accessory/penis
-	icon = 'modular_stonehedge/icons/mob/sprite_accessory/genitals/penis.dmi'
-/* color keys break this shit for some reason.
+	icon = 'icons/mob/sprite_accessory/genitals/penis.dmi'
 	color_keys = 2
 	color_key_names = list("Member", "Skin")
-*/
-	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FRONT_FRONT_LAYER)
+	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER) //Vrell - Yes I know this is hacky but it works for now
 
 /datum/sprite_accessory/penis/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)
@@ -41,6 +39,12 @@
 /datum/sprite_accessory/penis/knotted
 	icon_state = "knotted"
 	name = "Knotted"
+	color_key_defaults = list(null, KEY_CHEST_COLOR)
+	default_colors = list("C52828", null)
+
+/datum/sprite_accessory/penis/knotted2
+	name = "Knotted 2"
+	icon_state = "knotted2"
 	color_key_defaults = list(null, KEY_CHEST_COLOR)
 	default_colors = list("C52828", null)
 
@@ -82,7 +86,7 @@
 	default_colors = list("C52828", "C52828")
 
 /datum/sprite_accessory/testicles
-	icon = 'modular_stonehedge/icons/mob/sprite_accessory/genitals/testicles.dmi'
+	icon = 'icons/mob/sprite_accessory/genitals/testicles.dmi'
 	color_key_name = "Sack"
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
@@ -107,7 +111,7 @@
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /datum/sprite_accessory/breasts
-	icon = 'modular_stonehedge/icons/mob/sprite_accessory/genitals/breasts.dmi'
+	icon = 'icons/mob/sprite_accessory/genitals/breasts.dmi'
 	color_key_name = "Breasts"
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
@@ -139,7 +143,7 @@
 	color_key_defaults = list(KEY_CHEST_COLOR)
 
 /datum/sprite_accessory/vagina
-	icon = 'modular_stonehedge/icons/mob/sprite_accessory/genitals/vagina.dmi'
+	icon = 'icons/mob/sprite_accessory/genitals/vagina.dmi'
 	color_key_name = "Nethers"
 	relevant_layers = list(BODY_FRONT_LAYER)
 
@@ -182,22 +186,12 @@
 	default_colors = list("f99696")
 
 /datum/sprite_accessory/vagina/cloaca
-	icon_state = "tentacle"
-	name = "Tentacle"
+	icon_state = "cloaca"
+	name = "Cloaca"
 	default_colors = list("f99696")
 
-/datum/sprite_accessory/vagina/tentacle
-	icon_state = "human"
-	name = "Plain"
-	color_key_defaults = list(KEY_MUT_COLOR_ONE)
-
-//teeth pussy, nightmare fuel.
-/datum/sprite_accessory/vagina/dentata
-	icon_state = "dentata"
-	name = "Dentata"
-
 /datum/sprite_accessory/belly
-	icon = 'modular_stonehedge/icons/mob/sprite_accessory/genitals/belly.dmi'
+	icon = 'icons/mob/sprite_accessory/genitals/belly.dmi'
 	color_key_name = "Belly"
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_BACK_LAYER)
 

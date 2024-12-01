@@ -180,7 +180,6 @@ Hotkey-Mode: (hotkey-mode must be on)
 		to_chat(src, "Anti-aliased... OK")
 		winset(src, "mapwindow.map", "zoom-mode=normal")
 
-/*
 /client/verb/crtmode()
 	set category = "Options"
 	set name = "ToggleCRT"
@@ -200,7 +199,6 @@ Hotkey-Mode: (hotkey-mode must be on)
 		to_chat(src, "CRT... ON")
 		for(var/atom/movable/screen/scannies/S in screen)
 			S.alpha = 70
-*/
 
 /client/verb/triggercommend()
 	set category = "OOC"

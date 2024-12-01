@@ -61,7 +61,7 @@
 	if(penis.erect_state != ERECT_STATE_HARD && penis.sheath_type != SHEATH_TYPE_NONE)
 		switch(penis.sheath_type)
 			if(SHEATH_TYPE_NORMAL)
-				if(penis.penis_size >= 3)
+				if(penis.penis_size == 3)
 					used_name = "a fat sheath"
 				else
 					used_name = "a sheath"
@@ -104,47 +104,7 @@
 			adjective = "an average"
 		if(3)
 			adjective = "a large"
-		if(4)
-			adjective = "a massive"
-		if(5)
-			adjective = "a gigantic"
 	return "[adjective] pair of balls"
-
-/datum/mob_descriptor/butt
-	name = "butt"
-	slot = MOB_DESCRIPTOR_SLOT_BUTT
-	verbage = "has"
-	show_obscured = TRUE
-
-/datum/mob_descriptor/butt/can_describe(mob/living/described)
-	if(!ishuman(described))
-		return FALSE
-	var/mob/living/carbon/human/H = described
-	var/obj/item/organ/butt/buttie = H.getorganslot(ORGAN_SLOT_BUTT)
-	if(!buttie)
-		return FALSE
-	if(H.underwear)
-		return FALSE
-	if(!get_location_accessible(H, BODY_ZONE_PRECISE_GROIN))
-		return FALSE
-	return TRUE
-
-/datum/mob_descriptor/butt/get_description(mob/living/described)
-	var/mob/living/carbon/human/H = described
-	var/obj/item/organ/butt/buttie = H.getorganslot(ORGAN_SLOT_BUTT)
-	var/adjective
-	switch(buttie.organ_size)
-		if(1)
-			adjective = "a small"
-		if(2)
-			adjective = "an average"
-		if(3)
-			adjective = "a large"
-		if(4)
-			adjective = "a massive"
-		if(5)
-			adjective = "a colossal"
-	return "[adjective] ass"
 
 /datum/mob_descriptor/vagina
 	name = "vagina"
@@ -175,8 +135,6 @@
 			vagina_type = "plain vagina"
 		if(/datum/sprite_accessory/vagina/hairy)
 			vagina_type = "hairy vagina"
-		if(/datum/sprite_accessory/vagina/extrahairy)
-			vagina_type = "very hairy vagina"
 		if(/datum/sprite_accessory/vagina/spade)
 			vagina_type = "spade vagina"
 		if(/datum/sprite_accessory/vagina/furred)
@@ -229,27 +187,5 @@
 		if(4)
 			adjective = "a large"
 		if(5)
-			adjective = "an extra large"
-		if(6)
-			adjective = "a massive"
-		if(7)
 			adjective = "an enormous"
-		if(8)
-			adjective = "a magnificent"
-		if(9)
-			adjective = "a towering"
-		if(10)
-			adjective = "a gigantic"
-		if(11)
-			adjective = "a titanic"
-		if(12)
-			adjective = "a gargantuan"
-		if(13)
-			adjective = "a colossal"
-		if(14)
-			adjective = "a unbelieveably big"
-		if(15)
-			adjective = "a godly gib"
-		if(16)
-			adjective = "a ungodly big"
 	return "[adjective] pair of breasts"
