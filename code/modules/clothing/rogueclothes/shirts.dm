@@ -206,6 +206,19 @@
 	l_sleeve_status = SLEEVE_NORMAL
 	flags_inv = HIDECROTCH|HIDEBOOB
 
+
+/obj/item/clothing/suit/roguetown/shirt/dress/bra
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
+	name = "bra"
+	desc = ""
+	body_parts_covered = CHEST|GROIN|LEGS|VITALS
+	icon_state = "bra"
+	item_state = ""
+	allowed_sex = list(MALE, FEMALE)
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	flags_inv = NONE
+
 /obj/item/clothing/suit/roguetown/shirt/dress/gen
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "dress"
@@ -227,6 +240,12 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/random/Initialize()
 	color = pick("#6b5445", "#435436", "#704542", "#79763f", CLOTHING_BLUE)
 	..()
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/big
+	name = "big dress"
+	desc = ""
+	icon_state = "dressgenbig"
+	item_state = "dressgenbig"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT

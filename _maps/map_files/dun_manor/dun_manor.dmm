@@ -361,11 +361,8 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cave)
 "bQr" = (
-/obj/structure/roguemachine/withdraw,
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
-	},
-/turf/open/floor/rogue/blocks,
+/obj/structure/chair/stool/rogue,
+/turf/closed/mineral/random/rogue/high,
 /area/rogue/under/cave)
 "bRi" = (
 /obj/structure/flora/junglebush,
@@ -580,10 +577,14 @@
 	},
 /area/rogue/outdoors/rtfield)
 "cIq" = (
-/turf/open/floor/rogue/tile{
-	icon_state = "chess"
+/obj/structure/roguewindow/openclose{
+	dir = 4
 	},
-/area/rogue/outdoors/beach)
+/obj/structure/roguewindow/openclose{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/rtfield)
 "cKj" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/outdoors/beach)
@@ -758,16 +759,17 @@
 /area/rogue/indoors/shelter/woods)
 "dsK" = (
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/clothing/head/roguetown/sunflower,
-/obj/item/clothing/head/roguetown/lily_crown,
-/obj/item/clothing/head/roguetown/garland,
 /obj/item/clothing/cloak/hierophant,
 /obj/item/clothing/head/roguetown/roguehood/hierophant,
 /obj/item/clothing/suit/roguetown/armor/gambeson/hierophant,
 /obj/item/clothing/suit/roguetown/shirt/robe/hierophant,
 /obj/item/clothing/mask/rogue/lordmask/naledi,
-/obj/item/rogueweapon/woodstaff/naledi,
-/obj/item/rogueweapon/woodstaff/naledi,
+/obj/item/clothing/suit/roguetown/shirt/undershirt/maid_dress,
+/obj/item/clothing/shoes/roguetown/boots/furlinedanklets,
+/obj/item/clothing/head/roguetown/maid,
+/obj/item/clothing/head/roguetown/antlerhood,
+/obj/item/clothing/gloves/roguetown/angle,
+/obj/item/clothing/gloves/roguetown/angle/pontifex,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cave)
 "dtr" = (
@@ -998,8 +1000,13 @@
 /turf/open/water/bath,
 /area/rogue/under/cave)
 "euD" = (
-/obj/structure/chair/stool/rogue,
-/turf/closed/mineral/random/rogue/high,
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/clothing/head/roguetown/garland,
+/obj/item/clothing/head/roguetown/sunflower,
+/obj/item/clothing/head/roguetown/lily_crown,
+/turf/open/floor/rogue/blocks,
 /area/rogue/under/cave)
 "eyX" = (
 /obj/structure/mineral_door/wood/deadbolt{
@@ -1615,10 +1622,7 @@
 /area/rogue/under/cave)
 "ibq" = (
 /obj/structure/roguewindow/openclose{
-	dir = 4
-	},
-/obj/structure/roguewindow/openclose{
-	dir = 4
+	dir = 8
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/rtfield)
@@ -3001,16 +3005,7 @@
 /area/rogue/outdoors/rtfield)
 "pwM" = (
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/clothing/gloves/roguetown/angle/pontifex,
-/obj/item/clothing/gloves/roguetown/angle/pontifex,
-/obj/item/clothing/gloves/roguetown/angle,
-/obj/item/clothing/head/roguetown/antlerhood,
-/obj/item/clothing/head/roguetown/maid,
-/obj/item/clothing/shoes/roguetown/boots/furlinedanklets,
-/obj/item/clothing/shoes/roguetown/boots/furlinedanklets,
-/obj/item/clothing/shoes/roguetown/boots/furlinedanklets,
-/obj/item/clothing/shoes/roguetown/boots/furlinedanklets,
-/obj/item/clothing/suit/roguetown/shirt/undershirt/maid_dress,
+/obj/item/rogueweapon/woodstaff/naledi,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cave)
 "pwS" = (
@@ -3170,11 +3165,12 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
 "qza" = (
-/obj/structure/roguewindow/openclose{
-	dir = 8
+/obj/structure/roguemachine/withdraw,
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
 	},
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/rtfield)
+/turf/open/floor/rogue/blocks,
+/area/rogue/under/cave)
 "qzM" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -14501,7 +14497,7 @@ etD
 etD
 etD
 etD
-euD
+bQr
 etD
 etD
 etD
@@ -16084,7 +16080,7 @@ hVe
 hVe
 joi
 tCj
-bQr
+qza
 hVe
 hVe
 hVe
@@ -18283,7 +18279,7 @@ hVe
 hVe
 joi
 tCj
-hXR
+euD
 hVe
 dsK
 tCj
@@ -40529,7 +40525,7 @@ qYz
 qYz
 qYz
 qYz
-ibq
+cIq
 qYz
 qYz
 lnn
@@ -41349,7 +41345,7 @@ ntv
 hEP
 dzt
 dzt
-cIq
+dzt
 dzt
 dzt
 ntv
@@ -41783,7 +41779,7 @@ lnn
 lnn
 qYz
 qYz
-qza
+ibq
 qYz
 qYz
 qYz

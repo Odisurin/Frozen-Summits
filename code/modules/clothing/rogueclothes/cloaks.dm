@@ -1434,3 +1434,4 @@
 	icon_state = "naledisash"
 	item_state = "naledisash"
 	desc = "A limp piece of fabric traditionally used to fasten bags that are too baggy, but in modern days has become more of a fashion statement than anything."
+	slot_flags = ITEM_SLOT_CLOAK|ITEM_SLOT_NECK
