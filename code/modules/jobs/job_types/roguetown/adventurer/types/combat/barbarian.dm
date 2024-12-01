@@ -15,7 +15,7 @@
 	var/classes = list("Warrior","Hunter Killer", "Ravager")
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 	switch(classchoice)
-		if("Brute")
+		if("Warrior")
 			H.set_blindness(0)
 			to_chat(H, span_warning("Barbarians are great warriors of the outlands, often regarded as the strongest of their tribes -- should they have any that live. These incredible titans of strength and brutality are motivated most often by a single... all consuming instinct. SURVIVE."))
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
