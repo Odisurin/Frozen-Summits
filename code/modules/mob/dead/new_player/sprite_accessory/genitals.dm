@@ -219,7 +219,7 @@
 /datum/sprite_accessory/butt
 	icon = 'modular_stonehedge/icons/mob/sprite_accessory/genitals/butt.dmi'
 	color_key_name = "Butt"
-	relevant_layers = list(BODY_FRONT_LAYER)
+	relevant_layers = list(BODY_FRONT_BACK_LAYER, BODY_BEHIND_LAYER)
 
 /datum/sprite_accessory/butt/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_PANTS, OFFSET_PANTS_F)
