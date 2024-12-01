@@ -5,7 +5,6 @@
 	visible_organ = TRUE
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_PENIS
-	organ_size = DEFAULT_PENIS_SIZE
 	organ_dna_type = /datum/organ_dna/penis
 	accessory_type = /datum/sprite_accessory/penis/human
 	var/sheath_type = SHEATH_TYPE_NONE
@@ -14,6 +13,9 @@
 	var/penis_size = DEFAULT_PENIS_SIZE
 	var/functional = TRUE
 	var/always_hard = FALSE
+
+/obj/item/organ/penis/Initialize()
+	. = ..()
 
 /obj/item/organ/penis/proc/update_erect_state()
 	var/oldstate = erect_state
@@ -39,7 +41,7 @@
 	sheath_type = SHEATH_TYPE_NORMAL
 
 /obj/item/organ/penis/knotted/big
-	organ_size = 5
+	penis_size = 5
 
 /obj/item/organ/penis/equine
 	name = "equine penis"

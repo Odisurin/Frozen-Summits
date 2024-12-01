@@ -39,14 +39,14 @@
 /datum/organ_dna/penis
 	var/penis_size = DEFAULT_PENIS_SIZE
 	var/functional = TRUE
-	var/organ_size = DEFAULT_PENIS_SIZE
+
 
 /datum/organ_dna/penis/imprint_organ(obj/item/organ/organ)
 	..()
 	var/obj/item/organ/penis/penis_organ = organ
 	penis_organ.penis_size = penis_size
 	penis_organ.functional = functional
-	penis_organ.organ_size = organ_size
+
 
 /datum/organ_dna/testicles
 	var/ball_size = DEFAULT_TESTICLES_SIZE
