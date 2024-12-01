@@ -9,8 +9,6 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 	dodgetime = 30
 	flee_in_pain = TRUE
 	possible_rmb_intents = list()
-	erpable = TRUE
-
 	wander = FALSE
 
 /mob/living/carbon/human/species/human/northern/bum/ambush
