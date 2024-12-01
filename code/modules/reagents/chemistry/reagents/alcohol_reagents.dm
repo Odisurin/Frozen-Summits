@@ -2130,28 +2130,28 @@ All effects don't start immediately, but rather get worse over time; the rate is
 // Humen Production - Underwhelming, but cheap.
 
 /datum/reagent/consumable/ethanol/beer/zagul
-	name = "Zagul Brew"
+	name = "Moon Mountain Dark"
 	boozepwr = 15
 	taste_description = "cheap pisswater"
 	color = "#DBD77F"
 	quality = DRINK_NICE
 
 /datum/reagent/consumable/ethanol/beer/hagwoodbitter
-	name = "Hagwood Bitter"
+	name = "Moonslak"
 	boozepwr = 25
 	taste_description = "dull crispness"
 	color = "#BBB525"
 	quality = DRINK_NICE
 
 /datum/reagent/consumable/ethanol/beer/blackgoat
-	name = "Black Goat Kriek"
+	name = "Halfling's Help"
 	boozepwr = 25
 	taste_description = "overwhelming sourness"
 	color = "#401806"
 	quality = DRINK_NICE
 
 /datum/reagent/consumable/ethanol/beer/onion
-	name = "Ratkept Onin Cognac"
+	name = "Goblin Grog"
 	boozepwr = 10
 	taste_description = "spicy sweet malty overtones"
 	color = "#f1b5ff"
@@ -2160,7 +2160,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 // Elf Production - LEAF-LOVERS MOTHERFUCKER
 
 /datum/reagent/consumable/ethanol/beer/aurorian
-	name = "Aurorian"
+	name = "Bitterroot beer"
 	boozepwr = 5
 	taste_description = "subtle herbacious undertones"
 	color = "#5D8A8A"
@@ -2175,10 +2175,10 @@ All effects don't start immediately, but rather get worse over time; the rate is
 // Dwarven Production - Best in the Realms
 
 /datum/reagent/consumable/ethanol/beer/butterhairs
-	name = "Butterhairs"
+	name = "Elminster's Choice"
 	boozepwr = 30
 	taste_description = "buttery richness"
-	color = "#5D8A8A"
+	color = "#8a785d"
 	quality = DRINK_GOOD
 
 /datum/reagent/consumable/ethanol/beer/stonebeards
@@ -2189,7 +2189,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	quality = DRINK_GOOD
 
 /datum/reagent/consumable/ethanol/beer/voddena // Not vodka. Trust me.
-	name = "Voddena"
+	name = "Vodka"
 	boozepwr = 55  // holy shit
 	taste_description = "burning starchy wet dirt"
 	color = "#4b443c"
@@ -2229,14 +2229,14 @@ All effects don't start immediately, but rather get worse over time; the rate is
 // Elf Production - Berries & Herbal
 
 /datum/reagent/consumable/ethanol/beer/elfred
-	name = "Elven Red"
+	name = "Underdark Red Wine"
 	boozepwr = 15
-	taste_description = "delectable fruity notes"
+	taste_description = "incredible delectable fruity notes"
 	color = "#6C0000"
 	quality = DRINK_GOOD
 
 /datum/reagent/consumable/ethanol/beer/elfblue
-	name = "Valmora Blue"
+	name = "Silverymoon Blue"
 	boozepwr = 50
 	taste_description = "saintly sweetness"
 	color = "#2C9DAF"
@@ -2244,35 +2244,35 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 //AZURE DRINKS
 /datum/reagent/consumable/ethanol/beer/jagdtrunk // JÄGERMEISTER!!!!
-	name = "Jagdtrunk"
+	name = "Wyvern whiskey"
 	boozepwr = 55  // gotta be stronk
 	taste_description = "spicy herbal remedy"
 	color = "#331f18"
 	quality = DRINK_NICE
 
 /datum/reagent/consumable/ethanol/beer/apfelweinheim
-	name = "Appelheimer"
+	name = "Knee-Cracker Cider"
 	boozepwr = 45
 	taste_description = "tart crispness and mellow sweetness"
 	color = "#e0cb55"
 	quality = DRINK_NICE
 
 /datum/reagent/consumable/ethanol/beer/rtoper
-	name = "Rockhill Toper"
+	name = "Purple Hills Cider"
 	boozepwr = 40
 	taste_description = "overwhelming tartness"
 	color = "#e0a400"
 	quality = DRINK_NICE
 
 /datum/reagent/consumable/ethanol/beer/nred
-	name = "Norwardine Red"
+	name = "Baldur's Gate Red Ale"
 	boozepwr = 30
 	taste_description = "heavy caramel note and slight bitterness"
-	color = "#543633"
+	color = "#66413e"
 	quality = DRINK_GOOD
 
 /datum/reagent/consumable/ethanol/beer/gronnmead
-	name = "Ragnar's Brew"
+	name = "Evermead"
 	boozepwr = 35
 	taste_description = "notes of honey and red berries" //I love red mead ok...
 	color = "#772C48"
@@ -2281,21 +2281,21 @@ All effects don't start immediately, but rather get worse over time; the rate is
 //Avar boozes
 
 /datum/reagent/consumable/ethanol/beer/avarmead
-	name = "Zögiin bal"
+	name = "Malefic Mead"
 	boozepwr = 30
 	taste_description = "spicy honey"
 	color = "#e0a400"
 	quality = DRINK_GOOD
 
 /datum/reagent/consumable/ethanol/beer/avarrice
-	name = "Makkolir"
+	name = "Sparkling Evermead"
 	boozepwr = 30
-	taste_description = "tangy sweetness"
-	color = "#ddcbc9"
+	taste_description = "bubbly, tangy sweetness"
+	color = "#ebe0a2"
 	quality = DRINK_GOOD
 
 /datum/reagent/consumable/ethanol/beer/saigamilk //No way, kumys from avar!!!
-	name = "Bökhiin Arkhi"
+	name = "Kumis"
 	boozepwr = 15
 	taste_description = "bubbly, sour salt"
 	color = "#dddddd"
@@ -2303,21 +2303,21 @@ All effects don't start immediately, but rather get worse over time; the rate is
 //Kazengun boozes
 
 /datum/reagent/consumable/ethanol/beer/kgunlager
-	name = "Yamaguchi Pale"
+	name = "Baldur's Gate Pale"
 	boozepwr = 10 //A PALE imitation actual beer...
 	taste_description = "mellow bitterness and a hint of green tea"
 	color = "#d7dbbc"
 
 /datum/reagent/consumable/ethanol/beer/kgunsake
-	name = "Junmai-ginjo"
+	name = "Black Orc Grog"
 	boozepwr = 50
-	taste_description = "dry sweetness"
-	color = "#ccd7e0"
+	taste_description = "bitter licorice and malt"
+	color = "#38240a"
 	quality = DRINK_GOOD
 
 /datum/reagent/consumable/ethanol/beer/kgunplum
-	name = "Umeshu"
+	name = "Highsun Liqueur"
 	boozepwr = 30
 	taste_description = "a mix of sweet and sour"
-	color = "#ddb99b"
+	color = "#f1b98a"
 	quality = DRINK_VERYGOOD
