@@ -142,8 +142,8 @@ GLOBAL_VAR_INIT(underworld_coins, 0)
 
 // why not also some mob stuff too
 /mob/living/simple_animal/hostile/rogue/dragger
-	name = "dragger"
-	desc = ""
+	name = "Wraith"
+	desc = "An undead creature born of evil and darkness, despising light and all living things."
 	icon = 'icons/roguetown/underworld/enigma_dragger.dmi'
 	icon_state = "dragger"
 	icon_living = "dragger"
