@@ -267,3 +267,4 @@ GLOBAL_LIST_EMPTY(loadout_items)
 /datum/loadout_item/lbracers
 	name = "Leather Bracers"
 	path = /obj/item/clothing/wrists/roguetown/bracers/leather
+t
