@@ -556,6 +556,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return "FRONT"
 		if(BODY_FRONT_FRONT_LAYER)
 			return "FFRONT"
+
+		if(BODY_FRONT_FRONT_FRONT_LAYER)
+			return "FRONT"
 		if(BODY_UNDER_LAYER)
 			return "UNDER"
 

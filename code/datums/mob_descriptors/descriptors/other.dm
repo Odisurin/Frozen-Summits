@@ -42,6 +42,7 @@
 	var/adjective
 	var/arousal_modifier
 	switch(penis.penis_size)
+	switch(penis.organ_size)
 		if(1)
 			adjective = "a small"
 		if(2)
