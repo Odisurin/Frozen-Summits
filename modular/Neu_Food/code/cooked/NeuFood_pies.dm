@@ -394,6 +394,7 @@
 			name = "uncooked fish pie"
 			icon_state = "fishpie_raw"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/fish
+			cooked_smell = /datum/pollutant/food/fish_pie
 			filling_color = "#d44197"
 			process_step += 1
 			update_icon()
@@ -402,6 +403,7 @@
 			name = "uncooked meat pie"
 			icon_state = "meatpie_raw"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/meat
+			cooked_smell = /datum/pollutant/food/meat_pie
 			filling_color = "#b43628"
 			process_step += 1
 			update_icon()
@@ -410,6 +412,7 @@
 			name = "uncooked pot pie"
 			filling_color = "#755430"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/pot
+			cooked_smell = /datum/pollutant/food/pot_pie
 			process_step += 1
 			update_icon()
 			qdel(I)
@@ -417,6 +420,7 @@
 			name = "uncooked apple pie"
 			filling_color = "#947a4b"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/apple
+			cooked_smell = /datum/pollutant/food/apple_pie
 			process_step += 1
 			update_icon()
 			qdel(I)
@@ -424,6 +428,7 @@
 			name = "uncooked berry pie"
 			filling_color = "#4a62cf"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/berry
+			cooked_smell = /datum/pollutant/food/berry_pie
 			process_step += 1
 			update_icon()
 			qdel(I)
@@ -431,6 +436,7 @@
 			name = "uncooked berry pie"
 			filling_color = "#4a62cf"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/poison
+			cooked_smell = /datum/pollutant/food/berry_pie
 			process_step += 1
 			update_icon()
 			qdel(I)
@@ -591,6 +597,7 @@
 	icon_state = "handpie_raw"
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/handpie
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/handpie
+	cooked_smell = /datum/pollutant/food/pie_base
 	w_class = WEIGHT_CLASS_NORMAL
 	dropshrink = 0.8
 
