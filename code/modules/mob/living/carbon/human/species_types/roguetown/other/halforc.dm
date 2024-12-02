@@ -109,7 +109,7 @@
 		/datum/customizer/organ/breasts/human,
 		/datum/customizer/organ/belly/human,
 		/datum/customizer/organ/vagina/human,
-		/datum/customizer/organ/horns/anthro
+		/datum/customizer/organ/horns/anthro 	
 		)
 	languages = list(
 		/datum/language/common,
