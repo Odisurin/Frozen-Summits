@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/mole
 	icon = 'icons/roguetown/mob/monster/mole.dmi'
-	name = "mole"
+	name = "Dire Mole"
 	icon_state = "mole"
 	icon_living = "mole"
 	icon_dead = "mole_dead"
