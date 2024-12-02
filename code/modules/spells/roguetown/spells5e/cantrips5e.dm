@@ -648,6 +648,8 @@
 /obj/effect/proc_holder/spell/invoked/infestation5e
 	name = "Infestation"
 	overlay_state = "null"
+	invocation = "Infesta!"
+	invocation_type = "shout"
 	releasedrain = 50
 	chargetime = 3
 	charge_max = 20 SECONDS

@@ -330,3 +330,16 @@
 	export_price = 3
 	importexport_amt = 10
 	passive_generation = 2
+
+/datum/roguestock/stockpile/sugar_cane
+	name = "sugar cane"
+	desc = "You get sugar from this."
+	item_type =/obj/item/reagent_containers/food/snacks/grown/sugarcane
+	held_items = list(0, 0)
+	payout_price = 2
+	withdraw_price = 3
+	transport_fee = 1
+	export_price = 3
+	importexport_amt = 10
+	passive_generation = 2
+

@@ -285,6 +285,8 @@
 	var/wall_type = /obj/structure/forcefield_weak/caster
 	xp_gain = TRUE
 	cost = 1
+	invocation = "Barath'karn vi'drak!"
+	invocation_type = "shout"
 
 //adapted from forcefields.dm, this needs to be destructible
 /obj/structure/forcefield_weak
@@ -337,6 +339,8 @@
 /obj/effect/proc_holder/spell/invoked/slowdown_spell_aoe
 	name = "Ensnare"
 	desc = "Tendrils of arcyne force hold anyone in a small area in place for a short while."
+	invocation = "Karn vrak!"
+	invocation_type = "shout"
 	cost = 1
 	xp_gain = TRUE
 	releasedrain = 20
@@ -445,6 +449,8 @@
 	desc = "Conjure forth a wave of energy, repelling anyone around you."
 	cost = 1
 	xp_gain = TRUE
+	invocation = "Vael'torim!"
+	invocation_type = "shout"
 	releasedrain = 50
 	chargedrain = 1
 	chargetime = 5
@@ -503,6 +509,8 @@
 	name = "Blade Burst"
 	desc = "Summon a storm of arcyne force in an area, wounding anything in that location after a delay."
 	cost = 1
+	invocation = "Zar'khanis!!"
+	invocation_type = "shout"
 	xp_gain = TRUE
 	releasedrain = 30
 	chargedrain = 1
@@ -804,7 +812,8 @@
 	overlay_state = "null"
 	sound = list('sound/magic/whiteflame.ogg')
 	active = FALSE
-
+	invocation = "Vaer'thaliss!"
+	invocation_type = "shout"
 	releasedrain = 30
 	chargedrain = 1
 	chargetime = 3
@@ -884,6 +893,8 @@
 	name = "Frostbite"
 	desc = "Freeze your enemy with an icy blast that does low damage, but reduces the target's Speed for a considerable length of time."
 	overlay_state = "null"
+	invocation = "Gelid'zar!"
+	invocation_type = "shout"
 	releasedrain = 50
 	chargetime = 3
 	charge_max = 25 SECONDS
@@ -945,6 +956,8 @@
 	desc = "Harden one's humors to the fatigues of the body."
 	cost = 2
 	xp_gain = TRUE
+	invocation = "Valar'Thar!"
+	invocation_type = "shout"
 	releasedrain = 60
 	chargedrain = 1
 	chargetime = 4 SECONDS
@@ -979,6 +992,8 @@
 	desc = "Makes one's hand travel true, blessing them with arcyne luck in combat."
 	cost = 2
 	xp_gain = TRUE
+	invocation = "Sehanine'Ver!"
+	invocation_type = "shout"
 	releasedrain = 60
 	chargedrain = 1
 	chargetime = 4 SECONDS
@@ -1014,6 +1029,8 @@
 	cost = 2
 	xp_gain = TRUE
 	releasedrain = 30
+	invocation = "Vael'Thalar!"
+	invocation_type = "shout"
 	overlay = 'icons/effects/effects.dmi'
 	overlay_state = "shieldsparkles"
 	chargedrain = 1
@@ -1082,7 +1099,8 @@
 	overlay_state = "null"
 	sound = list('sound/magic/whiteflame.ogg')
 	active = FALSE
-
+	invocation = "Sylvaris!"
+	invocation_type = "shout"
 	releasedrain = 30
 	chargedrain = 1
 	chargetime = 3
@@ -1135,6 +1153,8 @@
 	name = "Arcyne Bolt"
 	desc = "Shoot out a rapid bolt of arcyne magic that hits on impact. Little damage, but disorienting."
 	clothes_req = FALSE
+	invocation = "Arcanis Vel!"
+	invocation_type = "shout"
 	range = 12
 	projectile_type = /obj/projectile/energy/rogue3
 	overlay_state = "force_dart"
@@ -1183,6 +1203,8 @@
 	desc = "Weighten space around someone, crushing them and knocking them to the floor. Stronger opponets will resist and be off-balanced."
 	cost = 1
 	xp_gain = TRUE
+	invocation = "Gravitas!"
+	invocation_type = "shout"
 	releasedrain = 20
 	chargedrain = 1
 	chargetime = 7
