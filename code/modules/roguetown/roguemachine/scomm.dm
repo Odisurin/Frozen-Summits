@@ -1,7 +1,7 @@
 
 /obj/structure/roguemachine/scomm
-	name = "SCOM"
-	desc = "The Supernatural Communication Optical Machine is a wonder of magic and technology."
+	name = "Sending Stone Box"
+	desc = "This large Sending stone allows remote communication over any distance, even across different planes."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "scomm1"
 	density = FALSE
@@ -97,7 +97,7 @@
 		return
 	if(calling)
 		speaking = !speaking
-		to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the output on the SCOM."))
+		to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the talking stone."))
 		return
 	var/canread = user.can_read(src, TRUE)
 	var/contents
@@ -213,7 +213,7 @@
 	return ..()
 
 /obj/structure/roguemachine/scomm/proc/ring_ring()
-	playsound(src, 'sound/vo/mobs/rat/rat_life.ogg', 100, TRUE, -1)
+	playsound(src, 'sound/misc/scom.ogg', 100, TRUE, -1)
 	var/oldx = pixel_x
 	animate(src, pixel_x = oldx+1, time = 0.5)
 	animate(pixel_x = oldx-1, time = 0.5)
@@ -225,7 +225,7 @@
 	if(tcolor)
 		voicecolor_override = tcolor
 	if(speaking && message)
-		playsound(loc, 'sound/vo/mobs/rat/rat_life.ogg', 100, TRUE, -1)
+		playsound(loc, 'sound/misc/scom.ogg', 100, TRUE, -1)
 		say(message, language = message_language)
 	voicecolor_override = null
 
@@ -289,9 +289,9 @@
 //SCOMSTONE                 SCOMSTONE
 
 /obj/item/scomstone
-	name = "scomstone"
+	name = "Sending Stone Ring"
 	icon_state = "ring_emerald"
-	desc = "A golden ring with an emerald gem."
+	desc = "A golden ring with an embedded Sending Stone."
 	gripped_intents = null
 	dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)
@@ -331,7 +331,7 @@
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	listening = !listening
 	speaking = !speaking
-	to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the scomstone."))
+	to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the sending stone."))
 	update_icon()
 
 /obj/item/scomstone/Destroy()
@@ -371,8 +371,8 @@
 		send_speech(message, 1, src, , spans, message_language=language)
 
 /obj/item/scomstone/bad
-	name = "serfstone"
-	desc = "A steel ring with a dull gem shoddily sticking out of it."
+	name = "Minor sending stone ring"
+	desc = "A steel ring with a sending stone embedded. This one can only listen, not speak."
 	icon_state = "ring_lamerald"
 	listening = FALSE
 	sellprice = 20
@@ -382,9 +382,9 @@
 
 //LISTENSTONE		LISTENSTONE
 /obj/item/listenstone
-	name = "emerald choker"
+	name = "Necklace of Sending"
 	icon_state = "listenstone"
-	desc = "A iron and gold choker with an emerald gem."
+	desc = "A iron and gold choker with an enchanted emerald gem."
 	gripped_intents = null
 	//dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)
@@ -408,7 +408,7 @@
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	listening = !listening
 	speaking = !speaking
-	to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the scomstone."))
+	to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the listening stone."))
 	update_icon()
 	if(listening)
 		icon_state = "listenstone"
@@ -427,7 +427,7 @@
 	if(tcolor)
 		voicecolor_override = tcolor
 	if(speaking && message)
-		playsound(loc, 'sound/vo/mobs/rat/rat_life.ogg', 100, TRUE, -1)
+		playsound(loc, 'sound/misc/scom.ogg', 100, TRUE, -1)
 		say(message, language = message_language)
 	voicecolor_override = null
 
@@ -450,7 +450,7 @@
 // MATTHIAN SCOMCOIN
 
 /obj/item/mattcoin
-	name = "rontz ring"
+	name = "Whispering Coin"
 	icon_state = "mattcoin"
 	desc = "A faded coin, a ruby laid into its center."
 	gripped_intents = null
@@ -566,7 +566,7 @@
 	if(tcolor)
 		voicecolor_override = tcolor
 	if(speaking && message)
-		playsound(loc, 'sound/vo/mobs/rat/rat_life.ogg', 20, TRUE, -1)
+		playsound(loc, 'sound/misc/scom.ogg', 20, TRUE, -1)
 		say(message, language = message_language)
 	voicecolor_override = null
 
