@@ -1,17 +1,18 @@
 /datum/job/roguetown/captain
-	title = "Guard Captain"
+	title = "Outpost Sergeant"
 	flag = GUARD_CAPTAIN
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 
 	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	tutorial = "Your lineage is noble, and generations of strong, loyal knights have come before you. You served your time \
-	gracefully as knight of his royal majesty, and now you've grown into a role which many men can only dream of becoming. \
-	Lead your men to victory--and keep them in line--and you will see this realm prosper under a thousand suns."
+	tutorial = "Your role is humble but vital. Tasked with defending a small hamlet on the frigid frontier of the Frozen Summit, you \
+	serve as both protector and mediator for its hardy folk. Contracted for your skill and reliability, your days are spent \
+	coordinating patrols, fending off minor threats like wolves and bandits, and ensuring the safety of travelers and townsfolk alike. \
+	It may not be a grand command, but to these people, you are their shield against the harshness of the wilds."
 	display_order = JDO_GUARD_CAPTAIN
 	advclass_cat_rolls = list(CTAG_CAPTAIN = 20)
 
@@ -20,7 +21,7 @@
 
 	give_bank_account = 26
 	noble_income = 16
-	min_pq = 9
+	min_pq = 0
 	max_pq = null
 	round_contrib_points = 3
 	cmode_music = 'sound/music/combat_knight.ogg'
@@ -47,11 +48,11 @@
 				index = copytext(H.real_name, 1,index)
 			if(!index)
 				index = H.real_name
-			S.name = "captain cape ([index])"
+			S.name = "sergeant cape ([index])"
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
-		H.real_name = "Captain [prev_real_name]"
-		H.name = "Captain [prev_name]"
+		H.real_name = "Sergeant [prev_real_name]"
+		H.name = "Sergeant [prev_name]"
 
 		for(var/X in peopleknowme)
 			for(var/datum/mind/MF in get_minds(X))

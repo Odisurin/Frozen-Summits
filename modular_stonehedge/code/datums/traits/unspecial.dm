@@ -594,6 +594,7 @@
 	H.mind.special_items["Cyan Collar"] = /obj/item/clothing/mask/rogue/collar
 	H.mind.special_items["Dress For Big Chest"] = /obj/item/clothing/suit/roguetown/shirt/dress/gen/big
 	H.mind.special_items["Bra"] = /obj/item/clothing/suit/roguetown/shirt/dress/bra
+	H.mind.special_items["glasses"] = /obj/item/clothing/mask/rogue/spectacles/glasses
 
 
 /datum/quirk/magic_potential

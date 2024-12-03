@@ -17,6 +17,17 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 //	block2add = FOV_BEHIND
 
+/obj/item/clothing/mask/rogue/spectacles/glasses
+	name = "glasses"
+	icon_state = "glasses_old"
+	break_sound = "glassbreak"
+	attacked_sound = 'sound/combat/hits/onglass/glasshit.ogg'
+	max_integrity = 20
+	integrity_failure = 0.5
+	resistance_flags = FIRE_PROOF
+	body_parts_covered = EYES
+	anvilrepair = /datum/skill/craft/armorsmithing
+
 /obj/item/clothing/mask/rogue/spectacles/golden
 	name = "golden spectacles"
 	icon_state = "goggles"
