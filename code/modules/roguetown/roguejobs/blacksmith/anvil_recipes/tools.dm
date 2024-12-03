@@ -140,10 +140,20 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/tools/iron/bowl
-	name = "Iron Bowl"
+	name = "Iron Bowl x3"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/reagent_containers/glass/bowl/iron
 	craftdiff = 1
+
+/datum/anvil_recipe/general/iron/ramrod
+	name = "Replacement Ramrods x3"
+	req_bar = /obj/item/ingot/iron
+	created_item = list(/obj/item/ramrod,
+						/obj/item/ramrod,
+						/obj/item/ramrod
+					)
+
+	craftdiff = 0
 
 // --------- Steel -----------
 

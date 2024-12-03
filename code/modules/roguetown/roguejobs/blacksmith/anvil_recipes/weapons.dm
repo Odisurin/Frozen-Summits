@@ -486,3 +486,20 @@
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/mace/warhammer
 	i_type = "Weapons"
+	craftdiff = 3
+
+/datum/anvil_recipe/ammo/musketball
+	name = "Musketballs 8x"
+	appro_skill = /datum/skill/craft/blacksmithing
+	req_bar = /obj/item/ingot/iron
+	created_item = list(/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet
+					)
+
+	craftdiff = 1
