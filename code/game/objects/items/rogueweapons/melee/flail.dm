@@ -91,6 +91,13 @@
 	smeltresult = /obj/item/ingot/steel
 	minstr = 5
 
+/obj/item/rogueweapon/flail/kusarifundo
+	force = 25
+	possible_item_intents = list(/datum/intent/flail/strikerange, /datum/intent/flail/strike/smashrange)
+	w_class = WEIGHT_CLASS_NORMAL
+	name = "kusari fundo"
+	desc = "A pair of heavy iron weights spanned by a long iron chain, developed as a self-defense weapon by peasants in regions where swords are carried only by samurai or other nobles."
+	icon_state = "kusarifundo"
 
 /datum/intent/whip/lash
 	name = "lash"

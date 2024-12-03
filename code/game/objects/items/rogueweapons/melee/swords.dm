@@ -82,6 +82,17 @@
 	swingdelay = 0
 	item_d_type = "stab"
 
+/obj/item/rogueweapon/sword/uchigatana
+	force_wielded = 30
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/chop)
+	name = "uchigatana"
+	desc = "Slightly shorter and simpler in design than the tachi, the uchigatana lends itself well to brutal chopping strikes alongside skillful swordplay, but lacks a long crossguard for safely parrying other blades."
+	icon = 'icons/roguetown/weapons/64.dmi'
+	icon_state = "uchigatana"
+	wdefense = 3
+	bloody_icon_state = null
+	bigboy = 1
+
 /obj/item/rogueweapon/sword/stone
 	force = 17 //Weaker than a short sword
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/chop)

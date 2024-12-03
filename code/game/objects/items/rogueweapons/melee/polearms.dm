@@ -250,6 +250,13 @@
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 200
 
+/obj/item/rogueweapon/halberd/bardiche/naginata
+	name = "naginata"
+	desc = "Its earliest form was a tachi blade mounted upon a long wooden pole, developed in order to better combat cavalry."
+	icon_state = "naginata"
+	smeltresult = /obj/item/ingot/steel
+	dropshrink = 0.8
+
 /datum/intent/spear/cut/halberd
 	damfactor = 0.9
 	swingdelay = 10
@@ -358,6 +365,26 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+/obj/item/rogueweapon/greatsword/odachi
+	force = 15
+	force_wielded = 40
+	possible_item_intents = list(/datum/intent/sword/cut)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop, /datum/intent/sword/thrust)
+	name = "odachi"
+	desc = "A large and extraordinarily expensive sword, the venerable odachi are constructed from a single large billet of steel by a masterful swordsmith."
+	icon_state = "odachi"
+	icon = 'icons/roguetown/weapons/64.dmi'
+
+/obj/item/rogueweapon/greatsword/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = 6,"nx" = 6,"ny" = 7,"wx" = 0,"wy" = 5,"ex" = -1,"ey" = 7,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -50,"sturn" = 40,"wturn" = 50,"eturn" = -50,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 9,"sy" = -4,"nx" = -7,"ny" = 1,"wx" = -9,"wy" = 2,"ex" = 10,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 5,"sturn" = -190,"wturn" = -170,"eturn" = -10,"nflip" = 4,"sflip" = 4,"wflip" = 1,"eflip" = 0)
+			if("onback")
+				return list("shrink" = 0.6,"sx" = -1,"sy" = 3,"nx" = -1,"ny" = 2,"wx" = 3,"wy" = 4,"ex" = -1,"ey" = 5,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 20,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
 /obj/item/rogueweapon/greatsword/zwei
 	name = "zweihander"
