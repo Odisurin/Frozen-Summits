@@ -193,6 +193,22 @@
 	wdefense = 3
 	resistance_flags = FLAMMABLE
 
+/obj/item/rogueweapon/mace/cudgel/ararebo
+	force = 15
+	force_wielded = 20
+	name = "ararebo"
+	icon_state = "ararebo"
+	desc = "A short, iron-capped club. The spikes cause it to inflict bleeding wounds."
+	gripped_intents = null
+	smeltresult = /obj/item/ingot/iron
+	wlength = WLENGTH_SHORT
+	w_class = WEIGHT_CLASS_NORMAL
+	sharpness = IS_SHARP
+	max_integrity = 300
+	wbalance = 0
+	minstr = 7
+	wdefense = 3
+
 /obj/item/rogueweapon/mace/cudgel/justice
 	name = "'Justice'"
 	desc = "The icon of the right of office of the Marshal. While mostly ceremonial in design, it serves it's purpose in dishing out some much needed justice."
@@ -322,6 +338,34 @@
 				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/mace/goden/kanabo
+	force = 20
+	force_wielded = 35
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
+	name = "kanabo"
+	desc = "A heavy two handed club, reinforced with an iron sleeve."
+	icon_state = "kanabo"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	sharpness = IS_BLUNT
+	//dropshrink = 0.75
+	wlength = WLENGTH_LONG
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	associated_skill = /datum/skill/combat/maces
+	smeltresult = /obj/item/ingot/iron
+	parrysound = "parrywood"
+	swingsound = BLUNTWOOSH_MED
+	max_integrity = 400
+	minstr = 12//Favored weapon of the Oni
+	wdefense = 3
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
 
 /obj/item/rogueweapon/mace/goden/steel
 	name = "grand mace"

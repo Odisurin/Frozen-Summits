@@ -192,6 +192,12 @@
 	max_integrity = 150
 	smeltresult = /obj/item/ingot/steel
 
+/obj/item/rogueweapon/huntingknife/idagger/steel/tanto
+	force = 15
+	name = "tanto"
+	icon_state = "tanto"
+	desc = "It is primarily a thrusting weapon, but is also a decent cutting implement."
+
 /obj/item/rogueweapon/huntingknife/idagger/dtace
 	name = "'De Tace'"
 	desc = "The right hand of the right hand, this narrow length of steel serves as a quick solution to petty greviences."
