@@ -6,10 +6,10 @@
 	if(armor > 0 && armor_penetration)
 		armor = max(0, armor - armor_penetration)
 		if(penetrated_text)
-			to_chat(src, "<span class='danger'>[penetrated_text]</span>")
-		else
-			to_chat(src, "<span class='danger'>My armor was penetrated!</span>")
-	else if(armor >= 131)
+			to_chat(src, span_danger("[penetrated_text]"))
+//		else
+//			to_chat(src, span_danger("My armor was penetrated!"))
+	else if(armor >= 100)
 		if(absorb_text)
 			to_chat(src, span_notice("[absorb_text]"))
 //		else

@@ -10,28 +10,7 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/iron
 
-/datum/anvil_recipe/weapons/bullets
-	name = "Lead Bullets x5 (+s)"
-	recipe_name = "five Lead Bullets"
-	appro_skill = /datum/skill/craft/engineering
-	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/ammo_casing/caseless/rogue/bullet
-	createmultiple = TRUE
-	createditem_num = 4
-	i_type = "Ammo"
-	craftdiff = 0
-
-/datum/anvil_recipe/weapons/spear_iron
-	name = "Spear x2 (+w)"
-	recipe_name = "a couple Spears"
-	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/spear
-	createmultiple = TRUE
-	createditem_num = 1
-
-/datum/anvil_recipe/weapons/shortsword_iron
+/datum/anvil_recipe/weapons/iron/swordshort
 	name = "Short sword"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/iron/short
