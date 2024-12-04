@@ -52,7 +52,7 @@
 		if(!cocked)
 			to_chat(user, span_info("I ready the runelock to be fired..."))
 			if(user.mind)
-				var/skill = user.mind.get_skill_level(/datum/skill/craft/hunting)
+				var/skill = user.mind.get_skill_level(/datum/skill/combat/crossbows)
 				if(skill)
 					reload_time = reload_time / skill
 			if(move_after(user, reload_time SECONDS, target = user))

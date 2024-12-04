@@ -27,7 +27,8 @@
 	var/list/permutated = list() // we've passed through these atoms, don't try to hit them again
 	var/p_x = 16
 	var/p_y = 16			// the pixel location of the tile that the player clicked. Default is the center
-
+	var/accuracy = 2
+	var/bonus_accuracy = 1
 	//Fired processing vars
 	var/fired = FALSE	//Have we been fired yet
 	var/paused = FALSE	//for suspending the projectile midair
