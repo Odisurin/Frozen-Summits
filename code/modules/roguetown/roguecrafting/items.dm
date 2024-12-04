@@ -724,10 +724,3 @@
 				/obj/item/cart_upgrade/level_1 = 1,
 				/obj/item/ingot/iron = 1)
 	craftdiff = 4
-
-/datum/crafting_recipe/roguetown/sawedoff
-	name = "handgonne"
-	result = /obj/item/gun/ballistic/handgonne
-	reqs = list(/obj/item/gun/ballistic/arquebus = 1)
-	craftdiff = 0
-	tools = list(/obj/item/rogueweapon/surgery/saw = 1)

@@ -254,9 +254,6 @@
 				if(BCLASS_SMASH)
 					dullfactor = 1.5
 					cont = TRUE
-				if(BCLASS_DRILL)
-					dullfactor = 10
-					cont = TRUE
 				if(BCLASS_PICK)
 					dullfactor = 1.5
 					cont = TRUE
@@ -277,9 +274,6 @@
 				if(BCLASS_SMASH)
 					dullfactor = 1.5
 					cont = TRUE
-				if(BCLASS_DRILL)
-					dullfactor = 10
-					cont = TRUE
 				if(BCLASS_BLUNT)
 					cont = TRUE
 				if(BCLASS_PICK)
@@ -292,8 +286,7 @@
 		if(DULLING_PICK) //cannot deal damage if not a pick item. aka rock walls
 
 			if(user.used_intent.blade_class != BCLASS_PICK)
-				if(user.used_intent.blade_class != BCLASS_DRILL)
-					return 0
+				return 0
 			var/mob/living/miner = user
 			var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
 			newforce = newforce * (8+(mineskill*1.5))

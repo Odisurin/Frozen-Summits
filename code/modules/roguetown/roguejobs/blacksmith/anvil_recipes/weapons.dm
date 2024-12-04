@@ -460,36 +460,3 @@
 	additional_items = list(/obj/item/ingot/blacksteel, /obj/item/roguegem)
 	created_item = /obj/item/rogueweapon/sword/long/blackflamb
 	craftdiff = 5
-	craftdiff = 3
-
-/datum/anvil_recipe/ammo/musketball
-	name = "Musketballs 8x"
-	appro_skill = /datum/skill/craft/blacksmithing
-	req_bar = /obj/item/ingot/iron
-	created_item = list(/obj/item/ammo_casing/caseless/lead,
-						/obj/item/ammo_casing/caseless/lead,
-						/obj/item/ammo_casing/caseless/lead,
-						/obj/item/ammo_casing/caseless/lead,
-						/obj/item/ammo_casing/caseless/lead,
-						/obj/item/ammo_casing/caseless/lead,
-						/obj/item/ammo_casing/caseless/lead,
-						/obj/item/ammo_casing/caseless/lead
-					)
-
-	craftdiff = 1
-
-/datum/anvil_recipe/ammo/grapeshot
-	name = "Grapeshot Cluster 8x"
-	appro_skill = /datum/skill/craft/blacksmithing
-	req_bar = /obj/item/ingot/iron
-	created_item = list(/obj/item/ammo_casing/caseless/grapeshot,
-						/obj/item/ammo_casing/caseless/grapeshot,
-						/obj/item/ammo_casing/caseless/grapeshot,
-						/obj/item/ammo_casing/caseless/grapeshot,
-						/obj/item/ammo_casing/caseless/grapeshot,
-						/obj/item/ammo_casing/caseless/grapeshot,
-						/obj/item/ammo_casing/caseless/grapeshot,
-						/obj/item/ammo_casing/caseless/grapeshot
-					)
-
-	craftdiff = 1

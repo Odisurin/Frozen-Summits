@@ -111,12 +111,10 @@ GLOBAL_LIST_INIT(yeoman_positions, list(
 	"Weaponsmith",
 	"Tailor",
 	"Alchemist",
-	"Architect",
 	"Artificer",
 	"Scribe",
 	"Town Elder",
 	"Bathmaster",
-	
 ))
 
 GLOBAL_LIST_INIT(peasant_positions, list(

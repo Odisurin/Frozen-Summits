@@ -143,7 +143,6 @@
 #define MERCHANT	(1<<8)
 #define SCRIBE		(1<<9)
 #define ELDER		(1<<10)
-#define ARCHITECT	(1<<11)
 #define PEASANTS	(1<<5)
 
 #define HUNTER		(1<<0)
@@ -269,7 +268,6 @@
 
 #define JDO_ARTIFICER 22
 #define JDO_TAILOR 24
-#define JDO_ARCHITECT 23
 
 #define JDO_BARKEEP 26
 #define JDO_COOK 27
@@ -359,7 +357,6 @@
 	/datum/job/roguetown/woodsman,\
 	/datum/job/roguetown/niteman,\
 	/datum/job/roguetown/archivist,\
-	/datum/job/roguetown/architect,\
 	/datum/job/roguetown/barkeep,\
 	/datum/job/roguetown/armorsmith,\
 	/datum/job/roguetown/weaponsmith,\
