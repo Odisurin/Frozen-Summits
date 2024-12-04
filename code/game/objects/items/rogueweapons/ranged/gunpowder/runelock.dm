@@ -11,7 +11,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	spread = 10
 	recoil = 3
-	associated_skill = /datum/skill/craft/hunting
+	associated_skill = /datum/skill/combat/crossbows
 	pin = /obj/item/firing_pin
 	force = 10
 	var/cocked = FALSE

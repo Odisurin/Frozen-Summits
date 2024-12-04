@@ -24,7 +24,6 @@
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "musketball"
 	ammo_type = /obj/item/ammo_casing/caseless/runelock
-	smeltresult = /obj/item/rogueore/iron
 	range = 30
 	hitsound = 'sound/combat/hits/hi_bolt (2).ogg'
 	embedchance = 100
