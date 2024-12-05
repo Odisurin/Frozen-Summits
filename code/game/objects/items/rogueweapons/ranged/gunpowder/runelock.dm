@@ -97,9 +97,9 @@
 	start_empty = TRUE
 
 /datum/intent/shoot/runelock
-	chargetime = 0
-	charging_slowdown = 0
+	chargetime = 8
+	charging_slowdown = 5
 
 /datum/intent/arc/runelock
-	chargetime = 1
-	chargedrain = 0
+	chargetime = 10
+	chargedrain = 5

@@ -36,6 +36,8 @@
 	var/ramrod_inserted = TRUE
 	var/powdered = FALSE
 	var/wound = FALSE
+	var/accuracy = 1
+	var/bonus_accuracy = 1
 
 	/obj/item/gun/ballistic/revolver/grenadelauncher/pistol/update_icon()
 		// Update the icon based on the cocked state and whether the ramrod is inserted

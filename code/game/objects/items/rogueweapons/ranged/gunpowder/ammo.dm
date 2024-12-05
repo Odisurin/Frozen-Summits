@@ -1,7 +1,7 @@
-/**
+/*
  * Special runelock ammo
  * Meant to be LIMITED, but reusable
- */
+
 /obj/item/ammo_casing/caseless/runelock
 	name = "runed sphere"
 	desc = "A small iron ball, perfectly round and covered in Psydonite runes. Deadly when projected at very high velocity."
@@ -71,3 +71,4 @@
 	icon_state = "musketball"
 	dropshrink = 0.5
 	max_integrity = 0.1
+*/

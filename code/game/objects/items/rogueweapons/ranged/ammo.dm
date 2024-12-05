@@ -264,8 +264,8 @@
 
 //Musket spheres.
 /obj/item/ammo_casing/caseless/rogue/bullet
-	name = "runed sphere"
-	desc = "A small lead sphere. It's been inscribed with countless runes, increasing its stopping power."
+	name = "iron sphere"
+	desc = "A small iron sphere. It's been inscribed with countless runes, increasing its stopping power."
 	projectile_type = /obj/projectile/bullet/reusable/bullet
 	caliber = "runeball"
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -276,9 +276,9 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/projectile/bullet/reusable/bullet
-	name = "lead ball"
-	desc = "A round lead shot, simple and spherical."
-	damage = 80
+	name = "iron ball"
+	desc = "A round iron shot, simple and spherical."
+	damage = 65
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "musketball_proj"
@@ -293,8 +293,8 @@
 	flag = "bullet"
 	armor_penetration = 100
 	speed = 0.3
-	accuracy = 50 //Lower accuracy than an arrow.
-
+	accuracy = 25 //Lower accuracy than an arrow.
+/*
 /obj/projectile/bullet/fragment
 	name = "smaller lead ball"
 	desc = "Haha. You're not able to see this!"
@@ -406,3 +406,4 @@
 			H.adjustFireLoss(25)
 			H.fire_act(1,10)
 			to_chat(H, span_userdanger("I'm hit by my BANE!"))
+*/
