@@ -156,7 +156,6 @@
 		REMOVE_TRAIT(M, TRAIT_HEAVYARMOR, "/datum/antagonist/vampirelord/lesser")
 		REMOVE_TRAIT(M, TRAIT_STEELHEARTED, "/datum/antagonist/vampirelord/lesser")
 		M.verbs -= /mob/living/carbon/human/proc/disguise_button
-		M.verbs -= /mob/living/carbon/human/proc/vampire_telepathy
 		M.verbs -= /mob/living/carbon/human/proc/vamp_regenerate
 		M.RemoveSpell(/obj/effect/proc_holder/spell/targeted/transfix)
 		ADD_TRAIT(M, TRAIT_SILVER_BLESSED, TRAIT_GENERIC)
