@@ -98,7 +98,7 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/nred
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/nred = 48)
-	desc = "A bottle with the City of Baldurs Gate. A red ale brewed to perfection."
+	desc = "A bottle with the City-Seal of Baldurs Gate. A red ale brewed to perfection."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/gronnmead
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/gronnmead = 48)
@@ -118,7 +118,7 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunlager
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/kgunlager = 48)
-	desc = "A bottle with of Baldur's Gate Pale, Even lighter than elven-brew!"
+	desc = "A bottle of Baldur's Gate Pale, Even lighter than elven-brew!"
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunsake
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/kgunsake = 48)
