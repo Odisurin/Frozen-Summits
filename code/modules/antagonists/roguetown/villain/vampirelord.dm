@@ -303,15 +303,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/antagonist/vampirelord/proc/vamp_look()
 	var/mob/living/carbon/human/V = owner.current
-	cache_skin = V.skin_tone
-	cache_eyes = V.eye_color
-	cache_hair = V.hair_color
-	V.skin_tone = "c9d3de"
-	V.hair_color = "181a1d"
-	V.facial_hair_color = "181a1d"
-	V.eye_color = "ff0000"
 	V.update_body()
-	V.update_hair()
 	V.update_body_parts(redraw = TRUE)
 	if(isspawn)
 		V.vampire_disguise(src)

@@ -735,7 +735,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_SMASH, BCLASS_TWIST, BCLASS_PICK)
-	block2add = FOV_RIGHT|FOV_LEFT
+	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	max_integrity = 400
 
@@ -751,7 +751,7 @@
 	icon_state = "guardhelm"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
+	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 2
 
@@ -761,7 +761,7 @@
 	icon_state = "gatehelm"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
+	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 2
 
@@ -773,7 +773,8 @@
 	adjustable = CAN_CADJUST
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
+	block2add = FOV_BEHIND
+	max_integrity = 300
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 2
 
@@ -851,7 +852,7 @@
 	item_state = "topfhelm"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
+	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 2
 
@@ -901,7 +902,7 @@
 	item_state = "astratahelm"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
+	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 2
 
@@ -930,7 +931,7 @@
 	item_state = "necrahelm"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
+	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 2
 
@@ -941,7 +942,7 @@
 	item_state = "dendorhelm"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	block2add = FOV_RIGHT|FOV_LEFT
+	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 2
 
@@ -954,6 +955,7 @@
 	body_parts_covered = HEAD|HAIR|EARS
 	flags_inv = HIDEEARS|HIDEHAIR
 	block2add = FOV_BEHIND
+	max_integrity = 300
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/pigface
@@ -966,7 +968,7 @@
 	body_parts_covered = FULL_HEAD
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	block2add = FOV_RIGHT|FOV_LEFT
+	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 2
 
@@ -1043,6 +1045,7 @@
 	body_parts_covered = FULL_HEAD|NECK
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_RIGHT|FOV_LEFT
+	max_integrity = 450
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 2
 
@@ -1368,7 +1371,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_SMASH, BCLASS_TWIST, BCLASS_PICK)
-	block2add = FOV_RIGHT|FOV_LEFT
+	block2add = FOV_BEHIND
 	max_integrity = 425
 	smeltresult = /obj/item/ingot/blacksteel
 	smelt_bar_num = 2
@@ -1425,3 +1428,36 @@
 	icon_state = "sunflower_crown"
 	sewrepair = TRUE
 
+
+/obj/item/clothing/head/roguetown/helmet/heavy/volfplate
+	name = "volf-face helm"
+	desc = "A steel bascinet helmet with a volfish visor protecting the head, ears, eyes, nose and mouth."
+	icon_state = "volfplate"
+	item_state = "volfplate"
+	adjustable = CAN_CADJUST
+	emote_environment = 3
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/heavy/volfplate/AdjustClothes(mob/user)
+	if(loc == user)
+		playsound(user, "sound/items/visor.ogg", 100, TRUE, -1)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			icon_state = "volfplate_visor_raised"
+			body_parts_covered = HEAD|EARS|HAIR
+			flags_inv = HIDEEARS
+			flags_cover = null
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_head()
+			block2add = null
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_head()
+		user.update_fov_angles()
