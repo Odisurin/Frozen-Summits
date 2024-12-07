@@ -271,9 +271,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	warden_area = TRUE
 	ambientsounds = AMB_BEACH
 	ambientnight = AMB_BEACH
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/ambience/cityday.ogg'
+	droning_sound_dusk = 'sound/ambience/citydusk.ogg'
+	droning_sound_night = 'sound/ambience/citynight.ogg'
 	converted_type = /area/rogue/under/lake
 
 /area/rogue/outdoors/beach/forest
@@ -634,9 +634,11 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "tavern"
 	ambientsounds = AMB_INGEN
 	ambientnight = AMB_INGEN
-	droning_sound = 'sound/music/jukeboxes/tavern1.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/jukeboxes/tavern2.ogg'
+	spookysounds = SPOOKY_CROWS
+	spookynight = SPOOKY_FOREST
+	droning_sound = 'sound/ambience/barday.ogg'
+	droning_sound_dusk = 'sound/ambience/bardusk.ogg'
+	droning_sound_night = 'sound/ambience/barnight.ogg'
 	converted_type = /area/rogue/outdoors/exposed/tavern
 /area/rogue/outdoors/exposed/tavern
 	icon_state = "tavern"
@@ -707,18 +709,27 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	name = "outdoors"
 	icon_state = "town"
 	soundenv = 16
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	ambientsounds = AMB_FORESTDAY
+	ambientnight = AMB_FORESTNIGHT
+	spookysounds = SPOOKY_CROWS
+	spookynight = SPOOKY_FOREST
+	droning_sound = 'sound/ambience/cityday.ogg'
+	droning_sound_dusk = 'sound/ambience/citydusk.ogg'
+	droning_sound_night = 'sound/ambience/citynight.ogg'
 	converted_type = /area/rogue/indoors/shelter/town
 	first_time_text = "THE HAMLET OF FROZEN SUMMIT"
 	town_area = TRUE
 
 /area/rogue/indoors/shelter/town
 	icon_state = "town"
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	soundenv = 16
+	droning_sound = 'sound/ambience/cityday.ogg'
+	droning_sound_dusk = 'sound/ambience/citydusk.ogg'
+	droning_sound_night = 'sound/ambience/citynight.ogg'
+	ambientsounds = AMB_INGEN
+	ambientnight = AMB_INGEN
+	spookysounds = SPOOKY_CROWS
+	spookynight = SPOOKY_FOREST
 
 
 /area/rogue/outdoors/town/sargoth
