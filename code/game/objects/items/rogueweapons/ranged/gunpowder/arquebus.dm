@@ -123,6 +123,6 @@
 /obj/item/ammo_box/magazine/internal/arquebus
 	name = "arquebus internal magazine"
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/bullet
-	caliber = "lead_sphere"
+	caliber = "runeball"
 	max_ammo = 1
 	start_empty = TRUE

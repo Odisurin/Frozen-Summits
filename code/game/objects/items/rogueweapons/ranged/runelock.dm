@@ -87,7 +87,7 @@
 //datums
 
 /datum/intent/shoot/runelock
-	chargedrain = 0 //no drain to aim a crossbow
+	chargedrain = 10 //no drain to aim a crossbow
 
 /datum/intent/shoot/runelock/get_chargetime()
 	if(mastermob && chargetime)
@@ -104,7 +104,7 @@
 	return chargetime
 
 /datum/intent/arc/runelock
-	chargetime = 1
+	chargetime = 15
 	chargedrain = 0 //no drain to aim a crossbow
 
 /datum/intent/arc/runelock/get_chargetime()

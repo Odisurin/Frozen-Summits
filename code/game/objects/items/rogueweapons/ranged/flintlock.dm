@@ -1,4 +1,4 @@
-/obj/item/gun/ballistic/revolver/grenadelauncher/pistol
+/*/obj/item/gun/ballistic/revolver/grenadelauncher/pistol
 	name = "puffer"
 	desc = "The current zenith of Dwarven and Humen cooperation on the Eastern continent. It uses alchemical blastpowder to propel metal balls for devastating effect."
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -218,3 +218,4 @@
 	desc = "A small metal flask used for the secure storing of alchemical powders."
 	list_reagents = list(/datum/reagent/blastpowder = 30)
 	icon_state = "aflask"
+*/
