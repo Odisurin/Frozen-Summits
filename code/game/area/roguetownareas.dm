@@ -110,9 +110,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_MOUNTAIN
 	spookysounds = SPOOKY_GEN
 	spookynight = SPOOKY_GEN
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/ambience/cityday.ogg'
+	droning_sound_dusk = 'sound/ambience/citydusk.ogg'
+	droning_sound_night = 'sound/ambience/citynight.ogg'
 	warden_area = TRUE
 	soundenv = 17
 	converted_type = /area/rogue/indoors/shelter/mountains
@@ -177,15 +177,16 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 30,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 50)
 	first_time_text = "FROZEN SUMMIT BASIN"
-	droning_sound = 'sound/music/area/field.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/ambience/cityday.ogg'
+	droning_sound_dusk = 'sound/ambience/citydusk.ogg'
+	droning_sound_night = 'sound/ambience/citynight.ogg'
 	converted_type = /area/rogue/indoors/shelter/rtfield
+
 /area/rogue/indoors/shelter/rtfield
 	icon_state = "rtfield"
-	droning_sound = 'sound/music/area/field.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/ambience/cityday.ogg'
+	droning_sound_dusk = 'sound/ambience/citydusk.ogg'
+	droning_sound_night = 'sound/ambience/citynight.ogg'
 
 
 /area/rogue/outdoors/woods
@@ -634,10 +635,11 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "tavern"
 	ambientsounds = AMB_INGEN
 	ambientnight = AMB_INGEN
-	droning_sound = 'sound/music/jukeboxes/tavern1.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/jukeboxes/tavern2.ogg'
+	droning_sound = 'sound/ambience/barday.ogg'
+	droning_sound_dusk = 'sound/ambience/bardusk.ogg'
+	droning_sound_night = 'sound/ambience/barnight.ogg'
 	converted_type = /area/rogue/outdoors/exposed/tavern
+
 /area/rogue/outdoors/exposed/tavern
 	icon_state = "tavern"
 	droning_sound = 'sound/music/jukeboxes/tavern1.ogg'
