@@ -52,6 +52,12 @@
 	reqs = list(/obj/item/natural/cloth = 1)
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/sewing/ragglove
+	name = "hand wrappings - (cloth; NONE)"
+	result = list(/obj/item/clothing/gloves/roguetown/wrap)
+	reqs = list(/obj/item/natural/cloth = 1)
+	craftdiff = 0
+
 /datum/crafting_recipe/roguetown/sewing/brownloincloth
 	name = "brown loincloth"
 	result = list(/obj/item/clothing/under/roguetown/loincloth/brown)
