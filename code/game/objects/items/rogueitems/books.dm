@@ -177,7 +177,7 @@
 	..()
 
 /obj/item/book/rogue/bibble
-	name = "The Book"
+	name = "The Book of AO"
 	icon_state = "bibble_0"
 	base_icon_state = "bibble"
 	title = "bible"
@@ -226,7 +226,7 @@
 
 /obj/item/book/rogue/law
 	name = "Tome of Justice"
-	desc = "The Tome of Laws, as passed from the Holy See to its many Ten-worshipping communities."
+	desc = "A dusty old book , written by a mad King."
 	icon_state ="lawtome_0"
 	base_icon_state = "lawtome"
 	bookfile = "law_2.json"
@@ -262,45 +262,45 @@
 	to_chat(user, span_notice("You feel laughter echo in your head."))
 
 /obj/item/book/rogue/secret/thefireisgone
-	name = "THE FIRE IS GONE"
-	desc = "{<font color='red'><blink>AN ANCIENT TOME WRITTEN BY THE GODS' GREATEST FOOL</blink></font>}"
+	name = "A Fall of Netheril"
+	desc = "{<font color='red'><blink>A first-hand account of the Fall of Netheril, written by Raphael</blink></font>}"
 	icon_state ="book6_0"
 	base_icon_state = "book6"
 	bookfile = "thefireisgone.json"
 
 //player made books
 /obj/item/book/rogue/tales1
-	name = "Assorted Tales From Yester Yils"
-	desc = "By Alamere J Wevensworth"
+	name = "Adopters of Culture"
+	desc = "A book written by Penelope Ringwarble that comments on the culture of Half-Orcs."
 	icon_state ="book_0"
 	base_icon_state = "book"
 	bookfile = "tales1.json"
 
 /obj/item/book/rogue/festus
-	name = "Book of Festus"
-	desc = "Unknown Author"
+	name = "Ethical Review of the Flaming Fist"
+	desc = "Written by Qesenya Cestor"
 	icon_state ="book2_0"
 	base_icon_state = "book2"
 	bookfile = "tales2.json"
 
 
 /obj/item/book/rogue/tales3
-	name = "Myths & Legends of the Peaks & Beyond Volume I"
-	desc = "Arbalius The Younger"
+	name = "A Traveller's Guide to Baldur's Gate"
+	desc = "An older book on Baldur's Gate, well-travelled and read."
 	icon_state ="book3_0"
 	base_icon_state = "book3"
 	bookfile = "tales3.json"
 
 /obj/item/book/rogue/bookofpriests
-	name = "Holy Book of Saphria"
+	name = "Holy Book of Sune"
 	desc = ""
 	icon_state ="knowledge_0"
 	base_icon_state = "knowledge"
 	bookfile = "holyguide.json"
 
 /obj/item/book/rogue/robber
-	name = "Reading for Robbers"
-	desc = "By Flavius of Silvanus"
+	name = "A Primer on Mythical Beasts"
+	desc = "This thick, gold-trimmed tome is embossed with decorative outlines of fantastical beasts."
 	icon_state ="basic_book_0"
 	base_icon_state = "basic_book"
 	bookfile = "tales4.json"
@@ -320,29 +320,29 @@
 	bookfile = "tales6.json"
 
 /obj/item/book/rogue/beardling
-	name = "Rock and Stone - ABC & Tales for Beardlings"
-	desc = "Distributed by the Dwarven Federation"
+	name = "Basics of Beginner's Dwarvish"
+	desc = "This dusty old book contains the fundamentals of learning a new language"
 	icon_state ="book8_0"
 	base_icon_state = "book8"
 	bookfile = "tales7.json"
 
 /obj/item/book/rogue/abyssor
-	name = "A Tale of Those Who Live At Sea"
-	desc = "By Bellum Aegir"
+	name = "Shanties for the Bitch Queen"
+	desc = " A salt-stained collection of sea shanties meant to honour Umberlee, goddess of the sea."
 	icon_state ="book2_0"
 	base_icon_state = "book2"
 	bookfile = "tales8.json"
 
 /obj/item/book/rogue/necra
-	name = "Burial Rites for Necra"
-	desc = "By Hunlaf, Gravedigger. Revised by Lenore, Priest of Necra."
+	name = "Burial Rites for Kelemvor"
+	desc = "By Hunlaf, Gravedigger. Revised by Velka, Priest of Kelemvor."
 	icon_state ="book6_0"
 	base_icon_state = "book6"
 	bookfile = "tales9.json"
 
 /obj/item/book/rogue/noc
 	name = "Dreamseeker"
-	desc = "By Hunlaf, Gravedigger. Revised by Lenore, Priest of Necra."
+	desc = "By Arenth the mad."
 	icon_state ="book6_0"
 	base_icon_state = "book6"
 	bookfile = "tales10.json"
@@ -362,46 +362,18 @@
 	bookfile = "tales12.json"
 
 /obj/item/book/rogue/arcyne
-	name = "Latent Magicks, where does Arcyne Power come from?"
-	desc = "By Kildren Birchwood, scholar of Magicks"
+	name = "An Alternative Perspective: The Weave"
+	desc = "This book is redolent with the enticing smell of paper and ink"
 	icon_state ="book4_0"
 	base_icon_state = "book4"
 	bookfile = "tales13.json"
 
 /obj/item/book/rogue/nitebeast
-	name = "Legend of the Nitebeast"
-	desc = "By Paquetto the Scholar"
+	name = "A hunters guide to Hags	"
+	desc = "Amadine Heartwood"
 	icon_state ="book8_0"
 	base_icon_state = "book8"
 	bookfile = "tales14.json"
-
-/obj/item/book/rogue/naledi1
-	name = "The Path of the War Scholar Volume 1"
-	desc = "By Jatholemew von Rittensquatter, Esq"
-	icon_state = "knowledge_0"
-	base_icon_state = "knowledge"
-	bookfile = "naledi1.json"
-
-/obj/item/book/rogue/naledi2
-	name = "The Path of the War Scholar Volume 3"
-	desc = "By Jatholemew von Rittensquatter, Esq"
-	icon_state = "book8_0"
-	base_icon_state = "book8"
-	bookfile = "naledi2.json"
-
-/obj/item/book/rogue/naledi3
-	name = "The Path of the War Scholar Volume 7"
-	desc = "By Jatholemew von Rittensquatter, Esq"
-	icon_state = "book7_0"
-	base_icon_state = "book7"
-	bookfile = "naledi3.json"
-
-/obj/item/book/rogue/naledi4
-	name = "The Path of the War Scholar Volume 20"
-	desc = "By Jatholemew von Rittensquatter, Esq"
-	icon_state = "book6_0"
-	base_icon_state = "book6"
-	bookfile = "naledi4.json"
 
 
 /obj/item/book/rogue/playerbook
