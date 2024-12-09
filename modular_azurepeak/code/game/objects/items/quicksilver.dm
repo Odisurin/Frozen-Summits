@@ -135,10 +135,6 @@
 			QDEL_NULL(eyes)
 			eyes = new /obj/item/organ/eyes/
 			eyes.Insert(M)
-		M.skin_tone = Vampless.cache_skin
-		M.hair_color = Vampless.cache_hair
-		M.facial_hair_color = Vampless.cache_hair 
-		M.eye_color = Vampless.cache_eyes
 		M.update_body()
 		M.update_hair()
 		M.update_body_parts(redraw = TRUE)
