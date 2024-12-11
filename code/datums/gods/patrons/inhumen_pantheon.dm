@@ -157,10 +157,10 @@
 	desc = "The Primordial Demon Lord Dagon dwells in the 89th level of the Abyss. His true motives are a mystery, even to the ones that worship him."
 	worshippers = "Sea Hags, Kuo-toa , Krakens and sentient sea-creatures"
 	confess_lines = list(
-		"THE WAVES WILL RUN RED WITH BLOOD"
-		"I SERVE DAGON AND THE DEEP ONES!"
+		"THE WAVES WILL RUN RED WITH BLOOD",
+		"I SERVE DAGON AND THE DEEP ONES!",
 		"I'a! Dagon! I'a! Dagon! I'a! Dagon!"
-	)
+)
 	
 /* RATWOOD EDIT - Back to the main pantheon 
 /datum/patron/inhumen/eora
