@@ -158,6 +158,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/headshot_link
 	var/list/descriptor_entries = list()
 	var/list/custom_descriptors = list()
+	var/virginity = FALSE
+	/// Tracker to whether the person has ever spawned into the round, for purposes of applying the respawn ban
+	var/has_spawned = FALSE
 
 	var/char_accent = "No accent"
 
@@ -704,6 +707,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	dat += "</td>"
 	dat += "<td width='33%' align='right'>"
+	dat += "<b>Be a virgin:</b> <a href='?_src_=prefs;preference=be_virgin'>[(virginity) ? "Yes":"No"]</a><br>"
 	dat += "<b>Be voice:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Enabled":"Disabled"]</a>"
 	dat += "</td>"
 	dat += "</tr>"
@@ -2102,6 +2106,14 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					widescreenpref = !widescreenpref
 					user.client.change_view(CONFIG_GET(string/default_view))
 
+
+				if("be_virgin")
+					virginity = !virginity
+					if(virginity)
+						to_chat(user, span_notice("You have not once indulged in the temptations of the flesh.")) 
+					else
+						to_chat(user, span_notice("You have. In a word. Fucked before.")) //Someone word this better please kitty is high and words are hard
+
 				if("schizo_voice")
 					toggles ^= SCHIZO_VOICE
 					if(toggles & SCHIZO_VOICE)
@@ -2247,6 +2259,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 	character.detail = detail
 	character.set_patron(selected_patron)
 	character.backpack = backpack
+	character.virginity = virginity
 
 	character.jumpsuit_style = jumpsuit_style
 

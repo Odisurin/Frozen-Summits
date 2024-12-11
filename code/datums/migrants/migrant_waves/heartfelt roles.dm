@@ -307,3 +307,7 @@
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_spells_priest(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
+
+/datum/outfit/job/roguetown/heartfelt/prior/post_equip(mob/living/carbon/human/H)
+	..()
+	H.virginity = TRUE
