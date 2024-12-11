@@ -24,9 +24,6 @@
 	var/vitae = 1000
 	var/last_transform
 	var/is_lesser = FALSE
-	var/cache_skin
-	var/cache_eyes
-	var/cache_hair
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/bat/batform //attached to the datum itself to avoid cloning memes, and other duplicates
 
 /datum/antagonist/vampire/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
@@ -175,10 +172,6 @@
 	if(!VD)
 		return
 	VD.disguised = TRUE
-	skin_tone = VD.cache_skin
-	hair_color = VD.cache_hair
-	eye_color = VD.cache_eyes
-	facial_hair_color = VD.cache_hair
 	update_body()
 	update_hair()
 	update_body_parts(redraw = TRUE)
@@ -190,10 +183,6 @@
 //	VD.cache_skin = skin_tone
 //	VD.cache_eyes = eye_color
 //	VD.cache_hair = hair_color
-	skin_tone = "c9d3de"
-	hair_color = "181a1d"
-	facial_hair_color = "181a1d"
-	eye_color = "ff0000"
 	update_body()
 	update_hair()
 	update_body_parts(redraw = TRUE)

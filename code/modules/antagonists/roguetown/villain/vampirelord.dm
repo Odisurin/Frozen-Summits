@@ -29,9 +29,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/vmax = 2500
 	var/obj/structure/vampire/bloodpool/mypool
 	var/last_transform
-	var/cache_skin
-	var/cache_eyes
-	var/cache_hair
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/bat/batform //attached to the datum itself to avoid cloning memes, and other duplicates
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/gaseousform/gas
 	var/ashes = FALSE
@@ -154,7 +151,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	cloak = /obj/item/clothing/cloak/cape/puritan
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel/black
-	H.ambushable = FALSE
+	H.ambushable = TRUE
 
 ////////Outfits////////
 /obj/item/clothing/under/roguetown/platelegs/vampire
