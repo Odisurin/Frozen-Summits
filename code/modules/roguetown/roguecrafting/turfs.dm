@@ -272,6 +272,23 @@
 			return
 	return TRUE
 
+/datum/crafting_recipe/roguetown/turfs/roofs
+	name = "rooftop"
+	result = /turf/open/floor/rogue/rooftop
+	reqs = list(/obj/item/grown/log/tree/stick = 2)
+	skillcraft = /datum/skill/craft/crafting
+	verbage_simple = "assemble"
+	verbage = "assembles"
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/turfs/roofs/TurfCheck(mob/user, turf/T)
+	if(isclosedturf(T))
+		return
+	if(!istype(T, /turf/open/transparent/openspace))
+		if(!istype(T, /turf/open/water))
+			return
+	return TRUE
+
 /datum/crafting_recipe/roguetown/turfs/tentwall
 	name = "tent wall"
 	result = /turf/closed/wall/mineral/rogue/tent

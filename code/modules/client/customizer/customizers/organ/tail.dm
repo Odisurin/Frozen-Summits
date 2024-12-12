@@ -160,6 +160,7 @@
 	organ_type = /obj/item/organ/tail/anthro
 	sprite_accessories = list(
 		/datum/sprite_accessory/tail/cat,
+		/datum/sprite_accessory/tail/lizard/kobold,
 		/datum/sprite_accessory/tail/monkey,
 		/datum/sprite_accessory/tail/axolotl,
 		/datum/sprite_accessory/tail/batl,
