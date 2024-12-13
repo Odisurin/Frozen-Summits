@@ -37,7 +37,7 @@
 			H.change_stat("endurance", 3)
 			H.change_stat("constitution", 2)
 			H.change_stat("perception", 1)
-			H.change_stat("speed", -1)		//They get heavy armor now + sword option; so lower speed.
+			H.change_stat("speed", 1)		//They get heavy armor now + sword option; so lower speed.
 			r_hand = /obj/item/rogueweapon/greatsword/grenz
 		if("Halberdier")
 			H.set_blindness(0)
@@ -70,7 +70,7 @@
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 	head = /obj/item/clothing/head/roguetown/grenzelhofthat
-	armor = /obj/item/clothing/suit/roguetown/armor/blacksteel/cuirass
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
 	pants = /obj/item/clothing/under/roguetown/grenzelpants
 	shoes = /obj/item/clothing/shoes/roguetown/grenzelhoft
 	gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
