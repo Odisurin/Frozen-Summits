@@ -40,6 +40,8 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 4, TRUE)
 			H.change_stat("strength", 2)
 			H.change_stat("endurance", 3)
 			H.change_stat("constitution", 3) //for the lack of ranged weaponry
@@ -67,6 +69,7 @@
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/engineering, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
 			H.change_stat("strength", 2)
 			H.change_stat("endurance", 2)
 			H.change_stat("constitution", 2)
