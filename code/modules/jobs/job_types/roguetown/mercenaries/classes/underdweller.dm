@@ -90,8 +90,8 @@
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	gloves = /obj/item/clothing/gloves/roguetown/angle
-	backr = /obj/item/storage/backpack/rogue/backpack
-	backl = /obj/item/rogueweapon/stoneaxe/woodcut/pick
+	backl = /obj/item/storage/backpack/rogue/backpack
+	backr = /obj/item/rogueweapon/stoneaxe/woodcut/pick
 
 	backpack_contents = list(/obj/item/roguekey/mercenary)
 
