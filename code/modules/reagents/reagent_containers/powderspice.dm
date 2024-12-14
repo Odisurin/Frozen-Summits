@@ -156,7 +156,7 @@
 	name = "sugar"
 	desc = ""
 	gender = PLURAL
-	icon_state = "sugar"
+	icon_state = "salt"
 	list_reagents = list(/datum/reagent/sugar = 1)
 	grind_results = list(/datum/reagent/sugar = 10)
 	volume = 1
