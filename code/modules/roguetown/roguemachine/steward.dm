@@ -6,8 +6,8 @@
 #define TAB_LOG 6
 
 /obj/structure/roguemachine/steward
-	name = "nerve master"
-	desc = "The stewards most trusted friend."
+	name = "Banking Golem"
+	desc = "A simple Construct that keeps track of the local economy. The stewards most trusted friend."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "steward_machine"
 	density = TRUE

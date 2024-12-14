@@ -28,7 +28,7 @@
 	..()
 
 /obj/structure/fluff/walldeco/painting
-	name = "painting of a Drow"
+	name = "Painting"
 	desc = "An old Portrait of the famous Liriel Baenre of house Baenre. Famous Noblewoman and Archmage of Menzoberranzan.	"
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "painting_deployed"
