@@ -176,8 +176,8 @@
 	qdel(src)
 
 /obj/item/clothing/neck/roguetown/psicross
-	name = "psycross"
-	desc = ""
+	name = "Talisman"
+	desc = "A blessed Talisman, often used by Clerics."
 	icon_state = "psicross"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
@@ -227,12 +227,14 @@
 	icon_state = "eora"
 
 /obj/item/clothing/neck/roguetown/psicross/wood
-	name = "wooden psycross"
+	name = "wooden talisman"
+	desc = "a simple wooden talisman or totem"
 	icon_state = "psicrossw"
 	sellprice = 0
 
 /obj/item/clothing/neck/roguetown/psicross/silver
-	name = "silver psycross"
+	name = "silver talisman"
+	desc = "A silver Talisman, often used by clerics to channel their divine powers."
 	icon_state = "psicrosssteel"
 	sellprice = 50
 
@@ -304,8 +306,8 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/horus
-	name = "eye of horuz"
-	desc = ""
+	name = "Guild Medal"
+	desc = "A Medal identifying the wearer as member of the Merchant's League."
 	icon_state = "horus"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
@@ -313,8 +315,8 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/shalal
-	name = "desert rider medal"
-	desc = ""
+	name = "Zhentarim Medal"
+	desc = "A Medal identifying the wearer as a member of the Zhentarim."
 	icon_state = "shalal"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
@@ -340,7 +342,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/psicross/naledi
-	name = "naledian psy-bracelet"
-	desc = "A peculiar icon of worship from a foreign land. Forming the three-progned Aoite cross in a circular ring, this bracelet embodies the Naledian belief of Ao's eternity."
+	name = "Blessed Bracelet"
+	desc = "A blessed Bracelet often found to be used by wandering monks and preachers."
 	icon_state = "psybracelet"
 	item_state = "psybracelet"
