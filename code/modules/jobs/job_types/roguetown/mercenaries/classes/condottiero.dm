@@ -43,7 +43,7 @@
 			H.change_stat("speed", 3)
 			backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 			r_hand = /obj/item/rogueweapon/sword/short
-			neck = /obj/item/clothing/neck/roguetown/chaincoif/full
+			neck = /obj/item/clothing/neck/roguetown/gorget
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 			pants = /obj/item/clothing/under/roguetown/trou/leather
