@@ -109,8 +109,8 @@
 #define UPGRADE_ALCOHOLS	(1<<5)
 
 /obj/structure/roguemachine/merchantvend
-	name = "GOLDFACE"
-	desc = "Gilded tombs do worms enfold."
+	name = "Merchants Catalogue "
+	desc = "A gnomish machine that lets you access the Merchant League's catalogue."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "streetvendor1"
 	density = TRUE

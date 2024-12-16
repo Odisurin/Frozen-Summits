@@ -13,7 +13,7 @@
 
 	// CLASS ARCHETYPES
 	H.adjust_blindness(-3)
-	var/classes = list("Bruiser","Blade Dancer","Blade Caster")
+	var/classes = list("Bruiser","Blade Dancer")
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 
 	switch(classchoice)

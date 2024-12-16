@@ -15,12 +15,12 @@
 
 
 /datum/supply_pack/rogue/tools/scomst
-	name = "Scomstone"
+	name = "Sending Stone Ring"
 	cost = 120
 	contains = list(/obj/item/scomstone)
 
 /datum/supply_pack/rogue/tools/serfst
-	name = "Serfstone"
+	name = "Minor Sending Stone Ring"
 	cost = 40
 	contains = list(/obj/item/scomstone/bad)
 

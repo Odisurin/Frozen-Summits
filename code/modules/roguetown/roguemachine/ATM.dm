@@ -1,6 +1,6 @@
 /obj/structure/roguemachine/atm
-	name = "MEISTER"
-	desc = "Stores and withdraws currency for accounts."
+	name = "Arcane Teller Mechanism"
+	desc = "A magical machine created by the Sword Coast Traders' Bank. It allows you to store and withdraw Money."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "atm"
 	density = FALSE
