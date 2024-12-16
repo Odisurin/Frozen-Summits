@@ -12,12 +12,3 @@ GLOBAL_LIST_EMPTY(weather_act_upon_list)
 #define TRAIT_WEATHER_IMMUNE "weather_immune" //Immune to ALL weather effects.
 #define TRAIT_RAINSTORM_IMMUNE "rainstorm_immune"
 
-#define SUNLIGHT_DARK_MATRIX \
-	list                     \
-	(                        \
-		0, 0, 0, 0, \
-		0, 0, 0, 0, \
-		0, 0, 0, 0, \
-		0, 0, 0, 0, \
-		0, 0, 0, 1           \
-	)
