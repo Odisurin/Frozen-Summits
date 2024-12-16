@@ -23,15 +23,6 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/customlock, /obj/item/customlock)
 
-/datum/anvil_recipe/general/keys
-	name = "Keys 2x"
-	req_bar = /obj/item/ingot/iron
-	created_item = list(/obj/item/key_custom_blank, /obj/item/key_custom_blank)
-
-/datum/anvil_recipe/tools/iron/scissors
-	name = "Scissors"
-	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/huntingknife/scissors
 
 /datum/anvil_recipe/tools/iron/pan
 	name = "Frypan"

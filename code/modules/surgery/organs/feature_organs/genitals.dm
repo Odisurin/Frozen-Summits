@@ -188,4 +188,4 @@
 	slot = ORGAN_SLOT_BUTT
 	organ_dna_type = /datum/organ_dna/butt
 	accessory_type = /datum/sprite_accessory/butt/pair
-	organ_size = DEFAULT_BUTT_SIZE
+	var/organ_size = DEFAULT_BUTT_SIZE

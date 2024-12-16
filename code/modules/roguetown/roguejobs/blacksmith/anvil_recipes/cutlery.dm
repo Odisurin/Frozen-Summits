@@ -8,7 +8,7 @@
   name = "Pewter Bowl 3x"
   req_bar = /obj/item/ingot/tin
   created_item = list(/obj/item/reagent_containers/glass/bowl/pewter, /obj/item/reagent_containers/glass/bowl/pewter, /obj/item/reagent_containers/glass/bowl/pewter)
-  skill_level = 1 // Pewter is v. easy to work with
+
 
 /datum/anvil_recipe/cutlery/tin/plate
   name = "Pewter Platter 3x"
@@ -37,7 +37,7 @@
   name = "Silver Bowl 3x"
   req_bar = /obj/item/ingot/silver
   created_item = list(/obj/item/reagent_containers/glass/bowl/silver, /obj/item/reagent_containers/glass/bowl/silver, /obj/item/reagent_containers/glass/bowl/silver)
-  skill_level = 2
+
 
 /datum/anvil_recipe/cutlery/silver/plate
   name = "Silver Platter 3x"
@@ -70,7 +70,7 @@
 	name = "Iron Fork x3"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/kitchen/ironfork
-	skill_level = 1
+
 
 /datum/anvil_recipe/cutlery/iron/spoon
 	name = "Iron Spoon x3"
@@ -79,7 +79,7 @@
 						/obj/item/kitchen/ironspoon,
 						/obj/item/kitchen/ironspoon
 					)
-	skill_level = 1
+
 
 /datum/anvil_recipe/cutlery/iron/bowl
 	name = "Iron Bowl x3"
@@ -88,7 +88,7 @@
 						/obj/item/reagent_containers/glass/bowl/iron,
 						/obj/item/reagent_containers/glass/bowl/iron
 					)
-	skill_level = 1
+
 
 // Steel
 /datum/anvil_recipe/cutlery/steel/cups
