@@ -47,18 +47,18 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 				if("dawn")
 					if(prob(12))
 						GLOB.forecast = "fog"
-					if(prob(13))
+					if(prob(100))
 						GLOB.forecast = "rain"
 				if("day")
-					if(prob(5))
+					if(prob(100))
 						GLOB.forecast = "rain"
 				if("dusk")
-					if(prob(13))
+					if(prob(1103))
 						GLOB.forecast = "rain"
 				if("night")
 					if(prob(5))
 						GLOB.forecast = "fog"
-					if(prob(21))
+					if(prob(100))
 						GLOB.forecast = "rain"
 			if(GLOB.forecast == "rain")
 				var/foundnd
