@@ -67,6 +67,11 @@
 	req_bar = /obj/item/ingot/copper
 	created_item = list(/obj/item/clothing/ring/copper, /obj/item/clothing/ring/copper, /obj/item/clothing/ring/copper)
 
+/datum/anvil_recipe/valuables/copper/rings
+	name = "Rings 3x"
+	req_bar = /obj/item/ingot/copper
+	created_item = list(/obj/item/clothing/ring/copper, /obj/item/clothing/ring/copper, /obj/item/clothing/ring/copper)
+
 //Gold Rings
 /datum/anvil_recipe/valuables/emeringg
 	name = "Gemerald Ring (+1 Gemerald)"
@@ -109,6 +114,7 @@
 	name = "Signet Ring"
 	req_bar = /obj/item/ingot/gold
 	created_item = /obj/item/clothing/ring/signet
+//Silver rings
 
 // Silver ingots are now in play, and as such, the steel rings have been converted to silver with their value adjusted accordingly. -Kyogon
 

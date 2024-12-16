@@ -161,7 +161,9 @@
 	desc = "This bar causes a gentle tingling sensation when touched."
 	icon_state = "ingotcop"
 	smeltresult = /obj/item/ingot/copper
-	sellprice = 10
+	grind_results = list(/datum/reagent/copper = 15)
+	sellprice = 40
+
 /obj/item/ingot/tin
 	name = "tin bar"
 	desc = "An ingot of strangely soft and malleable essence."

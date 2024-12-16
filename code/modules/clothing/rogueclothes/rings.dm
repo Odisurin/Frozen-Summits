@@ -196,6 +196,39 @@
 	sellprice = 170
 
 
+// Copper Rings
+
+/obj/item/clothing/ring/emeraldc
+	name = "gemerald ring"
+	icon_state = "c_ring_emerald"
+	sellprice = 110
+
+/obj/item/clothing/ring/rubyc
+	name = "rontz ring"
+	icon_state = "c_ring_ruby"
+	sellprice = 155
+
+/obj/item/clothing/ring/topazc
+	name = "toper ring"
+	icon_state = "c_ring_topaz"
+	sellprice = 105
+
+/obj/item/clothing/ring/quartzc
+	name = "blortz ring"
+	icon_state = "c_ring_quartz"
+	sellprice = 150
+
+/obj/item/clothing/ring/sapphirec
+	name = "saffira ring"
+	icon_state = "c_ring_sapphire"
+	sellprice = 115
+
+/obj/item/clothing/ring/diamondc
+	name = "dorpel ring"
+	icon_state = "c_ring_diamond"
+	sellprice = 170
+
+
 /obj/item/clothing/ring/dragon_ring
 	name = "Dragon Ring"
 	icon_state = "dragonring"
