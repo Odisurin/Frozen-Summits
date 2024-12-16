@@ -17,7 +17,6 @@
 	rotprocess = null
 	static_debris = list(/obj/item/natural/feather=1)
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/friedcrow
-	cooked_smell = /datum/pollutant/food/fried_crow
 
 /obj/item/reagent_containers/food/snacks/rogue/friedcrow
 	name = "fried crow"

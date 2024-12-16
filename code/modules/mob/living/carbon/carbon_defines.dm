@@ -92,6 +92,3 @@
 /// Amount of remaining vitae that can be drained from this mob
 	var/vitae_pool = 8000
 
-	var/tiredness = 0
-	var/aura = TRUE //Used to switch between good luck and bad luck auras
-	var/next_smell = 0

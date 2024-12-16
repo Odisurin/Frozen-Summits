@@ -25,7 +25,6 @@
 	icon_state = "meatcutlet"
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried
-	cooked_smell = /datum/pollutant/food/fried_meat
 	slices_num = 2
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef
 	slice_bclass = BCLASS_CHOP
@@ -156,7 +155,6 @@
 	ingredient_size = 1
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked
-	cooked_smell = /datum/pollutant/food/sausage
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/wiener
 	name = "raw wiener"
@@ -164,7 +162,7 @@
 	ingredient_size = 1
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/wiener
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/wiener
-	cooked_smell = /datum/pollutant/food/sausage
+
 
 /*	........   Fish sounds   ................ */
 /obj/item/reagent_containers/food/snacks/fish

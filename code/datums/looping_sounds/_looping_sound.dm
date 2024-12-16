@@ -35,19 +35,14 @@
 	var/list/thingshearing = list()
 	var/ignore_wallz = TRUE
 	var/timerid
-	/// Has the looping started yet?
-	var/loop_started = FALSE
-	///our sound channel
-	var/channel
 
-/datum/looping_sound/New(list/_output_atoms=list(), start_immediately=FALSE, _direct=FALSE, _channel = 0)
+/datum/looping_sound/New(list/_output_atoms=list(), start_immediately=FALSE, _direct=FALSE)
 	if(!mid_sounds)
 		WARNING("A looping sound datum was created without sounds to play.")
 		return
 
 	output_atoms = _output_atoms
 	direct = _direct
-	channel = _channel
 
 	if(start_immediately)
 		start()
@@ -61,7 +56,6 @@
 	stopped = FALSE
 	if(add_thing)
 		output_atoms |= add_thing
-	loop_started = TRUE
 //	if(timerid)
 //		return
 	on_start()
@@ -72,7 +66,6 @@
 		if(remove_thing)
 			output_atoms -= remove_thing
 		on_stop()
-		loop_started = FALSE
 //		if(!timerid)
 //			return
 //		deltimer(timerid)
@@ -99,16 +92,14 @@
 	if(!istype(S))
 		S = sound(soundfile)
 	if(direct)
-		S.channel = channel || open_sound_channel()
+		S.channel = open_sound_channel()
 		S.volume = volume
 	for(var/i in 1 to atoms_cache.len)
 		var/atom/thing = atoms_cache[i]
 		if(direct)
-			if(ismob(thing))
-				var/mob/mob = thing
-				mob.playsound_local(get_turf(mob), soundfile, volume, vary, frequency, falloff, repeat = src, channel = channel)
+			SEND_SOUND(thing, S)
 		else
-			var/list/R = playsound(thing, soundfile, volume, vary, extra_range, falloff, frequency, ignore_walls = ignore_wallz, repeat = src, channel = channel)
+			var/list/R = playsound(thing, soundfile, volume, vary, extra_range, falloff, frequency, ignore_walls = ignore_wallz, repeat = src)
 			if(!R || !R.len)
 				R = list()
 			for(var/mob/M in thingshearing)
