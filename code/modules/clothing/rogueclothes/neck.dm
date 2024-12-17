@@ -248,15 +248,15 @@
 /obj/item/clothing/neck/roguetown/psicross/wood
 	name = "wooden talisman"
 	desc = "a simple wooden talisman or totem"
-	icon_state = "psycross_w"
-	item_state = "psycross_w"
+	icon_state = "psicrossw"
+	item_state = "psicrossw"
 	sellprice = 0
 
 /obj/item/clothing/neck/roguetown/psicross/silver
 	name = "silver talisman"
 	desc = "A silver Talisman, often used by clerics to channel their divine powers."
-	icon_state = "psycross_s"
-	item_state = "psycross_s"
+	icon_state = "psicrosssteel"
+	item_state = "psicrosssteel"
 	sellprice = 50
 
 /obj/item/clothing/neck/roguetown/psicross/silver/pickup(mob/user)
