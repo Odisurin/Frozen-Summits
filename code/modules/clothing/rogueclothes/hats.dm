@@ -896,8 +896,8 @@
 		add_overlay(pic)
 
 /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
-	name = "astrata helmet"
-	desc = "Headwear commonly worn by Templars in service to Astrata. The firstborn child's light will forever shine on within its crest."
+	name = "Sun helmet"
+	desc = "Headwear commonly worn by Templars in service to Lathander."
 	icon_state = "astratahelm"
 	item_state = "astratahelm"
 	emote_environment = 3
@@ -907,14 +907,14 @@
 	smelt_bar_num = 2
 
 /obj/item/clothing/head/roguetown/helmet/heavy/psydonhelm
-	name ="otavan armet"
-	desc = "Headwear commonly worn by Templars in service to the Inquisition of Otava. PSYDON Endures."
+	name ="Grim Helmet"
+	desc = "Headwear commonly worn by Paladins of Vengeance."
 	icon_state = "psydonarmet"
 	item_state = "psydonarmet"
 
 /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
-	name = "noc helmet"
-	desc = "Headwear commonly worn by Templars in service to Mystra. Without the night there can be no day, without Mystra there can be no light in the dark hours."
+	name = "Mage Knight Helmet"
+	desc = "Headwear commonly worn by Spellswords in service to Mystra. Without the night there can be no day, without Mystra there can be no light in the dark hours."
 	icon_state = "nochelm"
 	item_state = "nochelm"
 	emote_environment = 3
@@ -925,8 +925,8 @@
 	smelt_bar_num = 2
 
 /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
-	name = "necra helmet"
-	desc = "Headwear commonly worn by Templars in service to Necra. Let its skeletal features remind you of the only thing which is guaranteed in life. You will die."
+	name = "Death Helmet"
+	desc = "Headwear commonly worn by Clerics and Paladins in service to Kelemvor. Let its skeletal features remind you of the only thing which is guaranteed in life. You will die."
 	icon_state = "necrahelm"
 	item_state = "necrahelm"
 	emote_environment = 3
@@ -937,7 +937,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 	name = "Silvanus helmet"
-	desc = "Headwear commonly worn by Templars in service to Dendor. Its protrusions almost resemble branches. Take root in the earth, and you will never be moved."
+	desc = "Headwear commonly worn by Templars in service to Sylvanus. Its protrusions almost resemble branches. Take root in the earth, and you will never be moved."
 	icon_state = "dendorhelm"
 	item_state = "dendorhelm"
 	emote_environment = 3
