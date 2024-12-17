@@ -100,7 +100,7 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	if(prob(30))
 		head = /obj/item/clothing/head/roguetown/helmet/tricorn/skull
 	if(prob(50))
-		neck = /obj/item/clothing/neck/roguetown/gorget
+		neck = /obj/item/clothing/neck/roguetown/bevor
 	if(prob(50))
 		gloves = /obj/item/clothing/gloves/roguetown/leather
 	H.STASPD = 9
@@ -111,7 +111,7 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	if(prob(50))
 		r_hand = /obj/item/rogueweapon/sword/rapier 
 	else
-		r_hand = /obj/item/rogueweapon/stoneaxe/battle
+		r_hand = /obj/item/rogueweapon/sword/cutlass
 	l_hand = /obj/item/rogueweapon/huntingknife/idagger/steel/parrying 
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	if(prob(30))

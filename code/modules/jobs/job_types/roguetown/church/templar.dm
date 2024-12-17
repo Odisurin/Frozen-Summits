@@ -1,10 +1,10 @@
 //shield flail or longsword, tief can be this with red cross	
 
 /datum/job/roguetown/templar
-	title = "Templar"
+	title = "Paladin"
 	department_flag = CHURCHMEN
 	faction = "Station"
-	tutorial = "Templars are warriors who have forsaken wealth and title in lieu of service to the church, due to either zealotry or a past shame. They guard the church and its priest while keeping a watchful eye against heresy and nite-creechers. Within troubled dreams, they wonder if the blood they shed makes them holy or stained."
+	tutorial = "Paladins are holy crusaders, sworn to an oath to promote and fight for their beliefs and values."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_patrons = ALL_DIVINE_PATRONS
