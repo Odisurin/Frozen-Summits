@@ -97,7 +97,7 @@
 
 /obj/effect/proc_holder/spell/invoked/rituos
 	name = "Rituos"
-	desc = "Draw upon the Lesser Work of She Who Is Z, and expunge the trappings of mortal flesh from your form in exchange for power unimaginable. Be warned: indulging in even the first step of this ritual will make you more deadite than not..."
+	desc = "Draw upon the Lesser Work of your dark god, and expunge the trappings of mortal flesh from your form in exchange for power unimaginable. Be warned: indulging in even the first step of this ritual will make you more deadite than not..."
 	clothes_req = FALSE
 	overlay_state = "rituos"
 	associated_skill = /datum/skill/magic/arcane
@@ -156,11 +156,11 @@
 	//check to see if we're all skeletonized first
 	var/pre_rituos = check_ritual_progress(user)
 	if (pre_rituos)
-		to_chat(user, span_notice("I have completed Her Lesser Work. Only lichdom awaits me now, but just out of reach..."))
+		to_chat(user, span_notice("I have completed the rite. Only lichdom awaits me now, but just out of reach..."))
 		return FALSE
 
 	if (user.mind?.has_rituos)
-		to_chat(user, span_warning("I have not the mental fortitude to enact the Lesser Work again. I must rest first..."))
+		to_chat(user, span_warning("I have not the mental fortitude to enact the rite again. I must rest first..."))
 		return FALSE
 
 	//hoo boy. here we go.
@@ -219,7 +219,7 @@
 			to_chat(user, span_small("...what have I done?"))
 		return TRUE
 	else
-		to_chat(user, span_notice("The Lesser Work of Rituos floods my mind with stolen arcyne knowledge: I can now cast [item.name] until I next rest..."))
+		to_chat(user, span_notice("The Lesser Work of Rituos floods my mind with stolen arcane knowledge: I can now cast [item.name] until I next rest..."))
 		user.mind.rituos_spell = item
 		user.mind.AddSpell(new item)
 		return TRUE
