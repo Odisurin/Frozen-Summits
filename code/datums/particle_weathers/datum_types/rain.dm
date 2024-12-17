@@ -17,14 +17,14 @@
 	spin                   = 0 // explicitly set spin to 0 - there is a bug that seems to carry generators over from old particle effects
 
 /datum/particle_weather/rain_gentle
-	name = "Snow"
+	name = "Hail"
 	desc = "Gentle Rain, la la description."
 	particleEffectType = /particles/weather/rain
 
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/snow)
 	indoor_weather_sounds = list(/datum/looping_sound/indoor_rain)
-	weather_messages = list("The snow cools your skin.", "The storm is really picking up!")
+	weather_messages = list("The hail pricks your skin.", "The storm is really picking up!")
 
 	minSeverity = 1
 	maxSeverity = 15
@@ -36,17 +36,20 @@
 
 //Makes you a little chilly
 /datum/particle_weather/rain_gentle/weather_act(mob/living/L)
-	L.adjust_bodytemperature(-rand(5,7))
+	L.adjust_bodytemperature(-rand(5,10))
+	L.adjust_fire_stacks(-100)
+	L.SoakMob(FULL_BODY)
+	L.apply_status_effect(/datum/status_effect/buff/frostbite5e)
 
 /datum/particle_weather/rain_storm
-	name = "Snow"
+	name = "Rail Storm"
 	desc = "Snow Storm"
 	particleEffectType = /particles/weather/rain
 
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/snow)
 	indoor_weather_sounds = list(/datum/looping_sound/indoor_rain)
-	weather_messages = list("The snow cools your skin.", "The storm is really picking up!")
+	weather_messages = list("The rail hurts a little.", "The storm is really picking up!")
 
 	minSeverity = 4
 	maxSeverity = 100
@@ -59,3 +62,6 @@
 //Makes you a bit chilly
 /datum/particle_weather/rain_storm/weather_act(mob/living/L)
 	L.adjust_bodytemperature(-rand(5,10))
+	L.adjust_fire_stacks(-100)
+	L.SoakMob(FULL_BODY)
+	L.apply_status_effect(/datum/status_effect/buff/frostbite5e)

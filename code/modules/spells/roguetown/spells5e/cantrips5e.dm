@@ -488,14 +488,14 @@
 		target.adjustBruteLoss(12)
 
 /datum/status_effect/buff/frostbite5e
-	id = "frostbite"
+	id = "coldness"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/frostbite5e
-	duration = 20 SECONDS
+	duration = 60 SECONDS
 	var/static/mutable_appearance/frost = mutable_appearance('icons/roguetown/mob/coldbreath.dmi', "breath_m", ABOVE_ALL_MOB_LAYER)
-	effectedstats = list("speed" = -2)
+	effectedstats = list("speed" = -1)
 
 /atom/movable/screen/alert/status_effect/buff/frostbite5e
-	name = "Frostbite"
+	name = "Coldness"
 	desc = "I can feel myself slowing down."
 	icon_state = "debuff"
 
@@ -504,10 +504,7 @@
 	var/mob/living/target = owner
 	target.add_overlay(frost)
 	target.update_vision_cone()
-	var/newcolor = rgb(136, 191, 255)
-	target.add_atom_colour(newcolor, TEMPORARY_COLOUR_PRIORITY)
-	addtimer(CALLBACK(target, TYPE_PROC_REF(/atom, remove_atom_colour), TEMPORARY_COLOUR_PRIORITY, newcolor), 20 SECONDS)
-	target.add_movespeed_modifier(MOVESPEED_ID_ADMIN_VAREDIT, update=TRUE, priority=100, multiplicative_slowdown=4, movetypes=GROUND)
+	target.add_movespeed_modifier(MOVESPEED_ID_ADMIN_VAREDIT, update=TRUE, priority=100, multiplicative_slowdown=2.5, movetypes=GROUND)
 
 /datum/status_effect/buff/frostbite5e/on_remove()
 	var/mob/living/target = owner
@@ -1227,37 +1224,8 @@
 	playsound(src, 'sound/items/stonestone.ogg', 100)
 	if(isliving(target))
 		var/mob/living/carbon/C = target
-		C.apply_status_effect(/datum/status_effect/buff/rayoffrost5e/) //apply debuff
+		C.apply_status_effect(/datum/status_effect/buff/frostbite5e) //apply debuff
 		C.adjustFireLoss(5)
-
-/datum/status_effect/buff/rayoffrost5e
-	id = "frostbite"
-	alert_type = /atom/movable/screen/alert/status_effect/buff/rayoffrost5e
-	duration = 3 SECONDS
-	var/static/mutable_appearance/frost = mutable_appearance('icons/roguetown/mob/coldbreath.dmi', "breath_m", ABOVE_ALL_MOB_LAYER)
-	effectedstats = list("speed" = -2)
-
-/atom/movable/screen/alert/status_effect/buff/rayoffrost5e
-	name = "Frostbite"
-	desc = "I can feel myself slowing down."
-	icon_state = "debuff"
-
-/datum/status_effect/buff/rayoffrost5e/on_apply()
-	. = ..()
-	var/mob/living/target = owner
-	target.add_overlay(frost)
-	target.update_vision_cone()
-	var/newcolor = rgb(136, 191, 255)
-	target.add_atom_colour(newcolor, TEMPORARY_COLOUR_PRIORITY)
-	addtimer(CALLBACK(target, TYPE_PROC_REF(/atom, remove_atom_colour), TEMPORARY_COLOUR_PRIORITY, newcolor), 3 SECONDS)
-	target.add_movespeed_modifier(MOVESPEED_ID_ADMIN_VAREDIT, update=TRUE, priority=100, multiplicative_slowdown=4, movetypes=GROUND)
-
-/datum/status_effect/buff/rayoffrost5e/on_remove()
-	var/mob/living/target = owner
-	target.cut_overlay(frost)
-	target.update_vision_cone()
-	target.remove_movespeed_modifier(MOVESPEED_ID_ADMIN_VAREDIT, TRUE)
-	. = ..()
 
 //==============================================
 //	CURE WOUNDS
