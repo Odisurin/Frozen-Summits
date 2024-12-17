@@ -27,15 +27,23 @@
 		"IN HELM'S NAME, I STAND UNBROKEN!"
 	)
 
-/datum/patron/neutral/ilmater
-	name = "Ilmater"
-	domain = "Endurance, Mercy, and Suffering"
-	desc = "Ilmater, the Crying God, protects the oppressed and persecuted, bearing the suffering of others to alleviate their pain. His followers are compassionate and self-sacrificing, willing to take on the burdens of others to ease their suffering."
-	worshippers = "Healers, Martyrs, Mercy-Givers, and the Oppressed"
+/datum/patron/neutral/Talona
+	name = "Talona"
+	domain = "Disease, Poison, Decay and Medicine"
+	desc = "The Lady of Poison, Talona represents both the natural decay of life and the spread of sickness. She is seen both as a curse and a purifier."
+	worshippers = "The Sick, Phyicians, Apothecaries"
+	mob_traits = list(TRAIT_EMPATH, TRAIT_ROT_EATER)
+	t0 = /obj/effect/proc_holder/spell/invoked/diagnose
+	t1 = /obj/effect/proc_holder/spell/invoked/lesser_heal
+	t2 = /obj/effect/proc_holder/spell/invoked/projectile/sickness
+	t3 = /obj/effect/proc_holder/spell/invoked/attach_bodypart
+	t4 = /obj/effect/proc_holder/spell/invoked/cure_rot
+
+
 	confess_lines = list(
-		"ILMATER, BEAR MY BURDENS!",
-		"FOR ILMATER, I SUFFER FOR OTHERS!",
-		"IN ILMATER'S NAME, I EASE THE PAIN!"
+		"TALONA'S TOUCH IS INESCAPABLE!",
+		"DECAY IS A CONTINUATION OF LIFE!!",
+		"MY AFFLICTION IS MY TESTAMENT!"
 	)
 
 /datum/patron/neutral/oghma
