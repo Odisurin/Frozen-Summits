@@ -101,7 +101,7 @@
 	worshippers = "Drow, Assassins, Spies, and Traitors"
 	confess_lines = list(
 	"LOLTH WEAVES THE WEB OF DEATH!",
-	"IN CHAOS, THERE IS POWER!",
+	"LOLTH TESTS ME!",
 	"THE SPIDER QUEEN DEMANDS FEAR!",
 	"BETRAYAL IS MY BLESSING!")
 	t1 = /obj/effect/proc_holder/spell/invoked/projectile/sickness
