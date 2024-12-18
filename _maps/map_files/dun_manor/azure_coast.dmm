@@ -1104,7 +1104,10 @@
 	},
 /area/rogue/indoors/cave)
 "gG" = (
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach)
 "gM" = (
 /obj/structure/table/vtable/v2,
@@ -1127,7 +1130,10 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach/forest)
 "gQ" = (
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/indoors/cave)
 "gT" = (
 /obj/structure/fluff/grindwheel,
@@ -1498,7 +1504,10 @@
 /area/rogue/under/town/basement)
 "kF" = (
 /obj/structure/statue/bone/skull,
-/turf/open/water/ocean/deep,
+/turf/open/water/ocean/deep{
+	name = "deep river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach)
 "kJ" = (
 /obj/structure/rack/rogue,
@@ -1735,7 +1744,10 @@
 /area/rogue/indoors/cave)
 "mE" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/mossback,
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/indoors/cave)
 "mJ" = (
 /turf/closed/wall/mineral/rogue/tent{
@@ -2066,7 +2078,10 @@
 /area/rogue/indoors/shelter)
 "po" = (
 /obj/structure/flora/roguegrass/water/reeds,
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach)
 "ps" = (
 /turf/open/transparent/openspace,
@@ -2970,7 +2985,10 @@
 "wk" = (
 /obj/structure/flora/roguegrass/water/reeds,
 /obj/structure/flora/roguegrass/water/reeds,
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach)
 "wl" = (
 /turf/closed/wall/mineral/rogue/wood,
@@ -3266,7 +3284,10 @@
 /turf/closed/mineral/random/rogue/med,
 /area/rogue/outdoors/beach)
 "yW" = (
-/turf/open/water/ocean/deep,
+/turf/open/water/ocean/deep{
+	name = "deep river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach)
 "yZ" = (
 /obj/structure/bed/rogue/inn/hay,
@@ -4346,7 +4367,10 @@
 /area/rogue/indoors/shelter)
 "HP" = (
 /obj/structure/statue/bone/rib,
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach)
 "HS" = (
 /obj/item/book/rogue/arcyne,
@@ -5730,7 +5754,10 @@
 /area/rogue/indoors/cave)
 "RS" = (
 /obj/item/restraints/legcuffs/beartrap/armed,
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach)
 "RT" = (
 /turf/closed/wall/mineral/rogue/tent,
@@ -6159,7 +6186,10 @@
 "VG" = (
 /obj/structure/flora/roguegrass/water/reeds,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/misc,
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach)
 "VI" = (
 /turf/open/floor/rogue/herringbone,
@@ -6401,7 +6431,10 @@
 /area/rogue/outdoors/beach/forest)
 "Xy" = (
 /obj/item/natural/stone,
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach)
 "XH" = (
 /obj/structure/mineral_door/wood/violet,
@@ -6595,7 +6628,10 @@
 /area/rogue/indoors/cave)
 "Zh" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/mossback,
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach)
 "Zi" = (
 /obj/structure/bookcase/random/archive,
@@ -18049,7 +18085,7 @@ bf
 zd
 bf
 bf
-bf
+gG
 zd
 bf
 bT

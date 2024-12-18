@@ -16,6 +16,36 @@
 	eyes.Insert(H)
 	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
 
+/datum/quirk/werewolfeyes
+	name = "Moonlight Eyes"
+	desc = "I can easily see in the dark with my lupine eyes."
+	value = 2
+
+/datum/quirk/werewolfeyes/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
+	if(eyes)
+		eyes.Remove(H,1)
+		QDEL_NULL(eyes)
+	eyes = new /obj/item/organ/eyes/night_vision/werewolf
+	eyes.Insert(H)
+	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
+
+/datum/quirk/undeadeyes
+	name = "Cursed Eyes"
+	desc = "I can easily see in the dark with my undead eyes."
+	value = 2
+
+/datum/quirk/undeadeyes/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
+	if(eyes)
+		eyes.Remove(H,1)
+		QDEL_NULL(eyes)
+	eyes = new /obj/item/organ/eyes/night_vision/zombie
+	eyes.Insert(H)
+	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
+
 /datum/quirk/thickskin
 	name = "Tough"
 	desc = "I feel it. Thick Skin. Dense Flesh. Durable Bones. I'm a punch-taking machine."

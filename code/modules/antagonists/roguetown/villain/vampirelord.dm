@@ -63,12 +63,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_VAMP_DREAMS, "[type]")
 	owner.current.cmode_music = 'sound/music/combat_vamp.ogg'
-	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
-	if(eyes)
-		eyes.Remove(owner.current,1)
-		QDEL_NULL(eyes)
-	eyes = new /obj/item/organ/eyes/night_vision/zombie
-	eyes.Insert(owner.current)
 	owner.current.AddSpell(new /obj/effect/proc_holder/spell/targeted/transfix)
 	owner.current.verbs |= /mob/living/carbon/human/proc/vamp_regenerate
 	vamp_look()
@@ -421,12 +415,12 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 // SPAWN
 /datum/antagonist/vampirelord/lesser
-	name = "Vampire Spawn"
+	name = "Cursed Spawn"
 	antag_hud_name = "Vspawn"
 	confess_lines = list(
 		"THE CRIMSON CALLS!",
-		"MY MASTER COMMANDS",
-		"THE SUN IS ENEMY!",
+		"THE BLOOD COMMANDS",
+		"THE SUN STINGS!",
 	)
 	isspawn = TRUE
 

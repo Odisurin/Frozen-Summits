@@ -676,7 +676,10 @@
 	dir = 1;
 	icon_state = "border"
 	},
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach/forest)
 "fF" = (
 /obj/structure/fluff/railing/wood,
@@ -2979,7 +2982,10 @@
 /area/rogue/indoors)
 "Bx" = (
 /obj/machinery/light/rogue/torchholder/l,
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach/forest)
 "By" = (
 /obj/structure/flora/newtree,
@@ -3050,7 +3056,10 @@
 	dir = 8;
 	icon_state = "border"
 	},
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach/forest)
 "BY" = (
 /obj/item/grown/log/tree/small,
@@ -3560,7 +3569,10 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "GT" = (
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/under/cavewet/bogcaves)
 "GV" = (
 /obj/machinery/light/rogue/torchholder/r,
@@ -3930,7 +3942,10 @@
 /area/rogue/under/cave/dungeon1/gethsmane)
 "JT" = (
 /obj/structure/flora/roguegrass/water/reeds,
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/under/cavewet/bogcaves)
 "JZ" = (
 /obj/item/rogueweapon/stoneaxe,
@@ -4260,7 +4275,10 @@
 /obj/structure/fluff/railing/border{
 	dir = 9
 	},
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach/forest)
 "MX" = (
 /obj/structure/closet/crate/coffin,
@@ -4662,7 +4680,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/beach/forest)
 "Rx" = (
-/turf/open/water/ocean,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach/forest)
 "Ry" = (
 /turf/closed/mineral/random/rogue/med,
@@ -4867,7 +4888,10 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/town/basement)
 "Tp" = (
-/turf/open/water/ocean/deep,
+/turf/open/water/ocean/deep{
+	name = "deep river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/outdoors/beach/forest)
 "Tq" = (
 /obj/effect/decal/cobbleedge{

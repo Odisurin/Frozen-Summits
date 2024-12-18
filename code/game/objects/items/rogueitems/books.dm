@@ -177,7 +177,7 @@
 	..()
 
 /obj/item/book/rogue/bibble
-	name = "The Book of AO"
+	name = "The Book of the Gods"
 	icon_state = "bibble_0"
 	base_icon_state = "bibble"
 	title = "bible"
@@ -215,8 +215,8 @@
 /datum/status_effect/buff/blessed
 	id = "blessed"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/blessed
-	effectedstats = list("fortune" = 1)
-	duration = 20 MINUTES
+	effectedstats = list("fortune" = 2)
+	duration = 50 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/blessed
 	name = "Blessed"

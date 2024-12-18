@@ -9,12 +9,10 @@
 	selection_color = JCOLOR_CHURCH
 	f_title = "Priestess"
 	allowed_races = RACES_ALL_KINDS
-	allowed_patrons = list(/datum/patron/divine/astrata)
+	allowed_patrons = ALL_DIVINE_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
 	tutorial = "You are a wandering Priest that came across a small hamlet. Deciding to settle here. You decided to help on its progression."
 	whitelist_req = FALSE
-
-	spells = list(/obj/effect/proc_holder/spell/invoked/cure_rot, /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	outfit = /datum/outfit/job/roguetown/priest
 
 	display_order = JDO_PRIEST
@@ -84,11 +82,11 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 4, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-		H.change_stat("strength", -1)
+		H.change_stat("strength", 1)
 		H.change_stat("intelligence", 3)
-		H.change_stat("constitution", -1)
+		H.change_stat("constitution", 1)
 		H.change_stat("endurance", 1)
-		H.change_stat("speed", -1)
+		H.change_stat("speed", 1)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron) // This creates the cleric holder used for devotion spells
 	C.grant_spells_priest(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
@@ -180,9 +178,6 @@
 		return
 	var/inputty = input("Make an announcement", "ROGUETOWN") as text|null
 	if(inputty)
-		if(!istype(get_area(src), /area/rogue/indoors/town/church/chapel))
-			to_chat(src, span_warning("I need to do this from the chapel."))
-			return FALSE
 		priority_announce("[inputty]", title = "The Priest Speaks", sound = 'sound/misc/bell.ogg')
 
 /obj/effect/proc_holder/spell/self/convertrole/templar

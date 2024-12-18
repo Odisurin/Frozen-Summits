@@ -1,13 +1,30 @@
-Sep 4:2... The Weeping God testament reminds us of our strength, inspiring us to stand firm through trials and wars, defending what is right.
-Sep 1:5... Necra, the mistress of the boundless tides, cradles us in her eternal care, as life's waves crash around.
-Hev 3:18... Embracing the profound silence of night, we find Noc's wisdom—a silent, ever-present guide.
-Hev 8:3... As we gaze upon the starry canvas, Astrata's wisdom reveals itself, illuminating the mysteries of existence.
-Hev 7:1... In the gentle radiance of Astrata's light, we discern our path, her wisdom guiding humanity's journey.
-Hev 2:5... In sacred silence, we embrace wisdom and enlightenment, as Holy Saphria's light burns brightly within us, illuminating our path.
-Hev 3:9... The Weeping God's sorrowful gaze pierces the depths of our hearts, urging us to seek redemption.
-Mer 16:2... Orion The demigod's presence was a testament to the Weeping God's enduring love, a bridge between the heavens and the earthly realm.
-Ast 2:2... Astrata's light, a beacon in the cosmic expanse, guides us through the darkness of the unknown.
-Ast 3:1... Astrata's radiance ignites the heavens, a testament to the brilliance of her divine design.
-Ast 8:4... In the embrace of Noc's night, we find solace and wisdom, where the mysteries of existence come to light.
-Den 1:15... Silvanus, the earthshaper, molds the very land beneath our feet, crafting landscapes with patient hands.
-Den 1:12... His gentle touch breathes life into the flora and fauna, nurturing the delicate balance of the natural world.
+Torm 4:2... Torm, the True, reminds us of our strength, inspiring us to stand firm through trials and wars, defending justice and honor.
+Helm 1:5... Helm, the Watcher, cradles us in his vigilant care, as life’s chaos swirls around us, ever steadfast in his protection.
+Tyr 3:18... In the profound stillness of night, we find Tyr's wisdom—a silent, unyielding guide to justice and fairness.
+Lathander 8:3... As we gaze upon the starry canvas, Lathander's hope illuminates our hearts, guiding us toward new beginnings and purpose.
+Lathander 7:1... In the first light of dawn, Lathander's radiance reveals our path, his blessings guiding us toward righteousness and renewal.
+Oghma 2:5... In sacred reflection, we embrace wisdom and enlightenment, as Oghma’s light illuminates the truths of the world.
+Ilmater 3:9... Ilmater's sorrowful gaze pierces the depths of our hearts, urging us to endure with compassion and seek redemption.
+Bahamut 16:2... Bahamut's presence is a testament to the gods' enduring love, his justice and protection bridging the mortal and divine realms.
+Helm 2:2... Helm's vigilant gaze is a beacon, guiding us through the perils of the unknown, steadfast and unwavering.
+Tyr 3:1... Tyr's guiding principles ignite the hearts of the just, a testament to the clarity of his divine design.
+Selûne 8:4... In the quiet of Selûne's night, we find solace and wisdom, where the mysteries of the divine unfold with clarity.
+Chauntea 1:15... Chauntea, the Earthmother, shapes the land with patient care, nurturing life and balance with every breath.
+Chauntea 1:12... Her gentle touch imbues the soil with vitality, cultivating harmony among the flora and fauna that thrive under her guidance.
+Mystra 5:7... Mystra’s weave grants us the power to understand the arcane, unveiling the hidden patterns of the universe.
+Gond 4:4... Gond, the Wonderbringer, inspires us to create, turning ideas into inventions that better the world.
+Silvanus 9:2... Silvanus, the Forest Father, reminds us of the balance between growth and decay, life and death.
+Savras 3:14... Savras, the All-Seeing, guides us through the uncertainties of fate, revealing the truth in every choice.
+Deneir 6:3... Deneir’s wisdom flows through written word and art, preserving the legacy of knowledge for future generations.
+Kelemvor 12:8... Kelemvor, the Judge of the Damned, teaches us to respect the inevitability of death and the sanctity of life.
+Lliira 5:10... Lliira, the Joybringer, blesses us with her laughter, reminding us to celebrate life’s moments of happiness and unity.
+Sune 4:6... Sune, the Lady of Love, inspires us to cherish beauty and love in all its forms, bringing light to the darkness of life.
+Mielikki 7:9... Mielikki, the Forest Queen, calls us to protect the wild places, preserving their majesty for generations to come.
+Tymora 2:8... Tymora, the Lady of Luck, smiles upon those who take risks, rewarding courage and determination.
+Eldath 1:3... Eldath, the Quiet One, offers peace and calm in the midst of chaos, guiding us toward harmony and forgiveness.
+Milil 7:5... Milil, the Lord of Song, inspires us through music and art, weaving beauty into the fabric of our lives.
+Tempus 8:12... Tempus, the Lord of Battles, strengthens our resolve to fight for what is just and protect the weak.
+Corellon 4:9... Corellon, the Creator of Elves, guides us in artistry and self-expression, shaping our lives with grace and creativity.
+Hanali 3:4... Hanali Celanil, the Heart of Gold, inspires love and beauty, teaching us to embrace the joy of connection and art.
+Sehanine 6:7... Sehanine Moonbow watches over transitions, offering guidance to those seeking their destiny and greater understanding.
+Arvoreen 9:5... Arvoreen, the Defender, teaches vigilance and courage in protecting those who cannot protect themselves.

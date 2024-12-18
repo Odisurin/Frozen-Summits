@@ -27,7 +27,7 @@
 		"IN HELM'S NAME, I STAND UNBROKEN!"
 	)
 
-/datum/patron/neutral/Talona
+/datum/patron/neutral/talona
 	name = "Talona"
 	domain = "Disease, Poison, Decay and Medicine"
 	desc = "The Lady of Poison, Talona represents both the natural decay of life and the spread of sickness. She is seen both as a curse and a purifier."

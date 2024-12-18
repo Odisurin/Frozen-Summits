@@ -155,7 +155,7 @@
 	. = ..()
 	if (!(owner.mob_biotypes & MOB_UNDEAD))
 		if (prob(10))
-			owner.adjustToxLoss(0.2)
+			owner.adjustToxLoss(0.02)
 
 /obj/item/organ/eyes/night_vision/werewolf
 	name = "moonlight eyes"

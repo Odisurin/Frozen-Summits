@@ -504,7 +504,7 @@
 	var/mob/living/target = owner
 	target.add_overlay(frost)
 	target.update_vision_cone()
-	target.add_movespeed_modifier(MOVESPEED_ID_ADMIN_VAREDIT, update=TRUE, priority=100, multiplicative_slowdown=2.5, movetypes=GROUND)
+	target.add_movespeed_modifier(MOVESPEED_ID_ADMIN_VAREDIT, update=TRUE, priority=100, multiplicative_slowdown=1.5, movetypes=GROUND)
 
 /datum/status_effect/buff/frostbite5e/on_remove()
 	var/mob/living/target = owner

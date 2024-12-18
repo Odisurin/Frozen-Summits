@@ -862,14 +862,14 @@
 	icon_state = "knightstatue_l"
 
 /obj/structure/fluff/statue/astrata
-	name = "astrata statue"
-	desc = "A stone statue of the sun Goddess Astrata. Bless."
+	name = "statue of the gods"
+	desc = "A stone statue of the gods."
 	icon_state = "astrata"
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 
 /obj/structure/fluff/statue/astrata/gold
-	name = "ornamental astrata statue"
-	desc = "An ornamental stone statue of the sun Goddess Astrata, decorated with golden jewelry. Bless."
+	name = "ornamental statue of the gods"
+	desc = "An ornamental stone statue of the gods decorated with golden jewelry. Bless."
 	icon_state = "astrata_bling"
 
 /obj/structure/fluff/statue/knight/r
