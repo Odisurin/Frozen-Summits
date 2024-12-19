@@ -35,5 +35,5 @@
 		return
 
 	var/mob/living/carbon/human/H = user
-	var/random_message = pick("you spin the globe!", "You land on Frozen Summit!", "You land on Beregost!", "You land on Waterdeep!" , "You land on Thay!" , "You land in the trackless Sea..", "You land on Baldurs Gate!!", "You land on Neverwinter!", "You land on Elturel.. Ohno!")
+	var/random_message = pick("you spin the globe!", "You land on Frozen Summit!", "You land on Beregost!", "You land on Waterdeep!" , "You land on Thay!" , "You land in the trackless Sea..", "You land on Baldurs Gate!!", "You land on Neverwinter!", "You land on Elturel.. Ohno!", "You land on Luskan!", "You land on Bryn Shander.", "You land on Easthaven.", "You land on Daggerford.")
 	to_chat(H, span_notice("[random_message]"))

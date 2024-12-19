@@ -353,8 +353,8 @@
 	qdel(pouch)
 
 /datum/special_trait/hussite
-	name = "Known Heretic"
-	greet_text = span_boldwarning("I've been denounced by the church for either reasons legitimate or not!")
+	name = "Cursed"
+	greet_text = span_boldwarning("I have been cursed by a fae, a hag or simliar entity!")
 	req_text = "Non-church role"
 	weight = 20
 	restricted_jobs = list(CHURCH_ROLES)
