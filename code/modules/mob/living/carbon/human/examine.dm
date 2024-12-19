@@ -90,7 +90,7 @@
 					. += family_text
 
 		if(name in GLOB.excommunicated_players)
-			. += span_userdanger("HERETIC! SHAME!")
+			. += span_userdanger("CURSED!")
 
 		if(name in GLOB.outlawed_players)
 			. += span_userdanger("OUTLAW!")

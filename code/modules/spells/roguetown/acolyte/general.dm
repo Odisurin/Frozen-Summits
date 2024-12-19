@@ -30,7 +30,7 @@
 			target.fire_act(1,5)
 			return TRUE
 		if(target.real_name in GLOB.excommunicated_players)
-			target.visible_message("<span class='warning'>The angry Gods sears [user]s flesh, blasphemer, heretic!</span>", "<span class='notice'>I am despised by the Gods, rejected, and they remind me with a wave of pain just how unlovable I am!</span>")
+			target.visible_message("<span class='warning'>The curse sears [user]s flesh, cursed being!</span>", "<span class='notice'>I am cursed, rejected, and this curse hits me with a wave of pain!</span>")
 			target.emote("scream")
 			target.adjustFireLoss(20)
 			return TRUE
