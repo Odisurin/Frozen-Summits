@@ -46,6 +46,7 @@
 	cloak = /obj/item/clothing/cloak/apron/waist/brown
 	pants = /obj/item/clothing/under/roguetown/trou
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
+	armor = /obj/item/clothing/suit/roguetown/armor/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/storage/belt/rogue/pouch/ammo
