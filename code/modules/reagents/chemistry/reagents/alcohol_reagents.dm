@@ -2161,7 +2161,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/beer/aurorian
 	name = "Bitterroot beer"
-	boozepwr = 5
+	boozepwr = 0
 	taste_description = "subtle herbacious undertones"
 	color = "#5D8A8A"
 	quality = DRINK_NICE
