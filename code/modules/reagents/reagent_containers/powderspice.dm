@@ -213,6 +213,7 @@
 	list_reagents = list(/datum/reagent/ozium = 15)
 	grind_results = list(/datum/reagent/ozium = 15)
 	sellprice = 5
+	possible_potion = "perpot"
 
 /datum/reagent/ozium
 	name = "Ozium"
@@ -238,7 +239,7 @@
 
 /obj/item/reagent_containers/powder/moondust
 	name = "moondust"
-	desc = ""
+	desc = "Derived from the skins of certain pallid goblins. Makes folk quick to act and anger."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust"
 	possible_transfer_amounts = list()
@@ -246,6 +247,7 @@
 	list_reagents = list(/datum/reagent/moondust = 15)
 	grind_results = list(/datum/reagent/moondust = 15)
 	sellprice = 5
+	possible_potion = "intpot"
 
 /datum/reagent/moondust/overdose_process(mob/living/M)
 	M.adjustToxLoss(3, 0)
@@ -276,8 +278,8 @@
 	M.visible_message(span_warning("Blood runs from [M]'s nose."))
 
 /obj/item/reagent_containers/powder/moondust_purest
-	name = "moondust"
-	desc = ""
+	name = "pure moondust"
+	desc = "This moondust glitters even in the dark. It seems to have certain pure properties."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust_purest"
 	possible_transfer_amounts = list()
@@ -285,6 +287,7 @@
 	list_reagents = list(/datum/reagent/moondust_purest = 18)
 	grind_results = list(/datum/reagent/moondust_purest = 15)
 	sellprice = 30
+	possible_potion = "spdpot"
 
 /datum/reagent/moondust_purest
 	name = "Purest Moondust"

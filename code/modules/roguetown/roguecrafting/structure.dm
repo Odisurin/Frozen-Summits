@@ -617,3 +617,12 @@
 	craftdiff = 3
 	wallcraft = TRUE
 	ontile = TRUE
+/datum/crafting_recipe/roguetown/structure/cauldron
+	name = "cauldron"
+	result = /obj/machinery/light/rogue/cauldron
+	reqs = list(/obj/item/natural/stone = 4,
+				/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "craft"
+	verbage = "crafts"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/masonry
