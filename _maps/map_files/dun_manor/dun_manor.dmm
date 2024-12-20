@@ -779,11 +779,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/rtfield)
 "ddt" = (
-/obj/structure/closet/crate/chest{
-	lockid = "priest"
-	},
-/obj/item/book/rogue/bibble,
-/turf/open/floor/carpet/royalblack,
+/turf/closed/wall/mineral/rogue/decostone/mossy,
 /area/rogue/outdoors/rtfield)
 "det" = (
 /obj/structure/closet/crate/roguecloset/inn/chest,
@@ -1004,6 +1000,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/rtfield)
+"dOa" = (
+/obj/machinery/light/rogue/wallfire{
+	pixel_y = 32
+	},
+/obj/structure/bed/rogue/inn/hay,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/outdoors/rtfield)
 "dOx" = (
 /obj/structure/fermenting_barrel/water,
 /turf/open/floor/rogue/dirt,
@@ -1127,7 +1130,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "eft" = (
-/obj/machinery/light/rogue/forge,
+/obj/machinery/anvil,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/rtfield)
 "ehm" = (
@@ -1219,6 +1222,15 @@
 	dir = 4;
 	icon_state = "rockwd"
 	},
+/area/rogue/outdoors/rtfield)
+"eHT" = (
+/obj/structure/fluff/railing/wood{
+	dir = 4;
+	layer = 2.8;
+	pixel_x = 8
+	},
+/obj/structure/bed/rogue/inn/hay,
+/turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/rtfield)
 "eLM" = (
 /obj/structure/underworld/barrier,
@@ -1345,6 +1357,23 @@
 /obj/structure/flora/newleaf,
 /obj/structure/flora/newbranch/connector,
 /turf/open/transparent/openspace,
+/area/rogue/outdoors/rtfield)
+"fDp" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/alch/feaudust,
+/obj/item/alch/feaudust,
+/obj/item/alch/airdust,
+/obj/item/alch/airdust,
+/obj/item/alch/tobaccodust,
+/obj/item/alch/tobaccodust,
+/obj/item/alch/sinew,
+/obj/item/alch/sinew,
+/obj/item/alch/runedust,
+/obj/item/alch/magicdust,
+/obj/item/alch/horn,
+/turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/rtfield)
 "fFk" = (
 /obj/structure/flora/roguegrass,
@@ -2503,6 +2532,17 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/mountains)
+"kIY" = (
+/obj/structure/closet/crate/chest{
+	lockid = "priest"
+	},
+/obj/item/book/rogue/bibble,
+/obj/machinery/light/rogue/torchholder{
+	dir = 8;
+	icon_state = "torchwall1"
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/outdoors/rtfield)
 "kJD" = (
 /obj/effect/landmark/start/adventurerlate{
 	icon_state = "arrow";
@@ -2670,8 +2710,12 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
 "lqj" = (
-/obj/structure/mineral_door/wood/deadbolt,
-/turf/open/floor/rogue/church,
+/obj/structure/closet/crate/chest{
+	lockid = "priest"
+	},
+/obj/item/clothing/cloak/stole/red,
+/obj/item/clothing/cloak/chasuble,
+/turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/rtfield)
 "lrg" = (
 /obj/structure/mineral_door/wood/deadbolt{
@@ -3071,6 +3115,17 @@
 /obj/machinery/light/rogue/smelter,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/rtfield)
+"mUx" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/alch/earthdust,
+/obj/item/alch/earthdust,
+/obj/item/alch/waterdust,
+/obj/item/alch/waterdust,
+/obj/item/alch/irondust,
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/rtfield)
 "mVe" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
@@ -3334,12 +3389,20 @@
 /turf/open/floor/rogue/grassred,
 /area/rogue/outdoors/rtfield)
 "ooG" = (
-/obj/structure/closet/crate/chest{
-	lockid = "priest"
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
 	},
-/obj/item/clothing/cloak/stole/red,
-/obj/item/clothing/cloak/chasuble,
-/turf/open/floor/carpet/royalblack,
+/obj/item/alch/firedust,
+/obj/item/alch/firedust,
+/obj/item/alch/coaldust,
+/obj/item/alch/coaldust,
+/obj/item/alch/bonemeal,
+/obj/item/alch/bonemeal,
+/obj/item/alch/bone,
+/obj/item/alch/bone,
+/obj/item/alch/silverdust,
+/obj/item/alch/silverdust,
+/turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/rtfield)
 "orW" = (
 /obj/structure/table/wood{
@@ -4420,6 +4483,14 @@
 /obj/structure/fluff/canopy/green,
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/town/tavern)
+"sWi" = (
+/obj/machinery/light/rogue/forge,
+/obj/machinery/light/rogue/torchholder{
+	dir = 4;
+	icon_state = "torchwall1"
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/outdoors/rtfield)
 "sXd" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -5201,11 +5272,9 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/rtfield)
 "wGY" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 4;
-	icon_state = "torchwall1"
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
 	},
-/obj/machinery/anvil,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/rtfield)
 "wMv" = (
@@ -5555,6 +5624,10 @@
 	dir = 8
 	},
 /turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/rtfield)
+"xWm" = (
+/obj/machinery/light/rogue/cauldron,
+/turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/rtfield)
 "xWK" = (
 /turf/closed/wall/mineral/rogue/tent,
@@ -46252,7 +46325,7 @@ lnn
 lnn
 lnn
 lnn
-vcT
+lnn
 lnn
 lnn
 lnn
@@ -50624,7 +50697,7 @@ lnn
 lnn
 lnn
 lnn
-vcT
+lnn
 dPV
 dPV
 lnn
@@ -50967,7 +51040,7 @@ jDE
 jDE
 jDE
 jDE
-lqj
+xdJ
 iQK
 kzW
 tKp
@@ -51119,10 +51192,10 @@ lAU
 xdJ
 xtg
 xtg
-xtg
-xtg
-xtg
-xtg
+ddt
+ehr
+ehr
+ddt
 xtg
 xdJ
 iQK
@@ -51137,8 +51210,8 @@ bxn
 bxn
 bxn
 bxn
-vTH
-vTH
+bxn
+bxn
 vTH
 vTH
 vTH
@@ -51290,12 +51363,12 @@ bxn
 kbL
 dcW
 dcW
-wGY
+jkn
 dcW
 eft
+dcW
+sWi
 bxn
-vTH
-vTH
 vTH
 vTH
 vTH
@@ -51449,10 +51522,10 @@ dcW
 dcW
 dcW
 dcW
+dcW
+dcW
 cml
 bxn
-vTH
-vTH
 vTH
 vTH
 vTH
@@ -51594,7 +51667,7 @@ dcW
 xdJ
 xdJ
 xdJ
-kBw
+dcW
 bxn
 bxn
 bxn
@@ -51607,9 +51680,9 @@ nNk
 dcW
 dcW
 dcW
+dcW
+dcW
 bxn
-vTH
-vTH
 vTH
 vTH
 vTH
@@ -51764,9 +51837,9 @@ bxn
 dcW
 dcW
 dcW
+dcW
+dcW
 bxn
-vTH
-vTH
 vTH
 vTH
 vTH
@@ -51906,24 +51979,24 @@ kfp
 ehr
 dcW
 xdJ
-kbL
+dOa
 dcW
 dcW
 dcW
-dcW
+piO
 bxn
-kUZ
+xWm
 kUZ
 kUZ
 bxn
-vTH
+bxn
 bxn
 nFv
 dcW
 dcW
+dcW
+dcW
 bxn
-vTH
-vTH
 vTH
 vTH
 vTH
@@ -52063,24 +52136,24 @@ pLE
 ehr
 dcW
 xdJ
-piO
+eHT
 dcW
 dcW
 dcW
-piO
+eHT
 bxn
 pwI
 kUZ
 kUZ
-bxn
-vTH
+kUZ
+ooG
 bxn
 neV
 dcW
-ooG
+dcW
+dcW
+lqj
 bxn
-vTH
-vTH
 vTH
 vTH
 vTH
@@ -52219,7 +52292,7 @@ xdJ
 uxU
 ehr
 dcW
-hRp
+dcW
 dcW
 dcW
 dcW
@@ -52229,15 +52302,15 @@ kUZ
 kUZ
 kUZ
 kUZ
-bxn
-vTH
+kUZ
+fDp
 bxn
 sph
 dcW
-ddt
+dcW
+dcW
+kIY
 bxn
-vTH
-vTH
 vTH
 vTH
 vTH
@@ -52379,22 +52452,22 @@ dcW
 xdJ
 sXQ
 pNv
-dcW
+pNv
 dcW
 dcW
 kUZ
 kUZ
 vmX
 aWO
-bxn
-vTH
-bxn
-bxn
-bxn
+kUZ
+mUx
 bxn
 bxn
 vTH
 vTH
+bxn
+bxn
+bxn
 vTH
 vTH
 vTH
@@ -52536,16 +52609,16 @@ lAh
 xdJ
 sNs
 aRl
+wGY
 uMX
 lAh
-dcW
 bxn
 bxn
 bxn
 bxn
 bxn
-vTH
-vTH
+bxn
+bxn
 vTH
 vTH
 vTH
