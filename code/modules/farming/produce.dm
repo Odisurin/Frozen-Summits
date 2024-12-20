@@ -380,17 +380,7 @@
 	foodtype = SUGAR
 	tastes = list("sugar" = 1)
 	grind_results = list(/datum/reagent/sugar = 10)
-/obj/item/reagent_containers/food/snacks/grown/cabbage
-	name = "cabbage"
-	seed = /obj/item/seeds/cabbage
-	icon_state = "cabbage"
-	tastes = list("cabbage" = 1)
-	filling_color = "#88c8a0"
-	bitesize = 3
-	foodtype = VEGETABLES
-	rotprocess = 15 MINUTES
-	become_rot_type = /obj/item/reagent_containers/food/snacks/grown/sauerkraut
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
+
 
 /obj/item/reagent_containers/food/snacks/grown/pear
 	name = "pear"
@@ -453,21 +443,7 @@
 	grind_results = list(/datum/reagent/consumable/tomatojuice = 6)
 	slices_num = 5
 	slice_batch = TRUE
-	slice_path = /obj/item/reagent_containers/food/snacks/rogue/tomatoslice
 
-/obj/item/reagent_containers/food/snacks/grown/onion
-	name = "onion"
-	seed = /obj/item/seeds/onion
-	icon_state = "onion"
-	tastes = list("onion" = 1)
-	filling_color = "#fdfaca"
-	bitesize = 3
-	foodtype = VEGETABLES
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/tearjuice = 3)
-	grind_results = list(/datum/reagent/consumable/tearjuice = 6)
-	slices_num = 5
-	slice_batch = TRUE
-	slice_path = /obj/item/reagent_containers/food/snacks/rogue/onionslice
 
 /obj/item/reagent_containers/food/snacks/grown/garlic
 	name = "garlic"
