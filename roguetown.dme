@@ -3319,6 +3319,7 @@
 #include "code\modules\roguetown\roguejobs\blacksmith\anvil_recipes\tools.dm"
 #include "code\modules\roguetown\roguejobs\blacksmith\anvil_recipes\valuables.dm"
 #include "code\modules\roguetown\roguejobs\blacksmith\anvil_recipes\weapons.dm"
+#include "code\modules\roguetown\roguejobs\cook\ingredients\misc.dm"
 #include "code\modules\roguetown\roguejobs\cook\tools\cooktools.dm"
 #include "code\modules\roguetown\roguejobs\cook\tools\grinding.dm"
 #include "code\modules\roguetown\roguejobs\cook\tools\oven.dm"
