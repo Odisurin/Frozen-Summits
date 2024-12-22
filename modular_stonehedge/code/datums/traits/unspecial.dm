@@ -16,10 +16,15 @@
 	eyes.Insert(H)
 	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
 
+
+
+
+
+
 /datum/quirk/werewolfeyes
-	name = "Moonlight Eyes"
-	desc = "I can easily see in the dark with my lupine eyes."
-	value = 2
+	name = "Moonlight Eyes (White Eyes)"
+	desc = "I can easily see in the dark with my eyes."
+	value = 4
 
 /datum/quirk/werewolfeyes/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -31,10 +36,80 @@
 	eyes.Insert(H)
 	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
 
+
+
+
+
+
+
+
+/datum/quirk/werewolfeyes_green
+	name = "Moonlight Eyes (Green Eyes)"
+	desc = "I can easily see in the dark with my eyes."
+	value = 4
+
+/datum/quirk/werewolfeyes/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
+	if(eyes)
+		eyes.Remove(H,1)
+		QDEL_NULL(eyes)
+	eyes = new /obj/item/organ/eyes/night_vision/werewolf/green
+	eyes.Insert(H)
+	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
+
+
+
+/datum/quirk/werewolfeyes_blue
+	name = "Moonlight Eyes (Blue Eyes)"
+	desc = "I can easily see in the dark with my eyes."
+	value = 4
+
+/datum/quirk/werewolfeyes/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
+	if(eyes)
+		eyes.Remove(H,1)
+		QDEL_NULL(eyes)
+	eyes = new /obj/item/organ/eyes/night_vision/werewolf/blue
+	eyes.Insert(H)
+	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
+
+/datum/quirk/werewolfeyes_yellow
+	name = "Moonlight Eyes (Yellow Eyes)"
+	desc = "I can easily see in the dark with my eyes."
+	value = 4
+
+/datum/quirk/werewolfeyes/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
+	if(eyes)
+		eyes.Remove(H,1)
+		QDEL_NULL(eyes)
+	eyes = new /obj/item/organ/eyes/night_vision/werewolf/yellow
+	eyes.Insert(H)
+	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
+
+/datum/quirk/werewolfeyes_brown
+	name = "Moonlight Eyes (Brown Eyes)"
+	desc = "I can easily see in the dark with my eyes."
+	value = 4
+
+/datum/quirk/werewolfeyes/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
+	if(eyes)
+		eyes.Remove(H,1)
+		QDEL_NULL(eyes)
+	eyes = new /obj/item/organ/eyes/night_vision/werewolf/brown
+	eyes.Insert(H)
+	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
+
+
 /datum/quirk/undeadeyes
-	name = "Cursed Eyes"
+	name = "Cursed Eyes (White Eyes)"
 	desc = "I can easily see in the dark with my undead eyes."
-	value = 2
+	value = 4
 
 /datum/quirk/undeadeyes/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -46,6 +121,15 @@
 	eyes.Insert(H)
 	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
 
+
+
+
+
+
+
+
+
+//-----------------------------------
 /datum/quirk/thickskin
 	name = "Tough"
 	desc = "I feel it. Thick Skin. Dense Flesh. Durable Bones. I'm a punch-taking machine."
@@ -415,8 +499,8 @@
 	qdel(pouch)
 
 /datum/quirk/hussite
-	name = "Known Heretic"
-	desc = "I've been denounced by the church for either reasons legitimate or not!"
+	name = "Cursed"
+	desc = "You are unabled to be healed by faithfuls due to a curse from a demon, fae or other entity, and people know you are cursed."
 	value = -8
 
 /datum/quirk/hussite/on_spawn()
@@ -629,7 +713,7 @@
 
 /datum/quirk/magic_potential
 	name = "Magical Potential"
-	desc = "You being born with magical blood, or learning through books, you know the way of arcane and have your trusty book with you, its more like a old book that you can't really use anymore, need get an actual new one. Precious and valuable, you would kill anyone if they touched this book, by Mystra spectral balls!"
+	desc = "You being born with magical blood, or learning through books, you know the way of arcane and have your trusty book with you, its more like a old book that you can't really use anymore, need get an actual new one. Precious and valuable, you would kill anyone if they touched this book, by Mystra spectral balls! (Do not pick this if you join a role with magic power, it is buggy.)"
 
 
 /datum/quirk/magic_potential/on_spawn()
@@ -641,7 +725,7 @@
 
 /datum/quirk/cleric
 	name = "Clerical Potential"
-	desc = "One of the gods favor you and has given you holy potential"
+	desc = "One of the gods favor you and has given you holy potential. (Do not pick this if you join a role with faith power, it is buggy.)"
 
 
 /datum/quirk/cleric/on_spawn()

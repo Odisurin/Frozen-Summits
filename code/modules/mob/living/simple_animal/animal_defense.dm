@@ -199,15 +199,15 @@
 		if(user.has_status_effect(/datum/status_effect/debuff/silver_curse))
 			to_chat(user, span_notice("My power is weakened, I cannot heal!"))
 			return
-		if(user.mind && istype(user, /mob/living/carbon/human/species/werewolf))
-			visible_message(span_danger("The werewolf ravenously consumes the [src]!"))
+		if(user.mind && istype(user, /mob/living/carbon/human/species/werewolf || /mob/living/carbon/human/species/anthromorph || /mob/living/carbon/human/species/anthromorphsmall || /mob/living/carbon/human/species/dracon || /mob/living/carbon/human/species/kobold || /mob/living/carbon/human/species/goblinp || /mob/living/carbon/human/species/vulpkanin || /mob/living/carbon/human/species/lupian || /mob/living/carbon/human/species/lizardfolk))
+			visible_message(span_danger("The [user] ravenously consumes the [src]!"))
 			to_chat(src, span_warning("I feed on succulent flesh. I feel reinvigorated."))
 			user.reagents.add_reagent(/datum/reagent/medicine/healthpot, 30)
 			gib()
 		return
 	if(src.apply_damage(damage, BRUTE))
-		if(istype(user, /mob/living/carbon/human/species/werewolf))
-			visible_message(span_danger("The werewolf bites into [src] and thrashes!"))
+		if(istype(user, /mob/living/carbon/human/species/werewolf || /mob/living/carbon/human/species/anthromorph || /mob/living/carbon/human/species/anthromorphsmall || /mob/living/carbon/human/species/dracon || /mob/living/carbon/human/species/kobold || /mob/living/carbon/human/species/goblinp || /mob/living/carbon/human/species/vulpkanin || /mob/living/carbon/human/species/lupian || /mob/living/carbon/human/species/lizardfolk))
+			visible_message(span_danger("The [user] bites into [src] and thrashes!"))
 		else
 			visible_message(span_danger("[user] bites [src]! What is wrong with them?"))
 

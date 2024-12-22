@@ -161,6 +161,19 @@
 	name = "moonlight eyes"
 	desc = ""
 
+/obj/item/organ/eyes/night_vision/werewolf/green
+	eye_color ="#4ad02f"
+
+/obj/item/organ/eyes/night_vision/werewolf/blue
+	eye_color ="#2fa2d0"
+
+/obj/item/organ/eyes/night_vision/werewolf/yellow
+	eye_color ="#cfd822"
+
+/obj/item/organ/eyes/night_vision/werewolf/brown
+	eye_color ="#5e3506"
+
+
 /obj/item/organ/eyes/night_vision/nightmare
 	name = "burning red eyes"
 	desc = ""
