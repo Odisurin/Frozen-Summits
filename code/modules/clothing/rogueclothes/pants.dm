@@ -145,7 +145,7 @@
 	body_parts_covered = GROIN
 
 /obj/item/clothing/under/roguetown/trou/otavan
-	name = "leather trousers"
+	name = "fancy leather trousers"
 	desc = "padded leather armor made by tailors, its quality is remarkable."
 	icon_state = "fencerpants"
 	resistance_flags = FIRE_PROOF
