@@ -91,7 +91,7 @@
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/gloves/roguetown/chain/psydon
-	name = "otavan chain gauntlets"
+	name = "fancy chain gauntlets"
 	icon_state = "psydongloveschain"
 	item_state = "psydongloveschains"
 
@@ -102,7 +102,7 @@
 	max_integrity = 200
 
 /obj/item/clothing/gloves/roguetown/otavan
-	name = "otavan leather gloves"
+	name = "fancy leather gloves"
 	desc = "A pair of heavy Otavan leather gloves, commonly used by fencers, renowned for their quality."
 	icon_state = "fencergloves"
 	item_state = "fencergloves"

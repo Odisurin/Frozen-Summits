@@ -1,8 +1,8 @@
 
 
 /datum/advclass/mercenary/routier
-	name = "Otavan Routiers"
-	tutorial = "The Routiers are a formidable Otavan mercenary band, a brotherhood of knights from noble families serving lords who seek to profit in peacetime. The Otavan nobility at large and even some of the clergy eagerly awaits to hear about your feats, they expect you to ENDURE, to be the champion of their faith and represent the true values of nobility, will you?"
+	name = "Order of the Burning Dawn"
+	tutorial = "Originally founded to track down the Moontear, a powerful relic of Sehanine Moonbow, the Order lost its original purpose shortly after being founded, turning instead to mercenary protection work."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = NON_DWARVEN_RACE_TYPES
 	outfit = /datum/outfit/job/roguetown/mercenary/routier
@@ -20,7 +20,7 @@
 	switch(classchoice)
 		if("Swordsman")
 			H.set_blindness(0)
-			to_chat(H, span_warning("You are a Knight of Otava, an experienced swordsman."))
+			to_chat(H, span_warning("You are a Knight of northern Neverwinter, an experienced swordsman."))
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
@@ -43,7 +43,7 @@
 			r_hand = /obj/item/rogueweapon/sword/falchion
 		if("Macebearer")
 			H.set_blindness(0)
-			to_chat(H, span_warning("You are a Macebearer from Otava, a skilled user of maces and clubs."))
+			to_chat(H, span_warning("You are a Macebearer from Luskan, a skilled user of maces and clubs."))
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
@@ -66,7 +66,7 @@
 			r_hand = /obj/item/rogueweapon/mace/steel/morningstar
 		if("Flailman")
 			H.set_blindness(0)
-			to_chat(H, span_warning("You are a Flailman from Otava, your enemies fear the unpredicability of your weapon."))
+			to_chat(H, span_warning("You are a Flailman from the east, your enemies fear the unpredicability of your weapon."))
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)

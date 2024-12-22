@@ -1,5 +1,5 @@
 /datum/advclass/mercenary/grenzelhoft
-	name = "Neverwinter Mercenary"
+	name = "Trade of Blades Mercenary"
 	tutorial = "Experts, Professionals, Expensive. Those are the first words that come to mind when your warband is mentioned. The Trade of Blades Mercenary guild is operating from the city of Neverwinter. While you may work for coin like any common sellsword, maintaining the prestige of the guild will be of utmost priority."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
