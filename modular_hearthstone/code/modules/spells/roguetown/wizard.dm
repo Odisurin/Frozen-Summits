@@ -237,8 +237,8 @@
 		/obj/effect/proc_holder/spell/invoked/projectile/frostbolt,
 		/obj/effect/proc_holder/spell/invoked/projectile/arcynebolt,
 		/obj/effect/proc_holder/spell/invoked/gravity,
-		/obj/effect/proc_holder/spell/targeted/touch/summonrogueweapon/bladeofpsydon
-		/obj/effect/proc_holder/spell/invoked/projectile/repel
+		/obj/effect/proc_holder/spell/targeted/touch/summonrogueweapon/bladeofpsydon,
+		/obj/effect/proc_holder/spell/invoked/projectile/repel,
 	)
 
 	for(var/i = 1, i <= spell_choices.len, i++)

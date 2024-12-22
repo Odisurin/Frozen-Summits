@@ -221,7 +221,7 @@
 	name = "Combat Knife (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/huntingknife/combat
+	created_item = /obj/item/rogueweapon/huntingknife/cleaver/combat
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/steel/mace
