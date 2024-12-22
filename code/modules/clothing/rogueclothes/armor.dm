@@ -368,7 +368,6 @@
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	clothing_flags = CANT_SLEEP_IN
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/roguetown/armor/armordress
