@@ -114,14 +114,6 @@
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel
 
-/obj/item/reagent_containers/food/snacks/fish/shrimp
-	name = "shrimp"
-	desc = "As shrimple as that."
-	icon_state = "shrimp"
-	sellprice = 2
-	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/shrimp
-	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/shrimp
-
 /obj/item/reagent_containers/food/snacks/rogue/fryfish
 	icon = 'icons/roguetown/misc/fish.dmi'
 	trash = null
@@ -154,7 +146,3 @@
 	icon_state = "eelcooked"
 	faretype = FARE_NEUTRAL
 	plateable = TRUE
-
-/obj/item/reagent_containers/food/snacks/rogue/fryfish/shrimp
-	icon_state = "shrimpcooked"
-	name = "cooked shrimp"

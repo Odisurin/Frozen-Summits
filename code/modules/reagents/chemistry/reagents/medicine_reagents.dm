@@ -586,18 +586,32 @@
 	..()
 
 /datum/reagent/medicine/oculine
-	name = "Carrot Juice"
-	description = "Good for your eyes."
+	name = "Oculine"
+	description = "Quickly restores eye damage, cures nearsightedness, and has a chance to restore vision to the blind."
 	reagent_state = LIQUID
-	color = "#dca31e" //carrot juice haha
+	color = "#404040" //oculine is dark grey, inacusiate is light grey
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
-	taste_description = "carrots"
+	taste_description = "dull toxin"
 
 /datum/reagent/medicine/oculine/on_mob_life(mob/living/carbon/M)
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
 	if (!eyes)
 		return
 	eyes.applyOrganDamage(-2)
+	if(HAS_TRAIT_FROM(M, TRAIT_BLIND, EYE_DAMAGE))
+		if(prob(20))
+			to_chat(M, span_warning("My vision slowly returns..."))
+			M.cure_blind(EYE_DAMAGE)
+			M.cure_nearsighted(EYE_DAMAGE)
+			M.blur_eyes(35)
+
+	else if(HAS_TRAIT_FROM(M, TRAIT_NEARSIGHT, EYE_DAMAGE))
+		to_chat(M, span_warning("The blackness in my peripheral vision fades."))
+		M.cure_nearsighted(EYE_DAMAGE)
+		M.blur_eyes(10)
+	else if(M.eye_blind || M.eye_blurry)
+		M.set_blindness(0)
+		M.set_blurriness(0)
 	..()
 
 /datum/reagent/medicine/inacusiate
