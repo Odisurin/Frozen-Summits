@@ -115,7 +115,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/otavan
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "otavan half-plate"
+	name = "engraved half-plate"
 	desc = "half-plate armor with pauldrons."
 	body_parts_covered = CHEST|GROIN|VITALS
 	icon_state = "corsethalfplate"

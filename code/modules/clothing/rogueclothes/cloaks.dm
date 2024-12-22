@@ -31,7 +31,7 @@
 
 /obj/item/clothing/cloak/psydontabard
 	name = "inquisitorial tabard"
-	desc = "A long vest bearing Psydonian symbology"
+	desc = "A long vest bearing celestial symbology"
 	color = null
 	icon_state = "psydontabard"
 	item_state = "psydontabard"
@@ -44,8 +44,8 @@
 	var/open_wear = FALSE
 
 /obj/item/clothing/cloak/psydontabard/alt
-	name = "open otavan tabard"
-	desc = "A long vest bearing Psydonian symbology"
+	name = "open inquistorial tabard"
+	desc = "A long vest bearing pcelestial symbology"
 	body_parts_covered = GROIN
 	icon_state = "psydontabardalt"
 	item_state = "psydontabardalt"
@@ -56,7 +56,7 @@
 	switch(open_wear)
 		if(FALSE)
 			name = "inquisitorial tabard"
-			desc = "A long vest bearing Psydonian symbology"
+			desc = "A long vest bearing celestial symbology"
 			body_parts_covered = GROIN
 			icon_state = "psydontabardalt"
 			item_state = "psydontabardalt"
@@ -65,7 +65,7 @@
 			to_chat(usr, span_warning("Now wearing ENDURINGLY!"))
 		if(TRUE)
 			name = "inquisitorial tabard"
-			desc = "A long vest bearing Psydonian symbology"
+			desc = "A long vest bearing celestial symbology"
 			body_parts_covered = CHEST|GROIN
 			icon_state = "psydontabard"
 			item_state = "psydontabard"
