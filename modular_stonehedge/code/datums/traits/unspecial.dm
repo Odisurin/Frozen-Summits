@@ -48,7 +48,7 @@
 	desc = "I can easily see in the dark with my eyes."
 	value = 4
 
-/datum/quirk/werewolfeyes/on_spawn()
+/datum/quirk/werewolfeyes_green/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
@@ -65,7 +65,7 @@
 	desc = "I can easily see in the dark with my eyes."
 	value = 4
 
-/datum/quirk/werewolfeyes/on_spawn()
+/datum/quirk/werewolfeyes_blue/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
@@ -80,7 +80,7 @@
 	desc = "I can easily see in the dark with my eyes."
 	value = 4
 
-/datum/quirk/werewolfeyes/on_spawn()
+/datum/quirk/werewolfeyes_yellow/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
@@ -95,7 +95,7 @@
 	desc = "I can easily see in the dark with my eyes."
 	value = 4
 
-/datum/quirk/werewolfeyes/on_spawn()
+/datum/quirk/werewolfeyes_brown/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
