@@ -93,6 +93,9 @@
 		"LIVE, LAUGH, LOVE!",
 		"SHARESS IS MY JOY!",
 	)
+	t1 = /obj/effect/proc_holder/spell/invoked/projectile/fetch
+	t2 = /obj/effect/proc_holder/spell/invoked/bud
+	t3 = /obj/effect/proc_holder/spell/invoked/eoracurse
 
 /datum/patron/inhumen/lolth
 	name = "Lolth"
@@ -119,7 +122,7 @@
 	"DESPAIR IS MY SALVATION!",
 	"SHAR HOLDS THE TRUTH OF THE VOID!"
 )
-	t1 = /obj/effect/proc_holder/spell/invoked/invisibility
+	t1 = /obj/effect/proc_holder/spell/invoked/invisibility/miracle
 	t2 = /obj/effect/proc_holder/spell/invoked/blindness
 	t3 = /obj/effect/proc_holder/spell/invoked/avert
 
@@ -161,6 +164,22 @@
 		"I SERVE DAGON AND THE DEEP ONES!",
 		"I'a! Dagon! I'a! Dagon! I'a! Dagon!"
 )
+
+/datum/patron/inhumen/malar
+	name = "Malar"
+	domain = "Nature , Savagery"
+	desc = "Malar is a lesser deity of hunting, stalking, bloodlust, and bestial savagery. In his more favorable aspects, he is worshiped by those who identify with the wild natures, as well as the grace and amorality of predators."
+	worshippers = "Druids, Werebeasts, Rangers, Barbarians"
+	mob_traits = list(TRAIT_KNEESTINGER_IMMUNITY)
+	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
+	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
+	t3 = /obj/effect/proc_holder/spell/targeted/conjure_glowshroom
+	t4 = /obj/effect/proc_holder/spell/self/howl/call_of_the_moon
+	confess_lines = list(
+		"Nothing can tame me!",
+		"Malar is my master!",
+		"I ANSWER THE CALL OF THE WILD HUNT!",
+	)
 	
 /* RATWOOD EDIT - Back to the main pantheon 
 /datum/patron/inhumen/eora
