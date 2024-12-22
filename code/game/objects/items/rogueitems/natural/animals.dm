@@ -3,7 +3,7 @@
 /obj/item/natural/hide
 	name = "hide"
 	icon_state = "hide"
-	desc = "Hide from one of Dendor's creachers."
+	desc = "Hide from one of Gott's creachers."
 	dropshrink = 0.50
 	force = 0
 	throwforce = 0
@@ -15,7 +15,7 @@
 /obj/item/natural/fur
 	name = "fur"
 	icon_state = "wool1"
-	desc = "Fur from one of Dendor's creachers."
+	desc = "Fur from one of Gott's creachers."
 	force = 0
 	throwforce = 0
 	w_class = WEIGHT_CLASS_SMALL
