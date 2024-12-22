@@ -5,10 +5,10 @@
 	name = "Tiefling"
 	id = "tiefling"
 	desc = "<b>Tiefling</b><br>\
-	Tieflings, also known as Infernal-Spawn by the Dwarves, are a relatively new species in Grimmoria\
+	Tieflings, also known as \"Infernal-Spawn\" by the Dwarves, are a relatively new species in the lands. \
 	Having shown up sometime within the past two centuries, very little is known about their culture \
-	as many seem to simply intergrate within whatever society they find themselves in. \
-	Tieflings usually cause strong disturbances with their presence, as their fiendish looks \
+	as many seem to seamlessly intergrate into whatever society they find themselves in. \
+	Despite this, Tieflings often cause strong disturbances wherever they go due to their fiendish appearances. \
 	Many have claimed that they are the spawn of a succubus (Or incubus) laying with a mortal. \
 	In this, their species has suffered vast tragedy throughout their short history, \
 	Facing scrutiny, judgement and even genocide in the past. Wounding many tiefling psyche \
@@ -87,6 +87,13 @@
 		/datum/customizer/organ/butt/human,
 		/datum/customizer/organ/vagina/human,
 		)
+	body_marking_sets = list(
+		/datum/body_marking_set/none,
+		/datum/body_marking_set/belly,
+		/datum/body_marking_set/bellysocks,
+		/datum/body_marking_set/tiger,
+		/datum/body_marking_set/tiger_dark,
+	)
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,

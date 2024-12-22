@@ -47,6 +47,11 @@
 
 	var/spell_points
 	var/used_spell_points
+	var/movemovemovetext = "Move!!"
+	var/takeaimtext = "Take aim!!"
+	var/holdtext = "Hold!!"
+	var/onfeettext = "On your feet!!"
+	var/focustargettext = "Focus target!!"
 
 	var/linglink
 	var/datum/martial_art/martial_art
@@ -144,6 +149,11 @@
 				referred_gender = "Androgynous"
 		known_people[H.real_name]["FGENDER"] = referred_gender
 		known_people[H.real_name]["FAGE"] = H.age
+		if (ishuman(current))
+			var/mob/living/carbon/human/C = current
+			var/heretic_text = H.get_heretic_symbol(C)
+			if (heretic_text)
+				known_people[H.real_name]["FHERESY"] = heretic_text
 
 
 
@@ -177,6 +187,12 @@
 						referred_gender = "Androgynous"
 				M.known_people[H.real_name]["FGENDER"] = referred_gender
 				M.known_people[H.real_name]["FAGE"] = H.age
+				if(ishuman(M.current))
+					var/mob/living/carbon/human/C = M.current
+					var/heretic_text = C.get_heretic_symbol(H)
+					if (heretic_text)
+						M.known_people[H.real_name]["FHERESY"] = heretic_text
+				
 
 /datum/mind/proc/do_i_know(datum/mind/person, name)
 	if(!person && !name)

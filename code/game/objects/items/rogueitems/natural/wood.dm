@@ -154,6 +154,7 @@
 	name = "stake"
 	desc = "A sharpened piece of wood, fantastic for piercing."
 	icon_state = "stake"
+	desc = "A wooden stake. Mind the pointy end!"
 	force = 10
 	throwforce = 4
 	thrown_bclass = BCLASS_STAB

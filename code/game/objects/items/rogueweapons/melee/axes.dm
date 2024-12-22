@@ -214,10 +214,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop, /datum/intent/pick, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop, /datum/intent/pick, /datum/intent/axe/bash)
 	smeltresult = /obj/item/ingot/steel
-	wlength = WLENGTH_NORMAL
-	toolspeed = 2
-
-/obj/item/rogueweapon/stoneaxe/handaxe
 	force = 19
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "hatchet"

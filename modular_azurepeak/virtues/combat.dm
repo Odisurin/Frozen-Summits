@@ -12,7 +12,8 @@
 		if (!HAS_TRAIT(recipient, TRAIT_MEDIUMARMOR) && !HAS_TRAIT(recipient, TRAIT_HEAVYARMOR) && !HAS_TRAIT(recipient, TRAIT_DODGEEXPERT))
 			recipient.mind?.adjust_spellpoints(1) // 1 extra spellpoint if you're already arcane
 		else
-			to_chat(recipient, span_notice("I'm too trained in defensive tactics for my Virtue to benefit my spell knowledge any further."))
+			recipient.mind?.adjust_spellpoints(2) // This lessons the -6 that applies to martial classes by default (currently only pontifex at time of change).
+			to_chat(recipient, span_notice("My virtue lessens the limitations of my magical reach."))
 
 /datum/virtue/combat/devotee
 	name = "Devotee"

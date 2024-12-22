@@ -100,12 +100,15 @@
 	desc = "The Queen of the Depths, Umberlee is feared and respected by those who sail. She commands the fury of the seas. "
 	worshippers = "Men of the Sea, Primitive Aquatics"
 	mob_traits = list(TRAIT_ABYSSOR_SWIM)
+	t1 = /obj/effect/proc_holder/spell/invoked/abyssor_bends
+	t2 = /obj/effect/proc_holder/spell/invoked/abyssheal
+	t3 = /obj/effect/proc_holder/spell/invoked/call_mossback
 	confess_lines = list(
 		"UMBERLEE COMMANDS THE WAVES!",
 		"THE OCEAN'S FURY IS UMBERLEE'S WILL!",
 		"I AM DRAWN BY THE PULL OF THE TIDE!",
 	)
-
+	
 /datum/patron/divine/ravox
 	name = "Tyr"
 	domain = "Justice, Glory, Battle"
@@ -155,6 +158,8 @@
 	desc = "Tymora is the goddess of good luck in the Faerûnian pantheon. Her followers seek to revel in life's pleasures, from games of chance to the pursuit of inspiration. Known for her trickery and penchant for unpredictability, she is a god of those who dance to their own beat."
 	worshippers = "Gamblers, Bards, Artists, and the Silver-Tongued"
 	mob_traits = list(TRAIT_XYLIX)
+	t1 = /obj/effect/proc_holder/spell/invoked/wheel
+	t2 = /obj/effect/proc_holder/spell/invoked/mockery
 	confess_lines = list(
 		"FORTUNE FAVORS THE BOLD!",
 		"TYMORA IS MY GODDESS!",

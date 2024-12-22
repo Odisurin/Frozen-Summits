@@ -95,6 +95,11 @@
 		if(name in GLOB.outlawed_players)
 			. += span_userdanger("OUTLAW!")
 
+		if(name in GLOB.court_agents)
+			var/datum/job/J = SSjob.GetJob(user.mind.assigned_role)
+			if(J.department_flag & GARRISON || J.department_flag & NOBLEMEN)
+			//if(GLOB.noble_positions.Find(J.title) || GLOB.garrison_positions.Find(J.title))
+				. += span_greentext("<b>[m1] an agent of the court!</b>")
 
 		var/commie_text
 		if(mind)
@@ -534,7 +539,7 @@
 			if(!(mobility_flags & MOBILITY_STAND) && user != src && (user.zone_selected == BODY_ZONE_CHEST))
 				. += "<a href='?src=[REF(src)];check_hb=1'>Listen to Heartbeat</a>"
 
-	if(!obscure_name && (flavortext || headshot_link || ooc_notes))
+	if((!obscure_name || client?.prefs.masked_examine) && (flavortext || headshot_link || ooc_notes))
 		. += "<a href='?src=[REF(src)];task=view_headshot;'>Examine closer</a>"
 
 	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
@@ -599,3 +604,56 @@
 			dat += "[new_text]\n" //dat.Join("\n") doesn't work here, for some reason
 	if(dat.len)
 		return dat.Join()
+
+/// Returns patron-related examine text for the mob, if any. Can return null.
+/mob/living/proc/get_heretic_text(mob/examiner)
+	var/heretic_text
+	if(HAS_TRAIT(src, TRAIT_COMMIE) && HAS_TRAIT(examiner, TRAIT_COMMIE))
+		heretic_text += "Comrade!"
+	else if(HAS_TRAIT(src, TRAIT_CABAL) && HAS_TRAIT(examiner, TRAIT_CABAL))
+		heretic_text += "Another of the Cabal!"
+	else if(HAS_TRAIT(src, TRAIT_HORDE) && HAS_TRAIT(examiner, TRAIT_HORDE))
+		heretic_text += "Anointed!"
+	else if(HAS_TRAIT(src, TRAIT_DEPRAVED) && HAS_TRAIT(examiner, TRAIT_DEPRAVED))
+		heretic_text += "Debased!"
+	
+	return heretic_text
+
+/// Same as get_heretic_text, but returns a simple symbol depending on the type of heretic!
+/mob/living/proc/get_heretic_symbol(mob/examiner)
+	var/heretic_text
+	if(HAS_TRAIT(src, TRAIT_COMMIE) && HAS_TRAIT(examiner, TRAIT_COMMIE))
+		heretic_text += "♠"
+	else if(HAS_TRAIT(src, TRAIT_CABAL) && HAS_TRAIT(examiner, TRAIT_CABAL))
+		heretic_text += "♦"
+	else if(HAS_TRAIT(src, TRAIT_HORDE) && HAS_TRAIT(examiner, TRAIT_HORDE))
+		heretic_text += "♠"
+	else if(HAS_TRAIT(src, TRAIT_DEPRAVED) && HAS_TRAIT(examiner, TRAIT_DEPRAVED))
+		heretic_text += "♥"
+	
+	return heretic_text
+
+
+// Used for Inquisition tags
+/mob/living/proc/get_inquisition_text(mob/examiner)
+	var/inquisition_text
+	if(HAS_TRAIT(src, TRAIT_INQUISITION) && HAS_TRAIT(examiner, TRAIT_INQUISITION))
+		inquisition_text += "Fellow Member of the Inquisition"
+
+	return inquisition_text
+
+/// Returns antagonist-related examine text for the mob, if any. Can return null.
+/mob/living/proc/get_villain_text(mob/examiner)
+	var/villain_text
+	if(mind)
+		if(mind.special_role == "Bandit")
+			if(HAS_TRAIT(examiner, TRAIT_COMMIE))
+				villain_text = span_notice("Free man!")
+			/*else
+				villain_text = span_userdanger("BANDIT!")*/
+		if(mind.special_role == "Vampire Lord")
+			villain_text += span_userdanger("A MONSTER!")
+		if(mind.assigned_role == "Lunatic")
+			villain_text += span_userdanger("LUNATIC!")
+
+	return villain_text

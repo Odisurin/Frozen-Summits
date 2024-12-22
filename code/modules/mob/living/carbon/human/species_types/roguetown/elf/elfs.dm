@@ -111,6 +111,11 @@
 		/datum/body_marking/spotted,
 	)
 
+	body_markings = list(
+		/datum/body_marking/flushed_cheeks,
+		/datum/body_marking/eyeliner,
+		/datum/body_marking/tonage
+	)
 /datum/species/elf/wood/get_span_language(datum/language/message_language)
 	if(!message_language)
 		return

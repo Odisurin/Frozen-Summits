@@ -5,11 +5,11 @@
 	name = "Aasimar"
 	id = "aasimar"
 	desc = "<b>Aasimar</b><br>\
-	Aasimar are born of a rare union between Humans and Angels. \
-	They bear the mark of their celestial touch through many varying physical features. \
-	Their looks resemble the traditional characteristics of whichever of the Gods the Angel parent was associated with. \
-	Most commonly, Aasimar are similar to Humans, albeit taller, and possess uncanny beauty. \
-	They have strangely colored skin and are more physically frail than the average Human. \
+	Aasimar are born of a rare union between Humens and Angels. \
+	They bear the mark of their celestial touch through their many varying physical features. \
+	Their looks resemble the traditional characteristics of whichever of the Gods their Angel parent was associated with. \
+	Most commonly, Aasimar are similar to Humens, albeit taller, and commonly possess an uncanny beauty. \
+	When compared to the average Humen, they have strangely colored skin and are more physically frail. \
 	Because of their upbringing, they make for natural conduits for godly powers. \
 	Frozen Summit's populace holds them with a mixture of uneasy fear or, and respect. \
 	It is also widely believed that an Aasimars death is a bad omen... \
@@ -67,6 +67,13 @@
 		/datum/customizer/organ/butt/human,
 		/datum/customizer/organ/vagina/human,
 		)
+	body_marking_sets = list(
+		/datum/body_marking_set/none,
+		/datum/body_marking_set/belly,
+		/datum/body_marking_set/bellysocks,
+		/datum/body_marking_set/tiger,
+		/datum/body_marking_set/tiger_dark,
+	)
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
