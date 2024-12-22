@@ -45,7 +45,7 @@
 
 /obj/item/clothing/cloak/psydontabard/alt
 	name = "open inquistorial tabard"
-	desc = "A long vest bearing pcelestial symbology"
+	desc = "A long vest bearing celestial symbology"
 	body_parts_covered = GROIN
 	icon_state = "psydontabardalt"
 	item_state = "psydontabardalt"
