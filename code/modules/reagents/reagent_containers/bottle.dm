@@ -46,6 +46,12 @@
 	if(closed)
 		add_overlay("[icon_state]cork")
 
+/obj/item/reagent_containers/glass/bottle/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum, do_splash = TRUE)
+	playsound(loc, 'sound/combat/hits/onglass/glassbreak (4).ogg', 100)
+	new /obj/item/natural/glass/shard(get_turf(src))
+	..()
+	qdel(src)
+
 /obj/item/reagent_containers/glass/bottle/rmb_self(mob/user)
 	. = ..()
 	closed = !closed
