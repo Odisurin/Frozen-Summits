@@ -59,10 +59,6 @@
 #define TRAIT_COMICSANS "Annoying Face"
 #define TRAIT_WATERBREATHING "Water Breathing"
 
-//Hearthstone change
-#define TRAIT_DEATHBYSNOOSNOO "Bed Breaker" // double sex damage (requires strong intent)
-//Hearthstone end.
-
 // PATRON GOD TRAITS
 #define TRAIT_ROT_EATER "Blessing of Talona" //can eat rotten food
 #define TRAIT_ORGAN_EATER "Blessing of Bhaal" //can eat organs
@@ -178,7 +174,6 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_DEPRAVED = span_info("The languid scent of Her debauchery is known to me, and I can detect its sordid presence upon others."),
 	TRAIT_SILVER_BLESSED = span_info("I am anointed with holy silver, which preserves me from curses that bite."),
 	TRAIT_GOODTRAINER = span_info("I am a good teacher, and when it comes to weaponry I can train others to be just as skilled as I am.")
-	TRAIT_DEATHBYSNOOSNOO = "It's an unlucky thing to share my bed.", // Hearthstone change
 ))
 
 // trait accessor defines
