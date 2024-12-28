@@ -52,3 +52,175 @@
 /datum/quirk/elemental_breath_eletricity/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
+
+
+
+
+
+
+
+
+
+
+
+
+//---------------------
+
+/datum/quirk/xenophobic
+	name = "Xenophobic"
+	desc = "Thoses filthy lesser races, to even look at them makes me feel disgust."
+	value = -7
+
+/datum/quirk/xenophobic/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_XENOPHOBIC, TRAIT_GENERIC)
+
+
+
+
+/datum/quirk/tolerant
+	name = "Tolerant"
+	desc = "Well, people are alright i guess."
+	value = 2
+
+/datum/quirk/tolerant/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_TOLERANT, TRAIT_GENERIC)
+
+
+/datum/quirk/nosey
+	name = "Nosey"
+	desc = "I can grab people by their nose!"
+	value = 3
+
+/datum/quirk/nosey/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
+
+
+/datum/quirk/nutcracker
+	name = "Nutkicker"
+	desc = "I can kick people in the nuts and CRACK them... even not having one does not save them from me."
+	value = 4
+
+/datum/quirk/nutcracker/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
+
+/datum/quirk/critical_weakness
+	name = "Critically Weak"
+	desc = "I am quick to wound, and a fracture on my head would be my doom. "
+	value = -15
+
+/datum/quirk/critical_weakness/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
+
+/datum/quirk/good_trainer
+	name = "Good Trainer"
+	desc = "I am good at training people."
+	value = 0
+
+/datum/quirk/good_trainer/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_GOODTRAINER, TRAIT_GENERIC)
+
+/datum/quirk/one_eye_l
+	name = "Bad Eye (Left)"
+	desc = "My left eye is bad, wounded, or lost, and thus my vision is bad"
+	value = -5
+
+/datum/quirk/one_eye_l/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_CYCLOPS_LEFT, TRAIT_GENERIC)
+
+/datum/quirk/one_eye_r
+	name = "Bad Eye (Right)"
+	desc = "My Right eye is bad, wounded, or lost, and thus my vision is bad"
+	value = -5
+
+/datum/quirk/one_eye_r/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_CYCLOPS_RIGHT, TRAIT_GENERIC)
+
+
+/datum/quirk/immune_eletricity
+	name = "Shock Immunity"
+	desc = "Due to my blood heritage, fey magic, or elemental prowess, i am immune to a degree to shocks."
+	value = 15
+
+/datum/quirk/immune_eletricity/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_SHOCKIMMUNE, TRAIT_GENERIC)
+
+/datum/quirk/seed_knower
+	name = "Seed Knower"
+	desc = "Due to teachings i had, i know which seed is which when i look at them."
+	value = 2
+
+/datum/quirk/seed_knower/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
+
+
+
+
+/datum/quirk/pugilist
+	name = "Pugilist"
+	desc = "I am good at punching people."
+	value = 2
+
+/datum/quirk/pugilist/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_PUGILIST, TRAIT_GENERIC)
+
+
+
+
+/datum/quirk/bed_breaker
+	name = "Bed Breaker"
+	desc = "Usually i hurt others really badly in the bed when i want to."
+	value = 0
+
+/datum/quirk/bed_breaker/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_DEATHBYSNOOSNOO, TRAIT_GENERIC)
+
+/datum/quirk/strong_throw
+	name = "Strong Throw"
+	desc = "By being big, or knowing how to throw stuff, i can hurl stuffs in a greater force in larger distance."
+	value = 2
+
+/datum/quirk/strong_throw/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_STRONGTHROW, TRAIT_GENERIC)
+
+
+
+/datum/quirk/martist
+	name = "Martial Artist"
+	desc = "I know martial arts to a degree, and i can use it in battle, like kicks in a better manner."
+	value = 2
+
+/datum/quirk/martist/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_MARTIALARTIST, TRAIT_GENERIC)
+
+
+/datum/quirk/bash_door
+	name = "Door Basher"
+	desc = "Due to my terrifying size or merely my body, i can bash into doors, and break them."
+	value = 3
+
+/datum/quirk/bash_door/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_BASHDOORS, TRAIT_GENERIC)
+
+/datum/quirk/silver_bless
+	name = "Silver Blessed"
+	desc = "I was blessed by the moonmaiden since i was little, completing the trial of the forest under her guidance under the moon made me slightly more special than others."
+	value = 6
+
+/datum/quirk/silver_bless/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_SILVER_BLESSED, TRAIT_GENERIC)

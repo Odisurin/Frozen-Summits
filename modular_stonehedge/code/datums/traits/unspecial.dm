@@ -618,19 +618,19 @@
 
 /datum/quirk/nude_sleeper
 	name = "Picky Sleeper"
-	desc = "I just can't seem to fall asleep unless I'm <i>truly</i> comfortable..."
-	value = -7 //Sleeping people are already rather vulnerable. Having to take off literally everything is more than just bothersome.
+	desc = "I just can't seem to fall asleep unless I'm <i>truly</i> comfortable... this makes me vulnerable"
+	value = -15 //Sleeping people are already rather vulnerable. Having to take off literally everything is more than just bothersome.
 
 /datum/quirk/nude_sleeper/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.change_stat("endurance", 1) //since sleeping naked will probably get you sick or some shit.
-	H.change_stat("constitution", 1)
+	H.change_stat("endurance", 2) //since sleeping naked will probably get you sick or some shit.
+	H.change_stat("constitution", 2)
 	ADD_TRAIT(H, TRAIT_NUDE_SLEEPER, TRAIT_GENERIC)
 
 /datum/quirk/nymphomaniac
 	name = "Nymphomaniac"
-	desc = "My experiences with certain things make me good in bed."
-	value = -5
+	desc = "My experiences with certain things make me good in bed and well...."
+	value = -10
 /datum/quirk/nymphomaniac/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
@@ -732,6 +732,5 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	H.mind.adjust_skillrank_up_to((/datum/skill/magic/holy), 2, TRUE)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/orison)
-	C.grant_spells_templar(H)
+	C.grant_spells_churchling(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
