@@ -75,7 +75,7 @@
 
 ///Gets called when a projectile hits the owner. Returning anything other than BULLET_ACT_HIT will stop the projectile from hitting the mob.
 /datum/martial_art/proc/on_projectile_hit(mob/living/carbon/human/A, obj/projectile/P, def_zone)
-	var/prob2defend = A.defprob + (A.STASPD * 15)
+	var/prob2defend = min(50, A.defprob + (A.STASPD * 1.5)) 
 	var/chance = prob(prob2defend)
 	if(projectile_deflect && chance)
 		return null
