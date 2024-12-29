@@ -28,6 +28,12 @@
 				say("Blueblood for the Freefolk!")
 				playsound(src, 'sound/vo/mobs/ghost/laugh (5).ogg', 100, TRUE)
 				return			
+
+	if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE))
+		to_chat(H, "<span class='warning'>The idea repulses me!</span>")
+		H.cursed_freak_out()
+		return
+
 	if(H in SStreasury.bank_accounts)
 		var/amt = SStreasury.bank_accounts[H]
 		if(!amt)
@@ -90,6 +96,13 @@
 
 /obj/structure/roguemachine/atm/attackby(obj/item/P, mob/user, params)
 	if(ishuman(user))
+
+		if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE))
+			var/mob/living/carbon/human/H = user
+			to_chat(H, "<span class='warning'>The idea repulses me!</span>")
+			H.cursed_freak_out()
+			return
+
 		if(istype(P, /obj/item/roguecoin))
 			var/mob/living/carbon/human/H = user
 			if(H in SStreasury.bank_accounts)

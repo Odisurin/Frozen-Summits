@@ -146,6 +146,33 @@
 
 #define ALL_PATRONS  list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/old_god, /datum/patron/inhumen/zizo, /datum/patron/inhumen/graggar, /datum/patron/inhumen/matthios, /datum/patron/inhumen/baotha, /datum/patron/divine/lathander, /datum/patron/neutral/tempus, /datum/patron/neutral/helm, /datum/patron/neutral/talona, /datum/patron/neutral/oghma, /datum/patron/neutral/corellon, /datum/patron/neutral/garl, /datum/patron/neutral/yondalla, /datum/patron/neutral/elistraee, /datum/patron/neutral/talos, /datum/patron/neutral/tymora, /datum/patron/neutral/mielikki, /datum/patron/inhumen/maglubiyet, /datum/patron/inhumen/gruumsh, /datum/patron/inhumen/shar, /datum/patron/divine/selune, /datum/patron/inhumen/malar)
 
+#define TEN_CURSES list(\
+	/datum/curse/astrata,\
+	/datum/curse/noc,\
+	/datum/curse/ravox,\
+	/datum/curse/necra,\
+	/datum/curse/xylix,\
+	/datum/curse/pestra,\
+	/datum/curse/eora\
+)
+
+#define INHUMEN_CURSES list(\
+	/datum/curse/zizo,\
+	/datum/curse/graggar,\
+	/datum/curse/matthios,\
+	/datum/curse/baotha\
+)
+
+#define SPECIAL_CURSES list(\
+	/datum/curse/atheism\
+)
+
+#define ALL_CURSES list(\
+	SPECIAL_CURSES,\
+	TEN_CURSES,\
+	INHUMEN_CURSES\
+)
+
 #define PLATEHIT "plate"
 #define CHAINHIT "chain"
 #define SOFTHIT "soft"

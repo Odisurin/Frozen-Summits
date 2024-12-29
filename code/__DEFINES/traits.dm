@@ -104,6 +104,23 @@
 #define TRAIT_NUDE_SLEEPER "Nude Sleeper"
 #define TRAIT_SILVER_BLESSED "Silver Blessed"
 
+// PATRON CURSE TRAITS
+#define TRAIT_CURSE "Curse" //source
+#define TRAIT_ATHEISM_CURSE "Curse of The Unbeliever"
+#define TRAIT_PSYDON_CURSE "Ao's Curse"
+#define TRAIT_ASTRATA_CURSE "Hex of the Forsaken"
+#define TRAIT_NOC_CURSE "Hex of the Shattered Mind"
+#define TRAIT_RAVOX_CURSE "Hex of the Pacifist"
+#define TRAIT_NECRA_CURSE "Hex of the Grim Gate"
+#define TRAIT_XYLIX_CURSE "Hex of Misfortune"
+#define TRAIT_PESTRA_CURSE "Hex of Decay"
+#define TRAIT_EORA_CURSE "Hex of the Heartless"
+#define TRAIT_ZIZO_CURSE "Curse of the Fractured Veil"
+#define TRAIT_GRAGGAR_CURSE "Curse of Eternal Rage"
+#define TRAIT_MATTHIOS_CURSE "Curse of Avarice's Scorn"
+#define TRAIT_BAOTHA_CURSE "Curse of Unbridled Desire"
+#define TRAIT_NYMPHO_CURSE "Nymph's Curse"
+
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEPROSY = span_necrosis("I'm a disgusting leper..."),
 	TRAIT_GUARDSMAN = span_info("I am vigilant in my duties. In the town of Frozen Summit, my abilities are sharper due to my routine and familiarity."),
