@@ -462,11 +462,11 @@
 
 /datum/quirk/backproblems/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.change_stat("strength", 2)
-	H.change_stat("constitution", 1)
+	H.change_stat("strength", 3)
+	H.change_stat("constitution", 2)
 	H.change_stat("speed", -2)
 	H.transform = H.transform.Scale(1.25, 1.25)
-	H.transform = H.transform.Translate(0, (0.25 * 16))
+	H.transform = H.transform.Translate(0, (1.1))
 	H.update_transform()
 
 
