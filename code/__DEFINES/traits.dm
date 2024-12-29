@@ -79,6 +79,7 @@
 #define TRAIT_CABAL "Of the Cabal" //Zizo cultists recognize each other too
 #define TRAIT_HORDE "Anointed" //Graggarites also recognize each other
 #define TRAIT_DEPRAVED "Fallen" //Baothans also recognize each other
+#define TRAIT_FAITHLESS "Ignorant" //being faithless means gods won't really help you, will they
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -183,6 +184,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_STRONGTHROW = "My throws are mighty!", // Hearthstone change
 	TRAIT_MARTIALARTIST = "I have better kicks.", // Hearthstone change
 	TRAIT_PUGILIST = "I have stronger punches.", // Hearthstone change
+	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
 ))
 
 // trait accessor defines

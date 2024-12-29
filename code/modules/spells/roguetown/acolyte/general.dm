@@ -20,6 +20,9 @@
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
+		if(!HAS_TRAIT(target, TRAIT_FAITHLESS)) //being faithless means god doesnt really want to help you now, does it
+			to_chat(user, span_warning("My prayers reach deaf ears - the Gods refuse to aid a non-believer!"))
+			return FALSE
 		if(user.patron?.undead_hater && (target.mob_biotypes & MOB_UNDEAD)) //positive energy harms the undead
 			target.visible_message(span_danger("[target] is burned by holy light!"), span_userdanger("I'm burned by holy light!"))
 			target.adjustFireLoss(10)
@@ -196,6 +199,9 @@
 			target.Knockdown(10)
 			target.fire_act(1,5)
 			return TRUE
+		if(!HAS_TRAIT(target, TRAIT_FAITHLESS)) //being faithless means god doesnt really want to help you now, does it
+			to_chat(user, span_warning("My prayers reach deaf ears - the Gods refuse to aid a non-believer!"))
+			return FALSE
 		target.visible_message(span_info("A wreath of gentle light passes over [target]!"), span_notice("I'm bathed in holy light!"))
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
