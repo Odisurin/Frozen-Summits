@@ -1,7 +1,7 @@
 /obj/effect/temp_visual/heal_rogue //color is white by default, set to whatever is needed
 	name = "healing glow"
 	icon = 'modular_azurepeak/icons/effects/miracle-healing.dmi'
-	icon_state = "heal_pantheon"
+	icon_state = "heal_normal"
 	duration = 15
 	plane = GAME_PLANE_UPPER
 	layer = ABOVE_ALL_MOB_LAYER

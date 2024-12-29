@@ -1259,11 +1259,11 @@
 		if(target.mob_biotypes & MOB_UNDEAD) //Doesn't affect undead according to the wiki
 			target.visible_message("<span class='danger'>[target] is unaffected!</span>", "<span class='userdanger'>I'm unaffected!</span>")
 			return TRUE
-		target.visible_message(span_info("Healing energies infuse [target]!"), span_notice("I'm infused with healing!"))
+		target.visible_message(span_info("Magical healing energies infuse [target]!"), span_notice("I'm infused with a magical healing!"))
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
 			var/healing = 2.5
-			C.apply_status_effect(/datum/status_effect/buff/healing, healing)
+			C.apply_status_effect(/datum/status_effect/buff/healing_weave, healing)
 			target.adjustBruteLoss(-25)
 			target.adjustFireLoss(-25)
 		else
@@ -1273,6 +1273,56 @@
 	revert_cast()
 	return FALSE
 
+
+
+
+
+
+
+
+/atom/movable/screen/alert/status_effect/buff/magical_healing
+	name = "Arcane Healing"
+	desc = "The weave flows in me, it relieves me of my ailments."
+	icon_state = "buff"
+
+#define MIRACLE_HEALING_FILTER "miracle_heal_glow"
+
+/datum/status_effect/buff/healing_weave
+	id = "weave healing"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/magical_healing
+	duration = 25 SECONDS
+	examine_text = "SUBJECTPRONOUN is bathed in a restorative aura from the weave!"
+	var/healing_on_tick = 0.5
+	var/outline_colour = "#6055f9"
+
+/datum/status_effect/buff/healing_weave/on_creation(mob/living/new_owner, new_healing_on_tick)
+	healing_on_tick = new_healing_on_tick
+	return ..()
+
+/datum/status_effect/buff/healing_weave/on_apply()
+	var/filter = owner.get_filter(MIRACLE_HEALING_FILTER)
+	if (!filter)
+		owner.add_filter(MIRACLE_HEALING_FILTER, 2, list("type" = "outline", "color" = outline_colour, "alpha" = 60, "size" = 1))
+	return TRUE
+
+/datum/status_effect/buff/healing_weave/tick()
+	var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal_rogue(get_turf(owner))
+	H.color = "#6055f9"
+	var/list/wCount = owner.get_wounds()
+	if(owner.blood_volume < BLOOD_VOLUME_NORMAL)
+		owner.blood_volume = min(owner.blood_volume+10, BLOOD_VOLUME_NORMAL)
+	if(wCount.len > 0)
+		owner.heal_wounds(healing_on_tick)
+		owner.update_damage_overlays()
+	owner.adjustBruteLoss(-healing_on_tick, 0)
+	owner.adjustFireLoss(-healing_on_tick, 0)
+	owner.adjustOxyLoss(-healing_on_tick, 0)
+	owner.adjustToxLoss(-healing_on_tick, 0)
+	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -healing_on_tick)
+	owner.adjustCloneLoss(-healing_on_tick, 0)
+
+/datum/status_effect/buff/healing_weave/on_remove()
+	owner.remove_filter(MIRACLE_HEALING_FILTER)
 //==============================================
 //	RESISTANCE
 //==============================================
