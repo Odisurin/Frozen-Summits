@@ -816,3 +816,27 @@
 /datum/quirk/pacifist/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_PACIFISM, TRAIT_GENERIC)
+
+
+
+/datum/quirk/helltalker
+	name = "Knows Hellspeak"
+	desc = "I learned to speak hellish in my time here."
+	value = 1
+
+/datum/quirk/helltalker/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/hellspeak)
+
+
+
+/datum/quirk/draconicspeaker
+	name = "Knows Draconic"
+	desc = "I learned to speak Draconic in my time here."
+	value = 1
+
+/datum/quirk/draconicspeaker/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/draconic)
+
+
