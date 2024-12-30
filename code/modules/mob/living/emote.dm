@@ -27,9 +27,6 @@
 		var/mob/living/L = user
 		var/area/C = get_area(user)
 
-		if(HAS_TRAIT(usr, TRAIT_ATHEISM_CURSE))
-			to_chat(usr, span_danger("Praying is for fools."))
-		return
 
 		var/msg = input("Whisper your prayer:", "Prayer") as text|null
 		if(msg)
