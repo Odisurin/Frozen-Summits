@@ -12,10 +12,10 @@
 	var/trait
 
 /datum/curse/proc/on_life()
-	return 
+	return
 
 /datum/curse/proc/on_death()
-	return 
+	return
 
 /datum/curse/proc/on_gain(mob/living/carbon/human/owner)
 	ADD_TRAIT(owner, trait, TRAIT_CURSE)
@@ -54,7 +54,6 @@
 			curse.on_loss(src)
 			curses -= curse
 			return TRUE
-			break
 
 	return FALSE
 

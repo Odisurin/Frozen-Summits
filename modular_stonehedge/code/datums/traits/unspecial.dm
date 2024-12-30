@@ -797,6 +797,8 @@
 	H.add_curse(/datum/curse/nympho, TRUE)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 
+
+
 /datum/quirk/loveless
 	name = "Loveless"
 	desc = "I am unable to show any kind of affection or love, whether carnal or platonic."
