@@ -7,4 +7,4 @@
 	desc = "A fey tree that has a small portion of the energy from feywild."
 	icon = 'icons/roguetown/misc/special_tree.dmi'
 	icon_state = "gem"
-	pixel_x = "0"
+	pixel_x = 0
