@@ -733,7 +733,7 @@
 
 /datum/quirk/clothing_stasher
 	name = "Clothing stasher"
-	desc = "You have a few clothing stashed away"
+	desc = "You have a few clothing stashed away, the majority of it are from loadout. (This Quirk gives you access to the tree to almost all the loadout items, but be careful that it will bloat the tree.)"
 
 
 /datum/quirk/clothing_stasher/on_spawn()
@@ -745,6 +745,77 @@
 	H.mind.special_items["Crimson Medallion"] = /obj/item/clothing/mask/rogue/collar/medallion
 	H.mind.special_items["Exotic Bra"] = /obj/item/clothing/suit/roguetown/shirt/exoticsilkbra
 	H.mind.special_items["Golden anklets"] = /obj/item/clothing/shoes/roguetown/anklets
+	H.mind.special_items["Keffiyeh"] = /obj/item/clothing/head/roguetown/roguehood/shalal
+	H.mind.special_items["Archer's Cap"] = /obj/item/clothing/head/roguetown/archercap
+	H.mind.special_items["Straw Hat"] = /obj/item/clothing/head/roguetown/strawhat
+	H.mind.special_items["Witch Hat"] = /obj/item/clothing/head/roguetown/witchhat
+	H.mind.special_items["Bard's Hat"] = /obj/item/clothing/head/roguetown/bardhat
+	H.mind.special_items["Fancy Hat"] = /obj/item/clothing/head/roguetown/fancyhat
+	H.mind.special_items["Smoking Cap"] = /obj/item/clothing/head/roguetown/smokingcap
+	H.mind.special_items["Headband"] = /obj/item/clothing/head/roguetown/headband
+	H.mind.special_items["Buckled Hat"] = /obj/item/clothing/head/roguetown/puritan
+	H.mind.special_items["Folded Hat"] = /obj/item/clothing/head/roguetown/bucklehat
+	H.mind.special_items["Duelist's Hat"] = /obj/item/clothing/head/roguetown/duelhat
+	H.mind.special_items["Hood"] = /obj/item/clothing/head/roguetown/roguehood
+
+	H.mind.special_items["Tabard"] = /obj/item/clothing/cloak/tabard
+	H.mind.special_items["Surcoat"] = /obj/item/clothing/cloak/stabard
+	H.mind.special_items["Jupon"] = /obj/item/clothing/cloak/stabard/surcoat
+	H.mind.special_items["Cape"] = /obj/item/clothing/cloak/cape
+	H.mind.special_items["Halfcloak"] = /obj/item/clothing/cloak/half
+	H.mind.special_items["Rider's Cloak"] = /obj/item/clothing/cloak/half/rider
+	H.mind.special_items["Rain Cloak"] = /obj/item/clothing/cloak/raincloak
+	H.mind.special_items["Fur Cloak"] = /obj/item/clothing/cloak/raincloak/furcloak
+	H.mind.special_items["Direbear Cloak"] = /obj/item/clothing/cloak/darkcloak/bear
+	H.mind.special_items["Light Direbear Cloak"] = /obj/item/clothing/cloak/darkcloak/bear/light
+
+	H.mind.special_items["Dark Boots"] = /obj/item/clothing/shoes/roguetown/boots
+	H.mind.special_items["Noble Boots"] = /obj/item/clothing/shoes/roguetown/nobleboot
+	H.mind.special_items["Short Boots"] = /obj/item/clothing/shoes/roguetown/shortboots
+	H.mind.special_items["Riding Boots"] = /obj/item/clothing/shoes/roguetown/ridingboots
+
+	H.mind.special_items["Longcoat"] = /obj/item/clothing/suit/roguetown/armor/longcoat
+	H.mind.special_items["Robe"] = /obj/item/clothing/suit/roguetown/shirt/robe
+	H.mind.special_items["Formal Silks"] = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
+	H.mind.special_items["Tunic"] = /obj/item/clothing/suit/roguetown/shirt/tunic
+	H.mind.special_items["Dress"] = /obj/item/clothing/suit/roguetown/shirt/dress/gen
+	H.mind.special_items["Bar Dress"] = /obj/item/clothing/suit/roguetown/shirt/dress
+	H.mind.special_items["Chemise"] = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress
+	H.mind.special_items["Maid Dress"] = /obj/item/clothing/suit/roguetown/shirt/undershirt/maid_dress
+	H.mind.special_items["Sexy Dress"] = /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy
+	H.mind.special_items["Strapless Dress"] = /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless
+	H.mind.special_items["Alternate Strapless Dress"] = /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/alt
+	H.mind.special_items["Leather Vest"] = /obj/item/clothing/suit/roguetown/armor/leather/vest
+	H.mind.special_items["Nun's Habit"] = /obj/item/clothing/suit/roguetown/shirt/robe/nun
+	H.mind.special_items["Blue Bell Dress"] = /obj/item/clothing/suit/roguetown/shirt/belldress
+	H.mind.special_items["Red Bell Dress"] = /obj/item/clothing/suit/roguetown/shirt/belldress/red
+	H.mind.special_items["Yellow Bell Dress"] = /obj/item/clothing/suit/roguetown/shirt/belldress/yellow
+	H.mind.special_items["Cyan Bell Dress"] = /obj/item/clothing/suit/roguetown/shirt/belldress/cyan
+	H.mind.special_items["Purple Bell Dress"] = /obj/item/clothing/suit/roguetown/shirt/belldress/purple
+	H.mind.special_items["Black Bell Dress"] = /obj/item/clothing/suit/roguetown/shirt/belldress/black
+	H.mind.special_items["Fancy White Dress"] = /obj/item/clothing/suit/roguetown/shirt/belldress/white
+	H.mind.special_items["Baroness Dress"] = /obj/item/clothing/suit/roguetown/shirt/belldress/baroness
+
+	H.mind.special_items["Stockings"] = /obj/item/clothing/under/roguetown/tights/stockings
+	H.mind.special_items["Silk Stockings"] = /obj/item/clothing/under/roguetown/tights/stockings/silk
+	H.mind.special_items["Fishnet Stockings"] = /obj/item/clothing/under/roguetown/tights/stockings/fishnet
+	H.mind.special_items["Loincloth"] = /obj/item/clothing/under/roguetown/loincloth
+	H.mind.special_items["Spectacles"] = /obj/item/clothing/mask/rogue/spectacles
+	H.mind.special_items["Rag Mask"] = /obj/item/clothing/mask/rogue/ragmask
+	H.mind.special_items["Halfmask"] = /obj/item/clothing/mask/rogue/shepherd
+	H.mind.special_items["Pipe"] = /obj/item/clothing/mask/cigarette/pipe
+	H.mind.special_items["Westman Pipe"] = /obj/item/clothing/mask/cigarette/pipe/westman
+	H.mind.special_items["Feather"] = /obj/item/natural/feather
+
+	H.mind.special_items["Silver Ring"] = /obj/item/clothing/ring/silver
+	H.mind.special_items["Gold Ring"] = /obj/item/clothing/ring/gold
+	H.mind.special_items["Divine Symbol"] = /obj/item/clothing/neck/roguetown/psicross
+
+	H.mind.special_items["Iron Mask"] = /obj/item/clothing/mask/rogue/facemask
+	H.mind.special_items["Iron Coif"] = /obj/item/clothing/neck/roguetown/chaincoif/iron
+	H.mind.special_items["Leather Bracers"] = /obj/item/clothing/wrists/roguetown/bracers/leather
+	H.mind.special_items["Collar"] = /obj/item/clothing/neck/roguetown/collar
+	H.mind.special_items["Bell Collar"] = /obj/item/clothing/neck/roguetown/collar/bell_collar
 
 
 /datum/quirk/magic_potential
