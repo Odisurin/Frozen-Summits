@@ -3677,6 +3677,7 @@
 #include "modular_guidesa\general_stuffs.dm"
 #include "modular_guidesa\quirks_guidesa.dm"
 #include "modular_guidesa\turfs.dm"
+#include "modular_guidesa\weapons.dm"
 #include "modular_guidesa\clothing\clothings_guidesa.dm"
 #include "modular_guidesa\new_mobs\slimes.dm"
 #include "modular_guidesa\sex_folder\milking.dm"

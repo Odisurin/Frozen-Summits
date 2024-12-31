@@ -242,3 +242,13 @@
 		if(quirk_holder.m_intent == MOVE_INTENT_RUN)
 			to_chat(quirk_holder, span_warning("Easy, easy, I need to take it slow... I am in the dark..."))
 			quirk_holder.toggle_move_intent(MOVE_INTENT_WALK)
+
+
+/datum/quirk/weird_weapons
+	name = "Ritual Weaponary"
+	desc = "You have a few less than conventional weapons stashed around."
+
+
+/datum/quirk/weird_weapons/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.special_items["Bone Scythe"] = /obj/item/rogueweapon/sword/iron/scythe
