@@ -206,7 +206,7 @@
 	name = "cloth lined anklets"
 	desc = "Cloth anklets lined with with fibers, foot remains bare."
 	gender = PLURAL
-	icon_state = "clothlinedanklets"
+	icon_state = "furlinedanklets"
 	item_state = "furlinedanklets"
 	is_barefoot = TRUE
 	sewrepair = TRUE

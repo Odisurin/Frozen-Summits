@@ -294,12 +294,13 @@
 	return ..()
 
 /obj/effect/wisp
-	name = "friendly wisp"
-	desc = "Happy to light your way."
+	name = "wisp"
+	desc = "These seelie spirits often appear in magical forests.."
 	icon = 'icons/roguetown/items/lighting.dmi'
 	icon_state = "wisp"
 	light_system = MOVABLE_LIGHT
 	light_range = 7
+	pixel_x = 20
 	light_flags = LIGHT_ATTACHED
 	layer = ABOVE_ALL_MOB_LAYER
 	var/sight_flags = SEE_MOBS

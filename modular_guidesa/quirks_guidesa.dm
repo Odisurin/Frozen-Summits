@@ -224,3 +224,21 @@
 /datum/quirk/silver_bless/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_SILVER_BLESSED, TRAIT_GENERIC)
+
+
+/datum/quirk/nyctophobia
+	name = "Nyctophobia"
+	desc = "I fear the dark..."
+	value = -6
+	medical_record_text = "Patient demonstrates a fear of the dark. (Seriously?)"
+
+/datum/quirk/nyctophobia/on_process()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H.dna.species.id in list("shadow", "nightmare"))
+		return //we're tied with the dark, so we don't get scared of it; don't cleanse outright to avoid cheese
+	var/turf/T = get_turf(quirk_holder)
+	var/lums = T.get_lumcount()
+	if(lums <= 0.2)
+		if(quirk_holder.m_intent == MOVE_INTENT_RUN)
+			to_chat(quirk_holder, span_warning("Easy, easy, I need to take it slow... I am in the dark..."))
+			quirk_holder.toggle_move_intent(MOVE_INTENT_WALK)
