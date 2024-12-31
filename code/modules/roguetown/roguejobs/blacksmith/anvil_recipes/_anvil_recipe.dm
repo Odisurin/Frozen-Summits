@@ -6,8 +6,9 @@
 	var/skill_quality = 0 // Accumulated per hit based on calculations, will decide final result.
 	var/appro_skill = /datum/skill/craft/blacksmithing
 	var/req_bar
+	var/createmultiple = FALSE // Boolean. Do we create more than one result when crafted?
+	var/createditem_num = 0 // How many EXTRA units this recipe will create. At 1, this creates 2 copies.
 	var/created_item
-	var/createditem_num = 1 // How many units to make.
 	var/craftdiff = 0
 	var/needed_item
 	var/needed_item_text

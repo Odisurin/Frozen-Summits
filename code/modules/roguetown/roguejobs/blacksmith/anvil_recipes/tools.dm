@@ -23,6 +23,21 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/customlock, /obj/item/customlock)
 
+/datum/anvil_recipe/tools/handsaw
+	name = "handsaw (+s)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/handsaw
+	i_type = "Tools"
+
+/datum/anvil_recipe/tools/chisel
+	name = "chisel (+s) x2"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/chisel
+	createmultiple = TRUE
+	createditem_num = 2
+	i_type = "Tools"
 
 /datum/anvil_recipe/tools/iron/pan
 	name = "Frypan"

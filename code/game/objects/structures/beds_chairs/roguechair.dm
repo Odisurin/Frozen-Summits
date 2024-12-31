@@ -268,7 +268,7 @@
 	buckle_lying = 90
 	pixel_y = 5
 	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 1)
+	debris = list(/obj/item/natural/plank = 1,)
 
 /obj/structure/bed/rogue/shit
 	icon_state = "shitbed"
@@ -332,7 +332,7 @@
 	buckle_lying = 90
 	pixel_y = 5
 	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 1)
+	debris = list(/obj/item/natural/plank = 1)
 
 /obj/structure/bed/rogue/inn/wooldouble
 	icon_state = "double_wool"
@@ -342,7 +342,7 @@
 	buckle_lying = 90
 	pixel_y = 0
 	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 2)
+	debris = list(/obj/item/natural/plank = 2)
 
 /obj/structure/bed/rogue/inn/double
 	icon_state = "double"
@@ -352,7 +352,7 @@
 	buckle_lying = 90
 	pixel_y = 0
 	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 2)
+	debris = list(/obj/item/natural/plank = 2)
 /*            ///////WIP  This will essentially allow for multiple mobs to buckle, just needs to change mousedrop function
 /obj/structure/bed/rogue/inn/double
 	var/list/buckled_mobs = list()
@@ -383,7 +383,7 @@
 	buckle_lying = 90
 	pixel_y = 5
 	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 1)
+	debris = list(/obj/item/natural/plank = 1)
 
 /obj/structure/bed/rogue/inn/wool
 	icon_state = "woolbed"
@@ -393,7 +393,7 @@
 	buckle_lying = 90
 	pixel_y = 5
 	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 1)
+	debris = list(/obj/item/natural/plank = 1)
 
 /obj/structure/bed/rogue/inn/pileofshit
 	icon_state = "shitbed2"
