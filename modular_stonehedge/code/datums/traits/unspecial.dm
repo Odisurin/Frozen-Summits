@@ -743,8 +743,8 @@
 	H.mind.special_items["Cyan Collar"] = /obj/item/clothing/mask/rogue/collar
 	H.mind.special_items["glasses"] = /obj/item/clothing/mask/rogue/spectacles/glasses
 	H.mind.special_items["Crimson Medallion"] = /obj/item/clothing/mask/rogue/collar/medallion
-	H.mind.special_items["Exotic Bra"] = /obj/item/clothing/suit/roguetown/shirt/exoticsilkbra
-	H.mind.special_items["Golden anklets"] = /obj/item/clothing/shoes/roguetown/anklets
+//	H.mind.special_items["Exotic Bra"] = /obj/item/clothing/suit/roguetown/shirt/exoticsilkbra
+//	H.mind.special_items["Golden anklets"] = /obj/item/clothing/shoes/roguetown/anklets
 
 
 /datum/quirk/magic_potential
