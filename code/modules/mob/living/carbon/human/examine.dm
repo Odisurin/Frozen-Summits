@@ -295,18 +295,6 @@
 			msg += span_artery("[m1] a little pale.")
 
 
-		if(user == src)
-			switch(bodytemperature)
-				if(-INFINITY to BODYTEMP_COLD_DAMAGE_LIMIT)
-					msg += span_blue("I feel freezing cold!")
-				if(BODYTEMP_COLD_DAMAGE_LIMIT to BODYTEMP_NORMAL)
-					msg += span_notice("I am shivering from the cold.")
-				if(BODYTEMP_NORMAL to BODYTEMP_HEAT_DAMAGE_LIMIT)
-					msg += span_notice("I am sweating from the heat.")
-				if(BODYTEMP_HEAT_DAMAGE_LIMIT to INFINITY)
-					msg += span_red("I feel burning hot!")
-
-
 	// Bleeding
 	var/bleed_rate = get_bleed_rate()
 	if(bleed_rate)
