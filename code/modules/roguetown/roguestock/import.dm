@@ -66,7 +66,7 @@
 	importexport_amt = 1
 
 /obj/structure/closet/crate/chest/crate/steward/woodsmantools/PopulateContents()
-	new /obj/item//obj/item/rogueweapon/stoneaxe/woodcut/steel(src)
+	new /obj/item/obj/item/rogueweapon/stoneaxe/woodcut/steel(src)
 	new /obj/item/rogueweapon/handsaw (src)
 
 
