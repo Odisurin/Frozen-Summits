@@ -43,7 +43,7 @@
 	backr = /obj/item/rogueweapon/stoneaxe/woodcut
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backpack_contents = list(
-						/obj/item/flashlight/flare/torch = 1,
+						/obj/item/flashlight/flare/torch = 1, /obj/item/rogueweapon/chisel =1,
 						)
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 2)

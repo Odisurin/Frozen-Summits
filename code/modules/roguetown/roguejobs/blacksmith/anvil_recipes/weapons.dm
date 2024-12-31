@@ -435,7 +435,7 @@
 /datum/anvil_recipe/weapons/steel/buckler
 	name = "Buckler (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel)
+	additional_items = list(/obj/item/natural/plankshort, /obj/item/natural/plankshort)
 	created_item = /obj/item/rogueweapon/shield/buckler
 	craftdiff = 2
 
@@ -443,7 +443,7 @@
 /datum/anvil_recipe/weapons/steel/xbow
 	name = "Crossbow (+1 Small Log, +1 Fiber)"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/grown/log/tree/small, /obj/item/natural/fibers)
+	additional_items = list(/obj/item/natural/plank, /obj/item/natural/fibers)
 	created_item = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 
 /datum/anvil_recipe/weapons/iron/bolts

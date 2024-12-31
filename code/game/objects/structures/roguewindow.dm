@@ -36,11 +36,16 @@
 	lockdir = dirin
 	. = ..(dirin)
 
+/obj/structure/roguewindow/solid
+	desc = "A window of simple paned glass."
+	icon_state = "window-solid"
+	integrity_failure = 0.5
+
 /obj/structure/roguewindow/stained
 	icon_state = null
 	base_state = null
 	opacity = TRUE
-	max_integrity = 100 
+	max_integrity = 100
 	integrity_failure = 0.5
 
 /obj/structure/roguewindow/stained/silver
@@ -50,7 +55,7 @@
 /obj/structure/roguewindow/stained/yellow
 	icon_state = "stained-yellow"
 	base_state = "stained-yellow"
-	
+
 /obj/structure/roguewindow/stained/zizo
 	icon_state = "stained-zizo"
 	base_state = "stained-zizo"
