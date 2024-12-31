@@ -15,3 +15,4 @@
 	gender = PLURAL
 	body_parts_covered = CHEST|ARMS|VITALS
 	sewrepair = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT|ITEM_SLOT_CLOAK
