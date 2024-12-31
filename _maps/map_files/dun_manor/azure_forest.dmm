@@ -902,6 +902,10 @@
 /obj/item/rope,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/shelter/woods)
+"hT" = (
+/obj/structure/flora/rock,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "hX" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/food,
@@ -1344,10 +1348,8 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/under/town/basement)
 "mk" = (
-/obj/structure/fluff/railing/wood{
-	dir = 4
-	},
-/turf/open/floor/rogue/dirt,
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/floor/rogue/grass/green,
 /area/rogue/outdoors/woods)
 "ml" = (
 /obj/structure/closet/crate/chest/wicker,
@@ -1796,8 +1798,10 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/town/basement)
 "rc" = (
-/obj/structure/flora/rock/pile/largejungle,
-/turf/open/floor/rogue/dirt,
+/obj/structure/fluff/railing/wood{
+	dir = 8
+	},
+/turf/open/floor/rogue/grass/green,
 /area/rogue/outdoors/woods)
 "rf" = (
 /obj/effect/landmark/mapGenerator/rogue/mountain{
@@ -2424,10 +2428,10 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "wE" = (
-/obj/structure/fluff/railing/wood{
-	dir = 8
+/obj/structure/well/fountain{
+	pixel_x = 16
 	},
-/turf/open/floor/rogue/grass/green,
+/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods)
 "wH" = (
 /turf/open/floor/rogue/ruinedwood/turned,
@@ -2489,10 +2493,6 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/grass/green,
-/area/rogue/outdoors/woods)
-"xA" = (
-/obj/structure/flora/rock/jungle,
-/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "xD" = (
 /obj/structure/mineral_door/wood/deadbolt{
@@ -3218,10 +3218,8 @@
 /turf/open/floor/rogue/grass/green,
 /area/rogue/outdoors/woods)
 "El" = (
-/obj/structure/well/fountain{
-	pixel_x = 16
-	},
-/turf/open/floor/rogue/cobble,
+/obj/structure/flora/rock/jungle,
+/turf/open/floor/rogue/grass/green,
 /area/rogue/outdoors/woods)
 "En" = (
 /obj/machinery/conveyor/auto{
@@ -4291,7 +4289,9 @@
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/cavewet/bogcaves)
 "NR" = (
-/obj/structure/flora/rock,
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "NX" = (
@@ -5363,11 +5363,11 @@
 /area/rogue/indoors/shelter/woods)
 "Yu" = (
 /obj/structure/flora/rock/pile/largejungle,
-/turf/open/floor/rogue/grass/green,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "Yv" = (
 /obj/structure/flora/rock/jungle,
-/turf/open/floor/rogue/grass/green,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "Yw" = (
 /obj/structure/flora/newtree,
@@ -44789,7 +44789,7 @@ GH
 jW
 jW
 jW
-rc
+Yu
 jW
 jW
 bP
@@ -45107,7 +45107,7 @@ bP
 Ek
 RB
 By
-jW
+Yu
 jW
 jW
 By
@@ -45744,7 +45744,7 @@ bP
 jW
 MK
 jW
-xA
+Yv
 So
 MK
 MK
@@ -45892,7 +45892,7 @@ jW
 jW
 jW
 bP
-Yv
+El
 bP
 jW
 jW
@@ -46523,7 +46523,7 @@ jW
 bP
 bP
 bP
-NR
+hT
 bP
 Ek
 bP
@@ -46678,7 +46678,7 @@ Vh
 MK
 jW
 bP
-Yv
+El
 jW
 jW
 bP
@@ -47621,11 +47621,11 @@ Yi
 MK
 MK
 MK
-mk
-jW
-jW
-jW
 NR
+jW
+jW
+jW
+hT
 jW
 By
 as
@@ -47779,7 +47779,7 @@ MK
 WK
 in
 sY
-El
+wE
 sY
 BO
 bP
@@ -47941,7 +47941,7 @@ sY
 BO
 Ek
 jW
-rc
+Yu
 MK
 Ek
 bP
@@ -48106,12 +48106,12 @@ Ek
 jW
 bP
 bP
-Yu
+mk
 bP
 bP
 bP
 bP
-Yu
+mk
 bP
 bP
 bP
@@ -48249,9 +48249,9 @@ jW
 jW
 jW
 jW
-wE
-wE
-wE
+rc
+rc
+rc
 Ek
 bP
 Ek
@@ -48408,7 +48408,7 @@ jW
 jW
 bP
 bP
-Yv
+El
 bP
 bP
 bP
@@ -48886,7 +48886,7 @@ jW
 bP
 bP
 bP
-Yu
+mk
 bP
 Ek
 bP

@@ -1633,7 +1633,7 @@
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/town/tavern)
 "cKj" = (
-/turf/closed/wall/mineral/rogue/craftstone,
+/turf/closed/wall/mineral/rogue/wood,
 /area/rogue/outdoors/beach)
 "cLb" = (
 /obj/structure/flora/roguegrass/water,
@@ -2302,10 +2302,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
-"gkB" = (
-/obj/structure/roguethrone,
-/turf/open/floor/rogue/carpet/lord/center,
-/area/rogue/indoors)
 "gmz" = (
 /obj/machinery/light/rogue/torchholder{
 	icon_state = "torchwall1";
@@ -2488,7 +2484,7 @@
 /obj/structure/boatbell/fluff{
 	desc = ""
 	},
-/turf/closed/wall/mineral/rogue/craftstone,
+/turf/closed/wall/mineral/rogue/wood,
 /area/rogue/outdoors/beach)
 "hmK" = (
 /obj/machinery/light/rogue/wallfire{
@@ -3724,7 +3720,7 @@
 /obj/structure/boatbell/fluff{
 	desc = ""
 	},
-/turf/closed/wall/mineral/rogue/craftstone,
+/turf/closed/wall/mineral/rogue/wood,
 /area/rogue/indoors)
 "mLS" = (
 /obj/structure/spider/stickyweb,
@@ -4035,10 +4031,6 @@
 /obj/item/alch/silverdust,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/rtfield)
-"osB" = (
-/turf/open/floor/rogue/rooftop,
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/mountains)
 "otl" = (
 /obj/machinery/light/rogue/wallfire{
 	pixel_y = 32
@@ -4304,7 +4296,7 @@
 "pIl" = (
 /obj/structure/globe,
 /turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/beach)
+/area/rogue/indoors)
 "pIG" = (
 /obj/structure/fluff/railing/stonehedge,
 /obj/structure/fluff/railing/stonehedge{
@@ -43344,7 +43336,7 @@ wPI
 bRO
 rPp
 wPI
-bRO
+pIl
 aat
 lNY
 ylN
@@ -43995,7 +43987,7 @@ cKj
 hmb
 cKj
 sRV
-sRV
+bHS
 ulb
 xOC
 xOC
@@ -46343,7 +46335,7 @@ xOC
 xOC
 xOC
 iXP
-pIl
+sRV
 sRV
 sRV
 cKj
@@ -46656,8 +46648,8 @@ xOC
 xOC
 xOC
 xOC
-oLW
-oLW
+aat
+aat
 sRV
 sRV
 sRV
@@ -46665,8 +46657,8 @@ sRV
 sRV
 sRV
 sRV
-oLW
-oLW
+aat
+aat
 xOC
 xOC
 xOC
@@ -46813,17 +46805,17 @@ xOC
 xOC
 xOC
 xOC
-oLW
-oLW
+aat
+aat
 jmO
 jmO
-oLW
+aat
 aoV
 mKQ
 jmO
 jmO
-oLW
-oLW
+aat
+aat
 xOC
 xOC
 xOC
@@ -47129,7 +47121,7 @@ xOC
 xOC
 xOC
 qAl
-gkB
+pKQ
 pKQ
 xgC
 xgC
@@ -47285,15 +47277,15 @@ xOC
 xOC
 xOC
 xOC
-oLW
+aat
 hqO
 tSL
 bez
 bez
 bez
 tSL
-oLW
-oLW
+hqO
+aat
 xOC
 xOC
 xOC
@@ -47442,15 +47434,15 @@ xOC
 xOC
 xOC
 xOC
-xOC
-oLW
-oLW
+cQd
+aat
+aat
 jmO
 jmO
 jmO
-oLW
-oLW
-xOC
+aat
+aat
+cQd
 xOC
 xOC
 xOC
@@ -70994,13 +70986,13 @@ tXZ
 tXZ
 clT
 clT
-osB
-osB
-osB
-osB
-osB
-osB
-kDi
+clT
+clT
+clT
+clT
+clT
+clT
+clT
 clT
 clT
 tXZ
