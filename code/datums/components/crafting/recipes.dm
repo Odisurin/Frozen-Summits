@@ -16,6 +16,7 @@
 	var/skillcraft = /datum/skill/craft/crafting
 	var/verbage_simple = "craft"
 	var/verbage = "crafts"
+	var/verbage_tp = "crafts" // Third person of verbage var
 	var/craftsound = 'sound/foley/bandage.ogg'
 	var/subtype_reqs = FALSE
 	var/structurecraft = null

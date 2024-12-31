@@ -38,6 +38,18 @@
 	cost = 20
 	contains = list(/obj/item/lockpickring/mundane)
 
+/datum/supply_pack/rogue/tools/handsaw
+	name = "handsaw"
+	cost = 12
+	contains = /obj/item/rogueweapon/handsaw
+
+/datum/supply_pack/rogue/tools/chisel
+	name = "chisel"
+	cost = 12
+	contains =  list(/obj/item/rogueweapon/chisel,
+	/obj/item/rogueweapon/chisel)
+
+
 /datum/supply_pack/rogue/tools/sacks
 	name = "Sacks"
 	cost = 10
