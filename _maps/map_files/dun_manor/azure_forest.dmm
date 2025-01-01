@@ -378,7 +378,8 @@
 "di" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cavewet/bogcaves)
@@ -629,7 +630,8 @@
 "fx" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
@@ -1468,7 +1470,8 @@
 "no" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains)
@@ -1660,7 +1663,8 @@
 "pL" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains)
@@ -1837,7 +1841,8 @@
 "ro" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
@@ -2004,7 +2009,8 @@
 "sy" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
@@ -2084,10 +2090,6 @@
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
-"tv" = (
-/obj/structure/flora/rogueshroom/big,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/woods)
 "ty" = (
 /obj/structure/table/wood{
 	dir = 5;
@@ -2149,7 +2151,8 @@
 "uc" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /turf/open/floor/rogue/grass/green,
 /area/rogue/outdoors/mountains)
@@ -2270,7 +2273,8 @@
 "uZ" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1
@@ -2653,7 +2657,8 @@
 "zs" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1
@@ -3252,7 +3257,8 @@
 "EM" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
@@ -3821,10 +3827,6 @@
 /obj/machinery/light/rogue/wallfire/candle/blue,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/town/basement)
-"JC" = (
-/obj/structure/flora/rogueshroom,
-/turf/open/floor/rogue/grass/green,
-/area/rogue/outdoors/woods)
 "JF" = (
 /obj/structure/fermenting_barrel,
 /turf/open/floor/rogue/blocks,
@@ -4023,7 +4025,8 @@
 "LC" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /turf/open/floor/rogue/grass/green,
 /area/rogue/outdoors/woods)
@@ -4175,10 +4178,6 @@
 "MK" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
-"ML" = (
-/obj/structure/flora/rogueshroom/big,
-/turf/open/floor/rogue/grass/green,
-/area/rogue/outdoors/woods)
 "MS" = (
 /obj/machinery/conveyor/auto{
 	dir = 6;
@@ -4310,7 +4309,8 @@
 "Og" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/shelter/woods)
@@ -4392,7 +4392,8 @@
 "Pq" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains)
@@ -4680,7 +4681,8 @@
 "RZ" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /obj/structure/fluff/railing/wood{
 	dir = 1
@@ -5191,9 +5193,8 @@
 /turf/open/water/swamp/deep,
 /area/rogue/under/cave/dungeon1/gethsmane/inner)
 "WK" = (
-/obj/structure/flora/rogueshroom/big,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/woods)
+/turf/closed/mineral/random/rogue/high,
+/area/rogue/indoors/shelter/woods)
 "WL" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/effect/decal/cleanable/blood,
@@ -5221,7 +5222,8 @@
 "WZ" = (
 /obj/effect/wisp{
 	name = "Will-o'-wisp";
-	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom"
+	desc = "Will-o'-wisps... malicious little creatures that try to lure people into traps or their doom";
+	color = "yellow"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/shelter/woods)
@@ -44789,7 +44791,7 @@ GH
 jW
 jW
 jW
-Yu
+jW
 jW
 jW
 bP
@@ -45102,12 +45104,12 @@ GH
 jW
 jW
 jW
-bP
+mk
 bP
 Ek
 RB
 By
-Yu
+jW
 jW
 jW
 By
@@ -45737,7 +45739,7 @@ Ek
 bP
 bP
 bP
-jW
+Yu
 jW
 bP
 bP
@@ -46838,7 +46840,7 @@ jW
 GX
 jW
 jW
-tv
+jW
 jW
 jW
 jW
@@ -46868,7 +46870,7 @@ jW
 jW
 jW
 MK
-tv
+jW
 jW
 jW
 jW
@@ -47003,7 +47005,7 @@ MK
 jW
 jW
 MK
-tv
+jW
 jW
 jW
 jW
@@ -47195,7 +47197,7 @@ MK
 Yi
 jW
 jW
-JC
+bP
 bP
 jW
 By
@@ -47501,7 +47503,7 @@ Yi
 jW
 bP
 bP
-ML
+bP
 bP
 bP
 bP
@@ -47646,7 +47648,7 @@ GX
 jW
 bP
 bP
-ML
+bP
 jW
 By
 jW
@@ -47660,7 +47662,7 @@ jW
 bP
 bP
 bP
-JC
+bP
 bP
 bP
 Vh
@@ -47776,7 +47778,7 @@ gU
 gU
 MK
 MK
-WK
+MK
 in
 sY
 wE
@@ -48139,7 +48141,7 @@ ew
 ew
 Vh
 bP
-JC
+bP
 jW
 jW
 bP
@@ -48749,12 +48751,12 @@ jW
 RR
 RR
 RR
-RR
-RR
-RR
-RR
-RR
-RR
+WK
+WK
+WK
+WK
+WK
+WK
 bP
 Yi
 Yi
@@ -48904,14 +48906,14 @@ jW
 jW
 jW
 RR
-RR
-RR
-RR
-RR
-RR
-RR
-RR
-RR
+WK
+WK
+WK
+WK
+WK
+WK
+WK
+WK
 bP
 Yi
 Yi
@@ -48922,7 +48924,7 @@ Yi
 Yi
 jW
 jW
-JC
+bP
 bP
 jW
 bP
@@ -49061,14 +49063,14 @@ jW
 jW
 jW
 RR
-RR
-RR
-RR
-RR
-RR
-RR
-RR
-RR
+WK
+WK
+WK
+WK
+WK
+WK
+WK
+WK
 bP
 Yi
 Yi
@@ -49218,14 +49220,14 @@ jW
 jW
 Ek
 RR
-RR
-RR
-RR
-RR
-RR
-RR
-RR
-RR
+WK
+WK
+WK
+WK
+WK
+WK
+WK
+WK
 bP
 jW
 Yi
@@ -49377,12 +49379,12 @@ bP
 bP
 RR
 RR
-RR
-RR
-RR
-RR
-RR
-RR
+WK
+WK
+WK
+WK
+WK
+WK
 Bj
 Xd
 Ko
@@ -72929,11 +72931,11 @@ rj
 rj
 ja
 Oa
-hh
-hh
-hh
-hh
-hh
+Oa
+ja
+ja
+ja
+Oa
 rj
 rj
 rj
@@ -73086,11 +73088,11 @@ Oa
 ja
 Oa
 nV
-hh
-hh
-hh
-hh
-hh
+ja
+ja
+ja
+Oa
+Oa
 rj
 rj
 rj
@@ -73243,11 +73245,11 @@ ja
 kr
 Oa
 nV
-hh
-hh
-hh
-hh
-hh
+ja
+ja
+ja
+Oa
+Oa
 rj
 rj
 rj
@@ -73400,11 +73402,11 @@ ja
 ja
 Kj
 fF
-hh
-hh
-hh
-hh
-hh
+ja
+ja
+ja
+ja
+Oa
 rj
 rj
 rj
@@ -73557,11 +73559,11 @@ ja
 ja
 oA
 Kj
-hh
-hh
-hh
-hh
-hh
+Oa
+ja
+ja
+ja
+Oa
 rj
 rj
 rj
@@ -73718,7 +73720,7 @@ Oa
 Kj
 Oa
 ja
-ja
+Oa
 rj
 rj
 rj
