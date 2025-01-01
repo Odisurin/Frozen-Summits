@@ -102,12 +102,12 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
-	
+
 /obj/effect/proc_holder/spell/invoked/boomingblade5e/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
 		var/mob/living/carbon/target = targets[1]
@@ -148,7 +148,7 @@
 		//explosion
 		if(!owner.anti_magic_check())
 			boom()
-		Destroy(src)
+		qdel(src)
 
 /datum/status_effect/buff/boomingblade5e/proc/boom()
 	var/exp_heavy = 0
@@ -164,6 +164,7 @@
 	name = "Booming Blade"
 	desc = "I feel if I move I am in serious trouble."
 	icon_state = "debuff"
+
 //==============================================
 //	CONTROL FLAMES
 //==============================================
