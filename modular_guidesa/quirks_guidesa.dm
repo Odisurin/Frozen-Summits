@@ -57,7 +57,14 @@
 
 
 
+/datum/quirk/elemental_acid
+	name = "Elemental (Acid)"
+	desc = "Channel the corrosive power of acid, harnessing abilities that melt and dissolve your foes."
+	value = 5
 
+/datum/quirk/elemental_acid/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/acidsplash5e)
 
 
 
