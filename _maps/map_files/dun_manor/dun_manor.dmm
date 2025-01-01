@@ -3002,6 +3002,15 @@
 /obj/item/roguegem/random,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/rtfield)
+"kuZ" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/structure/roguemachine/drugmachine{
+	name = "Consumables Catalogue"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors)
 "kzb" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/hexstone,
@@ -3763,6 +3772,10 @@
 /obj/structure/roguemachine/merchantvend,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/rtfield)
+"nBF" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/bull,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "nFv" = (
 /obj/machinery/light/rogue/smelter,
 /turf/open/floor/rogue/hexstone,
@@ -3787,6 +3800,10 @@
 /obj/structure/glowshroom,
 /turf/open/water/swamp,
 /area/rogue/under/cave)
+"nMT" = (
+/obj/structure/roguemachine/atm,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors)
 "nNk" = (
 /obj/machinery/light/rogue/torchholder{
 	icon_state = "torchwall1";
@@ -3969,6 +3986,10 @@
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/tavern)
+"paO" = (
+/obj/structure/roguemachine/stockpile,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors)
 "pbg" = (
 /obj/structure/bed/rogue/shit{
 	name = "makeshift bed"
@@ -4095,10 +4116,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 6
 	},
-/obj/structure/roguemachine/merchantvend,
-/obj/structure/table/wood{
-	icon_state = "tablewood1"
-	},
+/obj/structure/closet/crate/chest/crate,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
 "pzu" = (
@@ -4151,6 +4169,13 @@
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/rtfield)
+"pJb" = (
+/obj/structure/roguemachine/drugmachine,
+/turf/open/water/ocean/deep{
+	name = "deep river water";
+	water_reagent = /datum/reagent/water
+	},
+/area/rogue/outdoors/beach)
 "pJn" = (
 /obj/effect/decal/mossy{
 	dir = 1
@@ -4352,6 +4377,10 @@
 "qKM" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/rtfield)
+"qSD" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/cow,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "qUh" = (
 /obj/structure/fluff/railing/wood{
@@ -5494,7 +5523,6 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
 "wqE" = (
-/obj/structure/rack/rogue,
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
@@ -5844,6 +5872,13 @@
 "xOC" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/rtfield)
+"xQA" = (
+/obj/structure/roguemachine/merchantvend,
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors)
 "xRc" = (
 /obj/structure/bed/rogue/inn,
 /obj/item/bedsheet/rogue/wool,
@@ -20671,11 +20706,11 @@ azO
 bId
 bId
 obx
-mRr
+nMT
 obx
-uuE
+kuZ
 wqE
-uuE
+xQA
 obx
 mRr
 obx
@@ -20985,11 +21020,11 @@ bId
 bId
 bId
 jmO
-maL
+mRr
 obx
-uuE
+paO
 bEC
-uuE
+bRO
 obx
 wMR
 jmO
@@ -22719,7 +22754,7 @@ rPp
 pnk
 obx
 obx
-bId
+pJb
 bId
 bId
 bId
@@ -39012,7 +39047,7 @@ fsP
 abH
 fsP
 fsP
-fsP
+qSD
 hSZ
 dPV
 dPV
@@ -39169,7 +39204,7 @@ fsP
 fsP
 fsP
 abI
-fsP
+nBF
 hSZ
 dPV
 dPV
@@ -45634,7 +45669,7 @@ xOC
 xOC
 xOC
 iXP
-eor
+sRV
 sRV
 wpd
 uxa
