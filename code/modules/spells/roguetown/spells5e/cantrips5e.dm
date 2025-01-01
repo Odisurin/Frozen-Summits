@@ -998,16 +998,16 @@
 //	MENDING
 //==============================================
 
-/*
+
 /obj/effect/proc_holder/spell/invoked/mending5e
 	name = "Mending"
 	overlay_state = "null"
 	releasedrain = 50
 	chargetime = 5
-	charge_max = 20 SECONDS
+	charge_max = 15 SECONDS
 	//chargetime = 10
 	//charge_max = 30 SECONDS
-	range = 6
+	range = 1
 	warnie = "spellwarning"
 	movement_interrupt = FALSE
 	no_early_release = FALSE
@@ -1017,7 +1017,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1026,20 +1026,24 @@
 /obj/effect/proc_holder/spell/invoked/mending5e/cast(list/targets, mob/living/user)
 	if(istype(targets[1], /obj/item))
 		var/obj/item/I = targets[1]
-		if(I.obj_integrity >= I.max_integrity)	
-			var/repair_percent = 0.25
+		if(I.obj_integrity < I.max_integrity)
+			var/repair_percent = 0.50
 			repair_percent *= I.max_integrity
 			I.obj_integrity = min(I.obj_integrity + repair_percent, I.max_integrity)
 			user.visible_message(span_info("[I] glows in a faint mending light."))
 			if(I.obj_broken == TRUE)
 				I.obj_broken = FALSE
+			if(istype(I, /obj/item/clothing))
+				var/obj/item/clothing/C = I
+				C.update_clothes_damaged_state(FALSE)
+			I.update_overlays()
 		else
 			user.visible_message(span_info("[I] appears to be in pefect condition."))
 			revert_cast()
 	else
 		to_chat(user, span_warning("There is no item here!"))
 		revert_cast()
-*/
+
 //==============================================
 //	MESSAGE
 //==============================================
