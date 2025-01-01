@@ -252,3 +252,5 @@
 /datum/quirk/weird_weapons/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.special_items["Bone Scythe"] = /obj/item/rogueweapon/sword/iron/scythe
+	H.mind.special_items["Enchanted Iron Sword"] = /obj/item/rogueweapon/sword/iron/cultist_Sword
+	H.mind.special_items["Giant Cleaver"] = /obj/item/rogueweapon/sword/iron/cleaver
