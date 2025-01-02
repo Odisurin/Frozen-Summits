@@ -129,9 +129,11 @@
 			user.visible_message("<span class='notice'>[user] sweeps \the [O.name].</span>", "<span class='notice'>I sweep \the [O.name].</span>")
 			playsound(user, "clothwipe", 100, TRUE)
 			qdel(O)
-		if(istype(O, /obj/effect/decal/cleanable/blood))
+		else if(istype(O, /obj/effect/decal/cleanable/blood))
+			user.visible_message("<span class='notice'>[user] cleans the blood on the [O.name].</span>", "<span class='notice'>I clean the blood on the [O.name].</span>")
+			playsound(user, "clothwipe", 100, TRUE)
 			add_blood_DNA(O.return_blood_DNA())
-			return
+			qdel(O)
 
 /obj/item/broom/attack_turf(turf/T, mob/living/user)
 	if(do_after(user, 30, target = T))
@@ -142,8 +144,10 @@
 			playsound(user, "clothwipe", 100, TRUE)
 			qdel(C)
 		for(var/obj/effect/decal/cleanable/blood/O in T)
+			user.visible_message("<span class='notice'>[user] cleans the blood on the [T.name].</span>", "<span class='notice'>I clean the blood on the [T.name].</span>")
+			playsound(user, "clothwipe", 100, TRUE)
 			add_blood_DNA(O.return_blood_DNA())
-			return
+			qdel(O)
 
 
 
