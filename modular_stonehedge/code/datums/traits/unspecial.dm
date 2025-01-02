@@ -284,14 +284,15 @@
 
 /datum/quirk/mtraining1
 	name = "Medical Training"
-	desc = "I have basic medical training and stashed some med supplies."
+	desc = "I have basic medical training and stashed some med supplies alongside a broom to clean some blood."
 	value = 2
 
 /datum/quirk/mtraining1/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
-	H.mind.special_items["Surgery Kit"] = /obj/item/storage/belt/rogue/surgery_bag
+	H.mind.special_items["Surgery Kit"] = /obj/item/storage/belt/rogue/surgery_bag/full
+	H.mind.special_items["Broom"] = /obj/item/broom
 
 /datum/quirk/eagle_eyed
 	name = "Eagle Eyed"
