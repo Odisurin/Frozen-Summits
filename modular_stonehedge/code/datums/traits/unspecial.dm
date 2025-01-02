@@ -513,6 +513,18 @@
 	H.update_transform()
 
 
+/datum/quirk/backproblems_2
+	name = "Giant (Eyes slightly better)"
+	desc = "I've always been called a giant (atleast among my kin). I am valued for my stature, but, this world made for smaller folk has forced me to move cautiously."
+	value = 0
+
+/datum/quirk/backproblems_2/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.change_stat("strength", 3)
+	H.change_stat("constitution", 2)
+	H.change_stat("speed", -2)
+	H.transform = H.transform.Scale(1.15, 1.25)
+	H.update_transform()
 
 //negative
 /datum/quirk/nimrod
