@@ -810,6 +810,8 @@
 	H.mind.special_items["Black Bell Dress"] = /obj/item/clothing/suit/roguetown/shirt/belldress/black
 	H.mind.special_items["Fancy White Dress"] = /obj/item/clothing/suit/roguetown/shirt/belldress/white
 	H.mind.special_items["Baroness Dress"] = /obj/item/clothing/suit/roguetown/shirt/belldress/baroness
+	H.mind.special_items["Dress Strapped"] = /obj/item/clothing/suit/roguetown/shirt/dress_strapped
+
 
 	H.mind.special_items["Stockings"] = /obj/item/clothing/under/roguetown/tights/stockings
 	H.mind.special_items["Silk Stockings"] = /obj/item/clothing/under/roguetown/tights/stockings/silk

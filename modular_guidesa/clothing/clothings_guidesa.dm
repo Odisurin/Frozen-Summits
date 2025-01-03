@@ -16,3 +16,14 @@
 	body_parts_covered = CHEST|ARMS|VITALS
 	sewrepair = TRUE
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT|ITEM_SLOT_CLOAK
+
+
+/obj/item/clothing/suit/roguetown/shirt/dress_strapped
+	name = "dress"
+	desc = "Fancy dress."
+	icon_state = "dress_strapped"
+	item_state = "dress_strapped"
+	gender = PLURAL
+	body_parts_covered = CHEST|ARMS|VITALS
+	sewrepair = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT|ITEM_SLOT_CLOAK
