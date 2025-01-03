@@ -1716,10 +1716,6 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/shelter)
-"lT" = (
-/obj/structure/glowshroom,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/cave)
 "lU" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/cave)
@@ -3444,11 +3440,6 @@
 	water_reagent = /datum/reagent/water
 	},
 /area/rogue/outdoors/beach)
-"yY" = (
-/obj/structure/glowshroom,
-/obj/structure/flora/roguegrass/water,
-/turf/open/floor/rogue/dirt,
-/area/rogue/indoors/cave)
 "yZ" = (
 /obj/structure/bed/rogue/inn/hay,
 /obj/effect/decal/cleanable/blood/old,
@@ -4484,10 +4475,6 @@
 /mob/living/simple_animal/hostile/rogue/skeleton/guard,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/beach/forest)
-"GR" = (
-/obj/structure/glowshroom,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/beach)
 "GS" = (
 /obj/structure/bed/rogue/inn/hay,
 /turf/open/floor/rogue/blocks,
@@ -5670,10 +5657,6 @@
 /area/rogue/indoors/shelter)
 "Pi" = (
 /turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/indoors/cave)
-"Pj" = (
-/obj/structure/glowshroom,
-/turf/open/floor/rogue/dirt,
 /area/rogue/indoors/cave)
 "Pk" = (
 /obj/structure/chair/wood/rogue{
@@ -10761,7 +10744,7 @@ RC
 XE
 Nf
 xt
-hj
+Ad
 oE
 nq
 XE
@@ -11158,7 +11141,7 @@ Ad
 ot
 BX
 XE
-hj
+Ad
 Ad
 oE
 ot
@@ -12853,7 +12836,7 @@ tk
 RL
 RL
 ot
-hj
+Ad
 fj
 oE
 kQ
@@ -13381,7 +13364,7 @@ XE
 XE
 oE
 oE
-Pj
+oE
 RL
 RL
 tk
@@ -14678,7 +14661,7 @@ rB
 rB
 Ad
 ot
-hj
+Ad
 Ad
 Gt
 Wk
@@ -15856,7 +15839,7 @@ kQ
 oE
 BX
 kQ
-hj
+Ad
 ot
 RL
 RL
@@ -16373,7 +16356,7 @@ sA
 sA
 UR
 UR
-Pj
+oE
 oE
 RC
 XE
@@ -17029,7 +17012,7 @@ UR
 Wk
 oE
 RL
-lT
+XE
 oE
 oE
 RL
@@ -17393,7 +17376,7 @@ NX
 NX
 NX
 Xt
-GR
+Xt
 NX
 NX
 sA
@@ -18575,7 +18558,7 @@ UR
 Nm
 Nm
 oE
-yY
+kQ
 Wk
 Ad
 Ad
@@ -18692,7 +18675,7 @@ UR
 UR
 UR
 UR
-hj
+Ad
 kQ
 XE
 UR
@@ -18859,7 +18842,7 @@ vs
 vs
 cc
 fj
-hj
+Ad
 oE
 XE
 Gt
@@ -19209,7 +19192,7 @@ NX
 NX
 NX
 OU
-Pj
+oE
 XE
 in
 oE
@@ -19231,7 +19214,7 @@ UR
 UR
 kQ
 oE
-lT
+XE
 Dj
 BX
 vg
