@@ -21,7 +21,7 @@
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS_PARTSONLY)
 	default_features = MANDATORY_FEATURE_LIST
-	use_skintones = TRUE
+	use_skintones = FALSE
 	possible_ages = ALL_AGES_LIST
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE

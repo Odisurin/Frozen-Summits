@@ -873,18 +873,6 @@
 	},
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors)
-"acM" = (
-/obj/structure/roguewindow/openclose{
-	dir = 4
-	},
-/turf/closed/wall/mineral/rogue/wood,
-/area/rogue/indoors)
-"acN" = (
-/obj/structure/roguewindow/openclose{
-	dir = 8
-	},
-/turf/closed/wall/mineral/rogue/wood,
-/area/rogue/indoors)
 "acO" = (
 /obj/structure/closet/crate/chest/neu_fancy,
 /obj/item/clothing/cloak/heartfelt,
@@ -66954,16 +66942,16 @@ tXZ
 tXZ
 aat
 aat
-acM
+dMQ
 aat
 aat
-acM
+dMQ
 aat
 aat
 aat
 aat
 aat
-acM
+dMQ
 aat
 aat
 kDi
@@ -68053,10 +68041,10 @@ tXZ
 tXZ
 aat
 aat
-acN
+wDU
 aat
 aat
-acN
+wDU
 aat
 aat
 aat
@@ -68376,9 +68364,9 @@ tXZ
 tXZ
 aat
 aat
-acN
+wDU
 aat
-acN
+wDU
 aat
 aat
 aat
