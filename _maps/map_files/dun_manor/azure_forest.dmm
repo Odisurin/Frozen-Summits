@@ -584,6 +584,7 @@
 /area/rogue/under/town/basement)
 "eS" = (
 /obj/effect/landmark/start/druid,
+/obj/structure/roguemachine/stockpile,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/mountains)
 "eT" = (
@@ -2976,6 +2977,14 @@
 "zu" = (
 /turf/open/floor/rogue/grass/green,
 /area/rogue/outdoors/mountains)
+"zw" = (
+/obj/structure/fluff/railing/border{
+	dir = 9
+	},
+/obj/machinery/light/rogue/oven/south,
+/obj/machinery/light/rogue/hearth,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/mountains)
 "zA" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/woods)
@@ -4606,6 +4615,10 @@
 	icon_state = "wooden_floort"
 	},
 /area/rogue/outdoors/beach/forest)
+"MB" = (
+/obj/structure/roguemachine/atm,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/mountains)
 "MD" = (
 /obj/item/grown/log/tree/stick,
 /turf/open/floor/rogue/rooftop{
@@ -5446,6 +5459,10 @@
 /obj/structure/flora/newleaf,
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
+"TQ" = (
+/obj/structure/well,
+/turf/open/floor/rogue/grass/green,
+/area/rogue/outdoors/woods)
 "TR" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -5684,6 +5701,26 @@
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/basement)
+"VL" = (
+/obj/structure/closet/crate/roguecloset,
+/obj/item/cooking/pan,
+/obj/item/rogueweapon/huntingknife/chefknife,
+/obj/item/reagent_containers/glass/bucket/pot,
+/obj/item/kitchen/rollingpin,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/kitchen/spoon,
+/obj/item/kitchen/spoon,
+/obj/item/kitchen/spoon,
+/obj/item/kitchen/spoon,
+/obj/item/reagent_containers/glass/bowl,
+/obj/item/reagent_containers/glass/bowl,
+/obj/item/reagent_containers/glass/bowl,
+/obj/item/reagent_containers/glass/bowl,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/mountains)
 "VO" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/cavewet/bogcaves)
@@ -41514,7 +41551,7 @@ Ek
 bP
 bP
 bP
-Rq
+Ek
 Yt
 Yt
 bP
@@ -41835,7 +41872,7 @@ MK
 MK
 MK
 mP
-Rq
+bP
 MK
 MK
 bP
@@ -41984,16 +42021,16 @@ Ek
 bP
 bP
 bP
-Rq
-bP
+Ek
+Ek
 Lu
 MK
 MK
 MK
 Rq
 ZK
-ZK
-Rq
+LA
+Ek
 MK
 MK
 Yt
@@ -42150,7 +42187,7 @@ bP
 ZK
 tv
 tv
-ZK
+LA
 Ym
 MK
 MK
@@ -42778,7 +42815,7 @@ MK
 Rq
 ZK
 ZK
-Rq
+TQ
 bP
 MK
 bP
@@ -66325,7 +66362,7 @@ rj
 rj
 rj
 rj
-Zs
+oH
 eS
 JC
 JC
@@ -66482,8 +66519,8 @@ rj
 rj
 Zs
 ub
-Zs
-JC
+oH
+MB
 JC
 qz
 SR
@@ -90822,7 +90859,7 @@ JC
 JC
 JC
 JC
-JC
+VL
 oH
 Te
 Te
@@ -91287,8 +91324,8 @@ rj
 rj
 rj
 pg
-QT
-St
+oH
+zw
 qz
 sb
 oG
