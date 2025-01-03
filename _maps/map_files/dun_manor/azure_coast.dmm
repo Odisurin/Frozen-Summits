@@ -470,6 +470,11 @@
 "bY" = (
 /turf/closed/wall/mineral/rogue/wood,
 /area/rogue/outdoors/beach)
+"bZ" = (
+/obj/structure/fermenting_barrel/random/beer,
+/obj/structure/spacevine,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/beach)
 "cc" = (
 /obj/structure/flora/roguetree/stump/log,
 /turf/open/floor/rogue/dirt/road,
@@ -1560,6 +1565,10 @@
 	color = "80ffff"
 	},
 /area/rogue/under/town/basement)
+"kE" = (
+/obj/structure/spacevine,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/beach)
 "kF" = (
 /obj/structure/statue/bone/skull,
 /turf/open/water/ocean/deep{
@@ -1613,6 +1622,10 @@
 	color = "80ffff"
 	},
 /area/rogue/outdoors/beach/forest)
+"lh" = (
+/obj/structure/flora/roguegrass/water,
+/turf/open/water/swamp,
+/area/rogue/outdoors/beach)
 "li" = (
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/wood,
@@ -1703,10 +1716,6 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/shelter)
-"lT" = (
-/obj/structure/glowshroom,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/cave)
 "lU" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/cave)
@@ -2058,6 +2067,13 @@
 /mob/living/simple_animal/hostile/rogue/skeleton/bow,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/cave)
+"ox" = (
+/obj/structure/spacevine,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
+/area/rogue/outdoors/beach)
 "oC" = (
 /mob/living/carbon/human/species/skeleton/npc/ambush,
 /turf/open/floor/rogue/ruinedwood/turned,
@@ -2153,6 +2169,10 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/shelter)
+"pn" = (
+/obj/structure/spacevine,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/beach)
 "po" = (
 /obj/structure/flora/roguegrass/water/reeds,
 /turf/open/water/ocean{
@@ -2275,6 +2295,13 @@
 "qf" = (
 /obj/structure/fluff/walldeco/stone,
 /turf/closed/wall/mineral/rogue/craftstone,
+/area/rogue/indoors/cave)
+"qh" = (
+/obj/structure/flora/roguegrass/water,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
 /area/rogue/indoors/cave)
 "qi" = (
 /obj/effect/decal/cobbleedge{
@@ -2521,6 +2548,10 @@
 /obj/structure/bars/cemetery,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/cave)
+"rS" = (
+/obj/structure/flora/roguegrass/thorn_bush,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
 "rT" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1";
@@ -2617,7 +2648,7 @@
 /obj/effect/spawner/lootdrop/roguetown/dungeon/money,
 /obj/effect/spawner/lootdrop/roguetown/dungeon,
 /obj/effect/spawner/lootdrop/roguetown/dungeon,
-/turf/open/floor/rogue/naturalstone,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/cave)
 "sC" = (
 /turf/closed/wall/mineral/rogue/wooddark/window,
@@ -3118,6 +3149,7 @@
 /area/rogue/outdoors/beach)
 "wy" = (
 /obj/machinery/light/rogue/torchholder/c,
+/obj/structure/spacevine,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/beach)
 "wA" = (
@@ -3581,6 +3613,9 @@
 	color = "e6f2ff"
 	},
 /area/rogue/outdoors/beach/forest)
+"An" = (
+/turf/open/water/swamp,
+/area/rogue/outdoors/beach)
 "Ao" = (
 /turf/open/floor/rogue/dirt/road{
 	color = "80ffff"
@@ -3826,7 +3861,7 @@
 "Cd" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/mossback,
 /obj/structure/flora/roguegrass/water/reeds,
-/turf/open/floor/rogue/naturalstone,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/cave)
 "Cg" = (
 /obj/structure/mineral_door/wood/violet{
@@ -4297,6 +4332,10 @@
 	},
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/indoors/cave)
+"FT" = (
+/obj/structure/flora/roguegrass/water,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/beach)
 "FU" = (
 /mob/living/carbon/human/species/skeleton/npc/ambush,
 /turf/open/floor/rogue/ruinedwood,
@@ -4972,7 +5011,7 @@
 /area/rogue/indoors/cave)
 "Kw" = (
 /obj/item/restraints/legcuffs/beartrap/armed,
-/turf/open/floor/rogue/dirt,
+/turf/open/water/swamp,
 /area/rogue/outdoors/beach)
 "Kx" = (
 /turf/open/floor/carpet/red,
@@ -5048,6 +5087,11 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/cave)
+"KX" = (
+/obj/item/restraints/legcuffs/beartrap/armed,
+/obj/structure/spacevine,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors/cave)
 "KY" = (
 /obj/structure/composter/full,
 /turf/open/floor/rogue/dirt/road{
@@ -5121,6 +5165,13 @@
 /mob/living/carbon/human/species/human/northern/searaider/ambush,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/cave)
+"LM" = (
+/obj/structure/flora/roguegrass/water,
+/turf/open/water/ocean{
+	name = "river water";
+	water_reagent = /datum/reagent/water
+	},
+/area/rogue/outdoors/beach)
 "LO" = (
 /obj/structure/flora/roguegrass/bush/wall,
 /turf/open/floor/rogue/snow{
@@ -5277,6 +5328,10 @@
 /obj/structure/telescope,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/beach/forest)
+"ML" = (
+/obj/structure/spacevine,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
 "MN" = (
 /obj/item/reagent_containers/food/snacks/smallrat,
 /turf/open/floor/rogue/naturalstone,
@@ -5563,6 +5618,14 @@
 "OP" = (
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/outdoors/beach)
+"OS" = (
+/obj/structure/flora/roguegrass/water/reeds,
+/turf/open/water/swamp,
+/area/rogue/outdoors/beach)
+"OU" = (
+/obj/structure/spacevine,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/beach)
 "OY" = (
 /obj/structure/stairs{
 	icon_state = "stairs";
@@ -5594,10 +5657,6 @@
 /area/rogue/indoors/shelter)
 "Pi" = (
 /turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/indoors/cave)
-"Pj" = (
-/obj/structure/glowshroom,
-/turf/open/floor/rogue/dirt,
 /area/rogue/indoors/cave)
 "Pk" = (
 /obj/structure/chair/wood/rogue{
@@ -5894,6 +5953,10 @@
 /obj/item/natural/rock/salt,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/cave)
+"Rp" = (
+/obj/structure/spacevine,
+/turf/open/water/swamp,
+/area/rogue/outdoors/beach)
 "Rq" = (
 /obj/structure/fluff/railing/fence{
 	icon_state = "fence";
@@ -6480,6 +6543,11 @@
 /obj/structure/flora/roguegrass/thorn_bush,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/cave)
+"Wm" = (
+/obj/item/roguegem/blue,
+/obj/structure/flora/roguegrass/water,
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors/cave)
 "Wn" = (
 /obj/structure/bookcase,
 /obj/item/book/rogue/nitebeast,
@@ -6640,6 +6708,7 @@
 /area/rogue/indoors/cave)
 "Xr" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/mole,
+/obj/structure/flora/roguegrass/water,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/cave)
 "Xt" = (
@@ -10547,7 +10616,7 @@ kQ
 oE
 oE
 Gt
-oE
+jk
 kQ
 KH
 RL
@@ -10671,11 +10740,11 @@ RL
 RL
 RL
 RL
-XE
+RC
 XE
 Nf
 xt
-hj
+Ad
 oE
 nq
 XE
@@ -10799,7 +10868,7 @@ RL
 RL
 RL
 RL
-oE
+kQ
 Ro
 XE
 RL
@@ -11054,13 +11123,13 @@ XE
 XE
 XE
 XE
-oE
-oE
+kQ
+jk
 oE
 oE
 oE
 Ro
-oE
+kQ
 RL
 RL
 RL
@@ -11072,7 +11141,7 @@ Ad
 ot
 BX
 XE
-hj
+Ad
 Ad
 oE
 ot
@@ -11847,9 +11916,9 @@ tk
 tk
 tk
 tk
-XE
+RC
 jk
-oE
+Wk
 tk
 tk
 oE
@@ -11968,7 +12037,7 @@ tk
 tk
 tk
 XE
-XE
+RC
 oE
 XE
 oE
@@ -11979,7 +12048,7 @@ tk
 tk
 XE
 oE
-oE
+Wk
 tk
 tk
 RL
@@ -12102,11 +12171,11 @@ tk
 tk
 tk
 oE
-oE
+Gt
 XE
 tk
 tk
-XE
+Wk
 oE
 oE
 tk
@@ -12233,11 +12302,11 @@ tk
 tk
 tk
 tk
-XE
+Nf
 oE
 oE
 XE
-XE
+Gt
 tk
 tk
 tk
@@ -12364,8 +12433,8 @@ tk
 tk
 tk
 oE
-tk
-tk
+kQ
+oE
 XE
 tk
 tk
@@ -12493,9 +12562,9 @@ tk
 tk
 tk
 tk
-XE
-tk
+BX
 oE
+kQ
 tk
 tk
 tk
@@ -12623,16 +12692,16 @@ tk
 tk
 tk
 tk
-oE
-oE
+Nm
+BX
 XE
 XE
 oE
 oE
 tk
-XE
-XE
-XE
+BX
+BX
+BX
 tk
 RL
 Ad
@@ -12754,20 +12823,20 @@ tk
 tk
 tk
 tk
-oE
-XE
+Nm
+BX
 tk
+Gt
+HO
 oE
-XE
-oE
-XE
+BX
 tk
 XE
 tk
 RL
 RL
 ot
-hj
+Ad
 fj
 oE
 kQ
@@ -13019,8 +13088,8 @@ tk
 tk
 tk
 tk
-oE
-XE
+nq
+Gt
 XE
 XE
 tk
@@ -13152,7 +13221,7 @@ tk
 tk
 XE
 tk
-XE
+BX
 tk
 tk
 tk
@@ -13278,12 +13347,12 @@ RL
 tk
 tk
 tk
-oE
+Nm
 FH
 XE
 XE
 tk
-XE
+BX
 tk
 tk
 RL
@@ -13295,7 +13364,7 @@ XE
 XE
 oE
 oE
-Pj
+oE
 RL
 RL
 tk
@@ -13412,7 +13481,7 @@ es
 oE
 Xr
 oE
-oE
+kQ
 Hx
 tk
 tk
@@ -13541,7 +13610,7 @@ tk
 tk
 tk
 oE
-es
+Wm
 tk
 tk
 tk
@@ -14054,7 +14123,7 @@ NX
 ab
 NX
 NX
-sD
+bZ
 NX
 NX
 RL
@@ -14306,7 +14375,7 @@ oP
 oP
 oP
 UR
-bf
+OU
 bf
 bf
 bf
@@ -14446,7 +14515,7 @@ bf
 bf
 rx
 bf
-bf
+OU
 RL
 rB
 rB
@@ -14592,7 +14661,7 @@ rB
 rB
 Ad
 ot
-hj
+Ad
 Ad
 Gt
 Wk
@@ -15213,7 +15282,7 @@ bf
 bf
 bf
 Ps
-bf
+OU
 bf
 bf
 gG
@@ -15770,7 +15839,7 @@ kQ
 oE
 BX
 kQ
-hj
+Ad
 ot
 RL
 RL
@@ -16287,7 +16356,7 @@ sA
 sA
 UR
 UR
-Pj
+oE
 oE
 RC
 XE
@@ -16524,7 +16593,7 @@ gG
 gG
 gG
 gG
-NX
+bf
 bf
 NX
 NX
@@ -16654,7 +16723,7 @@ gG
 gG
 gG
 gG
-NX
+bf
 bf
 NX
 NX
@@ -16784,7 +16853,7 @@ gG
 gG
 gG
 NX
-bf
+OU
 bf
 NX
 NX
@@ -16917,8 +16986,8 @@ NX
 NX
 zd
 NX
-Xt
-Xt
+Rp
+Rp
 NX
 UR
 UR
@@ -16943,7 +17012,7 @@ UR
 Wk
 oE
 RL
-lT
+XE
 oE
 oE
 RL
@@ -17047,8 +17116,8 @@ NX
 NX
 bf
 NX
-Xt
-Xt
+pn
+Rp
 NX
 UR
 UR
@@ -17175,10 +17244,10 @@ gG
 gG
 NX
 NX
-Xt
+FT
 Xt
 Kw
-Xt
+pn
 NX
 sA
 sA
@@ -17435,8 +17504,8 @@ gG
 NX
 NX
 NX
-Xt
-Xt
+An
+FT
 Xt
 NX
 NX
@@ -17565,8 +17634,8 @@ gG
 NX
 NX
 NX
-Xt
-Xt
+OS
+An
 Ra
 NX
 NX
@@ -17695,8 +17764,8 @@ NX
 NX
 NX
 NX
-Xt
-Tv
+lh
+An
 NX
 NX
 NX
@@ -17825,9 +17894,9 @@ NX
 NX
 NX
 NX
-Tv
-Tv
-Tv
+An
+kE
+kE
 NX
 NX
 sA
@@ -17955,9 +18024,9 @@ NX
 NX
 NX
 UR
+Nf
 XE
-XE
-oE
+Nm
 UR
 UR
 UR
@@ -18086,7 +18155,7 @@ NX
 NX
 UR
 oE
-XE
+RC
 HH
 UR
 UR
@@ -18217,7 +18286,7 @@ UR
 UR
 HH
 XE
-XE
+vs
 UR
 UR
 UR
@@ -18345,8 +18414,8 @@ UR
 UR
 UR
 UR
-oE
-oE
+ot
+xt
 XE
 UR
 UR
@@ -18475,10 +18544,10 @@ UR
 UR
 UR
 UR
+kQ
+jk
 oE
-oE
-oE
-XE
+vs
 UR
 UR
 UR
@@ -18489,7 +18558,7 @@ UR
 Nm
 Nm
 oE
-Pj
+kQ
 Wk
 Ad
 Ad
@@ -18606,9 +18675,9 @@ UR
 UR
 UR
 UR
+Ad
+kQ
 XE
-oE
-XE
 UR
 UR
 UR
@@ -18616,7 +18685,7 @@ UR
 UR
 UR
 oE
-oE
+jk
 oE
 Wk
 XE
@@ -18735,17 +18804,17 @@ UR
 UR
 UR
 UR
-UR
-oE
+kM
+Ad
 HH
-oE
+xt
 XE
 Em
 Em
 UR
+xt
 oE
-oE
-oE
+kQ
 oE
 XE
 oE
@@ -18753,7 +18822,7 @@ oE
 KH
 oE
 fe
-Ad
+fj
 Ad
 UR
 UR
@@ -18763,7 +18832,7 @@ oE
 Ad
 kQ
 oE
-oE
+xt
 oE
 XE
 BX
@@ -18773,7 +18842,7 @@ vs
 vs
 cc
 fj
-hj
+Ad
 oE
 XE
 Gt
@@ -18864,17 +18933,17 @@ NX
 UR
 UR
 UR
-UR
-UR
-UR
+rS
+Wk
 oE
+ot
+XE
+nq
+XE
+RC
 XE
 oE
-XE
-XE
-XE
-oE
-oE
+xt
 oE
 vs
 BX
@@ -18993,17 +19062,17 @@ NX
 NX
 NX
 NX
-UR
-UR
-UR
-UR
+ML
+kQ
+Wk
 oE
+Nm
 XE
-XE
+RC
 oE
-oE
-XE
-XE
+Nm
+BX
+RC
 vs
 vs
 UR
@@ -19015,7 +19084,7 @@ Nm
 Nm
 Wk
 nq
-oE
+jk
 oE
 kQ
 qC
@@ -19122,17 +19191,17 @@ NX
 NX
 NX
 NX
-NX
-kM
-kM
-in
-UR
-UR
-dR
+OU
+oE
 XE
+in
 oE
+UR
+KX
+XE
+Ad
 oE
-oE
+Nm
 UR
 UR
 UR
@@ -19145,7 +19214,7 @@ UR
 UR
 kQ
 oE
-lT
+XE
 Dj
 BX
 vg
@@ -19252,17 +19321,17 @@ NX
 NX
 NX
 NX
-NX
+pn
 Cd
 sB
-kM
-UR
-UR
-UR
-UR
-XE
 oE
-XE
+Nm
+UR
+UR
+UR
+BX
+fj
+Ad
 UR
 UR
 UR
@@ -19383,16 +19452,16 @@ NX
 NX
 NX
 bF
-kM
+XE
 gQ
-kM
+XE
 UR
 UR
 UR
 UR
 UR
-oE
-oE
+ot
+Ad
 UR
 UR
 UR
@@ -19510,12 +19579,12 @@ gG
 gG
 gG
 gG
+LM
+ox
 gG
-gG
-gG
-gQ
+qh
 mE
-in
+Gt
 UR
 UR
 UR
@@ -19644,8 +19713,8 @@ gG
 Zh
 po
 gQ
-UR
-UR
+XE
+BX
 UR
 UR
 UR
@@ -19769,12 +19838,12 @@ gG
 gG
 gG
 gG
+ox
 gG
 gG
-gG
-NX
-UR
-UR
+Tv
+BX
+Nm
 UR
 UR
 UR
@@ -19899,11 +19968,11 @@ yW
 gG
 gG
 gG
-po
-gG
+LM
+ox
 gG
 bf
-bf
+pn
 NX
 bf
 bf
@@ -20031,11 +20100,11 @@ gG
 gG
 gG
 gG
+LM
 gG
-gG
 bf
 bf
-bf
+pn
 bf
 NX
 NX
@@ -20163,8 +20232,8 @@ gG
 gG
 gG
 po
-gG
-gG
+ox
+ox
 bf
 bf
 bf
@@ -20294,7 +20363,7 @@ gG
 gG
 gG
 gG
-gG
+LM
 gG
 gG
 bf
