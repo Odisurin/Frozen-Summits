@@ -873,6 +873,34 @@
 	},
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors)
+"acM" = (
+/obj/structure/table/wood,
+/obj/item/scomstone,
+/obj/item/scomstone,
+/obj/item/scomstone,
+/obj/item/scomstone,
+/obj/item/scomstone,
+/obj/item/scomstone,
+/obj/item/scomstone,
+/obj/item/scomstone,
+/obj/item/scomstone,
+/obj/item/scomstone,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/rtfield)
+"acN" = (
+/obj/structure/table/wood,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/obj/item/scomstone/bad,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/rtfield)
 "acO" = (
 /obj/structure/closet/crate/chest/neu_fancy,
 /obj/item/clothing/cloak/heartfelt,
@@ -38417,7 +38445,7 @@ ylN
 ylN
 biI
 kJD
-biI
+acN
 eUz
 eUz
 "}
@@ -38574,7 +38602,7 @@ fsP
 ylN
 ylN
 biI
-biI
+acM
 eUz
 eUz
 "}

@@ -211,15 +211,15 @@
 /datum/curse/baotha/on_life(mob/living/carbon/human/owner)
 	. = ..()
 	if(owner.mob_timers["baotha_curse_passive"])
-		if(world.time < owner.mob_timers["baotha_curse"] + rand(5,30)SECONDS)
+		if(world.time < owner.mob_timers["baotha_curse"] + rand(5,60)SECONDS)
 			return
 	owner.mob_timers["baotha_curse_passive"] = world.time
-	owner.sexcon.arousal += 1 // Very minor increase
+	owner.sexcon.arousal += 0.6 // Very minor increase
 	if(owner.mob_timers["baotha_curse"])
 		if(world.time < owner.mob_timers["baotha_curse"] + rand(60,300)SECONDS)
 			return
 	owner.mob_timers["baotha_curse"] = world.time
-	owner.sexcon.arousal += rand(-1,2) // Much smaller range to avoid major shifts
+	owner.sexcon.arousal += rand(-1,0.7) // Much smaller range to avoid major shifts
 
 /datum/curse/nympho/on_life(mob/living/carbon/human/owner)
 	. = ..()
