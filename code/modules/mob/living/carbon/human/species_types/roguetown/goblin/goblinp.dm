@@ -18,7 +18,7 @@
 	)
 	species_traits = list(EYECOLOR,LIPS,STUBBLE)
 	possible_ages = ALL_AGES_LIST
-zzz
+	use_skintones = TRUE
 	skin_tone_wording = "Skin Color"
 	limbs_icon_m = 'icons/mob/species/anthro_small_male.dmi'
 	limbs_icon_f = 'icons/mob/species/anthro_small_female.dmi'
