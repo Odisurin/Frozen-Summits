@@ -450,9 +450,20 @@
 	on = FALSE
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_HIP
-	force = 15
-	on_damage = 15
-	fuel = 9999 MINUTES
+	force = 1
+	on_damage = 5
+	fuel = 120 MINUTES
+	should_self_destruct = FALSE
+
+/obj/item/flashlight/flare/torch/lantern/afterattack(atom/movable/A, mob/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+	if(on && (prob(50) || (user.used_intent.type == /datum/intent/use)))
+		if(ismob(A))
+			A.spark_act()
+		else
+			A.fire_act(3,3)
 
 /obj/item/flashlight/flare/torch/lantern/process()
 	open_flame(heat)

@@ -964,7 +964,7 @@
 
 /obj/effect/proc_holder/spell/invoked/guidance
 	name = "Guidance"
-	desc = "Makes one's hand travel true, blessing them with arcyne luck in combat."
+	desc = "Makes one's hand travel true, blessing them with arcyne luck in combat. (+10% chance to hit with melee, +10% chance to defend from melee)"
 	cost = 2
 	xp_gain = TRUE
 	invocation = "Sehanine'Ver!"
