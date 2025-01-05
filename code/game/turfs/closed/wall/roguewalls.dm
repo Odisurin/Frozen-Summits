@@ -8,6 +8,7 @@
 	baseturfs = list(/turf/open/floor/rogue/dirt/road)
 	wallclimb = TRUE
 	icon = 'icons/turf/roguewall.dmi'
+	var/smashable = FALSE
 
 /turf/closed/wall/mineral/rogue/Initialize()
 	if(smooth_icon)
@@ -111,6 +112,7 @@
 	baseturfs = list(/turf/open/floor/rogue/ruinedwood)
 	neighborlay = "dirtedge"
 	climbdiff = 3
+	smashable = TRUE
 
 /turf/closed/wall/mineral/rogue/wood/window
 	name = "wooden window"
@@ -144,6 +146,7 @@
 	baseturfs = list(/turf/open/floor/rogue/twig)
 	neighborlay = "dirtedge"
 	climbdiff = 1
+	smashable = TRUE
 
 /turf/closed/wall/mineral/rogue/wooddark
 	name = "dark wood wall"
@@ -160,6 +163,7 @@
 	baseturfs = list(/turf/open/floor/rogue/ruinedwood)
 	neighborlay = "dirtedge"
 	climbdiff = 3
+	smashable = TRUE
 
 /turf/closed/wall/mineral/rogue/wooddark/horizontal
 	icon_state = "horizwooddark"
@@ -225,6 +229,7 @@
 	baseturfs = list(/turf/open/floor/rogue/ruinedwood)
 	neighborlay = "dirtedge"
 	climbdiff = 3
+	smashable = TRUE
 
 /turf/closed/wall/mineral/rogue/decowood/Initialize()
 	. = ..()
