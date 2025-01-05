@@ -3,6 +3,7 @@
 	desc = "I've always been larger, stronger and hardier than the average person. I tend to lumber around a lot, though..."
 	added_stats = list(STAT_STRENGTH = 3, STAT_CONSTITUTION = 2, STAT_SPEED = -2)
 	triumph_cost = 0
+	added_traits = list(TRAIT_BIGGUY)
 
 /datum/virtue/size/giant/apply_to_human(mob/living/carbon/human/recipient)
 	recipient.transform = recipient.transform.Scale(1.25, 1.25)
