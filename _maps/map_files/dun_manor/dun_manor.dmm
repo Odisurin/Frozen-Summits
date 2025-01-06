@@ -5707,6 +5707,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/rtfield)
+"pOB" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/fish,
+/turf/open/water/ocean/deep{
+	name = "deep river water";
+	water_reagent = /datum/reagent/water
+	},
+/area/rogue/outdoors/beach)
 "pQJ" = (
 /obj/machinery/gear_painter,
 /turf/open/floor/rogue/dirt,
@@ -7698,6 +7705,13 @@
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/beach)
+"wAg" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/fish/pike,
+/turf/open/water/ocean/deep{
+	name = "deep river water";
+	water_reagent = /datum/reagent/water
+	},
+/area/rogue/outdoors/beach)
 "wDU" = (
 /obj/structure/roguewindow/openclose{
 	dir = 8
@@ -8018,6 +8032,13 @@
 "xwA" = (
 /obj/structure/well,
 /turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/rtfield)
+"xxv" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/fish/koi,
+/turf/open/water/pond{
+	name = "hotspring";
+	desc = "Still and idyllic hot water that flows through meadows."
+	},
 /area/rogue/outdoors/rtfield)
 "xzP" = (
 /obj/structure/fluff/railing/wood,
@@ -19214,7 +19235,7 @@ bId
 bId
 bId
 bId
-bId
+pOB
 bId
 bId
 bId
@@ -20939,7 +20960,7 @@ bId
 bId
 bId
 bId
-bId
+pOB
 bId
 bId
 bId
@@ -21255,7 +21276,7 @@ bId
 bId
 bId
 bId
-bId
+pOB
 bId
 bId
 bId
@@ -22348,7 +22369,7 @@ bId
 bId
 bId
 bId
-bId
+pOB
 bId
 bId
 bId
@@ -23925,7 +23946,7 @@ bId
 bId
 bId
 bId
-bId
+pOB
 bId
 bId
 bId
@@ -25000,7 +25021,7 @@ bId
 bId
 bId
 bId
-bId
+wAg
 bId
 bId
 bId
@@ -25016,7 +25037,7 @@ pJb
 bId
 bId
 bId
-bId
+pOB
 bId
 bId
 bId
@@ -25787,7 +25808,7 @@ bId
 bId
 bId
 bId
-bId
+wAg
 bId
 bId
 bId
@@ -26417,7 +26438,7 @@ bId
 bId
 bId
 bId
-bId
+wAg
 bId
 bId
 bId
@@ -26880,7 +26901,7 @@ bId
 bId
 bId
 bId
-bId
+wAg
 bId
 bId
 bId
@@ -27348,7 +27369,7 @@ ogi
 bId
 bId
 bId
-bId
+wAg
 bId
 bId
 bId
@@ -28768,7 +28789,7 @@ aZe
 aZe
 bId
 bId
-bId
+wAg
 bId
 aZe
 aZe
@@ -28957,7 +28978,7 @@ aZe
 (133,1,1) = {"
 bId
 bId
-bId
+wAg
 bId
 ogi
 ogi
@@ -31789,7 +31810,7 @@ bId
 bId
 bId
 bId
-bId
+wAg
 bId
 bId
 bId
@@ -31963,6 +31984,8 @@ bId
 bId
 bId
 bId
+wAg
+wAg
 bId
 bId
 bId
@@ -32008,6 +32031,8 @@ bId
 bId
 bId
 bId
+wAg
+wAg
 bId
 bId
 bId
@@ -32021,11 +32046,7 @@ bId
 bId
 bId
 bId
-bId
-bId
-bId
-bId
-bId
+wAg
 bId
 bId
 bId
@@ -32140,6 +32161,7 @@ bId
 bId
 bId
 bId
+wAg
 bId
 bId
 bId
@@ -32147,9 +32169,8 @@ bId
 bId
 bId
 bId
-bId
-bId
-bId
+wAg
+wAg
 bId
 bId
 bId
@@ -42533,7 +42554,7 @@ fsP
 mVe
 xqr
 xqr
-xqr
+xxv
 xqr
 lRw
 acW
@@ -45359,7 +45380,7 @@ abV
 lnn
 xqr
 xqr
-xqr
+xxv
 xqr
 aqr
 tOE
@@ -45816,6 +45837,7 @@ xqr
 xqr
 xqr
 xqr
+xxv
 xqr
 xqr
 xqr
@@ -45824,8 +45846,7 @@ xqr
 xqr
 xqr
 xqr
-xqr
-xqr
+xxv
 xqr
 xqr
 xqr
@@ -47068,7 +47089,7 @@ xqr
 xqr
 xqr
 xqr
-xqr
+xxv
 xqr
 xqr
 xqr
