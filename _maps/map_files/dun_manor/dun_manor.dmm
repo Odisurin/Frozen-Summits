@@ -1145,6 +1145,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/rtfield)
+"auM" = (
+/mob/living/simple_animal/bird,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/mountains)
 "auQ" = (
 /obj/structure/flora/roguetree/snow{
 	icon_state = "tree5"
@@ -5341,6 +5345,16 @@
 /obj/item/alch/silverdust,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/rtfield)
+"opb" = (
+/obj/machinery/light/rogue/torchholder{
+	pixel_y = 26
+	},
+/mob/living/simple_animal/bird{
+	name = "familiar bird";
+	desc = "A bird summoned by a novice spellcaster"
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/outdoors/rtfield)
 "opX" = (
 /obj/structure/chair/wood/rogue{
 	dir = 8
@@ -5812,6 +5826,12 @@
 	},
 /turf/open/floor/rogue/wood/herringbone,
 /area/rogue/indoors/town/tavern)
+"pFm" = (
+/mob/living/simple_animal/bird,
+/turf/open/floor/rogue/snow{
+	color = "e6f2ff"
+	},
+/area/rogue/outdoors/rtfield)
 "pFB" = (
 /obj/structure/fluff/railing/border,
 /obj/machinery/light/rogue/wallfire/candle{
@@ -6843,6 +6863,10 @@
 	dir = 4
 	},
 /area/rogue/outdoors/rtfield)
+"sML" = (
+/mob/living/simple_animal/bird,
+/turf/closed/wall/mineral/rogue/stone,
+/area/rogue/outdoors/mountains)
 "sNs" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -7972,6 +7996,10 @@
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
+"wzC" = (
+/mob/living/simple_animal/bird,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/rtfield)
 "wAc" = (
 /obj/structure/fluff/traveltile{
 	aportalid = "forestout_cave";
@@ -36506,7 +36534,7 @@ jMT
 jMT
 jMT
 cij
-iUV
+opb
 rej
 cij
 kvF
@@ -39483,7 +39511,7 @@ ylN
 fsP
 dPV
 bxn
-dPV
+pFm
 dPV
 dPV
 fsP
@@ -41685,7 +41713,7 @@ bxn
 lnn
 biI
 biI
-biI
+wzC
 biI
 lnn
 dPV
@@ -63824,7 +63852,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -64440,7 +64468,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -65553,7 +65581,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -65799,7 +65827,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -66169,15 +66197,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-tXZ
-huO
-tXZ
-tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -66185,6 +66205,14 @@ tXZ
 huO
 tXZ
 tXZ
+tXZ
+tXZ
+tXZ
+tXZ
+tXZ
+huO
+tXZ
+auM
 tXZ
 huO
 tXZ
@@ -66316,7 +66344,7 @@ tXZ
 tXZ
 huO
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -66646,7 +66674,7 @@ tXZ
 tXZ
 tXZ
 huO
-huO
+sML
 huO
 huO
 huO
@@ -66721,8 +66749,8 @@ kDi
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
+auM
+auM
 tXZ
 tXZ
 tXZ
@@ -66754,7 +66782,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -68505,7 +68533,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -69211,6 +69239,7 @@ tXZ
 tXZ
 tXZ
 tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -69228,8 +69257,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -69457,7 +69485,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 huO
 tXZ
 tXZ
@@ -69781,7 +69809,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -70996,7 +71024,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -71502,7 +71530,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -72384,7 +72412,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -72661,7 +72689,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
@@ -73050,7 +73078,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
+auM
 tXZ
 tXZ
 tXZ
