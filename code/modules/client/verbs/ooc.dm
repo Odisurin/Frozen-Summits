@@ -346,9 +346,9 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 //			return "0"
 
 /client/verb/fix_chat()
-	set name = "fix-chat"
+	set name = "{FIX CHAT}"
 	set category = "Options"
-	set hidden = 0
+	set hidden = 1
 	if(!check_rights(0))
 		return
 	if (!chatOutput || !istype(chatOutput))
