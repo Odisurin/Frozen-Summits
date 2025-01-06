@@ -453,7 +453,6 @@
 	force = 1
 	on_damage = 5
 	fuel = 120 MINUTES
-	should_self_destruct = FALSE
 
 /obj/item/flashlight/flare/torch/lantern/afterattack(atom/movable/A, mob/user, proximity)
 	. = ..()
