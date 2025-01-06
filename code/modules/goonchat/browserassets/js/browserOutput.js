@@ -1024,7 +1024,7 @@ $(function() {
 		$.ajax({
 			type: 'GET',
 			url: 'browserOutput_white.css',
-			success: function (styleData) {
+			success: function(styleData) {
 				var blob = new Blob(['<head><title>Chat Log</title><style>', styleData, '</style></head><body>', $messages.html(), '</body>']);
 
 				var fname = 'SS13 Chat Log';
