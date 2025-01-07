@@ -113,11 +113,11 @@
 	var/max_bees = 2 // Maximum number of bees allowed
 	var/spawning_bee = FALSE
 
-/obj/structure/bee/Initialize()
+/obj/structure/beehive/Initialize()
 	. = ..()
 	spawn_bees()
 
-/obj/structure/bee/proc/create_bee()
+/obj/structure/beehive/proc/create_bee()
 	if(QDELETED(src))
 		return
 	if(!spawning_bee)
@@ -128,7 +128,7 @@
 	if(bee_count < max_bees)
 		spawn_bees()
 
-/obj/structure/bee/proc/spawn_bees()
+/obj/structure/beehive/proc/spawn_bees()
 	if(QDELETED(src))
 		return
 	if(spawning_bee)
