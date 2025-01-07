@@ -1065,6 +1065,13 @@
 /obj/structure/mineral_door/wood,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
+"ajx" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8
+	},
+/obj/structure/fluff/railing/wood,
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "aka" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4
@@ -1325,6 +1332,13 @@
 	dir = 1
 	},
 /area/rogue/outdoors/mountains)
+"beg" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7
+	},
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "bez" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -2003,6 +2017,19 @@
 /obj/structure/mineral_door/bars,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/under/cave)
+"cZF" = (
+/obj/structure/flora/roguetree/snow{
+	icon_state = "tree11"
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 8
+	},
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "dba" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /obj/structure/far_travel,
@@ -2159,6 +2186,14 @@
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/tavern)
+"duf" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7
+	},
+/obj/structure/beehive,
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "duV" = (
 /obj/effect/decal/remains/wolf,
 /turf/open/floor/rogue/naturalstone,
@@ -5947,6 +5982,12 @@
 	},
 /turf/open/floor/rogue/grasscold,
 /area/rogue/indoors/town/tavern)
+"pGP" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8
+	},
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "pGZ" = (
 /obj/machinery/light/rogue/torchholder/r,
 /obj/structure/fluff/railing/border{
@@ -7592,6 +7633,14 @@
 /obj/structure/mineral_door/wood,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
+"uFP" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7
+	},
+/obj/structure/bee,
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "uGz" = (
 /turf/open/water/river{
 	icon_state = "rockwd";
@@ -40970,7 +41019,7 @@ lnn
 fRr
 ilZ
 fRr
-lnn
+dPV
 dPV
 dPV
 fRr
@@ -41122,12 +41171,12 @@ lnn
 lnn
 lnn
 lnn
-uXC
-lnn
-fRr
-fRr
-lnn
-lnn
+cZF
+pGP
+pGP
+pGP
+ajx
+dPV
 dPV
 loN
 dPV
@@ -41279,13 +41328,13 @@ lnn
 lnn
 lnn
 lnn
-lnn
-lnn
-fRr
-lnn
-lnn
-lnn
-jzM
+beg
+aXS
+aXS
+aXS
+aXS
+dPV
+dPV
 dPV
 dPV
 fRr
@@ -41436,11 +41485,11 @@ dPV
 dPV
 dPV
 dPV
-dPV
-dPV
-dPV
-dPV
-dPV
+uFP
+aXS
+aXS
+aXS
+abv
 dPV
 dPV
 dPV
@@ -41593,11 +41642,11 @@ dPV
 dPV
 dPV
 tbN
-dPV
-dPV
-dPV
-dPV
-dPV
+duf
+aXS
+aXS
+aXS
+abv
 tbN
 dPV
 dPV
