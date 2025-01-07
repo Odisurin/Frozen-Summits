@@ -1065,13 +1065,6 @@
 /obj/structure/mineral_door/wood,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
-"ajx" = (
-/obj/structure/fluff/railing/wood{
-	dir = 8
-	},
-/obj/structure/fluff/railing/wood,
-/turf/open/floor/rogue/hay,
-/area/rogue/outdoors/rtfield)
 "aka" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4
@@ -1332,13 +1325,6 @@
 	dir = 1
 	},
 /area/rogue/outdoors/mountains)
-"beg" = (
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	layer = 2.7
-	},
-/turf/open/floor/rogue/hay,
-/area/rogue/outdoors/rtfield)
 "bez" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -1793,6 +1779,13 @@
 	},
 /turf/open/floor/rogue/twig/platform,
 /area/rogue/outdoors/rtfield)
+"cuK" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8
+	},
+/obj/structure/fluff/railing/wood,
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "cuY" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 8
@@ -2017,19 +2010,6 @@
 /obj/structure/mineral_door/bars,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/under/cave)
-"cZF" = (
-/obj/structure/flora/roguetree/snow{
-	icon_state = "tree11"
-	},
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	layer = 2.7
-	},
-/obj/structure/fluff/railing/wood{
-	dir = 8
-	},
-/turf/open/floor/rogue/hay,
-/area/rogue/outdoors/rtfield)
 "dba" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /obj/structure/far_travel,
@@ -2186,14 +2166,6 @@
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/tavern)
-"duf" = (
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	layer = 2.7
-	},
-/obj/structure/beehive,
-/turf/open/floor/rogue/hay,
-/area/rogue/outdoors/rtfield)
 "duV" = (
 /obj/effect/decal/remains/wolf,
 /turf/open/floor/rogue/naturalstone,
@@ -3277,6 +3249,19 @@
 "hqO" = (
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors)
+"hre" = (
+/obj/structure/flora/roguetree/snow{
+	icon_state = "tree11"
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 8
+	},
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "hrK" = (
 /obj/effect/decal/cobbleedge{
 	dir = 6
@@ -5273,6 +5258,12 @@
 "ntv" = (
 /turf/closed/wall/mineral/rogue/wood,
 /area/rogue/indoors/town/vault)
+"ntS" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8
+	},
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "nui" = (
 /obj/structure/bed/rogue/shit,
 /obj/effect/landmark/start/vagrant,
@@ -5982,12 +5973,6 @@
 	},
 /turf/open/floor/rogue/grasscold,
 /area/rogue/indoors/town/tavern)
-"pGP" = (
-/obj/structure/fluff/railing/wood{
-	dir = 8
-	},
-/turf/open/floor/rogue/hay,
-/area/rogue/outdoors/rtfield)
 "pGZ" = (
 /obj/machinery/light/rogue/torchholder/r,
 /obj/structure/fluff/railing/border{
@@ -6084,8 +6069,12 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors)
 "pTo" = (
-/mob/living/simple_animal/bird,
-/turf/open/floor/rogue/dirt/road,
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7
+	},
+/obj/structure/beehive,
+/turf/open/floor/rogue/hay,
 /area/rogue/outdoors/rtfield)
 "pUo" = (
 /obj/structure/fluff/railing/border{
@@ -6765,6 +6754,14 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
+"rWk" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7
+	},
+/obj/structure/bee,
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "rWl" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8
@@ -6837,6 +6834,13 @@
 /area/rogue/indoors/town/tavern)
 "sdw" = (
 /turf/open/floor/rogue/churchrough,
+/area/rogue/outdoors/rtfield)
+"sdF" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7
+	},
+/turf/open/floor/rogue/hay,
 /area/rogue/outdoors/rtfield)
 "shW" = (
 /obj/structure/fermenting_barrel/zagul,
@@ -7633,14 +7637,6 @@
 /obj/structure/mineral_door/wood,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
-"uFP" = (
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	layer = 2.7
-	},
-/obj/structure/bee,
-/turf/open/floor/rogue/hay,
-/area/rogue/outdoors/rtfield)
 "uGz" = (
 /turf/open/water/river{
 	icon_state = "rockwd";
@@ -39639,7 +39635,7 @@ ylN
 aae
 ylN
 fsP
-pTo
+fsP
 lnn
 dPV
 dPV
@@ -41171,11 +41167,11 @@ lnn
 lnn
 lnn
 lnn
-cZF
-pGP
-pGP
-pGP
-ajx
+hre
+ntS
+ntS
+ntS
+cuK
 dPV
 dPV
 loN
@@ -41328,7 +41324,7 @@ lnn
 lnn
 lnn
 lnn
-beg
+sdF
 aXS
 aXS
 aXS
@@ -41485,7 +41481,7 @@ dPV
 dPV
 dPV
 dPV
-uFP
+rWk
 aXS
 aXS
 aXS
@@ -41642,7 +41638,7 @@ dPV
 dPV
 dPV
 tbN
-duf
+pTo
 aXS
 aXS
 aXS
