@@ -14,7 +14,6 @@
 	base_intents = list(/datum/intent/simple/bite)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 					/obj/item/natural/silk = 2)
-	faction = list("bees")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_sound = 'sound/combat/wooshes/punch/punchwoosh (2).ogg'
 	health = 125
@@ -37,7 +36,7 @@
 	attack_same = 0
 	retreat_health = 0.3
 	attack_sound = list('sound/vo/mobs/spider/attack (1).ogg','sound/vo/mobs/spider/attack (2).ogg','sound/vo/mobs/spider/attack (3).ogg','sound/vo/mobs/spider/attack (4).ogg')
-	aggressive = 1
+	aggressive = 0
 	stat_attack = UNCONSCIOUS
 	faction = list("neutral", "Station")
 
