@@ -68,36 +68,7 @@
 	if(istype(examined_datum, /datum/antagonist/skeleton))
 		return span_boldnotice("Another deadite.")
 
-//Housekeeping/saving variables from pre-zombie 
-
-/*Death transformation process goes:
-	death -> 
-	/mob/living/carbon/human/death(gibbed) -> 
-	zombie_check_can_convert() -> 
-	zombie.on_gain() -> 
-	rotting.dm process -> 
-	time passes -> 
-	zombie.wake_zombie() -> 
-	transform
-*/
-/*
-	Deadite transformation is 2 ways. First is on the initial bite (low chance) and second is on being chewed on.
-
-	Initial bite is: other_mobs.dm, /mob/living/carbon/onbite(mob/living/carbon/human/user) ->
-	bite_victim.zombie_infect_attempt() -> 
-	attempt_zombie_infection(src, "bite", ZOMBIE_BITE_CONVERSION_TIME) -> rng check here
-	time passes ->
-	wake_zombie.
-
-	Wound transformation goes: grabbing.dm, /obj/item/grabbing/bite/proc/bitelimb(mob/living/carbon/human/user) ->
-	/datum/wound/proc/zombie_infect_attempt() -> 
-	human_owner.attempt_zombie_infection(src, "wound", zombie_infection_time) ->
-	time passes -> 
-	wake_zombie
-
-	Infection transformation process goes -> infection -> timered transform in zombie_infect_attempt() [drink red/holy water and kill timer?] -> /datum/antagonist/zombie/proc/wake_zombie -> zombietransform
-*/
-/datum/antagonist/zombie/on_gain(admin_granted = FALSE)
+/datum/antagonist/zombie/on_gain()
 	var/mob/living/carbon/human/zombie = owner?.current
 	if(zombie)
 		var/obj/item/bodypart/head = zombie.get_bodypart(BODY_ZONE_HEAD)
@@ -112,16 +83,9 @@
 		soundpack_m = zombie.dna.species.soundpack_m
 		soundpack_f = zombie.dna.species.soundpack_f
 	base_intents = zombie.base_intents
-
-	//Just need to clear it to snapshot. May get things we don't want to get.
-	for(var/status_effect in zombie.status_effects)
-		zombie.remove_status_effect(status_effect)
-
-	src.STASTR = zombie.STASTR
-	src.STASPD = zombie.STASPD
-	src.STAINT = zombie.STAINT
-	src.STACON = zombie.STACON
-	src.STAEND = zombie.STAEND
+	STASTR = zombie.STASTR
+	STASPD = zombie.STASPD
+	STAINT = zombie.STAINT
 	cmode_music = zombie.cmode_music
 	return ..()
 
@@ -249,54 +213,11 @@
 		zombie.emote("idle")
 		next_idle_sound = world.time + rand(5 SECONDS, 10 SECONDS)
 
-/*
-	Check for zombie infection post bite
-		Bite chance is checked here
-		Wound chance is checked in zombie_wound_infection.dm
-*/
-/mob/living/carbon/human/proc/attempt_zombie_infection(mob/living/carbon/human/source, infection_type, wake_delay = 0)
-	var/mob/living/carbon/human/victim = src
-	if (QDELETED(src) || stat >= DEAD)
-		return FALSE
-
-	var/datum/antagonist/zombie/victim_zombie = victim.mind?.has_antag_datum(/datum/antagonist/zombie)
-	if (victim_zombie) //Check that the victim isn't already a zombie or on the way to becoming one
-		return FALSE
-
-	var/datum/antagonist/zombie/zombie_antag = source.mind?.has_antag_datum(/datum/antagonist/zombie)
-	if (!zombie_antag || !zombie_antag.has_turned) //Check that the zombie who bit us is real
-		return FALSE
-
-	//How did the victim get infected
-	switch (infection_type)
-		if ("bite")
-			if (!prob(ZOMBIE_FIRST_BITE_CHANCE)) // Chance to infect via first bite (rare)
-				return FALSE
-			to_chat(victim, span_danger("A growing cold seeps into my body. I feel horrible... REALLY horrible..."))
-			mob_timers["puke"] = world.time
-			vomit(1, blood = TRUE, stun = FALSE)
-
-		if ("wound")	//Chance to infect via chewing to open wound
-			flash_fullscreen("redflash3")
-			to_chat(victim, span_danger("Ow! It hurts. I feel horrible... REALLY horrible..."))
-
-	victim.zombie_check_can_convert() //They are given zombie antag mind here unless they're already an antag.
-
-//Delay on waking up as a zombie. /proc/wake_zombie(mob/living/carbon/zombie, infected_wake = FALSE, converted = FALSE)
-	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(wake_zombie), victim, FALSE, TRUE), wake_delay, TIMER_STOPPABLE)
-	return zombie_antag
-
-/*
-
-*/
-/mob/living/carbon/human/proc/zombie_infect_attempt()
-	return attempt_zombie_infection(usr, "bite", ZOMBIE_BITE_CONVERSION_TIME)
-
-/*
-	Proc for our newly infected to wake up as a zombie
-*/
-/proc/wake_zombie(mob/living/carbon/zombie, infected_wake = FALSE, converted = FALSE)
-	if (!zombie || QDELETED(zombie)) 
+//Infected wake param is just a transition from living to zombie, via zombie_infect()
+//Previously you just died without warning in 3 minutes, now you just become an antag
+/datum/antagonist/zombie/proc/wake_zombie(infected_wake = FALSE)
+	testing("WAKEZOMBIE")
+	if(!owner.current)
 		return
 	var/mob/living/carbon/human/zombie = owner.current
 	if(!zombie || !istype(zombie))
@@ -361,14 +282,8 @@
 	to_chat(src, span_warning("[closest_dist] meters away, [dir2text(the_dir)]..."))
 	return TRUE
 
-
-	if (converted || infected_wake)
-		zombie.flash_fullscreen("redflash3")
-		zombie.emote("scream") // Warning for nearby players
-		zombie.Knockdown(1)
-
-///Making sure they're not any other antag as well as adding the zombie datum to their mind
-/mob/living/carbon/human/proc/zombie_check_can_convert()
+/// Use this to attempt to add the zombie antag datum to a human
+/mob/living/carbon/human/proc/zombie_check()
 	if(!mind)
 		return
 	var/already_zombie = mind.has_antag_datum(/datum/antagonist/zombie)
