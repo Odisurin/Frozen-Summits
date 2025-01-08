@@ -73,18 +73,14 @@
 /*
 /datum/virtue/combat/guarded
 	name = "Guarded"
-	desc = "I have long kept my true capabilities a secret. Sometimes being deceptively weak can save one's life. Such a virtue allows me to see and avoid feints easier."
+	desc = "I have long kept my true capabilities a secret. Sometimes being deceptively weak can save one's life."
 	added_traits = list(TRAIT_DECEIVING_MEEKNESS)
-
-
 
 /datum/virtue/combat/impervious
 	name = "Impervious"
 	desc = "I've spent years shoring up my weakspots, and have become difficult to wound with critical blows."
 	added_traits = list(TRAIT_CRITICAL_RESISTANCE)
 */
-
-
 /datum/virtue/combat/rotcured
 	name = "Rotcured"
 	desc = "I was once afflicted with the accursed rot, and was cured. It has left me changed: my limbs are weaker, but I feel no pain and have no need to breathe..."

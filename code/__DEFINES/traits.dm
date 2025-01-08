@@ -105,7 +105,6 @@
 #define TRAIT_LEPROSY "Leprosy"
 #define TRAIT_NUDE_SLEEPER "Nude Sleeper"
 #define TRAIT_SILVER_BLESSED "Silver Blessed"
-#define TRAIT_BIGGUY "Big Guy"
 
 // PATRON CURSE TRAITS
 #define TRAIT_CURSE "Curse" //source
@@ -140,7 +139,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NIGHT_OWL = span_info("I enjoy spending my time in the night"),
 	TRAIT_BEAUTIFUL = span_info("People love looking at my face"),
 	TRAIT_BAD_MOOD = span_warning("Everything just seems to piss me off"),
-	TRAIT_LEAPER = "I can leap like a frog, landing where I want.",
+	TRAIT_LEAPER = "I can leap like a frog.",
 	TRAIT_NOSEGRAB = "I love to grab idiots by their noses!",
 	TRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
 	TRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
@@ -152,7 +151,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_MEDIUMARMOR = "I can move freely in medium armor.",
 	TRAIT_HEAVYARMOR = "I can move freely in heavy armor.",
 	TRAIT_DODGEEXPERT = "I can dodge easily while only wearing light armor.",
-	TRAIT_DECEIVING_MEEKNESS = "People look at me and think I am a weakling. They are mistaken. I've learned how to feint, and how to avoid theirs.",
+	TRAIT_DECEIVING_MEEKNESS = "People look at me and think I am a weakling. They are mistaken.",
 	TRAIT_CRITICAL_RESISTANCE = "I am resistant to wounds that would be life threatening to others.",
 	TRAIT_CRITICAL_WEAKNESS = span_danger("I am weak to wounds that others could survive."),
 	TRAIT_MANIAC_AWOKEN = span_danger("I am <b>WAKING UP</b> and the sheeple know this. They will resist."),
@@ -206,8 +205,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_MARTIALARTIST = "I have better kicks.", // Hearthstone change
 	TRAIT_PUGILIST = "I have stronger punches.", // Hearthstone change
 	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
-	TRAIT_SEA_DRINKER = span_info("As a denizen of the deep, I can drink salty ocean water safely."),
-	TRAIT_BIGGUY = span_info("My immense frame and size allows me to smash through wooden walls, and into people with more effectiveness."),
+	TRAIT_SEA_DRINKER = span_info("As a denizen of the deep, I can drink salty ocean water safely.")
+))
 
 // trait accessor defines
 #define ADD_TRAIT(target, trait, source) \
