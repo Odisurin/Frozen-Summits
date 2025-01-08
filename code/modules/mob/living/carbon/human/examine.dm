@@ -3,8 +3,9 @@
 		return
 	if(user.mind)
 		user.mind.i_know_person(src)
-	if(user.has_flaw(/datum/charflaw/paranoid) && (STASTR - user.STASTR) > 1)
-		user.add_stress(/datum/stressevent/parastr)
+	if(user.has_flaw(/datum/charflaw/paranoid))	//We hate different species, that are stronger than us, and aren't racist themselves
+		if(dna.species.name != user.dna.species.name && (STASTR - user.STASTR) > 1 && !has_flaw(/datum/charflaw/paranoid))
+			user.add_stress(/datum/stressevent/parastr)
 	if(HAS_TRAIT(user, TRAIT_JESTERPHOBIA) && job == "Jester")
 		user.add_stress(/datum/stressevent/jesterphobia)
 	if(HAS_TRAIT(src, TRAIT_BEAUTIFUL))
@@ -137,6 +138,19 @@
 			. += span_notice("Anointed!")
 		else if(HAS_TRAIT(src, TRAIT_DEPRAVED) && HAS_TRAIT(user, TRAIT_DEPRAVED))
 			. += span_notice("Debased!")
+
+		if(has_flaw(/datum/charflaw/paranoid) && user.has_flaw(/datum/charflaw/paranoid))
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				if(dna.species.name == H.dna.species.name)
+					. += span_nicegreen("[m1] privy to the truths of this world. One of us.")
+				else
+					. += span_nicegreen("[m1] one of the good ones.")
+		if(has_flaw(/datum/charflaw/masochist) && user.has_flaw(/datum/charflaw/addiction/sadist))
+			. += span_secradio("[m1] marked by scars inflicted for pleasure. A delectable target for my urges.")
+		if(has_flaw(/datum/charflaw/addiction/sadist) && user.has_flaw(/datum/charflaw/masochist))
+			. += span_secradio("[m1] so very tense, and has a brutal sight filled with desire to inflict pain. So exciting.")
+
 
 	if(leprosy == 1)
 		. += span_necrosis("A LEPER...")
