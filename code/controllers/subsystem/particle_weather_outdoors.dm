@@ -9,23 +9,6 @@ SUBSYSTEM_DEF(outdoor_effects)
 	init_order = INIT_ORDER_OUTDOOR_EFFECTS
 	var/list/atom/movable/screen/plane_master/weather_effect/weather_planes_need_vis = list()
 
-	var/list/atom/movable/screen/fullscreen/lighting_backdrop/sunlight/sunlighting_planes = list()
-	var/datum/time_of_day/current_step_datum
-	var/datum/time_of_day/next_step_datum
-	var/list/mutable_appearance/sunlight_overlays
-
-	var/last_color = null
-	var/picked_color
-	//Ensure midnight is the liast step
-	var/list/datum/time_of_day/time_cycle_steps = list(new /datum/time_of_day/dawn(),
-	                                                   new /datum/time_of_day/sunrise(),
-	                                                   new /datum/time_of_day/daytime(),
-	                                                   new /datum/time_of_day/sunset(),
-	                                                   new /datum/time_of_day/dusk(),
-	                                                   new /datum/time_of_day/midnight())
-
-
-	var/list/turf_weather_affectable_z_levels = list()
 
 /datum/controller/subsystem/outdoor_effects/proc/fullPlonk()
 	for (var/z in SSmapping.levels_by_trait(ZTRAIT_STATION))
@@ -34,8 +17,6 @@ SUBSYSTEM_DEF(outdoor_effects)
 
 /datum/controller/subsystem/outdoor_effects/Initialize(timeofday)
 	if(!initialized)
-		turf_weather_affectable_z_levels = SSmapping.levels_by_trait(ZTRAIT_WEATHER_STUFF)
-		get_time_of_day()
 		InitializeTurfs()
 		initialized = TRUE
 	fire(FALSE, TRUE)
@@ -144,14 +125,10 @@ SUBSYSTEM_DEF(outdoor_effects)
 		cut_weather_overlay(OE)
 
 //get our weather overlay
-/datum/controller/subsystem/outdoor_effects/proc/get_weather_overlay() //TODO: Restore this to 32x48 for some extra
-	var/mutable_appearance/MA = new /mutable_appearance()
-	MA.icon 			  = 'icons/effects/weather_overlay.dmi'
-	MA.icon_state 		  = "weather_overlay"
-	MA.plane			  = WEATHER_OVERLAY_PLANE
-	MA.blend_mode   	  = BLEND_OVERLAY
-	MA.invisibility 	  = INVISIBILITY_LIGHTING
-	return MA
+/datum/controller/subsystem/outdoor_effects/proc/get_weather_overlay(atom/movable/outdoor_effect/OE) //TODO: Restore this to 32x48 for some extra
+	OE.icon 			  = 'icons/effects/weather_overlay.dmi'
+	OE.icon_state 		  = "weather_overlay"
+	OE.plane			  = WEATHER_OVERLAY_PLANE
 
 //get our weather overlay
 /datum/controller/subsystem/outdoor_effects/proc/cut_weather_overlay(atom/movable/outdoor_effect/OE) //TODO: Restore this to 32x48 for some extra
