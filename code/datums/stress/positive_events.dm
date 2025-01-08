@@ -167,3 +167,7 @@
 	stressadd = -1
 	desc = span_green("A soothing fragrance envelops me.")
 	timer = 10 MINUTES
+/datum/stressevent/meditation
+	timer = 10 MINUTES
+	stressadd = -1
+	desc = span_green("My meditations were rewarding.")
