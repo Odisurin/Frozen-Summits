@@ -223,7 +223,7 @@
 						thrown_speed = 1
 						thrown_range = max(round((STASTR/throwable_mob.STACON)*2), 1)
 						stop_pulling()
-						if(G.grab_state < GRAB_AGGRESSIVE)
+						if(G.grab_state < GRAB_AGGRESSIVE && !HAS_TRAIT(src, TRAIT_BIGGUY) && !HAS_TRAIT(throwable_mob, TRAIT_BIGGUY))
 							return
 						if(HAS_TRAIT(src, TRAIT_PACIFISM))
 							to_chat(src, span_notice("I gently let go of [throwable_mob]."))
