@@ -76,7 +76,6 @@
 		handle_liver()
 		update_rogfat()
 		update_rogstam()
-		handle_environment()
 		if(charflaw && !charflaw.ephemeral)
 			charflaw.flaw_on_life(src)
 		if(health <= 0)
