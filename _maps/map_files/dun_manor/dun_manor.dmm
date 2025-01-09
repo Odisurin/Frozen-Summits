@@ -1739,14 +1739,6 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/rtfield)
-"coT" = (
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	layer = 2.7
-	},
-/obj/structure/bee,
-/turf/open/floor/rogue/hay,
-/area/rogue/outdoors/rtfield)
 "cpp" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 8;
@@ -2159,13 +2151,6 @@
 "dqL" = (
 /obj/structure/fluff/dryingrack,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/rtfield)
-"drf" = (
-/obj/structure/fluff/railing/wood{
-	dir = 8
-	},
-/obj/structure/fluff/railing/wood,
-/turf/open/floor/rogue/hay,
 /area/rogue/outdoors/rtfield)
 "dsB" = (
 /turf/closed/wall/mineral/rogue/craftstone,
@@ -2843,6 +2828,13 @@
 	dir = 8
 	},
 /area/rogue/outdoors/mountains)
+"fNu" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8
+	},
+/obj/structure/fluff/railing/wood,
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "fOw" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/hexstone,
@@ -3057,10 +3049,6 @@
 /obj/machinery/light/rogue/forge,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
-"gAJ" = (
-/mob/living/simple_animal/bird,
-/turf/open/floor/rogue/twig/platform,
-/area/rogue/outdoors/mountains)
 "gCf" = (
 /obj/structure/flora/rock,
 /turf/open/floor/rogue/dirt/road,
@@ -4177,6 +4165,10 @@
 /obj/structure/closet/crate/roguecloset,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/rtfield)
+"kvK" = (
+/mob/living/simple_animal/bird,
+/turf/open/floor/rogue/twig/platform,
+/area/rogue/outdoors/mountains)
 "kwg" = (
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/grasscold,
@@ -4744,12 +4736,6 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/rtfield)
-"lPT" = (
-/obj/structure/fluff/railing/wood{
-	dir = 8
-	},
-/turf/open/floor/rogue/hay,
-/area/rogue/outdoors/rtfield)
 "lQX" = (
 /obj/structure/flora/roguetree/evil,
 /turf/open/floor/rogue/grasscold,
@@ -5219,14 +5205,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/rtfield)
-"nlu" = (
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	layer = 2.7
-	},
-/obj/structure/beehive,
-/turf/open/floor/rogue/hay,
-/area/rogue/outdoors/rtfield)
 "nmw" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/beach)
@@ -5485,9 +5463,15 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/rtfield)
 "opb" = (
+/obj/structure/flora/roguetree/snow{
+	icon_state = "tree11"
+	},
 /obj/structure/fluff/railing/wood{
 	dir = 1;
 	layer = 2.7
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 8
 	},
 /turf/open/floor/rogue/hay,
 /area/rogue/outdoors/rtfield)
@@ -5670,6 +5654,14 @@
 	dir = 4
 	},
 /turf/open/floor/rogue/church,
+/area/rogue/outdoors/rtfield)
+"oUP" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7
+	},
+/obj/structure/bee,
+/turf/open/floor/rogue/hay,
 /area/rogue/outdoors/rtfield)
 "oVz" = (
 /obj/structure/fluff/railing/fence,
@@ -6515,6 +6507,14 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
+"riD" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7
+	},
+/obj/structure/beehive,
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "riT" = (
 /obj/structure/bed/rogue/inn,
 /obj/item/bedsheet/rogue/cloth,
@@ -6659,6 +6659,13 @@
 "rJa" = (
 /turf/open/floor/rogue/wood/herringbone,
 /area/rogue/indoors/town/tavern)
+"rJb" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7
+	},
+/turf/open/floor/rogue/hay,
+/area/rogue/outdoors/rtfield)
 "rJC" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/mountains)
@@ -7717,19 +7724,6 @@
 	},
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/rtfield)
-"vbL" = (
-/obj/structure/flora/roguetree/snow{
-	icon_state = "tree11"
-	},
-/obj/structure/fluff/railing/wood{
-	dir = 1;
-	layer = 2.7
-	},
-/obj/structure/fluff/railing/wood{
-	dir = 8
-	},
-/turf/open/floor/rogue/hay,
-/area/rogue/outdoors/rtfield)
 "vcT" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf,
 /turf/open/floor/rogue/snow,
@@ -8266,8 +8260,10 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
 "wzC" = (
-/obj/structure/bee,
-/turf/open/floor/rogue/grasscold,
+/obj/structure/fluff/railing/wood{
+	dir = 8
+	},
+/turf/open/floor/rogue/hay,
 /area/rogue/outdoors/rtfield)
 "wAc" = (
 /obj/structure/fluff/traveltile{
@@ -41167,11 +41163,11 @@ lnn
 lnn
 lnn
 lnn
-vbL
-lPT
-lPT
-lPT
-drf
+opb
+wzC
+wzC
+wzC
+fNu
 dPV
 dPV
 loN
@@ -41324,7 +41320,7 @@ lnn
 lnn
 lnn
 lnn
-opb
+rJb
 aXS
 aXS
 aXS
@@ -41458,10 +41454,10 @@ fwr
 mML
 fRr
 fRr
-wzC
-wzC
-wzC
-wzC
+fRr
+fRr
+fRr
+fRr
 lnn
 lnn
 lnn
@@ -41481,7 +41477,7 @@ dPV
 dPV
 dPV
 dPV
-coT
+oUP
 aXS
 aXS
 aXS
@@ -41615,10 +41611,10 @@ fwr
 fwr
 fwr
 fRr
-wzC
-wzC
-wzC
-wzC
+fRr
+fRr
+fRr
+fRr
 lnn
 lnn
 lnn
@@ -41638,7 +41634,7 @@ dPV
 dPV
 dPV
 tbN
-nlu
+riD
 aXS
 aXS
 aXS
@@ -66329,7 +66325,7 @@ tXZ
 tXZ
 tXZ
 tXZ
-gAJ
+kvK
 xin
 tXZ
 tXZ
