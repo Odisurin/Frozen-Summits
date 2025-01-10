@@ -3683,6 +3683,7 @@
 #include "modular_guidesa\general_stuffs.dm"
 #include "modular_guidesa\items.dm"
 #include "modular_guidesa\quirks_guidesa.dm"
+#include "modular_guidesa\stats_quirk_guidesa.dm"
 #include "modular_guidesa\turfs.dm"
 #include "modular_guidesa\weapons.dm"
 #include "modular_guidesa\clothing\clothings_guidesa.dm"
