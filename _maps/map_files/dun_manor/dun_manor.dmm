@@ -3660,6 +3660,11 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors)
+"hKA" = (
+/turf/open/water/river{
+	icon_state = "rockwd"
+	},
+/area/rogue/outdoors/woods)
 "hLv" = (
 /obj/structure/table/church,
 /obj/item/reagent_containers/glass/bucket/pot/stone,
@@ -4689,6 +4694,10 @@
 "kzw" = (
 /turf/open/floor/carpet/royalblack,
 /area/rogue/outdoors/mountains)
+"kzR" = (
+/obj/structure/flora/roguetree/stump/log,
+/turf/open/floor/rogue/grasscold,
+/area/rogue/outdoors/woods)
 "kzW" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/rtfield)
@@ -4960,6 +4969,16 @@
 /obj/item/storage/roguebag,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
+"kXt" = (
+/obj/vehicle/ridden/lavaboat{
+	dir = 2;
+	name = "wooden boat"
+	},
+/turf/open/water/pond{
+	name = "hotspring";
+	desc = "Still and idyllic hot water that flows through meadows."
+	},
+/area/rogue/outdoors/woods)
 "laT" = (
 /obj/machinery/loom,
 /turf/open/floor/rogue/ruinedwood/herringbone,
@@ -5188,7 +5207,7 @@
 /obj/structure/fluff/railing/wood{
 	dir = 8
 	},
-/turf/open/floor/rogue/grasscold,
+/turf/open/water/cleanshallow,
 /area/rogue/outdoors/rtfield)
 "lAJ" = (
 /obj/structure/chair/stool/rogue,
@@ -5264,6 +5283,15 @@
 	},
 /turf/open/floor/rogue/blocks/platform,
 /area/rogue/outdoors/mountains)
+"lNu" = (
+/obj/structure/flora/roguetree/snow{
+	icon_state = "tree3"
+	},
+/turf/open/water/river{
+	icon_state = "rockwd";
+	dir = 1
+	},
+/area/rogue/outdoors/rtfield)
 "lNx" = (
 /obj/machinery/light/rogue/torchholder{
 	icon_state = "torchwall1";
@@ -5309,6 +5337,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/rtfield)
+"lUR" = (
+/obj/effect/decal/remains/saiga,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "lWc" = (
 /obj/structure/fluff/railing/border{
 	icon_state = "border";
@@ -5428,6 +5460,12 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/tavern)
+"mms" = (
+/obj/structure/flora/roguetree/snow{
+	icon_state = "tree7"
+	},
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/rtfield)
 "moC" = (
 /obj/structure/roguewindow/openclose,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -5776,6 +5814,12 @@
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/outdoors/mountains)
+"naq" = (
+/turf/open/water/river{
+	icon_state = "rockwd";
+	dir = 4
+	},
+/area/rogue/outdoors/woods)
 "nbm" = (
 /turf/open/floor/rogue/rooftop/green/corner1{
 	dir = 8
@@ -6079,12 +6123,8 @@
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors)
 "obN" = (
-/obj/structure/flora/newtree,
-/turf/open/water/river{
-	icon_state = "rockwd";
-	dir = 4
-	},
-/area/rogue/outdoors/rtfield)
+/turf/open/water/cleanshallow,
+/area/rogue/under/cave)
 "ocP" = (
 /obj/structure/bookcase,
 /obj/item/book/rogue/tales3,
@@ -6156,6 +6196,10 @@
 "ooe" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/outdoors/woods)
+"ooh" = (
+/obj/structure/flora/roguetree/normal,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
 "ooF" = (
 /obj/structure/flora/bush,
@@ -6233,6 +6277,9 @@
 /obj/item/kitchen/rollingpin,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
+"ozU" = (
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/woods)
 "oAx" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/ruinedwood,
@@ -6454,7 +6501,10 @@
 /area/rogue/under/cave)
 "pbj" = (
 /obj/structure/roguerock,
-/turf/open/floor/rogue/snow,
+/turf/open/water/river{
+	icon_state = "rockwd";
+	dir = 4
+	},
 /area/rogue/outdoors/woods)
 "pcH" = (
 /obj/structure/mineral_door/wood/deadbolt,
@@ -7167,6 +7217,10 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/rtfield)
+"qGf" = (
+/obj/structure/flora/roguetree/stump/log,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "qGo" = (
 /obj/machinery/light/rogue/firebowl/standing/blue,
 /turf/open/floor/rogue/tile,
@@ -7545,6 +7599,13 @@
 /obj/structure/fluff/wallclock/l,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
+"rIC" = (
+/obj/structure/flora/roguegrass,
+/mob/living/simple_animal/hostile/retaliate/rogue/saiga{
+	dir = 4
+	},
+/turf/open/floor/rogue/grasscold,
+/area/rogue/outdoors/woods)
 "rJa" = (
 /turf/open/floor/rogue/wood/herringbone,
 /area/rogue/indoors/town/tavern)
@@ -8957,6 +9018,10 @@
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
+"vHI" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/saiga,
+/turf/open/floor/rogue/grasscold,
+/area/rogue/outdoors/woods)
 "vIa" = (
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/ruinedwood/platform,
@@ -9341,6 +9406,16 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/mountains)
+"wtR" = (
+/obj/vehicle/ridden/lavaboat{
+	dir = 4;
+	name = "wooden boat"
+	},
+/turf/open/water/pond{
+	name = "hotspring";
+	desc = "Still and idyllic hot water that flows through meadows."
+	},
+/area/rogue/outdoors/woods)
 "wvf" = (
 /obj/structure/handcart{
 	icon_state = "cart-empty";
@@ -9978,6 +10053,11 @@
 /obj/machinery/light/rogue/hearth,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/rtfield)
+"yfy" = (
+/obj/item/rogue/instrument/flute,
+/obj/structure/flora/roguetree/stump,
+/turf/open/floor/rogue/grasscold,
+/area/rogue/outdoors/woods)
 "yfM" = (
 /obj/structure/mineral_door/wood/deadbolt,
 /turf/open/floor/rogue/churchmarble,
@@ -11053,7 +11133,7 @@ gqo
 gqo
 gqo
 gqo
-gqo
+obN
 hWI
 hWI
 hWI
@@ -11209,8 +11289,8 @@ gqo
 gqo
 gqo
 gqo
-gqo
-gqo
+obN
+obN
 hWI
 hWI
 hWI
@@ -11366,7 +11446,7 @@ gqo
 gqo
 gqo
 gqo
-gqo
+obN
 hWI
 hWI
 hWI
@@ -11429,7 +11509,7 @@ hWI
 dKO
 dKO
 dKO
-sbR
+lfj
 hWI
 hWI
 hWI
@@ -11522,8 +11602,8 @@ mAA
 gqo
 gqo
 gqo
-gqo
-gqo
+obN
+obN
 hWI
 hWI
 hWI
@@ -11558,7 +11638,7 @@ hWI
 hWI
 hWI
 hWI
-hpc
+obN
 hpc
 hpc
 hpc
@@ -11587,8 +11667,8 @@ sbR
 dKO
 dKO
 dKO
-dKO
-sbR
+aoQ
+lfj
 hWI
 hWI
 hWI
@@ -11679,7 +11759,7 @@ gqo
 gqo
 gqo
 gqo
-gqo
+obN
 hWI
 hWI
 hWI
@@ -11712,8 +11792,8 @@ hWI
 hWI
 hWI
 hWI
-hpc
-hpc
+obN
+obN
 hpc
 hpc
 hpc
@@ -11742,11 +11822,11 @@ hWI
 hWI
 dKO
 sbR
-dKO
-dKO
-sbR
-sbR
-sbR
+aoQ
+aoQ
+lfj
+lfj
+lfj
 hWI
 hWI
 hWI
@@ -11835,7 +11915,7 @@ gqo
 gqo
 gqo
 gqo
-gqo
+obN
 hWI
 hWI
 hWI
@@ -11869,7 +11949,7 @@ hWI
 hWI
 hWI
 qUX
-hpc
+obN
 hpc
 hpc
 hpc
@@ -11901,8 +11981,8 @@ dKO
 hWI
 hWI
 hWI
-dKO
-sbR
+aoQ
+lfj
 hWI
 hWI
 uBR
@@ -11992,7 +12072,7 @@ gqo
 gqo
 gqo
 gqo
-gqo
+obN
 hWI
 hWI
 hWI
@@ -12206,7 +12286,7 @@ uBR
 uBR
 hWI
 hWI
-dKO
+aoQ
 dKO
 uBR
 uBR
@@ -12337,7 +12417,7 @@ hWI
 hWI
 hWI
 hWI
-hpc
+obN
 hpc
 hpc
 hpc
@@ -12493,8 +12573,8 @@ hWI
 hWI
 hWI
 hWI
-hpc
-hpc
+obN
+obN
 hpc
 hpc
 mAA
@@ -12518,8 +12598,8 @@ hWI
 hWI
 hWI
 hWI
-dSI
-dSI
+xXc
+xXc
 dSI
 dSI
 dSI
@@ -12650,7 +12730,7 @@ hWI
 hWI
 hWI
 hWI
-hpc
+obN
 hpc
 hpc
 mAA
@@ -12674,7 +12754,7 @@ hWI
 hWI
 hWI
 sbR
-xXW
+vDe
 dSI
 dSI
 dSI
@@ -12695,7 +12775,7 @@ etD
 etD
 uBR
 hWI
-dSI
+xXc
 dSI
 gqo
 gqo
@@ -12851,9 +12931,9 @@ uBR
 etD
 etD
 uBR
+xXc
 dSI
-dSI
-dKO
+sbR
 gqo
 gqo
 mAA
@@ -13009,8 +13089,8 @@ etD
 uBR
 hWI
 dSI
-dKO
-dKO
+sbR
+sbR
 dKO
 gqo
 gqo
@@ -13168,7 +13248,7 @@ hWI
 hWI
 dKO
 dKO
-dKO
+sbR
 hWI
 gqo
 gqo
@@ -13639,7 +13719,7 @@ uBR
 uBR
 hWI
 hWI
-dKO
+sbR
 hWI
 hWI
 uBR
@@ -13795,7 +13875,7 @@ etD
 etD
 uBR
 uBR
-hWI
+sbR
 dKO
 hWI
 uBR
@@ -13950,9 +14030,9 @@ uBR
 etD
 etD
 etD
-uBR
-uBR
-hWI
+dSI
+sbR
+sbR
 dKO
 hWI
 uBR
@@ -14105,9 +14185,9 @@ hWI
 uBR
 uBR
 uBR
-etD
-etD
-etD
+dSI
+dSI
+dSI
 uBR
 hWI
 dSI
@@ -14245,7 +14325,7 @@ hWI
 hWI
 hWI
 dKO
-dKO
+sbR
 dKO
 aoQ
 dKO
@@ -14260,9 +14340,9 @@ hWI
 hWI
 hWI
 hWI
-uBR
-uBR
-uBR
+dKO
+dSI
+dSI
 uBR
 uBR
 uBR
@@ -14416,8 +14496,8 @@ hWI
 uBR
 uBR
 uBR
-hWI
-hWI
+dSI
+dKO
 hWI
 uBR
 uBR
@@ -14426,7 +14506,7 @@ hWI
 hWI
 dSI
 dKO
-dKO
+aoQ
 hWI
 uBR
 etD
@@ -14572,8 +14652,8 @@ hWI
 uBR
 uBR
 hWI
-hWI
-hWI
+dSI
+dKO
 hWI
 hWI
 hWI
@@ -14583,7 +14663,7 @@ uBR
 hWI
 hWI
 dKO
-dKO
+sbR
 hWI
 uBR
 etD
@@ -14714,7 +14794,7 @@ aoQ
 aoQ
 dKO
 dKO
-dKO
+sbR
 dKO
 dKO
 dKO
@@ -14729,8 +14809,8 @@ uBR
 uBR
 hWI
 hWI
-hWI
-dKO
+dSI
+sbR
 ona
 hWI
 hWI
@@ -14739,7 +14819,7 @@ hWI
 uBR
 hWI
 hWI
-dKO
+sbR
 dKO
 hWI
 uBR
@@ -14816,7 +14896,7 @@ uBR
 uBR
 uBR
 hWI
-hWI
+dKO
 gqo
 gqo
 mAA
@@ -14974,7 +15054,7 @@ uBR
 uBR
 uBR
 hWI
-hWI
+dKO
 gqo
 mAA
 mAA
@@ -15043,7 +15123,7 @@ hWI
 hWI
 aoQ
 dKO
-dKO
+sbR
 hWI
 ona
 ona
@@ -15131,8 +15211,8 @@ uBR
 uBR
 uBR
 uBR
-hWI
-hWI
+dKO
+sbR
 dKO
 gqo
 gqo
@@ -15181,7 +15261,7 @@ hWI
 hWI
 aoQ
 aoQ
-dKO
+sbR
 dKO
 dKO
 uBR
@@ -15189,7 +15269,7 @@ etD
 uBR
 dSI
 dSI
-dKO
+sbR
 dKO
 qmO
 uBR
@@ -15198,9 +15278,9 @@ hWI
 hWI
 aoQ
 aoQ
-dKO
+sbR
 adk
-dKO
+sbR
 hWI
 hWI
 ona
@@ -15290,7 +15370,7 @@ uBR
 uBR
 uBR
 hWI
-hWI
+sbR
 dKO
 gqo
 gqo
@@ -15339,13 +15419,13 @@ hWI
 hWI
 hWI
 dKO
-dKO
-dKO
+sbR
+sbR
 uBR
 uBR
 dKO
 dKO
-dKO
+sbR
 dKO
 dSI
 dSI
@@ -15353,7 +15433,7 @@ dSI
 uBR
 uBR
 hWI
-bMo
+esK
 dKO
 dKO
 dKO
@@ -15367,8 +15447,8 @@ hWI
 uBR
 uBR
 hWI
-dKO
-dKO
+aoQ
+sbR
 hWI
 uBR
 etD
@@ -15448,7 +15528,7 @@ uBR
 uBR
 uBR
 hWI
-hWI
+sbR
 hWI
 dKO
 gqo
@@ -15497,8 +15577,8 @@ hWI
 hWI
 uBR
 uBR
-dKO
-dKO
+sbR
+sbR
 dKO
 dKO
 dSI
@@ -15509,8 +15589,8 @@ dSI
 dSI
 dSI
 uBR
-dKO
-dKO
+sbR
+sbR
 dKO
 hWI
 hWI
@@ -15524,7 +15604,7 @@ hWI
 uBR
 hWI
 hWI
-dKO
+aoQ
 dKO
 hWI
 uBR
@@ -15605,9 +15685,9 @@ hWI
 uBR
 uBR
 uBR
-uBR
-hWI
-hWI
+dKO
+sbR
+sbR
 hWI
 dKO
 gqo
@@ -15680,7 +15760,7 @@ ona
 hWI
 uBR
 hWI
-dKO
+aoQ
 dKO
 dKO
 hWI
@@ -15765,9 +15845,9 @@ uBR
 uBR
 uBR
 hWI
-hWI
-hWI
-hWI
+sbR
+sbR
+sbR
 gqo
 gqo
 gqo
@@ -15923,9 +16003,9 @@ uBR
 uBR
 uBR
 hWI
-hWI
-hWI
-hWI
+dKO
+sbR
+sbR
 gqo
 gqo
 gqo
@@ -15946,7 +16026,7 @@ mAA
 mAA
 mAA
 mAA
-hWI
+sbR
 hWI
 hWI
 hWI
@@ -15994,7 +16074,7 @@ glK
 hWI
 hWI
 hWI
-dKO
+aoQ
 dKO
 hWI
 hWI
@@ -16081,7 +16161,7 @@ hWI
 uBR
 uBR
 hWI
-hWI
+dKO
 hWI
 dKO
 dKO
@@ -16152,7 +16232,7 @@ hWI
 hWI
 hWI
 hWI
-dKO
+sbR
 dKO
 hWI
 hWI
@@ -16310,9 +16390,9 @@ hWI
 hWI
 hWI
 dKO
-dKO
-dKO
-dKO
+sbR
+sbR
+sbR
 hWI
 pNQ
 pNQ
@@ -16467,8 +16547,8 @@ hWI
 hWI
 hWI
 hWI
-dKO
-dKO
+sbR
+sbR
 azO
 azO
 pNQ
@@ -38550,10 +38630,10 @@ dPV
 dPV
 dPV
 dPV
-dPV
-dPV
-dPV
-dPV
+fRr
+fRr
+ymg
+ymg
 dPV
 mVe
 fsP
@@ -38705,9 +38785,9 @@ dPV
 dPV
 dPV
 dPV
-fRr
-sLi
-uGz
+ymg
+ymg
+ymg
 uGz
 uGz
 uGz
@@ -38861,8 +38941,8 @@ dPV
 dPV
 dPV
 dPV
-dPV
-sLi
+ymg
+ymg
 sLi
 uGz
 uGz
@@ -39018,15 +39098,15 @@ dPV
 dPV
 dPV
 dPV
-dPV
+ymg
 sLi
 sLi
 uGz
+uGz
+uGz
+uGz
 ymg
-dPV
-fRr
-fRr
-fRr
+ymg
 fsP
 fsP
 fsP
@@ -39174,15 +39254,15 @@ lnn
 lnn
 dPV
 dPV
-dPV
-dPV
-sLi
-sLi
 ymg
 ymg
-dPV
-dPV
-fRr
+sLi
+sLi
+uGz
+uGz
+ymg
+ymg
+ymg
 fRr
 fRr
 fRr
@@ -39331,13 +39411,13 @@ lnn
 lnn
 dPV
 dPV
-dPV
-fRr
+ymg
+sLi
 sLi
 sLi
 ymg
-fRr
-dPV
+ymg
+ymg
 dPV
 lnn
 fRr
@@ -39487,9 +39567,9 @@ lnn
 lnn
 lnn
 lnn
-fRr
-fRr
-fRr
+ymg
+ymg
+sLi
 sLi
 sLi
 ymg
@@ -39644,9 +39724,9 @@ lnn
 lnn
 lnn
 fRr
-fRr
-fRr
-fwr
+ymg
+ymg
+sLi
 sLi
 sLi
 ymg
@@ -39801,13 +39881,13 @@ lnn
 fRr
 fRr
 fRr
-fRr
-fRr
-fRr
+ymg
+ymg
+sLi
 sLi
 sLi
 ymg
-lnn
+ymg
 lnn
 fRr
 fRr
@@ -39958,13 +40038,13 @@ lnn
 fRr
 fRr
 fwr
-fRr
-fRr
-fRr
+ymg
+ymg
+sLi
 sLi
 sLi
 ymg
-lnn
+ymg
 lnn
 lnn
 fRr
@@ -40116,12 +40196,12 @@ fRr
 fRr
 fwr
 fRr
-fRr
-fRr
+ymg
+sLi
 sLi
 sLi
 ymg
-lnn
+ymg
 lnn
 lnn
 lnn
@@ -40273,12 +40353,12 @@ fRr
 fRr
 fRr
 fRr
-fRr
-fRr
-sLi
-sLi
 ymg
-lnn
+sLi
+sLi
+uGz
+ymg
+ymg
 lnn
 lnn
 lnn
@@ -40430,12 +40510,12 @@ fRr
 fwr
 fRr
 fRr
-fRr
-lnn
-sLi
-sLi
 ymg
-lnn
+sLi
+sLi
+uGz
+ymg
+ymg
 lnn
 lnn
 lnn
@@ -40586,13 +40666,13 @@ fRr
 fRr
 fRr
 fRr
-fRr
-lnn
-lnn
-sLi
-sLi
 ymg
-lnn
+sLi
+sLi
+sLi
+uGz
+ymg
+ymg
 lnn
 lnn
 lnn
@@ -40743,11 +40823,11 @@ fRr
 fRr
 fRr
 fRr
-fRr
-lnn
-lnn
+ymg
 sLi
 sLi
+uGz
+ymg
 ymg
 lnn
 lnn
@@ -40900,11 +40980,11 @@ fRr
 fRr
 fRr
 fRr
-lnn
-lnn
-lnn
+ymg
 sLi
 sLi
+uGz
+ymg
 ymg
 lnn
 lnn
@@ -41057,11 +41137,11 @@ fRr
 fRr
 fRr
 fRr
-lnn
-apH
-lnn
+ymg
 sLi
 sLi
+uGz
+ymg
 ymg
 fRr
 lnn
@@ -41215,11 +41295,11 @@ fRr
 fRr
 lnn
 lnn
-lnn
-lnn
+sLi
 sLi
 sLi
 ymg
+lnn
 fRr
 lnn
 lnn
@@ -41372,11 +41452,11 @@ fRr
 lnn
 lnn
 lnn
-lnn
-lnn
+sLi
 sLi
 sLi
 ymg
+lnn
 ilZ
 dPV
 dPV
@@ -41529,11 +41609,11 @@ fRr
 lnn
 lnn
 lnn
-lnn
-lnn
+sLi
 sLi
 sLi
 ymg
+lnn
 fRr
 dPV
 dPV
@@ -41686,11 +41766,11 @@ lnn
 lnn
 lnn
 ooF
-lnn
-lnn
+sLi
 sLi
 sLi
 ymg
+lnn
 fRr
 lnn
 lnn
@@ -41843,10 +41923,10 @@ apH
 lnn
 lnn
 lnn
-lnn
-lnn
 sLi
 sLi
+sLi
+ymg
 ymg
 lnn
 lnn
@@ -42000,10 +42080,10 @@ lnn
 lnn
 lnn
 lnn
-lnn
-lnn
 sLi
 sLi
+sLi
+ymg
 ymg
 lnn
 lnn
@@ -42157,10 +42237,10 @@ lnn
 lnn
 lnn
 bOa
-lnn
-lnn
 sLi
 sLi
+sLi
+ymg
 ymg
 lnn
 lnn
@@ -42314,10 +42394,10 @@ lnn
 lnn
 lnn
 lnn
-lnn
-fRr
 sLi
 sLi
+sLi
+ymg
 ymg
 lnn
 lnn
@@ -42470,13 +42550,13 @@ uXC
 lnn
 lnn
 lnn
-lnn
-fRr
-fRr
+ymg
+uSj
 sLi
 sLi
 ymg
-lnn
+ymg
+ymg
 lnn
 lnn
 lnn
@@ -42627,13 +42707,13 @@ lnn
 lnn
 lnn
 lnn
-fRr
-fRr
-fRr
+ymg
+uSj
 sLi
 sLi
 ymg
-dPV
+ymg
+ymg
 dPV
 dPV
 dPV
@@ -42784,13 +42864,13 @@ lnn
 ooF
 lnn
 lnn
-fRr
-fRr
-fRr
+ymg
+ymg
+sLi
 sLi
 sLi
 ymg
-dPV
+ymg
 dPV
 dPV
 tbN
@@ -42941,13 +43021,13 @@ lnn
 lnn
 lnn
 fRr
-fRr
-fRr
-fRr
+ymg
+ymg
+uSj
 sLi
 sLi
 ymg
-fRr
+ymg
 dPV
 dPV
 abF
@@ -43099,12 +43179,12 @@ lnn
 lnn
 fRr
 fRr
-fRr
-fRr
+ymg
+uSj
 sLi
 sLi
 ymg
-fRr
+ymg
 fRr
 dPV
 abG
@@ -43256,8 +43336,8 @@ lnn
 lnn
 fRr
 ilZ
-fRr
-fRr
+ymg
+uSj
 sLi
 sLi
 ymg
@@ -43414,7 +43494,7 @@ lnn
 lnn
 fRr
 fRr
-fRr
+ymg
 sLi
 sLi
 ymg
@@ -43571,7 +43651,7 @@ lnn
 lnn
 fRr
 fRr
-fRr
+ymg
 sLi
 sLi
 ymg
@@ -43728,7 +43808,7 @@ lnn
 lnn
 fRr
 fRr
-fRr
+ymg
 sLi
 sLi
 ymg
@@ -44145,7 +44225,7 @@ lnn
 dPV
 dPV
 lnn
-lnn
+mVe
 fsP
 fsP
 mVe
@@ -44302,7 +44382,7 @@ lnn
 lnn
 lnn
 lnn
-dPV
+mVe
 fsP
 fsP
 mVe
@@ -44458,8 +44538,8 @@ dPV
 pHC
 dPV
 dPV
-dPV
-dPV
+mVe
+mVe
 fsP
 fsP
 lnn
@@ -44615,7 +44695,7 @@ lnn
 dPV
 dPV
 dPV
-dPV
+mVe
 mVe
 fsP
 fsP
@@ -44772,7 +44852,7 @@ dPV
 dPV
 dPV
 xnl
-fsP
+mVe
 fsP
 fsP
 fsP
@@ -46083,10 +46163,10 @@ ygR
 mVe
 fsP
 fsP
-mVe
+ymg
 sLi
 sLi
-lnn
+ymg
 lnn
 lnn
 lnn
@@ -46243,7 +46323,7 @@ fsP
 mVe
 sLi
 sLi
-lnn
+ymg
 lnn
 lnn
 lnn
@@ -46400,7 +46480,7 @@ dVE
 mVe
 sLi
 sLi
-lnn
+ymg
 lnn
 vIK
 lnn
@@ -46557,7 +46637,7 @@ fsP
 mVe
 sLi
 sLi
-lnn
+ymg
 lnn
 lnn
 lnn
@@ -46714,8 +46794,8 @@ fsP
 mVe
 sLi
 sLi
-lnn
-lnn
+ymg
+ymg
 lnn
 bOa
 lnn
@@ -46868,11 +46948,11 @@ fRr
 mVe
 fsP
 fsP
-mVe
+ymg
 sLi
 sLi
-lnn
-lnn
+ymg
+ymg
 lnn
 lnn
 lnn
@@ -47025,11 +47105,11 @@ mVe
 fsP
 fsP
 mVe
-fRr
+ymg
 sLi
 sLi
-bOa
-lnn
+ymg
+ymg
 lnn
 lnn
 lnn
@@ -47182,11 +47262,11 @@ mVe
 fsP
 fsP
 mVe
-fRr
+ymg
 sLi
 sLi
-lnn
-lnn
+sLi
+ymg
 vIK
 lnn
 lnn
@@ -47339,11 +47419,11 @@ fRr
 fsP
 fsP
 mVe
-fRr
+ymg
+uSj
 sLi
 sLi
-lnn
-lnn
+ymg
 lnn
 lnn
 lnn
@@ -47496,12 +47576,12 @@ fRr
 mVe
 fsP
 spZ
-fRr
+ymg
+uSj
 sLi
 sLi
-vIK
-lnn
-lnn
+ymg
+ymg
 lnn
 lnn
 lnn
@@ -47652,13 +47732,13 @@ oVz
 mVe
 fsP
 fsP
-fRr
-fRr
+ymg
+ymg
+uSj
+uSj
 sLi
 sLi
-lnn
-dPV
-lnn
+ymg
 lnn
 lnn
 lnn
@@ -47809,13 +47889,13 @@ aqr
 fsP
 fsP
 fsP
-fRr
-fRr
+ymg
+ymg
+uSj
+uSj
 sLi
 sLi
-lnn
-lnn
-lnn
+ymg
 lnn
 lnn
 lnn
@@ -47967,12 +48047,12 @@ fsP
 fsP
 mVe
 fRr
-lnn
+ymg
+uSj
+uSj
+eAz
 sLi
-sLi
-lnn
-lnn
-lnn
+ymg
 lnn
 lnn
 lnn
@@ -48115,7 +48195,7 @@ abk
 abk
 abk
 abk
-abk
+wtR
 kzW
 kzW
 fsP
@@ -48124,12 +48204,12 @@ mVe
 mVe
 fRr
 fRr
-lnn
+ymg
+uSj
+uSj
 sLi
 sLi
-lnn
-lnn
-lnn
+ymg
 lnn
 lnn
 lnn
@@ -48283,10 +48363,10 @@ fRr
 lnn
 lnn
 sLi
-obN
-lnn
-dXm
-lnn
+sLi
+sLi
+sLi
+ymg
 lnn
 lnn
 lnn
@@ -48429,7 +48509,7 @@ abk
 abk
 abk
 abk
-abk
+kXt
 kzW
 mxw
 lyQ
@@ -48441,9 +48521,9 @@ lnn
 lnn
 sLi
 sLi
-lnn
-lnn
-lnn
+sLi
+sLi
+uGz
 lnn
 lnn
 lnn
@@ -48598,9 +48678,9 @@ rFn
 aat
 sLi
 sLi
-lnn
-lnn
-lnn
+sLi
+sLi
+uGz
 bOa
 lnn
 lnn
@@ -48755,10 +48835,10 @@ xgy
 wmf
 sLi
 sLi
-lnn
-lnn
-lnn
-lnn
+sLi
+uGz
+uGz
+ymg
 lnn
 lnn
 lnn
@@ -48912,10 +48992,10 @@ hLv
 aat
 eAz
 sLi
-lnn
-lnn
-lnn
-lnn
+sLi
+uGz
+sLi
+ymg
 lnn
 dPV
 lnn
@@ -49069,10 +49149,10 @@ gFS
 aat
 sLi
 sLi
-lnn
-lnn
-lnn
-lnn
+uGz
+sLi
+sLi
+ymg
 lnn
 dPV
 lnn
@@ -49226,9 +49306,9 @@ vNx
 rFn
 sLi
 sLi
-lnn
-lnn
-lnn
+sLi
+sLi
+sLi
 bOa
 lnn
 dPV
@@ -49333,7 +49413,7 @@ adg
 cBC
 tVm
 tVm
-dot
+rIC
 dot
 dot
 tVm
@@ -49383,9 +49463,9 @@ aat
 aat
 sLi
 sLi
-lnn
-lnn
-lnn
+sLi
+sLi
+uGz
 lnn
 lnn
 dPV
@@ -49540,10 +49620,10 @@ cBC
 cBC
 sLi
 sLi
-lnn
-lnn
-lnn
-lnn
+sLi
+sLi
+sLi
+ymg
 lnn
 dPV
 lnn
@@ -49689,7 +49769,7 @@ cBC
 sHp
 sHp
 tVm
-tVm
+kzR
 tVm
 tVm
 cBC
@@ -49697,10 +49777,10 @@ cBC
 cBC
 sLi
 sLi
-lnn
-lnn
-lnn
-lnn
+sLi
+sLi
+sLi
+ymg
 lnn
 dPV
 lnn
@@ -49845,7 +49925,7 @@ adg
 cBC
 sHp
 sHp
-sHp
+ooh
 tVm
 tVm
 cBC
@@ -49854,9 +49934,9 @@ cBC
 cBC
 sLi
 sLi
-lnn
-lnn
-lnn
+sLi
+sLi
+ymg
 lnn
 lnn
 dPV
@@ -50011,8 +50091,8 @@ cBC
 nBe
 sLi
 sLi
-lnn
-lnn
+sLi
+sLi
 lnn
 iFR
 lnn
@@ -50168,8 +50248,8 @@ cBC
 nBe
 sLi
 sLi
-lnn
-lnn
+sLi
+ymg
 dXm
 lnn
 lnn
@@ -50322,11 +50402,11 @@ tVm
 tVm
 tVm
 nBe
-nBe
+ozU
 sLi
 sLi
-lnn
-lnn
+sLi
+ymg
 dPV
 dPV
 dPV
@@ -50421,7 +50501,7 @@ dot
 tVm
 tVm
 aka
-tVm
+vHI
 dot
 adn
 tVm
@@ -50476,13 +50556,13 @@ get
 get
 get
 tVm
-tVm
+jzs
 tVm
 tVm
 adg
 sLi
 sLi
-lnn
+uGz
 iPW
 aat
 aat
@@ -50584,7 +50664,7 @@ adn
 tVm
 tVm
 tVm
-tVm
+kzR
 sHp
 tVm
 adg
@@ -50639,7 +50719,7 @@ adg
 cBC
 sLi
 sLi
-lnn
+uGz
 aat
 wgT
 gIY
@@ -50796,7 +50876,7 @@ adg
 cBC
 sLi
 sLi
-dXm
+lNu
 aat
 fsg
 vUL
@@ -51368,7 +51448,7 @@ adg
 adg
 tVm
 tVm
-dUK
+tVm
 tVm
 sHp
 tVm
@@ -51421,7 +51501,7 @@ get
 sHp
 tVm
 cBC
-cBC
+hKA
 sLi
 eAz
 lnn
@@ -51578,7 +51658,7 @@ get
 get
 cBC
 adg
-cBC
+hKA
 sLi
 sLi
 lnn
@@ -51735,7 +51815,7 @@ get
 cBC
 adg
 adg
-cBC
+hKA
 sLi
 sLi
 lnn
@@ -51892,7 +51972,7 @@ get
 adg
 adg
 cBC
-nBe
+hKA
 sLi
 sLi
 dPV
@@ -52010,7 +52090,7 @@ sHp
 tVm
 tVm
 tVm
-tVm
+yfy
 dot
 iVy
 tVm
@@ -52206,10 +52286,10 @@ cBC
 cBC
 cBC
 tVm
-lnn
 sLi
 sLi
-dPV
+sLi
+ymg
 dPV
 dPV
 lnn
@@ -52312,7 +52392,7 @@ tLS
 tLS
 rWl
 vir
-vir
+lUR
 vir
 vir
 tVm
@@ -52363,11 +52443,11 @@ vir
 cBC
 adn
 tVm
-lnn
 sLi
 sLi
-dPV
-lnn
+sLi
+ymg
+ymg
 lnn
 lnn
 lnn
@@ -52520,11 +52600,11 @@ get
 vir
 tVm
 tVm
-dPV
 sLi
 sLi
-lnn
-lnn
+sLi
+ymg
+ymg
 lnn
 lnn
 lnn
@@ -52674,14 +52754,14 @@ abk
 abk
 hQe
 sHp
-vir
+qGf
 vir
 tVm
-tVm
+naq
 eAz
 sLi
-lnn
-lnn
+ymg
+ymg
 lnn
 lnn
 lnn
@@ -52829,15 +52909,15 @@ abk
 abk
 abk
 abk
-tVm
+waT
 vir
 vir
 cBC
 cBC
-tVm
+naq
 sLi
 sLi
-apH
+mms
 lnn
 lnn
 lnn
@@ -52945,7 +53025,7 @@ tVm
 tVm
 sHp
 tVm
-tVm
+kzR
 tVm
 oPE
 adg
@@ -52991,7 +53071,7 @@ vir
 cBC
 cBC
 adg
-adg
+naq
 sLi
 sLi
 lnn
@@ -53148,11 +53228,11 @@ adg
 adg
 adg
 adg
-cBC
+naq
 sLi
 sLi
-lnn
-lnn
+ymg
+ymg
 lnn
 lnn
 bOa
@@ -53305,12 +53385,12 @@ adg
 adg
 adg
 cBC
-lnn
 sLi
 sLi
-lnn
-lnn
-lnn
+sLi
+ymg
+ymg
+ymg
 lnn
 lnn
 lnn
@@ -53390,7 +53470,7 @@ wGn
 rWl
 rWl
 vir
-tVm
+kzR
 tVm
 adg
 adg
@@ -53462,10 +53542,10 @@ cBC
 adg
 cBC
 cBC
-lnn
 sLi
 sLi
-lnn
+sLi
+ymg
 lnn
 apH
 lnn
@@ -53619,10 +53699,10 @@ adg
 adg
 cBC
 lnn
-lnn
 sLi
 sLi
-lnn
+sLi
+ymg
 lnn
 lnn
 lnn
@@ -53775,11 +53855,11 @@ adg
 adg
 adg
 lnn
-lnn
-lnn
+bOa
 sLi
 sLi
-lnn
+sLi
+ymg
 lnn
 lnn
 lnn
@@ -53932,11 +54012,11 @@ veh
 lnn
 lnn
 lnn
-bOa
-lnn
+ymg
 sLi
 sLi
-lnn
+sLi
+ymg
 lnn
 lnn
 ylN
@@ -54089,11 +54169,11 @@ lnn
 lnn
 lnn
 lnn
-lnn
-lnn
+ymg
 sLi
 sLi
-lnn
+sLi
+sLi
 lnn
 kdr
 ylN
@@ -54246,12 +54326,12 @@ lnn
 lnn
 lnn
 lnn
-lnn
-lnn
+ymg
+uSj
 sLi
 sLi
-lnn
-lnn
+sLi
+ymg
 bxn
 sca
 bxn
@@ -54404,11 +54484,11 @@ lnn
 lnn
 lnn
 apH
-lnn
+uSj
 sLi
 sLi
-vIK
-lnn
+sLi
+ymg
 bxn
 cMx
 cMx
@@ -54562,9 +54642,9 @@ lnn
 lnn
 lnn
 fRr
+uSj
 sLi
 sLi
-lnn
 ilw
 bxn
 cMx
@@ -54721,7 +54801,7 @@ fRr
 fRr
 sLi
 sLi
-biI
+sLi
 vTH
 bxn
 gEm
@@ -54878,7 +54958,7 @@ fRr
 fRr
 sLi
 sLi
-biI
+sLi
 vTH
 bxn
 jYt
@@ -72567,8 +72647,8 @@ tXZ
 tXZ
 tXZ
 tXZ
-tXZ
-tXZ
+fam
+fam
 tXZ
 tXZ
 fam
@@ -72725,7 +72805,7 @@ tXZ
 tXZ
 fam
 fam
-tXZ
+fam
 fam
 fam
 fam
@@ -73038,7 +73118,7 @@ tQp
 tQp
 fam
 fam
-tXZ
+fam
 tXZ
 fam
 fam
