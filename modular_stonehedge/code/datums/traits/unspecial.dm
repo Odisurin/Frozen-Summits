@@ -2,7 +2,7 @@
 //Will need rebalancing costs and stuff.
 
 /datum/quirk/greaternightvision
-	name = "Darkvision"
+	name = "(Virtue) Darkvision"
 	desc = "I can easily see in the dark."
 	value = 2
 
@@ -22,7 +22,7 @@
 
 
 /datum/quirk/werewolfeyes
-	name = "Moonlight Eyes (White Eyes)"
+	name = "(Organs) Moonlight Eyes (White Eyes)"
 	desc = "I can easily see in the dark with my eyes."
 	value = 4
 
@@ -44,7 +44,7 @@
 
 
 /datum/quirk/werewolfeyes_green
-	name = "Moonlight Eyes (Green Eyes)"
+	name = "(Organs) Moonlight Eyes (Green Eyes)"
 	desc = "I can easily see in the dark with my eyes."
 	value = 4
 
@@ -61,7 +61,7 @@
 
 
 /datum/quirk/werewolfeyes_blue
-	name = "Moonlight Eyes (Blue Eyes)"
+	name = "(Organs) Moonlight Eyes (Blue Eyes)"
 	desc = "I can easily see in the dark with my eyes."
 	value = 4
 
@@ -76,7 +76,7 @@
 	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
 
 /datum/quirk/werewolfeyes_yellow
-	name = "Moonlight Eyes (Yellow Eyes)"
+	name = "(Organs) Moonlight Eyes (Yellow Eyes)"
 	desc = "I can easily see in the dark with my eyes."
 	value = 4
 
@@ -91,7 +91,7 @@
 	ADD_TRAIT(H, TRAIT_NOCSIGHT, TRAIT_GENERIC)
 
 /datum/quirk/werewolfeyes_brown
-	name = "Moonlight Eyes (Brown Eyes)"
+	name = "(Organs) Moonlight Eyes (Brown Eyes)"
 	desc = "I can easily see in the dark with my eyes."
 	value = 4
 
@@ -107,7 +107,7 @@
 
 
 /datum/quirk/undeadeyes
-	name = "Cursed Eyes (White Eyes)"
+	name = "(Organs) Cursed Eyes (White Eyes)"
 	desc = "I can easily see in the dark with my undead eyes."
 	value = 4
 
@@ -131,7 +131,7 @@
 
 //-----------------------------------
 /datum/quirk/thickskin
-	name = "Tough"
+	name = "(Combat) Tough"
 	desc = "I feel it. Thick Skin. Dense Flesh. Durable Bones. I'm a punch-taking machine."
 	value = 3
 
@@ -141,7 +141,7 @@
 	H.change_stat("constitution", 2)
 
 /datum/quirk/curseofcain
-	name = "Flawed Immortality"
+	name = "(Virtue) Flawed Immortality"
 	desc = "I don't need to eat or breathe anymore... Is this normal?"
 	value = 3
 
@@ -152,7 +152,7 @@
 	H.change_stat("endurance", 2)
 
 /datum/quirk/deadened
-	name = "Deadened"
+	name = "(Virtue) Deadened"
 	desc = "Ever since <b>it</b> happened, I've never been able to feel anything. Inside or out."
 	value = 2
 
@@ -161,7 +161,7 @@
 	ADD_TRAIT(H, TRAIT_NOMOOD, TRAIT_GENERIC)
 
 /datum/quirk/value
-	name = "Skilled Appraiser"
+	name = "(Virtue) Skilled Appraiser"
 	desc = "I know how to estimate an item's value, more or less."
 	value = 1
 
@@ -170,7 +170,7 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 
 /datum/quirk/night_owl
-	name = "Night Owl"
+	name = "(Virtue) Night Owl"
 	desc = "I've always preferred the night."
 	value = 1
 
@@ -179,7 +179,7 @@
 	ADD_TRAIT(H, TRAIT_NIGHT_OWL, TRAIT_GENERIC)
 
 /datum/quirk/beautiful
-	name = "Beautiful"
+	name = "(Virtue) Beautiful"
 	desc = "My face is a work of art"
 	value = 1
 
@@ -189,7 +189,7 @@
 
 //positive
 /datum/quirk/duelist
-	name = "Sword Training"
+	name = "(Weapons/Skills) Sword Training"
 	desc = "I sword training and stashed a short sword."
 	value = 2
 
@@ -199,7 +199,7 @@
 	H.mind.special_items["Short Sword"] = /obj/item/rogueweapon/sword/short
 
 /datum/quirk/fence
-	name = "Fencer"
+	name = "(Weapons/Skills) Fencer"
 	desc = "I have trained in agile sword fighting. I dodge more easily and have stashed my rapier nearby"
 	value = 4
 
@@ -210,7 +210,7 @@
 	H.mind.special_items["Rapier"] = /obj/item/rogueweapon/sword/rapier
 
 /datum/quirk/training2
-	name = "Mace Training"
+	name = "(Weapons/Skills) Mace Training"
 	desc = "I have mace training and stashed a mace."
 	value = 2
 
@@ -220,7 +220,7 @@
 	H.mind.special_items["Mace"] = /obj/item/rogueweapon/mace/spiked
 
 /datum/quirk/training4
-	name = "Polearms Training"
+	name = "(Weapons/Skills) Polearms Training"
 	desc = "I have polearm training and stashed a spear."
 	value = 2
 
@@ -230,7 +230,7 @@
 	H.mind.special_items["Spear"] = /obj/item/rogueweapon/spear
 
 /datum/quirk/training5
-	name = "Knife Training"
+	name = "(Weapons/Skills) Knife Training"
 	desc = "I have knife training and stashed a dagger."
 	value = 2
 
@@ -240,7 +240,7 @@
 	H.mind.special_items["Dagger"] = /obj/item/rogueweapon/huntingknife/idagger/steel/parrying
 
 /datum/quirk/training6
-	name = "Axe Training"
+	name = "(Weapons/Skills) Axe Training"
 	desc = "I have axe training, including woodchopping. and stashed a hatchet"
 	value = 2
 
@@ -252,7 +252,7 @@
 
 
 /datum/quirk/training8
-	name = "Shield Training"
+	name = "(Weapons/Skills) Shield Training"
 	desc = "I have shield training and stashed a shield."
 	value = 2
 
@@ -262,7 +262,7 @@
 	H.mind.special_items["Shield"] = /obj/item/rogueweapon/shield/wood
 
 /datum/quirk/training9
-	name = "Unarmed Training"
+	name = "(Weapons/Skills) Unarmed Training"
 	desc = "I have journeyman unarmed training and stashed a katar."
 	value = 2
 
@@ -273,7 +273,7 @@
 	H.mind.special_items["Katar"] = /obj/item/rogueweapon/katar
 
 /datum/quirk/greenthumb
-	name = "Green Thumb"
+	name = "(Skill/Tools) Green Thumb"
 	desc = "I've always been rather good at tending to plants, and I have a hoe stashed in a tree. (Raises skill to journeyman)"
 	value = 1
 
@@ -283,7 +283,7 @@
 	H.mind.special_items["Hoe"] = /obj/item/rogueweapon/hoe // I too respect a humble farmer.
 
 /datum/quirk/mtraining1
-	name = "Medical Training"
+	name = "(Skill/Tools) Medical Training"
 	desc = "I have basic medical training and stashed some med supplies alongside a broom to clean some blood."
 	value = 2
 
@@ -294,17 +294,9 @@
 	H.mind.special_items["Surgery Kit"] = /obj/item/storage/belt/rogue/surgery_bag/full
 	H.mind.special_items["Broom"] = /obj/item/broom
 
-/datum/quirk/eagle_eyed
-	name = "Eagle Eyed"
-	desc = "I was always goot at spotting distant things.."
-	value = 2
-
-/datum/quirk/eagle_eyed/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.change_stat("perception", 2)
 
 /datum/quirk/training10
-	name = "Bow Training"
+	name = "(Weapons/Skills) Bow Training"
 	desc = "I have journeyman bow training and stashed a bow."
 	value = 2
 
@@ -315,7 +307,7 @@
 	H.mind.special_items["Quiver"] = /obj/item/quiver/arrows
 
 /datum/quirk/mule
-	name = "Mule"
+	name = "(Weapons/Skills) Mule"
 	desc = "I've been dealing drugs and I have a stash hidden away"
 	value = 2
 
@@ -327,7 +319,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
 
 /datum/quirk/bookworm
-	name = "Bookworm"
+	name = "(Skills) Bookworm"
 	desc = "I love books and I became quite skillfull at reading and writing."
 	value = 1
 
@@ -336,7 +328,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 4, TRUE)
 
 /datum/quirk/arsonist
-	name = "Arsonist"
+	name = "(Weapons/Skills) Arsonist"
 	desc = "I like seeing things combust and burn. I have hidden around two firebobms"
 	value = 2
 
@@ -347,7 +339,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE)
 
 /datum/quirk/pineapple
-	name = "No safeword."
+	name = "(Weapons/Skills)No safeword."
 	desc = "I enjoy whipping people until they squirm and whine, I am skilled at using whips, and have a hidden one somewhere."
 	value = 4
 
@@ -358,8 +350,8 @@
 
 
 /datum/quirk/spring_in_my_step
-	name = "Spring in my Step"
-	desc = "My legs are quite strong and where most have to climb, I can just jump"
+	name = "(Vitue) Spring in my Step"
+	desc = "My legs are quite strong and where most have to climb, I can jump higher and not fall."
 	value = 2
 
 /datum/quirk/spring_in_my_step/on_spawn()
@@ -368,7 +360,7 @@
 	ADD_TRAIT(H, TRAIT_NOFALLDAMAGE1, TRAIT_GENERIC)
 
 /datum/quirk/impervious
-	name = "Impervious"
+	name = "(Combat) Impervious"
 	desc = "I've spent years shoring up my weakspots, and have become difficult to wound with critical blows."
 	value = 3
 /datum/quirk/impervious/on_spawn()
@@ -377,7 +369,7 @@
 
 
 /datum/quirk/thief
-	name = "Thief"
+	name = "(Skills) Thief"
 	desc = "Life's not easy around here, but I've made mine a little easier by taking things of others. I am a great at picking pockets."
 	value = 3
 
@@ -401,7 +393,7 @@
 	H.grant_language(/datum/language/draconic)
 
 /datum/quirk/civilizedbarbarian
-	name = "Tavern Brawler"
+	name = "(Combat) Tavern Brawler"
 	desc = "I am a barstool warrior. Improvised weapons are more effective in my hands."
 	value = 2
 
@@ -410,7 +402,7 @@
 	ADD_TRAIT(H, TRAIT_CIVILIZEDBARBARIAN, TRAIT_GENERIC) //Need to make trait improve hitting people with chairs, mugs, goblets.
 
 /datum/quirk/mastercraftsmen
-	name = "Jack of all trades"
+	name = "(Skills) Jack of all trades"
 	desc = "I've always had steady hands. I'm experienced enough in most fine craftsmanship to make a career out of it, if I can procure my own tools."
 	value = 3
 
@@ -428,7 +420,7 @@
 
 
 /datum/quirk/masterbuilder
-	name = "Practiced Builder"
+	name = "(Skills) Practiced Builder"
 	desc = "I have experience in putting up large structures and foundations for buildings. I can even use a sawmill if I can find one, and I have a handcart and two sacks hidden away for transporting my construction materials."
 	value = 1 // I have a lot of respect for people who actually bother making buildings that will be deleted within an hour or two.
 
@@ -444,7 +436,7 @@
 
 
 /datum/quirk/mastersmith
-	name = "Practiced Smith"
+	name = "(Skills) Practiced Smith"
 	desc = "I am a metalworker by trade, and I have the tools for my practice stashed away." //play a proper smith if you want starting smith gear.
 	value = 1 // Armor-making. Weapon-making. Everyone wants the gamer gear.
 
@@ -462,7 +454,7 @@
 
 
 /datum/quirk/bleublood
-	name = "Noble Lineage"
+	name = "(Flavor) Noble Lineage"
 	desc = "I am of noble blood."
 	value = 1
 
@@ -472,7 +464,7 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
 
 /datum/quirk/richpouch
-	name = "Rich Pouch"
+	name = "(Flavor) Rich Pouch"
 	desc = "I have a pouch full of coins."
 	value = 1
 
@@ -482,7 +474,7 @@
 	H.put_in_hands(pouch, forced = TRUE)
 
 /datum/quirk/swift
-	name = "Speedster"
+	name = "(Virtue) Speedster"
 	desc = "I am very athletic and fast. I can also dodge anything as long as I am not weighted down by medium or heavier armor."
 	value = 5
 
@@ -493,7 +485,7 @@
 	H.change_stat("speed", 3)
 
 /datum/quirk/gourmand
-	name = "Gourmand"
+	name = "(Virtue) Gourmand"
 	desc = "I can eat even the most spoiled, raw, or toxic food and water as if they were delicacies. I'm even immune to the berry poison some folk like to coat their arrows with."
 	value = 3
 
@@ -502,7 +494,7 @@
 	ADD_TRAIT(H, TRAIT_NASTY_EATER, TRAIT_GENERIC)
 
 /datum/quirk/backproblems
-	name = "Giant"
+	name = "(Virtue) Giant"
 	desc = "I've always been called a giant (atleast among my kin). I am valued for my stature, but, this world made for smaller folk has forced me to move cautiously."
 	value = 0
 
@@ -515,23 +507,9 @@
 	H.transform = H.transform.Translate(0, (1.1))
 	H.update_transform()
 
-
-/datum/quirk/backproblems_2
-	name = "Giant (Eyes slightly better)"
-	desc = "I've always been called a giant (atleast among my kin). I am valued for my stature, but, this world made for smaller folk has forced me to move cautiously."
-	value = 0
-
-/datum/quirk/backproblems_2/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.change_stat("strength", 3)
-	H.change_stat("constitution", 2)
-	H.change_stat("speed", -2)
-	H.transform = H.transform.Scale(1.15, 1.25)
-	H.update_transform()
-
 //negative
 /datum/quirk/nimrod
-	name = "Nimrod"
+	name = "(Flaw) Nimrod"
 	desc = "In the past I learned slower than my peers, and I tend to be clumsy."
 	value = -7
 
@@ -541,7 +519,7 @@
 	H.change_stat("intelligence", -4)
 
 /datum/quirk/nopouch
-	name = "No Pouch"
+	name = "(Flaw) No Pouch"
 	desc = "I lost my pouch recently, I'm without a zenny.."
 	value = -4
 
@@ -557,7 +535,7 @@
 	qdel(pouch)
 
 /datum/quirk/hussite
-	name = "Cursed"
+	name = "(Flaw) Cursed"
 	desc = "You are unabled to be healed by faithfuls due to a curse from a demon, fae or other entity, and people know you are cursed."
 	value = -8
 
@@ -566,7 +544,7 @@
 	GLOB.excommunicated_players += H.real_name
 
 /datum/quirk/bounty
-	name = "Hunted Man"
+	name = "(Flaw) Hunted Man"
 	desc = "Someone put a bounty on my head!"
 	value = -4
 
@@ -606,7 +584,7 @@
 	to_chat(H, span_notice("Whether I done it or not, I have been accused of [reason], and the [employer] put a bounty on my head!"))
 
 /datum/quirk/outlaw
-	name = "Known Outlaw"
+	name = "(Flaw) Known Outlaw"
 	desc = "Whether for crimes I did or was accused of, I have been declared an outlaw!"
 	value = -4
 
@@ -615,7 +593,7 @@
 	make_outlaw(H.real_name, TRUE)
 
 /datum/quirk/sillyvoice
-	name = "Annoying"
+	name = "(Flaw) Annoying"
 	desc = "People really hate my voice for some reason."
 	value = -4
 
@@ -625,7 +603,7 @@
 	H.dna.add_mutation(WACKY)
 
 /datum/quirk/unlucky
-	name = "Unlucky"
+	name = "(Flaw) Unlucky"
 	desc = "Ever since you knocked over that glass vase, you just feel... off"
 	value = -6
 
@@ -635,7 +613,7 @@
 
 
 /datum/quirk/jesterphobia
-	name = "Jesterphobic"
+	name = "(Flaw) Jesterphobic"
 	desc = "I have a severe, irrational fear of Jesters"
 	value = -4
 
@@ -644,7 +622,7 @@
 	ADD_TRAIT(H, TRAIT_JESTERPHOBIA, TRAIT_GENERIC)
 
 /datum/quirk/dweakness
-	name = "Deceiving Weakness"
+	name = "(Flaw) Deceiving Weakness"
 	desc = "People think i am weak... THINK."
 	value = -4
 
@@ -653,7 +631,7 @@
 	ADD_TRAIT(H, TRAIT_DECEIVING_MEEKNESS, TRAIT_GENERIC)
 
 /datum/quirk/wild_night
-	name = "Wild Night"
+	name = "(Flaw) Wild Night"
 	desc = "I don't remember what I did last night, and now I'm lost!"
 	value = -4
 
@@ -664,7 +642,7 @@
 	grant_lit_torch(H)
 
 /datum/quirk/atrophy
-	name = "Atrophy"
+	name = "(Flaw) Atrophy"
 	desc = "When growing up I could barely feed myself... this left me weak and fragile"
 	value = -6
 
@@ -675,7 +653,7 @@
 	H.change_stat("endurance", -2)
 
 /datum/quirk/nude_sleeper
-	name = "Picky Sleeper"
+	name = "(Flaw) Picky Sleeper"
 	desc = "I just can't seem to fall asleep unless I'm <i>truly</i> comfortable... this makes me vulnerable"
 	value = -15 //Sleeping people are already rather vulnerable. Having to take off literally everything is more than just bothersome.
 
