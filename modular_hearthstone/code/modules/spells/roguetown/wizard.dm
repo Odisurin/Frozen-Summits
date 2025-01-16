@@ -846,7 +846,7 @@
 	damage_type = BURN
 	flag = "magic"
 	range = 15
-	speed = 15 //higher is slower
+	speed = 1 //higher is slower
 	var/aoe_range = 1
 
 /obj/projectile/magic/acidsplash5e/on_hit(atom/target, blocked = FALSE)
