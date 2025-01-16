@@ -1248,7 +1248,7 @@
 	sound = 'sound/magic/heal.ogg'
 	associated_skill = /datum/skill/magic/arcane
 	antimagic_allowed = FALSE
-	charge_max = 20 SECONDS
+	charge_max = 30 SECONDS
 	cost = 1
 
 	xp_gain = FALSE

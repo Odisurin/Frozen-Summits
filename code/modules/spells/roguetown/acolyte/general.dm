@@ -12,7 +12,7 @@
 	invocation_type = "none"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
-	charge_max = 10 SECONDS
+	charge_max = 30 SECONDS
 	miracle = TRUE
 	devotion_cost = 10
 
