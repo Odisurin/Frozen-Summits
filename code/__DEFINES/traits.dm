@@ -49,6 +49,7 @@
 #define TRAIT_INQUISITION "Member of the Inquisition"
 #define TRAIT_GOODTRAINER "Good Trainer"
 #define TRAIT_SEA_DRINKER "Denizen of the Deep"
+#define TRAIT_STUDENT		"Student"
 
 //Hearthstone port (Tracking)
 #define TRAIT_PERFECT_TRACKER "Perfect Tracker" //Will always find any tracks and analyzes them perfectly.
@@ -206,6 +207,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_PUGILIST = "I have stronger punches.", // Hearthstone change
 	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
 	TRAIT_SEA_DRINKER = span_info("As a denizen of the deep, I can drink salty ocean water safely.")
+	TRAIT_STUDENT =  span_info("I am overwhelmed by all this knowledge!"),
 ))
 
 // trait accessor defines
