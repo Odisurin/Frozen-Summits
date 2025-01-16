@@ -93,7 +93,7 @@
 	added_stats = list(STAT_STRENGTH = 2, STAT_CONSTITUTION = 1, STAT_SPEED = -2, STAT_INTELLIGENCE = 1)
 
 
-/datum/virtue/size/lycan_female_sorcerer_druid_dragon_f/apply_to_human(mob/living/carbon/human/recipient)
+/datum/virtue/size/dragon/apply_to_human(mob/living/carbon/human/recipient)
 	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/self/claws)
 	recipient.mind?.AddSpell(new /obj/effect/proc_holder/spell/targeted/shapeshift/dragon_form)
 
