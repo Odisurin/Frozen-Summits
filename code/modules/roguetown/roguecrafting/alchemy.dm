@@ -292,7 +292,6 @@
 	reagents.maximum_volume = 0  // Makes them useless afterwards
 	reagents.flags = NONE  // Ensure reagents are deactivated
 	update_icon()
-	playsound(src, 'modular/Smoker/sound/inject.ogg', 100, TRUE)
 	return TRUE
 
 /obj/item/reagent_containers/hypospray/medipen/sty/attack(mob/user)
@@ -303,8 +302,8 @@
 		inject(user, user)
 
 /obj/item/reagent_containers/pill/caffpill
-	name = "WAKE-UP"
-	desc = "a handful of Dr V's pep-pills. a promise to make you both alert and have an uncomfortable amount of vigor for everyone involved. Who needs sleep anyway? thats how you get diddled by an orc!"
+	name = "wake-up"
+	desc = "A handful of pep-pills. a promise to make you both alert and have an uncomfortable amount of vigor for everyone involved. Who needs sleep anyway? thats how you get diddled by an orc!"
 	icon_state = "pillg"
 	icon = 'icons/roguetown/items/surgery.dmi'
 	list_reagents = list(/datum/reagent/medicine/caffeine = 1, /datum/reagent/medicine/antihol = 10, /datum/reagent/consumable/coffee = 81) //coffee OD is safe. causes jitters for awhile.
@@ -312,8 +311,8 @@
 	grind_results = null
 
 /obj/item/reagent_containers/pill/pnkpill
-	name = "PNKBAWLS"
-	desc = "a handful of Dr V's pink little balls. says they restore vitality, you are pretty certain this is watered down red mixed with ash"
+	name = "pink balls"
+	desc = "A handful of pink little balls. says they restore vitality, you are pretty certain this is watered down red mixed with ash"
 	icon_state = "pinkb"
 	icon = 'icons/roguetown/items/surgery.dmi'
 	list_reagents = list(/datum/reagent/ash = 15, /datum/reagent/iron = 15, /datum/reagent/medicine/healthpot = 24) //mug of red, bottle is 45u
@@ -321,15 +320,15 @@
 	grind_results = null
 
 /obj/item/reagent_containers/hypospray/medipen/sty/detox
-	name = "DETOX"
-	desc = "Dr. V's well aint this funny? a snake curing toxin's and venoms. heresy... purges the body of all that is not natural."
+	name = "detox"
+	desc = "Well aint this funny? a snake curing toxin's and venoms. heresy... purges the body of all that is not natural."
 	volume = 34
 	amount_per_transfer_from_this = 34
 	list_reagents = list(/datum/reagent/medicine/antihol = 10, /datum/reagent/medicine/pen_acid = 24)
 
 /obj/item/reagent_containers/hypospray/medipen/sealbottle/reju
 	name = "rejuv elixer"
-	desc = "Dr V's special formulated body revitalizer; restores blood, helps seal wounds, helps to stabalize breathing and numbs pain with a non-addictive snake venom derived analgesic. Single dose. Caffeinated, just like the snake that made it."
+	desc = "A special formulated body revitalizer; restores blood, helps seal wounds, helps to stabalize breathing and numbs pain with a non-addictive snake venom derived analgesic. Single dose. Caffeinated, just like the snake that made it."
 	icon_state = "THEbottle"
 	volume = 16
 	amount_per_transfer_from_this = 16
@@ -337,7 +336,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/sealbottle/purify
 	name = "purifying elixer"
-	desc = "Dr V's special formulated body purifier; A powerful drug that purifies the blood and seals wounds painfully on the body. flooding your blood with anything like this isnt exactly healthy but, if it stops you needing to use the word 'festering' to describe part of your body, it's worth it."
+	desc = "A special formulated body purifier; A powerful drug that purifies the blood and seals wounds painfully on the body. flooding your blood with anything like this isnt exactly healthy but, if it stops you needing to use the word 'festering' to describe part of your body, it's worth it."
 	icon_state = "THEbottle"
 	volume = 30
 	amount_per_transfer_from_this = 30

@@ -1248,7 +1248,7 @@
 	sound = 'sound/magic/heal.ogg'
 	associated_skill = /datum/skill/magic/arcane
 	antimagic_allowed = FALSE
-	charge_max = 10 SECONDS
+	charge_max = 20 SECONDS
 	cost = 1
 
 	xp_gain = FALSE
@@ -1295,9 +1295,9 @@
 /datum/status_effect/buff/healing_weave
 	id = "weave healing"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/magical_healing
-	duration = 25 SECONDS
+	duration = 10 SECONDS
 	examine_text = "SUBJECTPRONOUN is bathed in a restorative aura from the weave!"
-	var/healing_on_tick = 0.5
+	var/healing_on_tick = 0.3
 	var/outline_colour = "#6055f9"
 
 /datum/status_effect/buff/healing_weave/on_creation(mob/living/new_owner, new_healing_on_tick)
@@ -1315,7 +1315,7 @@
 	H.color = "#6055f9"
 	var/list/wCount = owner.get_wounds()
 	if(owner.blood_volume < BLOOD_VOLUME_NORMAL)
-		owner.blood_volume = min(owner.blood_volume+10, BLOOD_VOLUME_NORMAL)
+		owner.blood_volume = min(owner.blood_volume+2, BLOOD_VOLUME_NORMAL)
 	if(wCount.len > 0)
 		owner.heal_wounds(healing_on_tick)
 		owner.update_damage_overlays()

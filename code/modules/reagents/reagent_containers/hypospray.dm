@@ -21,7 +21,6 @@
 	if(has_cap)
 		to_chat(user, span_warning("[src] has a cap on! You need to remove it first."))
 		return FALSE
-		playsound(src, 'modular/Smoker/sound/inject.ogg')
 	inject(M, user)
 
 ///Handles all injection checks, injection and logging.

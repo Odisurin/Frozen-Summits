@@ -291,7 +291,8 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
-	H.mind.special_items["Surgery Kit"] = /obj/item/storage/belt/rogue/surgery_bag/full
+	H.mind.special_items["Patch Kit"] = /obj/item/storage/fancy/ifak
+	H.mind.special_items["Surgery Kit"] = /obj/item/storage/fancy/skit
 	H.mind.special_items["Broom"] = /obj/item/broom
 
 
@@ -378,8 +379,8 @@
 	H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 5, TRUE)
 
 /datum/quirk/languagesavant
-	name = "Polyglot"
-	desc = "I have always picked up on languages easily, even those that are forbidden to mortals."
+	name = "(Language) Polyglot"
+	desc = "I have always picked up on languages easily."
 	value = 3
 
 /datum/quirk/languagesavant/on_spawn()
@@ -389,7 +390,6 @@
 	H.grant_language(/datum/language/hellspeak)
 	H.grant_language(/datum/language/celestial)
 	H.grant_language(/datum/language/orcish)
-	H.grant_language(/datum/language/beast)
 	H.grant_language(/datum/language/draconic)
 
 /datum/quirk/civilizedbarbarian
@@ -665,7 +665,7 @@
 
 // disgustingly hooking into quirks to provide a convenient way to become a vampire
 /datum/quirk/vampire
-	name = "Blood Sucker"
+	name = "(Flavor/Mechanic) Blood Sucker"
 	desc = "You need blood to survive, depending if you are merely an beast folk that needs blood to survive or a mutated human, you are not truly a vampire, of course others might think you are. (To gain the undead trait, and all the benefits of being a vampire, select the correct virtue alongside this quirk.)"
 //	desc = "You've existed long before the gods existed, you know the truth and have no reason to worship them. You are faithless. After attaining power, Levishth has cursed your people, bringing bad omens where ever you go. For this reason, the people of Stonehedge have shunned you and discriminated against you, there is no possible way an antediluvian will ever hold a position of power in Stonehedge, let alone be welcomed. Levishth has only shown favor to one antediluvian, rewarding them with the title of Vampire Lord, and gifting them powers far beyond that of a regular nitecreacher. Your pale skin, fangs, and eerie eyes are EASILY identifable features, so it is best to stay covered at all times in public areas."
 
@@ -699,7 +699,7 @@
 */
 
 /datum/quirk/elvishtalker
-	name = "Knows Elvish"
+	name = "(Language) Knows Elvish"
 	desc = "I learned to speak elvish in my time here."
 	value = 1
 
@@ -708,7 +708,7 @@
 	H.grant_language(/datum/language/elvish)
 
 /datum/quirk/lupinetalker
-	name = "Knows Lupine"
+	name = "(Language) Knows Lupine"
 	desc = "I learned to speak lupine in my time here."
 	value = 1
 
@@ -718,14 +718,14 @@
 
 
 /datum/quirk/selfaware
-	name = "Self-Aware"
+	name = "(Virtue) Self-Aware"
 	desc = "I know the extent of my wounds to a terrifying scale."
 	value = 1
 	mob_trait = TRAIT_SELF_AWARE
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
 
 /datum/quirk/clothing_stasher
-	name = "Clothing stasher"
+	name = "(Clothing) Clothing stasher"
 	desc = "You have a few clothing stashed away, the majority of it are from loadout. (This Quirk gives you access to the tree to almost all the loadout items, but be careful that it will bloat the tree.)"
 
 
@@ -814,9 +814,9 @@
 
 
 /datum/quirk/magic_potential
-	name = "Magical Potential"
+	name = "(Spells) Magical Potential"
 	desc = "You being born with magical blood, or learning through books, you know the way of arcane and have your trusty book with you, its more like a old book that you can't really use anymore, need get an actual new one. Precious and valuable, you would kill anyone if they touched this book, by Mystra spectral balls! (Do not pick this if you join a role with magic power, it is buggy.)"
-
+	value = 3
 
 /datum/quirk/magic_potential/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -826,9 +826,9 @@
 
 
 /datum/quirk/cleric
-	name = "Clerical Potential"
+	name = "(Spells) Clerical Potential"
 	desc = "One of the gods favor you and has given you holy potential. (Do not pick this if you join a role with faith power, it is buggy.)"
-
+	value = 3
 
 /datum/quirk/cleric/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -842,7 +842,7 @@
 
 
 /datum/quirk/nymphomaniac
-	name = "Nymphomaniac"
+	name = "(Kinky) Nymphomaniac"
 	desc = "My nymphomania does not really helps, it makes me aroused. At least i good on the bed with it"
 	value = -3 // this thing really really sucks to have. I watched someone suffer all round with it.
 
@@ -855,7 +855,7 @@
 
 
 /datum/quirk/hypersensitivity
-	name = "Hypersensitivity"
+	name = "(Kinky) Hypersensitivity"
 	desc = "I am so senstiive even my pants are enough to constantly arouse me... I must not wear pants or wear things that don't touch my groin. Atleast my experiences with certain things make me good in bed."
 	value = -3 // this thing really really sucks to have. I watched someone suffer all round with it.
 
@@ -867,7 +867,7 @@
 
 
 /datum/quirk/loveless
-	name = "Loveless"
+	name = "(Flaw) Loveless"
 	desc = "I am unable to show any kind of affection or love, whether carnal or platonic."
 	value = -3
 
@@ -876,7 +876,7 @@
 	H.add_curse(/datum/curse/eora, TRUE)
 
 /datum/quirk/pacifist
-	name = "Pacifist"
+	name = "(Flaw) Pacifist"
 	desc = "Violence disgusts me. I cannot bring myself to wield any kind of physical weapon."
 	value = -6
 
@@ -887,7 +887,7 @@
 
 
 /datum/quirk/helltalker
-	name = "Knows Hellspeak"
+	name = "(Language) Knows Hellspeak"
 	desc = "I learned to speak hellish in my time here."
 	value = 1
 
@@ -898,7 +898,7 @@
 
 
 /datum/quirk/draconicspeaker
-	name = "Knows Draconic"
+	name = "(Language) Knows Draconic"
 	desc = "I learned to speak Draconic in my time here."
 	value = 1
 

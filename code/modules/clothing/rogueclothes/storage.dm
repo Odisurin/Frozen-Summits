@@ -35,7 +35,7 @@
 	icon_state = "leather"
 	item_state = "leather"
 	equip_sound = 'sound/blank.ogg'
-	heldz_items = 3
+	heldz_items = 5
 	sewrepair = TRUE
 	resistance_flags = FIRE_PROOF
 
@@ -76,13 +76,13 @@
 	icon_state = "rope"
 	item_state = "rope"
 	color = "#b9a286"
-	heldz_items = 1
+	heldz_items = 3
 
 /obj/item/storage/belt/rogue/leather/cloth
 	name = "cloth sash"
 	desc = ""
 	icon_state = "cloth"
-	heldz_items = 1
+	heldz_items = 3
 
 /obj/item/storage/belt/rogue/leather/cloth/lady
 	color = "#575160"
