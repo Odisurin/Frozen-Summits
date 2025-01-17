@@ -65,6 +65,7 @@
 #define TRAIT_STRONGTHROW "Strong Throw" // 1.5x throw distance and force
 #define TRAIT_MARTIALARTIST "Martial Artist" //more unarmed combat options
 #define TRAIT_PUGILIST "Pugilist" //more punch damage
+#define TRAIT_SLOPPYSLEEPER "Sloppy Sleeper"
 //Hearthstone end.
 
 // PATRON GOD TRAITS
@@ -210,6 +211,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SEA_DRINKER = span_info("As a denizen of the deep, I can drink salty ocean water safely."),
 	TRAIT_STUDENT =  span_info("I am overwhelmed by all this knowledge!"),
 	TRAIT_BIGGUY = span_info("My immense frame and size allows me to smash through wooden walls, and into people with more effectiveness."),
+	TRAIT_SLOPPYSLEEPER = span_info("I can sleep anywhere."),
 ))
 
 // trait accessor defines

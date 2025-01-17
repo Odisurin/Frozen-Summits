@@ -280,3 +280,103 @@
 /datum/quirk/elemental_breath_fire/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/teach)
+
+
+/datum/quirk/sea_drinker
+	name = "(Virtue) - Sea Drinker"
+	desc = "As a denizen of the deep, I can drink salty ocean water safely."
+	value = 2
+
+/datum/quirk/sea_drinker/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_SEA_DRINKER, TRAIT_GENERIC)
+
+/datum/quirk/student
+	name = "(Cosmetic) - Student"
+	desc = "I am overwhelmed by all this knowledge... so much to learn!"
+	value = 0
+
+/datum/quirk/student/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_STUDENT, TRAIT_GENERIC)
+
+/datum/quirk/bigguy
+	name = "(Health) - Big Guy"
+	desc = "My immense frame and size allows me to smash through wooden walls and doors, and into people with more effectiveness, and throw them really easily."
+	value = 3
+
+/datum/quirk/bigguy/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_BIGGUY, TRAIT_GENERIC)
+
+/datum/quirk/abyssor_swim
+	name = "(Virtue) - Blessed Swim"
+	desc = "I get far less tired when swimming than my peers."
+	value = 2
+
+/datum/quirk/abyssor_swim/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_ABYSSOR_SWIM, TRAIT_GENERIC)
+
+/datum/quirk/waterbreathing
+	name = "(Virtue) - Water Breathing"
+	desc = "I do not drown in bodies of water."
+	value = 2
+
+/datum/quirk/waterbreathing/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_WATERBREATHING, TRAIT_GENERIC)
+
+/datum/quirk/guardsman
+	name = "(Virtue) - Guardsman"
+	desc = "I am vigilant in my duties. In the town of Frozen Summit, my abilities are sharper due to my routine and familiarity."
+	value = 2
+
+/datum/quirk/guardsman/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_GUARDSMAN, TRAIT_GENERIC)
+
+/datum/quirk/woodsman
+	name = "(Virtue) - Woodsman"
+	desc = "I am vigilant in my duties. In the grove and coast of Frozen Summit, my abilities are sharper due to my routine and familiarity."
+	value = 1
+
+/datum/quirk/woodsman/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_WOODSMAN, TRAIT_GENERIC)
+
+/datum/quirk/bad_mood
+	name = "(Flaw) - Bad Mood"
+	desc = "Everything just seems to piss me off."
+	value = -3
+
+/datum/quirk/bad_mood/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_BAD_MOOD, TRAIT_GENERIC)
+
+/datum/quirk/bready
+	name = "(Skills) - Battle Ready"
+	desc = "Defensive stance does not passively fatigue me."
+	value = 4
+
+/datum/quirk/bready/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_BREADY, TRAIT_GENERIC)
+
+/datum/quirk/mediumarmor
+	name = "(Skills) - Medium Armor Proficiency"
+	desc = "I can move freely in medium armor."
+	value = 4
+
+/datum/quirk/mediumarmor/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+
+/datum/quirk/heavyarmor
+	name = "(Skills) - Heavy Armor Proficiency"
+	desc = "I can move freely in heavy armor."
+	value = 4
+
+/datum/quirk/heavyarmor/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
