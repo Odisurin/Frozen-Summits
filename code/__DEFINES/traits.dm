@@ -207,7 +207,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_MARTIALARTIST = "I have better kicks.", // Hearthstone change
 	TRAIT_PUGILIST = "I have stronger punches.", // Hearthstone change
 	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
-	TRAIT_SEA_DRINKER = span_info("As a denizen of the deep, I can drink salty ocean water safely.")
+	TRAIT_SEA_DRINKER = span_info("As a denizen of the deep, I can drink salty ocean water safely."),
 	TRAIT_STUDENT =  span_info("I am overwhelmed by all this knowledge!"),
 	TRAIT_BIGGUY = span_info("My immense frame and size allows me to smash through wooden walls, and into people with more effectiveness."),
 ))

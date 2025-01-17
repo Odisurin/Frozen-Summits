@@ -25,7 +25,7 @@
 	var/close_delay = -1 //-1 if does not auto close.
 	var/openSound = 'sound/blank.ogg'
 	var/closeSound = 'sound/blank.ogg'
-
+	var/smashable = TRUE
 	var/sheetType = /obj/item/stack/sheet/metal //what we're made of
 	var/sheetAmount = 7 //how much we drop when deconstructed
 
