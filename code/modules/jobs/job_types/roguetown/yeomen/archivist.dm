@@ -114,10 +114,6 @@
 					return  // student canceled
 				if(alert(L, "Are you sure you want to study [item.name]?", "Learning", "Learn", "Cancel") == "Cancel")
 					return
-				if(HAS_TRAIT(L, TRAIT_STUDENT))
-					to_chat(L, span_warning("There's no way I could handle all that knowledge!"))
-					to_chat(usr, span_warning("My student cannot handle that much knowledge at once!"))
-					return // cannot teach the same student twice
 				if(!(item in list(/datum/skill/misc/reading, /datum/skill/misc/music, /datum/skill/craft/cooking, /datum/skill/misc/music, /datum/skill/misc/sewing)) && L.mind?.get_skill_level(item) < SKILL_LEVEL_NOVICE)
 					to_chat(L, span_warning("I cannot understand the lesson on [item.name], I need to get more skilled first!"))
 					to_chat(usr, span_warning("I try teaching [L] [item.name] but my student couldnt grasp the lesson!"))

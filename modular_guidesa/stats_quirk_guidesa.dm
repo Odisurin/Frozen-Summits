@@ -310,3 +310,9 @@
 /datum/quirk/cursed/on_spawn()
     var/mob/living/carbon/human/H = quirk_holder
     H.change_stat("fortune", -4)
+
+
+
+
+
+
