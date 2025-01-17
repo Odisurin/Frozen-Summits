@@ -1,6 +1,6 @@
 /datum/migrant_role/heartfelt/lord
-	name = "Lord of Heartfelt"
-	greet_text = "You are the Lord of Heartfelt, ruler of a once-prosperous barony now in ruin. Guided by your Magos, you journey to the Peak, seeking aid to restore your domain to its former glory, or perhaps claim a new throne."
+	name = "Elturel Noble"
+	greet_text = "You are a wandering Lord, once councilmember in the citystate of Elturel. After the return from the hells your holds were destroyed or claimed by other nobles. Guided by your Magos, you journey to the Peak, seeking aid to restore your domain to its former glory, or perhaps claim a new throne."
 	outfit = /datum/outfit/job/roguetown/heartfelt/lord
 	allowed_sexes = list(MALE)
 	allowed_races = RACES_ALL_KINDS
@@ -50,8 +50,8 @@
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
 /datum/migrant_role/heartfelt/lady
-	name = "Lady of Heartfelt"
-	greet_text = "You are the Lady of Heartfelt, once a respected noblewoman now struggling to survive in a desolate landscape. With your home in ruins, you look to the Peak, hoping to find new purpose or refuge amidst the chaos."
+	name = "Lady of Elturel"
+	greet_text = "Once a respected noblewoman now struggling to survive in a desolate landscape. With your home in ruins, you look to the cold north, hoping to find new purpose or refuge amidst the chaos."
 	outfit = /datum/outfit/job/roguetown/heartfelt/lady
 	allowed_sexes = list(FEMALE)
 	allowed_races = RACES_ALL_KINDS
@@ -94,8 +94,8 @@
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 
 /datum/migrant_role/heartfelt/hand
-	name = "Hand of Heartfelt"
-	greet_text = "You are the Hand of Heartfelt, burdened by the perception of failure in protecting your Lord's domain. Despite doubts from others, your loyalty remains steadfast as you journey to the Peak, determined to fulfill your duties."
+	name = "Hand of Elturel"
+	greet_text = "You were once the hand of your Lord, burdened by the perception of failure in protecting your Lord's domain. Despite doubts from others, your loyalty remains steadfast as you journey to the North, determined to fulfill your duties."
 	outfit = /datum/outfit/job/roguetown/heartfelt/hand
 	allowed_races = RACES_ALL_KINDS
 	grant_lit_torch = TRUE
@@ -135,8 +135,8 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 
 /datum/migrant_role/heartfelt/knight
-	name = "Knight of Heartfelt"
-	greet_text = "You are a Knight of Heartfelt, once part of a brotherhood in service to your Lord. Now, alone and committed to safeguarding what remains of your court, you ride to the Peak, resolved to ensure their safe arrival."
+	name = "Knight of Elturel"
+	greet_text = "You are a wandering Knight, once part of a brotherhood in service to your Lord. Now, alone and committed to safeguarding what remains of your court, you ride to the Peak, resolved to ensure their safe arrival."
 	outfit = /datum/outfit/job/roguetown/heartfelt/knight
 	allowed_races = RACES_ALL_KINDS
 	grant_lit_torch = TRUE
@@ -208,8 +208,8 @@
 		H.name = "[honorary] [prev_name]"
 
 /datum/migrant_role/heartfelt/magos
-	name = "Magos of Heartfelt"
-	greet_text = "You are the Magos of Heartfelt, renowned for your arcane knowledge yet unable to foresee the tragedy that befell your home. Drawn by a guiding star to the Peak, you seek answers and perhaps a new purpose in the wake of destruction."
+	name = "Magos of Elturel"
+	greet_text = "You used to be the court wizard of a great house, renowned for your arcane knowledge yet unable to foresee the tragedy that befell your home. Drawn by a guiding star to the North, you seek answers and perhaps a new purpose in the wake of destruction."
 	outfit = /datum/outfit/job/roguetown/heartfelt/magos
 	allowed_races = RACES_ALL_KINDS
 	grant_lit_torch = TRUE
@@ -227,7 +227,7 @@
 	id = /obj/item/clothing/ring/gold
 	r_hand = /obj/item/rogueweapon/woodstaff
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/reagent_containers/glass/bottle/rogue/poison,/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
+	backpack_contents = list(/obj/item/slimepotion/lovepotion,/obj/item/reagent_containers/glass/bottle/rogue/poison,/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, "[type]")
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
@@ -266,8 +266,8 @@
 			H.mind.AddSpell(new S)
 
 /datum/migrant_role/heartfelt/prior
-	name = "Prior of Heartfelt"
-	greet_text = "The Prior of Heartfelt, you were destined for ascension within the Church, but fate intervened with the barony's downfall, delaying it indefinitely. Still guided by the blessings of Astrata, you journey to the Peak, determined to offer what aid and solace you can."
+	name = "Prior of Elturel"
+	greet_text = "As the Prior you were destined for ascension within the Church, but fate intervened with the barony's downfall, delaying it indefinitely. Still guided by the blessings of Lathander, you journey to the Peak, determined to offer what aid and solace you can."
 	outfit = /datum/outfit/job/roguetown/heartfelt/prior
 	allowed_races = RACES_ALL_KINDS
 	grant_lit_torch = TRUE
@@ -307,3 +307,7 @@
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_spells_priest(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
+
+/datum/outfit/job/roguetown/heartfelt/prior/post_equip(mob/living/carbon/human/H)
+	..()
+	H.virginity = TRUE

@@ -56,7 +56,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/nojumpsuit = 0	// this is sorta... weird. it basically lets you equip stuff that usually needs jumpsuits without one, like belts and pockets and ids
 	var/say_mod = "says"	// affects the speech message
 	var/list/default_features = MANDATORY_FEATURE_LIST // Default mutant bodyparts for this species. Don't forget to set one for every mutant bodypart you allow this species to have.
-	var/list/mutant_bodyparts = list() 	// Visible CURRENT bodyparts that are unique to a species. DO NOT USE THIS AS A LIST OF ALL POSSIBLE BODYPARTS AS IT WILL FUCK SHIT UP! Changes to this list for non-species specific bodyparts (ie cat ears and tails) should be assigned at organ level if possible. Layer hiding is handled by handle_mutant_bodyparts() below.
 	var/speedmod = 0	// this affects the race's speed. positive numbers make it move slower, negative numbers make it move faster
 	var/armor = 0		// overall defense for the race... or less defense, if it's negative.
 	var/brutemod = 1	// multiplier for brute damage
@@ -71,6 +70,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/siemens_coeff = 1 //base electrocution coefficient
 	var/damage_overlay_type = "human" //what kind of damage overlays (if any) appear on our species when wounded?
 	var/fixed_mut_color = "" //to use MUTCOLOR with a fixed color that's independent of dna.feature["mcolor"]
+	var/inert_mutation 	= DWARFISM //special mutation that can be found in the genepool. Dont leave empty or changing species will be a headache
 	var/deathsound //used to set the mobs deathsound on species change
 	var/grab_sound //Special sound for grabbing
 	var/datum/outfit/outfit_important_for_life /// A path to an outfit that is important for species life e.g. plasmaman outfit
@@ -120,6 +120,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		//ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
 		//ORGAN_SLOT_PENIS = /obj/item/organ/penis,
 		//ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
+		//ORGAN_SLOT_BELLY = /obj/item/organ/belly,
 		//ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
 		)
 	/// List of bodypart features of this species
@@ -389,7 +390,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		C.hud_used.update_locked_slots()
 
 	// this needs to be FIRST because qdel calls update_body which checks if we have DIGITIGRADE legs or not and if not then removes DIGITIGRADE from species_traits
-	if(("legs" in C.dna.species.mutant_bodyparts) && C.dna.features["legs"] == "Digitigrade Legs")
+	if(C.dna.features["legs"] == "Digitigrade Legs")
 		species_traits += DIGITIGRADE
 	if(DIGITIGRADE in species_traits)
 		C.Digitigrade_Leg_Swap(FALSE)
@@ -421,11 +422,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	for(var/X in inherent_traits)
 		ADD_TRAIT(C, X, SPECIES_TRAIT)
 
+	if(TRAIT_VIRUSIMMUNE in inherent_traits)
+		for(var/datum/disease/A in C.diseases)
+			A.cure(FALSE)
+
 	if(TRAIT_TOXIMMUNE in inherent_traits)
 		C.setToxLoss(0, TRUE, TRUE)
 
 	if(TRAIT_NOMETABOLISM in inherent_traits)
 		C.reagents.end_metabolization(C, keep_liverless = TRUE)
+
+	if(TRAIT_RADIMMUNE in inherent_traits)
+		C.dna.remove_all_mutations() // Radiation immune mobs can't get mutations normally
 
 	if(inherent_factions)
 		for(var/i in inherent_factions)
@@ -466,6 +474,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		C.Digitigrade_Leg_Swap(TRUE)
 	for(var/X in inherent_traits)
 		REMOVE_TRAIT(C, X, SPECIES_TRAIT)
+
+	//If their inert mutation is not the same, swap it out
+	if((inert_mutation != new_species.inert_mutation) && LAZYLEN(C.dna.mutation_index) && (inert_mutation in C.dna.mutation_index))
+		C.dna.remove_mutation(inert_mutation)
+		//keep it at the right spot, so we can't have people taking shortcuts
+		var/location = C.dna.mutation_index.Find(inert_mutation)
+		C.dna.mutation_index[location] = new_species.inert_mutation
+		C.dna.mutation_index[new_species.inert_mutation] = create_sequence(new_species.inert_mutation)
 
 	if(inherent_factions)
 		for(var/i in inherent_factions)
@@ -813,6 +829,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(!disable_warning)
 					to_chat(H, span_warning("The [I.name] is too big to attach!")) //should be src?
 				return FALSE
+			if( istype(I, /obj/item/pda) || istype(I, /obj/item/pen) || is_type_in_list(I, H.wear_armor.allowed) )
+				return TRUE
 			return FALSE
 		if(SLOT_HANDCUFFED)
 			if(H.handcuffed)
@@ -1027,8 +1045,38 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.remove_stress_list(list(/datum/stressevent/thirst,/datum/stressevent/drym))
 			H.apply_status_effect(/datum/status_effect/debuff/thirstyt3)
 
+
 /datum/species/proc/update_health_hud(mob/living/carbon/human/H)
 	return 0
+
+/datum/species/proc/handle_mutations_and_radiation(mob/living/carbon/human/H)
+	. = FALSE
+	var/radiation = H.radiation
+
+	if(HAS_TRAIT(H, TRAIT_RADIMMUNE))
+		radiation = 0
+		return TRUE
+
+	if(radiation > RAD_MOB_KNOCKDOWN && prob(RAD_MOB_KNOCKDOWN_PROB))
+		if(!H.IsParalyzed())
+			H.emote("collapse", TRUE)
+		H.Paralyze(RAD_MOB_KNOCKDOWN_AMOUNT)
+		to_chat(H, span_danger("I feel weak."))
+
+	if(radiation > RAD_MOB_VOMIT && prob(RAD_MOB_VOMIT_PROB))
+		H.vomit(10, TRUE)
+
+	if(radiation > RAD_MOB_MUTATE)
+		if(prob(1))
+			to_chat(H, span_danger("I mutate!"))
+			H.easy_randmut(NEGATIVE+MINOR_NEGATIVE)
+			H.emote("gasp")
+			H.domutcheck()
+
+	if(radiation > RAD_MOB_HAIRLOSS)
+		if(prob(15) && !(H.hairstyle == "Bald") && (HAIR in species_traits))
+			to_chat(H, span_danger("My hair starts to fall out in clumps..."))
+			addtimer(CALLBACK(src, PROC_REF(go_bald), H), 50)
 
 /datum/species/proc/go_bald(mob/living/carbon/human/H)
 	if(QDELETED(H))	//may be called from a timer
@@ -1372,7 +1420,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/selzone = accuracy_check(user.zone_selected, user, target, /datum/skill/combat/unarmed, user.used_intent)
 			var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(selzone))
 			var/damage = user.get_punch_dmg() * 1.4
+			if(HAS_TRAIT(user, TRAIT_MARTIALARTIST))
+				damage *= 1.5
 			var/armor_block = target.run_armor_check(selzone, "blunt", blade_dulling = BCLASS_BLUNT, damage = damage)
+			var/balance = 10
 			target.next_attack_msg.Cut()
 			var/nodmg = FALSE
 			if(!target.apply_damage(damage, user.dna.species.attack_type, affecting, armor_block))
@@ -1380,13 +1431,24 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				target.next_attack_msg += " <span class='warning'>Armor stops the damage.</span>"
 			else
 				if(affecting)
-					affecting.bodypart_attacked_by(BCLASS_BLUNT, damage, user, user.zone_selected, crit_message = TRUE)
-			target.visible_message(span_danger("[user] stomps [target]![target.next_attack_msg.Join()]"), \
-							span_danger("I'm stomped by [user]![target.next_attack_msg.Join()]"), span_hear("I hear a sickening kick!"), COMBAT_MESSAGE_RANGE, user)
-			to_chat(user, span_danger("I stomp on [target]![target.next_attack_msg.Join()]"))
+					if(selzone == BODY_ZONE_PRECISE_NECK)
+						to_chat(user, "<span class='danger'>I put my foot on [target]'s neck!</span>")
+						nodmg = TRUE
+						target.emote("gasp")
+						target.adjustOxyLoss(25)
+						target.Immobilize(5)
+						balance += 15
+						target.visible_message("<span class='danger'>[user] puts their foot on [target]'s neck!</span>", \
+										"<span class='danger'>I'm get my throat stepped on by [user]! I can't breathe!</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, user)
+					else
+						affecting.bodypart_attacked_by(BCLASS_BLUNT, damage, user, user.zone_selected, crit_message = TRUE)
+						target.visible_message("<span class='danger'>[user] stomps [target]![target.next_attack_msg.Join()]</span>", \
+										"<span class='danger'>I'm stomped by [user]![target.next_attack_msg.Join()]</span>", "<span class='hear'>I hear a sickening kick!</span>", COMBAT_MESSAGE_RANGE, user)
+						to_chat(user, "<span class='danger'>I stomp on [target]![target.next_attack_msg.Join()]</span>")
 			target.next_attack_msg.Cut()
 			log_combat(user, target, "kicked")
 			user.do_attack_animation(target, ATTACK_EFFECT_DISARM)
+			user.OffBalance(balance)
 			if(!nodmg)
 				playsound(target, 'sound/combat/hits/kick/stomp.ogg', 100, TRUE, -1)
 			return TRUE
@@ -1476,6 +1538,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(target.mind)
 			target.mind.attackedme[user.real_name] = world.time
 		user.rogfat_add(15)
+		user.OffBalance(15)
 		target.forcesay(GLOB.hit_appends)
 
 /datum/species/proc/spec_hitby(atom/movable/AM, mob/living/carbon/human/H)
@@ -1606,7 +1669,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		switch(hit_area)
 			if(BODY_ZONE_HEAD)
-//				if(!I.get_sharpness() && armor_block < 50)
+				if(!I.get_sharpness() && armor_block < 50)
 //					if(prob(I.force))
 //						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 20)
 //						if(H.stat == CONSCIOUS)
@@ -1617,6 +1680,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //							H.gain_trauma(/datum/brain_trauma/mild/concussion)
 //					else
 //						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, I.force * 0.2)
+
+					if(H.mind && H.stat == CONSCIOUS && H != user && prob(I.force + ((100 - H.health) * 0.5))) // rev deconversion through blunt trauma.
+						var/datum/antagonist/rev/rev = H.mind.has_antag_datum(/datum/antagonist/rev)
+						if(rev)
+							rev.remove_revolutionary(FALSE, user)
 
 				if(bloody)	//Apply blood
 					if(H.wear_mask)
@@ -1738,6 +1806,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	return 1
 
 /datum/species/proc/on_hit(obj/projectile/P, mob/living/carbon/human/H)
+	// called when hit by a projectile
+	switch(P.type)
+		if(/obj/projectile/energy/floramut) // overwritten by plants/pods
+			H.show_message(span_notice("The radiation beam dissipates harmlessly through my body."))
+		if(/obj/projectile/energy/florayield)
+			H.show_message(span_notice("The radiation beam dissipates harmlessly through my body."))
 
 /datum/species/proc/bullet_act(obj/projectile/P, mob/living/carbon/human/H, def_zone = BODY_ZONE_CHEST)
 	// called before a projectile hit
@@ -1762,6 +1836,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/handle_environment(datum/gas_mixture/environment, mob/living/carbon/human/H)
 	if(!environment)
+		return
+	if(istype(H.loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
 
 	var/loc_temp = H.get_temperature(environment)
@@ -1802,9 +1878,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		var/burn_damage
 		var/firemodifier = H.fire_stacks / 50
 		if (H.on_fire)
-			burn_damage = 20
-			if(H.fire_stacks >= HUMAN_FIRE_STACK_ICON_NUM)
-				burn_damage = 200
+			burn_damage = 30
+			if(H.fire_stacks >= 10)
+				burn_damage = 60
 		else
 			firemodifier = min(firemodifier, 0)
 			burn_damage = max(log(2-firemodifier,(H.bodytemperature-BODYTEMP_NORMAL))-5,0) // this can go below 5 at log 2.5

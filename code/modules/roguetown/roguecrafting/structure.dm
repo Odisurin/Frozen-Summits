@@ -90,7 +90,7 @@
 /datum/crafting_recipe/roguetown/roguebin
 	name = "wooden bin"
 	result = /obj/item/roguebin
-	reqs = list(/obj/item/grown/log/tree/small = 2)
+	reqs = list(/obj/item/natural/plank = 2)
 	verbage_simple = "make"
 	verbage = "makes"
 	skillcraft = /datum/skill/craft/carpentry
@@ -127,6 +127,22 @@
 	verbage_simple = "construct"
 	verbage = "constructs"
 
+/datum/crafting_recipe/roguetown/structure/window
+	name = "solid window"
+	result = /obj/structure/roguewindow/solid
+	reqs = list(/obj/item/natural/plank = 1,
+				/obj/item/natural/glass = 1)
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/masonry
+
+/datum/crafting_recipe/roguetown/structure/windowopen
+	name = "openable window"
+	result = /obj/structure/roguewindow/openclose
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/natural/glass = 1,
+				/obj/item/ingot/iron = 1)
+	craftsound = 'sound/foley/Building-01.ogg'
+
 /obj/item/chair/stool/bar/rogue/crafted
 	sellprice = 6
 
@@ -161,7 +177,7 @@
 /datum/crafting_recipe/roguetown/structure/forge
 	name = "forge"
 	result = /obj/machinery/light/rogue/forge
-	reqs = list(/obj/item/natural/stone = 4,
+	reqs = list(/obj/item/natural/stoneblock = 4,
 				/obj/item/rogueore/coal = 1)
 	verbage_simple = "build"
 	verbage = "builds"
@@ -617,3 +633,12 @@
 	craftdiff = 3
 	wallcraft = TRUE
 	ontile = TRUE
+/datum/crafting_recipe/roguetown/structure/cauldron
+	name = "cauldron"
+	result = /obj/machinery/light/rogue/cauldron
+	reqs = list(/obj/item/natural/stone = 4,
+				/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "craft"
+	verbage = "crafts"
+	craftsound = 'sound/foley/Building-01.ogg'
+	skillcraft = /datum/skill/craft/masonry

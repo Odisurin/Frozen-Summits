@@ -1,15 +1,15 @@
 //shield flail or longsword, tief can be this with red cross	
 
 /datum/job/roguetown/templar
-	title = "Templar"
+	title = "Paladin"
 	department_flag = CHURCHMEN
 	faction = "Station"
-	tutorial = "Templars are warriors who have forsaken wealth and title in lieu of service to the church, due to either zealotry or a past shame. They guard the church and its priest while keeping a watchful eye against heresy and nite-creechers. Within troubled dreams, they wonder if the blood they shed makes them holy or stained."
+	tutorial = "Paladins are holy crusaders, sworn to an oath to promote and fight for their beliefs and values."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_patrons = ALL_DIVINE_PATRONS
 	outfit = /datum/outfit/job/roguetown/templar
-	min_pq = 3 //Deus vult, but only according to the proper escalation rules
+	min_pq = 0 //Deus vult, but only according to the proper escalation rules
 	max_pq = null
 	round_contrib_points = 2
 	total_positions = 3
@@ -52,8 +52,7 @@
 			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
 			cloak = /obj/item/clothing/cloak/tabard/crusader/astrata
 		if(/datum/patron/divine/abyssor)
-			neck = /obj/item/clothing/neck/roguetown/psicross/abyssor
-			cloak = /obj/item/clothing/cloak/abyssortabard	
+			neck = /obj/item/clothing/neck/roguetown/psicross/abyssor	
 		if(/datum/patron/divine/dendor)
 			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 			cloak = /obj/item/clothing/cloak/tabard/crusader/dendor
@@ -75,11 +74,9 @@
 		if(/datum/patron/divine/malum)
 			neck = /obj/item/clothing/neck/roguetown/psicross/malum
 			cloak = /obj/item/clothing/cloak/tabard/crusader/malum
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
-	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
-	wrists = /obj/item/clothing/wrists/roguetown/bracers
+	pants = /obj/item/clothing/under/roguetown/tights/black
+	wrists = /obj/item/clothing/wrists/roguetown/wrappings
 	shoes = /obj/item/clothing/shoes/roguetown/sandals
-	r_hand = /obj/item/rogueweapon/katar
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE) 
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
@@ -123,8 +120,6 @@
 			cloak = /obj/item/clothing/cloak/templar/astratan
 		if(/datum/patron/divine/abyssor)
 			wrists = /obj/item/clothing/neck/roguetown/psicross/abyssor
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/abyssorgreathelm
-			cloak = /obj/item/clothing/cloak/abyssortabard
 		if(/datum/patron/divine/dendor)
 			wrists = /obj/item/clothing/neck/roguetown/psicross/dendor
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
@@ -151,7 +146,6 @@
 			wrists = /obj/item/clothing/neck/roguetown/psicross/malum
 			cloak = /obj/item/clothing/cloak/templar/malumite
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/malum
-			H.AddSpell(new /obj/effect/proc_holder/spell/invoked/malum_flame_rogue)
 		if(/datum/patron/old_god)
 			wrists = /obj/item/clothing/neck/roguetown/psicross
 			cloak = /obj/item/clothing/cloak/tabard/crusader/psydon
@@ -159,9 +153,9 @@
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	pants = /obj/item/clothing/under/roguetown/chainlegs
-	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
-	armor = /obj/item/clothing/suit/roguetown/armor/plate	///Half-Plate not fullplate
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)

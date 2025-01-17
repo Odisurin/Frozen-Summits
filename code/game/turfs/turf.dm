@@ -1,4 +1,4 @@
-/turf
+/turf 
 	icon = 'icons/turf/floors.dmi'
 	level = 1
 
@@ -41,6 +41,8 @@
 
 	var/blade_dulling = DULLING_FLOOR
 	var/attacked_sound
+	///Lumcount added by sources other than lighting datum objects, such as the overlay lighting component.
+	var/dynamic_lumcount = 0
 
 	var/break_sound = null //The sound played when a turf breaks
 	var/debris = null
@@ -59,7 +61,6 @@
 	. = ..()
 
 /turf/Initialize(mapload)
-	SHOULD_CALL_PARENT(FALSE)
 #ifdef TESTSERVER
 	if(!icon_state)
 		icon_state = "cantfind"
@@ -76,6 +77,7 @@
 	levelupdate()
 	if(smooth)
 		queue_smooth(src)
+	visibilityChanged()
 
 	for(var/atom/movable/AM in src)
 		Entered(AM)
@@ -88,7 +90,7 @@
 		CALCULATE_ADJACENT_TURFS(src)
 		SSair.add_to_active(src)
 
-	if (light_power && (light_outer_range || light_inner_range))
+	if (light_power && light_range)
 		update_light()
 
 	if(turf_integrity == null)
@@ -102,8 +104,6 @@
 	if(T)
 		T.multiz_turf_new(src, UP)
 		SEND_SIGNAL(T, COMSIG_TURF_MULTIZ_NEW, src, UP)
-	if(!mapload)
-		reassess_stack()
 
 	if (opacity)
 		has_opaque_atom = TRUE
@@ -141,6 +141,7 @@
 			B.vars[I] = null
 		return
 	SSair.remove_from_active(src)
+	visibilityChanged()
 	QDEL_LIST(blueprint_data)
 	flags_1 &= ~INITIALIZED_1
 	requires_activation = FALSE
@@ -222,9 +223,6 @@
 				nuarea.contents += src
 				change_area(A, nuarea)
 
-/turf/proc/can_traverse_safely(atom/movable/traveler)
-	return TRUE
-
 /turf/attack_hand(mob/user)
 	. = ..()
 	if(.)
@@ -232,62 +230,8 @@
 	user.Move_Pulled(src)
 
 /turf/proc/multiz_turf_del(turf/T, dir)
-	reassess_stack()
 
 /turf/proc/multiz_turf_new(turf/T, dir)
-	reassess_stack()
-
-/**
- * Check whether the specified turf is blocked by something dense inside it with respect to a specific atom.
- *
- * Returns truthy value TURF_BLOCKED_TURF_DENSE if the turf is blocked because the turf itself is dense.
- * Returns truthy value TURF_BLOCKED_CONTENT_DENSE if one of the turf's contents is dense and would block
- * a source atom's movement.
- * Returns falsey value TURF_NOT_BLOCKED if the turf is not blocked.
- *
- * Arguments:
- * * exclude_mobs - If TRUE, ignores dense mobs on the turf.
- * * source_atom - If this is not null, will check whether any contents on the turf can block this atom specifically. Also ignores itself on the turf.
- * * ignore_atoms - Check will ignore any atoms in this list. Useful to prevent an atom from blocking itself on the turf.
- * * type_list - are we checking for types of atoms to ignore and not physical atoms
- */
-/turf/proc/is_blocked_turf(exclude_mobs = FALSE, source_atom = null, list/ignore_atoms, type_list = FALSE)
-	if(density)
-		return TRUE
-
-	for(var/atom/movable/movable_content as anything in contents)
-		// We don't want to block ourselves
-		if((movable_content == source_atom))
-			continue
-		// dont consider ignored atoms or their types
-		if(length(ignore_atoms))
-			if(!type_list && (movable_content in ignore_atoms))
-				continue
-			else if(type_list && is_type_in_list(movable_content, ignore_atoms))
-				continue
-
-		// If the thing is dense AND we're including mobs or the thing isn't a mob AND if there's a source atom and
-		// it cannot pass through the thing on the turf,  we consider the turf blocked.
-		if(movable_content.density && (!exclude_mobs || !ismob(movable_content)))
-			if(source_atom && movable_content.CanPass(source_atom, get_dir(src, source_atom)))
-				continue
-			return TRUE
-	return FALSE
-
-/**
- * Checks whether the specified turf is blocked by something dense inside it, but ignores anything with the climbable trait
- *
- * Works similar to is_blocked_turf(), but ignores climbables and has less options. Primarily added for jaunting checks
- */
-/turf/proc/is_blocked_turf_ignore_climbable()
-	if(density)
-		return TRUE
-
-	for(var/atom/movable/atom_content as anything in contents)
-		if(atom_content.density && !(atom_content.flags_1 & ON_BORDER_1)) //&& !HAS_TRAIT(atom_content, TRAIT_CLIMBABLE))
-			return TRUE
-	return FALSE
-
 
 //zPassIn doesn't necessarily pass an atom!
 //direction is direction of travel of air
@@ -339,10 +283,38 @@
 	target.zImpact(A, levels, src)
 	return TRUE
 
+/turf/proc/handleRCL(obj/item/twohanded/rcl/C, mob/user)
+	if(C.loaded)
+		for(var/obj/structure/pipe_cleaner/LC in src)
+			if(!LC.d1 || !LC.d2)
+				LC.handlecable(C, user)
+				return
+		C.loaded.place_turf(src, user)
+		if(C.wiring_gui_menu)
+			C.wiringGuiUpdate(user)
+		C.is_empty(user)
+
 /turf/attackby(obj/item/C, mob/user, params, multiplier)
 	if(..())
 		return TRUE
-	return FALSE
+	//Cables and RCD
+	if(can_lay_cable() && istype(C, /obj/item/stack/cable_coil))
+		var/obj/item/stack/cable_coil/coil = C
+		coil.place_turf(src, user)
+		return TRUE
+	else if(can_have_cabling() && istype(C, /obj/item/stack/pipe_cleaner_coil))
+		var/obj/item/stack/pipe_cleaner_coil/coil = C
+		for(var/obj/structure/pipe_cleaner/LC in src)
+			if(!LC.d1 || !LC.d2)
+				LC.attackby(C, user)
+				return
+		coil.place_turf(src, user)
+		return TRUE
+
+	else if(istype(C, /obj/item/twohanded/rcl))
+		handleRCL(C, user)
+
+	return max_integrity && C.attack_turf(src, user, multiplier)
 
 /turf/CanPass(atom/movable/mover, turf/target)
 	if(!target)
@@ -481,6 +453,12 @@
 		if(O.level == 1 && (O.flags_1 & INITIALIZED_1))
 			O.hide(src.intact)
 
+// override for space turfs, since they should never hide anything
+/turf/open/space/levelupdate()
+	for(var/obj/O in src)
+		if(O.level == 1 && (O.flags_1 & INITIALIZED_1))
+			O.hide(0)
+
 // Removes all signs of lattice on the pos of the turf -Donkieyo
 /turf/proc/RemoveLattice()
 	var/obj/structure/lattice/L = locate(/obj/structure/lattice, src)
@@ -493,6 +471,8 @@
 			continue//Will not harm U. Since null != M, can be excluded to kill everyone.
 		M.adjustBruteLoss(damage)
 		M.Unconscious(damage * 4)
+	for(var/obj/mecha/M in src)
+		M.take_damage(damage*2, BRUTE, "blunt", 1)
 
 /turf/proc/Bless()
 	new /obj/effect/blessing(src)
@@ -502,7 +482,7 @@
 	if(.)
 		return
 	if(length(src_object.contents()))
-		to_chat(usr, "<span class='notice'>I start dumping out the contents...</span>")
+		to_chat(usr, span_notice("I start dumping out the contents..."))
 		if(!do_after(usr,20,target=src_object.parent))
 			return FALSE
 
@@ -532,11 +512,38 @@
 
 ////////////////////////////////////////////////////
 
+/turf/singularity_act()
+	if(intact)
+		for(var/obj/O in contents) //this is for deleting things like wires contained in the turf
+			if(O.level != 1)
+				continue
+			if(O.invisibility == INVISIBILITY_MAXIMUM)
+				O.singularity_act()
+	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
+	return(2)
+
+/turf/proc/can_have_cabling()
+	return TRUE
+
+/turf/proc/can_lay_cable()
+	return can_have_cabling() & !intact
+
+/turf/proc/visibilityChanged()
+	GLOB.cameranet.updateVisibility(src)
+	// The cameranet usually handles this for us, but if we've just been
+	// recreated we should make sure we have the cameranet vis_contents.
+	var/datum/camerachunk/C = GLOB.cameranet.chunkGenerated(x, y, z)
+	if(C)
+		if(C.obscuredTurfs[src])
+			vis_contents += GLOB.cameranet.vis_contents_objects
+		else
+			vis_contents -= GLOB.cameranet.vis_contents_objects
+
 /turf/proc/burn_tile()
 
 /turf/proc/is_shielded()
 
-/turf/contents_explosion(severity, target, epicenter, devastation_range, heavy_impact_range, light_impact_range, flame_range)
+/turf/contents_explosion(severity, target)
 	var/affecting_level
 	if(severity == 1)
 		affecting_level = 1
@@ -554,7 +561,7 @@
 				var/atom/movable/AM = A
 				if(!AM.ex_check(explosion_id))
 					continue
-			A.ex_act(severity, target, epicenter, devastation_range, heavy_impact_range, light_impact_range, flame_range)
+			A.ex_act(severity, target)
 			CHECK_TICK
 
 /turf/narsie_act(force, ignore_mobs, probability = 20)
@@ -572,12 +579,30 @@
 	underlay_appearance.dir = adjacency_dir
 	return TRUE
 
+/turf/proc/add_blueprints(atom/movable/AM)
+	var/image/I = new
+	I.appearance = AM.appearance
+	I.appearance_flags = RESET_COLOR|RESET_ALPHA|RESET_TRANSFORM
+	I.loc = src
+	I.setDir(AM.dir)
+	I.alpha = 128
+	LAZYADD(blueprint_data, I)
+
+/turf/proc/add_blueprints_preround(atom/movable/AM)
+	if(!SSticker.HasRoundStarted())
+		if(AM.layer == WIRE_LAYER)	//wires connect to adjacent positions after its parent init, meaning we need to wait (in this case, until smoothing) to take its image
+			SSicon_smooth.blueprint_queue += AM
+		else
+			add_blueprints(AM)
+
 /turf/proc/is_transition_turf()
 	return
 
 /turf/acid_act(acidpwr, acid_volume)
 	. = 1
 	var/acid_type = /obj/effect/acid
+	if(acidpwr >= 200) //alien acid power
+		acid_type = /obj/effect/acid/alien
 	var/has_acid_effect = FALSE
 	for(var/obj/O in src)
 		if(intact && O.level == 1) //hidden under the floor
@@ -620,7 +645,7 @@
 
 /turf/proc/add_vomit_floor(mob/living/M, toxvomit = NONE)
 
-	var/obj/effect/decal/cleanable/vomit/V = new /obj/effect/decal/cleanable/vomit(src)
+	var/obj/effect/decal/cleanable/vomit/V = new /obj/effect/decal/cleanable/vomit(src, M.get_static_viruses())
 
 	//if the vomit combined, apply toxicity and reagents to the old vomit
 	if (QDELETED(V))

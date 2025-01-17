@@ -1,5 +1,5 @@
-GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_PENIS, ORGAN_SLOT_VAGINA, ORGAN_SLOT_TESTICLES),
-	BODY_ZONE_CHEST=list(ORGAN_SLOT_BREASTS))) //Vrell - If we want to do this to other organs down the line, we can just add their slots here.
+GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_PENIS, ORGAN_SLOT_VAGINA, ORGAN_SLOT_TESTICLES, ORGAN_SLOT_BUTT),
+	BODY_ZONE_CHEST=list(ORGAN_SLOT_BREASTS, ORGAN_SLOT_BELLY))) //Vrell - If we want to do this to other organs down the line, we can just add their slots here.
 
 /datum/surgery/organ_manipulation
 	name = "Organ manipulation"
@@ -39,6 +39,7 @@ GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_P
 	accept_hand = TRUE
 	implements = list(
 		/obj/item/organ = 80,
+		/obj/item/organ_storage = 80,
 		/obj/item/reagent_containers/food/snacks/organ = 0,
 	)
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
@@ -53,6 +54,7 @@ GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_P
 		TOOL_CROWBAR = 65,
 		TOOL_HAND = 60,
 	)
+
 
 /datum/surgery_step/manipulate_organs/New()
 	. = ..()
@@ -79,6 +81,15 @@ GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_P
 	if(istype(tool, /obj/item/reagent_containers/food/snacks/organ))
 		to_chat(user, span_warning("[tool] was bitten by someone! It's too damaged to use!"))
 		return FALSE
+
+	if(istype(tool, /obj/item/organ_storage))
+		if(!length(tool.contents))
+			to_chat(user, span_warning("There is nothing inside [tool]!"))
+			return FALSE
+		tool = tool.contents[1]
+		if(!isorgan(tool))
+			to_chat(user, span_warning("I cannot put [tool] inside [target]'s [parse_zone(target_zone)]!"))
+			return FALSE
 
 	var/obj/item/organ/organ_tool = tool
 	if(istype(organ_tool))
@@ -118,6 +129,14 @@ GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_P
 	return TRUE
 
 /datum/surgery_step/manipulate_organs/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	if(istype(tool, /obj/item/organ_storage))
+		tool.icon_state = initial(tool.icon_state)
+		tool.desc = initial(tool.desc)
+		tool.cut_overlays()
+		tool = tool.contents[1]
+		if(!isorgan(tool))
+			return FALSE
+
 	var/obj/item/organ/organ_tool = tool
 	if(istype(organ_tool) && user.temporarilyRemoveItemFromInventory(organ_tool))
 		organ_tool.Insert(target)

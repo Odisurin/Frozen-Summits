@@ -79,6 +79,8 @@
 #define DEFAULT_BODYPART_ICON_ROBOTIC 'icons/mob/augmentation/augments.dmi'
 
 #define MONKEY_BODYPART "monkey"
+#define ALIEN_BODYPART "alien"
+#define LARVA_BODYPART "larva"
 #define DEVIL_BODYPART "devil"
 /*see __DEFINES/inventory.dm for bodypart bitflag defines*/
 
@@ -346,7 +348,7 @@
 
 // Roundstart trait system
 
-#define MAX_QUIRKS 6 //The maximum amount of quirks one character can have at roundstart
+#define MAX_QUIRKS 40 //The maximum amount of quirks one character can have at roundstart
 
 // AI Toggles
 #define AI_CAMERA_LUMINOSITY	5
@@ -376,6 +378,8 @@
 #define MIRROR_PRIDE  (1<<2)
 //Race swap wizard event
 #define RACE_SWAP     (1<<3)
+//ERT spawn template (avoid races that don't function without correct gear)
+#define ERT_SPAWN     (1<<4)
 //xenobio black crossbreed
 #define SLIME_EXTRACT (1<<5)
 //Wabbacjack staff projectiles
@@ -463,7 +467,6 @@
 #define SKIN_COLOR_CRESCENT_FANG "8A8951"
 #define SKIN_COLOR_MURKWALKER "716646"
 #define SKIN_COLOR_SHATTERHORN "D6D5E2"
-#define SKIN_COLOR_SPIRITCRUSHER "9D4D62"
 
 //TIEFLING SKIN TONES
 #define SKIN_COLOR_JEHOEL "DBA960"

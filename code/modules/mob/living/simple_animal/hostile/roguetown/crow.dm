@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/food/snacks/crow
-	name = "zad"
+	name = "crow"
 	desc = "Pesky bird."
 	icon_state = "crow"
 	icon = 'icons/roguetown/mob/monster/crow.dmi'
@@ -17,9 +17,10 @@
 	rotprocess = null
 	static_debris = list(/obj/item/natural/feather=1)
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/friedcrow
+	dust_result = /obj/item/alch/airdust
 
 /obj/item/reagent_containers/food/snacks/rogue/friedcrow
-	name = "fried zad"
+	name = "fried crow"
 	desc = ""
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "fcrow"
@@ -30,6 +31,7 @@
 	eat_effect = null
 	rotprocess = 12 MINUTES
 	sellprice = 0
+	dust_result = /obj/item/alch/airdust
 
 /obj/item/reagent_containers/food/snacks/crow/burning(input as num)
 	. = ..()

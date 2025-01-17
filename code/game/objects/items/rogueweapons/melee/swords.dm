@@ -123,6 +123,42 @@
 			if("onbelt")
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
+
+/datum/intent/sword/cut
+	name = "strike"
+	icon_state = "incut"
+	attack_verb = list("cuts", "slashes")
+	animname = "cut"
+	blade_class = BCLASS_CUT
+	chargetime = 0
+	hitsound = list('sound/combat/hits/bladed/genslash (1).ogg', 'sound/combat/hits/bladed/genslash (2).ogg', 'sound/combat/hits/bladed/genslash (3).ogg')
+	swingdelay = 0
+	damfactor = 1.1
+	item_d_type = "slash"
+
+/datum/intent/sword/thrust
+	name = "stab"
+	icon_state = "instab"
+	attack_verb = list("stabs")
+	animname = "stab"
+	blade_class = BCLASS_STAB
+	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
+	penfactor = 20
+	chargetime = 0
+	swingdelay = 0
+	item_d_type = "stab"
+
+/obj/item/rogueweapon/sword/uchigatana
+	force_wielded = 30
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/chop)
+	name = "uchigatana"
+	desc = "Slightly shorter and simpler in design than the tachi, the uchigatana lends itself well to brutal chopping strikes alongside skillful swordplay, but lacks a long crossguard for safely parrying other blades."
+	icon = 'icons/roguetown/weapons/64.dmi'
+	icon_state = "uchigatana"
+	wdefense = 3
+	bloody_icon_state = null
+	bigboy = 1
+
 /obj/item/rogueweapon/sword/stone
 	force = 17 //Weaker than a short sword
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/chop)
@@ -147,7 +183,6 @@
 	gripped_intents = null
 	minstr = 4
 	wdefense = 4
-	wlength = WLENGTH_SHORT
 
 /obj/item/rogueweapon/sword/long
 	force = 25
@@ -467,23 +502,20 @@
 	gripped_intents = null
 	minstr = 4
 	wdefense = 3
-	wlength = WLENGTH_SHORT
 
 /obj/item/rogueweapon/sword/iron/short/chipped
 	force = 17
 	desc = "An ancient-looking iron sword."
 	icon_state = "iswordshort_d"
 	max_integrity = 75
-	wlength = WLENGTH_SHORT
 
 /datum/intent/sword/cut/short
-	clickcd = 9
-	damfactor = 1
+	clickcd = 10
+	damfactor = 0.9
 
 /datum/intent/sword/thrust/short
-	clickcd = 8
+	clickcd = 10
 	damfactor = 1.1
-	penfactor = 30
 
 /obj/item/rogueweapon/sword/iron/messer
 	name = "iron messer"

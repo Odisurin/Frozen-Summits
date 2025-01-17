@@ -267,6 +267,8 @@
 							I.CheckParts(parts, R)
 							I.OnCrafted(user.dir, user)
 							I.add_fingerprint(user)
+					user.visible_message("<span class='notice'>[user] [R.verbage_tp] \a [R.name]!</span>", \
+										"<span class='notice'>I [R.verbage] \a [R.name]!</span>")
 					user.visible_message(span_notice("[user] [R.verbage] \a [R.name]!"), \
 										span_notice("I [R.verbage_simple] \a [R.name]!"))
 					if(user.mind && R.skillcraft)

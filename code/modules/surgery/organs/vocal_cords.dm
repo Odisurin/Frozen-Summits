@@ -44,7 +44,7 @@
 	owner.say(".x[message]")
 
 /obj/item/organ/vocal_cords/adamantine/handle_speech(message)
-	var/msg = "<span class='resonate'><span class='name'>[owner.real_name]</span> <span class='message'>resonates, \"[message]\"</span></span>"
+	var/msg = span_resonate("<span class='name'>[owner.real_name]</span> <span class='message'>resonates, \"[message]\"</span>")
 	for(var/m in GLOB.player_list)
 		if(iscarbon(m))
 			var/mob/living/carbon/C = m
@@ -89,7 +89,7 @@
 	. = ..()
 	if(!IsAvailable())
 		if(world.time < cords.next_command)
-			to_chat(owner, "<span class='notice'>I must wait [DisplayTimeText(cords.next_command - world.time)] before Speaking again.</span>")
+			to_chat(owner, span_notice("I must wait [DisplayTimeText(cords.next_command - world.time)] before Speaking again."))
 		return
 	var/command = input(owner, "Speak with the Voice of God", "Command")
 	if(QDELETED(src) || QDELETED(owner))
@@ -100,12 +100,12 @@
 
 /obj/item/organ/vocal_cords/colossus/can_speak_with()
 	if(world.time < next_command)
-		to_chat(owner, "<span class='notice'>I must wait [DisplayTimeText(next_command - world.time)] before Speaking again.</span>")
+		to_chat(owner, span_notice("I must wait [DisplayTimeText(next_command - world.time)] before Speaking again."))
 		return FALSE
 	if(!owner)
 		return FALSE
 	if(!owner.can_speak())
-		to_chat(owner, "<span class='warning'>I are unable to speak!</span>")
+		to_chat(owner, span_warning("I are unable to speak!"))
 		return FALSE
 	return TRUE
 
@@ -129,7 +129,10 @@
 
 	var/log_message = uppertext(message)
 	if(!span_list || !span_list.len)
-		span_list = list()
+		if(iscultist(user))
+			span_list = list("narsiesmall")
+		else
+			span_list = list()
 
 	user.say(message, spans = span_list, sanitize = FALSE)
 
@@ -139,6 +142,10 @@
 		if(L.can_hear() && !L.anti_magic_check(FALSE, TRUE) && L.stat != DEAD)
 			if(L == user && !include_speaker)
 				continue
+			if(ishuman(L))
+				var/mob/living/carbon/human/H = L
+				if(istype(H.ears, /obj/item/clothing/ears/earmuffs))
+					continue
 			listeners += L
 
 	if(!listeners.len)
@@ -158,6 +165,10 @@
 		if(user.mind.assigned_role == "Mime")
 			power_multiplier *= 0.5
 
+	//Cultists are closer to their gods and are more powerful, but they'll give themselves away
+	if(iscultist(user))
+		power_multiplier *= 2
+
 	//Try to check if the speaker specified a name or a job to focus on
 	var/list/specific_listeners = list()
 	var/found_string = null
@@ -167,7 +178,15 @@
 
 	for(var/V in listeners)
 		var/mob/living/L = V
-		if(dd_hasprefix(message, L.real_name))
+		var/datum/antagonist/devil/devilinfo = is_devil(L)
+		if(devilinfo && findtext(message, devilinfo.truename))
+			var/start = findtext(message, devilinfo.truename)
+			listeners = list(L) //Devil names are unique.
+			power_multiplier *= 5 //if you're a devil and god himself addressed you, you fucked up
+			//Cut out the name so it doesn't trigger commands
+			message = copytext(message, 0, start)+copytext(message, start + length(devilinfo.truename), length(message) + 1)
+			break
+		else if(dd_hasprefix(message, L.real_name))
 			specific_listeners += L //focus on those with the specified name
 			//Cut out the name so it doesn't trigger commands
 			found_string = L.real_name
@@ -342,7 +361,11 @@
 		for(var/V in listeners)
 			var/mob/living/L = V
 			var/text = ""
-			text = L.real_name
+			if(is_devil(L))
+				var/datum/antagonist/devil/devilinfo = is_devil(L)
+				text = devilinfo.truename
+			else
+				text = L.real_name
 			addtimer(CALLBACK(L, /atom/movable/, text), 5 * i)
 			i++
 
@@ -361,6 +384,12 @@
 			var/mob/living/L = V
 			addtimer(CALLBACK(L, /atom/movable/, "Who's there?"), 5 * i)
 			i++
+
+	//STATE LAWS
+	else if((findtext(message, statelaws_words)))
+		cooldown = COOLDOWN_STUN
+		for(var/mob/living/silicon/S in listeners)
+			S.statelaws(force = 1)
 
 	//MOVE
 	else if((findtext(message, move_words)))

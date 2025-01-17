@@ -43,15 +43,15 @@
 /datum/skill/misc/stealing
 	name = "Pickpocketing"
 	dreams = list(
-		"...one moment, you stand in line at the smithy, waiting behind the captain of the guard. The next, you're at the merchant's stall, shadowing a travelling noble. Moments later, cries of 'Thief!' echo throughout town, while you count out hundreds of mammon...",
-		"...a piss-stinking, beggar with wooden-arms and a lice-ridden beard calls out to you, a rotten-toothed smile on his face. 'Spare a zenny for the wretched?' he asks. As you step away from the wretch, you feel strangely light at your waist. A glance down reveals your now empty pouch -- and two wooden arms abandoned on the ground where he had been sitting..."
+		"...one moment you are standing in line for the smith, waiting behind the captain of the guard. The next moment, you are standing in line at the merchant's, behind a travelling noble. Moments later, cries of a thief echo throughout town, while you count out hundreds of coin...",
+		"...a piss-stinking, wooden-armed beggar with a lice-filled, greyed beard hails you, a rotten-toothed smile on his face, 'Spare a zenny for the wretched?' You step away from the disease-bearer, and as you turn around, you feel strangely light about the waist. With a double-take, you see your empty pouch, and two wooden arms left upon the floor where he had once seated..."
 	)
 
 /datum/skill/misc/sneaking
 	name = "Sneaking"
 	dreams = list(
-		"...the four connected houses, orthogonally aligned, have a small dip at the center of their slanted rooftops. Your crow's nest. Your safe haven. The only light that can reach you here is what Noc takes from Astrata, and this night is particularly veiled. It's concealing and comforting, safe from the town guard, as you curl up to rest...",
-		"...the pale volf gets on its hindlegs, and howls unto the moon. It seeks prey, and you happen to be unfortunate enough to be in its forest. This is the third time it has circled you, as you press yourself tighter into the hollow tree, completely still..."
+		"...the four connected, orthogonally facing houses have a small dip at the center of their slanted rooftops. Your crow's nest. Your safe haven. The only light that can reach you here is what Mystra takes from Astrata, and this night is particularly veiled. It's concealing and comforting, safe from the town guard, as you curl up to rest...",
+		"...The pale volf gets on it's hindlegs, and howls unto the moon. It seeks prey, and you happen to be unfortunate enough to be in it's forest. This is the third time it circled you, as you press yourself tighter into the hollow tree, completely still..."
 	)
 
 /datum/skill/misc/lockpicking

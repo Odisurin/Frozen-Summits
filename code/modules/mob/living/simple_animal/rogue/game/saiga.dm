@@ -357,49 +357,7 @@
 			return "foreleg"
 	return ..()
 
-
-/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/apply_damage(def_zone, blocked, forced)
-	if(buckled_mobs.len)	//If we're a mount and are hit while sprinting, throw our rider off
-		for(var/mob/living/carbon/human/H in buckled_mobs)
-			if(H.m_intent == MOVE_INTENT_RUN)
-				var/mob/living/simple_animal/M = src
-				M.violent_dismount(H)
-	..()
-
-/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigaboy
-	icon = 'icons/roguetown/mob/monster/saiga.dmi'
-	name = "saiga"
-	desc = ""
-	gender = MALE
-	icon_state = "saigaboy"
-	icon_living = "saigaboy"
-	icon_dead = "saigaboy_dead"
-	icon_gib = "saigaboy_gib"
-	animal_species = null
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, /obj/item/natural/bone = 3)
-	base_intents = list(/datum/intent/simple/headbutt)
-	health = 20
-	maxHealth = 20
-	pass_flags = PASSTABLE | PASSMOB
-	mob_size = MOB_SIZE_SMALL
-	milkies = FALSE
-	melee_damage_lower = 1
-	melee_damage_upper = 6
-	STACON = 5
-	STASTR = 5
-	STASPD = 5
-	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck
-	tame = TRUE
-	can_buckle = FALSE
-	aggressive = 1
-/mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame
-	tame = TRUE
-
-/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame
-	tame = TRUE
-
-
-/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck/tame/saddled/Initialize()
+/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled/Initialize()
 	. = ..()
 	var/obj/item/natural/saddle/S = new(src)
 	ssaddle = S

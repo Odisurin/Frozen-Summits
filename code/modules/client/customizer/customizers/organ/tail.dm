@@ -112,6 +112,7 @@
 		/datum/sprite_accessory/tail/fox2,
 		/datum/sprite_accessory/tail/hawk,
 		/datum/sprite_accessory/tail/horse,
+		/datum/sprite_accessory/tail/australian_shepherd,
 		/datum/sprite_accessory/tail/husky,
 		/datum/sprite_accessory/tail/insect,
 		/datum/sprite_accessory/tail/kangaroo,
@@ -160,6 +161,7 @@
 	organ_type = /obj/item/organ/tail/anthro
 	sprite_accessories = list(
 		/datum/sprite_accessory/tail/cat,
+		/datum/sprite_accessory/tail/lizard/kobold,
 		/datum/sprite_accessory/tail/monkey,
 		/datum/sprite_accessory/tail/axolotl,
 		/datum/sprite_accessory/tail/batl,
@@ -177,6 +179,7 @@
 		/datum/sprite_accessory/tail/fox2,
 		/datum/sprite_accessory/tail/hawk,
 		/datum/sprite_accessory/tail/horse,
+		/datum/sprite_accessory/tail/australian_shepherd,
 		/datum/sprite_accessory/tail/husky,
 		/datum/sprite_accessory/tail/insect,
 		/datum/sprite_accessory/tail/kangaroo,

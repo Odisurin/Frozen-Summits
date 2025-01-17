@@ -15,6 +15,7 @@
 	drinksounds = list('sound/items/drink_cup (1).ogg','sound/items/drink_cup (2).ogg','sound/items/drink_cup (3).ogg','sound/items/drink_cup (4).ogg','sound/items/drink_cup (5).ogg')
 	fillsounds = list('sound/items/fillcup.ogg')
 	anvilrepair = /datum/skill/craft/blacksmithing
+	improvised = TRUE
 
 /obj/item/reagent_containers/glass/cup/update_icon(dont_fill=FALSE)
 	testing("cupupdate")
@@ -27,6 +28,12 @@
 		filling.color = mix_color_from_reagents(reagents.reagent_list)
 		filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
 		add_overlay(filling)
+
+/obj/item/reagent_containers/glass/cup/pewter
+	name = "pewter tankard"
+	desc = "A fancy tankard for drinking like wannabe noblemen."
+	icon_state = "pewter"
+	sellprice = 10
 
 /obj/item/reagent_containers/glass/cup/wooden
 	name = "wooden cup"
@@ -128,6 +135,7 @@
 	sellprice = 1
 	drinksounds = list('sound/items/drink_cup (1).ogg','sound/items/drink_cup (2).ogg','sound/items/drink_cup (3).ogg','sound/items/drink_cup (4).ogg','sound/items/drink_cup (5).ogg')
 	fillsounds = list('sound/items/fillcup.ogg')
+	improvised = TRUE
 
 /obj/item/reagent_containers/glass/bowl/on_reagent_change(changetype)
 	..()

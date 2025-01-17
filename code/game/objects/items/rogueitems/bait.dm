@@ -10,9 +10,10 @@
 	throwforce = 0
 	var/check_counter = 0
 	var/list/attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10,
-										/mob/living/simple_animal/hostile/retaliate/rogue/goat = 33,
+									/mob/living/simple_animal/hostile/retaliate/rogue/goat = 33,
 									/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 33,
-									/mob/living/simple_animal/hostile/retaliate/rogue/chicken = 55)
+									/mob/living/simple_animal/hostile/retaliate/rogue/chicken = 55,
+									/mob/living/simple_animal/hostile/retaliate/goose = 5)
 	var/attraction_chance = 100
 	var/deployed = 0
 	var/deploy_speed = 2 SECONDS
@@ -96,8 +97,9 @@
 	attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/goat = 33,
 							/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 33,
 							/mob/living/simple_animal/hostile/retaliate/rogue/saiga = 20,
-							/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck = 20,
-							/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 20)
+							/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck = 20,
+							/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 20,
+							/mob/living/simple_animal/hostile/retaliate/rogue/trufflepig = 20)
 
 
 /obj/item/bait/bloody
@@ -105,4 +107,5 @@
 	desc = "Imagine if vampires got attracted to those!"
 	icon_state = "baitb"
 	attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 20,
-						/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10)
+						/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10,
+						/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 4)

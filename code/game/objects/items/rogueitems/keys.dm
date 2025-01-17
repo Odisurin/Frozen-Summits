@@ -57,7 +57,7 @@
 		SSroguemachine.key = src
 
 /obj/item/roguekey/lord/proc/anti_stall()
-	src.visible_message(span_warning("The Key of Azure Peak crumbles to dust, the ashes spiriting away in the direction of the Keep."))
+	src.visible_message(span_warning("The Key of Frozen Summit crumbles to dust, the ashes spiriting away in the direction of the Keep."))
 	SSroguemachine.key = null //Do not harddel.
 	qdel(src) //Anti-stall
 
@@ -125,12 +125,6 @@
 	desc = "This key belongs to the bailiff."
 	icon_state = "cheesekey"
 	lockid = "sheriff"
-
-/obj/item/roguekey/armory
-	name = "armory key"
-	desc = "This key opens the garrison's armory."
-	icon_state = "hornkey"
-	lockid = "armory"
 
 /obj/item/roguekey/merchant
 	name = "merchant's key"
@@ -353,7 +347,7 @@
 
 /obj/item/roguekey/hand
 	name = "hand's key"
-	desc = "This regal key belongs to the Grand Duke's Right Hand."
+	desc = "This regal key belongs to the Expedition Leader's Right Hand."
 	icon_state = "cheesekey"
 	lockid = "hand"
 
@@ -604,3 +598,4 @@
 				KE.name = src.holdname
 			to_chat(user, span_notice("You add [src] to [K]."))
 			qdel(src)
+

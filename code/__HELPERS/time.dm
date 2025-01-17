@@ -45,23 +45,23 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 		if(!GLOB.forecast)
 			switch(GLOB.tod)
 				if("dawn")
-					if(prob(25))
+					if(prob(55))
 						GLOB.forecast = "rain"
 				if("day")
-					if(prob(5))
+					if(prob(100))
 						GLOB.forecast = "rain"
 				if("dusk")
-					if(prob(33))
+					if(prob(75))
 						GLOB.forecast = "rain"
 				if("night")
-					if(prob(40))
+					if(prob(80))
 						GLOB.forecast = "rain"
 			if(GLOB.forecast == "rain")
 				var/foundnd
 				if(SSParticleWeather?.runningWeather?.target_trait == PARTICLEWEATHER_RAIN)
 					foundnd = TRUE
 				if(!foundnd)
-					SSParticleWeather?.run_weather(pick(/datum/particle_weather/rain_gentle, /datum/particle_weather/rain_storm))
+					SSParticleWeather?.run_weather(pick(/datum/particle_weather/rain_gentle, /datum/particle_weather/rain_storm, /datum/particle_weather/snow_storm, /datum/particle_weather/snow_gentle, /datum/particle_weather/ash))
 		else
 			switch(GLOB.forecast) //end the weather now
 				if("rain")
@@ -98,19 +98,19 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 		var/text_to_show
 		switch(GLOB.dayspassed)
 			if(1)
-				text_to_show = "DAWN OF THE FIRST DAE\nMOON'S DAE"
+				text_to_show = "DAWN OF THE FIRST DAE\nSELUNE'S DAE"
 			if(2)
-				text_to_show = "DAWN OF THE SECOND DAE\nTIW'S DAE"
+				text_to_show = "DAWN OF THE SECOND DAE\nTYR'S DAE"
 			if(3)
 				text_to_show = "DAWN OF THE THIRD DAE\nWEDDING'S DAE"
 			if(4)
-				text_to_show = "DAWN OF THE FOURTH DAE\nTHULE'S DAE"
+				text_to_show = "DAWN OF THE FOURTH DAE\nMYSTRA'S DAE"
 			if(5)
-				text_to_show = "DAWN OF THE FIFTH DAE\nFREYJA'S DAE"
+				text_to_show = "DAWN OF THE FIFTH DAE\nCHAUNTEA'S DAE"
 			if(6)
-				text_to_show = "DAWN OF THE SIXTH DAE\nSATURN'S DAE"
+				text_to_show = "DAWN OF THE SIXTH DAE\nMORADIN'S DAE"
 			if(7)
-				text_to_show = "DAWN OF THE SEVENTH DAE\nSUN'S DAE"
+				text_to_show = "DAWN OF THE SEVENTH DAE\nLATHANDER'S DAE"
 		if(!text_to_show)
 			return
 		if(text_to_show in mind.areas_entered)
@@ -126,16 +126,11 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 		T.maptext_height = 209
 		T.maptext_x = 12
 		T.maptext_y = -120
-		playsound_local(src, 'sound/misc/newday.ogg', 60, FALSE)
+		playsound_local(src, 'sound/misc/newday.ogg', 100, FALSE)
 		animate(T, alpha = 255, time = 10, easing = EASE_IN)
 		addtimer(CALLBACK(src, PROC_REF(clear_area_text), T), 35)
 		var/time_change_tips_random = pick(GLOB.time_change_tips)
 		to_chat(client, span_notice("<b>[time_change_tips_random]</b>"))
-	else if(GLOB.tod == "day")
-		playsound_local(src, 'sound/misc/midday.ogg', 100, FALSE)
-	else if(GLOB.tod == "night")
-		playsound_local(src, 'sound/misc/nightfall.ogg', 100, FALSE)
-
 	var/atom/movable/screen/daynight/D = new()
 	D.alpha = 0
 	client.screen += D
@@ -211,6 +206,3 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
 
 /proc/daysSince(realtimev)
 	return round((world.realtime - realtimev) / (24 HOURS))
-
-//returns time diff of two times normalized to time_rate_multiplier
-/proc/daytimeDiff(timeA, timeB)

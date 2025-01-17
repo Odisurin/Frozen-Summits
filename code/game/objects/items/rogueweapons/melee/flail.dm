@@ -44,10 +44,10 @@
 /datum/intent/flail/strike/smash
 	name = "smash"
 	chargetime = 5
-	chargedrain = 2
 	no_early_release = TRUE
 	penfactor = 80
 	recovery = 10
+	swingdelay = 7
 	damfactor = 1.2
 	chargedloop = /datum/looping_sound/flailswing
 	keep_looping = TRUE
@@ -60,12 +60,12 @@
 /datum/intent/flail/strike/smashrange
 	name = "ranged smash"
 	chargetime = 25
-	chargedrain = 2
 	no_early_release = TRUE
 	penfactor = 50
 	recovery = 30
-	damfactor = 1.2
+	damfactor = 1.5
 	reach = 2
+	swingdelay = 8
 	chargedloop = /datum/looping_sound/flailswing
 	keep_looping = TRUE
 	icon_state = "insmash"
@@ -91,6 +91,13 @@
 	smeltresult = /obj/item/ingot/steel
 	minstr = 5
 
+/obj/item/rogueweapon/flail/kusarifundo
+	force = 25
+	possible_item_intents = list(/datum/intent/flail/strikerange, /datum/intent/flail/strike/smashrange)
+	w_class = WEIGHT_CLASS_NORMAL
+	name = "kusari fundo"
+	desc = "A pair of heavy iron weights spanned by a long iron chain, developed as a self-defense weapon by peasants in regions where swords are carried only by samurai or other nobles."
+	icon_state = "kusarifundo"
 
 /datum/intent/whip/lash
 	name = "lash"

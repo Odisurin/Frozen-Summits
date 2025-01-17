@@ -111,7 +111,6 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	var/breedchildren = 3
 
 	///Simple_animal access.
-	var/list/lock_hashes
 	///Innate access uses an internal ID card.
 	var/obj/item/card/id/access_card = null
 	///In the event that you want to have a buffing effect on the mob, but don't want it to stack with other effects, any outside force that applies a buff to a simple mob should at least set this to 1, so we have something to check against.
@@ -155,8 +154,6 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	var/tame_chance
 	///Added success chance after every failed tame attempt.
 	var/bonus_tame_chance
-
-	var/mob/owner = null
 
 	///I don't want to confuse this with client registered_z.
 	var/my_z
@@ -217,23 +214,20 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			playsound(loc,'sound/misc/eat.ogg', rand(30,60), TRUE)
 			qdel(O)
 			food = min(food + 30, 100)
-			if(tame && owner == user)
+			if(tame)
 				return
 			var/realchance = tame_chance
 			if(realchance)
 				if(prob(realchance))
-					tamed(user)
+					tamed()
 				else
 					tame_chance += bonus_tame_chance
 
-
 ///Extra effects to add when the mob is tamed, such as adding a riding component
-/mob/living/simple_animal/proc/tamed(mob/user)
-	INVOKE_ASYNC(src, PROC_REF(emote), "lower_head", null, null, null, TRUE)
+/mob/living/simple_animal/proc/tamed()
+	emote("smile", forced = TRUE)
 	tame = TRUE
 	stop_automated_movement_when_pulled = TRUE
-	if(user)
-		owner = user
 	return
 
 //mob/living/simple_animal/examine(mob/user)
@@ -286,8 +280,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	if(stat != DEAD)
 		if(health <= 0)
 			death()
-			SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, DEAD)
 			return
+	med_hud_set_status()
 	if(footstep_type)
 		AddComponent(/datum/component/footstep, footstep_type)
 
@@ -531,6 +525,10 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		var/mob/living/L = the_target
 		if(L.stat == DEAD)
 			return FALSE
+	if (ismecha(the_target))
+		var/obj/mecha/M = the_target
+		if (M.occupant)
+			return FALSE
 	return TRUE
 
 /mob/living/simple_animal/handle_fire()
@@ -673,6 +671,9 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		if(A.update_remote_sight(src)) //returns 1 if we override all other sight updates.
 			return
 	sync_lighting_plane_alpha()
+
+/mob/living/simple_animal/get_idcard(hand_first)
+	return access_card
 
 /mob/living/simple_animal/can_hold_items()
 	return dextrous
@@ -821,22 +822,19 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			if(user.mind)
 				var/amt = user.mind.get_skill_level(/datum/skill/misc/riding)
 				if(amt)
-					riding_datum.vehicle_move_delay -= 5 + amt/6
+					riding_datum.vehicle_move_delay -= 5
 				else
 					riding_datum.vehicle_move_delay -= 3
 			if(loc != oldloc)
 				var/obj/structure/mineral_door/MD = locate() in loc
 				if(MD && !MD.ridethrough)
-					violent_dismount(user)
-
-/mob/living/simple_animal/proc/violent_dismount(mob/living/user)
-	if(isliving(user))
-		var/mob/living/L = user
-		unbuckle_mob(L)
-		L.Paralyze(50)
-		L.Stun(50)
-		playsound(L.loc, 'sound/foley/zfall.ogg', 100, FALSE)
-		L.visible_message(span_danger("[L] falls off [src]!"))
+					if(isliving(user))
+						var/mob/living/L = user
+						unbuckle_mob(L)
+						L.Paralyze(50)
+						L.Stun(50)
+						playsound(L.loc, 'sound/foley/zfall.ogg', 100, FALSE)
+						L.visible_message(span_danger("[L] falls off [src]!"))
 
 /mob/living/simple_animal/buckle_mob(mob/living/buckled_mob, force = 0, check_loc = 1)
 	. = ..()
@@ -882,6 +880,14 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 //		eat_plants()
 
 /mob/living/simple_animal/proc/eat_plants()
+//	if(food >= 10 MINUTES)
+//		return
+
+//	var/obj/structure/spacevine/SV = locate(/obj/structure/spacevine) in loc
+//	if(SV)
+//		SV.eat(src)
+//		eaten = TRUE
+//		food = min(food + 5 MINUTES, 10 MINUTES)
 
 	var/obj/item/reagent_containers/food/I = locate(/obj/item/reagent_containers/food) in loc
 	if(is_type_in_list(I, food_type))

@@ -106,3 +106,5 @@
 		log = FALSE
 	explosion(A, devastation_range, heavy_impact_range, light_impact_range, flash_range, log) //epic explosion time
 	qdel(A)
+
+

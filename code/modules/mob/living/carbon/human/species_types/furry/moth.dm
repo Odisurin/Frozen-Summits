@@ -8,13 +8,18 @@
 	(+1 Speed, -1 Intelligence)"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS,HAIR)
 	possible_ages = ALL_AGES_LIST
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/mob/species/moth_m.dmi'
 	limbs_icon_f = 'icons/mob/species/moth_f.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	soundpack_m = /datum/voicepack/male/elf
 	soundpack_f = /datum/voicepack/female/elf
+	inherent_traits = list(
+		TRAIT_ZJUMP,
+		TRAIT_LEAPER,
+		TRAIT_NOFALLDAMAGE1
+	)
 	offset_features = list(
 		OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_WRISTS = list(0,0),\
 		OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), \
@@ -67,6 +72,8 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/butt/animal,
 		/datum/customizer/organ/vagina/animal,
 		)
 	body_marking_sets = list(

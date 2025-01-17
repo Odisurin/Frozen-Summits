@@ -5,23 +5,20 @@
 	name = "Dark Elf"
 	id = "elfd"
 	desc = "<b>Dark Elf</b><br>\
-	\"Elf\" is a catch-all term used for tall, pointy-eared humanoids who can trace their \
-	heritage to the ancient and mysterious Snow Elves. This species of elf, less frequently \
-	seen, are also referred to by some as \"drow,\" and have several key differences \
-	that set them apart from their more well-known and surface-dwelling kin. Chief among these \
-	differences are their dark complexions and origins from the Underdark; a massive subterranean \
-	landscape made up of a vast network of interconnected caves, caverns and tunnels. In this world \
-	hidden deep beneath the soil are several dark elven cities who exist and function far from the \
-	reaches of the rest of the surface-dwelling societies. These are a large part of what has earned \
-	the dark elves their notoriety, for in these cities the worship of the ascendant pantheon is \
-	normalized, and their cruel and bloodthirsty culture reflects this. It was rare to see dark \
-	elves outside of their underground homes, but in recent years, more and more of them have fled \
-	to the surface. The reasons for each dark elf fleeing the Underdark vary depending on the \
-	individual, such as a kinder heart fleeing from a brutal society that scorns them for their \
-	less cruel nature. However, not every dark elf seen on the surface can be safely assumed as \
-	kind, for some leave the Underdark simply to find their own greater heights of power.<br>\
-	(+1 Perception)"
-
+	Elves, are a generic term for tall, pointy-eared humanoids\
+    Of whom trace their original heritage to the ancient mysterious Snow Elves. \
+	These ones are of a dark complexion and originate mostly from the underdark. \
+    Their culture and entire lives normally involve serving the evil gods of the inhumen pantheon. \
+    Previously rare but in recent times, more and more dark elfs can be seen on the surface. \
+    The ones who aren't overtly cruel and bloodthirsty, tend to flee to the surface lest they get culled by their own society, \
+    while some more sinister ones abandon their cities in search of new and greater power. \
+	+1 Perception"
+	inherent_traits = list(
+		TRAIT_FASTSLEEP,
+		TRAIT_NOCSIGHT,
+		TRAIT_XENOPHOBIC,
+		TRAIT_NIGHT_OWL
+	)
 /*
 	Former RT Desc: These guys were undead which doesn't really fit considering now you have a ton of them walking around.
 
@@ -46,7 +43,7 @@
 	disliked_food = NONE
 	liked_food = NONE
 	possible_ages = ALL_AGES_LIST
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mem.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -72,7 +69,7 @@
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/werewolf,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears/elf,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
@@ -93,6 +90,8 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
+		/datum/customizer/organ/butt/human,
 		/datum/customizer/organ/vagina/human,
 		)
 	body_marking_sets = list(
@@ -105,9 +104,28 @@
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
-		/datum/body_marking/tonage
+		/datum/body_marking/plain,
+		/datum/body_marking/tiger,
+		/datum/body_marking/tiger/dark,
+		/datum/body_marking/sock,
+		/datum/body_marking/socklonger,
+		/datum/body_marking/tips,
+		/datum/body_marking/bellyscale,
+		/datum/body_marking/bellyscaleslim,
+		/datum/body_marking/bellyscalesmooth,
+		/datum/body_marking/bellyscaleslimsmooth,
+		/datum/body_marking/buttscale,
+		/datum/body_marking/belly,
+		/datum/body_marking/bellyslim,
+		/datum/body_marking/butt,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
+		/datum/body_marking/backspots,
+		/datum/body_marking/front,
+		/datum/body_marking/drake_eyes,
+		/datum/body_marking/tonage,
+		/datum/body_marking/spotted,
 	)
-
 
 	gender_swapping = TRUE
 	stress_examine = TRUE

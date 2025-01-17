@@ -3,8 +3,8 @@
 	flag = PURITAN
 	department_flag = INQUISITION
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_patrons = list(/datum/patron/old_god) //You MUST have a Psydonite character to start. Just so people don't get japed into Oops Suddenly Psydon!
@@ -15,8 +15,8 @@
 
 	outfit = /datum/outfit/job/roguetown/puritan
 	display_order = JDO_PURITAN
-	give_bank_account = 30
-	min_pq = 10
+	give_bank_account = 36
+	min_pq = 0 //Only for those bold of spirit, sure of mind, hard of pintle...and should probably know Ao from Zizo. Not a crucial role, and rather prone to people instigating excessive conflict
 	max_pq = null
 	round_contrib_points = 2
 
@@ -30,14 +30,14 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 	belt = /obj/item/storage/belt/rogue/leather/knifebelt/black/psydon
 	neck = /obj/item/clothing/neck/roguetown/psicross/silver
-	shoes = /obj/item/clothing/shoes/roguetown/otavan/inqboots
+	shoes = /obj/item/clothing/shoes/roguetown/boots
 	pants = /obj/item/clothing/under/roguetown/tights/black
-	backr = /obj/item/storage/backpack/rogue/satchel
+	cloak = /obj/item/clothing/cloak/cape/puritan
+	backr = /obj/item/storage/backpack/rogue/satchel/black
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
-	head = /obj/item/clothing/head/roguetown/inqhat
-	gloves = /obj/item/clothing/gloves/roguetown/otavan/inqgloves
+	head = /obj/item/clothing/head/roguetown/puritan
+	gloves = /obj/item/clothing/gloves/roguetown/leather
 	beltl = /obj/item/rogueweapon/sword/rapier
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/scale/inqcoat
 	backpack_contents = list(/obj/item/storage/keyring/puritan = 1, /obj/item/rogueweapon/huntingknife/idagger/silver)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
@@ -65,7 +65,6 @@
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_SILVER_BLESSED, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_INQUISITION, TRAIT_GENERIC)
 
 /mob/living/carbon/human/proc/torture_victim()
 	set name = "Extract Confession"

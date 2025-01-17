@@ -165,7 +165,6 @@
 #define LUNATIC		(1<<17)
 #define MIGRANT		(1<<18)
 #define BANDIT		(1<<19)
-#define COURTAGENT	(1<<20)
 
 #define YOUNGFOLK	(1<<6)
 
@@ -283,7 +282,6 @@
 #define JDO_PILGRIM 30.2
 #define JDO_MIGRANT 32.3
 #define JDO_BANDIT 31.3
-#define JDO_COURTAGENT 30.3
 
 #define JDO_MERCENARY 31
 #define JDO_GRENZELHOFT 31.1

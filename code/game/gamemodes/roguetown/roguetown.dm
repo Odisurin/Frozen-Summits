@@ -62,14 +62,23 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 
 	if(ttime >= GLOB.round_timer)
 		if(roundvoteend)
-			if(ttime >= (GLOB.round_timer + 15 MINUTES) )
+			if(ttime >= round_ends_at)
 				return TRUE
 		else
 			if(!SSvote.mode && SSticker.autovote)
-				SSvote.initiate_vote("endround", pick("Psydon", "Zizo"))
+				SSvote.initiate_vote("endround", "the Gods")
 
 	if(headrebdecree)
-		return TRUE
+		if(reb_end_time == 0)
+			to_chat(world, span_boldannounce("The peasant rebels took control of the throne, hail the new community!"))
+			if(ttime >= INITIAL_ROUND_TIMER)
+				reb_end_time = ttime + REBEL_RULE_TIME
+				to_chat(world, span_boldwarning("The round will end in 15 minutes."))
+			else
+				reb_end_time = INITIAL_ROUND_TIMER
+				to_chat(world, span_boldwarning("The round will end at the 2:30 hour mark."))
+		if(ttime >= reb_end_time)
+			return TRUE
 
 	check_for_lord()
 /*
@@ -84,7 +93,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	var/lord_dead = FALSE
 	for(var/mob/living/carbon/human/H in GLOB.human_list)
 		if(H.mind)
-			if(H.job == "Grand Duke")
+			if(H.job == "Expedition Leader")
 				lord_found = TRUE
 				if(H.stat == DEAD)
 					lord_dead = TRUE
@@ -186,7 +195,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 /datum/game_mode/chaosmode/proc/pick_bandits()
 	//BANDITS
 	banditgoal = rand(200,400)
-	restricted_jobs = list("Grand Duke",
+	restricted_jobs = list("Expedition Leader",
 	"Consort",
 	"Merchant",
 	"Priest",
@@ -324,7 +333,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_maniac()
-	restricted_jobs = list("Grand Duke", "Consort")
+	restricted_jobs = list("Expedition Leader", "Consort")
 	antag_candidates = get_players_for_role(ROLE_MANIAC)
 	var/datum/mind/villain = pick_n_take(antag_candidates)
 	if(villain)
@@ -344,7 +353,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_lich()
-	restricted_jobs = list("Grand Duke", "Consort", "Royal Guard", "Guard Captain")
+	restricted_jobs = list("Expedition Leader", "Consort", "Royal Guard", "Guard Captain")
 	antag_candidates = get_players_for_role(ROLE_LICH)
 	var/datum/mind/lichman = pick_n_take(antag_candidates)
 	if(lichman)
@@ -366,7 +375,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 /datum/game_mode/chaosmode/proc/pick_vampires()
 	var/vampsremaining = 3
 	restricted_jobs = list(
-	"Grand Duke",
+	"Expedition Leader",
 	"Consort",
 	"Dungeoneer",
 	"Inquisitor",
@@ -413,7 +422,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 /datum/game_mode/chaosmode/proc/pick_werewolves()
 	// Ideally we want adventurers/pilgrims/towners to roll it
 	restricted_jobs = list(
-	"Grand Duke",
+	"Expedition Leader",
 	"Consort",
 	"Dungeoneer",
 	"Inquisitor",

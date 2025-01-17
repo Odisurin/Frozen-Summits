@@ -10,10 +10,19 @@
 	as many seem to seamlessly intergrate into whatever society they find themselves in. \
 	Despite this, Tieflings often cause strong disturbances wherever they go due to their fiendish appearances. \
 	Many have claimed that they are the spawn of a succubus (Or incubus) laying with a mortal. \
-	Due to this speculation, their species has suffered vast tragedy throughout their short history, \
-	facing harsh scrutiny, unfair judgement, and even outright genocide in the worst cases. This history of brutal treatment and prejudce has resulted in the damage of many a Tiefling's psyche, causing to most of their kind to seek a solitary life away from the judgemental eyes of others. Tieflings cannot reproduce with mortals, and as a result no half-breed exists. Tieflings tend to be extremely perceptive and paranoid, as luck is rarely on their side, and their unique biology makes them extremely susceptible to injury.<br>\
-	(+1 Intelligence)"
-
+	In this, their species has suffered vast tragedy throughout their short history, \
+	Facing scrutiny, judgement and even genocide in the past. Wounding many tiefling psyche \
+	and leading to most seeking a solitary life outside the watchful eyes of others. \
+	Tiefling can rarely reproduce with mortals. \
+	Tiefling tend to be extremely perceptive and paranoid, as luck is rarely on their side \
+	and their unique biology makes them extremely susceptible to injury. \
+	+1 Intelligence."
+	inherent_traits = list(
+		TRAIT_FASTSLEEP,
+		TRAIT_NOCSIGHT,
+		TRAIT_BEAUTIFUL,
+		TRAIT_NASTY_EATER
+	)
 	skin_tone_wording = "Progenitor"
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
@@ -24,7 +33,7 @@
 	disliked_food = NONE
 	liked_food = NONE
 	possible_ages = ALL_AGES_LIST
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -49,7 +58,7 @@
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/werewolf,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears/tiefling,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
@@ -74,6 +83,8 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
+		/datum/customizer/organ/butt/human,
 		/datum/customizer/organ/vagina/human,
 		)
 	body_marking_sets = list(
@@ -86,7 +97,27 @@
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
+		/datum/body_marking/plain,
+		/datum/body_marking/tiger,
+		/datum/body_marking/tiger/dark,
+		/datum/body_marking/sock,
+		/datum/body_marking/socklonger,
+		/datum/body_marking/tips,
+		/datum/body_marking/bellyscale,
+		/datum/body_marking/bellyscaleslim,
+		/datum/body_marking/bellyscalesmooth,
+		/datum/body_marking/bellyscaleslimsmooth,
+		/datum/body_marking/buttscale,
+		/datum/body_marking/belly,
+		/datum/body_marking/bellyslim,
+		/datum/body_marking/butt,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
+		/datum/body_marking/backspots,
+		/datum/body_marking/front,
+		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
+		/datum/body_marking/spotted,
 	)
 	languages = list(
 		/datum/language/common,

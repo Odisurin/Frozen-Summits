@@ -1,4 +1,4 @@
-GLOBAL_LIST_INIT(vanderlin_weather, list(PARTICLEWEATHER_RAIN))
+GLOBAL_LIST_INIT(weather, list(PARTICLEWEATHER_RAIN))
 SUBSYSTEM_DEF(ParticleWeather)
 	name = "Particle Weather"
 	flags = SS_BACKGROUND
@@ -20,6 +20,11 @@ SUBSYSTEM_DEF(ParticleWeather)
 				runningWeather.try_weather_act(act_on)
 			for(var/obj/act_on as anything in GLOB.weather_act_upon_list)
 				runningWeather.weather_obj_act(act_on)
+	else
+		// start random weather
+		var/datum/particle_weather/our_event = pickweight(elligble_weather) //possible_weather
+		if(our_event)
+			run_weather(our_event)
 
 
 //This has been mangled - currently only supports 1 weather effect serverwide so I can finish this
@@ -30,7 +35,7 @@ SUBSYSTEM_DEF(ParticleWeather)
 		var/target_trait = initial(W.target_trait)
 
 		// any weather with a probability set may occur at random
-		if (probability && (target_trait in GLOB.vanderlin_weather)) //TODO VANDERLIN: Map trait this.
+		if (probability && (target_trait in GLOB.weather)) //TODO: Map trait this.
 			LAZYINITLIST(elligble_weather)
 			elligble_weather[W] = probability
 	return ..()
@@ -71,21 +76,13 @@ SUBSYSTEM_DEF(ParticleWeather)
 		weatherEffect.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	return weatherEffect
 
-/datum/controller/subsystem/ParticleWeather/proc/SetparticleEffect(particles/P, blend_type, filter_type)
+/datum/controller/subsystem/ParticleWeather/proc/SetparticleEffect(particles/P)
 	particleEffect = P
 	weatherEffect.particles = particleEffect
-	if(!blend_type)
-		weatherEffect.blend_mode = BLEND_DEFAULT
-	else
-		weatherEffect.blend_mode = blend_type
-	weatherEffect.filters = list()
-	weatherEffect.filters += filter(type="alpha", render_source=WEATHER_RENDER_TARGET)
-	if(filter_type)
-		weatherEffect.filters += filter_type
 
 /datum/controller/subsystem/ParticleWeather/proc/stopWeather()
 	for(var/obj/act_on as anything in GLOB.weather_act_upon_list)
 		act_on.weather = FALSE
 	QDEL_NULL(runningWeather)
 	QDEL_NULL(particleEffect)
-	QDEL_NULL(weatherEffect)
+

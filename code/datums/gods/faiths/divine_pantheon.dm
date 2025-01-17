@@ -1,8 +1,7 @@
 /datum/faith/divine
-	name = "Divine Pantheon"
-	desc = "The TEN, children of PSYDON. The most accepted religion in Azure Peak. born from Psydon sending the Comet Syon to defeat the rampaging Archdevil and splitting him into Ten. \n \n\
-		The <b>Holy See</b>, recently rocked by a violent schism, controls diosces across the world.\
-		The splinter church, the <b>Holy Ecclesial</b>, recognize the heretical 'Ascendants'- better known as INHUMEN GODS- as True Divinity. \
-		But it is only through faith of the TRUE DIVINE that hope can be found in this world."
-	worshippers = "Citizens of Azure Peak, conservative religious-folk, zealotry-filled fools"
+	name = "The Creed of the Eternal Circle"
+	desc = "The Creed of the Eternal Circle venerates a pantheon of gods each ruling a vital force within the world’s natural and cosmic cycles. The people who worship this faith views the gods as protectors and custodians, with each deity weaving their influence into the Circle, which represents the continuity and balance of all life, magic, and the elements. \n \n\
+		The <b>Council of Eternal Paths</b>, the central religious authority, maintains that the Twelve Eternal Gods—entities such as Mystra, Corellon, and Sylvanus—are each bound to their sacred domain and embody the essential forces governing the world’s stability and growth. Followers believe that every life is a journey within this Circle and that to worship the gods is to align oneself with the cycles of creation, decay, and rebirth.\
+		Contrasting this, the <b>Followers of the Dark Covenant</b> are a well-known and insidious cult that openly worship the Dead Three and others gods, those malevolent deities who embody chaos, destruction, and corruption. These gods include infamous names like Bane, the Lord of Tyranny; Bhaal, Lord of Murder; Lolth, the Queen of Spiders And Myrkul, Lord of Bones. The Followers of the Dark Covenant seek to subvert the natural order, believing that true power and greatness can only be achieved through the embrace of deception, betrayal, and domination. Their ultimate goal is to spread the will of the evil gods, bringing about an era of tyranny and despair across the world."
+	worshippers = "Citizens of Frozen Summit, conservative religious-folk, zealotry-filled fools and the common folk."
 	godhead = /datum/patron/divine/astrata

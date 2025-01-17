@@ -72,7 +72,7 @@
 
 /datum/special_trait/night_owl
 	name = "Night Owl"
-	greet_text = span_notice("I've always preferred Noc over his other half.")
+	greet_text = span_notice("I've always preferred the night.")
 	weight = 100
 
 /datum/special_trait/night_owl/on_apply(mob/living/carbon/human/character, silent)
@@ -266,7 +266,7 @@
 
 /datum/special_trait/richpouch
 	name = "Rich Pouch"
-	greet_text = span_notice("I've recently found a pouch filled with mammons, probably belonging to some noble.")
+	greet_text = span_notice("I've recently found a pouch filled with coins, probably belonging to some noble.")
 	weight = 100
 
 /datum/special_trait/richpouch/on_apply(mob/living/carbon/human/character, silent)
@@ -293,8 +293,8 @@
 
 /datum/special_trait/lucky
 	name = "Fortune's Grace"
-	greet_text = span_notice("Xylix favor me, I am extremely lucky.")
-	req_text = "Have Xylix as your Patron"
+	greet_text = span_notice("Tymora favor me, I am extremely lucky.")
+	req_text = "Have Tymora as your Patron"
 	allowed_patrons = list(/datum/patron/divine/xylix)
 	weight = 7
 
@@ -353,8 +353,8 @@
 	qdel(pouch)
 
 /datum/special_trait/hussite
-	name = "Known Heretic"
-	greet_text = span_boldwarning("I've been denounced by the church for either reasons legitimate or not!")
+	name = "Cursed"
+	greet_text = span_boldwarning("I have been cursed by a fae, a hag or simliar entity!")
 	req_text = "Non-church role"
 	weight = 20
 	restricted_jobs = list(CHURCH_ROLES)
@@ -407,6 +407,15 @@
 
 /datum/special_trait/outlaw/on_apply(mob/living/carbon/human/character, silent)
 	make_outlaw(character.real_name, TRUE)
+
+/datum/special_trait/sillyvoice
+	name = "Annoying"
+	greet_text = span_sans("People really hate my voice for some reason.")
+	weight = 100
+
+/datum/special_trait/sillyvoice/on_apply(mob/living/carbon/human/character)
+	ADD_TRAIT(character, TRAIT_COMICSANS, "[type]")
+	character.dna.add_mutation(WACKY)
 
 /datum/special_trait/unlucky
 	name = "Unlucky"

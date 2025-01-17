@@ -10,7 +10,17 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/iron
 
-/datum/anvil_recipe/weapons/iron/swordshort
+
+/datum/anvil_recipe/weapons/bullets
+	name = "Lead Bullets x5 (+s)"
+	appro_skill = /datum/skill/craft/engineering
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/ammo_casing/caseless/rogue/bullet
+	createditem_num = 4
+	i_type = "Ammo"
+	craftdiff = 0
+
+/datum/anvil_recipe/weapons/shortsword_iron
 	name = "Short sword"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/iron/short
@@ -33,6 +43,11 @@
 	name = "Flail"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/flail
+
+/datum/anvil_recipe/weapons/ironflail/kusarifundo
+	name = "kusari fundo (+1 iron ingot, 1 iron chain)"
+	additional_items = list(/obj/item/ingot/iron,/obj/item/rope/chain)
+	created_item = /obj/item/rogueweapon/flail/kusarifundo
 
 /datum/anvil_recipe/weapons/iron/huntknife
 	name = "Hunting knife"
@@ -82,6 +97,12 @@
 	created_item = /obj/item/rogueweapon/halberd/bardiche
 	craftdiff = 2
 
+/datum/anvil_recipe/weapons/bardiche/naginata
+	name = "naginata (+1 steel ingot, 1 wooden staff)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/rogueweapon/woodstaff)
+	created_item = /obj/item/rogueweapon/halberd/bardiche/naginata
+
 /datum/anvil_recipe/weapons/iron/lucerne
 	name = "Lucerne (+1 Iron, +1 Small Log)"
 	req_bar = /obj/item/ingot/iron
@@ -95,6 +116,15 @@
 	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/mace/goden
 
+/datum/anvil_recipe/weapons/iron/polemace/kanabo
+	name = "kanabo (+1 iron ingot, 1 wooden club)"
+	additional_items = list(/obj/item/ingot/iron,/obj/item/rogueweapon/mace/woodclub)
+	created_item = /obj/item/rogueweapon/mace/goden/kanabo
+
+/datum/anvil_recipe/weapons/iron/tossblade
+	name = "Iron Tossblades (four)"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rogueweapon/huntingknife/throwingknife
 /datum/anvil_recipe/weapons/iron/tossblade
 	name = "Iron Tossblades 4x"
 	req_bar = /obj/item/ingot/iron
@@ -109,6 +139,10 @@
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/huntingknife/idagger/steel
 	createditem_num = 1
+
+/datum/anvil_recipe/weapons/steel/dagger/tanto
+	name = "tanto"
+	created_item = /obj/item/rogueweapon/huntingknife/idagger/steel/tanto
 
 /datum/anvil_recipe/weapons/steel/daggerparrying
 	name = "Parrying Dagger (+1 Steel)"
@@ -153,6 +187,10 @@
 	created_item = /obj/item/rogueweapon/sword
 	craftdiff = 2
 
+/datum/anvil_recipe/weapons/steel/sword/uchigatana
+	name = "uchigatana"
+	created_item = /obj/item/rogueweapon/sword/uchigatana
+
 /datum/anvil_recipe/weapons/steel/saber
 	name = "Sabre"
 	req_bar = /obj/item/ingot/steel
@@ -183,7 +221,7 @@
 	name = "Combat Knife (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/huntingknife/combat
+	created_item = /obj/item/rogueweapon/huntingknife/cleaver/combat
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/steel/mace
@@ -193,12 +231,21 @@
 	created_item = /obj/item/rogueweapon/mace/steel
 	craftdiff = 2
 
+/datum/anvil_recipe/weapons/steel/mace/ararebo
+	name = "arerebo (+1 stick)"
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/mace/cudgel/ararebo
+
 /datum/anvil_recipe/weapons/steel/greatsword
 	name = "Greatsword (+2 Steel)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
 	created_item = /obj/item/rogueweapon/greatsword
 	craftdiff = 4
+
+/datum/anvil_recipe/weapons/greatsword/odachi
+	name = "odachi (+2 steel ingots)"
+	created_item = /obj/item/rogueweapon/greatsword/odachi
 
 /datum/anvil_recipe/weapons/steel/steelzweihander
 	name = "Zweihander (+2 Steel)"
@@ -212,13 +259,6 @@
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/rogueweapon/estoc
-	craftdiff = 4
-
-/datum/anvil_recipe/weapons/buckler
-	name = "Buckler (+1 Steel)"
-	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/greatsword/grenz
 	craftdiff = 4
 
 /datum/anvil_recipe/weapons/steel/axe
@@ -395,7 +435,7 @@
 /datum/anvil_recipe/weapons/steel/buckler
 	name = "Buckler (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel)
+	additional_items = list(/obj/item/natural/plankshort, /obj/item/natural/plankshort)
 	created_item = /obj/item/rogueweapon/shield/buckler
 	craftdiff = 2
 
@@ -403,7 +443,7 @@
 /datum/anvil_recipe/weapons/steel/xbow
 	name = "Crossbow (+1 Small Log, +1 Fiber)"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/grown/log/tree/small, /obj/item/natural/fibers)
+	additional_items = list(/obj/item/natural/plank, /obj/item/natural/fibers)
 	created_item = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 
 /datum/anvil_recipe/weapons/iron/bolts
@@ -456,3 +496,20 @@
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/mace/warhammer
 	i_type = "Weapons"
+	craftdiff = 3
+
+/datum/anvil_recipe/ammo/musketball
+	name = "Musketballs 8x"
+	appro_skill = /datum/skill/craft/blacksmithing
+	req_bar = /obj/item/ingot/iron
+	created_item = list(/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet,
+						/obj/item/ammo_casing/caseless/rogue/bullet
+					)
+
+	craftdiff = 1

@@ -11,9 +11,16 @@
 	Most commonly, Aasimar are similar to Humens, albeit taller, and commonly possess an uncanny beauty. \
 	When compared to the average Humen, they have strangely colored skin and are more physically frail. \
 	Because of their upbringing, they make for natural conduits for godly powers. \
-	Azure Peak's populace holds them with a mixture of uneasy mixture of fear and respect. \
-	Due to their celestial nature, it is widely believed that an Aasimar's death is a bad omen...<br>\
-	(+1 Fortune, -1 Perception)"
+	Frozen Summit's populace holds them with a mixture of uneasy fear or, and respect. \
+	It is also widely believed that an Aasimars death is a bad omen... \
+	+1 Fortune, -1 Perception."
+
+	inherent_traits = list(
+		TRAIT_FASTSLEEP,
+		TRAIT_EMPATH,
+		TRAIT_BEAUTIFUL,
+		TRAIT_STEELHEARTED
+	)
 
 	skin_tone_wording = "Craft"
 
@@ -25,7 +32,7 @@
 	disliked_food = NONE
 	liked_food = NONE
 	possible_ages = ALL_AGES_LIST
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -56,6 +63,8 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
+		/datum/customizer/organ/butt/human,
 		/datum/customizer/organ/vagina/human,
 		)
 	body_marking_sets = list(
@@ -66,9 +75,29 @@
 		/datum/body_marking_set/tiger_dark,
 	)
 	body_markings = list(
-		/datum/body_marking/flushed_cheeks, //Azure > Hearth
+		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
+		/datum/body_marking/plain,
+		/datum/body_marking/tiger,
+		/datum/body_marking/tiger/dark,
+		/datum/body_marking/sock,
+		/datum/body_marking/socklonger,
+		/datum/body_marking/tips,
+		/datum/body_marking/bellyscale,
+		/datum/body_marking/bellyscaleslim,
+		/datum/body_marking/bellyscalesmooth,
+		/datum/body_marking/bellyscaleslimsmooth,
+		/datum/body_marking/buttscale,
+		/datum/body_marking/belly,
+		/datum/body_marking/bellyslim,
+		/datum/body_marking/butt,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
+		/datum/body_marking/backspots,
+		/datum/body_marking/front,
+		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
+		/datum/body_marking/spotted,
 	)
 	languages = list(
 		/datum/language/common,

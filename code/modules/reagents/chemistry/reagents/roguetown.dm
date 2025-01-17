@@ -6,20 +6,10 @@
 	metabolization_rate = 1
 
 /datum/reagent/miasmagas/on_mob_life(mob/living/carbon/M)
-	if(!HAS_TRAIT(M, TRAIT_NOSTINK) && !physician_mask_check(M))
+	if(!HAS_TRAIT(M, TRAIT_NOSTINK))
 		M.add_nausea(15)
 		M.add_stress(/datum/stressevent/miasmagas)
 	return ..()
-
-/proc/physician_mask_check(mob/living/carbon/M)
-	if(!M)
-		return FALSE
-	if(!istype(M, /mob/living/carbon/human))
-		return FALSE
-	var/mob/living/carbon/human/H = M
-	if(!H.wear_mask)
-		return FALSE
-	return istype(H.wear_mask, /obj/item/clothing/mask/rogue/physician)
 
 /datum/reagent/rogueacid
 	name = "rogueacid"
@@ -32,3 +22,15 @@
 /datum/reagent/rogueacid/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	M.adjustFireLoss(35, 0)
 	..()
+
+/datum/reagent/phlogiston/on_mob_life(mob/living/carbon/M)
+	M.adjustFireLoss(35, 0)
+	..()
+	return TRUE
+
+/datum/reagent/blastpowder
+	name = "blastpowder"
+	description = "."
+	color = "#6b0000"
+	taste_description = "spicy"
+	self_consuming = TRUE

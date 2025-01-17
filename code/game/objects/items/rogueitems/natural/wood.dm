@@ -19,7 +19,7 @@
 	var/lumber_amount = 1
 
 /obj/item/grown/log/tree/attacked_by(obj/item/I, mob/living/user) //This serves to reward woodcutting
-	if(user.used_intent.blade_class == BCLASS_CHOP && lumber_amount && lumber)
+	if(user.used_intent.blade_class == BCLASS_CHOP && lumber_amount)
 		var/skill_level = user.mind.get_skill_level(/datum/skill/labor/lumberjacking)
 		var/lumber_time = (40 - (skill_level * 5))
 		var/minimum = 1
@@ -41,7 +41,7 @@
 
 /obj/item/grown/log/tree/small
 	name = "small log"
-	desc = "A smaller log that came from a larger log. Suitable for building."
+	desc = "A smaller log that came from a larger log. With a saw, you could turn it into wooden planks."
 	icon_state = "logsmall"
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	max_integrity = 30
@@ -77,6 +77,50 @@
 	icon = 'icons/roguetown/items/64x.dmi'
 	icon_state = "long_bowstave"
 
+/obj/item/grown/log/tree/small
+	name = "small log"
+	desc = "A smaller log that came from a larger log. With a saw, you could turn it into wooden planks."
+	icon_state = "logsmall"
+	attacked_sound = 'sound/misc/woodhit.ogg'
+	max_integrity = 30
+	static_debris = list(/obj/item/grown/log/tree/stick = 3)
+	firefuel = 20 MINUTES
+	twohands_required = FALSE
+	gripped_intents = null
+	w_class = WEIGHT_CLASS_BULKY
+	smeltresult = /obj/item/rogueore/coal
+
+/obj/item/grown/log/tree/small/attackby(obj/item/I, mob/living/user, params)		// remake to use /datum/intent/axe/cut or TO DO never do maybe
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(istype(I, /obj/item/rogueweapon/stoneaxe))
+		playsound(get_turf(src.loc), 'sound/items/wood_cutting.ogg', 100)
+		if(do_after(user, 10 SECONDS))
+			user.visible_message("<span class='notice'>[user] makes a crude plank from [src].</span>")
+			var/obj/item/natural/plank/S = new /obj/item/natural/plank(get_turf(src.loc))
+			if(user.is_holding(src))
+				user.dropItemToGround(src)
+				user.put_in_hands(S)
+			qdel(src)
+	if(istype(I, /obj/item/rogueweapon/halberd/bardiche))
+		playsound(get_turf(src.loc), 'sound/items/wood_cutting.ogg', 100)
+		if(do_after(user, 10 SECONDS))
+			user.visible_message("<span class='notice'>[user] makes a crude plank from [src].</span>")
+			var/obj/item/natural/plank/S = new /obj/item/natural/plank(get_turf(src.loc))
+			if(user.is_holding(src))
+				user.dropItemToGround(src)
+				user.put_in_hands(S)
+			qdel(src)
+	if(istype(I, /obj/item/rogueweapon/handsaw))
+		playsound(get_turf(src.loc), 'sound/items/sawing.ogg', 100)
+		if(do_after(user, 3 SECONDS))
+			user.visible_message("<span class='notice'>[user] makes a crude plank from [src].</span>")
+			var/obj/item/natural/plank/S = new /obj/item/natural/plank(get_turf(src.loc))
+			if(user.is_holding(src))
+				user.dropItemToGround(src)
+				user.put_in_hands(S)
+			qdel(src)
+	..()
+
 /obj/item/grown/log/tree/stick
 	name = "stick"
 	icon_state = "stick1"
@@ -90,6 +134,7 @@
 	twohands_required = FALSE
 	gripped_intents = null
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP
+	tool_behaviour = TOOL_SCREWDRIVER
 	lumber_amount = 0
 
 /obj/item/grown/log/tree/stick/Crossed(mob/living/L)
@@ -151,22 +196,30 @@
 
 /obj/item/grown/log/tree/stake
 	name = "stake"
+	desc = "A sharpened piece of wood, fantastic for piercing."
 	icon_state = "stake"
 	desc = "A wooden stake. Mind the pointy end!"
 	force = 10
-	throwforce = 5
-	possible_item_intents = list(/datum/intent/stab, /datum/intent/pick)
+	throwforce = 4
+	thrown_bclass = BCLASS_STAB
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick)
 	firefuel = 1 MINUTES
 	blade_dulling = 0
 	max_integrity = 20
+	associated_skill = /datum/skill/combat/knives
+	wdefense = 0
 	static_debris = null
 	tool_behaviour = TOOL_IMPROVISED_RETRACTOR
 	obj_flags = null
+	wlength = WLENGTH_SHORT
 	w_class = WEIGHT_CLASS_SMALL
+	wbalance = 1
 	twohands_required = FALSE
 	gripped_intents = null
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP
 	lumber_amount = 0
+	tool_behaviour = TOOL_RETRACTOR
+	improvised = TRUE
 
 /*/obj/item/grown/log/tree/lumber
 	name = "lumber"

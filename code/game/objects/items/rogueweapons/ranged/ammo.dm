@@ -1,11 +1,3 @@
-#define ARROW_DAMAGE		33
-#define BOLT_DAMAGE			44
-#define BULLET_DAMAGE		80
-#define ARROW_PENETRATION	25
-#define BOLT_PENETRATION	50
-#define BULLET_PENETRATION	100
-
-
 /obj/item/ammo_casing/caseless/rogue/bolt
 	name = "bolt"
 	desc = "A durable iron bolt that will pierce a skull easily."
@@ -24,6 +16,8 @@
 	projectile_type = /obj/projectile/bullet/reusable/bolt/poison
 	icon_state = "arrow_poison"
 */
+	w_class = WEIGHT_CLASS_SMALL
+
 /obj/projectile/bullet/reusable/bolt
 	name = "bolt"
 	damage = 70
@@ -36,7 +30,7 @@
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	embedchance = 100
 	woundclass = BCLASS_STAB
-	flag = "piercing"
+	flag = "bullet"
 	speed = 0.5
 
 /obj/projectile/bullet/reusable/bolt/on_hit(atom/target)
@@ -60,13 +54,6 @@
 	name = "poisoned bolt"
 	damage = 50
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/bolt/poison
-
-
-/obj/projectile/bullet/reusable/bolt/poison/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
-		M.reagents.add_reagent(/datum/reagent/toxin/mutetoxin, 7) //not gonna kill anyone, but they will be quite quiet
 */
 /obj/item/ammo_casing/caseless/rogue/arrow
 	name = "arrow"
@@ -104,7 +91,7 @@
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	embedchance = 100
 	woundclass = BCLASS_STAB
-	flag = "piercing"
+	flag = "bullet"
 	speed = 0.4
 
 /obj/projectile/bullet/reusable/arrow/on_hit(atom/target)
@@ -190,7 +177,7 @@
 	hitsound = 'sound/blank.ogg'
 	embedchance = 0
 	woundclass = BCLASS_BLUNT
-	flag = "piercing"
+	flag = "bullet"
 	speed = 0.3
 
 	var/explode_sound = list('sound/misc/explode/incendiary (1).ogg','sound/misc/explode/incendiary (2).ogg')
@@ -239,7 +226,7 @@
 	hitsound = 'sound/blank.ogg'
 	embedchance = 0
 	woundclass = BCLASS_BLUNT
-	flag = "piercing"
+	flag = "bullet"
 	speed = 0.4
 
 	var/explode_sound = list('sound/misc/explode/incendiary (1).ogg','sound/misc/explode/incendiary (2).ogg')
@@ -275,36 +262,148 @@
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, adjustToxLoss), 100), 10 SECONDS)
 		addtimer(CALLBACK(M, TYPE_PROC_REF(/atom, visible_message), span_danger("[M] appears greatly weakened by the poison!")), 10 SECONDS)
 
-/obj/projectile/bullet/reusable/bullet
-	name = "lead ball"
-	damage = 50
-	damage_type = BRUTE
-	icon = 'icons/roguetown/weapons/ammo.dmi'
-	icon_state = "musketball_proj"
-	ammo_type = /obj/item/ammo_casing/caseless/rogue/bullet
-	range = 30
-	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
-	embedchance = 100
-	woundclass = BCLASS_STAB
-	flag = "piercing"
-	armor_penetration = 200
-	speed = 0.1
-
+//Musket spheres.
 /obj/item/ammo_casing/caseless/rogue/bullet
-	name = "lead sphere"
-	desc = "A small lead sphere. This should go well with gunpowder."
+	name = "iron sphere"
+	desc = "A small iron sphere. It's been inscribed with countless runes, increasing its stopping power."
 	projectile_type = /obj/projectile/bullet/reusable/bullet
-	caliber = "musketball"
+	caliber = "runeball"
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "musketball"
 	dropshrink = 0.5
 	possible_item_intents = list(/datum/intent/use)
-	max_integrity = 0.1
+	max_integrity = 0
+	w_class = WEIGHT_CLASS_TINY
 
+/obj/projectile/bullet/reusable/bullet
+	name = "iron ball"
+	desc = "A round iron shot, simple and spherical."
+	damage = 65
+	damage_type = BRUTE
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_proj"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/bullet
+	range = 15
+	jitter = 5
+	eyeblur = 3
+	hitsound = 'sound/combat/hits/hi_bolt (2).ogg'
+	embedchance = 100
+	woundclass = BCLASS_SHOT
+	impact_effect_type = /obj/effect/temp_visual/impact_effect
+	flag = "bullet"
+	armor_penetration = 100
+	speed = 0.3
+	accuracy = 25 //Lower accuracy than an arrow.
+/*
+/obj/projectile/bullet/fragment
+	name = "smaller lead ball"
+	desc = "Haha. You're not able to see this!"
+	damage = 25
+	damage_type = BRUTE
+	woundclass = BCLASS_SHOT
+	range = 30
+	jitter = 5
+	eyeblur = 3
+	stun = 1
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_proj"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/cball/grapeshot
+	impact_effect_type = /obj/effect/temp_visual/impact_effect
+	flag = "bullet"
+	armor_penetration = 100
+	speed = 0.5
 
-#undef ARROW_DAMAGE
-#undef BOLT_DAMAGE
-#undef BULLET_DAMAGE
-#undef ARROW_PENETRATION
-#undef BOLT_PENETRATION
-#undef BULLET_PENETRATION
+/obj/item/ammo_casing/caseless/rogue/bullet
+	name = "iron sphere"
+	desc = "A small iron ball, perfectly round. Deadly when projected at very high velocity."
+	projectile_type = /obj/projectile/bullet/reusable/bullet
+	caliber = "small_sphere"
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball"
+	possible_item_intents = list(/datum/intent/use)
+	max_integrity = 0
+	force = 20
+
+/obj/projectile/bullet/reusable/cannonball
+	name = "large lead ball"
+	desc = "A round lead ball. Complex and still spherical."
+	damage = 300
+	damage_type = BRUTE
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_proj" // No one sees it anyway. I think.
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/cball
+	range = 999
+	jitter = 5
+	stun = 1
+	hitsound = 'sound/combat/hits/hi_bolt (2).ogg'
+	embedchance = 0
+	dismemberment = 300
+	spread = 0
+	woundclass = BCLASS_SMASH
+	impact_effect_type = /obj/effect/temp_visual/impact_effect
+	flag = "bullet"
+	hitscan = FALSE
+	armor_penetration = 100
+	speed = 0.8
+
+/obj/projectile/bullet/reusable/cannonball/on_hit(atom/target,blocked = FALSE)
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.visible_message("<span class='danger'>[M] explodes into a shower of gibs!</span>")
+		M.gib()
+	explosion(get_turf(target), heavy_impact_range = 2, light_impact_range = 4, flame_range = 0, smoke = TRUE, soundin = pick('sound/misc/explode/bottlebomb (1).ogg','sound/misc/explode/bottlebomb (2).ogg'))
+	..(target, blocked)
+
+/obj/item/ammo_casing/caseless/rogue/cball
+	name = "large lead ball"
+	desc = "A round lead ball. Complex and still spherical."
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	projectile_type = /obj/projectile/bullet/reusable/cannonball
+	dropshrink = 0.5
+	icon_state = "cball"
+	caliber = "cannoball"
+	possible_item_intents = list(/datum/intent/use)
+	max_integrity = 1
+	randomspread = 0
+	variance = 0
+	force = 20
+
+/obj/item/ammo_casing/caseless/rogue/cball/grapeshot
+	name = "berryshot"
+	desc = "A large pouch of smaller lead balls. Not as complex and not as spherical."
+	icon_state = "grapeshot" // NEEDS SPRITE
+	dropshrink = 0.5
+	projectile_type = /obj/projectile/bullet/fragment
+
+/obj/projectile/bullet/reusable/bullet
+	name = "iron sphere"
+	damage = 40
+	armor_penetration = 50
+	speed = 0.6
+	damage_type = BRUTE
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/bullet
+	range = 30
+	hitsound = 'sound/combat/hits/hi_bolt (2).ogg'
+	embedchance = 100
+	woundclass = BCLASS_STAB
+	flag = "bullet"
+	armor_penetration = 50
+	speed = 0.1
+
+/obj/projectile/bullet/reusable/bullet/on_hit(mob/living/target, blocked = FALSE)
+	. = ..()
+
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf)
+
+		if(W && W.transformed == TRUE)
+			H.adjustFireLoss(25)
+			H.Paralyze(10)
+			H.Stun(10)
+			H.adjustFireLoss(25)
+			H.fire_act(1,10)
+			to_chat(H, span_userdanger("I'm hit by my BANE!"))
+*/

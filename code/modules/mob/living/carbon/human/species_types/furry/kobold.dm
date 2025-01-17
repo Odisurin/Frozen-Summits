@@ -5,11 +5,10 @@
 	name = "Kobold"
 	id = "kobold"
 	desc = "<b>Kobold</b><br>\
-	Short in stature and typically scrawny, this little lizards make up for it in their natural agility. People typically stereotype them as thieves, though...<br>\
-	(+1 Speed, -1 Constitution)"
+	Short in stature and typically scrawny, this little lizards are distant cousins of half-dragons, and they make up for it in their natural agility. People typically stereotype them as thieves, though..."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	possible_ages = ALL_AGES_LIST
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/mob/species/anthro_small_male.dmi'
 	limbs_icon_f = 'icons/mob/species/anthro_small_female.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -19,19 +18,29 @@
 	use_f = TRUE
 	custom_clothes = TRUE
 	clothes_id = "dwarf"
+	inherent_traits = list(
+		TRAIT_WEBWALK,
+		TRAIT_STRONGBITE,
+		TRAIT_WILD_EATER,
+		TRAIT_NOCSIGHT,
+		TRAIT_NOFALLDAMAGE1,
+		TRAIT_NUTCRACKER,
+		TRAIT_NIGHT_OWL,
+		TRAIT_DECEIVING_MEEKNESS
+	)
 	offset_features = list(
-		OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,-3), OFFSET_WRISTS = list(0,-3),\
+		OFFSET_ID = list(0,-6), OFFSET_GLOVES = list(0,0), OFFSET_WRISTS = list(0,0),\
 		OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,-4), OFFSET_HEAD = list(0,-4), \
-		OFFSET_FACE = list(0,-4), OFFSET_BELT = list(0,-4), OFFSET_BACK = list(0,-3), \
+		OFFSET_FACE = list(0,-4), OFFSET_BELT = list(0,-5), OFFSET_BACK = list(0,-4), \
 		OFFSET_NECK = list(0,-4), OFFSET_MOUTH = list(0,-4), OFFSET_PANTS = list(0,0), \
 		OFFSET_SHIRT = list(0,0), OFFSET_ARMOR = list(0,0), OFFSET_HANDS = list(0,-3), \
-		OFFSET_ID_F = list(0,-4), OFFSET_GLOVES_F = list(0,-4), OFFSET_WRISTS_F = list(0,-4), OFFSET_HANDS_F = list(0,-4), \
+		OFFSET_ID_F = list(0,-6), OFFSET_GLOVES_F = list(0,-4), OFFSET_WRISTS_F = list(0,-4), OFFSET_HANDS_F = list(0,-4), \
 		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-5), OFFSET_HEAD_F = list(0,-5), \
-		OFFSET_FACE_F = list(0,-5), OFFSET_BELT_F = list(0,-4), OFFSET_BACK_F = list(0,-4), \
+		OFFSET_FACE_F = list(0,-5), OFFSET_BELT_F = list(0,-5), OFFSET_BACK_F = list(0,-5), \
 		OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,-4), OFFSET_UNDIES_F = list(0,-4), \
 		)
-	race_bonus = list(STAT_SPEED = 1, STAT_CONSTITUTION = -1)
+	race_bonus = list(STAT_SPEED = 2, STAT_CONSTITUTION = -1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
@@ -40,7 +49,7 @@
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/werewolf,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/lizard,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
@@ -57,24 +66,45 @@
 		)
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
-		/datum/customizer/bodypart_feature/hair/head/humanoid/bald_default,
-		/datum/customizer/bodypart_feature/hair/facial/humanoid/shaved_default,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/bodypart_feature/underwear,
-		/datum/customizer/organ/snout/lizard,
-		/datum/customizer/organ/frills/lizard,
-		/datum/customizer/organ/horns/humanoid,
+		/datum/customizer/organ/tail/anthro,
+		/datum/customizer/organ/tail_feature/anthro,
+		/datum/customizer/organ/snout/anthrosmall,
+		/datum/customizer/organ/ears/anthro,
+		/datum/customizer/organ/horns/anthro,
+		/datum/customizer/organ/frills/anthro,
+		/datum/customizer/organ/wings/anthro,
+		/datum/customizer/organ/neck_feature/anthro,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
-		/datum/customizer/organ/vagina/animal,
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/vagina/anthro,
+		/datum/customizer/organ/butt/animal,
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
 		/datum/body_marking_set/kobold_scale,
 	)
 	body_markings = list(
+		/datum/body_marking/flushed_cheeks,
+		/datum/body_marking/eyeliner,
+		/datum/body_marking/small/plain,
+		/datum/body_marking/small/sock,
+		/datum/body_marking/small/socklonger,
+		/datum/body_marking/small/tips,
+		/datum/body_marking/small/belly,
+		/datum/body_marking/small/bellyslim,
+		/datum/body_marking/small/butt,
+		/datum/body_marking/small/tie,
+		/datum/body_marking/small/tiesmall,
+		/datum/body_marking/small/backspots,
+		/datum/body_marking/small/front,
+		/datum/body_marking/small/spotted,
 	)
 	languages = list(
 		/datum/language/common,

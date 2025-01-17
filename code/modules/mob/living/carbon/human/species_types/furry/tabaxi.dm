@@ -5,16 +5,22 @@
 	name = "Tabaxi"
 	id = "tabaxi"
 
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	desc = "<b>Tabaxi</b><br>\
-		Tabaxi are taller than most humans at six to seven feet. \
-		Their bodies are slender and covered in spotted or striped fur. \
-		Like most felines, Tabaxi have long tails and retractable claws. \
-		Tabaxi fur color ranges from light yellow to brownish red. \
-		Tabaxi eyes are slit-pupilled and usually green or yellow. \
-		Tabaxi are competent swimmers and climbers as well as speedy runners. \
-		They have a good sense of balance and an acute sense of smell.<br>\
-		(+1 Speed, -1 Intelligence)"
+		Tabaxi are taller than most humans at six to seven feet.\
+		Their bodies are slender and covered in spotted or striped fur.\
+		Like most felines, Tabaxi have long tails and retractable claws.\
+		Tabaxi fur color ranges from light yellow to brownish red.\
+		Tabaxi eyes are slit-pupilled and usually green or yellow.\
+		Tabaxi are competent swimmers and climbers as well as speedy runners.\
+		They have a good sense of balance and an acute sense of smell."
+	inherent_traits = list(
+		TRAIT_ZJUMP,
+		TRAIT_LEAPER,
+		TRAIT_NOFALLDAMAGE1,
+		TRAIT_STRONGBITE ,
+		TRAIT_WILD_EATER
+	)
 	skin_tone_wording = "Fur Colors"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE, MUTCOLORS)
 	possible_ages = ALL_AGES_LIST
@@ -43,7 +49,7 @@
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/werewolf,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears/cat,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/wild_tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
@@ -73,6 +79,8 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/butt/animal,
 		/datum/customizer/organ/vagina/animal,
 		/datum/customizer/organ/ears/tajaran
 		)
@@ -91,6 +99,11 @@
 		/datum/body_marking/sock,
 		/datum/body_marking/socklonger,
 		/datum/body_marking/tips,
+		/datum/body_marking/bellyscale,
+		/datum/body_marking/bellyscaleslim,
+		/datum/body_marking/bellyscalesmooth,
+		/datum/body_marking/bellyscaleslimsmooth,
+		/datum/body_marking/buttscale,
 		/datum/body_marking/belly,
 		/datum/body_marking/bellyslim,
 		/datum/body_marking/butt,
@@ -98,12 +111,15 @@
 		/datum/body_marking/tiesmall,
 		/datum/body_marking/backspots,
 		/datum/body_marking/front,
+		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
 		/datum/body_marking/spotted,
 	)
 	languages = list(
 		/datum/language/common,
+		/datum/language/felid
 	)
+
 	descriptor_choices = list(
 		/datum/descriptor_choice/height,
 		/datum/descriptor_choice/body,

@@ -12,7 +12,7 @@
 	invocation_type = "none"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
-	charge_max = 10 SECONDS
+	charge_max = 30 SECONDS
 	miracle = TRUE
 	devotion_cost = 10
 
@@ -24,9 +24,26 @@
 			target.visible_message(span_danger("[target] is burned by holy light!"), span_userdanger("I'm burned by holy light!"))
 			target.adjustFireLoss(10)
 			target.fire_act(1,10)
+		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
+			target.visible_message("<span class='danger'>[target] is burned by holy light!</span>", "<span class='userdanger'>I'm burned by holy light!</span>")
+			target.adjustFireLoss(25)
+			target.fire_act(1,5)
+			return TRUE
+		if(target.real_name in GLOB.excommunicated_players)
+			target.visible_message("<span class='warning'>The curse sears [user]s flesh, cursed being!</span>", "<span class='notice'>I am cursed, rejected, and this curse hits me with a wave of pain!</span>")
+			target.emote("scream")
+			target.adjustFireLoss(20)
 			return TRUE
 		var/conditional_buff = FALSE
 		var/situational_bonus = 1
+		if(HAS_TRAIT(target, TRAIT_ASTRATA_CURSE))
+			target.visible_message(span_danger("[target] recoils in pain!"), span_userdanger("Divine healing shuns me!"))
+			target.cursed_freak_out()
+			return FALSE
+		if(HAS_TRAIT(target, TRAIT_ATHEISM_CURSE))
+			target.visible_message(span_danger("[target] recoils in disgust!"), span_userdanger("These fools are trying to cure me with religion!!"))
+			target.cursed_freak_out()
+			return FALSE
 		//this if chain is stupid, replace with variables on /datum/patron when possible?
 		switch(user.patron.type)
 			if(/datum/patron/old_god)
@@ -53,7 +70,7 @@
 						situational_bonus = min(situational_bonus + 0.1, 2)
 				for (var/obj/structure/flora/roguetree/wise/O in oview(5, user))
 					situational_bonus += 1.5
-				// Healing before the oaken avatar of Dendor in the Druid Grove (exceptionally rare otherwise) supercharges their healing
+				// Healing before the oaken avatar of Silvanus in the Druid Grove (exceptionally rare otherwise) supercharges their healing
 				if (situational_bonus > 0)
 					conditional_buff = TRUE
 			if(/datum/patron/divine/abyssor)
@@ -70,7 +87,7 @@
 					situational_bonus = min(situational_bonus + 0.1, 2)
 				conditional_buff = TRUE
 			if(/datum/patron/divine/necra)
-				target.visible_message(span_info("A sense of quiet respite radiates from [target]!"), span_notice("I feel the Undermaiden's gaze turn from me for now!"))
+				target.visible_message(span_info("A sense of quiet respite radiates from [target]!"), span_notice("I feel Deaths's gaze turn from me for now!"))
 				if (iscarbon(target))
 					var/mob/living/carbon/C = target
 					// if the target is "close to death" (at or below 25% health)
@@ -181,11 +198,20 @@
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		if(user.patron?.undead_hater && (target.mob_biotypes & MOB_UNDEAD)) //positive energy harms the undead
-			target.visible_message(span_danger("[target] is burned by holy light!"), span_userdanger("I'm burned by holy light!"))
-			target.adjustFireLoss(25)
-			target.fire_act(1,10)
+		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
+			target.visible_message("<span class='danger'>[target] is burned by holy light!</span>", "<span class='userdanger'>I'm burned by holy light!</span>")
+			target.adjustFireLoss(50)
+			target.Knockdown(10)
+			target.fire_act(1,5)
 			return TRUE
+		if(HAS_TRAIT(target, TRAIT_ASTRATA_CURSE))
+			target.visible_message(span_danger("[target] recoils in pain!"), span_userdanger("Divine healing shuns me!"))
+			target.cursed_freak_out()
+			return FALSE
+		if(HAS_TRAIT(target, TRAIT_ATHEISM_CURSE))
+			target.visible_message(span_danger("[target] recoils in disgust!"), span_userdanger("These fools are trying to cure me with religion!!"))
+			target.cursed_freak_out()
+			return FALSE
 		target.visible_message(span_info("A wreath of gentle light passes over [target]!"), span_notice("I'm bathed in holy light!"))
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target

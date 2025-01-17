@@ -3,8 +3,9 @@
 		return
 	if(user.mind)
 		user.mind.i_know_person(src)
-	if(user.has_flaw(/datum/charflaw/paranoid) && (STASTR - user.STASTR) > 1)
-		user.add_stress(/datum/stressevent/parastr)
+	if(user.has_flaw(/datum/charflaw/paranoid))	//We hate different species, that are stronger than us, and aren't racist themselves
+		if(dna.species.name != user.dna.species.name && (STASTR - user.STASTR) > 1 && !has_flaw(/datum/charflaw/paranoid))
+			user.add_stress(/datum/stressevent/parastr)
 	if(HAS_TRAIT(user, TRAIT_JESTERPHOBIA) && job == "Jester")
 		user.add_stress(/datum/stressevent/jesterphobia)
 	if(HAS_TRAIT(src, TRAIT_BEAUTIFUL))
@@ -68,43 +69,91 @@
 			if(islatejoin)
 				is_returning = TRUE
 		if(display_as_wanderer)
-			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [race_name].")
+			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [custom_race_name] ([race_name]).")
 		else if(used_title)
-			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [is_returning ? "returning " : ""][race_name] [used_title].")
+			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [is_returning ? "returning " : ""][custom_race_name] ([race_name]) [used_title].")
 		else
 			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
 
 		if(GLOB.lord_titles[name])
 			. += span_notice("[m3] been granted the title of \"[GLOB.lord_titles[name]]\".")
 
-		if(HAS_TRAIT(src, TRAIT_NOBLE) && HAS_TRAIT(user, TRAIT_NOBLE))
-			. += span_notice("A fellow noble.")
+		if(HAS_TRAIT(src, TRAIT_NOBLE))
+			if(HAS_TRAIT(user, TRAIT_NOBLE))
+				. += span_notice("A fellow noble.")
+			else
+				. += span_notice("A noble!")
 
 		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
-			if(H.marriedto == name)
-				. += span_love("It's my spouse.")
+			var/mob/living/carbon/human/stranger = user
+			if(RomanticPartner(stranger))
+				. += "<span class='love'>It's my spouse.</span>"
+			if(family_datum == stranger.family_datum && family_datum)
+				var/family_text = ReturnRelation(user)
+				if(family_text)
+					. += family_text
 
 		if(name in GLOB.excommunicated_players)
-			. += span_userdanger("HERETIC! SHAME!")
+			. += span_userdanger("CURSED!")
 
 		if(name in GLOB.outlawed_players)
 			. += span_userdanger("OUTLAW!")
 
 		if(name in GLOB.court_agents)
-			var/datum/job/J = SSjob.GetJob(user.mind?.assigned_role)
-			if(J?.department_flag & GARRISON || J?.department_flag & NOBLEMEN)
+			var/datum/job/J = SSjob.GetJob(user.mind.assigned_role)
+			if(J.department_flag & GARRISON || J.department_flag & NOBLEMEN)
+			//if(GLOB.noble_positions.Find(J.title) || GLOB.garrison_positions.Find(J.title))
 				. += span_greentext("<b>[m1] an agent of the court!</b>")
+		
+		if(has_flaw(/datum/charflaw/addiction/lovefiend) && user.has_flaw(/datum/charflaw/addiction/lovefiend))
+			. += span_aiprivradio("[m1] as lovesick as I.")
+		
+		if(has_flaw(/datum/charflaw/addiction/junkie) && user.has_flaw(/datum/charflaw/addiction/junkie))
+			. += span_deadsay("[m1] carrying the same dust marks on their nose as I.")
 
-		var/villain_text = get_villain_text()
-		if(villain_text)
-			. += villain_text
-		var/heretic_text = get_heretic_text(user)
-		if(heretic_text)
-			. += span_notice(heretic_text)
-		var/inquisition_text =get_inquisition_text(user)
-		if(inquisition_text)
-			. +=span_notice(inquisition_text)
+		if(has_flaw(/datum/charflaw/addiction/smoker) && user.has_flaw(/datum/charflaw/addiction/smoker))
+			. += span_suppradio("[m1] enveloped by the familiar, faint stench of smoke. I know it well.")
+
+		if(has_flaw(/datum/charflaw/addiction/alcoholic) && user.has_flaw(/datum/charflaw/addiction/alcoholic))
+			. += span_syndradio("[m1] struggling to hide the hangover, and the stench of spirits. We're alike.")
+
+		var/commie_text
+		if(mind)
+			if(mind.special_role == "Bandit")
+				if(HAS_TRAIT(user, TRAIT_COMMIE))
+					commie_text = span_notice("Free man!")
+				/*else
+					commie_text = span_userdanger("BANDIT!")*/
+			if(mind.special_role == "Vampire Lord")
+				. += span_userdanger("A MONSTER!")
+			if(mind.assigned_role == "Lunatic")
+				. += span_userdanger("LUNATIC!")
+		if(HAS_TRAIT(src, TRAIT_MANIAC_AWOKEN))
+			. += span_userdanger("MANIAC!")
+
+		if(commie_text)
+			. += commie_text
+		else if(HAS_TRAIT(src, TRAIT_COMMIE) && HAS_TRAIT(user, TRAIT_COMMIE))
+			. += span_notice("Comrade!")
+		else if(HAS_TRAIT(src, TRAIT_CABAL) && HAS_TRAIT(user, TRAIT_CABAL))
+			. += span_notice("Another of the Cabal!")
+		else if(HAS_TRAIT(src, TRAIT_HORDE) && HAS_TRAIT(user, TRAIT_HORDE))
+			. += span_notice("Anointed!")
+		else if(HAS_TRAIT(src, TRAIT_DEPRAVED) && HAS_TRAIT(user, TRAIT_DEPRAVED))
+			. += span_notice("Debased!")
+
+		if(has_flaw(/datum/charflaw/paranoid) && user.has_flaw(/datum/charflaw/paranoid))
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				if(dna.species.name == H.dna.species.name)
+					. += span_nicegreen("[m1] privy to the dangers of all these strangers around us. Just like me.")
+				else
+					. += span_nicegreen("[m1] one of the good ones. He hates other faces as much as I.")
+		if(has_flaw(/datum/charflaw/masochist) && user.has_flaw(/datum/charflaw/addiction/sadist))
+			. += span_secradio("[m1] marked by scars inflicted for pleasure. A delectable target for my urges.")
+		if(has_flaw(/datum/charflaw/addiction/sadist) && user.has_flaw(/datum/charflaw/masochist))
+			. += span_secradio("[m1] looking with eyes filled with a desire to inflict pain. So exciting.")
+
 
 	if(leprosy == 1)
 		. += span_necrosis("A LEPER...")
@@ -217,7 +266,7 @@
 	if(!(SLOT_GLASSES in obscured))
 		if(glasses)
 			. += "[m3] [glasses.get_examine_string(user)] covering [m2] eyes."
-		else if(eye_color == BLOODCULT_EYE)
+		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
 			. += span_warning("<B>[m2] eyes are glowing an unnatural red!</B>")
 
 	//ears
@@ -273,6 +322,7 @@
 			msg += span_artery("[m1] pale.")
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
 			msg += span_artery("[m1] a little pale.")
+
 
 	// Bleeding
 	var/bleed_rate = get_bleed_rate()
@@ -450,7 +500,7 @@
 		var/mob/living/L = user
 		var/final_str = STASTR
 		if(HAS_TRAIT(src, TRAIT_DECEIVING_MEEKNESS))
-			final_str = 10
+			final_str = 5
 		var/strength_diff = final_str - L.STASTR
 		switch(strength_diff)
 			if(5 to INFINITY)
@@ -463,6 +513,34 @@
 				. += span_warning("[t_He] look[p_s()] weaker than I.")
 			if(-INFINITY to -5)
 				. += span_warning("<B>[t_He] look[p_s()] much weaker than I.</B>")
+
+		//The Nymphomaniac Underground
+		if((!appears_dead) && stat == CONSCIOUS && src.has_flaw(/datum/charflaw/addiction/lovefiend))
+			var/datum/charflaw/addiction/bonercheck = src.charflaw
+			if((bonercheck) && (bonercheck.sated == 0))
+				if(user.has_flaw(/datum/charflaw/addiction/lovefiend)) //Takes one to know one
+					switch(rand(1,5))
+						if(1)
+							. += span_love("I can sense [m2] <B>need</B> for a good time.")
+						if(2)
+							. += span_love("[m1] <B>aching</B> for a release.")
+						if(3)
+							. += span_love("A carnal hunger <B>stirs</B> within [m2] core.")
+						if(4)
+							. += span_love("I can practically hear the <B>thrum</B> of [m2] heartbeat.")
+						if(5)
+							. += span_love("Embers of desire <B>smolder</B> within [m2] eyes.")
+					user.advance_addiction(60) //Don't look now!
+				else if(Adjacent(user)) //No nympho, but close enough to notice.
+					switch(rand(1,4))
+						if(1)
+							. += span_love("[m1] blushing quite fiercely.")
+						if(2)
+							. += span_love("I can see [m2] face is flushed.")
+						if(3)
+							. += span_love("[m3] an odd way of breathing.")
+						if(4)
+							. += span_love("[m1] restless, for some reason.")
 
 	if(maniac)
 		var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
@@ -501,6 +579,48 @@
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))
 		. += trait_exam
+
+	var/traitstring = get_trait_string()
+
+	var/perpname = get_face_name(get_id_name(""))
+	if(perpname && (HAS_TRAIT(user, TRAIT_SECURITY_HUD) || HAS_TRAIT(user, TRAIT_MEDICAL_HUD)))
+		var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
+		if(R)
+			. += "<span class='deptradio'>Rank:</span> [R.fields["rank"]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
+		if(HAS_TRAIT(user, TRAIT_MEDICAL_HUD))
+			var/cyberimp_detect
+			for(var/obj/item/organ/cyberimp/CI in internal_organs)
+				if(CI.status == ORGAN_ROBOTIC && !CI.syndicate_implant)
+					cyberimp_detect += "[name] is modified with a [CI.name]."
+			if(cyberimp_detect)
+				. += "Detected cybernetic modifications:"
+				. += cyberimp_detect
+			if(R)
+				var/health_r = R.fields["p_stat"]
+				. += "<a href='?src=[REF(src)];hud=m;p_stat=1'>\[[health_r]\]</a>"
+				health_r = R.fields["m_stat"]
+				. += "<a href='?src=[REF(src)];hud=m;m_stat=1'>\[[health_r]\]</a>"
+			R = find_record("name", perpname, GLOB.data_core.medical)
+			if(R)
+				. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a><br>"
+			if(traitstring)
+				. += "<span class='info'>Detected physiological traits:\n[traitstring]"
+
+		if(HAS_TRAIT(user, TRAIT_SECURITY_HUD))
+			if(!user.stat && user != src)
+			//|| !user.canmove || user.restrained()) Fluff: Sechuds have eye-tracking technology and sets 'arrest' to people that the wearer looks and blinks at.
+				var/criminal = "None"
+
+				R = find_record("name", perpname, GLOB.data_core.security)
+				if(R)
+					criminal = R.fields["criminal"]
+
+				. += "<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>"
+				. += jointext(list("<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
+					"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
+					"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
+					"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
+	. += "ø ------------ ø</span>"
 
 /mob/living/proc/status_effect_examines(pronoun_replacement) //You can include this in any mob's examine() to show the examine texts of status effects!
 	var/list/dat = list()
@@ -562,7 +682,10 @@
 			/*else
 				villain_text = span_userdanger("BANDIT!")*/
 		if(mind.special_role == "Vampire Lord")
-			villain_text += span_userdanger("A MONSTER!")
+			var/datum/antagonist/vampirelord/VD = mind.has_antag_datum(/datum/antagonist/vampirelord)
+			if(VD) 
+				if(!VD.disguised)
+					villain_text += span_userdanger("A MONSTER!")
 		if(mind.assigned_role == "Lunatic")
 			villain_text += span_userdanger("LUNATIC!")
 

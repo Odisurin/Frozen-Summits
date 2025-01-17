@@ -101,6 +101,10 @@
 /obj/item/clothing/wrists/roguetown/bracers,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
+"an" = (
+/obj/docking_port/mobile/emergency/backup,
+/turf/closed,
+/area/rogue)
 "ao" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -387,9 +391,6 @@
 /obj/item/inhand_tester,
 /turf/open/floor/rogue/blocks,
 /area/rogue)
-"aR" = (
-/turf/closed/wall/mineral/rogue/wood,
-/area/rogue/outdoors/banditcamp)
 "aS" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -554,10 +555,6 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue)
-"bj" = (
-/obj/structure/bed/rogue/shit,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/banditcamp)
 "bk" = (
 /obj/item/inhand_tester/big,
 /turf/open/floor/rogue/blocks,
@@ -664,10 +661,6 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue)
-"bx" = (
-/obj/structure/bars,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/banditcamp)
 "by" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -723,7 +716,7 @@
 "bJ" = (
 /obj/item/rogueweapon/shield/wood,
 /obj/structure/rack/rogue,
-/obj/effect/decal/cleanable/dirt/cobweb,
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
 "bK" = (
@@ -738,15 +731,8 @@
 /obj/structure/vampire/portalmaker,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors)
-"bM" = (
-/obj/structure/toilet,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
-	},
-/area/rogue/indoors/banditcamp)
 "bN" = (
-/obj/effect/decal/cleanable/dirt/cobweb,
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
 "bO" = (
@@ -946,9 +932,6 @@
 /obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors)
-"cw" = (
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/outdoors/banditcamp)
 "cx" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -1004,7 +987,7 @@
 	},
 /area/rogue/indoors)
 "cE" = (
-/obj/effect/decal/cleanable/dirt/cobweb,
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "cF" = (
@@ -1036,7 +1019,7 @@
 "cK" = (
 /obj/structure/table/wood,
 /obj/item/candle/skull/lit,
-/obj/effect/decal/cleanable/dirt/cobweb,
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -1068,10 +1051,6 @@
 /obj/structure/closet/crate/roguecloset/inn/chest,
 /turf/open/floor/rogue/blocks/paving,
 /area/rogue/indoors)
-"cR" = (
-/obj/structure/bed/rogue/shit,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/outdoors/banditcamp)
 "cS" = (
 /obj/structure/mineral_door/wood/donjon{
 	icon_state = "donjondir";
@@ -1179,16 +1158,9 @@
 /area/rogue/indoors)
 "dk" = (
 /obj/structure/fluff/statue/gargoyle/moss,
-/obj/effect/decal/cleanable/dirt/cobweb,
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/woods)
-"dl" = (
-/obj/structure/mineral_door/bars{
-	locked = 1;
-	lockid = "bandit"
-	},
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/banditcamp)
 "dm" = (
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/outdoors/woods)
@@ -1196,18 +1168,11 @@
 /obj/structure/fluff/statue/gargoyle/moss,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/woods)
-"do" = (
-/obj/structure/closet/crate/chest,
-/obj/item/rope/chain,
-/obj/item/rope/chain,
-/obj/item/rope/chain,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/banditcamp)
 "dp" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
 "dq" = (
-/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors)
 "dr" = (
@@ -1388,33 +1353,14 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
-"dZ" = (
-/obj/structure/closet/crate/chest,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/paper,
-/obj/item/natural/feather,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/banditcamp)
-"ea" = (
-/obj/structure/roguewindow/openclose{
-	icon_state = "woodwindowdir";
-	dir = 1
-	},
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/outdoors/banditcamp)
 "eb" = (
-/mob/living/simple_animal/pet/cat/rogue/black,
+/mob/living/simple_animal/pet/cat/black,
 /obj/structure/table/wood{
 	icon_state = "largetable_mid";
 	dir = 1
 	},
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors)
-"ec" = (
-/obj/structure/roguemachine/scomm/r,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/banditcamp)
 "ek" = (
 /obj/structure/fluff/railing/border{
 	icon_state = "border";
@@ -1559,6 +1505,10 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/banditcamp)
 "kB" = (
+/obj/effect/landmark/mapGenerator/sunlights{
+	endTurfX = 128;
+	endTurfY = 128
+	},
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/woods)
 "kF" = (
@@ -1880,6 +1830,7 @@
 /area/rogue/indoors/banditcamp)
 "wB" = (
 /obj/effect/landmark/start/new_player,
+/turf/open/floor/plating,
 /area/start)
 "wO" = (
 /turf/closed,
@@ -1947,7 +1898,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/banditcamp)
 "xS" = (
-/mob/living/simple_animal/pet/cat/rogue/black,
+/mob/living/simple_animal/pet/cat/black,
 /obj/structure/table/wood{
 	icon_state = "largetable_mid";
 	dir = 1
@@ -2039,6 +1990,16 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/banditcamp)
+"Bw" = (
+/obj/structure/mineral_door/bars{
+	locked = 1;
+	lockid = "bandit"
+	},
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "vertw";
+	dir = 1
+	},
+/area/rogue/indoors/banditcamp)
 "BF" = (
 /obj/structure/roguewindow,
 /turf/open/floor/rogue/herringbone,
@@ -2057,6 +2018,13 @@
 "Cj" = (
 /obj/item/candle/skull,
 /turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/banditcamp)
+"Cp" = (
+/obj/structure/closet/crate/chest,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/banditcamp)
 "CA" = (
 /obj/effect/landmark/start/bandit{
@@ -2224,6 +2192,13 @@
 "Iw" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/woods)
+"Ix" = (
+/obj/structure/roguewindow/openclose{
+	icon_state = "woodwindowdir";
+	dir = 1
+	},
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/banditcamp)
 "IY" = (
 /obj/effect/landmark/events/testportal{
 	aportalloc = "spidercave"
@@ -2256,6 +2231,10 @@
 /obj/structure/fluff/grindwheel,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
+"Ke" = (
+/obj/structure/bed/rogue/shit,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/banditcamp)
 "Le" = (
 /obj/effect/landmark/events/testportal{
 	aportalloc = "bog"
@@ -2275,6 +2254,14 @@
 "LN" = (
 /obj/structure/fermenting_barrel/random/water,
 /turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/banditcamp)
+"LR" = (
+/obj/structure/closet/crate/chest,
+/obj/item/paper,
+/obj/item/paper,
+/obj/item/paper,
+/obj/item/natural/feather,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/banditcamp)
 "Mi" = (
 /turf/open/floor/rogue/ruinedwood{
@@ -2403,6 +2390,10 @@
 "RH" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
+"RJ" = (
+/obj/structure/bars,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/banditcamp)
 "RX" = (
 /turf/closed/indestructible/riveted,
 /area/start)
@@ -2413,10 +2404,13 @@
 "Te" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"Tf" = (
-/obj/effect/landmark/start/vampirespawn,
-/turf/open/floor/rogue/blocks/paving,
-/area/rogue/indoors)
+"Tv" = (
+/obj/structure/bars,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "vertw";
+	dir = 1
+	},
+/area/rogue/indoors/banditcamp)
 "Tw" = (
 /obj/structure/fluff/railing/fence{
 	icon_state = "fence";
@@ -2523,6 +2517,13 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/banditcamp)
+"Wx" = (
+/obj/structure/bed/rogue/shit,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "vertw";
+	dir = 1
+	},
 /area/rogue/indoors/banditcamp)
 "WB" = (
 /turf/closed/wall/mineral/rogue/craftstone,
@@ -5036,9 +5037,9 @@ ky
 ky
 jg
 Az
-Uy
-bj
-bx
+kR
+Ke
+RJ
 oP
 mM
 on
@@ -5166,9 +5167,9 @@ ky
 ky
 jg
 Az
-on
-on
-bx
+kR
+kR
+RJ
 on
 on
 JA
@@ -5296,12 +5297,12 @@ ky
 ky
 jg
 Az
-bj
-on
-dl
-on
-on
-on
+Wx
+Mi
+Bw
+Mi
+Mi
+Az
 Az
 jg
 jg
@@ -5426,13 +5427,13 @@ ky
 ky
 jg
 Az
-bx
-bx
-bx
-on
-on
-on
-aR
+Mi
+Mi
+Tv
+Mi
+Mi
+Az
+jg
 jg
 jg
 ZM
@@ -5556,13 +5557,13 @@ ky
 ky
 jg
 Az
-bM
-bj
-bx
-do
+Uy
 on
-on
-aR
+RJ
+Cp
+kR
+Az
+jg
 jg
 jg
 jg
@@ -5686,13 +5687,13 @@ ky
 ky
 jg
 Az
-on
-Mi
-dl
-on
-on
-on
-ea
+Az
+Az
+Az
+kR
+kR
+Ix
+jg
 jg
 jg
 jg
@@ -5815,14 +5816,14 @@ eS
 ky
 ky
 ky
-aR
-cw
-cR
-bx
-dZ
-on
-ec
-aR
+ky
+ky
+ky
+Az
+LR
+kR
+Az
+jg
 jg
 jg
 jg
@@ -5945,14 +5946,14 @@ eS
 ky
 ky
 ky
-aR
-aR
-aR
+ky
+ky
+ky
 Az
 Az
 Az
 Az
-aR
+jg
 jg
 ky
 ky
@@ -6340,7 +6341,7 @@ kx
 kx
 ky
 ky
-ky
+eS
 jg
 jg
 ky
@@ -10389,7 +10390,7 @@ Zl
 Zl
 WB
 Gz
-Tf
+cN
 cZ
 cZ
 dh
@@ -10519,7 +10520,7 @@ Zl
 Zl
 WB
 Gz
-Tf
+cN
 cZ
 dO
 cZ
@@ -10649,7 +10650,7 @@ WB
 cD
 WB
 Gs
-Tf
+cN
 WB
 de
 cZ
@@ -10779,7 +10780,7 @@ cC
 cD
 WB
 Gz
-Tf
+cN
 da
 cZ
 cZ
@@ -16617,7 +16618,7 @@ rQ
 rQ
 rQ
 rQ
-rQ
+an
 rQ
 rQ
 rQ

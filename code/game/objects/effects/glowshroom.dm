@@ -24,7 +24,7 @@
 //		var/throwdir = get_dir(src, mover)
 		var/mob/living/L = mover
 
-		if(HAS_TRAIT(L, TRAIT_KNEESTINGER_IMMUNITY)) //Dendor kneestinger immunity
+		if(HAS_TRAIT(L, TRAIT_KNEESTINGER_IMMUNITY)) //Silvanus kneestinger immunity
 			return TRUE
 
 		if(L.electrocute_act(30, src))
@@ -51,7 +51,7 @@
 	if(isliving(user) && W && user.z == z)
 		if(W.flags_1 & CONDUCT_1)
 			var/mob/living/L = user
-			if(L.electrocute_act(30, src)) // The kneestingers will let you pass if you worship dendor, but they won't take your stupid ass hitting them.
+			if(L.electrocute_act(30, src)) // The kneestingers will let you pass if you worship Silvanus, but they won't take your stupid ass hitting them.
 				L.emote("painscream")
 				L.consider_ambush()
 				if(L.throwing)
@@ -62,7 +62,7 @@
 
 /obj/structure/glowshroom/New(loc, obj/item/seeds/newseed, mutate_stats)
 	..()
-	set_light(1.5, 1.5, 1.5, l_color ="#d4fcac")
+	set_light(1.5, 1.5, "#d4fcac")
 
 	icon_state = "glowshroom[rand(1,3)]"
 

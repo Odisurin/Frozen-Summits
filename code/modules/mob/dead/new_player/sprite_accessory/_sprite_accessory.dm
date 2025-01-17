@@ -177,6 +177,8 @@
 			return "ADJ"
 		if(BODY_FRONT_LAYER)
 			return "FRONT"
+		if(BODY_FRONT_BACK_LAYER)
+			return "FRONT"
 		if(BODY_FRONT_FRONT_LAYER)
 			return "FFRONT"
 		if(BODY_UNDER_LAYER)
@@ -233,6 +235,9 @@
 	var/chest_color = prefs.get_chest_color()
 	if(chest_color)
 		sources[KEY_CHEST_COLOR] = chest_color
+	var/belly_color = prefs.get_belly_color()
+	if(belly_color)
+		sources[KEY_CHEST_COLOR] = belly_color
 	return sources
 
 /proc/color_key_source_list_from_carbon(mob/living/carbon/carbon)
@@ -255,8 +260,11 @@
 		sources[KEY_FACE_HAIR_COLOR] = human.get_facial_hair_color()
 		sources[KEY_CHEST_COLOR] = sources[KEY_SKIN_COLOR]
 		var/chest_color = human.get_chest_color()
+		var/belly_color = human.get_chest_color()
 		if(chest_color)
 			sources[KEY_CHEST_COLOR] = chest_color
+		if(belly_color)
+			sources[KEY_CHEST_COLOR] = belly_color
 	else
 		sources[KEY_SKIN_COLOR] = "FFFFFF"
 		sources[KEY_CHEST_COLOR] = sources[KEY_SKIN_COLOR]

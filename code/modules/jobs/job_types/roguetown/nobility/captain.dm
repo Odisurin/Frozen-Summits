@@ -1,5 +1,5 @@
 /datum/job/roguetown/captain
-	title = "Guard Captain"
+	title = "Outpost Sergeant"
 	flag = GUARD_CAPTAIN
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -8,9 +8,10 @@
 	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	tutorial = "Your lineage is noble, and generations of strong, loyal knights have come before you. You served your time \
-	gracefully as knight of his royal majesty, and now you've grown into a role which many men can only dream of becoming. \
-	Lead your men to victory--and keep them in line--and you will see this realm prosper under a thousand suns."
+	tutorial = "Your role is humble but vital. Tasked with defending a small hamlet on the frigid frontier of the Frozen Summit, you \
+	serve as both protector and mediator for its hardy folk. Contracted for your skill and reliability, your days are spent \
+	coordinating patrols, fending off minor threats like wolves and bandits, and ensuring the safety of travelers and townsfolk alike. \
+	It may not be a grand command, but to these people, you are their shield against the harshness of the wilds."
 	display_order = JDO_GUARD_CAPTAIN
 	advclass_cat_rolls = list(CTAG_CAPTAIN = 20)
 
@@ -19,7 +20,7 @@
 
 	give_bank_account = 26
 	noble_income = 16
-	min_pq = 9
+	min_pq = 0
 	max_pq = null
 	round_contrib_points = 3
 	cmode_music = 'sound/music/combat_knight.ogg'
@@ -34,7 +35,6 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	cloak = /obj/item/clothing/cloak/stabard/guardhood
-	id = /obj/item/scomstone/garrison
 
 /datum/job/roguetown/captain/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	. = ..()
@@ -47,11 +47,11 @@
 				index = copytext(H.real_name, 1,index)
 			if(!index)
 				index = H.real_name
-			S.name = "captain cape ([index])"
+			S.name = "sergeant cape ([index])"
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
-		H.real_name = "Captain [prev_real_name]"
-		H.name = "Captain [prev_name]"
+		H.real_name = "Sergeant [prev_real_name]"
+		H.name = "Sergeant [prev_name]"
 
 		for(var/X in peopleknowme)
 			for(var/datum/mind/MF in get_minds(X))
@@ -96,6 +96,82 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+		H.change_stat("strength", 2)
+		H.change_stat("perception", 1)
+		H.change_stat("intelligence", 2)
+		H.change_stat("constitution", 2)
+		H.change_stat("endurance", 2)
+		H.change_stat("fortune", 1)
+	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	H.verbs |= /mob/proc/haltyell
+	H.adjust_blindness(-3)
+	var/weapons = list(
+		"Zweihander",
+		"Great Mace",
+		"Battle Axe",
+		"Estoc",
+		"Bastard Sword & Shield",
+		"Flail & Shield",
+		"Sabre & Shield",
+		)
+	var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
+	H.set_blindness(0)
+	switch(weapon_choice)
+		if("Zweihander")
+			r_hand = /obj/item/rogueweapon/greatsword/zwei
+			backl = /obj/item/gwstrap
+		if("Great Mace")
+			r_hand = /obj/item/rogueweapon/mace/goden/steel
+		if("Battle Axe")
+			r_hand = /obj/item/rogueweapon/stoneaxe/battle
+		if("Estoc")
+			r_hand = /obj/item/rogueweapon/estoc
+			backl = /obj/item/gwstrap
+		if("Bastard Sword & Shield")
+			beltr = /obj/item/rogueweapon/sword/long
+			backl = /obj/item/rogueweapon/shield/tower/metal
+		if("Flail & Shield")
+			beltr = /obj/item/rogueweapon/flail/sflail
+			backl = /obj/item/rogueweapon/shield/tower/metal
+		if("Sabre & Shield")
+			beltr = /obj/item/rogueweapon/sword/sabre
+			backl = /obj/item/rogueweapon/shield/tower/metal
+
+/datum/advclass/captain/cavalry
+	name = "Cavalry Captain"
+	tutorial = "As the first among finest you ride at the speartip of cavalier forces, barreling saiga and blades through \
+	the soft flanks of enemy formations."
+	outfit = /datum/outfit/job/roguetown/captain/cavalry
+	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
+	category_tags = list(CTAG_CAPTAIN)
+
+/datum/outfit/job/roguetown/captain/cavalry/pre_equip(mob/living/carbon/human/H)
+	..()
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
+	backr = /obj/item/storage/backpack/rogue/satchel/black
+	backpack_contents = list(
+		/obj/item/storage/keyring/sheriff = 1,
+		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
+		)
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
 		H.change_stat("strength", 2)
 		H.change_stat("perception", 1)
 		H.change_stat("intelligence", 2)
@@ -150,7 +226,7 @@
 	tutorial = "As the first among finest you ride at the speartip of cavalier forces, barreling saiga and blades through \
 	the soft flanks of enemy formations."
 	outfit = /datum/outfit/job/roguetown/captain/cavalry
-	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck/tame/saddled
+	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
 	category_tags = list(CTAG_CAPTAIN)
 
 /datum/outfit/job/roguetown/captain/cavalry/pre_equip(mob/living/carbon/human/H)

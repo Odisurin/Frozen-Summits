@@ -1,6 +1,6 @@
 /obj/structure/roguemachine/atm
-	name = "MEISTER"
-	desc = "Stores and withdraws currency for accounts managed by the Grand Duchy of Azuria."
+	name = "Arcane Teller Mechanism"
+	desc = "A magical machine created by the Sword Coast Traders' Bank. It allows you to store and withdraw Money."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "atm"
 	density = FALSE
@@ -28,6 +28,12 @@
 				say("Blueblood for the Freefolk!")
 				playsound(src, 'sound/vo/mobs/ghost/laugh (5).ogg', 100, TRUE)
 				return			
+
+	if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE))
+		to_chat(H, "<span class='warning'>The idea repulses me!</span>")
+		H.cursed_freak_out()
+		return
+
 	if(H in SStreasury.bank_accounts)
 		var/amt = SStreasury.bank_accounts[H]
 		if(!amt)
@@ -51,7 +57,7 @@
 			mod = 10
 		if(selection == "SILVER")
 			mod = 5
-		var/coin_amt = input(user, "There is [SStreasury.treasury_value] mammon in the treasury. You may withdraw [floor(amt/mod)] [selection] COINS from your account.", src) as null|num
+		var/coin_amt = input(user, "There is [SStreasury.treasury_value] coin in the treasury. You may withdraw [floor(amt/mod)] [selection] COINS from your account.", src) as null|num
 		coin_amt = round(coin_amt)
 		if(coin_amt < 1)
 			return
@@ -90,6 +96,13 @@
 
 /obj/structure/roguemachine/atm/attackby(obj/item/P, mob/user, params)
 	if(ishuman(user))
+
+		if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE))
+			var/mob/living/carbon/human/H = user
+			to_chat(H, "<span class='warning'>The idea repulses me!</span>")
+			H.cursed_freak_out()
+			return
+
 		if(istype(P, /obj/item/roguecoin))
 			var/mob/living/carbon/human/H = user
 			if(H in SStreasury.bank_accounts)
@@ -97,7 +110,7 @@
 				if(!HAS_TRAIT(H, TRAIT_NOBLE))
 					var/T = round(P.get_real_price() * SStreasury.tax_value)
 					if(T != 0)
-						say("Your deposit was taxed [T] mammon.")
+						say("Your deposit was taxed [T] coin.")
 				qdel(P)
 				playsound(src, 'sound/misc/coininsert.ogg', 100, FALSE, -1)
 				return
@@ -159,7 +172,7 @@
 			mammonsiphoned += 50
 			budget2change(50, null, "SILVER")
 			playsound(src, 'sound/misc/coindispense.ogg', 70, TRUE)
-			SStreasury.log_to_steward("-[50] exported mammon to the Freefolks!")
+			SStreasury.log_to_steward("-[50] exported coin to the Freefolks!")
 			drill(src)
 
 /obj/structure/roguemachine/atm/attack_right(mob/living/carbon/human/user)

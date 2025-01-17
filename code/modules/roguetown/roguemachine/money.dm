@@ -44,7 +44,7 @@ GLOBAL_VAR(moneymaster)
 					return
 			P.forceMove(T.loc)
 			playsound(T.loc, 'sound/misc/hiss.ogg', 100, TRUE, -1)
-			say("Item accepted for [amtofsale] mammon.")
+			say("Item accepted for [amtofsale] coin.")
 			playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 			playsound(T, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
 
@@ -80,7 +80,9 @@ GLOBAL_VAR(moneymaster)
 	user.changeNext_move(CLICK_CD_MELEE)
 	to_chat(user, span_info("I rub the machine clockwise."))
 	if(budget > 0)
-		say("[budget] MAMMON ARE MINE...")
+
+		say("[budget] GOLD ARE MINE...")
+
 		playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 		playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	update_icon()
@@ -194,7 +196,7 @@ GLOBAL_VAR(moneymaster)
 	if(obj_broken)
 		set_light(0)
 		return
-	set_light(1, 1, 1, l_color = "#1b7bf1")
+	set_light(1, 1, "#1b7bf1")
 
 /obj/structure/roguemachine/money/Destroy()
 	set_light(0)
@@ -231,4 +233,4 @@ GLOBAL_VAR(moneymaster)
 		add_overlay(mutable_appearance(icon, "[icon_state]-e"))
 	else
 		add_overlay(mutable_appearance(icon, "[icon_state]-b"))
-	set_light(1, 1, 1, l_color = "#1b7bf1")
+	set_light(1, 1, "#1b7bf1")

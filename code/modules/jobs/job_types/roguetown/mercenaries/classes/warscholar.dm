@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/warscholar
-	name = "Naledi Warscholar"
-	tutorial = "Heralded by sigils of black-and-gold and their distinct masks, the Naledi Warscholars once prowled the dunes of their homeland, exterminating daemons in exchange for coin, artifacts, or knowledge. As Naledi's economy falters, the Warscholars travel to foreign lands to seek further business."
+	name = "Hired Mage"
+	tutorial = "Skilled Spellswords, Casters and Sholars can bee found all over the swordcoast, exterminating daemons in exchange for coin, artifacts, or knowledge. Many sholars of the arcane travel to foreign lands to seek further business."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/mercenary/warscholar
@@ -30,7 +30,7 @@
 	H.adjust_blindness(-3)
 	detailcolor = input("Choose a color.", "NALEDIAN COLORPLEX") as anything in naledicolors
 	detailcolor = naledicolors[detailcolor]
-	var/classes = list("Hierophant","Pontifex","Vizier")
+	var/classes = list("Enchanter","Spellblade","Healer")
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 
 	mask = /obj/item/clothing/mask/rogue/lordmask/naledi
@@ -43,9 +43,9 @@
 
 	switch(classchoice)
 
-		if("Hierophant")
+		if("Enchanter")
 			H.set_blindness(0)
-			to_chat(H, span_warning("Hierophants are magicians who studied under cloistered sages, well-versed in all manners of arcyne. They prioritize enhancing their teammates and distracting foes while staying in the backline."))
+			to_chat(H, span_warning("Enchanters are magicians who studied under cloistered sages, well-versed in all manners of arcyne. They prioritize enhancing their teammates and distracting foes while staying in the backline."))
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
@@ -81,9 +81,9 @@
 			pants = /obj/item/clothing/under/roguetown/trou/leather
 			backpack_contents = list(/obj/item/roguekey/mercenary,/obj/item/rogueweapon/huntingknife)
 
-		if("Pontifex")
+		if("Spellblade")
 			H.set_blindness(0)
-			to_chat(H, span_warning("You are a Naledi Pontifex, a warrior trained into a hybridized style of movement-controlling magic and hand-to-hand combat. Though your abilities in magical fields are lacking, you are far more dangerous than other magi in a straight fight. You manifest your calm, practiced skill into a killing intent that takes the shape of an arcyne blade."))
+			to_chat(H, span_warning("You are a Spellblade, a warrior trained into a hybridized style of movement-controlling magic and hand-to-hand combat. Though your abilities in magical fields are lacking, you are far more dangerous than other magi in a straight fight. You manifest your calm, practiced skill into a killing intent that takes the shape of an arcane blade."))
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
@@ -113,9 +113,9 @@
 			pants = /obj/item/clothing/under/roguetown/trou/leather/pontifex
 			backpack_contents = list(/obj/item/roguekey/mercenary,/obj/item/rogueweapon/huntingknife)
 
-		if("Vizier")
+		if("Healer")
 			H.set_blindness(0)
-			to_chat(H, span_warning("You are a Naledi Vizier. You are a healer, trained in both physick and holy practices. Likely of a learned or upper class background, you are a supporting fellow, meant to heal your allies with miracles and surgeries- though you are no stranger to combat."))
+			to_chat(H, span_warning("You are a professional Healer. You are a healer, trained in both medicine and holy practices. Likely of a learned or upper class background, you are a supporting fellow, meant to heal your allies with miracles and surgeries- though you are no stranger to combat."))
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
@@ -124,11 +124,13 @@
 			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
+			H.mind.adjust_spellpoints(2)
 			H.change_stat("strength", 1)
 			H.change_stat("endurance", 2)
 			H.change_stat("intelligence", 2)

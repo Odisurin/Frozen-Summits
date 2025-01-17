@@ -1,3 +1,4 @@
+GLOBAL_LIST_INIT(searaider_quotes, world.file2list("strings/rt/searaiderlines.txt"))
 GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggrolines.txt"))
 
 /mob/living/carbon/human/species/human/northern/searaider
@@ -7,7 +8,6 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	ambushable = FALSE
 	dodgetime = 30
 	flee_in_pain = TRUE
-	stand_attempts = 6
 	possible_rmb_intents = list()
 	var/is_silent = FALSE /// Determines whether or not we will scream our funny lines at people.
 
@@ -35,8 +35,9 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 /mob/living/carbon/human/species/human/northern/searaider/Initialize()
 	. = ..()
 	set_species(/datum/species/human/northern)
-	addtimer(CALLBACK(src, PROC_REF(after_creation)), 1 SECONDS)
-	is_silent = TRUE
+	spawn(10)
+		after_creation()
+	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
 
 
 /mob/living/carbon/human/species/human/northern/searaider/after_creation()
@@ -44,8 +45,8 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	job = "Sea Raider"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/northern/searaider)
 	var/obj/item/organ/eyes/organ_eyes = getorgan(/obj/item/organ/eyes)
 	if(organ_eyes)
@@ -68,6 +69,10 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 			face_atom(get_step(src,pick(GLOB.cardinals)))
 	if(!wander && prob(10))
 		face_atom(get_step(src,pick(GLOB.cardinals)))
+	if(!is_silent && prob(12))
+		say(pick(GLOB.searaider_quotes))
+	if(!is_silent && prob(12))
+		emote(pick("laugh","burp","yawn","grumble","mumble","blink_r","clap"))
 
 /mob/living/carbon/human/species/human/northern/searaider/handle_combat()
 	if(mode == AI_HUNT)
@@ -75,22 +80,27 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 			emote("rage")
 	. = ..()
 
+/// This version of sea raider actually stays quiet and doesn't yell. Great for admin spawn events if you don't want to destroy your players' chat logs!
+/mob/living/carbon/human/species/human/northern/searaider/silent
+	is_silent = TRUE
+
 /datum/outfit/job/roguetown/human/species/human/northern/searaider/pre_equip(mob/living/carbon/human/H)
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	if(prob(50))
 		wrists = /obj/item/clothing/wrists/roguetown/bracers
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor 
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
 	if(prob(50))
 		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic
-	pants = /obj/item/clothing/under/roguetown/tights
+	pants = /obj/item/clothing/under/roguetown/tights/sailor 
 	if(prob(50))
 		pants = /obj/item/clothing/under/roguetown/chainlegs/iron
-	head = /obj/item/clothing/head/roguetown/helmet/leather
 	if(prob(50))
-		head = /obj/item/clothing/head/roguetown/helmet/horned
+		head = /obj/item/clothing/head/bandana
+	if(prob(30))
+		head = /obj/item/clothing/head/roguetown/helmet/tricorn/skull
 	if(prob(50))
-		neck = /obj/item/clothing/neck/roguetown/gorget
+		neck = /obj/item/clothing/neck/roguetown/bevor
 	if(prob(50))
 		gloves = /obj/item/clothing/gloves/roguetown/leather
 	H.STASPD = 9
@@ -99,13 +109,12 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	H.STAPER = 10
 	H.STAINT = 1
 	if(prob(50))
-		r_hand = /obj/item/rogueweapon/sword
+		r_hand = /obj/item/rogueweapon/sword/rapier 
 	else
-		r_hand = /obj/item/rogueweapon/stoneaxe/battle
-	l_hand = /obj/item/rogueweapon/shield/wood
+		r_hand = /obj/item/rogueweapon/sword/cutlass
+	l_hand = /obj/item/rogueweapon/huntingknife/idagger/steel/parrying 
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	if(prob(30))
-		neck = /obj/item/clothing/neck/roguetown/chaincoif
 		H.eye_color = pick("27becc", "35cc27", "000000")
 	H.hair_color = pick ("4f4f4f", "61310f", "faf6b9")
 	H.facial_hair_color = H.hair_color

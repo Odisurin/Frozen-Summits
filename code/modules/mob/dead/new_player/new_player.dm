@@ -559,9 +559,9 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 				if(SHUTTLE_CALL)
 					if(SSshuttle.emergency.timeLeft(1) > initial(SSshuttle.emergencyCallTime)*0.5)
 						SSticker.mode.make_antag_chance(humanc)
+*/
 
-	if(humanc && CONFIG_GET(flag/roundstart_traits))
-		SSquirks.AssignQuirks(humanc, humanc.client, TRUE)*/
+	SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
 	if(humanc)
 		var/fakekey = character.ckey
 		if(character.ckey in GLOB.anonymize)
@@ -579,6 +579,14 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	if(humanc)
 		try_apply_character_post_equipment(humanc)
 	log_manifest(character.mind.key,character.mind,character,latejoin = TRUE)
+
+/mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
+	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
+	for(var/C in GLOB.employmentCabinets)
+		var/obj/structure/filingcabinet/employment/employmentCabinet = C
+		if(!employmentCabinet.virgin)
+			employmentCabinet.addFile(employee)
+
 
 /mob/dead/new_player/proc/LateChoices()
 	var/list/dat = list("<div class='notice' style='font-style: normal; font-size: 14px; margin-bottom: 2px; padding-bottom: 0px'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time, 1)]</div>")

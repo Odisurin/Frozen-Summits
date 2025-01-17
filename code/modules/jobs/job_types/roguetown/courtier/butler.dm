@@ -3,8 +3,8 @@
 	flag = BUTLER
 	department_flag = COURTIERS
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 
 	allowed_races = RACES_ALL_KINDS
 
@@ -16,7 +16,6 @@
 	min_pq = 3
 	max_pq = null
 	round_contrib_points = 3
-	cmode_music = 'sound/music/combat_fancy.ogg'
 
 /datum/job/roguetown/butler/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	. = ..()

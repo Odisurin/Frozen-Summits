@@ -145,10 +145,28 @@
 	grind_results = list(/datum/reagent/floure = 10)
 	volume = 1
 	sellprice = 0
+
 /datum/reagent/floure
 	name = "flour"
 	description = ""
 	color = "#FFFFFF" // rgb: 96, 165, 132
+	
+
+/obj/item/reagent_containers/powder/sugar
+	name = "sugar"
+	desc = ""
+	gender = PLURAL
+	icon_state = "salt"
+	list_reagents = list(/datum/reagent/sugar = 1)
+	grind_results = list(/datum/reagent/sugar = 10)
+	volume = 1
+	sellprice = 0
+
+/datum/reagent/sugar
+	name = "sugar"
+	description = ""
+	color = "#FFFFFF" // rgb: 96, 165, 132
+
 
 /datum/reagent/floure/on_mob_life(mob/living/carbon/M)
 	if(prob(30))
@@ -186,8 +204,8 @@
 	qdel(src)
 
 /obj/item/reagent_containers/powder/ozium
-	name = "powder"
-	desc = ""
+	name = "ozium"
+	desc = "A potent drug that causes a state of euphoria, but can also arrest breathing."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "ozium"
 	possible_transfer_amounts = list()
@@ -195,6 +213,7 @@
 	list_reagents = list(/datum/reagent/ozium = 15)
 	grind_results = list(/datum/reagent/ozium = 15)
 	sellprice = 5
+	possible_potion = "perpot"
 
 /datum/reagent/ozium
 	name = "Ozium"
@@ -220,7 +239,7 @@
 
 /obj/item/reagent_containers/powder/moondust
 	name = "moondust"
-	desc = ""
+	desc = "Derived from the skins of certain pallid goblins. Makes folk quick to act and anger."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust"
 	possible_transfer_amounts = list()
@@ -228,6 +247,7 @@
 	list_reagents = list(/datum/reagent/moondust = 15)
 	grind_results = list(/datum/reagent/moondust = 15)
 	sellprice = 5
+	possible_potion = "intpot"
 
 /datum/reagent/moondust/overdose_process(mob/living/M)
 	M.adjustToxLoss(3, 0)
@@ -258,8 +278,8 @@
 	M.visible_message(span_warning("Blood runs from [M]'s nose."))
 
 /obj/item/reagent_containers/powder/moondust_purest
-	name = "moondust"
-	desc = ""
+	name = "pure moondust"
+	desc = "This moondust glitters even in the dark. It seems to have certain pure properties."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust_purest"
 	possible_transfer_amounts = list()
@@ -267,6 +287,7 @@
 	list_reagents = list(/datum/reagent/moondust_purest = 18)
 	grind_results = list(/datum/reagent/moondust_purest = 15)
 	sellprice = 30
+	possible_potion = "spdpot"
 
 /datum/reagent/moondust_purest
 	name = "Purest Moondust"
@@ -304,4 +325,17 @@
 
 /datum/reagent/moondust_purest/overdose_start(mob/living/M)
 	M.playsound_local(M, 'sound/misc/heroin_rush.ogg', 100, FALSE)
-	M.visible_message(span_warning("Blood runs from [M]'s nose."))
+	M.visible_message("<span class='warning'>Blood runs from [M]'s nose.</span>")
+
+/datum/reagent/moondust_purest/overdose_process(mob/living/M)
+	M.adjustToxLoss(10, 0)
+
+/obj/item/reagent_containers/powder/blastpowder
+	name = "blastpowder"
+	desc = "explosive powder known to be produced by the dwarves. It's used in many explosives."
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "blastpowder"
+	possible_transfer_amounts = list()
+	volume = 15
+	list_reagents = list(/datum/reagent/blastpowder = 15)
+	sellprice = 15

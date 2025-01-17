@@ -155,11 +155,24 @@
 	. = ..()
 	if (!(owner.mob_biotypes & MOB_UNDEAD))
 		if (prob(10))
-			owner.adjustToxLoss(0.2)
+			owner.adjustToxLoss(0.02)
 
 /obj/item/organ/eyes/night_vision/werewolf
 	name = "moonlight eyes"
 	desc = ""
+
+/obj/item/organ/eyes/night_vision/werewolf/green
+	eye_color ="#4ad02f"
+
+/obj/item/organ/eyes/night_vision/werewolf/blue
+	eye_color ="#2fa2d0"
+
+/obj/item/organ/eyes/night_vision/werewolf/yellow
+	eye_color ="#cfd822"
+
+/obj/item/organ/eyes/night_vision/werewolf/brown
+	eye_color ="#5e3506"
+
 
 /obj/item/organ/eyes/night_vision/nightmare
 	name = "burning red eyes"
@@ -242,6 +255,26 @@
 	flash_protect = FLASH_PROTECTION_WELDER
 	tint = INFINITY
 	var/obj/item/flashlight/eyelight/eye
+
+/obj/item/organ/eyes/robotic/flashlight/emp_act(severity)
+	return
+
+/obj/item/organ/eyes/robotic/flashlight/Insert(mob/living/carbon/M, special = FALSE, drop_if_replaced = FALSE)
+	..()
+	if(!eye)
+		eye = new /obj/item/flashlight/eyelight()
+	eye.on = TRUE
+	eye.forceMove(M)
+	eye.update_brightness(M)
+	M.become_blind("flashlight_eyes")
+
+
+/obj/item/organ/eyes/robotic/flashlight/Remove(mob/living/carbon/M, special = 0)
+	eye.on = FALSE
+	eye.update_brightness(M)
+	eye.forceMove(src)
+	M.cure_blind("flashlight_eyes")
+	..()
 
 // Welding shield implant
 /obj/item/organ/eyes/robotic/shield
@@ -374,6 +407,7 @@
 		clear_visuals()
 	var/turf/scanning = scanfrom
 	var/stop = FALSE
+	on_mob.set_light_flags(on_mob.light_flags & ~LIGHT_ATTACHED)
 	on_mob.forceMove(scanning)
 	for(var/i in 1 to light_beam_distance)
 		scanning = get_step(scanning, scandir)
@@ -394,6 +428,7 @@
 			var/obj/effect/abstract/eye_lighting/L = i
 			L.forceMove(src)
 		if(!QDELETED(on_mob))
+			on_mob.set_light_flags(on_mob.light_flags | LIGHT_ATTACHED)
 			on_mob.forceMove(src)
 
 /obj/item/organ/eyes/robotic/glow/proc/start_visuals()
@@ -417,20 +452,32 @@
 
 
 /obj/item/organ/eyes/robotic/glow/proc/sync_light_effects()
-	for(var/I in eye_lighting)
-		var/obj/effect/abstract/eye_lighting/L = I
-		L.set_light(light_object_range, light_inner_range, light_object_power, l_color =  current_color_string)
-	if(on_mob)
-		on_mob.set_light(1, 1, 1, l_color = current_color_string)
+	for(var/e in eye_lighting)
+		var/obj/effect/abstract/eye_lighting/eye_lighting = e
+		eye_lighting.set_light_color(current_color_string)
+	on_mob?.set_light_color(current_color_string)
+
 
 /obj/effect/abstract/eye_lighting
+	light_system = MOVABLE_LIGHT
 	var/obj/item/organ/eyes/robotic/glow/parent
 
-/obj/effect/abstract/eye_lighting/Initialize()
+
+/obj/effect/abstract/eye_lighting/Initialize(mapload, light_object_range, light_object_power, current_color_string, light_flags)
 	. = ..()
 	parent = loc
 	if(!istype(parent))
+		stack_trace("/obj/effect/abstract/eye_lighting added to improper parent ([loc]). Deleting.")
 		return INITIALIZE_HINT_QDEL
+	if(!isnull(light_object_range))
+		set_light_range(light_object_range)
+	if(!isnull(light_object_power))
+		set_light_power(light_object_power)
+	if(!isnull(current_color_string))
+		set_light_color(current_color_string)
+	if(!isnull(light_flags))
+		set_light_flags(light_flags)
+
 
 /obj/item/organ/eyes/moth
 	name = "fluvian eyes"

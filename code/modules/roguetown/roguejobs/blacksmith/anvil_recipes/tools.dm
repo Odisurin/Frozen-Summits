@@ -16,6 +16,28 @@
 	created_item = /obj/item/flashlight/flare/torch/metal
 	createditem_num = 5
 	craftdiff = 0
+	created_item = list(/obj/item/flashlight/flare/torch/metal, /obj/item/flashlight/flare/torch/metal, /obj/item/flashlight/flare/torch/metal, /obj/item/flashlight/flare/torch/metal, /obj/item/flashlight/flare/torch/metal)
+
+/datum/anvil_recipe/general/locks
+	name = "Locks 2x"
+	req_bar = /obj/item/ingot/iron
+	created_item = list(/obj/item/customlock, /obj/item/customlock)
+
+/datum/anvil_recipe/tools/handsaw
+	name = "handsaw (+s)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/handsaw
+	i_type = "Tools"
+
+/datum/anvil_recipe/tools/chisel
+	name = "chisel (+s) x2"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/rogueweapon/chisel
+	createmultiple = TRUE
+	createditem_num = 2
+	i_type = "Tools"
 
 /datum/anvil_recipe/tools/iron/pan
 	name = "Frypan"
@@ -105,6 +127,7 @@
 	created_item = /obj/item/flashlight/flare/torch/lantern
 	createditem_num = 3
 
+
 /datum/anvil_recipe/tools/iron/cups
 	name = "Cups x3"
 	req_bar = /obj/item/ingot/iron
@@ -139,10 +162,20 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/tools/iron/bowl
-	name = "Iron Bowl"
+	name = "Iron Bowl x3"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/reagent_containers/glass/bowl/iron
 	craftdiff = 1
+
+/datum/anvil_recipe/general/iron/ramrod
+	name = "Replacement Ramrods x3"
+	req_bar = /obj/item/ingot/iron
+	created_item = list(/obj/item/ramrod,
+						/obj/item/ramrod,
+						/obj/item/ramrod
+					)
+
+	craftdiff = 0
 
 // --------- Steel -----------
 

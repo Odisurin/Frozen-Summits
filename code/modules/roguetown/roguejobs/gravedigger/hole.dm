@@ -197,6 +197,9 @@
 			user.visible_message(span_notice("[user] stuffs [O] into [src]."), \
 							 	 span_notice("I stuff [O] into [src]."), \
 							 	 span_hear("I hear a loud bang."))
+			var/mob/living/L = O
+			if(!issilicon(L))
+				L.Paralyze(40)
 			O.forceMove(T)
 			user_buckle_mob(O, user)
 	else
@@ -232,7 +235,7 @@
 			var/mob/living/carbon/human/B = A
 			B.buried = FALSE
 	..()
-
+	
 /obj/structure/closet/dirthole/open(mob/living/user)
 	if(opened)
 		return
@@ -284,6 +287,8 @@
 			if(!(locate(/obj/item/natural/stone) in T))
 				if(prob(23))
 					new /obj/item/natural/stone(T)
+				if(prob(10))
+					new /obj/item/reagent_containers/food/snacks/rogue/truffles(T)
 	return ..()
 
 /obj/structure/closet/dirthole/Destroy()

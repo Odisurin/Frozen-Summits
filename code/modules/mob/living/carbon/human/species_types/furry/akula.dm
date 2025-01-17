@@ -2,22 +2,28 @@
 	race = /datum/species/akula
 
 /datum/species/akula
-	name = "Axian"
+	name = "Kuo-Toa"
 	id = "akula"
 	desc = "<b>Axian</b><br>\
-	Axians are a proud, shark-like people that have a heritage founded in maritime trade, \
-	tax evasion, and piracy. They have a strong distaste for the nobility and taxation, \
-	making them a target of discrimination in the Azurean lands. They are oftentimes scapegoats for crime. \
-	Due to their penchant for trade and travel, they can be found all over the world, oftentimes \
-	seeing places many could not even dream of. They look down at those they considered the 'settled' \
-	and often uproot themselves quite often in their lifetimes. However, due to the isolation in Azure, many Axians \
-	find their sanity being clawed away as they find themselves stuck in one place.<br>\
-	(+1 Endurance)"
+	Kuo-toa , also known as gogglers and men-fish, are a piscine race of warm-blooded and amphibious creatures that dwelt in the Underdark and the deep sea. \
+	Sinister secrets lurked below the surface of their alien minds, \
+	for the kuo-toa were fanatics plagued by mental instability.\
+	Kuo-toa are not all necessarily evil, but within their repressive theocracy,\
+	only few posess enough willpower to oppose the ruling castes. \
+	Kuo-toa are an amphibious race, capable of operating with equal or greater mobility underwater as they could on land.\
+	"
+	inherent_traits = list(
+		TRAIT_STRONGBITE,
+		TRAIT_NASTY_EATER,
+		TRAIT_SHOCKIMMUNE,
+		TRAIT_PERFECT_TRACKER,
+		TRAIT_WATERBREATHING
+	)
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	inherent_traits = list(TRAIT_WATERBREATHING, TRAIT_SEA_DRINKER)
 	possible_ages = ALL_AGES_LIST
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -36,7 +42,7 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
-	race_bonus = list(STAT_ENDURANCE = 1)
+	race_bonus = list(STAT_ENDURANCE = 1, STAT_STRENGTH = 1, STAT_SPEED = -1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
@@ -75,7 +81,9 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/butt/human,
 		/datum/customizer/organ/vagina/human_anthro,
+		/datum/customizer/organ/belly/human,
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
@@ -84,11 +92,27 @@
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
+		/datum/body_marking/plain,
+		/datum/body_marking/tiger,
+		/datum/body_marking/tiger/dark,
+		/datum/body_marking/sock,
+		/datum/body_marking/socklonger,
+		/datum/body_marking/tips,
+		/datum/body_marking/bellyscale,
+		/datum/body_marking/bellyscaleslim,
+		/datum/body_marking/bellyscalesmooth,
+		/datum/body_marking/bellyscaleslimsmooth,
+		/datum/body_marking/buttscale,
 		/datum/body_marking/belly,
 		/datum/body_marking/bellyslim,
 		/datum/body_marking/butt,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
+		/datum/body_marking/backspots,
+		/datum/body_marking/front,
+		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
-		/datum/body_marking/tiger/dark,
+		/datum/body_marking/spotted,
 	)
 	descriptor_choices = list(
 		/datum/descriptor_choice/height,

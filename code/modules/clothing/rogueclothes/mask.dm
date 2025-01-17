@@ -17,6 +17,17 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 //	block2add = FOV_BEHIND
 
+/obj/item/clothing/mask/rogue/spectacles/glasses
+	name = "glasses"
+	icon_state = "glasses_old"
+	break_sound = "glassbreak"
+	attacked_sound = 'sound/combat/hits/onglass/glasshit.ogg'
+	max_integrity = 20
+	integrity_failure = 0.5
+	resistance_flags = FIRE_PROOF
+	body_parts_covered = EYES
+	anvilrepair = /datum/skill/craft/armorsmithing
+
 /obj/item/clothing/mask/rogue/spectacles/golden
 	name = "golden spectacles"
 	icon_state = "goggles"
@@ -85,7 +96,7 @@
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	max_integrity = 100
 	resistance_flags = FIRE_PROOF
-	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT)
 	flags_inv = HIDEFACE
 	body_parts_covered = FACE
@@ -102,7 +113,7 @@
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	resistance_flags = FIRE_PROOF
-	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT)
 	flags_inv = HIDEFACE
 	body_parts_covered = FACE
@@ -113,8 +124,8 @@
 	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/mask/rogue/facemask/psydonmask
-	name = "psydonian mask"
-	desc = "A silver mask, forever locked in a rigor of uncontestable joy. The Order of Saint Xylix can't decide on whether it's meant to represent Psydon's 'mirthfulness', 'theatricality', or the unpredictable melding of both."
+	name = "Psydonian Mask"
+	desc = "A symbolic mask typically worn by members of the Otavan Inquisition."
 	icon_state = "psydonmask"
 	item_state = "psydonmask"
 
@@ -197,7 +208,7 @@
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	resistance_flags = FIRE_PROOF
-	armor = list("blunt" = 10, "slash" = 40, "stab" = 40, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 10, "slash" = 40, "stab" = 40, "bullet" = 8, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = null
 	flags_inv = HIDEFACE
 	body_parts_covered = FACE
@@ -241,5 +252,33 @@
 	name = "war scholar's mask"
 	item_state = "naledimask"
 	icon_state = "naledimask"
-	desc = "Runes and wards, meant for daemons; the gold has somehow rusted in unnatural, impossible agony. The most prominent of these etchings is in the shape of the Naledian psycross."
+	desc = "A light ,gold plated mask covered in protective runes."
 	sellprice = 0
+
+
+/obj/item/clothing/mask/rogue/collar
+	name = "cyan collar"
+	desc = "A collar meant to a humanoid to wear. Weird."
+	icon_state = "collar_cyan"
+	flags_inv = NONE
+	body_parts_covered = NONE
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP|ITEM_SLOT_NECK
+	adjustable = FALSE
+	toggle_icon_state = FALSE
+	experimental_onhip = TRUE
+	sewrepair = TRUE
+
+/obj/item/clothing/mask/rogue/collar/spiked
+	name = "spiked collar"
+	desc = "A collar meant to a humanoid to wear. Weird."
+	icon_state = "collar_spike"
+
+/obj/item/clothing/mask/rogue/collar/black
+	name = "black collar"
+	desc = "A collar meant to a humanoid to wear. Weird."
+	icon_state = "collar_black"
+
+/obj/item/clothing/mask/rogue/collar/medallion
+	name = "crimson medallion"
+	desc = "A blood-soaked medallion"
+	icon_state = "crimson_medallion"

@@ -13,6 +13,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	associated_skill = /datum/skill/combat/maces
 	smeltresult = /obj/item/ingot/iron
+	improvised = TRUE
 
 /obj/item/rogueweapon/hammer/attack_obj(obj/attacked_object, mob/living/user)
 	if(!isliving(user) || !user.mind)
@@ -178,6 +179,7 @@
 	icon_state = "tongs"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT
+	tool_behaviour = TOOL_HEMOSTAT
 	//dropshrink = 0.8
 	wlength = 10
 	slot_flags = ITEM_SLOT_HIP

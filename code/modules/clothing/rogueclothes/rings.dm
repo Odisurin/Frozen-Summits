@@ -13,10 +13,59 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	anvilrepair = /datum/skill/craft/armorsmithing
 
+/obj/item/clothing/ringP  /////////////////////// cast focus ring for acolytes and shit.
+	parent_type = /obj/item/clothing/neck/roguetown/psicross
+	name = "psi ring"
+	desc = "a blessed psi ring, for the religious type"
+	w_class = WEIGHT_CLASS_TINY
+	icon = 'icons/roguetown/clothing/rings.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/rings.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/rings.dmi'
+	sleevetype = "shirt"
+	icon_state = "castring"
+	slot_flags = ITEM_SLOT_RING
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	anvilrepair = /datum/skill/craft/blacksmithing
+
+/obj/item/clothing/ring/lantern
+	parent_type = /obj/item/flashlight/flare/torch/lantern // Inherits parents properties from lantern
+	name = "alchemist ring"
+	icon_state = "lanternR"
+	w_class = WEIGHT_CLASS_TINY
+	icon = 'icons/roguetown/clothing/rings.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/rings.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/rings.dmi'
+	sleevetype = "shirt"
+	desc = "flick of the thumb portable flame"
+	light_range = 4 // standard torch range
+	on = FALSE
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_HIP
+	force = 5
+	on_damage = 5
+	produce_heat = 1500
+	heat = 1000
+	slot_flags = ITEM_SLOT_RING
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	anvilrepair = /datum/skill/craft/blacksmithing
+	fuel = 9999 
+	sellprice = 30
+
+/obj/item/clothing/ring/lantern/MiddleClick(mob/living/user, params)
+	if (!on)
+		on = TRUE
+		to_chat(user, "<span class='notice'>With a flick of the thumb, you strike a flame.</span>")
+	..()
+
 /obj/item/clothing/ring/silver
 	name = "silver ring"
 	icon_state = "ring_s"
 	sellprice = 33
+
+/obj/item/clothing/ring/copper
+	name = "copper ring"
+	icon_state = "ring_c"
+	sellprice = 15
 
 /obj/item/clothing/ring/gold
 	name = "gold ring"
@@ -124,7 +173,7 @@
 /obj/item/clothing/ring/signet
 	name = "Signet Ring"
 	icon_state = "signet"
-	desc = "A large golden ring engraved with the Symbol of Psydon."
+	desc = "A large golden ring engraved with the Symbol of Ao."
 	sellprice = 135
 
 //silver rings
@@ -158,6 +207,72 @@
     icon_state = "s_ring_diamond"
     sellprice = 230
 
+// Copper Rings
+
+/obj/item/clothing/ring/emeraldc
+	name = "gemerald ring"
+	icon_state = "c_ring_emerald"
+	sellprice = 110
+
+/obj/item/clothing/ring/rubyc
+	name = "rontz ring"
+	icon_state = "c_ring_ruby"
+	sellprice = 155
+
+/obj/item/clothing/ring/topazc
+	name = "toper ring"
+	icon_state = "c_ring_topaz"
+	sellprice = 105
+
+/obj/item/clothing/ring/quartzc
+	name = "blortz ring"
+	icon_state = "c_ring_quartz"
+	sellprice = 150
+
+/obj/item/clothing/ring/sapphirec
+	name = "saffira ring"
+	icon_state = "c_ring_sapphire"
+	sellprice = 115
+
+/obj/item/clothing/ring/diamondc
+	name = "dorpel ring"
+	icon_state = "c_ring_diamond"
+	sellprice = 170
+
+
+// Copper Rings
+
+/obj/item/clothing/ring/emeraldc
+	name = "gemerald ring"
+	icon_state = "c_ring_emerald"
+	sellprice = 110
+
+/obj/item/clothing/ring/rubyc
+	name = "rontz ring"
+	icon_state = "c_ring_ruby"
+	sellprice = 155
+
+/obj/item/clothing/ring/topazc
+	name = "toper ring"
+	icon_state = "c_ring_topaz"
+	sellprice = 105
+
+/obj/item/clothing/ring/quartzc
+	name = "blortz ring"
+	icon_state = "c_ring_quartz"
+	sellprice = 150
+
+/obj/item/clothing/ring/sapphirec
+	name = "saffira ring"
+	icon_state = "c_ring_sapphire"
+	sellprice = 115
+
+/obj/item/clothing/ring/diamondc
+	name = "dorpel ring"
+	icon_state = "c_ring_diamond"
+	sellprice = 170
+
+
 /obj/item/clothing/ring/dragon_ring
 	name = "Dragon Ring"
 	icon_state = "dragonring"
@@ -165,17 +280,17 @@
 	sellprice = 666
 	var/active_item
 
-/obj/item/clothing/ring/dragon_ring/equipped(mob/living/user, slot)
+/obj/item/clothing/ring/dragon_ring/equipped(mob/living/user)
 	. = ..()
 	if(active_item)
 		return
-	else if(slot == SLOT_RING)
+	else
 		active_item = TRUE
 		to_chat(user, span_notice("Here be dragons."))
 		user.change_stat("strength", 2)
 		user.change_stat("constitution", 2)
 		user.change_stat("endurance", 2)
-	return
+		return
 
 /obj/item/clothing/ring/dragon_ring/dropped(mob/living/user)
 	..()
@@ -185,5 +300,5 @@
 		user.change_stat("constitution", -2)
 		user.change_stat("endurance", -2)
 		active_item = FALSE
-	return
+		return
 

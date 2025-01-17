@@ -27,56 +27,50 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 	var/last_asset_job = 0 // Last job done.
 
 //This proc sends the asset to the client, but only if it needs it.
-//This proc blocks(sleeps)
-/proc/send_asset(client/client, asset_name)
-	if(!send_asset_internal(client, asset_name))
-		return FALSE
-	client.sending |= asset_name
-	var/job = client.browse_queue_flush()
-	if(!isnull(job) && client) // if job is null we runtimed somehow
-		client.sending -= asset_name
-		client.cache |= asset_name
-		client.completed_asset_jobs -= job
-
-//This proc doesn't
-/proc/send_asset_async(client/client, asset_name)
-	if(!send_asset_internal(client, asset_name))
-		return FALSE
-	client.cache += asset_name
-	return TRUE
-
-/proc/send_asset_internal(client/client, asset_name)
+//This proc blocks(sleeps) unless verify is set to false
+/proc/send_asset(client/client, asset_name, verify = TRUE)
 	if(!istype(client))
 		if(ismob(client))
 			var/mob/M = client
 			if(M.client)
 				client = M.client
+
 			else
-				return FALSE
+				return 0
+
 		else
-			return FALSE
+			return 0
 
 	if(client.cache.Find(asset_name) || client.sending.Find(asset_name))
-		return FALSE
+		return 0
 
 	log_asset("Sending asset [asset_name] to client [client]")
 	client << browse_rsc(SSassets.cache[asset_name], asset_name)
-	return TRUE // sent, but not necessarily received
+	if(!verify)
+		client.cache += asset_name
+		return 1
 
-/client/proc/browse_queue_flush()
-	var/job = ++last_asset_job
-	var/t = 0
-	var/timeout_time = (ASSET_CACHE_SEND_TIMEOUT * sending.len) + ASSET_CACHE_SEND_TIMEOUT
-	src << browse({"
+	client.sending |= asset_name
+	var/job = ++client.last_asset_job
+
+	client << browse({"
 	<script>
 		window.location.href="?asset_cache_confirm_arrival=[job]"
 	</script>
 	"}, "window=asset_cache_browser")
-	while(!completed_asset_jobs.Find(job) && t < timeout_time) // Reception is handled in Topic()
+
+	var/t = 0
+	var/timeout_time = (ASSET_CACHE_SEND_TIMEOUT * client.sending.len) + ASSET_CACHE_SEND_TIMEOUT
+	while(client && !client.completed_asset_jobs.Find(job) && t < timeout_time) // Reception is handled in Topic()
 		stoplag(1) // Lock up the caller until this is received.
 		t++
 
-	return job
+	if(client)
+		client.sending -= asset_name
+		client.cache |= asset_name
+		client.completed_asset_jobs -= job
+
+	return 1
 
 //This proc blocks(sleeps) unless verify is set to false
 /proc/send_asset_list(client/client, list/asset_list, verify = TRUE)
@@ -142,7 +136,7 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 			send_asset(client, file)
 		else
 			concurrent_tracker++
-			send_asset_async(client, file)
+			send_asset(client, file, verify=FALSE)
 
 		stoplag(0) //queuing calls like this too quickly can cause issues in some client versions
 
@@ -375,7 +369,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 				continue
 			asset = fcopy_rsc(asset) //dedupe
 			var/prefix2 = (directions.len > 1) ? "[dir2text(direction)]." : ""
-			var/asset_name = sanitize_filename("[prefix].[prefix2][icon_state_name].png")
+			var/asset_name = SANITIZE_FILENAME("[prefix].[prefix2][icon_state_name].png")
 			if (generic_icon_names)
 				asset_name = "[generate_asset_name(asset)].png"
 
@@ -411,7 +405,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 /datum/asset/group/tgui
 	children = list(
 		/datum/asset/simple/tgui,
-		/datum/asset/simple/fontawesome
+	//	/datum/asset/simple/fontawesome
 	)
 
 /datum/asset/simple/headers
@@ -533,35 +527,36 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		/datum/asset/simple/jquery,
 		/datum/asset/simple/goonchat,
 		/datum/asset/spritesheet/goonchat,
-		/datum/asset/simple/fontawesome
+		/datum/asset/simple/fontawesome,
+		/datum/asset/simple/roguefonts
 	)
 
 
 /datum/asset/simple/jquery
 	verify = FALSE
-/*	assets = list(
-		"jquery.min.js"            = 'code/modules/goonchat/browserassets/js/jquery.min.js',
-	)*/
+	assets = list(
+		"jquery.min.js"            = 'goon/browserassets/js/jquery.min.js',
+	)
 
 /datum/asset/simple/goonchat
-	verify = FALSE
-/*	assets = list(
-		"json2.min.js"             = 'code/modules/goonchat/browserassets/js/json2.min.js',
-		"browserOutput.js"         = 'code/modules/goonchat/browserassets/js/browserOutput.js',
-		"browserOutput.css"	       = 'code/modules/goonchat/browserassets/css/browserOutput.css',
-		"browserOutput_white.css"	      = 'code/modules/goonchat/browserassets/css/browserOutput.css',
-	)*/
+	verify = TRUE
+	assets = list(
+		"json2.min.js"             = 'goon/browserassets/js/json2.min.js',
+		"browserOutput.js"         = 'goon/browserassets/js/browserOutput.js',
+		"browserOutput.css"	       = 'goon/browserassets/css/browserOutput.css',
+		"browserOutput_white.css"  = 'goon/browserassets/css/browserOutput.css',
+	)
 
 /datum/asset/simple/fontawesome
 	verify = FALSE
-/*	assets = list(
+	assets = list(
 		"fa-regular-400.eot"  = 'html/font-awesome/webfonts/fa-regular-400.eot',
 		"fa-regular-400.woff" = 'html/font-awesome/webfonts/fa-regular-400.woff',
 		"fa-solid-900.eot"    = 'html/font-awesome/webfonts/fa-solid-900.eot',
 		"fa-solid-900.woff"   = 'html/font-awesome/webfonts/fa-solid-900.woff',
 		"font-awesome.css"    = 'html/font-awesome/css/all.min.css',
-		"v4shim.css"          = 'html/font-awesome/css/v4-shims.min.css'
-	)*/
+		//"v4shim.css"          = 'html/font-awesome/css/v4-shims.min.css'
+	)
 
 /datum/asset/simple/blackedstone_class_menu_slop_layout
 	verify = FALSE
@@ -569,7 +564,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"try4.png" = 'icons/roguetown/misc/try4.png',
 		"try4_border.png" = 'icons/roguetown/misc/try4_border.png',
 		"slop_menustyle2.css" = 'html/browser/slop_menustyle2.css',
-		"haha_skull.gif" = 'icons/roguetown/misc/haha_skull.gif'
+		//"haha_skull.gif" = 'icons/roguetown/misc/haha_skull.gif'
 	)
 
 /datum/asset/simple/blackedstone_triumph_buy_menu_slop_layout
@@ -598,7 +593,8 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"sand.ttf" = 'interface/fonts/languages/sand.ttf',
 		"undead.ttf" = 'interface/fonts/languages/undead.ttf',
 		"draconic.ttf" = 'interface/fonts/languages/draconic.ttf',
-		"lupian.ttf" = 'interface/fonts/languages/lupian.ttf'
+		"lupian.ttf" = 'interface/fonts/languages/lupian.ttf',
+		"felid.ttf" = 'interface/fonts/languages/felid.ttf'
 	)
 
 /datum/asset/spritesheet/goonchat
@@ -615,8 +611,8 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		var/icon = initial(L.icon)
 		if (icon != 'icons/misc/language.dmi')
 			var/icon_state = initial(L.icon_state)
-			Insert("language-[icon_state]", icon, icon_state=icon_state)
-*/
+			Insert("language-[icon_state]", icon, icon_state=icon_state)*/
+
 	..()
 
 /datum/asset/simple/permissions

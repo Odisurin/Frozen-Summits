@@ -2,25 +2,31 @@
 	race = /datum/species/lizardfolk
 
 /datum/species/lizardfolk
-	name = "Sissean"
+	name = "Lizard-folk"
 	id = "lizardfolk"
-	desc = "<b>Sissean</b><br>\
-	Sisseans are semi-aquatic reptilian humanoids. \
-	Their flesh is covered in scales varying in color from dark green to shades of brown and gray. \
-	Taller than humans and powerfully built, sisseans are often between 6 and 7 feet tall. \
-	Sisseans have non-prehensile muscular tails that grow to three or four feet in length, and these are used for balance. \
-	They also have sharp claws and teeth.<br>\
-	(+1 Constitution)"
+	desc = "<b>Kecuala</b><br>\
+	Kecualas are semi-aquatic reptilian humanoids, usually called lizardfolk.\
+	Their skin is covered in scales and varied in color from dark green through to shades of brown and gray.\
+	Taller than humans and powerfully built, lizardfolk are often between 6 and 7 feet tall.\
+	Lizardfolks have non-prehensile muscular tails that grow to three or four feet in length, and these are used for balance.\
+	They also have sharp claws and teeth."
 	skin_tone_wording = "Skin Colors"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	possible_ages = ALL_AGES_LIST
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	soundpack_m = /datum/voicepack/male
 	soundpack_f = /datum/voicepack/female
+	inherent_traits = list(
+		TRAIT_STRONGBITE,
+		TRAIT_NASTY_EATER,
+		TRAIT_SHOCKIMMUNE,
+		TRAIT_PERFECT_TRACKER,
+		TRAIT_WATERBREATHING
+	)
 	offset_features = list(
 		OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
 		OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
@@ -68,12 +74,13 @@
 		/datum/customizer/organ/tail/lizard,
 		/datum/customizer/organ/tail_feature/lizard_spines,
 		/datum/customizer/organ/snout/lizard,
-		/datum/customizer/organ/ears/lizard,
 		/datum/customizer/organ/frills/lizard,
 		/datum/customizer/organ/horns/humanoid/sissean,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/butt/animal,
 		/datum/customizer/organ/vagina/animal,
 		)
 	body_marking_sets = list(
@@ -85,14 +92,27 @@
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
-		/datum/body_marking/bellyscale,
-		/datum/body_marking/bellyscaleslim,
-		/datum/body_marking/bellyscaleslimsmooth,
-		/datum/body_marking/buttscale,
+		/datum/body_marking/plain,
 		/datum/body_marking/tiger,
 		/datum/body_marking/tiger/dark,
+		/datum/body_marking/sock,
+		/datum/body_marking/socklonger,
+		/datum/body_marking/tips,
+		/datum/body_marking/bellyscale,
+		/datum/body_marking/bellyscaleslim,
+		/datum/body_marking/bellyscalesmooth,
+		/datum/body_marking/bellyscaleslimsmooth,
+		/datum/body_marking/buttscale,
+		/datum/body_marking/belly,
+		/datum/body_marking/bellyslim,
+		/datum/body_marking/butt,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
+		/datum/body_marking/backspots,
+		/datum/body_marking/front,
 		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
+		/datum/body_marking/spotted,
 	)
 	languages = list(
 		/datum/language/common,

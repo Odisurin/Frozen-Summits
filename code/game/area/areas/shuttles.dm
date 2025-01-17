@@ -4,18 +4,28 @@
 
 /area/shuttle
 	name = "Shuttle"
+	requires_power = FALSE
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
+	always_unpowered = FALSE
 	valid_territory = FALSE
 	icon_state = "shuttle"
 	// Loading the same shuttle map at a different time will produce distinct area instances.
 	unique = FALSE
+	blob_allowed = FALSE
 	flags_1 = CAN_BE_DIRTY_1
 
 /area/shuttle/Initialize()
 	if(!canSmoothWithAreas)
 		canSmoothWithAreas = type
 	. = ..()
+
+/area/shuttle/PlaceOnTopReact(list/new_baseturfs, turf/fake_turf_type, flags)
+	. = ..()
+	if(length(new_baseturfs) > 1 || fake_turf_type)
+		return // More complicated larger changes indicate this isn't a player
+	if(ispath(new_baseturfs[1], /turf/open/floor/plating))
+		new_baseturfs.Insert(1, /turf/baseturf_skipover/shuttle)
 
 ////////////////////////////Multi-area shuttles////////////////////////////
 
@@ -47,6 +57,7 @@
 
 /area/shuttle/pirate
 	name = "Pirate Shuttle"
+	requires_power = TRUE
 	canSmoothWithAreas = /area/shuttle/pirate
 
 ////////////////////////////Bounty Hunter Shuttles////////////////////////////
@@ -60,6 +71,7 @@
 
 /area/shuttle/abandoned
 	name = "Abandoned Ship"
+	requires_power = TRUE
 	canSmoothWithAreas = /area/shuttle/abandoned
 
 /area/shuttle/abandoned/bridge
@@ -92,6 +104,7 @@
 
 /area/shuttle/custom
 	name = "Custom player shuttle"
+	blob_allowed = TRUE
 	flags_1 = CAN_BE_DIRTY_1 | CULT_PERMITTED_1
 
 /area/shuttle/arrival
@@ -100,21 +113,26 @@
 
 /area/shuttle/pod_1
 	name = "Escape Pod One"
+	blob_allowed = TRUE
 
 /area/shuttle/pod_2
 	name = "Escape Pod Two"
+	blob_allowed = TRUE
 
 /area/shuttle/pod_3
 	name = "Escape Pod Three"
+	blob_allowed = TRUE
 
 /area/shuttle/pod_4
 	name = "Escape Pod Four"
+	blob_allowed = TRUE
 
 /area/shuttle/mining
 	name = "Mining Shuttle"
 
 /area/shuttle/mining/large
 	name = "Mining Shuttle"
+	requires_power = TRUE
 
 /area/shuttle/labor
 	name = "Labor Camp Shuttle"
@@ -136,6 +154,7 @@
 
 /area/shuttle/escape
 	name = "Emergency Shuttle"
+	blob_allowed = TRUE
 	flags_1 = CAN_BE_DIRTY_1 | CULT_PERMITTED_1
 
 /area/shuttle/escape/afterShuttleMove(new_parallax_dir)
@@ -186,6 +205,7 @@
 	name = "Syndicate Scout"
 
 /area/shuttle/caravan
+	requires_power = TRUE
 
 /area/shuttle/caravan/syndicate1
 	name = "Syndicate Fighter"

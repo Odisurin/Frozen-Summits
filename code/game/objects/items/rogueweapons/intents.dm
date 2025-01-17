@@ -51,8 +51,6 @@
 		chargedloop.stop()
 	if(mastermob.curplaying == src)
 		mastermob.curplaying = null
-	mastermob = null
-	masteritem = null
 	return ..()
 
 /datum/intent/proc/examine(mob/user)
@@ -152,7 +150,7 @@
 	if(mastermob)
 		if(chargedloop)
 			if(!istype(chargedloop))
-				chargedloop = new chargedloop(mastermob)
+				chargedloop = new chargedloop(list(mastermob))
 
 /datum/intent/proc/on_charge_start() //what the fuck is going on here lol
 	if(mastermob.curplaying)
@@ -160,10 +158,10 @@
 		mastermob.curplaying = null
 	if(chargedloop)
 		if(!istype(chargedloop, /datum/looping_sound))
-			chargedloop = new chargedloop(mastermob)
+			chargedloop = new chargedloop(list(mastermob))
 		else
 			chargedloop.stop()
-		chargedloop.start(chargedloop.parent)
+		chargedloop.start(chargedloop.output_atoms)
 		mastermob.curplaying = src
 
 /datum/intent/proc/on_mouse_up()
@@ -278,6 +276,10 @@
 	mid_length = 7
 	volume = 100
 
+/datum/looping_sound/drill
+	mid_sounds = list('sound/combat/drill_loop.ogg')
+	mid_length = 85
+	volume = 100
 
 /datum/intent/hit
 	name = "hit"
@@ -309,6 +311,17 @@
 	blade_class = BCLASS_PICK
 	chargetime = 0
 	swingdelay = 12
+
+/datum/intent/drill
+	name = "drill"
+	icon_state = "inpick"
+	attack_verb = list("drills","augers")
+	hitsound = list('sound/combat/hits/pick/genpick (1).ogg', 'sound/combat/hits/pick/genpick (2).ogg')
+	animname = "strike"
+	item_d_type = "stab"
+	blade_class = BCLASS_DRILL
+	chargetime = 0.3
+	swingdelay = 3
 
 /datum/intent/shoot //shooting crossbows or other guns, no parrydrain
 	name = "shoot"
@@ -366,7 +379,7 @@
 	candodge = TRUE
 	canparry = TRUE
 	blade_class = BCLASS_PUNCH
-	miss_text = "swing a fist at the air"
+	miss_text = "swings a fist at the air!"
 	miss_sound = "punchwoosh"
 	item_d_type = "blunt"
 
@@ -384,23 +397,8 @@
 	return
 
 /datum/intent/unarmed/claw
-	name = "claw"
-	//icon_state
-	attack_verb = list("mauls", "scratches", "claws")
-	chargetime = 0
-	animname = "blank22"
-	hitsound = list('sound/combat/hits/punch/punch (1).ogg', 'sound/combat/hits/punch/punch (2).ogg', 'sound/combat/hits/punch/punch (3).ogg')
-	misscost = 5
-	releasedrain = 5
-	swingdelay = 0
-	penfactor = 10
-	candodge = TRUE
-	canparry = TRUE
 	blade_class = BCLASS_CUT
-	miss_text = "claw at the air"
-	miss_sound = "punchwoosh"
 	item_d_type = "slash"
-	
 
 /datum/intent/unarmed/shove
 	name = "shove"
@@ -495,7 +493,7 @@
 	swingdelay = 3
 	candodge = TRUE
 	canparry = TRUE
-	miss_text = "slash the air"
+	miss_text = "slashes the air!"
 	item_d_type = "slash"
 
 /datum/intent/simple/bite
@@ -530,7 +528,7 @@
 /datum/intent/simple/spear
 	name = "spear"
 	icon_state = "instrike"
-	attack_verb = list("stabs", "skewers")
+	attack_verb = list("stabs", "skewers", "bashes")
 	animname = "blank22"
 	blade_class = BCLASS_CUT
 	hitsound = list("genthrust", "genstab")

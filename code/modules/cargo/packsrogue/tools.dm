@@ -15,12 +15,12 @@
 
 
 /datum/supply_pack/rogue/tools/scomst
-	name = "Scomstone"
+	name = "Sending Stone Ring"
 	cost = 120
 	contains = list(/obj/item/scomstone)
 
 /datum/supply_pack/rogue/tools/serfst
-	name = "Serfstone"
+	name = "Minor Sending Stone Ring"
 	cost = 40
 	contains = list(/obj/item/scomstone/bad)
 
@@ -37,6 +37,18 @@
 	name = "Lockpicks"
 	cost = 20
 	contains = list(/obj/item/lockpickring/mundane)
+
+/datum/supply_pack/rogue/tools/handsaw
+	name = "handsaw"
+	cost = 12
+	contains = list(/obj/item/rogueweapon/handsaw)
+
+/datum/supply_pack/rogue/tools/chisel
+	name = "chisel"
+	cost = 12
+	contains =  list(/obj/item/rogueweapon/chisel,
+	/obj/item/rogueweapon/chisel)
+
 
 /datum/supply_pack/rogue/tools/sacks
 	name = "Sacks"
@@ -77,6 +89,15 @@
 					/obj/item/reagent_containers/glass/bottle/rogue,
 					/obj/item/reagent_containers/glass/bottle/rogue,
 					/obj/item/reagent_containers/glass/bottle/rogue,
+				)
+
+/datum/supply_pack/rogue/tools/matches
+	name = "Box of Matches"
+	cost = 15
+	contains = list(
+					/obj/item/storage/box/matches,
+					/obj/item/storage/box/matches,
+					/obj/item/storage/box/matches,
 				)
 
 /datum/supply_pack/rogue/tools/pipes

@@ -25,6 +25,7 @@
 #define TRAIT_NUDIST "Nudist" //you can't wear most clothes
 #define TRAIT_CYCLOPS_LEFT "Cyclops (Left)" //poked left eye
 #define TRAIT_CYCLOPS_RIGHT "Cyclops (Right)" //poked right eye
+#define TRAIT_CYCLOPS_BOTH_EYES "Cyclops (Both Eyes)"
 #define TRAIT_INHUMEN_ANATOMY "Inhumen Anatomy" //can't wear hats and shoes
 #define TRAIT_NASTY_EATER "Inhumen Digestion" //can eat rotten food, organs, poison berries, and drink murky water
 #define TRAIT_WILD_EATER "Beastly Digestion" //can eat raw and rotten food and drink murky water
@@ -45,14 +46,14 @@
 #define TRAIT_GUARDSMAN "Vigilant Guardsman"
 #define TRAIT_KNIGHTSMAN "Royal Defiance"
 #define TRAIT_WOODSMAN "Talented Woodsman"
-#define TRAIT_INQUISITION "Member of the Otavan Inquisition"
+#define TRAIT_INQUISITION "Member of the Inquisition"
 #define TRAIT_GOODTRAINER "Good Trainer"
-#define TRAIT_OUTDOORSMAN "Outdoorsman"
 #define TRAIT_SEA_DRINKER "Denizen of the Deep"
+#define TRAIT_STUDENT		"Student"
 
 //Hearthstone port (Tracking)
 #define TRAIT_PERFECT_TRACKER "Perfect Tracker" //Will always find any tracks and analyzes them perfectly.
-#define TRAIT_NOCSIGHT "Blessing of Noc" // I can see just a bit more clearly in darkness.
+#define TRAIT_NOCSIGHT "Blessing of the Night" // I can see just a bit more clearly in darkness.
 #define TRAIT_DEATHSIGHT "Veiled Whispers" // Is notified when a player character dies, but not told exactly where or how.
 //Hearthstone/Azure end.
 
@@ -60,24 +61,28 @@
 #define TRAIT_CIVILIZEDBARBARIAN "Tavern Brawler"
 #define TRAIT_COMICSANS "Annoying Face"
 #define TRAIT_WATERBREATHING "Water Breathing"
+#define TRAIT_DEATHBYSNOOSNOO "Bed Breaker" // double sex damage (requires strong intent)
+#define TRAIT_STRONGTHROW "Strong Throw" // 1.5x throw distance and force
+#define TRAIT_MARTIALARTIST "Martial Artist" //more unarmed combat options
+#define TRAIT_PUGILIST "Pugilist" //more punch damage
+//Hearthstone end.
 
 // PATRON GOD TRAITS
-#define TRAIT_ROT_EATER "Blessing of Pestra" //can eat rotten food
-#define TRAIT_ORGAN_EATER "Blessing of Graggar" //can eat organs
-#define TRAIT_KNEESTINGER_IMMUNITY "Blessing of Dendor"
-#define TRAIT_SOUL_EXAMINE "Blessing of Necra" //can check bodies to see if they have departed
-#define TRAIT_LEECHIMMUNE "Unleechable" //leeches wont attach in bog squares + Abyssor boon.
-#define TRAIT_CRACKHEAD "Blessing of Baotha" //will never overdose
-#define TRAIT_CHOSEN "Astrata's Chosen"
-#define TRAIT_ABYSSOR_SWIM "Blessing of Abyssor" //less base fatigue drain when swimming
-#define TRAIT_XYLIX "Blessing of Xylix" //secret thieves cant language
-#define TRAIT_FORGEBLESSED "Blessing of Malum" //Reduces the fatigue cost of smithing a bit.
+#define TRAIT_ROT_EATER "Blessing of Talona" //can eat rotten food
+#define TRAIT_ORGAN_EATER "Blessing of Bhaal" //can eat organs
+#define TRAIT_KNEESTINGER_IMMUNITY "Blessing of Silvanus"
+#define TRAIT_SOUL_EXAMINE "Blessing of Kelemvor" //can check bodies to see if they have departed
+#define TRAIT_CRACKHEAD "Blessing of Sharess" //will never overdose
+#define TRAIT_CHOSEN "Pelor's Chosen"
+#define TRAIT_ABYSSOR_SWIM "Blessing of Umberlee" //less base fatigue drain when swimming
+#define TRAIT_XYLIX "Blessing of Lady Luck" //secret thieves cant language
 
 // ASCENDANT CULTIST TRAITS (all of them recognize each other)
-#define TRAIT_COMMIE "Blessing of Matthios" //recognized by bandits as an ally
+#define TRAIT_COMMIE "Blessing of Mask" //recognized by bandits as an ally
 #define TRAIT_CABAL "Of the Cabal" //Zizo cultists recognize each other too
 #define TRAIT_HORDE "Anointed" //Graggarites also recognize each other
 #define TRAIT_DEPRAVED "Fallen" //Baothans also recognize each other
+#define TRAIT_FAITHLESS "Ignorant" //being faithless means gods won't really help you, will they
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -102,13 +107,30 @@
 #define TRAIT_NUDE_SLEEPER "Nude Sleeper"
 #define TRAIT_SILVER_BLESSED "Silver Blessed"
 
+// PATRON CURSE TRAITS
+#define TRAIT_CURSE "Curse" //source
+#define TRAIT_ATHEISM_CURSE "Curse of The Unbeliever"
+#define TRAIT_PSYDON_CURSE "Ao's Curse"
+#define TRAIT_ASTRATA_CURSE "Hex of the Forsaken"
+#define TRAIT_NOC_CURSE "Hex of the Shattered Mind"
+#define TRAIT_RAVOX_CURSE "Hex of the Pacifist"
+#define TRAIT_NECRA_CURSE "Hex of the Grim Gate"
+#define TRAIT_XYLIX_CURSE "Hex of Misfortune"
+#define TRAIT_PESTRA_CURSE "Hex of Decay"
+#define TRAIT_EORA_CURSE "Hex of the Heartless"
+#define TRAIT_ZIZO_CURSE "Curse of the Fractured Veil"
+#define TRAIT_GRAGGAR_CURSE "Curse of Eternal Rage"
+#define TRAIT_MATTHIOS_CURSE "Curse of Avarice's Scorn"
+#define TRAIT_BAOTHA_CURSE "Curse of Unbridled Desire"
+#define TRAIT_NYMPHO_CURSE "Nymph's Curse"
+
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEPROSY = span_necrosis("I'm a disgusting leper..."),
-	TRAIT_GUARDSMAN = span_info("I am vigilant in my duties. In the town of Azure Peak, my abilities are sharper due to my routine and familiarity."),
-	TRAIT_WOODSMAN = span_info("I am vigilant in my duties. In the grove and coast of Azure Peak, my abilities are sharper due to my routine and familiarity."),
-	TRAIT_KNIGHTSMAN = span_info("I am a stalwart defender of the crown. In the keep of Azure Peak, my abilities are sharper due to my routine and familiarity."),
-	TRAIT_INQUISITION = span_info("I am a member of the Otavan Inquisition. I can easily identify others of my cadre at a glance."),
-	TRAIT_CHOSEN = "Astrata choose you to represent her glory.",
+	TRAIT_GUARDSMAN = span_info("I am vigilant in my duties. In the town of Frozen Summit, my abilities are sharper due to my routine and familiarity."),
+	TRAIT_KNIGHTSMAN = span_info("I am a stalwart defender of the town. In the keep of Frozen Summit, my abilities are sharper due to my routine and familiarity."),
+	TRAIT_WOODSMAN = span_info("I am vigilant in my duties. In the grove and coast of Frozen Summit, my abilities are sharper due to my routine and familiarity."),
+	TRAIT_CHOSEN = "You were choosen by the gods you to represent their glory.",
+	TRAIT_INQUISITION = span_info("I am a member of the Inquisition. I can easily identify others of my cadre at a glance."),
 	TRAIT_WEBWALK = "I can move freely between webs.",
 	TRAIT_NOSTINK = span_dead("My nose is numb to the smell of decay."),
 	TRAIT_ZJUMP = "Time to reach a new high.",
@@ -138,7 +160,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NUDIST = "I <b>refuse</b> to wear clothes. They are a hindrance to my freedom.",
 	TRAIT_CYCLOPS_LEFT = span_warning("My left eye has been poked out..."),
 	TRAIT_CYCLOPS_RIGHT = span_warning("My right eye has been poked out..."),
-	TRAIT_LEECHIMMUNE = "Leeches are reluctant to bite me.",
+	TRAIT_CYCLOPS_BOTH_EYES = span_warning("My both eyes are really bad at seeing things..."),
 	TRAIT_INHUMEN_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
 	TRAIT_NASTY_EATER = span_dead("I can eat bad food, and water that would be toxic to humen will not affect me."),
 	TRAIT_WILD_EATER = span_info("I can eat raw food and drink from dirty water."),
@@ -161,8 +183,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_GOODLOVER = span_love("It's a lucky thing to share my bed."),
 	TRAIT_SEEDKNOW = span_info("I know which seeds grow which crops."),
 	TRAIT_PERFECT_TRACKER = span_info("I am the perfect tracker. No tracks will deceive my eyes, nor will they hide their secrets from me."),//Hearthstone port.
-	TRAIT_NOCSIGHT = span_info("Noc blesses my eyes to be unburdened by the night."), //Hearthstone change.
-	TRAIT_CIVILIZEDBARBARIAN = span_info("Your fists are heavier."),
+	TRAIT_NOCSIGHT = span_info("My ancestry blesses my eyes to be unburdened by the night."), //Hearthstone change.
+	TRAIT_CIVILIZEDBARBARIAN = span_info("Improvised weapons are your specialty."),
 	TRAIT_COMICSANS = span_sans("I am cursed with a odd voice."),
 	TRAIT_SQUIRE_REPAIR = span_info("I know my way around my Master's tools."),
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
@@ -170,18 +192,22 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_ABYSSOR_SWIM = "I get far less tired when swimming than my peers.",
 	TRAIT_LONGSTRIDER = "Each of my steps finds it's footing no matter how treacherous the terrain is.",
 	TRAIT_TRAINED_SMITH = span_info("I've spent long training, and with some more, I will be able to smith legendary items."),
-	TRAIT_DEATHSIGHT = span_info("I can feel when someone nearby draws the Undermaiden's attention."),
-	TRAIT_FORGEBLESSED = span_info("Countless long nights spent forging metal have honed my endurance, allowing me to work an anvil far longer than most without tiring."),
+	TRAIT_DEATHSIGHT = span_info("I can feel when someone nearby is recorded in the book of the dead."),
 	TRAIT_XYLIX = span_info("I know how to speak in code that only fellow tricksters can understand."),
 	TRAIT_CABAL = span_info("In secret, I have studied the ways of Her ascension, and know of others of the Cabal."),
-	TRAIT_HORDE = span_info("BY BLOOD AND BONE, I AM OF GRAGGAR'S ANOINTED! I FEEL THE STRENGTH IN OTHERS WHO ARE THE SAME."),
+	TRAIT_HORDE = span_info("BY BLOOD AND BONE, I AM OF THEIR'S ANOINTED! I FEEL THE STRENGTH IN OTHERS WHO ARE THE SAME."),
 	TRAIT_FORTITUDE = span_info("The typical drain I feel from day to day life is lessened, my athleticism greater."),
 	TRAIT_GUIDANCE = span_info("The arcyne aides me in battle."),
 	TRAIT_DEPRAVED = span_info("The languid scent of Her debauchery is known to me, and I can detect its sordid presence upon others."),
 	TRAIT_SILVER_BLESSED = span_info("I am anointed with holy silver, which preserves me from curses that bite."),
 	TRAIT_GOODTRAINER = span_info("I am a good teacher, and when it comes to weaponry I can train others to be just as skilled as I am."),
-	TRAIT_OUTDOORSMAN = span_info("My experience in the wilds allows me to fall asleep on surfaces like treebranches as if they were beds."),
+	TRAIT_DEATHBYSNOOSNOO = "It's an unlucky thing to share my bed.", // Hearthstone change
+	TRAIT_STRONGTHROW = "My throws are mighty!", // Hearthstone change
+	TRAIT_MARTIALARTIST = "I have better kicks.", // Hearthstone change
+	TRAIT_PUGILIST = "I have stronger punches.", // Hearthstone change
+	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
 	TRAIT_SEA_DRINKER = span_info("As a denizen of the deep, I can drink salty ocean water safely.")
+	TRAIT_STUDENT =  span_info("I am overwhelmed by all this knowledge!"),
 ))
 
 // trait accessor defines
@@ -266,6 +292,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_IGNOREDAMAGESLOWDOWN "ignoredamageslowdown"
 #define TRAIT_DEATHCOMA			"deathcoma" //Causes death-like unconsciousness
 #define TRAIT_FAKEDEATH			"fakedeath" //Makes the owner appear as dead to most forms of medical examination
+#define TRAIT_XENO_HOST			"xeno_host"	//Tracks whether we're gonna be a baby alien's mummy.
 #define TRAIT_STUNIMMUNE		"stun_immunity"
 #define TRAIT_STUNRESISTANCE    "stun_resistance"
 #define TRAIT_SLEEPIMMUNE		"sleep_immunity"
@@ -454,8 +481,3 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TIMESTOP_TRAIT "timestop"
 #define HUGBOX_TRAIT "hugbox"
 #define ADVENTURER_TRAIT "adventurer"
-
-#define TRAIT_I_AM_INVISIBLE_ON_A_BOAT "invisible_on_tram"
-
-//for ai
-#define TRAIT_SUBTREE_REQUIRED_OPERATIONAL_DATUM "element-required"

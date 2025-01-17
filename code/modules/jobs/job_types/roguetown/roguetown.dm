@@ -37,6 +37,9 @@
 	back = null
 	shoes = null
 	box = null
+	backpack = null
+	satchel  = null
+	duffelbag = null
 	/// List of patrons we are allowed to use
 	var/list/allowed_patrons
 	/// Default patron in case the patron is not allowed
@@ -77,6 +80,8 @@
 /datum/outfit/job/roguetown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 	if(H.mind)
+		if(H.familytree_pref != FAMILY_NONE && !visualsOnly && !H.family_datum)
+			SSfamilytree.AddLocal(H, H.familytree_pref)
 		if(H.ckey)
 			if(check_crownlist(H.ckey))
 				H.mind.special_items["Champion Circlet"] = /obj/item/clothing/head/roguetown/crown/sparrowcrown

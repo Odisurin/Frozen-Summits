@@ -3,8 +3,8 @@
 	flag = HAND
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 
 	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
@@ -18,7 +18,7 @@
 	min_pq = 9 //The second most powerful person in the realm...
 	max_pq = null
 	round_contrib_points = 3
-	cmode_music = 'sound/music/combat_noble.ogg'
+	cmode_music = 'sound/music/combat_fancy.ogg'
 
 /*
 /datum/job/roguetown/hand/special_job_check(mob/dead/new_player/player)

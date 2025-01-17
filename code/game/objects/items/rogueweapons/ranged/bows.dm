@@ -20,10 +20,12 @@
 	randomspread = 0
 	spread = 0
 	can_parry = TRUE
+	pin = /obj/item/firing_pin
 	force = 10
 	verbage = "nock"
 	cartridge_wording = "arrow"
 	load_sound = 'sound/foley/nockarrow.ogg'
+	damfactor = 1
 	obj_flags = UNIQUE_RENAME
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/getonmobprop(tag)
@@ -137,7 +139,7 @@
 			BB.damage = BB.damage - (BB.damage * (user.client.chargedprog / 100))
 			BB.embedchance = 5
 		else
-			BB.damage = BB.damage
+			BB.damage = BB.damage * (user.STAPER / 10)
 			BB.embedchance = 100
 		BB.damage = BB.damage * (user.STAPER / 10) * damfactor
 	. = ..()

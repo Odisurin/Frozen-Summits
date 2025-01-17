@@ -27,7 +27,8 @@
 	var/list/permutated = list() // we've passed through these atoms, don't try to hit them again
 	var/p_x = 16
 	var/p_y = 16			// the pixel location of the tile that the player clicked. Default is the center
-
+	var/accuracy = 2
+	var/bonus_accuracy = 1
 	//Fired processing vars
 	var/fired = FALSE	//Have we been fired yet
 	var/paused = FALSE	//for suspending the projectile midair
@@ -82,7 +83,7 @@
 	var/damage = 10
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE are the only things that should be in here
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
-	var/flag = "piercing" //Defines what armor to use when it hits things.  Must be set to bullet, laser, energy,or bomb
+	var/flag = "bullet" //Defines what armor to use when it hits things.  Must be set to bullet, laser, energy,or bomb
 	///How much armor this projectile pierces.
 	var/armor_penetration = 0
 	var/projectile_type = /obj/projectile
@@ -96,6 +97,7 @@
 	var/paralyze = 0
 	var/immobilize = 0
 	var/unconscious = 0
+	var/irradiate = 0
 	var/stutter = 0
 	var/slur = 0
 	var/eyeblur = 0
@@ -110,16 +112,13 @@
 
 	var/woundclass = null
 	var/embedchance = 0
-	var/obj/item/dropped = null
+	var/obj/item/dropped = FALSE
 	var/ammo_type
 
 	var/arcshot = FALSE
 	var/poisontype
 	var/poisonamount
 	var/poisonfeel
-
-	var/accuracy = 65 //How likely the project will hit it's intended target area. Decreases over distance moved, increased from perception.
-	var/bonus_accuracy = 0 //bonus accuracy that cannot be affected by range drop off.
 
 /obj/projectile/proc/handle_drop()
 	return
@@ -131,8 +130,6 @@
 
 /obj/projectile/proc/Range()
 	range--
-	if(accuracy > 20) //so there is always a somewhat prevalent chance to hit the target, despite distance.
-		accuracy -= 10
 	if(range <= 0 && loc)
 		on_range()
 
@@ -191,7 +188,10 @@
 			var/splatter_dir = dir
 			if(starting)
 				splatter_dir = get_dir(starting, target_loca)
-			new /obj/effect/temp_visual/dir_setting/bloodsplatter(target_loca, splatter_dir)
+			if(isalien(L))
+				new /obj/effect/temp_visual/dir_setting/bloodsplatter/xenosplatter(target_loca, splatter_dir)
+			else
+				new /obj/effect/temp_visual/dir_setting/bloodsplatter(target_loca, splatter_dir)
 			if(prob(33))
 				L.add_splatter_floor(target_loca)
 
@@ -251,7 +251,7 @@
 		playsound(loc, hitsound_wall, volume, TRUE, -1)
 
 	if(arcshot)
-		if(A.loc != original.loc)
+		if(A.loc != original)
 			if(ismob(A))
 				var/mob/M = A
 				if(!CHECK_BITFIELD(movement_type, UNSTOPPABLE))
@@ -558,7 +558,7 @@
 					return TRUE
 	if(!ignore_source_check && firer)
 		var/mob/M = firer
-		if((target == firer) || (target in firer.buckled_mobs) || (istype(M) && (M.buckled == target)))
+		if((target == firer) || ((target == firer.loc) && ismecha(firer.loc)) || (target in firer.buckled_mobs) || (istype(M) && (M.buckled == target)))
 			return FALSE
 	if(!ignore_loc && (loc != target.loc))
 		return FALSE
@@ -572,11 +572,9 @@
 	else
 		var/mob/living/L = target
 		if(!direct_target)
-			//If they're able to 1. stand or 2. use items or 3. move, AND they are not softcrit,  they are able to avoid indirect projectiles passing over.
-			//If they're unconscious or dead they shouldn't be getting hit by indirect fire
-			if((CHECK_BITFIELD(L.mobility_flags, MOBILITY_USE | MOBILITY_STAND | MOBILITY_MOVE) && L.stat == CONSCIOUS) || L.stat >= UNCONSCIOUS)
-				return FALSE
-			if(L.lying)
+			//If they're able to 1. stand or 2. use items or 3. move, AND they are not softcrit,  they are not stunned enough to dodge projectiles passing over.
+			//If they're dead they shouldn't be getting hit by indirect fire
+			if((CHECK_BITFIELD(L.mobility_flags, MOBILITY_USE | MOBILITY_STAND | MOBILITY_MOVE) && L.stat == CONSCIOUS) || L.stat == DEAD)		
 				return FALSE
 	return TRUE
 
@@ -694,7 +692,7 @@
 		M.Turn(original_angle)
 		thing.transform = M
 		thing.color = color
-		thing.set_light(muzzle_flash_range,muzzle_flash_range, muzzle_flash_intensity, l_color = muzzle_flash_color_override? muzzle_flash_color_override : color)
+		thing.set_light(muzzle_flash_range, muzzle_flash_intensity, muzzle_flash_color_override? muzzle_flash_color_override : color)
 		QDEL_IN(thing, duration)
 	if(impacting && impact_type && duration > 0)
 		var/datum/point/p = beam_segments[beam_segments[beam_segments.len]]
@@ -704,7 +702,7 @@
 		M.Turn(Angle)
 		thing.transform = M
 		thing.color = color
-		thing.set_light(impact_light_range, impact_light_range, impact_light_intensity, l_color = impact_light_color_override? impact_light_color_override : color)
+		thing.set_light(impact_light_range, impact_light_intensity, impact_light_color_override? impact_light_color_override : color)
 		QDEL_IN(thing, duration)
 	if(cleanup)
 		cleanup_beam_segments()

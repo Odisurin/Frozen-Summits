@@ -85,7 +85,7 @@
 /obj/structure/flora/roguetree/evil/Initialize()
 	. = ..()
 	icon_state = "wv[rand(1,2)]"
-	soundloop = new(src, FALSE)
+	soundloop = new(list(src), FALSE)
 	soundloop.start()
 
 /obj/structure/flora/roguetree/evil/Destroy()
@@ -114,6 +114,26 @@
 	. = ..()
 	user.play_priomusic('sound/music/tree.ogg', MUSIC_PRIO_DEFAULT)
 */
+
+/obj/structure/flora/roguetree/snow
+	name = "snow covered temperate tree"
+	desc = "An standard looking tree found throughout the swordcoast though snow weighs it down."
+	icon = 'icons/roguetown/misc/96x96.dmi'
+	icon_state = "tree1"
+
+/obj/structure/flora/roguetree/snow/Initialize()
+	. = ..()
+	icon_state = "tree[rand(1,11)]"
+
+/obj/structure/flora/roguetree/normal
+	name = "temperate tree"
+	desc = "An standard looking tree found throughout the swordcoast, beauty in the likeness of such."
+	icon = 'icons/roguetown/misc/96x96.dmi'
+	icon_state = "free1"
+
+/obj/structure/flora/roguetree/normal/Initialize()
+	. = ..()
+	icon_state = "free[rand(1,11)]"
 
 /obj/structure/flora/roguetree/burnt
 	name = "burnt tree"
@@ -270,6 +290,7 @@
 	if(prob(88))
 		bushtype = pickweight(list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue=5,
 					/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison=3,
+					/obj/item/reagent_containers/food/snacks/grown/shroom=2,
 					/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed=1))
 	loot_replenish()
 	pixel_x += rand(-3,3)
@@ -476,6 +497,12 @@
 	. = ..()
 	icon_state = "t[rand(1,4)]stump"
 
+/obj/structure/flora/rogueshroom/big
+	name = "mushroom"
+	desc = "Mushrooms are the only happy beings in this place."
+	icon = 'icons/roguetown/misc/fungal_tree.dmi'
+
+
 /obj/structure/roguerock
 	name = "rock"
 	desc = "A rock protuding from the ground."
@@ -530,7 +557,7 @@
 
 /obj/structure/flora/roguegrass/pyroclasticflowers/update_icon()
 	icon_state = "pyroflower[rand(1,3)]"
-	
+
 /obj/structure/flora/roguegrass/pyroclasticflowers/Initialize()
 	. = ..()
 	if(prob(88))

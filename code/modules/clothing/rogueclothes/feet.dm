@@ -21,15 +21,14 @@
 	icon_state = "blackboots"
 	item_state = "blackboots"
 	sewrepair = TRUE
-	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/shoes/roguetown/boots/psydonboots
-	name = "psydonian boots"
-	desc = "Blacksteel-heeled boots. The leather refuses to be worn down, no matter how far you march through these lands."
+/obj/item/clothing/shoes/roguetown/psydonboots
+	name = "enduring boots"
+	desc = "A reliable pair of dark leather boots. Seems like they could endure the world!"
+	color = "#d5c2aa"
 	icon_state = "psydonboots"
 	item_state = "psydonboots"
-	sewrepair = TRUE
-	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/nobleboot
 	name = "noble boots"
@@ -40,7 +39,7 @@
 	icon_state = "nobleboots"
 	item_state = "nobleboots"
 	sewrepair = TRUE
-	armor = list("blunt" = 35, "slash" = 15, "stab" = 25, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 35, "slash" = 15, "stab" = 25, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/shortboots
 	name = "shortboots"
@@ -93,15 +92,15 @@
 	color = "#cbcac9"
 
 /obj/item/clothing/shoes/roguetown/gladiator
-	name = "leather sandals"
-	desc = ""
+	name = "leather soleae"
+	desc = "A form of fashionable sandaled boots whose design comes from a distant land, with straps that extend partway up the lower leg."
 	gender = PLURAL
 	icon_state = "gladiator"
 	item_state = "gladiator"
 	sewrepair = TRUE
 
 /obj/item/clothing/shoes/roguetown/sandals
-	name = "sandals"
+	name = "leather sandals"
 	desc = ""
 	gender = PLURAL
 	icon_state = "sandals"
@@ -124,7 +123,7 @@
 	icon_state = "leatherboots"
 	item_state = "leatherboots"
 	sewrepair = TRUE
-	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/boots/armor
 	name = "plated boots"
@@ -137,7 +136,7 @@
 	blocksound = PLATEHIT
 	resistance_flags = FIRE_PROOF
 	max_integrity = 300
-	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 
@@ -150,7 +149,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = SOFTHIT
 	max_integrity = 200
-	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "piercing" = 100, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	allowed_race = NON_DWARVEN_RACE_TYPES
 
 /obj/item/clothing/shoes/roguetown/boots/armor/iron
@@ -163,7 +162,7 @@
 	color = null
 	blocksound = PLATEHIT
 	max_integrity = 200
-	armor = list("blunt" = 80, "slash" = 100, "stab" = 70, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 70, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/iron
 
@@ -178,11 +177,11 @@
 	AddComponent(/datum/component/item_equipped_movement_rustle, SFX_JINGLE_BELLS)
 
 /obj/item/clothing/shoes/roguetown/grenzelhoft
-	name = "grenzelhoft boots"
+	name = "mercenary boots"
 	icon_state = "grenzelboots"
 	item_state = "grenzelboots"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
-	armor = list("blunt" = 15, "slash" = 15, "stab" = 15, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 15, "slash" = 15, "stab" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/boots/furlinedboots
 	name = "fur lined boots"
@@ -191,7 +190,7 @@
 	icon_state = "furlinedboots"
 	item_state = "furlinedboots"
 	sewrepair = TRUE
-	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/boots/furlinedanklets
 	name = "fur lined anklets"
@@ -200,24 +199,18 @@
 	icon_state = "furlinedanklets"
 	item_state = "furlinedanklets"
 	sewrepair = TRUE
-	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	is_barefoot = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/clothlinedanklets
 	name = "cloth lined anklets"
 	desc = "Cloth anklets lined with with fibers, foot remains bare."
 	gender = PLURAL
-	icon_state = "clothlinedanklets"
+	icon_state = "furlinedanklets"
 	item_state = "furlinedanklets"
 	is_barefoot = TRUE
 	sewrepair = TRUE
-	armor = list("blunt" = 5, "slash" = 5, "stab" = 5, "fire" = 0, "acid" = 0) //Thinks its fair for a piece of cloth and fiber.
-
-/obj/item/clothing/shoes/roguetown/otavan/inqboots
-	name = "inquisitorial boots"
-	desc = "Finely crafted boots, made to stomp out darkness."
-	icon_state = "inqboots"
-	item_state = "inqboots"
+	armor = list("blunt" = 5, "slash" = 5, "stab" = 5, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //Thinks its fair for a piece of cloth and fiber.
 
 
 // ----------------- BLACKSTEEL -----------------------
@@ -234,7 +227,7 @@
 	color = null
 	blocksound = PLATEHIT
 	max_integrity = 400
-	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/blacksteel
 	resistance_flags = FIRE_PROOF

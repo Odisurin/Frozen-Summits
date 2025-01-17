@@ -1,5 +1,6 @@
 // This is a list of turf types we dont want to assign to baseturfs unless through initialization or explicitly
 GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
+	/turf/open/space,
 	/turf/baseturf_bottom,
 	)))
 
@@ -66,6 +67,10 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 				if (!ispath(path))
 					warning("Z-level [z] has invalid baseturf '[SSmapping.level_trait(z, ZTRAIT_BASETURF)]'")
 					path = /turf/open/floor/rogue/naturalstone
+		if(/turf/open/space/basic)
+			// basic doesn't initialize and this will cause issues
+			// no warning though because this can happen naturaly as a result of it being built on top of
+			path = /turf/open/space
 
 	if(!GLOB.use_preloader && path == type && !(flags & CHANGETURF_FORCEOP)) // Don't no-op if the map loader requires it to be reconstructed
 		return src
@@ -155,6 +160,9 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 				lighting_build_overlay()
 			else
 				lighting_clear_overlay()
+
+		for(var/turf/open/space/S in RANGE_TURFS(1, src)) //RANGE_TURFS is in code\__HELPERS\game.dm
+			S.update_starlight()
 
 	return W
 
@@ -354,6 +362,13 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		ImmediateCalculateAdjacentTurfs()
 	else
 		CALCULATE_ADJACENT_TURFS(src)
+
+	//update firedoor adjacency
+	var/list/turfs_to_check = get_adjacent_open_turfs(src) | src
+	for(var/I in turfs_to_check)
+		var/turf/T = I
+		for(var/obj/machinery/door/firedoor/FD in T)
+			FD.CalculateAffectingAreas()
 
 	queue_smooth_neighbors(src)
 

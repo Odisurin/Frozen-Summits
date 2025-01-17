@@ -36,6 +36,30 @@
 					/obj/item/clothing/mask/rogue/facemask/steel,
 				)
 
+/datum/supply_pack/rogue/armor/bracers
+	name = "Steel Bracers"
+	cost = 50
+	contains = list(
+					/obj/item/clothing/wrists/roguetown/bracers,
+					/obj/item/clothing/wrists/roguetown/bracers,
+				)
+
+/datum/supply_pack/rogue/armor/chaingauntlets
+	name = "Steel Chain Gauntlets"
+	cost = 50
+	contains = list(
+					/obj/item/clothing/gloves/roguetown/chain,
+					/obj/item/clothing/gloves/roguetown/chain,
+				)
+
+/datum/supply_pack/rogue/armor/boots
+	name = "Steel Boots"
+	cost = 50
+	contains = list(
+					/obj/item/clothing/shoes/roguetown/boots/armor,
+					/obj/item/clothing/shoes/roguetown/boots/armor,
+				)
+
 /datum/supply_pack/rogue/armor/gambeson
 	name = "Gambeson"
 	cost = 50

@@ -140,7 +140,7 @@
 
 /datum/stressevent/puzzle_impossible
 	stressadd = -4
-	desc = span_boldgreen("I solved an extremely difficult puzzle. Xylix is smiling at me, and surely even Noc must find it impressive.")
+	desc = span_boldgreen("I solved an extremely difficult puzzle. I bet the gods find it impressive.")
 	timer = 15 MINUTES
 
 /datum/stressevent/noble_lavish_food
@@ -163,6 +163,10 @@
 	desc = span_blue("An absolutely exquisite vintage. Indubitably.")
 	timer = 10 MINUTES
 
+/datum/stressevent/perfume
+	stressadd = -1
+	desc = span_green("A soothing fragrance envelops me.")
+	timer = 10 MINUTES
 /datum/stressevent/meditation
 	timer = 10 MINUTES
 	stressadd = -1

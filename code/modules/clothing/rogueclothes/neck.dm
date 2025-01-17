@@ -13,7 +13,7 @@
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
 	blocksound = SOFTHIT
 	body_parts_covered = NECK|HAIR|EARS|HEAD
-	armor = list("blunt" = 33, "slash" = 12, "stab" = 22, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 33, "slash" = 12, "stab" = 22, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
@@ -47,7 +47,7 @@
 	icon_state = "chaincoif"
 	item_state = "chaincoif"
 	flags_inv = HIDEHAIR
-	armor = list("blunt" = 30, "slash" = 60, "stab" = 45, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 30, "slash" = 60, "stab" = 45, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 	max_integrity = 200
 	resistance_flags = FIRE_PROOF
@@ -129,7 +129,7 @@
 /obj/item/clothing/neck/roguetown/bevor
 	name = "bevor"
 	icon_state = "bevor"
-	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 
@@ -143,7 +143,7 @@
 /obj/item/clothing/neck/roguetown/gorget
 	name = "gorget"
 	icon_state = "gorget"
-	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/skill/craft/armorsmithing
 	max_integrity = 150
@@ -156,7 +156,7 @@
 /obj/item/clothing/neck/roguetown/fencerguard
 	name = "fencer neckguard"
 	icon_state = "fencercollar"
-	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "piercing" = 100, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/skill/craft/armorsmithing
 	max_integrity = 150
@@ -190,8 +190,8 @@
 	qdel(src)
 
 /obj/item/clothing/neck/roguetown/psicross
-	name = "psycross"
-	desc = "'With every broken bone, I swore I lived!'"
+	name = "Talisman"
+	desc = "A blessed Talisman, often used by Clerics."
 	icon_state = "psicross"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
@@ -201,12 +201,12 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/psicross/astrata
-	name = "amulet of Astrata"
+	name = "amulet of the sun"
 	desc = ""
 	icon_state = "astrata"
 
 /obj/item/clothing/neck/roguetown/psicross/noc
-	name = "amulet of Noc"
+	name = "amulet of the moon"
 	desc = ""
 	icon_state = "noc"
 
@@ -216,47 +216,47 @@
 	icon_state = "abyssor"
 
 /obj/item/clothing/neck/roguetown/psicross/dendor
-	name = "amulet of Dendor"
+	name = "amulet of nature"
 	desc = ""
 	icon_state = "dendor"
 
 /obj/item/clothing/neck/roguetown/psicross/necra
-	name = "amulet of Necra"
+	name = "amulet of death"
 	desc = ""
 	icon_state = "necra"
 
 /obj/item/clothing/neck/roguetown/psicross/pestra
-	name = "amulet of Pestra"
+	name = "amulet of medicine"
 	desc = ""
 	icon_state = "pestra"
 
 /obj/item/clothing/neck/roguetown/psicross/ravox
-	name = "amulet of Ravox"
+	name = "amulet of justice"
 	desc = ""
 	icon_state = "ravox"
 
 /obj/item/clothing/neck/roguetown/psicross/malum
-	name = "amulet of Malum"
+	name = "amulet of crafts"
 	desc = ""
 	icon_state = "malum"
 
 /obj/item/clothing/neck/roguetown/psicross/eora
-	name = "amulet of Eora"
+	name = "amulet of love"
 	desc = ""
 	icon_state = "eora"
 
 /obj/item/clothing/neck/roguetown/psicross/wood
-	name = "wooden psycross"
-	desc = "'A man with nothing can still have faith!'"
-	icon_state = "psycross_w"
-	item_state = "psycross_w"
+	name = "wooden talisman"
+	desc = "a simple wooden talisman or totem"
+	icon_state = "psicrossw"
+	item_state = "psicrossw"
 	sellprice = 0
 
 /obj/item/clothing/neck/roguetown/psicross/silver
-	name = "silver psycross"
-	desc = "'The horrors persist, but so do I!'"
-	icon_state = "psycross_s"
-	item_state = "psycross_s"
+	name = "silver talisman"
+	desc = "A silver Talisman, often used by clerics to channel their divine powers."
+	icon_state = "psicrosssteel"
+	item_state = "psicrosssteel"
 	sellprice = 50
 
 /obj/item/clothing/neck/roguetown/psicross/silver/pickup(mob/user)
@@ -309,7 +309,7 @@
 
 /obj/item/clothing/neck/roguetown/psicross/g
 	name = "golden psycross"
-	desc = "'Purity afloat, for paradise awaits!'"
+	desc = ""
 	icon_state = "psycross_g"
 	item_state = "psycross_g"
 	//dropshrink = 0.75
@@ -328,8 +328,8 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/horus
-	name = "eye of horuz"
-	desc = ""
+	name = "Guild Medal"
+	desc = "A Medal identifying the wearer as member of the Merchant's League."
 	icon_state = "horus"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
@@ -337,8 +337,8 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/shalal
-	name = "desert rider medal"
-	desc = ""
+	name = "Zhentarim Medal"
+	desc = "A Medal identifying the wearer as a member of the Zhentarim."
 	icon_state = "shalal"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
@@ -364,9 +364,10 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/psicross/naledi
-	name = "naledian psy-bracelet"
-	desc = "A peculiar icon of worship from a foreign land. Forming the three-progned Psydonite cross in a circular ring, this bracelet embodies the Naledian belief of Psydon's eternity."
+	name = "Blessed Bracelet"
+	desc = "A blessed Bracelet often found to be used by wandering monks and preachers."
 	icon_state = "psybracelet"
+	item_state = "psybracelet"
 	item_state = null
 
 /obj/item/clothing/neck/roguetown/collar

@@ -1,5 +1,4 @@
 //Not to be confused with /obj/item/reagent_containers/food/drinks/bottle
-GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 
 /obj/item/reagent_containers/glass/bottle
 	name = "bottle"
@@ -21,9 +20,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	fillsounds = list('sound/items/fillcup.ogg')
 	poursounds = list('sound/items/fillbottle.ogg')
 	experimental_onhip = TRUE
-	debris = list(/obj/item/natural/glass/shard = 1)
 	var/desc_uncorked = "An open bottle, hopefully a cork is close by."
-	var/fancy		// for bottles with custom descriptors that you don't want to change when bottle manipulated
 
 /obj/item/reagent_containers/glass/bottle/update_icon(dont_fill=FALSE)
 	if(!fill_icon_thresholds || dont_fill)
@@ -49,18 +46,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	if(closed)
 		add_overlay("[icon_state]cork")
 
-/obj/item/reagent_containers/glass/bottle/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum, do_splash = TRUE)
-	playsound(loc, 'sound/combat/hits/onglass/glassbreak (4).ogg', 100)
-	shatter(get_turf(src))
-	..()
-
-/obj/item/reagent_containers/glass/bottle/proc/shatter(turf/T)
-	if(istransparentturf(T))
-		shatter(GET_TURF_BELOW(T))
-		return 
-	new /obj/item/natural/glass/shard(get_turf(T))
-	new /obj/effect/decal/cleanable/glass(get_turf(T))
-	qdel(src)
 
 /obj/item/reagent_containers/glass/bottle/rmb_self(mob/user)
 	. = ..()
@@ -69,19 +54,15 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	if(closed)
 		reagent_flags = TRANSPARENT
 		reagents.flags = reagent_flags
-		to_chat(user, span_notice("You carefully press the cork back into the mouth of [src]."))
+		desc = initial(desc)
+		playsound(user.loc,'sound/items/uncork.ogg', 50, TRUE)
 		spillable = FALSE
-		if(!fancy)
-			desc = "A bottle with a cork."
 	else
 		reagent_flags = OPENCONTAINER
 		reagents.flags = reagent_flags
 		playsound(user.loc,'sound/items/uncork.ogg', 100, TRUE)
-		to_chat(user, span_notice("You thumb off the cork from [src]."))
 		desc = desc_uncorked
 		spillable = TRUE
-		if(!fancy)
-			desc = "An open bottle, hopefully a cork is close by."
 	update_icon()
 
 /obj/item/reagent_containers/glass/bottle/Initialize()
@@ -92,16 +73,52 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 		icon_state = "clear_bottle[rand(1,4)]"
 	update_icon()
 
+/obj/item/reagent_containers/glass/bottle/epinephrine
+	name = "epinephrine bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 30)
+
 /obj/item/reagent_containers/glass/bottle/toxin
 	name = "toxin bottle"
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin = 30)
+
+/obj/item/reagent_containers/glass/bottle/cyanide
+	name = "cyanide bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/toxin/cyanide = 30)
 
 /obj/item/reagent_containers/glass/bottle/spewium
 	name = "spewium bottle"
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin/spewium = 30)
 
+/obj/item/reagent_containers/glass/bottle/morphine
+	name = "morphine bottle"
+	desc = ""
+	icon = 'icons/obj/chemical.dmi'
+	list_reagents = list(/datum/reagent/medicine/morphine = 30)
+
+/obj/item/reagent_containers/glass/bottle/chloralhydrate
+	name = "chloral hydrate bottle"
+	desc = ""
+	icon_state = "bottle20"
+	list_reagents = list(/datum/reagent/toxin/chloralhydrate = 15)
+
+/obj/item/reagent_containers/glass/bottle/mannitol
+	name = "mannitol bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/medicine/mannitol = 30)
+
+/obj/item/reagent_containers/glass/bottle/multiver
+	name = "multiver bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/medicine/C2/multiver = 30)
+
+/obj/item/reagent_containers/glass/bottle/syriniver
+	name = "syriniver bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/medicine/C2/syriniver = 30)
 
 /obj/item/reagent_containers/glass/bottle/mutagen
 	name = "unstable mutagen bottle"
@@ -109,9 +126,14 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	list_reagents = list(/datum/reagent/toxin/mutagen = 30)
 
 /obj/item/reagent_containers/glass/bottle/plasma
-	name = "purple aetherium bottle"
+	name = "liquid plasma bottle"
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin/plasma = 30)
+
+/obj/item/reagent_containers/glass/bottle/synaptizine
+	name = "synaptizine bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/medicine/synaptizine = 30)
 
 /obj/item/reagent_containers/glass/bottle/ammonia
 	name = "ammonia bottle"
@@ -128,6 +150,12 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin/acid/fluacid = 30)
 
+/obj/item/reagent_containers/glass/bottle/adminordrazine
+	name = "Adminordrazine Bottle"
+	desc = ""
+	icon = 'icons/obj/drinks.dmi'
+	icon_state = "holyflask"
+	list_reagents = list(/datum/reagent/medicine/adminordrazine = 30)
 
 /obj/item/reagent_containers/glass/bottle/capsaicin
 	name = "Capsaicin Bottle"
@@ -147,8 +175,18 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 
 /obj/item/reagent_containers/glass/bottle/traitor/Initialize()
 	. = ..()
-	extra_reagent = pick(/datum/reagent/toxin/histamine, /datum/reagent/toxin/formaldehyde, /datum/reagent/toxin/venom, /datum/reagent/toxin/fentanyl, /datum/reagent/toxin/cyanide)
+	extra_reagent = pick(/datum/reagent/toxin/polonium, /datum/reagent/toxin/histamine, /datum/reagent/toxin/formaldehyde, /datum/reagent/toxin/venom, /datum/reagent/toxin/fentanyl, /datum/reagent/toxin/cyanide)
 	reagents.add_reagent(extra_reagent, 3)
+
+/obj/item/reagent_containers/glass/bottle/polonium
+	name = "polonium bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/toxin/polonium = 30)
+
+/obj/item/reagent_containers/glass/bottle/magillitis
+	name = "magillitis bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/magillitis = 5)
 
 /obj/item/reagent_containers/glass/bottle/venom
 	name = "venom bottle"
@@ -200,11 +238,108 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin/histamine = 30)
 
+/obj/item/reagent_containers/glass/bottle/diphenhydramine
+	name = "antihistamine bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/medicine/diphenhydramine = 30)
+
+/obj/item/reagent_containers/glass/bottle/potass_iodide
+	name = "anti-radiation bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/medicine/potass_iodide = 30)
+
 /obj/item/reagent_containers/glass/bottle/salglu_solution
 	name = "saline-glucose solution bottle"
 	desc = ""
 	icon_state = "bottle1"
 	list_reagents = list(/datum/reagent/medicine/salglu_solution = 30)
+
+/obj/item/reagent_containers/glass/bottle/atropine
+	name = "atropine bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/medicine/atropine = 30)
+
+/obj/item/reagent_containers/glass/bottle/romerol
+	name = "romerol bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/romerol = 30)
+
+/obj/item/reagent_containers/glass/bottle/random_virus
+	name = "Experimental disease culture bottle"
+	desc = ""
+	spawned_disease = /datum/disease/advance/random
+
+/obj/item/reagent_containers/glass/bottle/pierrot_throat
+	name = "Pierrot's Throat culture bottle"
+	desc = ""
+	spawned_disease = /datum/disease/pierrot_throat
+
+/obj/item/reagent_containers/glass/bottle/cold
+	name = "Rhinovirus culture bottle"
+	desc = ""
+	spawned_disease = /datum/disease/advance/cold
+
+/obj/item/reagent_containers/glass/bottle/flu_virion
+	name = "Flu virion culture bottle"
+	desc = ""
+	spawned_disease = /datum/disease/advance/flu
+
+/obj/item/reagent_containers/glass/bottle/retrovirus
+	name = "Retrovirus culture bottle"
+	desc = ""
+	spawned_disease = /datum/disease/dna_retrovirus
+
+/obj/item/reagent_containers/glass/bottle/gbs
+	name = "GBS culture bottle"
+	desc = ""//Or simply - General BullShit
+	amount_per_transfer_from_this = 5
+	spawned_disease = /datum/disease/gbs
+
+/obj/item/reagent_containers/glass/bottle/fake_gbs
+	name = "GBS culture bottle"
+	desc = ""//Or simply - General BullShit
+	spawned_disease = /datum/disease/fake_gbs
+
+/obj/item/reagent_containers/glass/bottle/brainrot
+	name = "Brainrot culture bottle"
+	desc = ""
+	icon_state = "bottle3"
+	spawned_disease = /datum/disease/brainrot
+
+/obj/item/reagent_containers/glass/bottle/magnitis
+	name = "Magnitis culture bottle"
+	desc = ""
+	spawned_disease = /datum/disease/magnitis
+
+/obj/item/reagent_containers/glass/bottle/wizarditis
+	name = "Wizarditis culture bottle"
+	desc = ""
+	spawned_disease = /datum/disease/wizarditis
+
+/obj/item/reagent_containers/glass/bottle/anxiety
+	name = "Severe Anxiety culture bottle"
+	desc = ""
+	spawned_disease = /datum/disease/anxiety
+
+/obj/item/reagent_containers/glass/bottle/beesease
+	name = "Beesease culture bottle"
+	desc = ""
+	spawned_disease = /datum/disease/beesease
+
+/obj/item/reagent_containers/glass/bottle/fluspanish
+	name = "Spanish flu culture bottle"
+	desc = ""
+	spawned_disease = /datum/disease/fluspanish
+
+/obj/item/reagent_containers/glass/bottle/tuberculosis
+	name = "Fungal Tuberculosis culture bottle"
+	desc = ""
+	spawned_disease = /datum/disease/tuberculosis
+
+/obj/item/reagent_containers/glass/bottle/tuberculosiscure
+	name = "BVAK bottle"
+	desc = ""
+	list_reagents = list(/datum/reagent/vaccine/fungal_tb = 30)
 
 //Oldstation.dmm chemical storage bottles
 
@@ -293,7 +428,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	list_reagents = list(/datum/reagent/toxin/acid = 30)
 
 /obj/item/reagent_containers/glass/bottle/welding_fuel
-	name = "naphta bottle"
+	name = "welding fuel bottle"
 	list_reagents = list(/datum/reagent/fuel = 30)
 
 /obj/item/reagent_containers/glass/bottle/silver
@@ -307,3 +442,43 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 /obj/item/reagent_containers/glass/bottle/bromine
 	name = "bromine bottle"
 	list_reagents = list(/datum/reagent/bromine = 30)
+
+// message in a bootl
+
+// vials
+/obj/item/reagent_containers/glass/bottle/vial
+	name = "vial"
+	desc = "A vial with a cork."
+	icon = 'icons/roguetown/misc/alchemy.dmi'
+	icon_state = "clear_vial1"
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
+	volume = 30
+	fill_icon_thresholds = list(0, 25, 50, 75, 100)
+	dropshrink = 0.5
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH|ITEM_SLOT_BELT
+	obj_flags = CAN_BE_HIT
+	spillable = FALSE
+	closed = TRUE
+	reagent_flags = TRANSPARENT
+	w_class = WEIGHT_CLASS_SMALL
+	drinksounds = list('sound/items/drink_bottle (1).ogg','sound/items/drink_bottle (2).ogg')
+	fillsounds = list('sound/items/fillcup.ogg')
+	poursounds = list('sound/items/fillbottle.ogg')
+	experimental_onhip = TRUE
+
+/obj/item/reagent_containers/glass/bottle/vial/rmb_self(mob/user)
+	closed = !closed
+	user.changeNext_move(CLICK_CD_RAPID)
+	if(closed)
+		reagent_flags = TRANSPARENT
+		reagents.flags = reagent_flags
+		desc = "A vial with a cork."
+		spillable = FALSE
+	else
+		reagent_flags = OPENCONTAINER
+		reagents.flags = reagent_flags
+		playsound(user.loc,'sound/items/uncork.ogg', 100, TRUE)
+		desc = "An open vial, easy to drink quickly."
+		spillable = TRUE
+	update_icon()

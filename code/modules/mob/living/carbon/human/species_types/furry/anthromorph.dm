@@ -2,25 +2,37 @@
 	race = /datum/species/anthromorph
 
 /datum/species/anthromorph
-	name = "Wild-Kin"
+	name = "Beast-Kin"
 	id = "anthromorph"
-	desc = "A product of Dendor's enigmatic meddling in mortals races. The average wild-kin suffers from animalistic urges that vary in severity, \
-	from simply avoiding certain foods to smoldering desires to howl at the moon or chase prey. Usually these urges are tied to the animal that the wild-kin is melded with, \
-	making them rather predictable. Despite this, the way each wild-kin approaches their bizarre physiology and psychology varies, \
-	creating a diverse race of people who may not even empathise with one another. And whilst Dendor is considered the main culprit for Wild-kin, there are those created through other means, \
-	akin to Noc's stolen knowledge that created lupians and other abstract experimentation or circumstance. \
-	(Wild-kin are not a template race to play your own custom race. If you play a wild-kin, you are expected to roleplay to the setting and the race's lore.)<br>\
-	(+1 Perception)"
+	desc = "A product of many gods enigmatic meddling in mortals races. The average beast-kin suffers from animalistic urges that vary in severity, \
+	from simply avoiding certain foods to smoldering desires to howl at the moon or chase prey. Usually these urges are tied to the animal that the beast-kin is melded with, \
+	making them rather predictable. Despite this, the way each beast-kin approaches their bizarre physiology and psychology varies, \
+	creating a diverse race of people who may not even empathise with one another. And whilst Silvanus is considered the main culprit for beast-kin, there are those created through other means, \
+	akin to Mystra's stolen knowledge that created lupians and other abstract experimentation or circumstance. "
 	default_color = "444"
+	inherent_traits = list(
+		TRAIT_STRONGBITE,
+		TRAIT_NASTY_EATER,
+		TRAIT_LEAPER,
+		TRAIT_PERFECT_TRACKER,
+		TRAIT_NOCSIGHT,
+		TRAIT_SEEDKNOW
+	)
 	species_traits = list(
 		MUTCOLORS,
 		EYECOLOR,
 		LIPS,
 		HAIR,
 	)
+
+	languages = list(
+		/datum/language/common,
+		/datum/language/beast
+	)
+
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	attack_verb = "slash"
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	possible_ages = ALL_AGES_LIST
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
@@ -40,13 +52,13 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
-	race_bonus = list(STAT_PERCEPTION = 1)
+	race_bonus = list(STAT_PERCEPTION = -1, STAT_STRENGTH = 1, STAT_INTELLIGENCE = 1, )
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/werewolf,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/wild_tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
@@ -79,6 +91,8 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/butt/animal,
 		/datum/customizer/organ/vagina/anthro,
 		)
 	body_marking_sets = list(
@@ -92,6 +106,8 @@
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
 		/datum/body_marking/plain,
+		/datum/body_marking/fox,
+		/datum/body_marking/wolf,
 		/datum/body_marking/tiger,
 		/datum/body_marking/tiger/dark,
 		/datum/body_marking/sock,

@@ -18,7 +18,7 @@
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	backl = /obj/item/storage/backpack/rogue/satchel/black
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
-	shoes = /obj/item/clothing/shoes/roguetown/boots/psydonboots
+	shoes = /obj/item/clothing/shoes/roguetown/psydonboots
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/fluted
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/psydonhelm
 	belt = /obj/item/storage/belt/rogue/leather/black
@@ -45,7 +45,6 @@
 		
 		ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
-		ADD_TRAIT(H, TRAIT_INQUISITION, TRAIT_GENERIC)
 
 		H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 		var/datum/devotion/C = new /datum/devotion(H, H.patron)
@@ -55,15 +54,15 @@
 
 /datum/outfit/job/roguetown/psydoniantemplar/choose_loadout(mob/living/carbon/human/H)
 	. = ..()
-	var/weapons = list("Bastard Sword","Whip","Executioner Sword")
+	var/weapons = list("Bastard Sword","Flail","Mace")
 	var/weapon_choice = input(H,"Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 	switch(weapon_choice)
 		if("Bastard Sword")
 			H.put_in_hands(new /obj/item/rogueweapon/sword/long(H), TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-		if("Whip")
-			H.put_in_hands(new /obj/item/rogueweapon/whip(H), TRUE)
+		if("Flail")
+			H.put_in_hands(new /obj/item/rogueweapon/flail(H), TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
-		if("Executioner Sword")
-			H.put_in_hands(new /obj/item/rogueweapon/sword/long/exe(H), TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		if("Mace")
+			H.put_in_hands(new /obj/item/rogueweapon/mace(H), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)

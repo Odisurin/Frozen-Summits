@@ -1,5 +1,5 @@
 /datum/job/roguetown/magician
-	title = "Court Magician"
+	title = "Hamlet Magician"
 	flag = WIZARD
 	department_flag = COURTIERS
 	selection_color = JCOLOR_COURTIER
@@ -12,15 +12,14 @@
 	spells = list(/obj/effect/proc_holder/spell/targeted/touch/prestidigitation, /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater)
 	display_order = JDO_MAGICIAN
 	tutorial = "Your creed is one dedicated to the conquering of the arcane arts and the constant thrill of knowledge. \
-		You owe your life to the Lord, for it was his coin that allowed you to continue your studies in these dark times. \
-		In return, you have proven time and time again as justicar and trusted advisor to their reign."
+		You owe your life to the Expedition Leader, for it was his coin that allowed you to continue your studies in these dark times. \
+		In return, you have proven time and time again as justicar and trusted advisor to their new hamlet."
 	outfit = /datum/outfit/job/roguetown/magician
 	whitelist_req = TRUE
 	give_bank_account = 47
-	min_pq = 4 //High potential for abuse, lovepotion/killersice/greater fireball is not for the faint of heart
+	min_pq = 0 //High potential for abuse, lovepotion/killersice/greater fireball is not for the faint of heart
 	max_pq = null
 	round_contrib_points = 2
-	cmode_music = 'sound/music/combat_bandit_mage.ogg'
 
 /datum/outfit/job/roguetown/magician/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -35,7 +34,7 @@
 	id = /obj/item/clothing/ring/gold
 	r_hand = /obj/item/rogueweapon/woodstaff
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/reagent_containers/glass/bottle/rogue/poison,/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
+	backpack_contents = list(/obj/item/slimepotion/lovepotion,/obj/item/reagent_containers/glass/bottle/rogue/poison,/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, "[type]")
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)

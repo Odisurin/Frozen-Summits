@@ -5,13 +5,20 @@
 	name = "Lupian"
 	id = "lupian"
 	desc = "<b>Lupian</b><br>\
-	Lupians are the sons and daughters of Noc. They are a volf-like people hailing from the Northern Regions of the world. \
-	They are resilient, cunning and fight ready creachures capable of surviving the north thanks to their rugged pelts, \
-	sharp teeth and deep-rooted spirit of community. They are very dutiful individuals and make fantastic and fearsome \
-	warriors to those who earn their loyalty. Thanks to their pack minded nature they are slow to trust the other races \
+	Lupians are a volf-like people hailing from the Northern Regions, born to withstand harsh winters with rugged pelts and sharp fangs.\
+	Their half-lycanthrophic ancestry grants them heightened senses, night vision, and a natural instinct for tracking and hunting, making them exceptional warriors and survivalists.\
+	They are very dutiful individuals and make fantastic and fearsome \
+	allies to those who earn their loyalty. Thanks to their pack minded nature they are slow to trust the other races \
 	but form deep connections with those they do. In recent years they have been driven from the forests by unrest and pressed \
-	into cohabitation with races they'd deem lesser.<br>\
-	(+1 Intelligence)"
+	into cohabitation with races they'd deem lesser."
+	inherent_traits = list(
+		TRAIT_STRONGBITE,
+		TRAIT_NASTY_EATER,
+		TRAIT_LEAPER,
+		TRAIT_PERFECT_TRACKER,
+		TRAIT_NOCSIGHT,
+		TRAIT_NIGHT_OWL
+	)
 	skin_tone_wording = "Pack"
 	species_traits = list(
 		MUTCOLORS,
@@ -23,7 +30,7 @@
 	use_skintones = 1
 	attack_verb = "slash"
 	liked_food = GROSS | MEAT | FRIED
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	possible_ages = ALL_AGES_LIST
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
@@ -49,7 +56,7 @@
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/werewolf,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears/lupian,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/wild_tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
@@ -80,6 +87,8 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/butt/animal,
 		/datum/customizer/organ/vagina/animal,
 		)
 	body_marking_sets = list(
@@ -92,16 +101,28 @@
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
+		/datum/body_marking/wolf,
 		/datum/body_marking/plain,
-		/datum/body_marking/belly,
-		/datum/body_marking/bellyslim,
-		/datum/body_marking/butt,
+		/datum/body_marking/tiger,
+		/datum/body_marking/tiger/dark,
 		/datum/body_marking/sock,
 		/datum/body_marking/socklonger,
 		/datum/body_marking/tips,
+		/datum/body_marking/bellyscale,
+		/datum/body_marking/bellyscaleslim,
+		/datum/body_marking/bellyscalesmooth,
+		/datum/body_marking/bellyscaleslimsmooth,
+		/datum/body_marking/buttscale,
+		/datum/body_marking/belly,
+		/datum/body_marking/bellyslim,
+		/datum/body_marking/butt,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
 		/datum/body_marking/backspots,
 		/datum/body_marking/front,
+		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
+		/datum/body_marking/spotted,
 	)
 	descriptor_choices = list(
 		/datum/descriptor_choice/height,
@@ -118,7 +139,8 @@
 	)
 	languages = list(
 		/datum/language/common,
-		/datum/language/canilunzt
+		/datum/language/canilunzt,
+		/datum/language/beast
 	)
 
 /datum/species/lupian/check_roundstart_eligible()

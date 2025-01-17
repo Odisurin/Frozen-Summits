@@ -18,6 +18,21 @@
 	var/lifetime = 5
 	var/opaque = 1 //whether the smoke can block the view when in enough amount
 
+/obj/effect/particle_effect/smoke/arquebus
+	name = "smoke"
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "smoke"
+	pixel_x = -32
+	pixel_y = -32
+	opacity = FALSE
+	layer = FLY_LAYER
+	plane = GAME_PLANE_UPPER
+	anchored = TRUE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	animate_movement = 0
+	amount = 4
+	lifetime = 4
+	opaque = FALSE
 
 /obj/effect/particle_effect/smoke/proc/fade_out(frames = 16)
 	if(alpha == 0) //Handle already transparent case
@@ -59,6 +74,8 @@
 	if(!istype(C))
 		return 0
 	if(lifetime<1)
+		return 0
+	if(C.internal != null || C.has_smoke_protection())
 		return 0
 	if(C.smoke_delay)
 		return 0
@@ -131,6 +148,13 @@
 		M.emote("cough")
 		return 1
 
+/obj/effect/particle_effect/smoke/bad/CanPass(atom/movable/mover, turf/target)
+	if(istype(mover, /obj/projectile/beam))
+		var/obj/projectile/beam/B = mover
+		B.damage = (B.damage/2)
+	return 1
+
+
 
 /datum/effect_system/smoke_spread/bad
 	effect_type = /obj/effect/particle_effect/smoke/bad
@@ -167,6 +191,12 @@
 				G_gases[/datum/gas/nitrogen][MOLES] += (G_gases[/datum/gas/plasma][MOLES])
 				G_gases[/datum/gas/plasma][MOLES] = 0
 				G.garbage_collect()
+		if (weldvents)
+			for(var/obj/machinery/atmospherics/components/unary/U in T)
+				if(!isnull(U.welded) && !U.welded) //must be an unwelded vent pump or vent scrubber.
+					U.welded = TRUE
+					U.update_icon()
+					U.visible_message(span_danger("[U] was frozen shut!"))
 		for(var/mob/living/L in T)
 			L.ExtinguishMob()
 		for(var/obj/item/Item in T)
@@ -232,8 +262,11 @@
 		return 0
 	if(!istype(M))
 		return 0
+	var/mob/living/carbon/C = M
+	if(C.internal != null || C.has_smoke_protection())
+		return 0
 	var/fraction = 1/initial(lifetime)
-	reagents.copy_to(M, fraction*reagents.total_volume)
+	reagents.copy_to(C, fraction*reagents.total_volume)
 	reagents.reaction(M, INGEST, fraction)
 	return 1
 
@@ -276,10 +309,12 @@
 			var/more = ""
 			if(M)
 				more = "[ADMIN_LOOKUPFLW(M)] "
-			message_admins("Smoke: ([ADMIN_VERBOSEJMP(location)])[contained]. Key: [more ? more : carry.my_atom.fingerprintslast].")
+			if(!istype(carry.my_atom, /obj/machinery/plumbing))
+				message_admins("Smoke: ([ADMIN_VERBOSEJMP(location)])[contained]. Key: [more ? more : carry.my_atom.fingerprintslast].")
 			log_game("A chemical smoke reaction has taken place in ([where])[contained]. Last touched by [carry.my_atom.fingerprintslast].")
 		else
-			message_admins("Smoke: ([ADMIN_VERBOSEJMP(location)])[contained]. No associated key.")
+			if(!istype(carry.my_atom, /obj/machinery/plumbing))
+				message_admins("Smoke: ([ADMIN_VERBOSEJMP(location)])[contained]. No associated key.")
 			log_game("A chemical smoke reaction has taken place in ([where])[contained]. No associated key.")
 
 

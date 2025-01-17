@@ -5,11 +5,11 @@
 	var/endTurfX = 0
 	var/endTurfY = 0
 	var/endTurfZ = -1
-	var/mapGeneratorType = /datum/mapGenerator/beach
+	var/mapGeneratorType = /datum/mapGenerator/nature
 	var/datum/mapGenerator/mapGenerator
 
-/obj/effect/landmark/mapGenerator/Initialize(mapload)
-	..()
+/obj/effect/landmark/mapGenerator/Initialize()
+	. = ..()
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/effect/landmark/mapGenerator/LateInitialize()
@@ -21,4 +21,3 @@
 	mapGenerator = new mapGeneratorType()
 	mapGenerator.defineRegion(locate(startTurfX,startTurfY,startTurfZ), locate(endTurfX,endTurfY,endTurfZ))
 	mapGenerator.generate()
-	qdel(src)

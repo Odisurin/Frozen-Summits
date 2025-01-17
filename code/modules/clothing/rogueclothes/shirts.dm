@@ -206,6 +206,19 @@
 	l_sleeve_status = SLEEVE_NORMAL
 	flags_inv = HIDECROTCH|HIDEBOOB
 
+
+/obj/item/clothing/suit/roguetown/shirt/dress/bra
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
+	name = "bra"
+	desc = ""
+	body_parts_covered = CHEST|GROIN|LEGS|VITALS
+	icon_state = "bra"
+	item_state = ""
+	allowed_sex = list(MALE, FEMALE)
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	flags_inv = NONE
+
 /obj/item/clothing/suit/roguetown/shirt/dress/gen
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "dress"
@@ -227,6 +240,12 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/random/Initialize()
 	color = pick("#6b5445", "#435436", "#704542", "#79763f", CLOTHING_BLUE)
 	..()
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gen/big
+	name = "big dress"
+	desc = ""
+	icon_state = "dressgenbig"
+	item_state = "dressgenbig"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
@@ -288,6 +307,17 @@
 	body_parts_covered = CHEST|ARMS|VITALS
 	color = null
 
+
+/obj/item/clothing/suit/roguetown/shirt/undershirt/maid_dress
+	name = "maid dress"
+	desc = "A maid dress meant to clean stuff with."
+	icon_state = "maid"
+	item_state = "maid"
+	r_sleeve_status = SLEEVE_NOMOD
+	l_sleeve_status = SLEEVE_NOMOD
+	body_parts_covered = CHEST|ARMS|VITALS
+	color = null
+
 /obj/item/clothing/suit/roguetown/shirt/jester
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
 	name = "jester's tunick"
@@ -304,7 +334,7 @@
 
 /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
-	name = "grenzelhoftian hip-shirt"
+	name = "mercenary hip-shirt"
 	desc = "Padded shirt for extra comfort and protection, adorned in vibrant colors."
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	icon_state = "grenzelshirt"
@@ -312,7 +342,7 @@
 	boobed = TRUE
 	detail_tag = "_detail"
 	detail_color = CLOTHING_WHITE
-	armor = list("blunt" = 40, "slash" = 30, "stab" = 30, "fire" = 0, "acid" = 0) //gambeson stats
+	armor = list("blunt" = 40, "slash" = 30, "stab" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //gambeson stats
 	max_integrity = 250
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL

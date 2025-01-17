@@ -4,6 +4,7 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ash"
 	w_class = WEIGHT_CLASS_TINY
+	possible_potion = "diseasecure"
 
 /obj/item/ash/Crossed(mob/living/L)
 	. = ..()
@@ -15,3 +16,10 @@
 			prob2break = 100
 		if(prob(prob2break))
 			qdel(src)
+
+/obj/item/ash/bonemeal
+	name = "bonemeal"
+	desc = "Rich in calcium and phosphorus, a perfect feed for plants."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "bonemeal"
+	w_class = WEIGHT_CLASS_TINY

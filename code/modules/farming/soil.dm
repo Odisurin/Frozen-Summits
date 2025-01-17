@@ -274,14 +274,14 @@
 
 /obj/structure/soil/proc/bless_soil()
 	blessed_time = 15 MINUTES
-	// It's a miracle! Plant comes back to life when blessed by Dendor
+	// It's a miracle! Plant comes back to life when blessed by Silvanus
 	if(plant && plant_dead)
 		plant_dead = FALSE
 		plant_health = 10.0
-	// If low on nutrition, Dendor provides
+	// If low on nutrition, Silvanus provides
 	if(nutrition < 30)
 		adjust_nutrition(max(30 - nutrition, 0))
-	// If low on water, Dendor provides
+	// If low on water, Silvanus provides
 	if(water < 30)
 		adjust_water(max(30 - water, 0))
 	// And it grows a little!
@@ -322,6 +322,11 @@
 	GLOB.weather_act_upon_list -= src
 	. = ..()
 
+/obj/structure/soil/weather_act_on(weather_trait, severity)
+	if(weather_trait != PARTICLEWEATHER_RAIN)
+		return
+	water = min(MAX_PLANT_WATER, water + min(5, severity / 4))
+
 /obj/structure/soil/process()
 	var/dt = 10
 	process_weeds(dt)
@@ -330,11 +335,6 @@
 	update_icon()
 	if(soil_decay_time <= 0)
 		decay_soil()
-
-/obj/structure/soil/weather_act_on(weather_trait, severity)
-	if(weather_trait != PARTICLEWEATHER_RAIN)
-		return
-	water = min(MAX_PLANT_WATER, water + min(5, severity / 4))
 
 /obj/structure/soil/update_icon()
 	. = ..()

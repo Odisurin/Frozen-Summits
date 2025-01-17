@@ -4,8 +4,19 @@
 /datum/species/demihuman
 	name = "Half-Kin"
 	id = "demihuman"
-	desc = "The inevitable union between wildkin and some form of humanity or another. While they also experience animalistic tendencies akin to their full-blooded ancestors, their intermingling with others has stemmed the severity of such primordial impulses. (Half-kin are not a template race to play your own custom race. If you play a half-kin, you are expected to roleplay to the setting and the race's lore.)<br>\
-	(+1 Perception)"
+	desc = "The inevitable union between wildkin and some form of humanity or another, and while they also experience animalistic tendencies akin to their full-blooded ancestors, their intermingling with others has stemmed the intensity."
+	inherent_traits = list(
+		TRAIT_STRONGBITE,
+		TRAIT_WILD_EATER,
+		TRAIT_FASTSLEEP,
+		TRAIT_NOCSIGHT
+	)
+
+	languages = list(
+		/datum/language/common,
+		/datum/language/beast
+	)
+
 	skin_tone_wording = "Ancestry"
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS_PARTSONLY)
@@ -15,13 +26,30 @@
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	soundpack_m = /datum/voicepack/male
 	soundpack_f = /datum/voicepack/female
+
+	organs = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/werewolf,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
+		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+		//ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
+		//ORGAN_SLOT_PENIS = /obj/item/organ/penis/tapered,
+		//ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
+		//ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
+		)
+
 	offset_features = list(
 		OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
 		OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
@@ -65,6 +93,8 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/butt/animal,
 		/datum/customizer/organ/vagina/animal,
 		)
 	body_marking_sets = list(
@@ -74,9 +104,27 @@
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
-		/datum/body_marking/tonage,
+		/datum/body_marking/plain,
+		/datum/body_marking/tiger,
+		/datum/body_marking/tiger/dark,
+		/datum/body_marking/sock,
 		/datum/body_marking/socklonger,
 		/datum/body_marking/tips,
+		/datum/body_marking/bellyscale,
+		/datum/body_marking/bellyscaleslim,
+		/datum/body_marking/bellyscalesmooth,
+		/datum/body_marking/bellyscaleslimsmooth,
+		/datum/body_marking/buttscale,
+		/datum/body_marking/belly,
+		/datum/body_marking/bellyslim,
+		/datum/body_marking/butt,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
+		/datum/body_marking/backspots,
+		/datum/body_marking/front,
+		/datum/body_marking/drake_eyes,
+		/datum/body_marking/tonage,
+		/datum/body_marking/spotted,
 	)
 	descriptor_choices = list(
 		/datum/descriptor_choice/height,
@@ -91,20 +139,20 @@
 		/datum/descriptor_choice/prominent_three_wild,
 		/datum/descriptor_choice/prominent_four_wild,
 	)
-	
+
 /datum/species/demihuman/check_roundstart_eligible()
 	return TRUE
 
 /datum/species/demihuman/qualifies_for_rank(rank, list/features)
 	return TRUE
 
-/datum/species/demihuman/on_species_gain(mob/living/carbon/foreign, datum/species/old_species)
-	..()
-	languages(foreign)
-	
-/datum/species/demihuman/proc/languages(mob/living/carbon/human/foreign)
-	if(foreign.skin_tone == SKIN_COLOR_GRENZELHOFT)
-		foreign.grant_language(/datum/language/grenzelhoftian)
+/datum/species/demihuman/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	. = ..()
+	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+
+/datum/species/demihuman/on_species_loss(mob/living/carbon/C)
+	. = ..()
+	UnregisterSignal(C, COMSIG_MOB_SAY)
 
 /datum/species/demihuman/get_random_features()
 	var/list/returned = MANDATORY_FEATURE_LIST

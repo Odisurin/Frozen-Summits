@@ -4,7 +4,7 @@
 	tutorial = "Originating in the vibrant Kingdom of Etrusca, a 'vaquero' had originally been a mere cattle-driver... Now, though, it has become a title for roaming swashbucklers. Whether they set out as a defender of the commonfolk or a pilferer of purses, the Vaquero is defined by the tale they carve across continents - and more frequently - by their story's violent end."
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/adventurer/vaquero
-	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck/tame/saddled
+	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
 	cmode_music = 'sound/music/combat_vaquero.ogg'
 	category_tags = list(CTAG_ADVENTURER)
 
@@ -15,7 +15,7 @@
 
 /datum/outfit/job/roguetown/adventurer/vaquero/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
@@ -43,11 +43,12 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/rogueweapon/sword/rapier
 	backr = /obj/item/rogue/instrument/guitar
+	beltr = /obj/item/gun/ballistic/arquebus_pistol
 	backpack_contents = list(
 					/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
 					/obj/item/rogueweapon/huntingknife/idagger/navaja = 1,
 					/obj/item/lockpick = 1,
-					/obj/item/flashlight/flare/torch = 1,,
+					/obj/item/storage/belt/rogue/pouch/ammo = 1,,
 					)
 	H.change_stat("intelligence", 2)
 	H.change_stat("endurance", 2)

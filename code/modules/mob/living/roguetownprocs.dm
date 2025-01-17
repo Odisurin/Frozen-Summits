@@ -70,7 +70,7 @@
 	if(!(mobility_flags & MOBILITY_STAND))
 		return FALSE
 	if(user.badluck(4))
-		var/list/usedp = list("Critical miss!", "Damn! Critical miss!", "No! Critical miss!", "It can't be! Critical miss!", "Xylix laughs at me! Critical miss!", "Bad luck! Critical miss!", "Curse creation! Critical miss!", "What?! Critical miss!")
+		var/list/usedp = list("Critical miss!", "Damn! Critical miss!", "No! Critical miss!", "It can't be! Critical miss!", "Lady luck laughs at me! Critical miss!", "Bad luck! Critical miss!", "Curse creation! Critical miss!", "What?! Critical miss!")
 		to_chat(user, span_boldwarning("[pick(usedp)]"))
 		flash_fullscreen("blackflash2")
 		user.aftermiss()
@@ -184,13 +184,13 @@
 				else
 					attacker_skill = U.mind.get_skill_level(/datum/skill/combat/unarmed)
 					prob2defend -= (attacker_skill * 20)
-
+			
 			if(HAS_TRAIT(src, TRAIT_GUIDANCE))
 				prob2defend += 10
-
+			
 			if(HAS_TRAIT(user, TRAIT_GUIDANCE))
 				prob2defend -= 10
-
+				
 			// parrying while knocked down sucks ass
 			if(!(mobility_flags & MOBILITY_STAND))
 				prob2defend *= 0.65
@@ -224,6 +224,8 @@
 						if (can_train_combat_skill(src, used_weapon.associated_skill, skill_target))
 							mind.add_sleep_experience(used_weapon.associated_skill, max(round(STAINT*exp_multi), 0), FALSE)
 
+					if((mobility_flags & MOBILITY_STAND) && can_train_combat_skill(src, used_weapon.associated_skill, SKILL_LEVEL_EXPERT))
+						mind.add_sleep_experience(used_weapon.associated_skill, max(round(STAINT*exp_multi), 0), FALSE)
 					var/obj/item/AB = intenty.masteritem
 
 					//attacker skill gain
@@ -234,12 +236,8 @@
 							attacker_skill_type = AB.associated_skill
 						else
 							attacker_skill_type = /datum/skill/combat/unarmed
-						if ((mobility_flags & MOBILITY_STAND))
-							var/skill_target = defender_skill
-							if(!HAS_TRAIT(src, TRAIT_GOODTRAINER))
-								skill_target -= SKILL_LEVEL_NOVICE
-							if (can_train_combat_skill(U, attacker_skill_type, skill_target))
-								U.mind.add_sleep_experience(attacker_skill_type, max(round(STAINT*exp_multi), 0), FALSE)
+						if((U.mobility_flags & MOBILITY_STAND) && can_train_combat_skill(U, attacker_skill_type, SKILL_LEVEL_EXPERT))
+							U.mind.add_sleep_experience(attacker_skill_type, max(round(STAINT*exp_multi), 0), FALSE)
 
 					if(prob(66) && AB)
 						if((used_weapon.flags_1 & CONDUCT_1) && (AB.flags_1 & CONDUCT_1))
@@ -263,12 +261,8 @@
 
 			if(weapon_parry == FALSE)
 				if(do_unarmed_parry(drained, user))
-					if((mobility_flags & MOBILITY_STAND))
-						var/skill_target = attacker_skill
-						if(!HAS_TRAIT(U, TRAIT_GOODTRAINER))
-							skill_target -= SKILL_LEVEL_NOVICE
-						if(can_train_combat_skill(H, /datum/skill/combat/unarmed, skill_target))
-							H.mind?.add_sleep_experience(/datum/skill/combat/unarmed, max(round(STAINT*exp_multi), 0), FALSE)
+					if((mobility_flags & MOBILITY_STAND) && can_train_combat_skill(H, /datum/skill/combat/unarmed, attacker_skill - SKILL_LEVEL_NOVICE))
+						H.mind?.add_sleep_experience(/datum/skill/combat/unarmed, max(round(STAINT*exp_multi), 0), FALSE)
 					flash_fullscreen("blackflash2")
 					return TRUE
 				else
@@ -283,8 +277,6 @@
 				if(!istype(rmb_intent, /datum/rmb_intent/riposte))
 					return FALSE
 			if(has_status_effect(/datum/status_effect/debuff/riposted))
-				return FALSE
-			if(has_status_effect(/datum/status_effect/debuff/feinted))
 				return FALSE
 			last_dodge = world.time
 			if(src.loc == user.loc)

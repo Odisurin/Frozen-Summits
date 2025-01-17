@@ -1,5 +1,5 @@
 /datum/migrant_wave/heartfelt
-	name = "The Court of Heartfelt"
+	name = "Nobles of Elturel"
 	max_spawns = 1
 	shared_wave_type = /datum/migrant_wave/heartfelt
 	weight = 50
@@ -15,7 +15,7 @@
 	greet_text = "Fleeing disaster, you have come together as a court, united in a final effort to restore the former glory and promise of Heartfelt. Stay close and watch out for each other, for all of your sakes!"
 
 /datum/migrant_wave/heartfelt_down_one
-	name = "The Court of Heartfelt"
+	name = "Nobles of Elturel"
 	shared_wave_type = /datum/migrant_wave/heartfelt
 	can_roll = FALSE
 	downgrade_wave = /datum/migrant_wave/heartfelt_down_two
@@ -29,7 +29,7 @@
 	greet_text = "Fleeing disaster, you have come together as a court, united in a final effort to restore the former glory and promise of Heartfelt. Stay close and watch out for each other, for all of your sakes! Some of you already did not make it on the way here..."
 
 /datum/migrant_wave/heartfelt_down_two
-	name = "The Court of Heartfelt"
+	name = "Nobles of Elturel"
 	shared_wave_type = /datum/migrant_wave/heartfelt
 	can_roll = FALSE
 	downgrade_wave = /datum/migrant_wave/heartfelt_down_three
@@ -43,7 +43,7 @@
 
 
 /datum/migrant_wave/heartfelt_down_three
-	name = "The Court of Heartfelt"
+	name = "Nobles of Elturel"
 	shared_wave_type = /datum/migrant_wave/heartfelt
 	can_roll = FALSE
 	roles = list(

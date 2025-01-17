@@ -4,8 +4,9 @@
 	desc = ""
 
 	telegraph_duration = 10 SECONDS
-	telegraph_message = span_warning("The sky begins to weep.")
+	telegraph_message = span_warning("Snow starts to fall from the sky.")
 	telegraph_sound = 'sound/blank.ogg'
+	weather_color = "ccffff"
 
 	weather_message = ""
 	weather_overlay = "rain1"

@@ -1,6 +1,6 @@
 /datum/job/roguetown/servant
-	title = "Servant"
-//	f_title = "Maid"
+	title = "Hamlet Servant"
+	f_title = "Hamlet Maid"
 	flag = SERVANT
 	department_flag = YOUNGFOLK
 	faction = "Station"
@@ -10,7 +10,7 @@
 	allowed_races = RACES_ALL_KINDS
 	allowed_ages = ALL_AGES_LIST
 
-	tutorial = "Granted a life of comfortable servitude in the Duke's manor, you follow the Seneschal's commands and spend your day performing necessary but menial tasks. This role offers an aesthetic choice between labor-servant, maid, and butler."
+	tutorial = "Granted a life to serve the hamlet, you follow the commands of all the hamlet and spend your day performing necessary but menial tasks."
 
 	outfit = /datum/outfit/job/roguetown/servant
 	advclass_cat_rolls = list(CTAG_SERVANT = 20)
@@ -20,7 +20,6 @@
 	max_pq = null
 	round_contrib_points = 2
 	advjob_examine = TRUE
-	cmode_music = 'sound/music/combat_bard.ogg'
 
 /datum/job/roguetown/servant/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	. = ..()

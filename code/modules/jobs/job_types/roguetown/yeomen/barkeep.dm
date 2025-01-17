@@ -1,10 +1,11 @@
 /datum/job/roguetown/barkeep
 	title = "Innkeeper"
+	f_title = "Innmatron"
 	flag = BARKEEP
 	department_flag = YEOMEN
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 
 	allowed_races = RACES_ALL_KINDS
 
@@ -45,9 +46,9 @@
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress
 	else
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
-	H.change_stat("strength", 1)
-	H.change_stat("endurance", 1)
-	H.change_stat("constitution", 1)
+	H.change_stat("strength", 2)
+	H.change_stat("endurance", 2)
+	H.change_stat("constitution", 2)
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) // Guess they were a bard.

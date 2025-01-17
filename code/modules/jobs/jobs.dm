@@ -60,7 +60,7 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 	ROLE_PAI))
 
 GLOBAL_LIST_INIT(noble_positions, list(
-	"Grand Duke",
+	"Expedition Leader",
 	"Consort",
 	"Prince",
 	"Hand",
@@ -72,7 +72,7 @@ GLOBAL_LIST_INIT(noble_positions, list(
 ))
 
 GLOBAL_LIST_INIT(courtier_positions, list(
-	"Court Magician",
+	"Hamlet Magician",
 	"Court Physician",
 	"Jester",
 	"Seneschal",
@@ -93,7 +93,7 @@ GLOBAL_LIST_INIT(church_positions, list(
 	"Acolyte",
 	"Mortician",
 	"Templar",
-	"Druid",
+	"Druidic Priest",
 ))
 
 GLOBAL_LIST_INIT(inquisition_positions, list(
@@ -136,7 +136,6 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Adventurer",
 	"Pilgrim",
 	"Bandit",
-	"Court Agent",
 ))
 
 GLOBAL_LIST_INIT(mercenary_positions, list(
@@ -151,9 +150,9 @@ GLOBAL_LIST_INIT(youngfolk_positions, list(
 	"Clerk",
 	"Apothecary",
 	"Smithy Apprentice",
-	"Magicians Associate",
+	"Magicians Apprentice",
 	"Churchling",
-	"Servant",
+	"Hamlet Servant",
 	"Shophand",
 	"Vagabond",
 ))

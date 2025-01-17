@@ -23,7 +23,7 @@
 	return
 
 /mob/living/proc/spawn_gibs()
-	new /obj/effect/gibspawner/generic(drop_location(), src)
+	new /obj/effect/gibspawner/generic(drop_location(), src, get_static_viruses())
 
 /mob/living/proc/spill_embedded_objects()
 	for(var/obj/item/embedded_item as anything in simple_embedded_objects)
@@ -83,6 +83,7 @@
 
 	set_drugginess(0)
 	set_disgust(0)
+	cure_holdbreath()
 	SetSleeping(0, 0)
 	reset_perspective(null)
 	reload_fullscreen()
@@ -90,11 +91,14 @@
 	update_damage_hud()
 	update_health_hud()
 	update_mobility()
+	med_hud_set_health()
+	med_hud_set_status()
+	if(!gibbed && !QDELETED(src))
+		addtimer(CALLBACK(src, PROC_REF(med_hud_set_status)), (DEFIB_TIME_LIMIT * 10) + 1)
 	stop_pulling()
 
 	. = ..()
 
-	SEND_SIGNAL(src, COMSIG_LIVING_DEATH, gibbed) 
 	if(client)
 		client.move_delay = initial(client.move_delay)
 		var/atom/movable/screen/gameover/hog/H = new()
@@ -135,7 +139,7 @@
 					if (HAS_TRAIT(player, TRAIT_CABAL))
 						to_chat(player, span_warning("I feel the faint passage of disjointed life essence as it flees [locale]."))
 					else
-						to_chat(player, span_warning("Veiled whispers herald the Undermaiden's gaze in my mind's eye as it turn towards [locale] for but a brief, singular moment."))
+						to_chat(player, span_warning("Veiled whispers herald Death's gaze in my mind's eye as it turn towards [locale] for but a brief, singular moment."))
 	// AZURE EDIT END
 
 	return TRUE
@@ -151,9 +155,9 @@
 		if ("bog", "dense bog")
 			locale = "a wretched, fetid bog"
 		if ("coast", "coastforest")
-			locale = "somewhere betwixt Abyssor's realm and Dendor's bounty"
+			locale = "somewhere betwixt Umberlee's realm and Silvanus's bounty"
 		if ("indoors", "shop", "physician", "outdoors", "roofs", "manor", "wizard's tower", "garrison", "dungeon cell", "baths", "tavern")
-			locale = "the city of Azure Peak and all its bustling souls"
+			locale = "the city of Frozen Summit and all its bustling souls"
 		if ("church")
 			locale = "a hallowed place, sworn to the Ten" // special bit for the church since it's sacred ground
 	

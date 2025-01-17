@@ -14,6 +14,7 @@
 	randomspread = 1
 	spread = 0
 	can_parry = TRUE
+	pin = /obj/item/firing_pin
 	force = 10
 	var/cocked = FALSE
 	cartridge_wording = "bolt"
@@ -21,6 +22,8 @@
 	fire_sound = 'sound/combat/Ranged/crossbow-small-shot-02.ogg'
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	smeltresult = /obj/item/ingot/steel
+	damfactor = 2
+
 	resistance_flags = FIRE_PROOF
 	obj_flags = UNIQUE_RENAME
 
@@ -58,6 +61,53 @@
 			return newtime
 		else
 			return 10
+	return chargetime
+
+/datum/intent/shoot/musket
+	chargedrain = 0 //no drain to aim a gun
+	charging_slowdown = 4
+	warnoffset = 20
+	chargetime = 10
+
+/datum/intent/shoot/musket/arc
+	name = "arc"
+	icon_state = "inarc"
+	chargedrain = 1
+	charging_slowdown = 3
+	warnoffset = 20
+
+/datum/intent/shoot/musket/arc/arc_check()
+	return TRUE
+
+/datum/intent/shoot/musket/get_chargetime()
+	if(mastermob && chargetime)
+		var/newtime = chargetime
+		//skill block
+		newtime = newtime + 18
+		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/firearms) * 3.5)
+		//per block
+		newtime = newtime + 20
+		// Perception aint gonna help you with loading a musket, bud
+		//newtime = newtime - (mastermob.STAPER)
+		if(newtime > 0)
+			return newtime
+		else
+			return 0.1
+	return chargetime
+
+/datum/intent/shoot/musket/pistol/get_chargetime()
+	if(mastermob && chargetime)
+		var/newtime = chargetime
+		//skill block
+		newtime = newtime + 18
+		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/firearms) * 3)
+		//per block
+		newtime = newtime + 20
+		newtime = newtime - (mastermob.STAPER)
+		if(newtime > 0)
+			return newtime
+		else
+			return 1
 	return chargetime
 
 /datum/intent/arc/crossbow

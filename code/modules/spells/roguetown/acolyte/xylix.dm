@@ -45,15 +45,15 @@
 
 /obj/effect/proc_holder/spell/invoked/mockery/invocation(mob/user = usr)
 	if(ishuman(user))
-		switch(pick(1,2,3,4,5,6,7,8,9,10,11,12,13))
+		switch(pick(1,2,3,4,5,6,7,8,9,10,11))
 			if(1)
-				user.say("Your mother was a Rous, and your father smelled of jacksberries!", forced = "spell")
+				user.say("Your mother was a horse, and your father smelled of elderberries!", forced = "spell")
 			if(2)
 				user.say("What are you going to do for a face when the Archdevil wants his arse back?!", forced = "spell")
 			if(3)
 				user.say("Wandought thine blades stand, much like thine loving parts!", forced = "spell")
 			if(4)
-				user.say("That's a face not even Eora could love!", forced = "spell")
+				user.say("That's a face not even your mother could love!", forced = "spell")
 			if(5)
 				user.say("Your breath smells like raw butter and cheap beer!.", forced = "spell")
 			if(6)
@@ -68,10 +68,6 @@
 				user.say("How much sparring did it take to become this awful?!", forced = "spell")
 			if(11)
 				user.say("You may need a smith- for you seem ill-equipped for a battle of wits!", forced = "spell")
-			if(12)
-				user.say("Looks as if thou art PSY-DONE! No? Too soon? Alright.", forced = "spell")
-			if(13)
-				user.say("Ravox bring justice to your useless mentor, ser!", forced = "spell")
 
 /datum/status_effect/debuff/viciousmockery
 	id = "viciousmockery"

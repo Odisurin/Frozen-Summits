@@ -12,7 +12,7 @@
 
 
 /obj/item/paper/scroll/attackby(obj/item/P, mob/living/carbon/human/user, params)
-	if(istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
+	if(istype(P, /obj/item/pen) || istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
 		if(!open)
 			to_chat(user, span_warning("Open me."))
 			return
@@ -187,12 +187,12 @@
 
 	if(signedname)
 		info += "SIGNED,<br/>"
-		info += "<font face=\"[FOUNTAIN_PEN_FONT]\" color=#27293f>[signedname] the [signedjob] of Azure Peak</font>"
+		info += "<font face=\"[FOUNTAIN_PEN_FONT]\" color=#27293f>[signedname] the [signedjob] of Frozen Summit</font>"
 
 /obj/item/paper/confession
 	name = "confession"
 	icon_state = "confession"
-	info = "THE GUILTY PARTY ADMITS THEIR SIN AND THE WEAKENING OF PSYDON'S HOLY FLOCK. THEY WILL REPENT AND SUBMIT TO ANY PUNISHMENT THE CLERGY DEEMS APPROPRIATE, OR BE RELEASED IMMEDIATELY. LET THIS RECORD OF THEIR SIN WEIGH ON THE ANGEL GABRIEL'S JUDGEMENT AT THE MANY-SPIKED GATES OF HEAVEN.<br/><br/>SIGNED,"
+	info = "THE GUILTY PARTY ADMITS THEIR SIN AND THE WEAKENING OF Ao'S HOLY FLOCK. THEY WILL REPENT AND SUBMIT TO ANY PUNISHMENT THE CLERGY DEEMS APPROPRIATE, OR BE RELEASED IMMEDIATELY. LET THIS RECORD OF THEIR SIN WEIGH ON THE ANGEL GABRIEL'S JUDGEMENT AT THE MANY-SPIKED GATES OF HEAVEN.<br/><br/>SIGNED,"
 	var/signed = FALSE
 	textper = 150
 
@@ -229,4 +229,4 @@
 			M.add_stress(/datum/stressevent/confessed)
 		M.add_stress(/datum/stressevent/confessed)
 		signed = M.real_name
-		info = "THE GUILTY PARTY ADMITS THEIR SIN AND THE WEAKENING OF PSYDON'S HOLY FLOCK. THEY WILL REPENT AND SUBMIT TO ANY PUNISHMENT THE CLERGY DEEMS APPROPRIATE, OR BE RELEASED IMMEDIATELY. LET THIS RECORD OF THEIR SIN WEIGH ON THE ANGEL GABRIEL'S JUDGEMENT AT THE MANY-SPIKED GATES OF HEAVEN.<br/><br/>SIGNED,<br/><font color='red'>[signed]</font>"
+		info = "THE GUILTY PARTY ADMITS THEIR SIN AND THE WEAKENING OF Ao'S HOLY FLOCK. THEY WILL REPENT AND SUBMIT TO ANY PUNISHMENT THE CLERGY DEEMS APPROPRIATE, OR BE RELEASED IMMEDIATELY. LET THIS RECORD OF THEIR SIN WEIGH ON THE ANGEL GABRIEL'S JUDGEMENT AT THE MANY-SPIKED GATES OF HEAVEN.<br/><br/>SIGNED,<br/><font color='red'>[signed]</font>"

@@ -284,12 +284,20 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/static/list/eavesdropping_modes = list(MODE_WHISPER = TRUE, MODE_WHISPER_CRIT = TRUE)
 	var/eavesdrop_range = 0
 	var/Zs_too = FALSE
+	var/listener_has_ceiling	= TRUE
+	var/speaker_has_ceiling		= TRUE
+
+	var/turf/speaker_turf = get_turf(src)
+	var/speaker_ceiling = GET_TURF_ABOVE(speaker_turf)
+	if(speaker_ceiling)
+		if(istransparentturf(speaker_ceiling))
+			speaker_has_ceiling = FALSE
 	if(eavesdropping_modes[message_mode])
 		eavesdrop_range = EAVESDROP_EXTRA_RANGE
 	if(message_mode != MODE_WHISPER)
+		Zs_too = TRUE
 		if(say_test(message) == "2")	//CIT CHANGE - ditto
 			message_range += 10
-			Zs_too = TRUE
 	// AZURE EDIT: thaumaturgical loudness (from orisons)
 	if (has_status_effect(/datum/status_effect/thaumaturgy))
 		spans |= SPAN_REALLYBIG
@@ -344,8 +352,20 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/rendered = compose_message(src, message_language, message, , spans, message_mode)
 	for(var/_AM in listening)
 		var/atom/movable/AM = _AM
+		var/turf/listener_turf = get_turf(AM)
+		var/listener_ceiling = GET_TURF_ABOVE(listener_turf)
+		if(listener_ceiling)
+			if(istransparentturf(listener_ceiling))
+				listener_has_ceiling = FALSE
 		if(!Zs_too && !isobserver(AM))
 			if(AM.z != src.z)
+				continue
+		if(Zs_too)
+			if(AM.z < src.z && listener_has_ceiling)	//Listener is below the speaker and has a ceiling above them
+				continue
+			if(AM.z > src.z && speaker_has_ceiling)		//Listener is above the speaker and the speaker has a ceiling above
+				continue
+			if(listener_has_ceiling && speaker_has_ceiling && AM.z != src.z)	//Both have a ceiling, on different z-levels -- no hearing at all
 				continue
 
 		var/highlighted_message
@@ -442,6 +462,15 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	return message
 
 /mob/living/proc/radio(message, message_mode, list/spans, language)
+	var/obj/item/implant/radio/imp = locate() in src
+	if(imp && imp.radio.on)
+		if(message_mode == MODE_HEADSET)
+			imp.radio.talk_into(src, message, , spans, language)
+			return ITALICS | REDUCE_RANGE
+		if(message_mode == MODE_DEPARTMENT || (message_mode in imp.radio.channels))
+			imp.radio.talk_into(src, message, message_mode, spans, language)
+			return ITALICS | REDUCE_RANGE
+
 	switch(message_mode)
 		if(MODE_WHISPER)
 			return ITALICS
@@ -455,6 +484,11 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 				if (l_hand)
 					return l_hand.talk_into(src, message, , spans, language)
 				return ITALICS | REDUCE_RANGE
+
+		if(MODE_INTERCOM)
+			for (var/obj/item/radio/intercom/I in view(1, null))
+				I.talk_into(src, message, , spans, language)
+			return ITALICS | REDUCE_RANGE
 
 		if(MODE_BINARY)
 			return ITALICS | REDUCE_RANGE //Does not return 0 since this is only reached by humans, not borgs or AIs.

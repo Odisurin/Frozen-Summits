@@ -27,7 +27,6 @@
 						/obj/item/flashlight/flare/torch = 1,
 						)
 	gloves = /obj/item/clothing/gloves/roguetown/leather
-	ADD_TRAIT(H, TRAIT_OUTDOORSMAN, TRAIT_GENERIC)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axes, 1, TRUE)

@@ -10,6 +10,19 @@
 	importexport_amt = 10
 	passive_generation = 5
 
+/datum/roguestock/stockpile/stone
+	name = "Stone"
+	desc = "High quality rocks of stone used for construction."
+	item_type = /obj/item/natural/stone
+	held_items = list(2, 0)
+	payout_price = 2
+	withdraw_price = 4
+	transport_fee = 3
+	export_price = 4
+	importexport_amt = 10
+	passive_generation = 5
+
+
 /datum/roguestock/stockpile/coal
 	name = "Coal"
 	desc = "Chunks of coal used for fuel and alloying."
@@ -39,10 +52,10 @@
 	desc = "Chunks of copper used for smithing and alloying."
 	item_type = /obj/item/rogueore/copper
 	held_items = list(6, 0)
-	payout_price = 3
-	withdraw_price = 5
-	transport_fee = 3
-	export_price = 5
+	payout_price = 20
+	withdraw_price = 30
+	transport_fee = 5
+	export_price = 30
 	importexport_amt = 10
 	passive_generation = 2
 
@@ -318,3 +331,38 @@
 	export_price = 3
 	importexport_amt = 10
 	passive_generation = 2
+
+/datum/roguestock/stockpile/mushroom
+	name = "Crag Mushroom"
+	desc = "Fungus with rare properties."
+	item_type =/obj/item/reagent_containers/food/snacks/grown/shroom
+	held_items = list(0, 0)
+	payout_price = 2
+	withdraw_price = 3
+	transport_fee = 1
+	export_price = 3
+	importexport_amt = 10
+	passive_generation = 2
+
+/datum/roguestock/stockpile/sugar_cane
+	name = "Sugar cane"
+	desc = "You get sugar from this."
+	item_type =/obj/item/reagent_containers/food/snacks/grown/sugarcane
+	held_items = list(0, 0)
+	payout_price = 2
+	withdraw_price = 3
+	transport_fee = 1
+	export_price = 3
+	importexport_amt = 10
+	passive_generation = 2
+
+/datum/roguestock/stockpile/truffles
+	name = "Truffles"
+	desc = "rare, delicious mushrooms."
+	item_type = /obj/item/reagent_containers/food/snacks/rogue/truffles
+	held_items = list(0, 0)
+	payout_price = 10
+	withdraw_price = 20
+	transport_fee = 5
+	export_price = 5
+	importexport_amt = 10

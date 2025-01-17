@@ -24,8 +24,6 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	. = ..()
 	if((src.town_area == TRUE) && HAS_TRAIT(guy, TRAIT_GUARDSMAN) && guy.z == 3 && !guy.has_status_effect(/datum/status_effect/buff/guardbuffone)) //man at arms
 		guy.apply_status_effect(/datum/status_effect/buff/guardbuffone)
-		if(HAS_TRAIT(guy, TRAIT_KNIGHTSMAN) && guy.has_status_effect(/datum/status_effect/buff/knightbuff))
-			guy.remove_status_effect(/datum/status_effect/buff/knightbuff)
 
 /area/rogue/Entered(mob/living/carbon/human/guy)
 
@@ -36,11 +34,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/Entered(mob/living/carbon/human/guy)
 
 	. = ..()
-	if((src.keep_area == TRUE) && HAS_TRAIT(guy, TRAIT_KNIGHTSMAN) && guy.z == 3 && !guy.has_status_effect(/datum/status_effect/buff/knightbuff)) //royal guard
+	if((src.keep_area == TRUE) && HAS_TRAIT(guy, TRAIT_KNIGHTSMAN) && guy.z == 3 && !guy.has_status_effect(/datum/status_effect/buff/knightbuff)) //man at arms
 		guy.apply_status_effect(/datum/status_effect/buff/knightbuff)
-		if(HAS_TRAIT(guy, TRAIT_GUARDSMAN) && guy.has_status_effect(/datum/status_effect/buff/guardbuffone))
-			guy.remove_status_effect(/datum/status_effect/buff/guardbuffone)
-
 
 /area/rogue/indoors
 	name = "indoors rt"
@@ -115,9 +110,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_MOUNTAIN
 	spookysounds = SPOOKY_GEN
 	spookynight = SPOOKY_GEN
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/ambience/cityday.ogg'
+	droning_sound_dusk = 'sound/ambience/citydusk.ogg'
+	droning_sound_night = 'sound/ambience/citynight.ogg'
 	warden_area = TRUE
 	soundenv = 17
 	converted_type = /area/rogue/indoors/shelter/mountains
@@ -181,16 +176,17 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 30,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 50)
-	first_time_text = "AZURE BASIN"
-	droning_sound = 'sound/music/area/field.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	first_time_text = "FROZEN SUMMIT BASIN"
+	droning_sound = 'sound/ambience/cityday.ogg'
+	droning_sound_dusk = 'sound/ambience/citydusk.ogg'
+	droning_sound_night = 'sound/ambience/citynight.ogg'
 	converted_type = /area/rogue/indoors/shelter/rtfield
+
 /area/rogue/indoors/shelter/rtfield
 	icon_state = "rtfield"
-	droning_sound = 'sound/music/area/field.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = 'sound/ambience/cityday.ogg'
+	droning_sound_dusk = 'sound/ambience/citydusk.ogg'
+	droning_sound_night = 'sound/ambience/citynight.ogg'
 
 
 /area/rogue/outdoors/woods
@@ -213,7 +209,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 40,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 10,
 				/mob/living/carbon/human/species/goblin/npc/ambush = 30)
-	first_time_text = "THE AZURE GROVE"
+	first_time_text = "THE FROZEN SUMMIT GROVE"
 	converted_type = /area/rogue/indoors/shelter/woods
 /area/rogue/indoors/shelter/woods
 	icon_state = "woods"
@@ -255,7 +251,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambush_mobs = list(
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 20,
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 60,
-				/mob/living/simple_animal/hostile/retaliate/rogue/trollbog = 20,
+				/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 20,
 				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 40,
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30)
 	first_time_text = "THE TERRORBOG"
@@ -301,7 +297,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 30,
 				/mob/living/carbon/human/species/human/northern/searaider/ambush = 10,
 				/mob/living/carbon/human/species/goblin/npc/ambush/sea = 40)
-	first_time_text = "THE AZURE COAST"
+	first_time_text = "THE FROZEN SUMMIT COAST"
 	converted_type = /area/rogue/indoors/shelter/woods
 
 //// UNDER AREAS (no indoor rain sound usually)
@@ -367,7 +363,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/carbon/human/species/skeleton/npc = 10,
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
 				/mob/living/carbon/human/species/goblin/npc/sea = 20,
-				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 15)
+				/mob/living/simple_animal/hostile/retaliate/rogue/cavetroll = 15)
 	converted_type = /area/rogue/outdoors/caves
 
 /area/rogue/under/cavewet/bogcaves
@@ -550,11 +546,11 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/manor
 	name = "Manor"
 	icon_state = "manor"
-	droning_sound = list('sound/music/area/manor.ogg', 'sound/music/area/manor2.ogg')
+	droning_sound = 'sound/music/area/manorgarri.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
-	first_time_text = "THE KEEP OF AZURE PEAK"
+	first_time_text = "THE MANOR OF FROZEN SUMMIT"
 	keep_area = TRUE
 
 /area/rogue/outdoors/exposed/manorgarri
@@ -639,10 +635,11 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "tavern"
 	ambientsounds = AMB_INGEN
 	ambientnight = AMB_INGEN
-	droning_sound = 'sound/music/jukeboxes/tavern1.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/jukeboxes/tavern2.ogg'
+	droning_sound = 'sound/ambience/barday.ogg'
+	droning_sound_dusk = 'sound/ambience/bardusk.ogg'
+	droning_sound_night = 'sound/ambience/barnight.ogg'
 	converted_type = /area/rogue/outdoors/exposed/tavern
+
 /area/rogue/outdoors/exposed/tavern
 	icon_state = "tavern"
 	droning_sound = 'sound/music/jukeboxes/tavern1.ogg'
@@ -716,7 +713,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 	converted_type = /area/rogue/indoors/shelter/town
-	first_time_text = "THE CITY OF AZURE PEAK"
+	first_time_text = "THE HAMLET OF FROZEN SUMMIT"
 	town_area = TRUE
 
 /area/rogue/indoors/shelter/town

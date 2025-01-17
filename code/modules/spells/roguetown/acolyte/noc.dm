@@ -20,7 +20,7 @@
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	chargedrain = 0
 	chargetime = 0
-	invocation = "Noc blinds thee of thy sins!"
+	invocation = "Mystra blinds thee of thy sins!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	associated_skill = /datum/skill/magic/holy
 	devotion_cost = 15
@@ -32,7 +32,7 @@
 		if(target.anti_magic_check(TRUE, TRUE))
 			return FALSE
 		target.visible_message(span_warning("[user] points at [target]'s eyes!"),span_warning("My eyes are covered in darkness!"))
-		target.blind_eyes(4)
+		target.blind_eyes(5)
 		return TRUE
 	revert_cast()
 	return FALSE

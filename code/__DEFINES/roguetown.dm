@@ -134,17 +134,44 @@
 	/datum/species/anthromorph,\
 	/datum/species/demihuman,\
 )
-#define ALL_CLERIC_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra, /datum/patron/divine/ravox, /datum/patron/divine/malum, /datum/patron/divine/eora)
+#define ALL_CLERIC_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/divine/lathander, /datum/patron/neutral/tempus, /datum/patron/neutral/helm, /datum/patron/neutral/talona, /datum/patron/neutral/oghma, /datum/patron/neutral/corellon, /datum/patron/neutral/garl, /datum/patron/neutral/yondalla, /datum/patron/neutral/elistraee, /datum/patron/neutral/talos, /datum/patron/neutral/tymora, /datum/patron/neutral/mielikki, /datum/patron/divine/selune)
 
-#define ALL_PALADIN_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/abyssor, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra, /datum/patron/divine/ravox, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/old_god)
+#define ALL_PALADIN_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/divine/lathander, /datum/patron/neutral/tempus, /datum/patron/neutral/helm, /datum/patron/neutral/talona, /datum/patron/neutral/oghma, /datum/patron/neutral/corellon, /datum/patron/neutral/garl, /datum/patron/neutral/yondalla, /datum/patron/neutral/elistraee, /datum/patron/neutral/talos, /datum/patron/neutral/tymora, /datum/patron/neutral/mielikki, /datum/patron/divine/selune)
 
-#define ALL_ACOLYTE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/pestra, /datum/patron/divine/eora, /datum/patron/divine/necra, /datum/patron/divine/abyssor, /datum/patron/divine/malum)
+#define ALL_ACOLYTE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/divine/lathander, /datum/patron/neutral/tempus, /datum/patron/neutral/helm, /datum/patron/neutral/talona, /datum/patron/neutral/oghma, /datum/patron/neutral/corellon, /datum/patron/neutral/garl, /datum/patron/neutral/yondalla, /datum/patron/neutral/elistraee, /datum/patron/neutral/talos, /datum/patron/neutral/tymora, /datum/patron/neutral/mielikki, /datum/patron/divine/selune)
 
-#define ALL_DIVINE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
+#define ALL_DIVINE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/divine/lathander, /datum/patron/neutral/tempus, /datum/patron/neutral/helm, /datum/patron/neutral/talona, /datum/patron/neutral/oghma, /datum/patron/neutral/corellon, /datum/patron/neutral/garl, /datum/patron/neutral/yondalla, /datum/patron/neutral/elistraee, /datum/patron/neutral/talos, /datum/patron/neutral/tymora, /datum/patron/neutral/mielikki, /datum/patron/divine/selune)
 
 #define ALL_INHUMEN_PATRONS list(/datum/patron/inhumen/zizo, /datum/patron/inhumen/graggar, /datum/patron/inhumen/matthios, /datum/patron/inhumen/baotha)
 
-#define ALL_PATRONS  list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/old_god, /datum/patron/inhumen/zizo, /datum/patron/inhumen/graggar, /datum/patron/inhumen/matthios, /datum/patron/inhumen/baotha)
+#define ALL_PATRONS  list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/old_god, /datum/patron/inhumen/zizo, /datum/patron/inhumen/graggar, /datum/patron/inhumen/matthios, /datum/patron/inhumen/baotha, /datum/patron/divine/lathander, /datum/patron/neutral/tempus, /datum/patron/neutral/helm, /datum/patron/neutral/talona, /datum/patron/neutral/oghma, /datum/patron/neutral/corellon, /datum/patron/neutral/garl, /datum/patron/neutral/yondalla, /datum/patron/neutral/elistraee, /datum/patron/neutral/talos, /datum/patron/neutral/tymora, /datum/patron/neutral/mielikki, /datum/patron/inhumen/maglubiyet, /datum/patron/inhumen/gruumsh, /datum/patron/inhumen/shar, /datum/patron/divine/selune, /datum/patron/inhumen/malar, /datum/patron/inhumen/lolth)
+
+#define TEN_CURSES list(\
+	/datum/curse/astrata,\
+	/datum/curse/noc,\
+	/datum/curse/ravox,\
+	/datum/curse/necra,\
+	/datum/curse/xylix,\
+	/datum/curse/pestra,\
+	/datum/curse/eora\
+)
+
+#define INHUMEN_CURSES list(\
+	/datum/curse/zizo,\
+	/datum/curse/graggar,\
+	/datum/curse/matthios,\
+	/datum/curse/baotha\
+)
+
+#define SPECIAL_CURSES list(\
+	/datum/curse/atheism\
+)
+
+#define ALL_CURSES list(\
+	SPECIAL_CURSES,\
+	TEN_CURSES,\
+	INHUMEN_CURSES\
+)
 
 #define PLATEHIT "plate"
 #define CHAINHIT "chain"
@@ -182,9 +209,17 @@ GLOBAL_LIST_EMPTY(credits_icons)
 GLOBAL_LIST_EMPTY(confessors)
 
 //preference stuff
-#define FAMILY_NONE 1
-#define FAMILY_PARTIAL 2
-#define FAMILY_FULL 3
+#define FAMILY_NONE "None"
+#define FAMILY_PARTIAL "Siblings"
+#define FAMILY_NEWLYWED "Newlywed"
+#define FAMILY_FULL "Parent"
+
+#define FAMILY_FATHER "Father"
+#define FAMILY_MOTHER "Mother"
+#define FAMILY_PROGENY "Progeny"
+#define FAMILY_ADOPTED "Adoptive Progeny"
+#define FAMILY_OMMER "Parents Sibling"
+#define FAMILY_INLAW "In Law"
 
 GLOBAL_LIST_EMPTY(sunlights)
 GLOBAL_LIST_EMPTY(head_bounties)
@@ -228,8 +263,7 @@ GLOBAL_LIST_EMPTY(round_join_times)
 #define CTAG_MARSHAL		"CAT_MARSHAL"		// Marshal class
 #define CTAG_SENESCHAL		"CAT_SENESCHAL"		// Seneschal's aesthetic choices. 
 #define CTAG_SERVANT		"CAT_SERVANT"		// Servant's aesthetic choices.
-#define CTAG_CAPTAIN		"CAT_CAPTAIN"		// Handles Captain class selector
-#define CTAG_WAPPRENTICE	"CTAG_WAPPRENTICE"	// Mage Apprentice Classes - Handles Mage Apprentices class selector 
+#define CTAG_CAPTAIN		"CAT_CAPTAIN"		// Handles Captain class selector 
 
 /*
 	Defines for the triumph buy datum categories

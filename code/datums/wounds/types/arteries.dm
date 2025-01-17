@@ -20,7 +20,8 @@
 	sleep_healing = 0
 	embed_chance = 75
 
-	werewolf_infection_probability = 100
+	zombie_infection_probability = 10
+	werewolf_infection_probability = 10
 
 /datum/wound/artery/can_stack_with(datum/wound/other)
 	if(istype(other, /datum/wound/artery) && (type == other.type))
@@ -84,6 +85,7 @@
 	to_chat(affected, span_userdanger("[pick(heartaches)]"))
 	if(HAS_TRAIT(affected, TRAIT_CRITICAL_WEAKNESS))
 		affected.death()
+
 
 /datum/wound/artery/chest/on_life()
 	. = ..()

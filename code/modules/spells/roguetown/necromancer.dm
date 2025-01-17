@@ -194,8 +194,7 @@
 	var/datum/antagonist/lich/lichman = user.mind.has_antag_datum(/datum/antagonist/lich)
 	if(lichman)
 		if(user.stat != DEAD)
-			if(!lichman.consume_phylactery(0)) //Use phylactery at 0 timer. Returns false if none left.
-				user.death() // If no more phylacteries, die
+			lichman.consume_phylactery(0)
 	else
 		user.death()
 

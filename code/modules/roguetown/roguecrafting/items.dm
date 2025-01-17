@@ -60,6 +60,66 @@
 	verbage_simple = "tie"
 	verbage = "ties"
 
+/datum/crafting_recipe/roguetown/plankaxe
+	name = "crude wooden plank"
+	result = list(/obj/item/natural/plank)
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	tools = list(/obj/item/rogueweapon/stoneaxe)
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
+	verbage = "cut"
+	verbage_tp = "cuts"
+
+/datum/crafting_recipe/roguetown/plank
+	name = "wooden plank"
+	result = list(/obj/item/natural/plank,/obj/item/natural/plank,/obj/item/natural/plank)
+	reqs = list(/obj/item/grown/log/tree = 1)
+	tools = list(/obj/item/rogueweapon/handsaw)
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
+	verbage = "saw"
+	verbage_tp = "saws"
+
+/datum/crafting_recipe/roguetown/plankshort
+	name = " wooden half plank"
+	result = list(/obj/item/natural/plankshort, /obj/item/natural/plankshort)
+	reqs = list(/obj/item/natural/plank = 1)
+	tools = list(/obj/item/rogueweapon/handsaw)
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
+	verbage = "saw"
+	verbage_tp = "saws"
+
+/datum/crafting_recipe/roguetown/stoneblock
+	name = "stone block"
+	result = list(/obj/item/natural/stoneblock, /obj/item/natural/stoneblock)
+	reqs = list(/obj/item/natural/stone = 1)
+	tools = list(/obj/item/rogueweapon/chisel)
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 1
+	verbage = "chisel"
+	verbage_tp = "chisels"
+
+/datum/crafting_recipe/roguetown/stoneblocprimitive
+	name = "crude stone block"
+	result = list(/obj/item/natural/stoneblock)
+	reqs = list(/obj/item/natural/stone = 1)
+	tools = list(/obj/item/natural/stone)
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 1
+	verbage = "bash"
+	verbage_tp = "bashes"
+
+/datum/crafting_recipe/roguetown/stonesaw
+	name = "crude saw"
+	result = /obj/item/rogueweapon/handsaw/crude
+	reqs = list(/obj/item/natural/stone = 2, /obj/item/alch/bone = 1)
+	tools = /obj/item/rogueweapon/huntingknife
+	craftdiff = 1
+	verbage = "hew"
+	verbage_tp = "hews"
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/unropebelt
 	name = "untie rope belt"
 	result = /obj/item/rope
@@ -72,15 +132,6 @@
 	name = "rope"
 	result = /obj/item/rope
 	reqs = list(/obj/item/natural/fibers = 3)
-	verbage_simple = "braid"
-	verbage = "braids"
-
-/datum/crafting_recipe/roguetown/net
-	name = "net"
-	result = /obj/item/net
-	craftdiff = 2
-	reqs = list(/obj/item/rope = 2,
-				/obj/item/natural/stone = 3)
 	verbage_simple = "braid"
 	verbage = "braids"
 
@@ -321,6 +372,16 @@
 /obj/item/rogueweapon/shield/wood/crafted
 	sellprice = 6
 
+/datum/crafting_recipe/roguetown/heatershield
+	name = "heater shield"
+	result = /obj/item/rogueweapon/shield/heater/crafted
+	reqs = list(/obj/item/grown/log/tree/small = 2,
+				/obj/item/natural/hide = 1)
+	skillcraft = /datum/skill/craft/carpentry
+
+/obj/item/rogueweapon/shield/heater/crafted
+	sellprice = 6
+
 /datum/crafting_recipe/roguetown/woodbucket
 	name = "wooden bucket"
 	result = /obj/item/reagent_containers/glass/bucket/wooden
@@ -491,16 +552,24 @@
 	craftdiff = 1
 	skillcraft = /datum/skill/craft/engineering
 
-/datum/crafting_recipe/roguetown/mortar
-	name = "stone mortar"
-	result = /obj/item/reagent_containers/glass/mortar
-	reqs = list(/obj/item/natural/stone = 1)
-	craftdiff = 1
+/datum/crafting_recipe/roguetown/bandage
+	name = "roll of bandages"
+	result = /obj/item/natural/bundle/cloth/bandage/full
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/ash = 1,)
+	craftdiff = 2
+	skillcraft = /datum/skill/misc/medicine
 
-/datum/crafting_recipe/roguetown/pestle
-	name = "stone pestle"
-	result = /obj/item/pestle
-	reqs = list(/obj/item/natural/stone = 1)
+/datum/crafting_recipe/roguetown/mortar
+	name = "mortar and pestle"
+	result = /obj/item/reagent_containers/glass/mortar
+	reqs = list(/obj/item/grown/log/tree/stick = 1, /obj/item/grown/log/tree/small = 1,)
+	craftdiff = 1
+	skillcraft = /datum/skill/craft/crafting
+
+/datum/crafting_recipe/roguetown/whet
+	name = "whet stone"
+	result = /obj/item/natural/whet
+	reqs = list(/obj/item/natural/stone = 2)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/bag
@@ -584,13 +653,6 @@
 			/obj/item/grown/log/tree/stick = 1)
 /obj/item/rogueweapon/shovel/small/crafted
 	sellprice = 5
-
-/datum/crafting_recipe/roguetown/broom
-	name = "broom"
-	result = /obj/item/broom
-	reqs = list(/obj/item/natural/fibers = 1,
-			/obj/item/grown/log/tree/stick = 4)
-	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/book_crafting_kit
 	name = "book crafting kit"
@@ -682,28 +744,28 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/prosthetic/woodleftarm
+/datum/crafting_recipe/roguetown/prosthetic/woodleft
 	name = "wood arm (L)"
 	result = list(/obj/item/bodypart/l_arm/prosthetic/woodleft)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	skillcraft = /datum/skill/craft/crafting
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/prosthetic/woodrightarm
+/datum/crafting_recipe/roguetown/prosthetic/woodright
 	name = "wood arm (R)"
 	result = list(/obj/item/bodypart/r_arm/prosthetic/woodright)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	skillcraft = /datum/skill/craft/crafting
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/prosthetic/woodleftleft
+/datum/crafting_recipe/roguetown/prosthetic/woodleft
 	name = "wood leg (L)"
 	result = list(/obj/item/bodypart/l_leg/prosthetic)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	skillcraft = /datum/skill/craft/crafting
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/prosthetic/woodrightleg
+/datum/crafting_recipe/roguetown/prosthetic/woodright
 	name = "wood leg (R)"
 	result = list(/obj/item/bodypart/r_leg/prosthetic)
 	reqs = list(/obj/item/grown/log/tree/small = 1)

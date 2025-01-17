@@ -4,9 +4,16 @@
 /datum/species/vulpkanin
 	name = "Vulpkian"
 	id = "vulpkanin"
-	desc = "Foxy creatures known for their cleverness and mischief. In ancient history they were Dendor's original champions, but as His madness grew the connect became frey and forgotten, leaving them to their own devices. Or, at least, that's what they say.<br>\
-	(+1 Intelligence)"
+	desc = "Foxy creatures known for their cleverness and mischief. In ancient history they were the one of the forgotten god's original champions, but when the god started to be forgotten, they could not control vulpkanin any longer due to their lack of power, leaving them to their own devices. Or, at least, that's what they say."
 	default_color = "444"
+	inherent_traits = list(
+		TRAIT_STRONGBITE,
+		TRAIT_NASTY_EATER,
+		TRAIT_LEAPER,
+		TRAIT_PERFECT_TRACKER,
+		TRAIT_NOCSIGHT,
+		TRAIT_NIGHT_OWL
+	)
 	species_traits = list(
 		MUTCOLORS,
 		EYECOLOR,
@@ -16,7 +23,7 @@
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	attack_verb = "slash"
 	liked_food = GROSS | MEAT | FRIED
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	possible_ages = ALL_AGES_LIST
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
@@ -40,7 +47,7 @@
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/werewolf,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears/vulpkanin,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/wild_tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
@@ -71,6 +78,8 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/butt/animal,
 		/datum/customizer/organ/vagina/animal,
 		)
 	body_marking_sets = list(
@@ -82,10 +91,28 @@
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
+		/datum/body_marking/plain,
+		/datum/body_marking/tiger,
+		/datum/body_marking/tiger/dark,
+		/datum/body_marking/sock,
+		/datum/body_marking/socklonger,
+		/datum/body_marking/tips,
+		/datum/body_marking/bellyscale,
+		/datum/body_marking/bellyscaleslim,
+		/datum/body_marking/bellyscalesmooth,
+		/datum/body_marking/bellyscaleslimsmooth,
+		/datum/body_marking/buttscale,
+		/datum/body_marking/fox,
 		/datum/body_marking/belly,
 		/datum/body_marking/bellyslim,
 		/datum/body_marking/butt,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
+		/datum/body_marking/backspots,
+		/datum/body_marking/front,
+		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
+		/datum/body_marking/spotted,
 	)
 	descriptor_choices = list(
 		/datum/descriptor_choice/height,
@@ -102,7 +129,8 @@
 	)
 	languages = list(
 		/datum/language/common,
-		/datum/language/canilunzt
+		/datum/language/canilunzt,
+		/datum/language/beast
 	)
 
 /datum/species/vulpkanin/check_roundstart_eligible()

@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/grenzelhoft
-	name = "Grenzelhoft"
-	tutorial = "Experts, Professionals, Expensive. Those are the first words that come to mind when the emperiate Grenzelhoft mercenary guild is mentioned. While you may work for coin like any common sellsword, maintaining the prestige of the guild will be of utmost priority."
+	name = "Trade of Blades Mercenary"
+	tutorial = "Experts, Professionals, Expensive. Those are the first words that come to mind when your warband is mentioned. The Trade of Blades Mercenary guild is operating from the city of Neverwinter. While you may work for coin like any common sellsword, maintaining the prestige of the guild will be of utmost priority."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/mercenary/grenzelhoft
@@ -18,7 +18,7 @@
 	switch(classchoice)
 		if("Doppelsoldner")
 			H.set_blindness(0)
-			to_chat(H, span_warning("You are a Doppelsoldner of Grenzelhoft, a swordsman experienced with long-length blades."))
+			to_chat(H, span_warning("You are a Doppelsöldner, a swordsman experienced with long-length blades."))
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
@@ -37,11 +37,11 @@
 			H.change_stat("endurance", 3)
 			H.change_stat("constitution", 2)
 			H.change_stat("perception", 1)
-			H.change_stat("speed", -1)		//They get heavy armor now + sword option; so lower speed.
+			H.change_stat("speed", 1)		//They get heavy armor now + sword option; so lower speed.
 			r_hand = /obj/item/rogueweapon/greatsword/grenz
 		if("Halberdier")
 			H.set_blindness(0)
-			to_chat(H, span_warning("You are a Halberdier from Grenzelhoft, a skilled user of poleamrs and axes. Though you prefer them combined.."))
+			to_chat(H, span_warning("You are a Halberdier, a skilled user of polearms and axes. Though you prefer them combined.."))
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)

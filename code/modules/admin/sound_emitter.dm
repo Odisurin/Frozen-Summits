@@ -27,6 +27,12 @@
 		return QDEL_HINT_LETMELIVE
 	. = ..()
 
+/obj/effect/sound_emitter/singularity_act()
+	return
+
+/obj/effect/sound_emitter/singularity_pull()
+	return
+
 /obj/effect/sound_emitter/examine(mob/user)
 	. = ..()
 	if(!isobserver(user))

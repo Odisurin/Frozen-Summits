@@ -3,8 +3,8 @@
 	flag = COUNCILLOR
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 0
+	spawn_positions = 0
 	allowed_ages = ALL_AGES_LIST
 	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
@@ -19,7 +19,7 @@
 	max_pq = null
 	round_contrib_points = 2
 
-	cmode_music = 'sound/music/combat_noble.ogg'
+	cmode_music = 'sound/music/combat_fancy.ogg'
 
 /datum/outfit/job/roguetown/councillor/pre_equip(mob/living/carbon/human/H)
 	..()

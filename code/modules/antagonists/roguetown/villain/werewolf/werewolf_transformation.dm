@@ -28,8 +28,8 @@
 
 		else if (world.time >= transforming + 25 SECONDS) // Stage 2
 			H.flash_fullscreen("redflash3")
-			H.emote("agony", forced = TRUE)
-			to_chat(H, span_userdanger("UNIMAGINABLE PAIN!"))
+			H.emote("whimper", forced = TRUE)
+			to_chat(H, span_userdanger("THE MOON SCORCHES, THE PAIN!"))
 			H.Stun(30)
 			H.Knockdown(30)
 
@@ -92,7 +92,7 @@
 	W.stored_mob = src
 	W.limb_destroyer = TRUE
 	W.ambushable = FALSE
-	W.cmode_music = 'sound/music/combat_druid.ogg'
+	W.cmode_music = 'sound/music/combat_werewolf.ogg'
 	W.skin_armor = new /obj/item/clothing/suit/roguetown/armor/skin_armor/werewolf_skin(W)
 	playsound(W.loc, pick('sound/combat/gib (1).ogg','sound/combat/gib (2).ogg'), 200, FALSE, 3)
 	W.spawn_gibs(FALSE)
@@ -146,9 +146,23 @@
 	ADD_TRAIT(W, TRAIT_HARDDISMEMBER, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_PIERCEIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_SPELLCOCKBLOCK, TRAIT_GENERIC)
+	ADD_TRAIT(W, TRAIT_PERFECT_TRACKER, TRAIT_GENERIC) //Hearthstone change.
+	ADD_TRAIT(W, TRAIT_DEATHBYSNOOSNOO, TRAIT_GENERIC) //Hearthstone change.
 
 	invisibility = oldinv
 
+	if(getorganslot(ORGAN_SLOT_PENIS))
+		W.internal_organs_slot[ORGAN_SLOT_PENIS] = /obj/item/organ/penis/knotted
+	if(getorganslot(ORGAN_SLOT_TESTICLES))
+		W.internal_organs_slot[ORGAN_SLOT_TESTICLES] = /obj/item/organ/testicles
+	if(getorganslot(ORGAN_SLOT_BREASTS))
+		W.internal_organs_slot[ORGAN_SLOT_BREASTS] = /obj/item/organ/breasts
+	if(getorganslot(ORGAN_SLOT_BELLY))
+		W.internal_organs_slot[ORGAN_SLOT_BELLY] = /obj/item/organ/belly
+	if(getorganslot(ORGAN_SLOT_VAGINA))
+		W.internal_organs_slot[ORGAN_SLOT_VAGINA] = /obj/item/organ/vagina
+
+	W.client.prefs.sexable = client.prefs.sexable
 
 /mob/living/carbon/human/proc/werewolf_untransform(dead,gibbed)
 	if(!stored_mob)

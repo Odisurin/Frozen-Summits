@@ -39,12 +39,18 @@
 /obj/item/roguecoin/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	playsound(loc, 'sound/foley/coins1.ogg', 100, TRUE, -2)
 	scatter(get_turf(src))
-	..() 
+	..()
+
+/obj/item/roguecoin/pickup(mob/user)
+	. = ..()
+	if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE))
+		var/mob/living/carbon/human/H = user
+		to_chat(H, span_warning("The idea repulses me!"))
+		H.cursed_freak_out()
+		H.Paralyze(20)
+		return
 
 /obj/item/roguecoin/proc/scatter(turf/T)
-	if(istransparentturf(T))
-		scatter(GET_TURF_BELOW(T))
-		return
 	pixel_x = rand(-8, 8)
 	pixel_y = rand(-5, 5)
 	if(isturf(T) && quantity > 1)
@@ -173,31 +179,31 @@
 
 //GOLD
 /obj/item/roguecoin/gold
-	name = "zenar"
-	desc = "A gold coin bearing the symbol of the Taurus and the pre-kingdom psycross. These were in the best condition of the provincial gold mints, the rest were melted down."
+	name = "Gold Piece"
+	desc = "A gold coin also known as a Gold Dragon minted in the sword coast."
 	icon_state = "g1"
 	sellprice = 10
 	base_type = CTYPE_GOLD
-	plural_name = "zenarii"
+	plural_name = "Gold coins"
 
 
 // SILVER
 /obj/item/roguecoin/silver
-	name = "ziliqua"
-	desc = "An ancient silver coin still in use due to their remarkable ability to last the ages."
+	name = "Silver Piece"
+	desc = "A triangle shaped silver coin. The hole serves the simple purpose of adding them to strings for storage. ."
 	icon_state = "s1"
 	sellprice = 5
 	base_type = CTYPE_SILV
-	plural_name = "ziliquae"
+	plural_name = "Silver Coins"
 
 // COPPER
 /obj/item/roguecoin/copper
-	name = "zenny"
-	desc = "A brand-new bronze coin minted by the capital in an effort to be rid of the financial use of silver."
+	name = "Copper Piece"
+	desc = "A simple copper coin. The least valued form of currency in Faerun."
 	icon_state = "c1"
 	sellprice = 1
 	base_type = CTYPE_COPP
-	plural_name = "zennies"
+	plural_name = "Copper Coins"
 
 /obj/item/roguecoin/copper/pile/Initialize()
 	. = ..()

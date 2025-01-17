@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	//doohickeys for savefiles
 	var/path
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
-	var/max_save_slots = 40
+	var/max_save_slots = 60
 
 	//non-preference stuff
 	var/muted = 0
@@ -64,6 +64,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	//character preferences
 	var/slot_randomized					//keeps track of round-to-round randomization of the character slot, prevents overwriting
 	var/real_name						//our character's name
+	var/custom_race_name				//custom race name
 	var/gender = MALE					//gender of character (well duh) (LETHALSTONE EDIT: this no longer references anything but whether the masculine or feminine model is used)
 	var/pronouns = HE_HIM				// LETHALSTONE EDIT: character's pronouns (well duh)
 	var/voice_type = VOICE_TYPE_MASC	// LETHALSTONE EDIT: the type of soundpack the mob should use
@@ -146,7 +147,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/highlight_color = "#FF0000"
 	var/datum/charflaw/charflaw
 
+	//Family system
 	var/family = FAMILY_NONE
+	var/setspouse = ""
 
 	var/crt = FALSE
 	var/grain = TRUE
@@ -158,6 +161,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/headshot_link
 	var/list/descriptor_entries = list()
 	var/list/custom_descriptors = list()
+	var/virginity = FALSE
+	/// Tracker to whether the person has ever spawned into the round, for purposes of applying the respawn ban
+	var/has_spawned = FALSE
 
 	var/char_accent = "No accent"
 
@@ -180,7 +186,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			load_path(C.ckey)
 			unlock_content = C.IsByondMember()
 			if(unlock_content)
-				max_save_slots = 60
+				max_save_slots = 80
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
@@ -294,10 +300,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "</table>"
 
-			if(CONFIG_GET(flag/roundstart_traits))
-				dat += "<center><h2>Quirk Setup</h2>"
-				dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
-				dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
+			dat += "<center><h2>Quirk Setup</h2>"
+			dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
+			dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
 
 			// Encapsulating table
 			dat += "<table width = '100%'>"
@@ -326,8 +331,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			// LETHALSTONE EDIT END
 
 			dat += "<BR>"
-			dat += "<b>Race:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
-
+			dat += "<b>Race Origin:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
+			dat += "<b>Race Name:</b> <a href='?_src_=prefs;preference=customracename;task=input'>Change: [custom_race_name]</a><BR>"
 			// LETHALSTONE EDIT BEGIN: add statpack selection
 			dat += "<b>Statpack:</b> <a href='?_src_=prefs;preference=statpack;task=input'>[statpack.name]</a><BR>"
 //			dat += "<a href='?_src_=prefs;preference=species;task=random'>Random Species</A> "
@@ -358,12 +363,16 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE_ANTAG]'>When Antagonist: [(randomise[RANDOM_AGE_ANTAG]) ? "Yes" : "No"]</A>"
 
 //			dat += "<b><a href='?_src_=prefs;preference=name;task=random'>Random Name</A></b><BR>"
+
+
 			dat += "<b>Virtue:</b> <a href='?_src_=prefs;preference=virtue;task=input'>[virtue]</a><BR>"
 			dat += "<b>Vice:</b> <a href='?_src_=prefs;preference=charflaw;task=input'>[charflaw]</a><BR>"
 			var/datum/faith/selected_faith = GLOB.faithlist[selected_patron?.associated_faith]
 			dat += "<b>Faith:</b> <a href='?_src_=prefs;preference=faith;task=input'>[selected_faith?.name || "FUCK!"]</a><BR>"
 			dat += "<b>Patron:</b> <a href='?_src_=prefs;preference=patron;task=input'>[selected_patron?.name || "FUCK!"]</a><BR>"
-//			dat += "<b>Family:</b> <a href='?_src_=prefs;preference=family'>Unknown</a><BR>" // Disabling until its working
+			dat += "<b>Family:</b> <a href='?_src_=prefs;preference=family'>[family ? family : "None"]</a><BR>"
+			if(family == FAMILY_FULL || family == FAMILY_NEWLYWED)
+				dat += "<b>Preferred Spouse:</b> <a href='?_src_=prefs;preference=setspouse'>[setspouse ? setspouse : "None"]</a><BR>"
 			dat += "<b>Dominance:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Left-handed" : "Right-handed"]</a><BR>"
 
 /*
@@ -411,7 +420,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<b>Mutant Color #2:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color2;task=input'>Change</a><BR>"
 				dat += "<b>Mutant Color #3:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor3"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
 
-
 			dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
 			dat += "<br><b>Nickname Color: </b> </b><a href='?_src_=prefs;preference=highlight_color;task=input'>Change</a>"
 			dat += "<br><b>Voice Pitch: </b><a href='?_src_=prefs;preference=voice_pitch;task=input'>[voice_pitch]</a>"
@@ -419,6 +427,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<br><b>Features:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Change</a>"
 			dat += "<br><b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
 			dat += "<br><b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
+
+			dat += "<br><b>__________________________</b>"
+
 
 			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
@@ -705,6 +716,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	dat += "</td>"
 	dat += "<td width='33%' align='right'>"
+	dat += "<b>Be a virgin:</b> <a href='?_src_=prefs;preference=be_virgin'>[(virginity) ? "Yes":"No"]</a><br>"
 	dat += "<b>Be voice:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Enabled":"Disabled"]</a>"
 	dat += "</td>"
 	dat += "</tr>"
@@ -1026,6 +1038,78 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 			user.client.prefs.lastclass = null
 			user.client.prefs.save_preferences()
 
+/datum/preferences/proc/SetQuirks(mob/user)
+	if(!SSquirks)
+		to_chat(user, span_danger("The quirk subsystem is still initializing! Try again in a minute."))
+		return
+
+	var/list/dat = list()
+	if(!SSquirks.quirks.len)
+		dat += "The quirk subsystem hasn't finished initializing, please hold..."
+		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center><br>"
+	else
+		dat += "<center><b>Choose quirk setup</b></center><br>"
+		dat += "<div align='center'>Left-click to add or remove quirks. You need negative quirks to have positive ones.<br>\
+		Quirks are applied at roundstart and cannot normally be removed. Most things may not work or work right.</div>"
+		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center>"
+		dat += "<hr>"
+		dat += "<center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
+		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS] max positive quirks<br>\
+		<b>Quirk balance remaining:</b> [GetQuirkBalance()]</center><br>"
+		for(var/V in SSquirks.quirks)
+			var/datum/quirk/T = SSquirks.quirks[V]
+			var/quirk_name = initial(T.name)
+			var/has_quirk
+			var/quirk_cost = initial(T.value) * -1
+			var/lock_reason = "This trait is unavailable."
+			var/quirk_conflict = FALSE
+			for(var/_V in all_quirks)
+				if(_V == quirk_name)
+					has_quirk = TRUE
+			if(initial(T.mood_quirk) && CONFIG_GET(flag/disable_human_mood))
+				lock_reason = "Mood is disabled."
+				quirk_conflict = TRUE
+			if(has_quirk)
+				if(quirk_conflict)
+					all_quirks -= quirk_name
+					has_quirk = FALSE
+				else
+					quirk_cost *= -1 //invert it back, since we'd be regaining this amount
+			if(quirk_cost > 0)
+				quirk_cost = "+[quirk_cost]"
+			var/font_color = "#AAAAFF"
+			if(initial(T.value) != 0)
+				font_color = initial(T.value) > 0 ? "#AAFFAA" : "#FFAAAA"
+			if(quirk_conflict)
+				dat += "<font color='[font_color]'>[quirk_name]</font> - [initial(T.desc)] \
+				<font color='red'><b>LOCKED: [lock_reason]</b></font><br>"
+			else
+				if(has_quirk)
+					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[quirk_name]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
+					<b><font color='[font_color]'>[quirk_name]</font></b> - [initial(T.desc)]<br>"
+				else
+					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[quirk_name]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
+					<font color='[font_color]'>[quirk_name]</font> - [initial(T.desc)]<br>"
+		dat += "<br><center><a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a></center>"
+
+	var/datum/browser/noclose/popup = new(user, "mob_occupation", "<div align='center'>Quirk Preferences</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	popup.set_window_options("can_close=0")
+	popup.set_content(dat.Join())
+	popup.open(FALSE)
+
+/datum/preferences/proc/GetQuirkBalance()
+	var/bal = 0
+	for(var/V in all_quirks)
+		var/datum/quirk/T = SSquirks.quirks[V]
+		bal -= initial(T.value)
+	return bal
+
+/datum/preferences/proc/GetPositiveQuirkCount()
+	. = 0
+	for(var/q in all_quirks)
+		if(SSquirks.quirk_points[q] > 0)
+			.++
+
 /datum/preferences/proc/SetKeybinds(mob/user)
 	var/list/dat = list()
 	// Create an inverted list of keybindings -> key
@@ -1174,6 +1258,45 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 			else
 				SetChoices(user)
 		return 1
+
+
+	else if(href_list["preference"] == "trait")
+		switch(href_list["task"])
+			if("close")
+				user << browse(null, "window=mob_occupation")
+				ShowChoices(user)
+			if("update")
+				var/quirk = href_list["trait"]
+				if(!SSquirks.quirks[quirk])
+					return
+				for(var/V in SSquirks.quirk_blacklist) //V is a list
+					var/list/L = V
+					for(var/Q in all_quirks)
+						if((quirk in L) && (Q in L) && !(Q == quirk)) //two quirks have lined up in the list of the list of quirks that conflict with each other, so return (see quirks.dm for more details)
+							to_chat(user, span_danger("[quirk] is incompatible with [Q]."))
+							return
+				var/value = SSquirks.quirk_points[quirk]
+				var/balance = GetQuirkBalance()
+				if(quirk in all_quirks)
+					if(balance + value < 0)
+						to_chat(user, span_warning("Refunding this would cause you to go below your balance!"))
+						return
+					all_quirks -= quirk
+				else
+					if(GetPositiveQuirkCount() >= MAX_QUIRKS)
+						to_chat(user, span_warning("I can't have more than [MAX_QUIRKS] positive quirks!"))
+						return
+					if(balance - value < 0)
+						to_chat(user, span_warning("I don't have enough balance to gain this quirk!"))
+						return
+					all_quirks += quirk
+				SetQuirks(user)
+			if("reset")
+				all_quirks = list()
+				SetQuirks(user)
+			else
+				SetQuirks(user)
+		return TRUE
 
 	else if(href_list["preference"] == "antag")
 		switch(href_list["task"])
@@ -1493,6 +1616,22 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							return
 						voice_pitch = new_voice_pitch
 
+				if("customracename")
+					to_chat(user, "<span class='notice'>What are you?</span>")
+					var/new_custom_race_name = input(user, "Input your custom race name:", "Custom Race Name", custom_race_name) as message|null
+					if(new_custom_race_name == null)
+						return
+					if(new_custom_race_name == "")
+						custom_race_name = null
+						ShowChoices(user)
+						return
+					if(!valid_custom_race_name(user, new_custom_race_name))
+						custom_race_name = null
+						ShowChoices(user)
+						return
+					custom_race_name = new_custom_race_name
+					to_chat(user, "<span class='notice'>Successfully updated Race Name</span>")
+					log_game("[user] has set their Race Name to '[custom_race_name]'.")
 				if("highlight_color")
 					var/new_color = input(user, "Choose your character's nickname highlight color:", "Character Preference","#"+highlight_color) as color|null
 					if(new_color)
@@ -1593,9 +1732,6 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						virtue = virtue_chosen
 						if (virtue.desc)
 							to_chat(user, span_purple(virtue.desc))
-						if (statpack.type != /datum/statpack/wildcard/virtuous)
-							statpack = new /datum/statpack/wildcard/virtuous
-							to_chat(user, span_purple("Your statpack has been set to virtuous (no stats) due to selecting a virtue."))
 
 				if("charflaw")
 					var/list/coom = GLOB.character_flaws.Copy()
@@ -1780,9 +1916,30 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						to_chat(user, span_warning("You may switch your character and choose any role, if you don't meet the requirements (if any are specified) it won't be applied"))
 
 				if("family")
-					var/list/loly = list("Not yet.","Work in progress.","Don't click me.","Stop clicking this.","Nope.","Be patient.","Sooner or later.")
-					to_chat(user, "<font color='red'>[pick(loly)]</font>")
-					return
+					var/list/famtree_options_list = list(FAMILY_NONE, FAMILY_PARTIAL, FAMILY_NEWLYWED, FAMILY_FULL)
+					if(age > AGE_ADULT)
+						famtree_options_list = list(FAMILY_NONE, FAMILY_NEWLYWED, FAMILY_FULL)
+					var/new_family = input(user, "Do you have relatives in rockhill? \
+						[FAMILY_NONE] will disable this feature. \
+						[FAMILY_PARTIAL] will assign you as a progeny of a local house based on your species. This feature is disabled if your older than ADULT. \
+						[FAMILY_NEWLYWED] assigns you a spouse without adding you to a family. Setspouse will try to assign you as a certain persons spouse. \
+						[FAMILY_FULL] will attempt to assign you as matriarch or patriarch of one of the local houses of rockhill. Setspouse will will prevent \
+						players with the setspouse = None from matching with you unless their name equals your setspouse. \
+						.", "The Major Houses of Rockhill") as null|anything in famtree_options_list
+					if(new_family)
+						family = new_family
+				//Setspouse is part of the family subsystem. It will check existing families for this character and attempt to place you in this family.
+				if("setspouse")
+					var/newspouse = input(user, "Input the name of another player:","Rememberin your spouse") as text|null
+					if(newspouse)
+						setspouse = newspouse
+					else
+						setspouse = null
+/*				if("alignment")
+///					to_chat(user, "<font color='puple'>Alignment is how you communicate to the Game Masters if your character follows a certain set of behavior restrictions. This allows you to </font>")
+					var/new_alignment = input(user, "Alignment is how you communicate to the Game Masters and other players the intent of your character. Your character will be under less administrative scrutiny for evil actions if you choose evil alignments, but you will experience subtle disadvantages. Alignment is overwritten for antagonists.", "Alignment") as null|anything in ALL_ALIGNMENTS_LIST
+					if(new_alignment)
+						alignment = new_alignment*/
 				if("hotkeys")
 					hotkeys = !hotkeys
 					if(hotkeys)
@@ -1971,6 +2128,14 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					widescreenpref = !widescreenpref
 					user.client.change_view(CONFIG_GET(string/default_view))
 
+
+				if("be_virgin")
+					virginity = !virginity
+					if(virginity)
+						to_chat(user, span_notice("You have not once indulged in the temptations of the flesh.")) 
+					else
+						to_chat(user, span_notice("You have. In a word. Fucked before.")) //Someone word this better please kitty is high and words are hard
+
 				if("schizo_voice")
 					toggles ^= SCHIZO_VOICE
 					if(toggles & SCHIZO_VOICE)
@@ -2118,6 +2283,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 	character.detail = detail
 	character.set_patron(selected_patron)
 	character.backpack = backpack
+	character.virginity = virginity
 
 	character.jumpsuit_style = jumpsuit_style
 
@@ -2128,6 +2294,8 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 	character.dna.real_name = character.real_name
 
 	character.headshot_link = headshot_link
+
+	character.custom_race_name = custom_race_name
 
 	character.statpack = statpack
 
@@ -2153,6 +2321,8 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 		character.update_body_parts(redraw = TRUE)
 
 	character.char_accent = char_accent
+	character.familytree_pref = family
+	character.setspouse = setspouse
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)
@@ -2228,6 +2398,13 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 			to_chat(usr, "<span class='warning'>The image must be hosted on one of the following sites: 'Gyazo, Lensdump, Imgbox, Catbox'</span>")
 		return FALSE
 	return TRUE
+
+/proc/valid_custom_race_name(mob/user, value, silent = FALSE)
+
+	if(!length(value))
+		return FALSE
+	return TRUE
+
 
 /datum/preferences/proc/is_active_migrant()
 	if(!migrant)

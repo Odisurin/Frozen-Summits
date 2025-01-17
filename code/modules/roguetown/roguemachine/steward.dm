@@ -6,8 +6,8 @@
 #define TAB_LOG 6
 
 /obj/structure/roguemachine/steward
-	name = "nerve master"
-	desc = "The stewards most trusted friend."
+	name = "Banking Golem"
+	desc = "A simple Construct that keeps track of the local economy. The stewards most trusted friend."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "steward_machine"
 	density = TRUE
@@ -64,13 +64,13 @@
 		if(!D)
 			return
 		if(SStreasury.treasury_value < D.get_import_price())
-			say("Insufficient mammon.")
+			say("Insufficient coin.")
 			return
 		var/amt = D.get_import_price()
 		SStreasury.treasury_value -= amt
 		SStreasury.log_to_steward("-[amt] imported [D.name]")
 		if(amt >= 100) //Only announce big spending.
-			scom_announce("Azure Peak imports [D.name] for [amt] mammon.", )
+			scom_announce("Frozen Summit imports [D.name] for [amt] coin.", )
 		D.raise_demand()
 		addtimer(CALLBACK(src, PROC_REF(do_import), D.type), 10 SECONDS)
 	if(href_list["export"])
@@ -93,7 +93,7 @@
 		SStreasury.treasury_value += amt
 		SStreasury.log_to_steward("+[amt] exported [D.name]")
 		if(amt >= 100) //Only announce big spending.
-			scom_announce("Azure Peak exports [D.name] for [amt] mammon.")
+			scom_announce("Frozen Summit exports [D.name] for [amt] coin.")
 		D.lower_demand()
 	if(href_list["togglewithdraw"])
 		var/datum/roguestock/D = locate(href_list["togglewithdraw"]) in SStreasury.stockpile_datums

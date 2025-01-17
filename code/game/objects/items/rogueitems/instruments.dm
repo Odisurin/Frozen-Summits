@@ -12,6 +12,7 @@
 	var/datum/looping_sound/dmusloop/soundloop
 	var/list/song_list = list()
 	var/playing = FALSE
+	improvised = TRUE
 
 /obj/item/rogue/instrument/equipped(mob/living/user, slot)
 	. = ..()
@@ -30,7 +31,8 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogue/instrument/Initialize()
-	soundloop = new(src, FALSE)
+	soundloop = new(list(src), FALSE)
+//	soundloop.start()
 	. = ..()
 
 /obj/item/rogue/instrument/dropped(mob/living/user, silent)
@@ -108,7 +110,10 @@
 	"Tip Thine Tankard" = 'sound/music/instruments/lute (4).ogg',
 	"A Reed On the Wind" = 'sound/music/instruments/lute (5).ogg',
 	"Jests On Steel Ears" = 'sound/music/instruments/lute (6).ogg',
-	"Merchant in the Mire" = 'sound/music/instruments/lute (7).ogg')
+	"Merchant in the Mire" = 'sound/music/instruments/lute (7).ogg',
+	"The Power" = 'modular_stonehedge/sound/music/instruments/lute (8).ogg',
+	"Bard Dance" = 'modular_stonehedge/sound/music/instruments/lute (9).ogg',
+	"Old Time Battles" = 'modular_stonehedge/sound/music/instruments/lute (10).ogg')
 
 /obj/item/rogue/instrument/accord
 	name = "accordion"
@@ -129,7 +134,7 @@
 	song_list = list("Fire-Cast Shadows" = 'sound/music/instruments/guitar (1).ogg',
 	"The Forced Hand" = 'sound/music/instruments/guitar (2).ogg',
 	"Regrets Unpaid" = 'sound/music/instruments/guitar (3).ogg',
-	"'Took the Mammon and Ran'" = 'sound/music/instruments/guitar (4).ogg',
+	"'Took the coin and Ran'" = 'sound/music/instruments/guitar (4).ogg',
 	"Poor Man's Tithe" = 'sound/music/instruments/guitar (5).ogg',
 	"In His Arms Ye'll Find Me" = 'sound/music/instruments/guitar (6).ogg',
 	"El Odio" = 'sound/music/instruments/guitar (7).ogg',
@@ -155,13 +160,17 @@
 	name = "flute"
 	desc = "A slender flute carefully carved from a smooth wood piece."
 	icon_state = "flute"
-	song_list = list("Half-Dragon's Ten Mammon" = 'sound/music/instruments/flute (1).ogg',
+	song_list = list("Half-Dragon's Ten coin" = 'sound/music/instruments/flute (1).ogg',
 	"'The Local Favorite'" = 'sound/music/instruments/flute (2).ogg',
 	"Rous in the Cellar" = 'sound/music/instruments/flute (3).ogg',
 	"Her Boots, So Incandescent" = 'sound/music/instruments/flute (4).ogg',
 	"Moondust Minx" = 'sound/music/instruments/flute (5).ogg',
 	"Quest to the Ends" = 'sound/music/instruments/flute (6).ogg',
-	"Spit Shine" = 'sound/music/instruments/flute (7).ogg')
+	"Spit Shine" = 'sound/music/instruments/flute (7).ogg',
+	"The Power" = 'modular_stonehedge/sound/music/instruments/flute (7).ogg',
+	"Bard Dance" = 'modular_stonehedge/sound/music/instruments/flute (8).ogg',
+	"Old Time Battles" = 'modular_stonehedge/sound/music/instruments/flute (9).ogg')
+//	"Spit Shine" = 'sound/music/instruments/flute (7).ogg')  Doesnt exist on HS
 
 /obj/item/rogue/instrument/drum
 	name = "drum"

@@ -10,7 +10,7 @@
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
-	invocation = "Undermaiden grant thee passage forth and spare the trials of the forgotten."
+	invocation = "Kelemvor grant thee passage forth and spare the trials of the forgotten."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
 	devotion_cost = 5 //very weak spell, you can just make a grave marker with a literal stick
@@ -41,7 +41,7 @@
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
-	invocation = "The Undermaiden rebukes!"
+	invocation = "THE GODS REBUKES!!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	miracle = TRUE
 	devotion_cost = 20
@@ -76,8 +76,7 @@
 				vamp_prob -= 59
 			if(prob(vamp_prob))
 				explosion(get_turf(L), light_impact_range = 1, flame_range = 1, smoke = FALSE)
-				L.Stun(50)
-//				L.throw_at(get_ranged_target_turf(L, get_dir(user,L), 7), 7, 1, L, spin = FALSE)
+				L.Knockdown(50)
 			else
 				L.visible_message(span_warning("[L] resists being churned!"), span_userdanger("I resist being churned!"))
 	..()

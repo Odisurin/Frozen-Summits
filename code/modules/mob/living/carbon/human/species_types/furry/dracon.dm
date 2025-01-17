@@ -2,14 +2,12 @@
 	race = /datum/species/dracon
 
 /datum/species/dracon
-	name = "Drakian"
+	name = "Half Dragon"
 	id = "dracon"
-	desc = "<b>Drakian</b><br>\
-	Mighty scaled individuals who claim to be descendants of the dragons of yore.<br>\
-	(+1 Strength, -1 Endurance)"
+	desc = "Mighty scaled individuals who are descendant from the primordial dragons."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	possible_ages = ALL_AGES_LIST
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -28,16 +26,24 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
-	race_bonus = list(STAT_STRENGTH = 1, STAT_ENDURANCE = -1)
+	race_bonus = list(STAT_STRENGTH = 2, STAT_ENDURANCE = 1, STAT_SPEED = -2)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
 	miss_sound = 'sound/blank.ogg'
+	inherent_traits = list(
+		TRAIT_ZJUMP,
+		TRAIT_STRONGBITE ,
+		TRAIT_WILD_EATER,
+		TRAIT_LEAPER,
+		TRAIT_NOFALLDAMAGE1
+	)
+
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/night_vision/werewolf,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/lizard,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
@@ -61,18 +67,20 @@
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/bodypart_feature/underwear,
-		/datum/customizer/organ/wings/dracon,
-		/datum/customizer/organ/tail/lizard,
-		/datum/customizer/organ/tail_feature/lizard_spines,
-		/datum/customizer/organ/snout/lizard,
-		/datum/customizer/organ/ears/lizard,
-		/datum/customizer/organ/frills/lizard,
-		/datum/customizer/organ/horns/humanoid,
+		/datum/customizer/organ/tail/anthro,
+		/datum/customizer/organ/tail_feature/anthro,
+		/datum/customizer/organ/snout/anthro,
+		/datum/customizer/organ/ears/anthro,
+		/datum/customizer/organ/horns/anthro,
+		/datum/customizer/organ/frills/anthro,
+		/datum/customizer/organ/wings/anthro,
+		/datum/customizer/organ/neck_feature/anthro,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
-		/datum/customizer/organ/vagina/animal,
-		/datum/customizer/organ/ears/anthro,
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/vagina/anthro,
+		/datum/customizer/organ/butt/animal,
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
@@ -115,12 +123,12 @@
 		/datum/descriptor_choice/stature,
 		/datum/descriptor_choice/face,
 		/datum/descriptor_choice/face_exp,
-		/datum/descriptor_choice/scales,
+		/datum/descriptor_choice/skin_all,
 		/datum/descriptor_choice/voice,
-		/datum/descriptor_choice/prominent_one,
-		/datum/descriptor_choice/prominent_two,
-		/datum/descriptor_choice/prominent_three,
-		/datum/descriptor_choice/prominent_four,
+		/datum/descriptor_choice/prominent_one_wild,
+		/datum/descriptor_choice/prominent_two_wild,
+		/datum/descriptor_choice/prominent_three_wild,
+		/datum/descriptor_choice/prominent_four_wild,
 	)
 
 /datum/species/dracon/check_roundstart_eligible()

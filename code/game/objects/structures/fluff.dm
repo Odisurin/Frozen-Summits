@@ -12,6 +12,18 @@
 	max_integrity = 150
 	var/deconstructible = TRUE
 
+/obj/structure/fluff/attackby(obj/item/I, mob/living/user, params)
+	if(I.tool_behaviour == TOOL_WRENCH && deconstructible)
+		user.visible_message(span_notice("[user] starts disassembling [src]..."), span_notice("I start disassembling [src]..."))
+		I.play_tool_sound(src)
+		if(I.use_tool(src, user, 50))
+			user.visible_message(span_notice("[user] disassembles [src]!"), span_notice("I break down [src] into scrap metal."))
+			playsound(user, 'sound/blank.ogg', 50, TRUE)
+			new/obj/item/stack/sheet/metal(drop_location())
+			qdel(src)
+		return
+	. = ..()
+
 /obj/structure/fluff/empty_terrarium //Empty terrariums are created when a preserved terrarium in a lavaland seed vault is activated.
 	name = "empty terrarium"
 	desc = ""
@@ -533,7 +545,7 @@
 	drag_slowdown = 3
 
 /obj/structure/fluff/clock/Initialize()
-	soundloop = new(src, FALSE)
+	soundloop = new(list(src), FALSE)
 	soundloop.start()
 	. = ..()
 
@@ -647,7 +659,7 @@
 //				. += span_warning("The last boat will leave in [round(SSshuttle.emergency.timeLeft()/600)] minutes.")
 
 /obj/structure/fluff/wallclock/Initialize()
-	soundloop = new(src, FALSE)
+	soundloop = new(list(src), FALSE)
 	soundloop.start()
 	. = ..()
 
@@ -706,7 +718,7 @@
 	if(!user.is_literate())
 		. += "I have no idea what it says."
 	else
-		. += "It says \"AZURE PEAK\""
+		. += "It says \"FROZEN SUMMIT\""
 
 /obj/structure/fluff/buysign
 	icon_state = "signwrote"
@@ -850,14 +862,14 @@
 	icon_state = "knightstatue_l"
 
 /obj/structure/fluff/statue/astrata
-	name = "astrata statue"
-	desc = "A stone statue of the sun Goddess Astrata. Bless."
+	name = "statue of the gods"
+	desc = "A stone statue of the gods."
 	icon_state = "astrata"
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 
 /obj/structure/fluff/statue/astrata/gold
-	name = "ornamental astrata statue"
-	desc = "An ornamental stone statue of the sun Goddess Astrata, decorated with golden jewelry. Bless."
+	name = "ornamental statue of the gods"
+	desc = "An ornamental stone statue of the gods decorated with golden jewelry. Bless."
 	icon_state = "astrata_bling"
 
 /obj/structure/fluff/statue/knight/r
@@ -967,7 +979,7 @@
 	..()
 
 /obj/structure/fluff/statue/spider
-	name = "mother"
+	name = "Lolth"
 	icon_state = "spidercore"
 
 /obj/structure/fluff/statue/spider/attackby(obj/item/W, mob/user, params)
@@ -988,7 +1000,7 @@
 
 /obj/structure/fluff/statue/evil
 	name = "idol"
-	desc = "A statue built to the robber-god, Matthios, who stole the gift of fire from the underworld. It is said that he grants the wishes of those pagan bandits (free folk) who feed him money and valuable metals."
+	desc = "A statue built to the robber-god, Mask, who stole the gift of fire from the underworld. It is said that they grant the wishes of those pagan bandits (free folk) who feed him money and valuable metals."
 	icon_state = "evilidol"
 	icon = 'icons/roguetown/misc/structure.dmi'
 // What items the idol will accept
@@ -1133,7 +1145,7 @@
 								if(!C.client)
 									continue
 								//Gotta get a divorce first
-								if(C.marriedto)
+								if(C.IsWedded())
 									continue
 								if(C.real_name == X)
 									//I know this is very sloppy but its alot less code.
@@ -1180,8 +1192,7 @@
 						bridefirst = thebride.real_name
 						thegroom.change_name(thegroom.real_name + surname2use)
 						thebride.change_name(thebride.real_name + surname2use)
-						thegroom.marriedto = thebride.real_name
-						thebride.marriedto = thegroom.real_name
+						thegroom.MarryTo(thebride)
 						thegroom.adjust_triumphs(1)
 						thebride.adjust_triumphs(1)
 						//Bite the apple first if you want to be the groom.

@@ -1,7 +1,7 @@
 
 /obj/structure/roguemachine/scomm
-	name = "SCOM"
-	desc = "The Supernatural Communication Optical Machine is a wonder of magic and technology."
+	name = "Sending Stone Box"
+	desc = "This large Sending stone allows remote communication over any distance, even across different planes."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "scomm1"
 	density = FALSE
@@ -18,7 +18,6 @@
 	var/obj/structure/roguemachine/scomm/calling = null
 	var/obj/structure/roguemachine/scomm/called_by = null
 	var/spawned_rat = FALSE
-	var/garrisonline = FALSE
 
 /obj/structure/roguemachine/scomm/OnCrafted(dirin, mob/user)
 	. = ..()
@@ -98,14 +97,14 @@
 		return
 	if(calling)
 		speaking = !speaking
-		to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the output on the SCOM."))
+		to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the talking stone."))
 		return
 	var/canread = user.can_read(src, TRUE)
 	var/contents
-	if(SSticker.rulertype == "Grand Duke")
-		contents += "<center>GRAND DUKE'S DECREES<BR>"
+	if(SSticker.rulertype == "Expedition Leader")
+		contents += "<center>EXPEDITION LEADER'S DECREES<BR>"
 	else
-		contents += "<center>GRAND DUCHESS' DECREES<BR>"
+		contents += "<center>EXPEDITION LEADER' DECREES<BR>"
 	contents += "-----------<BR><BR></center>"
 	for(var/i = GLOB.lord_decrees.len to 1 step -1)
 		contents += "[i]. <span class='info'>[GLOB.lord_decrees[i]]</span><BR>"
@@ -115,16 +114,9 @@
 	popup.set_content(contents)
 	popup.open()
 
-/obj/structure/roguemachine/scomm/MiddleClick(mob/living/carbon/human/user)
+/obj/structure/roguemachine/scomm/MiddleClick(mob/user)
 	if(.)
 		return
-	if((HAS_TRAIT(user, TRAIT_GUARDSMAN) || (HAS_TRAIT(user, TRAIT_KNIGHTSMAN)) || (HAS_TRAIT(user, TRAIT_WOODSMAN)) || (user.job == "Squire") || (user.job == "Marshal") || (user.job == "Grand Duke") || (user.job == "Guard Captain") || (user.job == "Grand Duchess")))
-		if(alert("Would you like to swap lines or connect to a jabberline?",, "swap", "jabberline") != "jabberline")
-			garrisonline = !garrisonline
-			to_chat(user, span_info("I [garrisonline ? "connect to the garrison SCOMline" : "connect to the general SCOMLINE"]"))
-			playsound(loc, 'sound/misc/garrisonscom.ogg', 100, FALSE, -1)
-			update_icon()
-			return
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	if(calling)
@@ -207,9 +199,6 @@
 	if(obj_broken)
 		set_light(0)
 		return
-	if(garrisonline)
-		icon_state = "scomm2"
-		return
 	if(calling)
 		icon_state = "scomm2"
 	else if(listening)
@@ -224,7 +213,7 @@
 	return ..()
 
 /obj/structure/roguemachine/scomm/proc/ring_ring()
-	playsound(src, 'sound/vo/mobs/rat/rat_life.ogg', 100, TRUE, -1)
+	playsound(src, 'sound/misc/scom.ogg', 100, TRUE, -1)
 	var/oldx = pixel_x
 	animate(src, pixel_x = oldx+1, time = 0.5)
 	animate(pixel_x = oldx-1, time = 0.5)
@@ -236,7 +225,7 @@
 	if(tcolor)
 		voicecolor_override = tcolor
 	if(speaking && message)
-		playsound(loc, 'sound/vo/mobs/rat/rat_life.ogg', 100, TRUE, -1)
+		playsound(loc, 'sound/misc/scom.ogg', 100, TRUE, -1)
 		say(message, language = message_language)
 	voicecolor_override = null
 
@@ -264,15 +253,6 @@
 					spawned_rat = TRUE
 				return*/
 			raw_message = "<small>[raw_message]</small>"
-		if(garrisonline)
-			for(var/obj/item/scomstone/garrison/S in SSroguemachine.scomm_machines)
-				S.repeat_message(raw_message, src, usedcolor, message_language)
-			for(var/obj/item/scomstone/bad/garrison/S in SSroguemachine.scomm_machines)
-				S.repeat_message(raw_message, src, usedcolor, message_language)
-			for(var/obj/structure/roguemachine/scomm/S in SSroguemachine.scomm_machines)
-				if(S.garrisonline)
-					S.repeat_message(raw_message, src, usedcolor, message_language)
-			return
 		for(var/obj/structure/roguemachine/scomm/S in SSroguemachine.scomm_machines)
 			if(!S.calling)
 				S.repeat_message(raw_message, src, usedcolor, message_language)
@@ -309,9 +289,9 @@
 //SCOMSTONE                 SCOMSTONE
 
 /obj/item/scomstone
-	name = "scomstone"
+	name = "Sending Stone Ring"
 	icon_state = "ring_emerald"
-	desc = "A golden ring with an emerald gem."
+	desc = "A golden ring with an embedded Sending Stone."
 	gripped_intents = null
 	dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)
@@ -325,8 +305,6 @@
 	muteinmouth = TRUE
 	var/listening = TRUE
 	var/speaking = TRUE
-	var/messagereceivedsound = 'sound/misc/scom.ogg'
-	var/hearrange = 1 // change to 0 if you want your special scomstone to be only hearable by wearer
 	sellprice = 100
 //wip
 /obj/item/scomstone/attack_right(mob/living/carbon/human/user)
@@ -353,7 +331,7 @@
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	listening = !listening
 	speaking = !speaking
-	to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the scomstone."))
+	to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the sending stone."))
 	update_icon()
 
 /obj/item/scomstone/Destroy()
@@ -373,7 +351,7 @@
 	if(tcolor)
 		voicecolor_override = tcolor
 	if(speaking && message)
-		playsound(loc, messagereceivedsound, 100, TRUE, -1)
+		playsound(loc, 'sound/misc/scom.ogg', 100, TRUE, -1)
 		say(message, language = message_language)
 	voicecolor_override = null
 
@@ -388,13 +366,13 @@
 		language = get_default_language()
 	if(istype(loc, /obj/item))
 		var/obj/item/I = loc
-		I.send_speech(message, hearrange, I, , spans, message_language=language)
+		I.send_speech(message, 1, I, , spans, message_language=language)
 	else
-		send_speech(message, hearrange, src, , spans, message_language=language)
+		send_speech(message, 1, src, , spans, message_language=language)
 
 /obj/item/scomstone/bad
-	name = "serfstone"
-	desc = "A steel ring with a dull gem shoddily sticking out of it."
+	name = "Minor sending stone ring"
+	desc = "A steel ring with a sending stone embedded. This one can only listen, not speak."
 	icon_state = "ring_lamerald"
 	listening = FALSE
 	sellprice = 20
@@ -404,9 +382,9 @@
 
 //LISTENSTONE		LISTENSTONE
 /obj/item/listenstone
-	name = "emerald choker"
+	name = "Necklace of Sending"
 	icon_state = "listenstone"
-	desc = "A iron and gold choker with an emerald gem."
+	desc = "A iron and gold choker with an enchanted emerald gem."
 	gripped_intents = null
 	//dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)
@@ -430,7 +408,7 @@
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	listening = !listening
 	speaking = !speaking
-	to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the scomstone."))
+	to_chat(user, span_info("I [speaking ? "unmute" : "mute"] the listening stone."))
 	update_icon()
 	if(listening)
 		icon_state = "listenstone"
@@ -449,7 +427,7 @@
 	if(tcolor)
 		voicecolor_override = tcolor
 	if(speaking && message)
-		playsound(loc, 'sound/vo/mobs/rat/rat_life.ogg', 100, TRUE, -1)
+		playsound(loc, 'sound/misc/scom.ogg', 100, TRUE, -1)
 		say(message, language = message_language)
 	voicecolor_override = null
 
@@ -472,7 +450,7 @@
 // MATTHIAN SCOMCOIN
 
 /obj/item/mattcoin
-	name = "rontz ring"
+	name = "Whispering Coin"
 	icon_state = "mattcoin"
 	desc = "A faded coin, a ruby laid into its center."
 	gripped_intents = null
@@ -588,7 +566,7 @@
 	if(tcolor)
 		voicecolor_override = tcolor
 	if(speaking && message)
-		playsound(loc, 'sound/vo/mobs/rat/rat_life.ogg', 20, TRUE, -1)
+		playsound(loc, 'sound/misc/scom.ogg', 20, TRUE, -1)
 		say(message, language = message_language)
 	voicecolor_override = null
 
@@ -679,57 +657,3 @@
 			raw_message = "<small>[raw_message]</small>"
 		for(var/obj/item/speakerinq/S in SSroguemachine.scomm_machines)
 			S.repeat_message(raw_message, src, usedcolor, message_language)
-
-// garrison scoms/listenstones
-
-/obj/item/scomstone/garrison
-	name = "crownstone"
-	icon_state = "ring_sapphire"
-	desc = "A silver ring with an sapphire gem."
-	var/garrisonline = TRUE
-	messagereceivedsound = 'sound/misc/garrisonscom.ogg'
-	hearrange = 0
-	sellprice = 100
-
-/obj/item/scomstone/garrison/attack_right(mob/living/carbon/human/user)
-	user.changeNext_move(CLICK_CD_MELEE)
-	var/input_text = input(user, "Enter your message:", "Message")
-	if(input_text)
-		var/usedcolor = user.voice_color
-		if(user.voicecolor_override)
-			usedcolor = user.voicecolor_override
-		user.whisper(input_text)
-		if(length(input_text) > 100) //When these people talk too much, put that shit in slow motion, yeah
-			input_text = "<small>[input_text]</small>"
-		if(!garrisonline)
-			for(var/obj/structure/roguemachine/scomm/S in SSroguemachine.scomm_machines)
-				S.repeat_message(input_text, src, usedcolor)
-			for(var/obj/item/scomstone/S in SSroguemachine.scomm_machines)
-				S.repeat_message(input_text, src, usedcolor)
-			for(var/obj/item/listenstone/S in SSroguemachine.scomm_machines)
-				S.repeat_message(input_text, src, usedcolor)
-		if(garrisonline)
-			for(var/obj/item/scomstone/bad/garrison/S in SSroguemachine.scomm_machines)
-				S.repeat_message(input_text, src, usedcolor)
-			for(var/obj/item/scomstone/garrison/S in SSroguemachine.scomm_machines)
-				S.repeat_message(input_text, src, usedcolor)
-			for(var/obj/structure/roguemachine/scomm/S in SSroguemachine.scomm_machines)
-				if(S.garrisonline)
-					S.repeat_message(input_text, src, usedcolor)
-
-/obj/item/scomstone/garrison/attack_self(mob/living/user)
-	if(.)
-		return
-	user.changeNext_move(CLICK_CD_MELEE)
-	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
-	garrisonline = !garrisonline
-	to_chat(user, span_info("I [garrisonline ? "connect to the garrison SCOMline" : "connect to the general SCOMline"]"))
-
-/obj/item/scomstone/bad/garrison
-	name = "houndstone"
-	desc = "A steel ring with a dull gem shoddily sticking out of it. This one has the mark of the Crown upon its side."
-	icon_state = "ring_lamerald"
-	listening = FALSE
-	sellprice = 20
-	messagereceivedsound = 'sound/misc/garrisonscom.ogg'
-	hearrange = 0

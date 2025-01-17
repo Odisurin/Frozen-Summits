@@ -1,6 +1,7 @@
 /obj/item/organ/penis
 	name = "penis"
-	icon_state = "severedtail" //placeholder
+	icon_state = "penis"
+	dropshrink = 0.5
 	visible_organ = TRUE
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_PENIS
@@ -11,6 +12,9 @@
 	var/penis_type = PENIS_TYPE_PLAIN
 	var/penis_size = DEFAULT_PENIS_SIZE
 	var/functional = TRUE
+
+/obj/item/organ/penis/Initialize()
+	. = ..()
 
 /obj/item/organ/penis/Initialize()
 	. = ..()
@@ -84,7 +88,8 @@
 	
 /obj/item/organ/vagina
 	name = "vagina"
-	icon_state = "severedtail" //placeholder
+	icon_state = "vagina"
+	dropshrink = 0.5
 	visible_organ = TRUE
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_VAGINA
@@ -104,7 +109,8 @@
 
 /obj/item/organ/breasts
 	name = "breasts"
-	icon_state = "severedtail" //placeholder
+	icon_state = "breasts"
+	dropshrink = 1.25
 	visible_organ = TRUE
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_BREASTS
@@ -113,15 +119,27 @@
 	var/breast_size = DEFAULT_BREASTS_SIZE
 	var/lactating = FALSE
 	var/milk_stored = 0
-	var/milk_max = 75
+	var/milk_max = 250
+	var/last_milked
 
 /obj/item/organ/breasts/New()
 	..()
-	milk_max = max(75, breast_size * 100)
+	milk_max = max(250 , breast_size * 100)
+
+/obj/item/organ/belly
+	name = "belly"
+	icon_state = "belly"
+	visible_organ = TRUE
+	zone = BODY_ZONE_PRECISE_STOMACH
+	slot = ORGAN_SLOT_BELLY
+	organ_dna_type = /datum/organ_dna/belly
+	accessory_type = /datum/sprite_accessory/belly
+	var/belly_size = DEFAULT_BELLY_SIZE
 
 /obj/item/organ/testicles
 	name = "testicles"
-	icon_state = "severedtail" //placeholder
+	icon_state = "testicles"
+	dropshrink = 0.5
 	visible_organ = TRUE
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_TESTICLES
@@ -134,3 +152,40 @@
 	name = "internal testicles"
 	visible_organ = FALSE
 	accessory_type = /datum/sprite_accessory/none
+
+/obj/item/organ/penis/internal
+	name = "internal penis"
+	visible_organ = FALSE
+	accessory_type = /datum/sprite_accessory/none
+
+/obj/item/organ/vagina/internal
+	name = "internal vagina"
+	visible_organ = FALSE
+	accessory_type = /datum/sprite_accessory/none
+
+/obj/item/organ/breasts/internal
+	name = "internal breasts"
+	visible_organ = FALSE
+	accessory_type = /datum/sprite_accessory/none
+
+/obj/item/organ/belly/internal
+	name = "internal belly"
+	visible_organ = FALSE
+	accessory_type = /datum/sprite_accessory/none
+
+/obj/item/organ/butt/internal
+	name = "internal butt"
+	visible_organ = FALSE
+	accessory_type = /datum/sprite_accessory/none
+
+/obj/item/organ/butt
+	name = "butt"
+	icon = 'modular_stonehedge/icons/obj/surgery.dmi'
+	icon_state = "butt"
+	dropshrink = 0.5
+	visible_organ = TRUE
+	zone = BODY_ZONE_PRECISE_STOMACH
+	slot = ORGAN_SLOT_BUTT
+	organ_dna_type = /datum/organ_dna/butt
+	accessory_type = /datum/sprite_accessory/butt/pair
+	var/organ_size = DEFAULT_BUTT_SIZE

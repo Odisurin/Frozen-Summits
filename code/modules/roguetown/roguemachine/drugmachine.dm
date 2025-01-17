@@ -114,28 +114,21 @@
 			return
 		switch(select)
 			if("Withdraw Cut")
-				if(secret_budget < 1)
-					say("There is no mammon to move, Master.")
-					return
-				options = list("To Bank (Taxed)", "Direct")
+				options = list("To Bank", "Direct")
 				select = input(usr, "Please select an option.", "", null) as null|anything in options
 				if(!select)
 					return
 				if(!usr.canUseTopic(src, BE_CLOSE) || locked)
 					return
-				if(secret_budget < 1)
-					say("There is no mammon to move, Master.")
-					return
 				switch(select)
-					if("To Bank (Taxed)")
+					if("To Bank")
 						var/mob/living/carbon/human/H = usr
-						if(!(SStreasury.generate_money_account(floor(secret_budget), H))) //We returned false on executing the transfer
-							say("I could not put your cut in your account, Master. My apologies.")
-							return
+						SStreasury.generate_money_account(secret_budget, H)
 						secret_budget = 0
 					if("Direct")
-						budget2change(floor(secret_budget), usr)
-						secret_budget = 0
+						if(secret_budget > 0)
+							budget2change(secret_budget, usr)
+							secret_budget = 0
 			if("Enable Paying Taxes")
 				drugrade_flags &= ~DRUGRADE_NOTAX
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
@@ -178,20 +171,18 @@
 	var/contents
 	if(canread)
 		contents = "<center>PURITY - In the name of pleasure.<BR>"
-		contents += "<a href='?src=[REF(src)];change=1'>MAMMON LOADED:</a> [budget]<BR>"
+		contents += "<a href='?src=[REF(src)];change=1'>COIN LOADED:</a> [budget]<BR>"
 	else
 		contents = "<center>[stars("PURITY - In the name of pleasure.")]<BR>"
-		contents += "<a href='?src=[REF(src)];change=1'>[stars("MAMMON LOADED:")]</a> [budget]<BR>"
+		contents += "<a href='?src=[REF(src)];change=1'>[stars("COIN LOADED:")]</a> [budget]<BR>"
 
 
 	var/mob/living/carbon/human/H = user
 	if(H.job == "Bathmaster")
 		if(canread)
-			contents += "<a href='?src=[REF(src)];secrets=1'>Secrets</a><BR>"
-			contents += "Mammon Washing: [recent_payments] -- Your cut, Master! [secret_budget]<BR>"
+			contents = "<a href='?src=[REF(src)];secrets=1'>Secrets</a>"
 		else
-			contents += "<a href='?src=[REF(src)];secrets=1'>[stars("Secrets")]</a><BR>"
-			contents += "[stars("Mammon Washing:")] [recent_payments] -- [stars("Your cut, Master!")] [secret_budget]<BR>"
+			contents = "<a href='?src=[REF(src)];secrets=1'>[stars("Secrets")]</a>"
 
 	contents += "</center>"
 
@@ -225,7 +216,7 @@
 	if(obj_broken)
 		set_light(0)
 		return
-	set_light(1, 1, 1, l_color = "#1b7bf1")
+	set_light(1, 1, "#1b7bf1")
 	add_overlay(mutable_appearance(icon, "vendor-drug"))
 
 
@@ -238,18 +229,16 @@
 	. = ..()
 	START_PROCESSING(SSroguemachine, src)
 	update_icon()
-	held_items[/obj/item/reagent_containers/powder/spice] = list("PRICE" = rand(41,55),"NAME" = "chuckledust")
+	held_items[/obj/item/reagent_containers/powder/spice] = list("PRICE" = rand(20,30),"NAME" = "spice")
 	held_items[/obj/item/reagent_containers/powder/ozium] = list("PRICE" = rand(6,15),"NAME" = "ozium")
-	held_items[/obj/item/reagent_containers/powder/moondust] = list("PRICE" = rand(13,25),"NAME" = "moondust")
+	held_items[/obj/item/reagent_containers/powder/moondust] = list("PRICE" = rand(35,55),"NAME" = "moondust")
 	held_items[/obj/item/clothing/mask/cigarette/rollie/cannabis] = list("PRICE" = rand(12,18),"NAME" = "swampweed zig")
-	held_items[/obj/item/clothing/mask/cigarette/rollie/nicotine] = list("PRICE" = rand(5,10),"NAME" = "zig")
-/*	held_items[/obj/item/reagent_containers/glass/bottle/rogue/wine] = list("PRICE" = rand(35,77),"NAME" = "vino")
-	held_items[/obj/item/rogueweapon/huntingknife/idagger] = list("PRICE" = rand(20,33),"NAME" = "kinfe")
-	held_items[/obj/item/clothing/cloak/half] = list("PRICE" = rand(103,110),"NAME" = "black halfcloak")
-	held_items[/obj/item/clothing/gloves/roguetown/fingerless] = list("PRICE" = rand(16,31),"NAME" = "gloves with 6 holes")
-	held_items[/obj/item/clothing/head/roguetown/roguehood/black] = list("PRICE" = rand(43,45),"NAME" = "black hood")
-	held_items[/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow] = list("PRICE" = rand(58,88),"NAME" = "crossed bow")
-	held_items[/obj/item/quiver/bolts] = list("PRICE" = rand(33,57),"NAME" = "quiver w/ bolts")*/
+	held_items[/obj/item/storage/box/matches] = list("PRICE" = rand(10,15),"NAME" = "tinderbox")
+	held_items[/obj/item/reagent_containers/hypospray/medipen/sty/detox] = list("PRICE" = rand(15,20),"NAME" = "DETOX")
+	held_items[/obj/item/storage/fancy/pilltinwake] = list("PRICE" = rand(25,30),"NAME" = "pep pills tin")
+	held_items[/obj/item/reagent_containers/hypospray/medipen/sealbottle/purify] = list("PRICE" = rand(25,30),"NAME" = "PURIFY")
+	held_items[/obj/item/storage/fancy/pilltinpink] = list("PRICE" = rand(25,35),"NAME" = "pink pill tin")
+	held_items[/obj/item/natural/bundle/cloth/bandage/full] = list("PRICE" = rand(10,15),"NAME" = "roll of bandages")
 
 #undef DRUGRADE_MONEYA
 #undef DRUGRADE_MONEYB

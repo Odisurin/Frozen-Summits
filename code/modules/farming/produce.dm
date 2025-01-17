@@ -96,6 +96,22 @@
 	var/equippedloc = null
 	var/list/bitten_names = list()
 
+/obj/item/reagent_containers/food/snacks/grown/shroom
+	seed = /obj/item/seeds/shroom
+	name = "crag shroom"
+	desc = "a mushroom that makes a healing brew when fermented."
+	icon_state = "eldershroom"
+	filling_color = "#476e4d"
+	bitesize = 4
+	foodtype = VEGETABLES
+	tastes = list("mushroom" = 1)
+	worn_x_dimension = 64
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/druqks = 2)
+	worn_y_dimension = 64
+	rotprocess = 20 MINUTES
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/medicine/shroomt
+
 /obj/item/reagent_containers/food/snacks/grown/apple/On_Consume(mob/living/eater)
 	..()
 	if(ishuman(eater))
@@ -333,3 +349,17 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/voddena
 	rotprocess = null
 	seed = /obj/item/seeds/potato
+	
+/obj/item/reagent_containers/food/snacks/grown/sugarcane
+	seed = /obj/item/seeds/sugarcane
+	name = "sugarcane"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "sugarcane"
+	gender = PLURAL
+	dropshrink = 0.75
+	filling_color = "#f5f2d9"
+	bitesize_mod = 2
+	foodtype = SUGAR
+	tastes = list("sugar" = 1)
+	grind_results = list(/datum/reagent/sugar = 10)

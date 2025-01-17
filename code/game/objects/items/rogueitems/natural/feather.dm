@@ -21,7 +21,7 @@
 
 /obj/item/natural/feather/afterattack(obj/O, mob/living/user, proximity)
 	. = ..()
-	if(isobj(O) && proximity && (O.obj_flags & UNIQUE_RENAME))
+	if(isobj(O) && proximity && (O.obj_flags))
 		var/penchoice = input(user, "What would you like to edit?", "Rename or change description?") as null|anything in list("Rename","Change description")
 		if(QDELETED(O) || !user.canUseTopic(O, BE_CLOSE))
 			return
@@ -33,7 +33,7 @@
 			if(oldname == input)
 				to_chat(user, span_notice("I changed \the [O.name] to... well... \the [O.name]."))
 			else
-				O.name = "[input] ([oldname])"
+				O.name = "[input]"
 				to_chat(user, span_notice("\The [oldname] has been successfully been renamed to \the [input]."))
 				O.renamedByPlayer = TRUE
 

@@ -84,6 +84,27 @@
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/clothing/suit/roguetown/armor/leather)
 	created_item = /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini
+
+/datum/anvil_recipe/armor/lbrigandine
+	name = "Light Brigandine (+1 Cloth)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/suit/roguetown/armor/brigandine/light
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/splintarms
+	name = "Brigandine Rerebraces (+1 Cloth)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/wrists/roguetown/splintarms
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/splintlegs
+	name = "Brigandine Chausses (+1 Cloth)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/under/roguetown/splintlegs
+	i_type = "Armor"
 /*
 /datum/anvil_recipe/armor/helmetgoblin
 	name = "Goblin Helmet (+1 Iron)"
@@ -302,6 +323,14 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/bascinet/pigface
 	craftdiff = 2
 
+/datum/anvil_recipe/armor/helmetvolf
+	name = "Volf Face Helmet (+1 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/volfplate
+	craftdiff = 3
+	i_type = "Armor"
+
 /datum/anvil_recipe/armor/steel/bascinet
 	name = "Bascinet Helmet"
 	req_bar = /obj/item/ingot/steel
@@ -350,12 +379,6 @@
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
 	craftdiff = 3
 
-/datum/anvil_recipe/armor/steel/abyssorhelm
-	name = "Abyssor Helmet (+1 Steel)"
-	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/abyssorgreathelm
-	craftdiff = 3
 
 /datum/anvil_recipe/armor/steel/necrahelm
 	name = "Necra Helmet (+1 Steel)"
@@ -365,14 +388,14 @@
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/steel/nochelm
-	name = "Noc Helmet (+1 Steel)"
+	name = "Mystra Helmet (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 	craftdiff = 3
 
 /datum/anvil_recipe/armor/steel/dendorhelm
-	name = "Dendor Helmet (+1 Steel)"
+	name = "Silvanus Helmet (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm

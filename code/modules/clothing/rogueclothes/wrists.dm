@@ -4,9 +4,6 @@
 	icon = 'icons/roguetown/clothing/wrists.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/wrists.dmi'
 	sleevetype = "shirt"
-	resistance_flags = FLAMMABLE
-	sewrepair = TRUE
-	anvilrepair = null
 
 /obj/item/clothing/wrists/roguetown/bracers
 	name = "bracers"
@@ -14,7 +11,7 @@
 	body_parts_covered = ARMS
 	icon_state = "bracers"
 	item_state = "bracers"
-	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
 	resistance_flags = FIRE_PROOF
@@ -27,7 +24,7 @@
 	desc = ""
 	icon_state = "lbracers"
 	item_state = "lbracers"
-	armor = list("blunt" = 50, "slash" = 25, "stab" = 40, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 50, "slash" = 25, "stab" = 40, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
@@ -57,12 +54,13 @@
 	body_parts_covered = ARMS
 	icon_state = "splintarms"
 	item_state = "splintarms"
-	armor = list("blunt" = 60, "slash" = 70, "stab" = 70, "piercing" = 60, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 60, "slash" = 70, "stab" = 70, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT)
 	blocksound = SOFTHIT
 	max_integrity = 250
 	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/iron
+	armor_class = ARMOR_CLASS_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FIRE_PROOF
 	sewrepair = FALSE

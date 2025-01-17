@@ -67,7 +67,7 @@ SUBSYSTEM_DEF(ticker)
 	var/end_state = "undefined"
 	var/job_change_locked = FALSE
 	var/list/royals_readied = list()
-	var/rulertype = "Grand Duke" // reports whether king or queen rules
+	var/rulertype = "Expedition Leader" // reports whether king or queen rules
 	var/rulermob = null // reports what the ruling mob is.
 	var/failedstarts = 0
 	var/list/manualmodes = list()
@@ -142,7 +142,7 @@ SUBSYSTEM_DEF(ticker)
 	else
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 
-	login_music = pick('sound/music/title.ogg')
+
 
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase	= generate_code_phrase(return_list=TRUE)
@@ -207,6 +207,12 @@ SUBSYSTEM_DEF(ticker)
 
 			if(timeLeft <= 0)
 				if(!checkreqroles())
+/*					if(failedstarts >= 13)
+						current_state = GAME_STATE_SETTING_UP
+						Master.SetRunLevel(RUNLEVEL_SETUP)
+						if(start_immediately)
+							fire()
+					else*/
 					current_state = GAME_STATE_STARTUP
 					start_at = world.time + 600
 					timeLeft = null
@@ -270,6 +276,11 @@ SUBSYSTEM_DEF(ticker)
 	*/
 
 	/*
+		This prevents any gamemode from starting unless theres at least 2 players ready, but the comments say 20 or it defaults into a deathmatch mode.
+		It is commented out and just left here for posterity
+	*/
+	/*
+	var/amt_ready = 0
 	for(var/mob/dead/new_player/player in GLOB.player_list)
 		if(!player)
 			continue
@@ -470,6 +481,8 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/PostSetup()
 	set waitfor = FALSE
 	mode.post_setup()
+	GLOB.start_state = new /datum/station_state()
+	GLOB.start_state.count()
 
 	var/list/adm = get_admin_counts()
 	var/list/allmins = adm["present"]
@@ -520,10 +533,10 @@ SUBSYSTEM_DEF(ticker)
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
 		if(!player)
-			message_admins("THERES A FUCKING NULL IN THE NEW_PLAYER_LIST, REPORT IT TO AZURE DEVELOPMENT STAFF NOW!")
+			message_admins("THERES A FUCKING NULL IN THE NEW_PLAYER_LIST, REPORT IT TO BLACKEDSTONE DEVELOPMENT STAFF NOW!")
 			continue
 		if(!player.mind)
-			message_admins("THERES A MIND LACKING PLAYER IN THE NEW_PLAYER_LIST, REPORT IT TO AZURE DEVELOPMENT STAFF NOW!")
+			message_admins("THERES A MIND LACKING PLAYER IN THE NEW_PLAYER_LIST, REPORT IT TO BLACKEDSTONE DEVELOPMENT STAFF NOW!")
 			continue
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			GLOB.joined_player_list += player.ckey
@@ -540,17 +553,28 @@ SUBSYSTEM_DEF(ticker)
 		CHECK_TICK
 
 /datum/controller/subsystem/ticker/proc/equip_characters()
+//	var/captainless=1
 	var/list/valid_characters = list()
 	for(var/mob/dead/new_player/new_player as anything in GLOB.new_player_list)
 		var/mob/living/carbon/human/player = new_player.new_character
 		if(istype(player) && player.mind?.assigned_role)
+//			if(player.mind.assigned_role == "Captain")
+//				captainless=0
 			if(player.mind.assigned_role != player.mind.special_role)
 				valid_characters[player] = new_player
 	sortTim(valid_characters, GLOBAL_PROC_REF(cmp_assignedrole_dsc))
 	for(var/mob/character as anything in valid_characters)
 		var/mob/new_player = valid_characters[character]
 		SSjob.EquipRank(new_player, character.mind.assigned_role, joined_late = FALSE)
+		if(ishuman(character))
+			SSquirks.AssignQuirks(character, new_player.client, TRUE)
 		CHECK_TICK
+//	if(captainless)
+//		for(var/i in GLOB.new_player_list)
+//			var/mob/dead/new_player/N = i
+//			if(N.new_character)
+//				to_chat(N, span_notice("Captainship not forced on anyone."))
+//			CHECK_TICK
 
 /datum/controller/subsystem/ticker/proc/transfer_characters()
 	var/list/livings = list()
@@ -817,6 +841,7 @@ SUBSYSTEM_DEF(ticker)
 		world.Reboot()
 
 /datum/controller/subsystem/ticker/Shutdown()
+	gather_newscaster() //called here so we ensure the log is created even upon admin reboot
 	save_admin_data()
 	update_everything_flag_in_db()
 

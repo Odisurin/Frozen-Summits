@@ -84,7 +84,7 @@ GLOBAL_LIST_INIT(stone_personalities, list(
 	"Daredevil",
 	"Barbarics",
 	"Fanciness",
-	"Relaxing",	
+	"Relaxing",
 	"Blacked",
 	"Greed",
 	"Evil",
@@ -121,7 +121,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	"One must wonder: Where did this stone come from?",
 	"If all stones were like this, then they would be some pretty great stones.",
 	"I wish my personality was like this stone's...",
-	"I could sure do a whole lot with this stone.", 
+	"I could sure do a whole lot with this stone.",
 	"I love stones!",
 ))
 
@@ -139,6 +139,9 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	w_class = WEIGHT_CLASS_TINY
 	/// If our stone is magical, this lets us know -how- magical. Maximum is 15.
 	var/magic_power = 0
+	destroy_sound = 'sound/foley/hit_rock.ogg'
+	grind_results = list(/datum/reagent/consumable/sodiumchloride = 15)
+	var/magicstone = FALSE
 
 /obj/item/natural/stone/Initialize()
 	. = ..()
@@ -152,7 +155,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	var/stone_title = "stone" // Our stones title
 	var/stone_desc = "[desc]" // Total Bonus desc the stone will be getting
 
-	icon_state = "stone[rand(1,5)]" 
+	icon_state = "stone[rand(1,5)]"
 
 	var/bonus_force = 0 // Total bonus force the rock will be getting
 	var/list/given_intent_list = list(/datum/intent/hit) // By default you get this at least
@@ -191,7 +194,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 			desc_jumbler += pick(GLOB.stone_sharpness_descs)
 
 	if(name_jumbler.len) // Both name jumbler and desc jumbler should be symmetrical in insertions conceptually anyways.
-		for(var/i in 1 to name_jumbler.len) //Theres only two right now 
+		for(var/i in 1 to name_jumbler.len) //Theres only two right now
 			if(!name_jumbler.len) // If list somehow empty get the hell out! Now~!
 				break
 			//Remove so theres no repeats
@@ -214,7 +217,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 			stone_title = "[stone_title] of [pick(GLOB.stone_personalities)]"
 			stone_desc += " [pick(GLOB.stone_personality_descs)]"
 			personality_modifier += rand(1,5) // Personality gives a stone some more power too
-			
+
 	if (personality_modifier)
 		bonus_force += personality_modifier
 		magic_power += personality_modifier
@@ -240,7 +243,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 			var/cock = pick(extra_intent_list) // We pick one
 			given_intent_list += cock // Add it to the list
 			extra_intent_list -= cock // Remove it from the prev list
-	
+
 	//Now that we have built the history and lore of this stone, we apply it to the main vars.
 	name = stone_title
 	desc = stone_desc
@@ -274,7 +277,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	gripped_intents = list(INTENT_GENERIC)
 	w_class = WEIGHT_CLASS_HUGE
 	twohands_required = TRUE
-	var/obj/item/rogueore/mineralType = null
+	var/obj/item/stack/ore/mineralType = null
 	var/mineralAmt = 1
 	blade_dulling = DULLING_BASH
 	max_integrity = 90
@@ -361,3 +364,35 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 
 /obj/item/natural/rock/gem
 	mineralType = /obj/item/roguegem/random
+
+
+/obj/item/natural/whet
+	name = "sharpening stone"
+	icon_state = "whet"
+	desc = "A piece of rough smoothed down stone, better blade maintenance"
+	gripped_intents = null
+	dropshrink = 0.75
+	possible_item_intents = list(INTENT_GENERIC)
+	force = 10
+	throwforce = 15
+	slot_flags = ITEM_SLOT_MOUTH
+	obj_flags = null
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/attackby(obj/item/I, mob/user, params)
+	user.changeNext_move(user.used_intent.clickcd)
+	if(max_blade_int)
+		if(istype(I, /obj/item/natural/whet))
+			playsound(src.loc, pick('sound/items/sharpen_long1.ogg','sound/items/sharpen_long2.ogg'), 100)
+			user.visible_message(span_notice("[user] sharpens [src]!"))
+			degrade_bintegrity(0.5)
+			add_bintegrity(max_blade_int * 0.3) 
+			if(blade_int >= max_blade_int)
+				to_chat(user, span_info("Fully sharpened."))
+			if(prob(35))
+				var/datum/effect_system/spark_spread/S = new()
+				var/turf/front = get_step(user,user.dir)
+				S.set_up(1, 1, front)
+				S.start()
+			return
+	. = ..()

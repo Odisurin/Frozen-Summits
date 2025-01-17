@@ -3,13 +3,13 @@
 	flag = BOGGUARD
 	department_flag = GARRISON
 	faction = "Station"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 0
+	spawn_positions = 0
 	selection_color = JCOLOR_SOLDIER
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	tutorial = "Typically a denizen of the sparsely populated Azure woods, you volunteered up with the wardens--a group of ranger types who keep a vigil over the untamed wilds."
+	tutorial = "Typically a denizen of the sparsely populated Frozen Summit woods, you volunteered up with the wardens--a group of ranger types who keep a vigil over the untamed wilds."
 	display_order = JDO_TOWNGUARD
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/bogguardsman
@@ -33,7 +33,7 @@ Also given some non-combat skills that a peasent would have, just to support the
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	pants = /obj/item/clothing/under/roguetown/trou/leather
-	id = /obj/item/scomstone/bad/garrison
+	id = /obj/item/scomstone/bad
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	beltl = /obj/item/storage/keyring/guard
 	belt = /obj/item/storage/belt/rogue/leather
@@ -41,7 +41,7 @@ Also given some non-combat skills that a peasent would have, just to support the
 	backr = /obj/item/storage/backpack/rogue/satchel
 	r_hand = /obj/item/rogueweapon/spear
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife = 1, /obj/item/flashlight/flare/torch/lantern = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife = 1, /obj/item/signal_horn = 1, /obj/item/flashlight/flare/torch/lantern = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
@@ -73,5 +73,4 @@ Also given some non-combat skills that a peasent would have, just to support the
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_WOODSMAN, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_OUTDOORSMAN, TRAIT_GENERIC)
-	
+

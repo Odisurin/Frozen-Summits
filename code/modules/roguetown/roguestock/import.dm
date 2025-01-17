@@ -41,7 +41,7 @@
 	new /obj/item/clothing/suit/roguetown/armor/gambeson(src)
 	new /obj/item/rogueweapon/mace/cudgel(src)
 	new /obj/item/rope/chain(src)
-	
+
 /datum/roguestock/import/townguard
 	name = "Watchman Equipment Crate"
 	desc = "Starting kit for a new Watchman."
@@ -57,6 +57,32 @@
 	new /obj/item/rogueweapon/mace/cudgel(src)
 	new /obj/item/rope/chain(src)
 
+// ---------- Woodsman Tools ----------------
+/datum/roguestock/import/woodsmantools
+	name = "Woodsman equipment"
+	desc = "For cutting and chastising of trees, large and small."
+	item_type = /obj/structure/closet/crate/chest/crate/steward/woodsmantools
+	export_price = 85
+	importexport_amt = 1
+
+/obj/structure/closet/crate/chest/crate/steward/woodsmantools/PopulateContents()
+	new /obj/item/rogueweapon/stoneaxe/woodcut/steel(src)
+	new /obj/item/rogueweapon/handsaw (src)
+
+
+// ---------- Craftsman Tools ----------------
+/datum/roguestock/import/craftingtools
+	name = "Crafting tools"
+	desc = "For making stone blocks and planks."
+	item_type = /obj/structure/closet/crate/chest/crate/steward/tools
+	export_price = 40
+	importexport_amt = 1
+
+/obj/structure/closet/crate/chest/crate/steward/tools/PopulateContents()
+	new /obj/item/rogueweapon/handsaw (src)
+	new /obj/item/rogueweapon/chisel(src)
+
+
 /datum/roguestock/import/redpotion
 	name = "Crate of Health Potions"
 	desc = "Red that keeps men alive."
@@ -71,6 +97,21 @@
 	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
 	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
 	new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(src)
+
+/datum/roguestock/import/perfume
+	name = "Crate of perfumes"
+	desc = "To keep the stench away."
+	item_type = /obj/structure/closet/crate/chest/steward/perfume
+	export_price = 60
+	importexport_amt = 1
+
+/obj/structure/closet/crate/chest/steward/perfume/Initialize()
+	. = ..()
+	new /obj/item/perfume/random(src)
+	new /obj/item/perfume/random(src)
+	new /obj/item/perfume/random(src)
+	new /obj/item/perfume/random(src)
+	new /obj/item/perfume/random(src)
 
 /datum/roguestock/import/knight
 	name = "Knight Equipment Crate"
@@ -140,7 +181,7 @@
 
 /obj/structure/closet/crate/chest/steward/saigabuck/Initialize()
 	. = ..()
-	new /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck/tame/saddled(src)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled(src)
 
 /datum/roguestock/import/cow
 	name = "Cow"

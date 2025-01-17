@@ -186,6 +186,10 @@
 	if(dir == get_dir(A,src)) //they are behind us and we are not facing them
 		return
 
+	if(ismecha(loc))
+		var/obj/mecha/M = loc
+		return M.click_action(A,src,params)
+
 	if(restrained())
 		changeNext_move(CLICK_CD_HANDCUFFED)   //Doing shit in cuffs shall be vey slow
 		RestrainedClickOn(A)
@@ -405,7 +409,7 @@
 				if(user.used_intent)
 					usedreach = user.used_intent.reach
 			if(isturf(target) || isturf(target.loc) || (target in direct_access)) //Directly accessible atoms
-				if(Adjacent(target) || ( (tool || (!iscarbon(src) && usedreach >= 2)) && CheckToolReach(src, target, usedreach))) //Adjacent or reaching attacks
+				if(Adjacent(target) || (tool && CheckToolReach(src, target, usedreach))) //Adjacent or reaching attacks
 					return TRUE
 
 			if (!target.loc)

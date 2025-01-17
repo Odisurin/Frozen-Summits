@@ -1,3 +1,5 @@
+
+
 /atom/proc/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	return null
 
@@ -9,34 +11,6 @@
 
 /turf/open/hotspot_expose(added, maxstacks, soh)
 	return
-/* 	var/list/air_gases = air?.gases
-	if(!air_gases)
-		return
-
-	. = air_gases[/datum/gas/oxygen]
-	var/oxy = . ? .[MOLES] : 0
-	if (oxy < 0.5)
-		return
-	. = air_gases[/datum/gas/plasma]
-	var/tox = . ? .[MOLES] : 0
-	. = air_gases[/datum/gas/tritium]
-	var/trit = . ? .[MOLES] : 0
-	if(active_hotspot)
-		if(soh)
-			if(tox > 0.5 || trit > 0.5)
-				if(active_hotspot.temperature < added)
-					active_hotspot.temperature = added
-				if(active_hotspot.volume < maxstacks)
-					active_hotspot.volume = maxstacks
-		return
-
-	if((added > PLASMA_MINIMUM_BURN_TEMPERATURE) && (tox > 0.5 || trit > 0.5))
-
-		active_hotspot = new /obj/effect/hotspot(src, maxstacks*25, added)
-
-		active_hotspot.just_spawned = (current_cycle < SSair.times_fired)
-			//remove just_spawned protection if no longer processing this cell
-		SSair.add_to_active(src, 0) */
 
 //This is the icon for fire on turfs, also helps for nurturing small fires until they are full tile
 /obj/effect/hotspot
@@ -45,9 +19,11 @@
 	icon = 'icons/effects/fire.dmi'
 	icon_state = "1"
 	layer = GASFIRE_LAYER
-	light_outer_range =  LIGHT_RANGE_FIRE
-	light_color = LIGHT_COLOR_FIRE
 	blend_mode = BLEND_ADD
+	light_system = MOVABLE_LIGHT
+	light_range = LIGHT_RANGE_FIRE
+	light_power = 1
+	light_color = LIGHT_COLOR_FIRE
 
 	var/volume = 125
 	var/temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST
@@ -61,6 +37,7 @@
 //	if(isturf(loc))
 //		new /obj/effect/temp_visual/small_smoke(src.loc)
 //	qdel(src)
+
 
 /obj/effect/hotspot/Initialize(mapload, starting_volume, starting_temperature)
 	. = ..()
@@ -99,7 +76,7 @@
 	for(var/A in location)
 		var/atom/AT = A
 		if(!QDELETED(AT) && AT != src) // It's possible that the item is deleted in temperature_expose
-			AT.fire_act(1, 20)
+			AT.fire_act(3, 20)
 	return
 
 /obj/effect/hotspot/proc/gauss_lerp(x, x1, x2)
@@ -151,7 +128,7 @@
 		add_overlay(fusion_overlay)
 		add_overlay(rainbow_overlay)
 
-	set_light(l_color = rgb(LERP(250,heat_r,greyscale_fire),LERP(160,heat_g,greyscale_fire),LERP(25,heat_b,greyscale_fire)))
+	set_light_color(rgb(LERP(250, heat_r, greyscale_fire), LERP(160, heat_g, greyscale_fire), LERP(25, heat_b, greyscale_fire)))
 
 	heat_r /= 255
 	heat_g /= 255
@@ -180,10 +157,8 @@
 		return
 
 	perform_exposure()
-	return
 
 /obj/effect/hotspot/Destroy()
-	set_light(0)
 	SSair.hotspots -= src
 	var/turf/open/T = loc
 	if(istype(T) && T.active_hotspot == src)
@@ -210,11 +185,14 @@
 	..()
 	if(isliving(AM))
 		var/mob/living/L = AM
-		L.fire_act(1, 20)
+		L.fire_act(3, 20)
+
+/obj/effect/hotspot/singularity_pull()
+	return
 
 /obj/effect/dummy/lighting_obj/moblight/fire
 	name = "fire"
 	light_color = LIGHT_COLOR_FIRE
-	light_outer_range =  LIGHT_RANGE_FIRE
+	light_range = LIGHT_RANGE_FIRE
 
 #undef INSUFFICIENT

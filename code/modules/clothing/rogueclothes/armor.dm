@@ -27,13 +27,27 @@
 
 //LIGHT ARMOR//
 
+/obj/item/clothing/suit/roguetown/armor/brigandine/light
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "lightweight brigandine"
+	desc = "A light riveted coat with plates concealed inside an exterior fabric."
+	icon_state = "light_brigandine"
+	blocksound = SOFTHIT
+	body_parts_covered = CHEST|GROIN|VITALS
+	armor = list("blunt" = 60, "slash" = 70, "stab" = 70, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	smeltresult = /obj/item/ingot/iron
+	equip_delay_self = 40
+	armor_class = ARMOR_CLASS_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	resistance_flags = FIRE_PROOF
+
 /obj/item/clothing/suit/roguetown/armor/armordress
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "padded dress"
 	desc = "This dress has been padded with leather for extra protection."
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|VITALS
 	icon_state = "armordress"
-	armor = list("blunt" = 60, "slash" = 40, "stab" = 50, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 60, "slash" = 40, "stab" = 50, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT)
 	blocksound = SOFTHIT
 	allowed_sex = list(MALE, FEMALE)
@@ -57,7 +71,7 @@
 	desc = "A large shirt meant to be used below armor."
 	icon_state = "gambeson"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|VITALS
-	armor = list("blunt" = 45, "slash" = 30, "stab" = 35, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 45, "slash" = 30, "stab" = 35, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT,BCLASS_BLUNT)
 	blocksound = SOFTUNDERHIT
 	blade_dulling = DULLING_BASHCHOP
@@ -71,7 +85,7 @@
 /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	name = "light gambeson"
 	desc = "A barely padded gambeson, typically worn by the peasantry as cheap yet fashionable armor for the whole body."
-	armor = list("blunt" = 30, "slash" = 15, "stab" = 20, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 30, "slash" = 15, "stab" = 20, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = null // It won't help, like, at all.
 	sellprice = 10
 
@@ -80,7 +94,7 @@
 	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still cannot compare to proper armor."
 	icon_state = "gambesonp"
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
-	armor = list("blunt" = 60, "slash" = 40, "stab" = 50, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 60, "slash" = 40, "stab" = 50, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	sellprice = 30
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/otavan
@@ -89,7 +103,7 @@
 	desc = "A large shirt with heavy padding meant to be used below armor."
 	icon_state = "fancygamb"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|VITALS
-	armor = list("blunt" = 60, "slash" = 40, "stab" = 50, "piercing" = 25, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 60, "slash" = 40, "stab" = 50, "bullet" = 25, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT,BCLASS_BLUNT)
 	blocksound = SOFTUNDERHIT
 	blade_dulling = DULLING_BASHCHOP
@@ -136,7 +150,7 @@
 	icon_state = "leather"
 //	color = "#514339"
 	body_parts_covered = CHEST|GROIN|VITALS
-	armor = list("blunt" = 65, "slash" = 30, "stab" = 40, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 65, "slash" = 30, "stab" = 40, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT,BCLASS_BLUNT)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
@@ -161,7 +175,7 @@
 	icon_state = "studleather"
 	item_state = "studleather"
 	blocksound = SOFTHIT
-	armor = list("blunt" = 70, "slash" = 50, "stab" = 60, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 70, "slash" = 50, "stab" = 60, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_CHOP)
 	nodismemsleeves = TRUE
 	body_parts_covered = CHEST|GROIN|VITALS
@@ -176,7 +190,7 @@
 	for its wearer, shielding from blows and weather alike."
 	icon_state = "roguearmor"
 	item_state = "roguearmor"
-	armor = list("blunt" = 70, "slash" = 50, "stab" = 60, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 70, "slash" = 50, "stab" = 60, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_CHOP)
 	max_integrity = 300
 	sellprice = 25
@@ -186,7 +200,7 @@
 	desc = "A heavy steerhide jerkin bearing a supplementary utility belt."
 	icon_state = "roguearmor_belt"
 	item_state = "roguearmor_belt"
-	armor = list("blunt" = 70, "slash" = 50, "stab" = 60, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 70, "slash" = 50, "stab" = 60, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_CHOP)
 	max_integrity = 300
 	sellprice = 25
@@ -197,7 +211,7 @@
 	icon_state = "roguearmor_coat"
 	item_state = "roguearmor_coat"
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS
-	armor = list("blunt" = 70, "slash" = 50, "stab" = 60, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 70, "slash" = 50, "stab" = 60, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_CHOP)
 	max_integrity = 200
 	sellprice = 25
@@ -235,7 +249,7 @@
 	icon_state = "vest"
 	item_state = "vest"
 	color = "#514339"
-	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT)
 	blocksound = SOFTHIT
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
@@ -341,7 +355,7 @@
 	desc = "A padded dressing made from the finest silks."
 	icon_state = "bliaut"
 	color = null
-	armor = list("blunt" = 70, "slash" = 35, "stab" = 60, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 70, "slash" = 35, "stab" = 60, "bullet" = 7, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_TWIST)
 	blocksound = SOFTHIT
 	slot_flags = ITEM_SLOT_ARMOR
@@ -403,7 +417,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/fluted
 	name = "fluted hauberk"
-	desc = "An ornate cuirass, flanked with sleeves of steel maille."
+	desc = "A steel maille, of a pattern popularized by Otavan templars."
 	icon_state = "flutedhauberk"
 	item_state = "flutedhauberk"
 
@@ -691,8 +705,6 @@
 	sleeved_detail = TRUE
 	boobed_detail = TRUE
 
-
-
 /obj/item/clothing/suit/roguetown/armor/brigandine/sheriff/coat/attack_right(mob/user)
 	if(picked)
 		return
@@ -721,29 +733,12 @@
 	icon_state = "light_brigandine"
 	blocksound = SOFTHIT
 	body_parts_covered = CHEST|GROIN|VITALS
-	armor = list("blunt" = 60, "slash" = 70, "stab" = 70, "piercing" = 70, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 60, "slash" = 70, "stab" = 70, "bullet" = 70, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 350
 	smeltresult = /obj/item/ingot/iron
 	equip_delay_self = 40
 	armor_class = ARMOR_CLASS_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/clothing/suit/roguetown/armor/plate/scale/inqcoat
-	slot_flags = ITEM_SLOT_ARMOR
-	name = "inquisitorial duster"
-	desc = "Metal plates reinforce this heavy coat, only the finest for the inquisition."
-	body_parts_covered = CHEST|VITALS|GROIN|LEGS|ARMS
-	allowed_sex = list(MALE, FEMALE)
-	icon_state = "inqcoat"
-	item_state = "inqcoat"
-	sleevetype = "shirt"
-	max_integrity = 200
-	anvilrepair = /datum/skill/craft/armorsmithing
-	smeltresult = /obj/item/ingot/steel
-	equip_delay_self = 4 SECONDS
-	armor_class = ARMOR_CLASS_MEDIUM
-	smelt_bar_num = 2
-	blocksound = SOFTHIT
 
  //--------------- BLACKSTEEL ---------------------
 
@@ -779,6 +774,3 @@
 	smeltresult = /obj/item/ingot/blacksteel
 	armor_class = ARMOR_CLASS_MEDIUM
 	smelt_bar_num = 2
-
-
-

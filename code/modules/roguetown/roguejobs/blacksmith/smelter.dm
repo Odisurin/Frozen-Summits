@@ -22,6 +22,8 @@
 	var/actively_smelting = FALSE // Are we currently smelting?
 
 	fueluse = 30 MINUTES
+	start_fuel = 5 MINUTES
+	fuel_modifier = 0.33
 	crossfire = FALSE
 
 /obj/machinery/light/rogue/smelter/attackby(obj/item/W, mob/living/user, params)
@@ -52,7 +54,7 @@
 			return
 
 	if(W.firefuel)
-		if(!(..())) //False/null if using the item as fuel. If true, we want to try smelt it so go onto next segment.
+		if (..())
 			return
 	if(W.smeltresult)
 		if(ore.len < maxore)
@@ -148,7 +150,7 @@
 /obj/machinery/light/rogue/smelter/great
 	icon = 'icons/roguetown/misc/forge.dmi'
 	name = "great furnace"
-	desc = "The pinnacle of dwarven engineering and the miracle of Malum's blessed fire crystal, allowing for greater alloys to be made."
+	desc = "The pinnacle of dwarven engineering and the miracle of Moradins's blessed fire crystal, allowing for greater alloys to be made."
 	icon_state = "smelter0"
 	base_state = "smelter"
 	anchored = TRUE

@@ -39,6 +39,7 @@
 		else
 			return FALSE
 
+
 /obj/item/quiver/attackby(obj/A, loc, params)
 	if(A.type in subtypesof(/obj/item/ammo_casing/caseless/rogue))
 		if(arrows.len < max_storage)
@@ -96,6 +97,8 @@
 		var/obj/item/ammo_casing/caseless/rogue/bolt/A = new()
 		arrows += A
 	update_icon()
+
+
 /*
 /obj/item/quiver/Parrows/Initialize()
 	. = ..()

@@ -7,11 +7,13 @@
 	gravity                = list(0, -2, 0.1)
 	drift                  = generator("circle", 0, 3) // Some random movement for variation
 	friction               = 0.3  // shed 30% of velocity and drift every 0.1s
-	transform 			   = null // Looks weird without it
 	//Weather effects, max values
 	maxSpawning           = 50
 	minSpawning           = 10
 	wind                  = 2
+
+	// big snowflakes
+	transform			 = null
 
 /datum/particle_weather/snow_gentle
 	name = "Rain"
@@ -20,6 +22,7 @@
 
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/snow)
+	weather_messages = list("It's snowing!","You feel a chill on your bones.")
 
 	minSeverity = 1
 	maxSeverity = 10
@@ -31,8 +34,10 @@
 
 //Makes you a little chilly
 /datum/particle_weather/snow_gentle/weather_act(mob/living/L)
-	L.adjust_bodytemperature(-rand(1,3))
-
+	L.adjust_bodytemperature(-rand(5,10))
+	L.adjust_fire_stacks(-100)
+	L.SoakMob(FULL_BODY)
+	L.apply_status_effect(/datum/status_effect/buff/frostbite5e)
 
 /datum/particle_weather/snow_storm
 	name = "Rain"
@@ -41,6 +46,7 @@
 
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/snow)
+	weather_messages = list("You feel a chill", "The cold wind is freezing you to the bone")
 
 	minSeverity = 40
 	maxSeverity = 100
@@ -52,4 +58,7 @@
 
 //Makes you a lot little chilly
 /datum/particle_weather/snow_storm/weather_act(mob/living/L)
-	L.adjust_bodytemperature(-rand(5,15))
+	L.adjust_bodytemperature(-rand(5,10))
+	L.adjust_fire_stacks(-100)
+	L.SoakMob(FULL_BODY)
+	L.apply_status_effect(/datum/status_effect/buff/frostbite5e)

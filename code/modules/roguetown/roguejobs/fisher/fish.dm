@@ -27,14 +27,18 @@
 		if("gold")
 			sellprice = sellprice * 10
 			name = "legendary [initial(name)]"
+			dust_result = /obj/item/alch/waterdust
 		if("ultra")
 			sellprice = sellprice * 4
 			name = "ultra-rare [initial(name)]"
+			dust_result = /obj/item/alch/waterdust
 		if("rare")
 			sellprice = sellprice * 2
 			name = "rare [initial(name)]"
+			dust_result = /obj/item/alch/waterdust
 		if("com")
 			name = "common [initial(name)]"
+			possible_potion = "conpot"
 	if(!dead)
 		START_PROCESSING(SSobj, src)
 
@@ -80,6 +84,7 @@
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/carp
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/carp
 
+
 /obj/item/reagent_containers/food/snacks/fish/clownfish
 	name = "clownfish"
 	desc = "This fish brings vibrant hues to the dark world of Azure Peak."
@@ -88,6 +93,7 @@
 	sellprice = 40
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish
+
 
 /obj/item/reagent_containers/food/snacks/fish/angler
 	name = "anglerfish"
@@ -98,6 +104,7 @@
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler
 
+
 /obj/item/reagent_containers/food/snacks/fish/eel
 	name = "eel"
 	desc = "A sinuous eel that slithers through the dark waters."
@@ -106,6 +113,7 @@
 	sellprice = 5
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel
+
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish
 	icon = 'icons/roguetown/misc/fish.dmi'

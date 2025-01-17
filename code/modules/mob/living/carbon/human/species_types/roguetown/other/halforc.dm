@@ -10,11 +10,21 @@
 	Between humen civilization and orc savagery, orc-women opting for exile over dishonor have become \
 	more common visitors to fur trading posts and prospecting camps, eventually leading to half-orcs \
 	being born in these rough places otherwise devoid of a fairer sex. Your mother-clan is in thrall \
-	to the Ironmask. True orcs would kill you on sight, seeing you as a mongrel dog, and non-orcish \
-	people cannot decide between regarding you with either mere distrust or outright disgust. Yet \
-	somehow your wandering feet came to Azure Peak, where half-orcs ply muscle and their hardiness \
-	in the rough underbelly or outer reaches of society.<br>\
-	(+1 Strength, -1 Intelligence)"
+	to the Ironmask, true orcs would kill you as a mongrel dog and your father’s people cannot decide \
+	between mere distrust and disgust. Yet somehow your wandering feet came to Frozen Summit, where \
+	half-orcs ply muscle and their hardiness in the rough underbelly or outer reaches of society. \
+	+1 Strength, -1 Intelligence."
+
+	inherent_traits = list(
+		TRAIT_FASTSLEEP,
+		TRAIT_CRITICAL_RESISTANCE,
+		TRAIT_CIVILIZEDBARBARIAN,
+		TRAIT_STEELHEARTED,
+		TRAIT_BREADY,
+		TRAIT_STRONGBITE,
+		TRAIT_NASTY_EATER
+	)
+
 
 	skin_tone_wording = "Clan"
 
@@ -26,7 +36,7 @@
 	disliked_food = NONE
 	liked_food = NONE
 	possible_ages = ALL_AGES_LIST
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt_muscular.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/ft_muscular.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -44,7 +54,7 @@
 	OFFSET_FACE_F = list(0,1), OFFSET_BELT_F = list(0,1), OFFSET_BACK_F = list(0,1), \
 	OFFSET_NECK_F = list(0,1), OFFSET_MOUTH_F = list(0,1), OFFSET_PANTS_F = list(0,1), \
 	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
-	race_bonus = list(STAT_STRENGTH = 1, STAT_INTELLIGENCE = -1)
+	race_bonus = list(STAT_STRENGTH = 2, STAT_INTELLIGENCE = -1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
@@ -72,7 +82,27 @@
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
+		/datum/body_marking/plain,
+		/datum/body_marking/tiger,
+		/datum/body_marking/tiger/dark,
+		/datum/body_marking/sock,
+		/datum/body_marking/socklonger,
+		/datum/body_marking/tips,
+		/datum/body_marking/bellyscale,
+		/datum/body_marking/bellyscaleslim,
+		/datum/body_marking/bellyscalesmooth,
+		/datum/body_marking/bellyscaleslimsmooth,
+		/datum/body_marking/buttscale,
+		/datum/body_marking/belly,
+		/datum/body_marking/bellyslim,
+		/datum/body_marking/butt,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
+		/datum/body_marking/backspots,
+		/datum/body_marking/front,
+		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
+		/datum/body_marking/spotted,
 	)
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
@@ -84,7 +114,10 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
+		/datum/customizer/organ/butt/human,
 		/datum/customizer/organ/vagina/human,
+		/datum/customizer/organ/horns/anthro
 		)
 	languages = list(
 		/datum/language/common,
@@ -116,7 +149,6 @@
 		"Crescent Fang" = SKIN_COLOR_CRESCENT_FANG,
 		"Murkwalker" = SKIN_COLOR_MURKWALKER,
 		"Shatterhorn" = SKIN_COLOR_SHATTERHORN,
-		"Spirit Crusher" = SKIN_COLOR_SPIRITCRUSHER
 	)
 
 /datum/species/halforc/get_hairc_list()

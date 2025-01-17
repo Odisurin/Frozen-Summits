@@ -36,11 +36,16 @@
 	lockdir = dirin
 	. = ..(dirin)
 
+/obj/structure/roguewindow/solid
+	desc = "A window of simple paned glass."
+	icon_state = "window-solid"
+	integrity_failure = 0.5
+
 /obj/structure/roguewindow/stained
 	icon_state = null
 	base_state = null
 	opacity = TRUE
-	max_integrity = 100 
+	max_integrity = 100
 	integrity_failure = 0.5
 
 /obj/structure/roguewindow/stained/silver
@@ -50,7 +55,7 @@
 /obj/structure/roguewindow/stained/yellow
 	icon_state = "stained-yellow"
 	base_state = "stained-yellow"
-	
+
 /obj/structure/roguewindow/stained/zizo
 	icon_state = "stained-zizo"
 	base_state = "stained-zizo"
@@ -167,9 +172,6 @@
 	if(brokenstate)
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	if(HAS_TRAIT(user, TRAIT_BASHDOORS))
-		src.take_damage(15)
-		return
 	src.visible_message(span_info("[user] knocks on [src]."))
 	add_fingerprint(user)
 	playsound(src, 'sound/misc/glassknock.ogg', 100)
@@ -177,8 +179,7 @@
 /obj/structure/roguewindow/obj_break(damage_flag)
 	if(!brokenstate)
 		attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
-		new /obj/item/natural/glass/shard (get_turf(src))
-		new /obj/effect/decal/cleanable/glass(get_turf(src))
+		new /obj/item/shard (get_turf(src))
 		climbable = TRUE
 		brokenstate = TRUE
 		opacity = FALSE

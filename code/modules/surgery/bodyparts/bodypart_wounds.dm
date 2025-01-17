@@ -150,7 +150,7 @@
 					added_wound = /datum/wound/slash
 				if(1 to 10)
 					added_wound = /datum/wound/slash/small
-		if(BCLASS_STAB, BCLASS_PICK)
+		if(BCLASS_STAB, BCLASS_PICK, BCLASS_SHOT)
 			switch(dam)
 				if(20 to INFINITY)
 					added_wound = /datum/wound/puncture/large
@@ -218,6 +218,7 @@
 		if(prob(used))
 			attempted_wounds += /datum/wound/artery
 
+
 	for(var/wound_type in shuffle(attempted_wounds))
 		var/datum/wound/applied = add_wound(wound_type, silent, crit_message)
 		if(applied)
@@ -235,6 +236,9 @@
 	if(user && dam)
 		if(user.goodluck(2))
 			dam += 10
+	if ((bclass = BCLASS_PUNCH) && (user && dam))
+		if(user && HAS_TRAIT(user, TRAIT_PUGILIST))
+			dam += 15
 	if((bclass in GLOB.cbt_classes) && (zone_precise == BODY_ZONE_PRECISE_GROIN))
 		var/cbt_multiplier = 1
 		if(user && HAS_TRAIT(user, TRAIT_NUTCRACKER))
@@ -389,13 +393,14 @@
 	LAZYADD(embedded_objects, embedder)
 	embedder.is_embedded = TRUE
 	embedder.forceMove(src)
+	embedder.on_embed(src)
 	if(owner)
 		embedder.add_mob_blood(owner)
 		if(!silent)
 			owner.emote("embed")
 			playsound(owner, 'sound/combat/newstuck.ogg', 100, vary = TRUE)
 		if(crit_message)
-			owner.next_attack_msg += " <span class='userdanger'>[embedder] runs through [owner]'s [src]!</span>"
+			owner.next_attack_msg += " <span class='userdanger'>[embedder] is stuck in [owner]'s [src]!</span>"
 		update_disabled()
 	return TRUE
 

@@ -8,7 +8,6 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 	throwforce = 0
 
 /mob/dead/Initialize()
-	SHOULD_CALL_PARENT(FALSE)
 	if(flags_1 & INITIALIZED_1)
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
 	flags_1 |= INITIALIZED_1
@@ -95,10 +94,10 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 							var/thing = "[player.client.prefs.real_name]"
 							if(istype(job, /datum/job/roguetown/hand))
 								if(player != src)
-									if(client.prefs.job_preferences["Grand Duke"] == JP_HIGH)
+									if(client.prefs.job_preferences["Expedition Leader"] == JP_HIGH)
 										thing = "<a href='byond://?src=[REF(src)];sethand=[player.client.ckey]'>[player.client.prefs.real_name]</a>"
 								for(var/mob/dead/new_player/Lord in GLOB.player_list)
-									if(Lord.client.prefs.job_preferences["Grand Duke"] == JP_HIGH)
+									if(Lord.client.prefs.job_preferences["Expedition Leader"] == JP_HIGH)
 										if(Lord.brohand == player.ckey)
 											thing = "*[thing]*"
 											break
