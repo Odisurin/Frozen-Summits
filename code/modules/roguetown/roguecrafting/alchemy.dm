@@ -321,13 +321,13 @@
 
 /obj/item/reagent_containers/hypospray/medipen/sty/detox
 	name = "detox"
-	desc = "Well aint this funny? a snake curing toxin's and venoms. heresy... purges the body of all that is not natural."
+	desc = "Well aint this funny? a snake curing toxin's and venoms. Heresy... purges the body of all that is not natural."
 	volume = 34
 	amount_per_transfer_from_this = 34
 	list_reagents = list(/datum/reagent/medicine/antihol = 10, /datum/reagent/medicine/pen_acid = 24)
 
 /obj/item/reagent_containers/hypospray/medipen/sealbottle/reju
-	name = "rejuv elixer"
+	name = "rejuv elixir"
 	desc = "A special formulated body revitalizer; restores blood, helps seal wounds, helps to stabalize breathing and numbs pain with a non-addictive snake venom derived analgesic. Single dose. Caffeinated, just like the snake that made it."
 	icon_state = "THEbottle"
 	volume = 16
@@ -335,7 +335,7 @@
 	list_reagents = list(/datum/reagent/medicine/stimu = 15, /datum/reagent/medicine/caffeine = 1)
 
 /obj/item/reagent_containers/hypospray/medipen/sealbottle/purify
-	name = "purifying elixer"
+	name = "purifying elixir"
 	desc = "A special formulated body purifier; A powerful drug that purifies the blood and seals wounds painfully on the body. flooding your blood with anything like this isnt exactly healthy but, if it stops you needing to use the word 'festering' to describe part of your body, it's worth it."
 	icon_state = "THEbottle"
 	volume = 30
