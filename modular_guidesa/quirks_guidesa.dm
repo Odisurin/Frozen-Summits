@@ -277,7 +277,7 @@
 	desc = "I can teach others lessons in skills they don't know and i do! Usually would not work at someone who is more skilled at me."
 	value = 2
 
-/datum/quirk/elemental_breath_fire/on_spawn()
+/datum/quirk/teacher/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/teach)
 
