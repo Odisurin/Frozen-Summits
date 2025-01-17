@@ -1,4 +1,4 @@
-w/obj/structure
+/obj/structure
 	icon = 'icons/obj/structures.dmi'
 	pressure_resistance = 8
 	max_integrity = 300
